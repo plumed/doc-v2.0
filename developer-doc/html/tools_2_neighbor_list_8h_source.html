@@ -1,0 +1,245 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/NeighborList.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">NeighborList.h</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_neighbor_list_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_tools_NeighborList_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_tools_NeighborList_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_vector_8h.html">Vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_atom_number_8h.html">AtomNumber.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">class </span>Pbc;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/// \ingroup TOOLBOX</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/// A class that implements neighbor lists from two lists or a single list of atoms</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html">   36</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_neighbor_list.html">NeighborList</a>  </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html#a99c54783d14c87fdb26d7c48e4ee091b">   38</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a99c54783d14c87fdb26d7c48e4ee091b">reduced</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html#aed5f501a35b404ca4c7d2bfea85fcadd">   39</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a8539534d536635ff9ba853c5bb549f2b">do_pair_</a>,<a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a8435b5f09d388d9bd0afe7ca1ba51f50">do_pbc_</a>,<a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#aed5f501a35b404ca4c7d2bfea85fcadd">twolists_</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html#a18d469ef99d75f8093c1aeb4fc8a8344">   40</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html">PLMD::Pbc</a>* <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a18d469ef99d75f8093c1aeb4fc8a8344">pbc_</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html#a746aaebaced7e40a58774a3a7672e843">   41</a></span>&#160;  std::vector&lt;PLMD::AtomNumber&gt; <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a5a18b601b0bd83e92c547078f067c6f0">fullatomlist_</a>,<a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a746aaebaced7e40a58774a3a7672e843">requestlist_</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html#a8da0fc6133f8c9647d06855e7ab7df0c">   42</a></span>&#160;  std::vector&lt;std::pair&lt;unsigned,unsigned&gt; &gt; <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a8da0fc6133f8c9647d06855e7ab7df0c">neighbors_</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html#acdebac51ad71183f5dbe0c886afaa202">   43</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#acdebac51ad71183f5dbe0c886afaa202">distance_</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html#afb8ae374d77b7f2cacb693bb8c127350">   44</a></span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#afb8ae374d77b7f2cacb693bb8c127350">stride_</a>,<a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a91d0c59b43c9d35ee033e92f6c97e9be">nlist0_</a>,<a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a3c91a5f5c87f9f74e0c63870a8d2c7e6">nlist1_</a>,<a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#abc7bcc0cc4220a671467bc54b2557ed1">nallpairs_</a>,<a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a8975767e67dff5a2c612338ef7629a98">lastupdate_</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/// Initialize the neighbor list with all possible pairs</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a741aa8024860ff5eebd7986f81786fa8">initialize</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/// Return the pair of indexes in the positions array</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/// of the two atoms forming the i-th pair among all possible pairs  </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span>  std::pair&lt;unsigned,unsigned&gt; <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a2e336af3e02ba154b6bffbe63d978eda">getIndexPair</a>(<span class="keywordtype">unsigned</span> i);<span class="comment"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/// Extract the list of atoms from the current list of close pairs</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a3bae950ad3edef579e825cb98db5eb0d">setRequestList</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#aec701af1c3cf5ff647898b1826dd0906">NeighborList</a>(<span class="keyword">const</span> std::vector&lt;PLMD::AtomNumber&gt;&amp; list0,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;               <span class="keyword">const</span> std::vector&lt;PLMD::AtomNumber&gt;&amp; list1,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; do_pair, <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; do_pbc, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html">PLMD::Pbc</a>&amp; pbc, </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; distance=1.0e+30, <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; stride=0);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#aec701af1c3cf5ff647898b1826dd0906">NeighborList</a>(<span class="keyword">const</span> std::vector&lt;PLMD::AtomNumber&gt;&amp; list0, <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; do_pbc,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;               <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html">PLMD::Pbc</a>&amp; pbc, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; distance=1.0e+30,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; stride=0);<span class="comment"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/// Return the list of all atoms. These are needed to rebuild the neighbor list.                         </span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span>  std::vector&lt;PLMD::AtomNumber&gt;&amp; <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#abef26a854615aee2405b69419f6a4692">getFullAtomList</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/// Update the indexes in the neighbor list to match the</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// ordering in the new positions array</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/// and return the new list of atoms that must be requested to the main code</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span>  std::vector&lt;PLMD::AtomNumber&gt;&amp; <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a695a8521a96c25bdb88290be931c1e8e">getReducedAtomList</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/// Update the neighbor list and prepare the new</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// list of atoms that will be requested to the main code  </span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a83d191a91aefd32228399b201b4e1ffd">update</a>(<span class="keyword">const</span> std::vector&lt;PLMD::Vector&gt;&amp; positions);<span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/// Get the update stride of the neighbor list</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#afa52da6adca9ee695a28ee0c9ac56814">getStride</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">/// Get the last step in which the neighbor list was updated  </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a5bb19fb8de936c5df9b056e319c89444">getLastUpdate</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">/// Set the step of the last update</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a11869e9161380d70265489458774ee81">setLastUpdate</a>(<span class="keywordtype">unsigned</span> step);<span class="comment"></span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/// Get the size of the neighbor list</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a4b12ff28ca8c240c8985d69eb09650ac">size</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/// Get the i-th pair of the neighbor list</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span>  std::pair&lt;unsigned,unsigned&gt; <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a75f53975ba8e96041cb8f0f250a33a09">getClosePair</a>(<span class="keywordtype">unsigned</span> i) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/// Get the list of neighbors of the i-th atom</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span>  std::vector&lt;unsigned&gt; <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a0e444a256b102cc1c4fc0648b37cead8">getNeighbors</a>(<span class="keywordtype">unsigned</span> i);</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_neighbor_list.html#a699cff96212dea2d2f69f5b85069d578">   81</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_neighbor_list.html#a699cff96212dea2d2f69f5b85069d578">~NeighborList</a>(){}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a8da0fc6133f8c9647d06855e7ab7df0c"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a8da0fc6133f8c9647d06855e7ab7df0c">PLMD::NeighborList::neighbors_</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; unsigned, unsigned &gt; &gt; neighbors_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00042">NeighborList.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_abef26a854615aee2405b69419f6a4692"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#abef26a854615aee2405b69419f6a4692">PLMD::NeighborList::getFullAtomList</a></div><div class="ttdeci">std::vector&lt; PLMD::AtomNumber &gt; &amp; getFullAtomList()</div><div class="ttdoc">Return the list of all atoms. These are needed to rebuild the neighbor list. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00075">NeighborList.cpp:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a0e444a256b102cc1c4fc0648b37cead8"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a0e444a256b102cc1c4fc0648b37cead8">PLMD::NeighborList::getNeighbors</a></div><div class="ttdeci">std::vector&lt; unsigned &gt; getNeighbors(unsigned i)</div><div class="ttdoc">Get the list of neighbors of the i-th atom. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00160">NeighborList.cpp:160</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a746aaebaced7e40a58774a3a7672e843"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a746aaebaced7e40a58774a3a7672e843">PLMD::NeighborList::requestlist_</a></div><div class="ttdeci">std::vector&lt; PLMD::AtomNumber &gt; requestlist_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00041">NeighborList.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a5a18b601b0bd83e92c547078f067c6f0"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a5a18b601b0bd83e92c547078f067c6f0">PLMD::NeighborList::fullatomlist_</a></div><div class="ttdeci">std::vector&lt; PLMD::AtomNumber &gt; fullatomlist_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00041">NeighborList.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a3bae950ad3edef579e825cb98db5eb0d"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a3bae950ad3edef579e825cb98db5eb0d">PLMD::NeighborList::setRequestList</a></div><div class="ttdeci">void setRequestList()</div><div class="ttdoc">Extract the list of atoms from the current list of close pairs. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00115">NeighborList.cpp:115</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a83d191a91aefd32228399b201b4e1ffd"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a83d191a91aefd32228399b201b4e1ffd">PLMD::NeighborList::update</a></div><div class="ttdeci">void update(const std::vector&lt; PLMD::Vector &gt; &amp;positions)</div><div class="ttdoc">Update the neighbor list and prepare the new list of atoms that will be requested to the main code...</div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00094">NeighborList.cpp:94</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html">PLMD::Pbc</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00038">Pbc.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a11869e9161380d70265489458774ee81"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a11869e9161380d70265489458774ee81">PLMD::NeighborList::setLastUpdate</a></div><div class="ttdeci">void setLastUpdate(unsigned step)</div><div class="ttdoc">Set the step of the last update. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00148">NeighborList.cpp:148</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a91d0c59b43c9d35ee033e92f6c97e9be"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a91d0c59b43c9d35ee033e92f6c97e9be">PLMD::NeighborList::nlist0_</a></div><div class="ttdeci">unsigned nlist0_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00044">NeighborList.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html">PLMD::NeighborList</a></div><div class="ttdoc">A class that implements neighbor lists from two lists or a single list of atoms. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00036">NeighborList.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a75f53975ba8e96041cb8f0f250a33a09"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a75f53975ba8e96041cb8f0f250a33a09">PLMD::NeighborList::getClosePair</a></div><div class="ttdeci">std::pair&lt; unsigned, unsigned &gt; getClosePair(unsigned i) const </div><div class="ttdoc">Get the i-th pair of the neighbor list. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00156">NeighborList.cpp:156</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a3c91a5f5c87f9f74e0c63870a8d2c7e6"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a3c91a5f5c87f9f74e0c63870a8d2c7e6">PLMD::NeighborList::nlist1_</a></div><div class="ttdeci">unsigned nlist1_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00044">NeighborList.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a2e336af3e02ba154b6bffbe63d978eda"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a2e336af3e02ba154b6bffbe63d978eda">PLMD::NeighborList::getIndexPair</a></div><div class="ttdeci">std::pair&lt; unsigned, unsigned &gt; getIndexPair(unsigned i)</div><div class="ttdoc">Return the pair of indexes in the positions array of the two atoms forming the i-th pair among all po...</div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00079">NeighborList.cpp:79</a></div></div>
+<div class="ttc" id="tools_2_vector_8h_html"><div class="ttname"><a href="tools_2_vector_8h.html">Vector.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a699cff96212dea2d2f69f5b85069d578"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a699cff96212dea2d2f69f5b85069d578">PLMD::NeighborList::~NeighborList</a></div><div class="ttdeci">~NeighborList()</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00081">NeighborList.h:81</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_afb8ae374d77b7f2cacb693bb8c127350"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#afb8ae374d77b7f2cacb693bb8c127350">PLMD::NeighborList::stride_</a></div><div class="ttdeci">unsigned stride_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00044">NeighborList.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a741aa8024860ff5eebd7986f81786fa8"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a741aa8024860ff5eebd7986f81786fa8">PLMD::NeighborList::initialize</a></div><div class="ttdeci">void initialize()</div><div class="ttdoc">Initialize the neighbor list with all possible pairs. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00068">NeighborList.cpp:68</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_afa52da6adca9ee695a28ee0c9ac56814"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#afa52da6adca9ee695a28ee0c9ac56814">PLMD::NeighborList::getStride</a></div><div class="ttdeci">unsigned getStride() const </div><div class="ttdoc">Get the update stride of the neighbor list. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00140">NeighborList.cpp:140</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a695a8521a96c25bdb88290be931c1e8e"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a695a8521a96c25bdb88290be931c1e8e">PLMD::NeighborList::getReducedAtomList</a></div><div class="ttdeci">std::vector&lt; PLMD::AtomNumber &gt; &amp; getReducedAtomList()</div><div class="ttdoc">Update the indexes in the neighbor list to match the ordering in the new positions array and return t...</div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00125">NeighborList.cpp:125</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_abc7bcc0cc4220a671467bc54b2557ed1"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#abc7bcc0cc4220a671467bc54b2557ed1">PLMD::NeighborList::nallpairs_</a></div><div class="ttdeci">unsigned nallpairs_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00044">NeighborList.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a8539534d536635ff9ba853c5bb549f2b"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a8539534d536635ff9ba853c5bb549f2b">PLMD::NeighborList::do_pair_</a></div><div class="ttdeci">bool do_pair_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00039">NeighborList.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a99c54783d14c87fdb26d7c48e4ee091b"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a99c54783d14c87fdb26d7c48e4ee091b">PLMD::NeighborList::reduced</a></div><div class="ttdeci">bool reduced</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00038">NeighborList.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a18d469ef99d75f8093c1aeb4fc8a8344"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a18d469ef99d75f8093c1aeb4fc8a8344">PLMD::NeighborList::pbc_</a></div><div class="ttdeci">const PLMD::Pbc * pbc_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00040">NeighborList.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a8975767e67dff5a2c612338ef7629a98"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a8975767e67dff5a2c612338ef7629a98">PLMD::NeighborList::lastupdate_</a></div><div class="ttdeci">unsigned lastupdate_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00044">NeighborList.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a5bb19fb8de936c5df9b056e319c89444"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a5bb19fb8de936c5df9b056e319c89444">PLMD::NeighborList::getLastUpdate</a></div><div class="ttdeci">unsigned getLastUpdate() const </div><div class="ttdoc">Get the last step in which the neighbor list was updated. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00144">NeighborList.cpp:144</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_aec701af1c3cf5ff647898b1826dd0906"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#aec701af1c3cf5ff647898b1826dd0906">PLMD::NeighborList::NeighborList</a></div><div class="ttdeci">NeighborList(const std::vector&lt; PLMD::AtomNumber &gt; &amp;list0, const std::vector&lt; PLMD::AtomNumber &gt; &amp;list1, const bool &amp;do_pair, const bool &amp;do_pbc, const PLMD::Pbc &amp;pbc, const double &amp;distance=1.0e+30, const unsigned &amp;stride=0)</div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00033">NeighborList.cpp:33</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_acdebac51ad71183f5dbe0c886afaa202"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#acdebac51ad71183f5dbe0c886afaa202">PLMD::NeighborList::distance_</a></div><div class="ttdeci">double distance_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00043">NeighborList.h:43</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a8435b5f09d388d9bd0afe7ca1ba51f50"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a8435b5f09d388d9bd0afe7ca1ba51f50">PLMD::NeighborList::do_pbc_</a></div><div class="ttdeci">bool do_pbc_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00039">NeighborList.h:39</a></div></div>
+<div class="ttc" id="tools_2_atom_number_8h_html"><div class="ttname"><a href="tools_2_atom_number_8h.html">AtomNumber.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_a4b12ff28ca8c240c8985d69eb09650ac"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#a4b12ff28ca8c240c8985d69eb09650ac">PLMD::NeighborList::size</a></div><div class="ttdeci">unsigned size() const </div><div class="ttdoc">Get the size of the neighbor list. </div><div class="ttdef"><b>Definition:</b> <a href="_neighbor_list_8cpp_source.html#l00152">NeighborList.cpp:152</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_neighbor_list_html_aed5f501a35b404ca4c7d2bfea85fcadd"><div class="ttname"><a href="class_p_l_m_d_1_1_neighbor_list.html#aed5f501a35b404ca4c7d2bfea85fcadd">PLMD::NeighborList::twolists_</a></div><div class="ttdeci">bool twolists_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_neighbor_list_8h_source.html#l00039">NeighborList.h:39</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

@@ -1,0 +1,217 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: core/PlumedMainInitializer.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">PlumedMainInitializer.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_plumed_main_initializer_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2_plumed_main_8h.html">PlumedMain.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;tools/Exception.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// !!!!!!!!!!!!!!!!!!!!!!    DANGER   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// THE FOLLOWING ARE UTILITIES WHICH ARE NECESSARY FOR DYNAMIC LOADING OF THE PLUMED KERNEL:</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// This section should be consistent with the Plumed.h file.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Since the Plumed.h file may be included in host MD codes, **NEVER** MODIFY THE CODE IN THIS FILE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// unless you know exactly what you are doing</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">  Container for plumedmain function pointers (create, cmd and finalize).</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structplumed__plumedmain__function__holder.html">   37</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structplumed__plumedmain__function__holder.html#af4be510f6eaef0f643b4d63c0e4f8f8d">   38</a></span>&#160;  <span class="keywordtype">void</span>*(*create)();</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structplumed__plumedmain__function__holder.html#ac84bce85c92b749438e0e7a7b9500356">   39</a></span>&#160;  void(*cmd)(<span class="keywordtype">void</span>*,<span class="keyword">const</span> <span class="keywordtype">char</span>*,<span class="keyword">const</span> <span class="keywordtype">void</span>*);</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structplumed__plumedmain__function__holder.html#ac3ebf9fd32aabb494777778623c4af8c">   40</a></span>&#160;  void(*finalize)(<span class="keywordtype">void</span>*);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;} <a class="code" href="structplumed__plumedmain__function__holder.html">plumed_plumedmain_function_holder</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/* These functions should be accessible from C, since they might be statically</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   used from Plumed.c (for static binding) */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="_plumed_main_initializer_8cpp.html#a82e43aa5c6c03a931a8e49904d007901">   46</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span>*<a class="code" href="_plumed_main_initializer_8cpp.html#a82e43aa5c6c03a931a8e49904d007901">plumedmain_create</a>(){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html">PLMD::PlumedMain</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="_plumed_main_initializer_8cpp.html#ad4e3c5df1f908d0d42e8e3e010aed19d">   50</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="_plumed_main_initializer_8cpp.html#ad4e3c5df1f908d0d42e8e3e010aed19d">plumedmain_cmd</a>(<span class="keywordtype">void</span>*<a class="code" href="structplumed.html">plumed</a>,<span class="keyword">const</span> <span class="keywordtype">char</span>*key,<span class="keyword">const</span> <span class="keywordtype">void</span>*val){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  plumed_massert(plumed,<span class="stringliteral">&quot;trying to use a plumed object which is not initialized&quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">static_cast&lt;</span><a class="code" href="class_p_l_m_d_1_1_plumed_main.html">PLMD::PlumedMain</a>*<span class="keyword">&gt;</span>(plumed)-&gt;cmd(key,val);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="_plumed_main_initializer_8cpp.html#a6e4f425d9a9165dd9d06d59225bacfdb">   55</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="_plumed_main_initializer_8cpp.html#a6e4f425d9a9165dd9d06d59225bacfdb">plumedmain_finalize</a>(<span class="keywordtype">void</span>*<a class="code" href="structplumed.html">plumed</a>){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  plumed_massert(plumed,<span class="stringliteral">&quot;trying to deallocate a plumed object which is not initialized&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">delete</span> <span class="keyword">static_cast&lt;</span><a class="code" href="class_p_l_m_d_1_1_plumed_main.html">PLMD::PlumedMain</a>*<span class="keyword">&gt;</span>(plumed);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/* This refers to a function implemented in Plumed.c */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <a class="code" href="structplumed__plumedmain__function__holder.html">plumed_plumedmain_function_holder</a>* <a class="code" href="_plumed_main_initializer_8cpp.html#a377e99e39e924581cca26a29ce90d2b9">plumed_kernel_register</a>(<span class="keyword">const</span> <a class="code" href="structplumed__plumedmain__function__holder.html">plumed_plumedmain_function_holder</a>*);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// Static object which registers Plumed.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/// This is a static object which, during its construction at startup,</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// registers the pointers to plumedmain_create, plumedmain_cmd and plumedmain_finalize</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/// to the plumed_kernel_register function</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main_initializer.html">   69</a></span>&#160;<span class="comment"></span><span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_plumed_main_initializer.html">PlumedMainInitializer</a>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main_initializer.html#a2d734523bd39c6114edc74fc6646ef6c">   71</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_plumed_main_initializer.html#a2d734523bd39c6114edc74fc6646ef6c">PlumedMainInitializer</a>(){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="structplumed__plumedmain__function__holder.html">plumed_plumedmain_function_holder</a> fh={<a class="code" href="_plumed_main_initializer_8cpp.html#a82e43aa5c6c03a931a8e49904d007901">plumedmain_create</a>,<a class="code" href="_plumed_main_initializer_8cpp.html#ad4e3c5df1f908d0d42e8e3e010aed19d">plumedmain_cmd</a>,<a class="code" href="_plumed_main_initializer_8cpp.html#a6e4f425d9a9165dd9d06d59225bacfdb">plumedmain_finalize</a>};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="_plumed_main_initializer_8cpp.html#a377e99e39e924581cca26a29ce90d2b9">plumed_kernel_register</a>(&amp;fh);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <a class="code" href="namespace_p_l_m_d.html#a58a6b9fdc777a0669aacee7da32bf5b0">RegisterMe</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_initializer_html"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main_initializer.html">PLMD::PlumedMainInitializer</a></div><div class="ttdoc">Static object which registers Plumed. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_initializer_8cpp_source.html#l00069">PlumedMainInitializer.cpp:69</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a58a6b9fdc777a0669aacee7da32bf5b0"><div class="ttname"><a href="namespace_p_l_m_d.html#a58a6b9fdc777a0669aacee7da32bf5b0">PLMD::RegisterMe</a></div><div class="ttdeci">static class PLMD::PlumedMainInitializer RegisterMe</div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_initializer_html_a2d734523bd39c6114edc74fc6646ef6c"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main_initializer.html#a2d734523bd39c6114edc74fc6646ef6c">PLMD::PlumedMainInitializer::PlumedMainInitializer</a></div><div class="ttdeci">PlumedMainInitializer()</div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_initializer_8cpp_source.html#l00071">PlumedMainInitializer.cpp:71</a></div></div>
+<div class="ttc" id="core_2_plumed_main_8h_html"><div class="ttname"><a href="core_2_plumed_main_8h.html">PlumedMain.h</a></div></div>
+<div class="ttc" id="structplumed__plumedmain__function__holder_html"><div class="ttname"><a href="structplumed__plumedmain__function__holder.html">plumed_plumedmain_function_holder</a></div><div class="ttdoc">Container for plumedmain function pointers (create, cmd and finalize). </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_initializer_8cpp_source.html#l00037">PlumedMainInitializer.cpp:37</a></div></div>
+<div class="ttc" id="_plumed_main_initializer_8cpp_html_a6e4f425d9a9165dd9d06d59225bacfdb"><div class="ttname"><a href="_plumed_main_initializer_8cpp.html#a6e4f425d9a9165dd9d06d59225bacfdb">plumedmain_finalize</a></div><div class="ttdeci">void plumedmain_finalize(void *plumed)</div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_initializer_8cpp_source.html#l00055">PlumedMainInitializer.cpp:55</a></div></div>
+<div class="ttc" id="_plumed_main_initializer_8cpp_html_ad4e3c5df1f908d0d42e8e3e010aed19d"><div class="ttname"><a href="_plumed_main_initializer_8cpp.html#ad4e3c5df1f908d0d42e8e3e010aed19d">plumedmain_cmd</a></div><div class="ttdeci">void plumedmain_cmd(void *plumed, const char *key, const void *val)</div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_initializer_8cpp_source.html#l00050">PlumedMainInitializer.cpp:50</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html">PLMD::PlumedMain</a></div><div class="ttdoc">Main plumed object. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00071">PlumedMain.h:71</a></div></div>
+<div class="ttc" id="structplumed_html"><div class="ttname"><a href="structplumed.html">plumed</a></div><div class="ttdoc">Main plumed object. </div><div class="ttdef"><b>Definition:</b> <a href="wrapper_2_plumed_8h_source.html#l00201">Plumed.h:201</a></div></div>
+<div class="ttc" id="_plumed_main_initializer_8cpp_html_a377e99e39e924581cca26a29ce90d2b9"><div class="ttname"><a href="_plumed_main_initializer_8cpp.html#a377e99e39e924581cca26a29ce90d2b9">plumed_kernel_register</a></div><div class="ttdeci">plumed_plumedmain_function_holder * plumed_kernel_register(const plumed_plumedmain_function_holder *)</div><div class="ttdoc">Register for plumedmain function pointers. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_8c_source.html#l00101">Plumed.c:101</a></div></div>
+<div class="ttc" id="_plumed_main_initializer_8cpp_html_a82e43aa5c6c03a931a8e49904d007901"><div class="ttname"><a href="_plumed_main_initializer_8cpp.html#a82e43aa5c6c03a931a8e49904d007901">plumedmain_create</a></div><div class="ttdeci">void * plumedmain_create()</div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_initializer_8cpp_source.html#l00046">PlumedMainInitializer.cpp:46</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

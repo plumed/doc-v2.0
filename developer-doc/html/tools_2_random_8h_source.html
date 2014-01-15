@@ -1,0 +1,228 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/Random.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Random.h</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_random_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_tools_Random_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_tools_Random_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;iosfwd&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/// \ingroup TOOLBOX</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html">   31</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_random.html">Random</a>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#ac445df6229fdc38de64bd7a469ec7d92">   32</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_random.html#aa37605e5b57cb8f15528c66159f15194">IA</a>=16807,<a class="code" href="class_p_l_m_d_1_1_random.html#aa4f5c77981d9706039e85010e825206a">IM</a>=2147483647,<a class="code" href="class_p_l_m_d_1_1_random.html#afb76fcfdfb927d45e710410390434534">IQ</a>=127773,<a class="code" href="class_p_l_m_d_1_1_random.html#a6b731cc50c0f655e455f8ab46913ba57">IR</a>=2836,<a class="code" href="class_p_l_m_d_1_1_random.html#ac445df6229fdc38de64bd7a469ec7d92">NTAB</a>=32;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#aae9417368d3ffc332063dc1f97a01bd3">   33</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_random.html#aae9417368d3ffc332063dc1f97a01bd3">NDIV</a>=(1+(<a class="code" href="class_p_l_m_d_1_1_random.html#aa4f5c77981d9706039e85010e825206a">IM</a>-1)/<a class="code" href="class_p_l_m_d_1_1_random.html#ac445df6229fdc38de64bd7a469ec7d92">NTAB</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a43698a2b172ad91d67157b9270c2824f">   34</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a43698a2b172ad91d67157b9270c2824f">EPS</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a7f2c527429b43ef8e859de33dd1086de">   35</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a7f2c527429b43ef8e859de33dd1086de">AM</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a1b63145a8b7a531e33396d366bfd1255">   36</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a1b63145a8b7a531e33396d366bfd1255">RNMX</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#ada9b7505db413b540d281fbb1109c869">   37</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#ada9b7505db413b540d281fbb1109c869">fact</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#ad73e4f5be0c9c0a2fd4ddceb3dbdb6f6">   38</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="class_p_l_m_d_1_1_random.html#ad73e4f5be0c9c0a2fd4ddceb3dbdb6f6">noname</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#ab84ddac3b6d4a577cf8b2a3453ab4d94">   39</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_random.html#ab84ddac3b6d4a577cf8b2a3453ab4d94">incPrec</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a15b7435563d26cc21b7d61e352b48bd3">   40</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a15b7435563d26cc21b7d61e352b48bd3">switchGaussian</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a05b4edbcbeefca1eaa32d08e13b6f321">   41</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a05b4edbcbeefca1eaa32d08e13b6f321">saveGaussian</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#aa55f60cd322f820c0e4bf796e6a31522">   42</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_random.html#aa55f60cd322f820c0e4bf796e6a31522">iy</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a38086b555d9f2cf9b78038343010a451">   43</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a38086b555d9f2cf9b78038343010a451">iv</a>[<a class="code" href="class_p_l_m_d_1_1_random.html#ac445df6229fdc38de64bd7a469ec7d92">NTAB</a>];</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a78b88f95b8fde1d90d83502ee1164119">   44</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a78b88f95b8fde1d90d83502ee1164119">idum</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a5329fcab0e458300b76f0bd89bff337a">   45</a></span>&#160;        std::string <a class="code" href="class_p_l_m_d_1_1_random.html#a5329fcab0e458300b76f0bd89bff337a">name</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_random.html#ad61f148dc3a66988f1653b1212df6ea3">Random</a>(<span class="keyword">const</span> std::string &amp; <a class="code" href="class_p_l_m_d_1_1_random.html#a5329fcab0e458300b76f0bd89bff337a">name</a>=<a class="code" href="class_p_l_m_d_1_1_random.html#ad73e4f5be0c9c0a2fd4ddceb3dbdb6f6">noname</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_random.html#aac7a25dd0c8fa92594789d580487163a">setSeed</a>(<span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a78b88f95b8fde1d90d83502ee1164119">idum</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a41e26619b6d2a00d4faac288baedbb17">RandU01</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#adfac95fdd9184821243a49da0ba9b314">U01d</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_random.html#ad25d12b181ac216b1ba679dc3aef82cd">WriteStateFull</a>(std::ostream &amp;)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a5e5296f2d837b294193c31520b7983c1">ReadStateFull</a> (std::istream &amp;);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a5474925ca797c1695f4ccaedd187d1eb">fromString</a>(<span class="keyword">const</span> std::string &amp; str);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a1bc63d5786ce100c8b289d1fb305ea77">toString</a>(std::string &amp; str)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a32fe71e21a27feaf49a69d970bf2bb55">   56</a></span>&#160;        <span class="keyword">friend</span> std::ostream &amp; <a class="code" href="class_p_l_m_d_1_1_random.html#a32fe71e21a27feaf49a69d970bf2bb55">operator&lt;&lt;</a>(std::ostream &amp; out,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_random.html">Random</a> &amp; rng){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                rng.<a class="code" href="class_p_l_m_d_1_1_random.html#ad25d12b181ac216b1ba679dc3aef82cd">WriteStateFull</a>(out); <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a86b6653b09cd653eaf737a04064e509d">   59</a></span>&#160;        <span class="keyword">friend</span> std::istream &amp; <a class="code" href="class_p_l_m_d_1_1_random.html#a86b6653b09cd653eaf737a04064e509d">operator&gt;&gt;</a>(std::istream &amp; in,<a class="code" href="class_p_l_m_d_1_1_random.html">Random</a> &amp; rng){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                rng.<a class="code" href="class_p_l_m_d_1_1_random.html#a5e5296f2d837b294193c31520b7983c1">ReadStateFull</a>(in); <span class="keywordflow">return</span> in;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_random.html#aa3399506a9c838136ec12c888b0762d4">Gaussian</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_random.html#a3cdabc7339287a62ff10ab8936d9f26f">   63</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_random.html#a3cdabc7339287a62ff10ab8936d9f26f">IncreasedPrecis</a>(<span class="keywordtype">bool</span> i){<a class="code" href="class_p_l_m_d_1_1_random.html#ab84ddac3b6d4a577cf8b2a3453ab4d94">incPrec</a>=i;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a1bc63d5786ce100c8b289d1fb305ea77"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a1bc63d5786ce100c8b289d1fb305ea77">PLMD::Random::toString</a></div><div class="ttdeci">void toString(std::string &amp;str) const </div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00112">Random.cpp:112</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a5474925ca797c1695f4ccaedd187d1eb"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a5474925ca797c1695f4ccaedd187d1eb">PLMD::Random::fromString</a></div><div class="ttdeci">void fromString(const std::string &amp;str)</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00121">Random.cpp:121</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a05b4edbcbeefca1eaa32d08e13b6f321"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a05b4edbcbeefca1eaa32d08e13b6f321">PLMD::Random::saveGaussian</a></div><div class="ttdeci">double saveGaussian</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00041">Random.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a83a3faa028b6b8b880bd86a25325e4ea"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">PLMD::Random::U01</a></div><div class="ttdeci">double U01()</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00069">Random.cpp:69</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html">PLMD::Random</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00031">Random.h:31</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a7f2c527429b43ef8e859de33dd1086de"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a7f2c527429b43ef8e859de33dd1086de">PLMD::Random::AM</a></div><div class="ttdeci">static const double AM</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00035">Random.h:35</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a32fe71e21a27feaf49a69d970bf2bb55"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a32fe71e21a27feaf49a69d970bf2bb55">PLMD::Random::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, const Random &amp;rng)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00056">Random.h:56</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_adfac95fdd9184821243a49da0ba9b314"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#adfac95fdd9184821243a49da0ba9b314">PLMD::Random::U01d</a></div><div class="ttdeci">double U01d()</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00060">Random.cpp:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_ada9b7505db413b540d281fbb1109c869"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#ada9b7505db413b540d281fbb1109c869">PLMD::Random::fact</a></div><div class="ttdeci">static const double fact</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00037">Random.h:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_aac7a25dd0c8fa92594789d580487163a"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#aac7a25dd0c8fa92594789d580487163a">PLMD::Random::setSeed</a></div><div class="ttdeci">void setSeed(int idum)</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00046">Random.cpp:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_ad25d12b181ac216b1ba679dc3aef82cd"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#ad25d12b181ac216b1ba679dc3aef82cd">PLMD::Random::WriteStateFull</a></div><div class="ttdeci">void WriteStateFull(std::ostream &amp;) const </div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00093">Random.cpp:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_ab84ddac3b6d4a577cf8b2a3453ab4d94"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#ab84ddac3b6d4a577cf8b2a3453ab4d94">PLMD::Random::incPrec</a></div><div class="ttdeci">bool incPrec</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00039">Random.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a5329fcab0e458300b76f0bd89bff337a"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a5329fcab0e458300b76f0bd89bff337a">PLMD::Random::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00045">Random.h:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a5e5296f2d837b294193c31520b7983c1"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a5e5296f2d837b294193c31520b7983c1">PLMD::Random::ReadStateFull</a></div><div class="ttdeci">void ReadStateFull(std::istream &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00104">Random.cpp:104</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_afb76fcfdfb927d45e710410390434534"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#afb76fcfdfb927d45e710410390434534">PLMD::Random::IQ</a></div><div class="ttdeci">static const int IQ</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00032">Random.h:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a78b88f95b8fde1d90d83502ee1164119"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a78b88f95b8fde1d90d83502ee1164119">PLMD::Random::idum</a></div><div class="ttdeci">int idum</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00044">Random.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a3cdabc7339287a62ff10ab8936d9f26f"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a3cdabc7339287a62ff10ab8936d9f26f">PLMD::Random::IncreasedPrecis</a></div><div class="ttdeci">void IncreasedPrecis(bool i)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00063">Random.h:63</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_aae9417368d3ffc332063dc1f97a01bd3"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#aae9417368d3ffc332063dc1f97a01bd3">PLMD::Random::NDIV</a></div><div class="ttdeci">static const int NDIV</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00033">Random.h:33</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_ad61f148dc3a66988f1653b1212df6ea3"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#ad61f148dc3a66988f1653b1212df6ea3">PLMD::Random::Random</a></div><div class="ttdeci">Random(const std::string &amp;name=noname)</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00036">Random.cpp:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a6b731cc50c0f655e455f8ab46913ba57"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a6b731cc50c0f655e455f8ab46913ba57">PLMD::Random::IR</a></div><div class="ttdeci">static const int IR</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00032">Random.h:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_aa37605e5b57cb8f15528c66159f15194"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#aa37605e5b57cb8f15528c66159f15194">PLMD::Random::IA</a></div><div class="ttdeci">static const int IA</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00032">Random.h:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_aa4f5c77981d9706039e85010e825206a"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#aa4f5c77981d9706039e85010e825206a">PLMD::Random::IM</a></div><div class="ttdeci">static const int IM</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00032">Random.h:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a86b6653b09cd653eaf737a04064e509d"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a86b6653b09cd653eaf737a04064e509d">PLMD::Random::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;in, Random &amp;rng)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00059">Random.h:59</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a15b7435563d26cc21b7d61e352b48bd3"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a15b7435563d26cc21b7d61e352b48bd3">PLMD::Random::switchGaussian</a></div><div class="ttdeci">bool switchGaussian</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00040">Random.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_ac445df6229fdc38de64bd7a469ec7d92"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#ac445df6229fdc38de64bd7a469ec7d92">PLMD::Random::NTAB</a></div><div class="ttdeci">static const int NTAB</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00032">Random.h:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a43698a2b172ad91d67157b9270c2824f"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a43698a2b172ad91d67157b9270c2824f">PLMD::Random::EPS</a></div><div class="ttdeci">static const double EPS</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00034">Random.h:34</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a41e26619b6d2a00d4faac288baedbb17"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a41e26619b6d2a00d4faac288baedbb17">PLMD::Random::RandU01</a></div><div class="ttdeci">double RandU01()</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00051">Random.cpp:51</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_aa3399506a9c838136ec12c888b0762d4"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#aa3399506a9c838136ec12c888b0762d4">PLMD::Random::Gaussian</a></div><div class="ttdeci">double Gaussian()</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00135">Random.cpp:135</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a1b63145a8b7a531e33396d366bfd1255"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a1b63145a8b7a531e33396d366bfd1255">PLMD::Random::RNMX</a></div><div class="ttdeci">static const double RNMX</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00036">Random.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_aa55f60cd322f820c0e4bf796e6a31522"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#aa55f60cd322f820c0e4bf796e6a31522">PLMD::Random::iy</a></div><div class="ttdeci">int iy</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00042">Random.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_ad73e4f5be0c9c0a2fd4ddceb3dbdb6f6"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#ad73e4f5be0c9c0a2fd4ddceb3dbdb6f6">PLMD::Random::noname</a></div><div class="ttdeci">static const std::string noname</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00038">Random.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a38086b555d9f2cf9b78038343010a451"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a38086b555d9f2cf9b78038343010a451">PLMD::Random::iv</a></div><div class="ttdeci">int iv[NTAB]</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00043">Random.h:43</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

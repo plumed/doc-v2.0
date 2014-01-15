@@ -1,0 +1,45 @@
+/**
+
+\page Bias Bias
+
+Once you have calculated a number of collective variables PLUMED allows you to
+run a number of enhanced sampling algorithms.
+The list of available enhanced sampling algorithms contains:
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td width=5%> \subpage  ABMD </td> <td>
+Adds a ratchet-and-pawl like restraint on one or more variables.
+</td> </tr>
+<tr> <td width=5%> \subpage  EXTERNAL </td> <td>
+Calculate a restraint that is defined on a grid that is read during start up
+</td> </tr>
+<tr> <td width=5%> \subpage  LOWER_WALLS </td> <td>
+The LOWER_WALLS and UPPER_WALLS keywords define a wall for the value of one or more collective variables,
+ which limits the region of the phase space accessible during the simulation. 
+</td> </tr>
+<tr> <td width=5%> \subpage  METAD </td> <td>
+Used to performed MetaDynamics on one or more collective variables.
+</td> </tr>
+<tr> <td width=5%> \subpage  MOVINGRESTRAINT </td> <td>
+Add a time-dependent, harmonic restraint on one or more variables.
+</td> </tr>
+<tr> <td width=5%> \subpage  RESTRAINT </td> <td>
+Adds harmonic and/or linear restraints on one or more variables.  
+</td> </tr>
+<tr> <td width=5%> \subpage  UPPER_WALLS </td> <td>
+The LOWER_WALLS and UPPER_WALLS keywords define a wall for the value of one or more collective variables,
+ which limits the region of the phase space accessible during the simulation. 
+</td> </tr>
+<tr> <td width=5%> \subpage  BIASVALUE </td> <td>
+Takes the value of one variable and use it as a bias
+</td> </tr>
+</table>
+
+Methods, such as \ref METAD, that introduce a history dependent bias can be restarted
+using the \subpage RESTART keyword
+
+You can also use PLUMED in conjunction with VMD's interactive MD module by taking
+advantage of the \subpage IMD action.
+
+*/
+

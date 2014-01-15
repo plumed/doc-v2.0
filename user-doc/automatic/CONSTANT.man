@@ -1,0 +1,13 @@
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> VALUE </b></td>
+<td> The value of the constant </td>
+</tr>
+</table>
+
+</table>
+
+</table>
+

@@ -1,0 +1,40 @@
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ATOMS </b></td>
+<td> the fake atom index, a number is enough </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> PERIODIC </b></td>
+<td> if the output of your function is periodic then you should specify the periodicity of the function.  If the output is not periodic you must state this using PERIODIC=NO,NO (one for the lower and the other for the upper boundary). For multicomponents then it is PERIODIC=mincomp1,maxcomp1,mincomp2,maxcomp2  etc  </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> COMPONENTS </b></td>
+<td> additional componnets that this variable is supposed to have. Periodicity is ruled by PERIODIC keyword  </td>
+</tr>
+
+</table>
+

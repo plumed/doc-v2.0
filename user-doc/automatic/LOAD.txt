@@ -1,0 +1,28 @@
+/**
+\page LOAD LOAD
+Loads a library, possibly defining new actions.
+
+It is available only
+on systems allowing for dynamic loading. It can also be fed with a cpp file,
+in which case the file is compiled first.
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> FILE </b></td>
+<td> file to be loaded </td>
+</tr>
+</table>
+
+</table>
+
+</table>
+
+\par Examples
+
+\verbatim
+LOAD FILE=extensions.so
+\endverbatim
+
+*/

@@ -1,0 +1,37 @@
+/**
+\page simplemd simplemd
+simplemd allows one to do molecular dynamics on systems of Lennard-Jones atoms.
+
+The input to simplemd is spcified in an input file. Configurations are input and
+output in xyz format. The input file should contain one directive per line. 
+The directives available are as follows:
+
+\par Examples
+
+You run an MD simulation using simplemd with the following command:
+\verbatim
+plumed simplemd < in
+\endverbatim
+
+The following is an example of an input file for a simplemd calculation. This file
+instructs simplemd to do 50 steps of MD at a temperature of 0.722
+\verbatim
+nputfile input.xyz
+outputfile output.xyz
+temperature 0.722
+tstep 0.005
+friction 1
+forcecutoff 2.5
+listcutoff  3.0
+nstep 50
+nconfig 10 trajectory.xyz
+nstat   10 energies.dat
+\endverbatim
+
+If you run the following a description of all the directives that can be used in the
+input file will be output.
+\verbatim
+plumed simplemd --help
+\endverbatim
+
+*/

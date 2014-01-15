@@ -1,0 +1,26 @@
+<tr> <td width=5%> \subpage  COMBINE </td> <td>
+Calculate a polynomial combination of a set of other variables.
+</td> </tr>
+<tr> <td width=5%> \subpage  FUNCPATHMSD </td> <td>
+This function calculates path collective variables. 
+</td> </tr>
+<tr> <td width=5%> \subpage  FUNCSUMHILLS </td> <td>
+This function is intended to be called by the command line tool sum_hills
+and it is meant to integrate a HILLS file or an HILLS file interpreted as 
+a histogram i a variety of ways. Therefore it is not expected that you use this 
+during your dynamics (it will crash!)
+</td> </tr>
+<tr> <td width=5%> \subpage  MATHEVAL </td> <td>
+Calculate a combination of variables using a matheval expression.
+</td> </tr>
+<tr> <td width=5%> \subpage  PIECEWISE </td> <td>
+Compute a piecewise straight line through its arguments that passes through
+a set of ordered control points. 
+</td> </tr>
+<tr> <td width=5%> \subpage  SORT </td> <td>
+This function can be used to sort colvars according to their magnitudes.
+</td> </tr>
+<tr> <td width=5%> \subpage  TARGET </td> <td>
+This function measures the pythagorean distance from a particular structure measured in the space defined by some 
+set of collective variables.
+</td> </tr>

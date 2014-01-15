@@ -1,0 +1,46 @@
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ATOMS </b></td>
+<td> the four atoms involved in the torsional angle </td>
+</tr>
+</table>
+
+\par Or alternatively by using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> AXIS </b></td>
+<td> two atoms that define an axis.  You can use this to find the angle in the plane perpendicular to the axis between the vectors specified using the VECTOR1 and VECTOR2 keywords. </td>
+</tr>
+<tr>
+<td width=15%> <b> VECTOR1 </b></td>
+<td> two atoms that define a vector.  You can use this in combination with VECTOR2 and AXIS </td>
+</tr>
+<tr>
+<td width=15%> <b> VECTOR2 </b></td>
+<td> two atoms that define a vector.  You can use this in combination with VECTOR1 and AXIS </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> COSINE </b></td>
+<td> ( default=off ) calculate cosine instead of dihedral </td>
+</tr>
+
+</table>
+
+</table>
+

@@ -1,0 +1,18 @@
+/**
+
+@page tutorials How-tos
+
+The following pages describe how to perform a variety of tasks using PLUMED 2
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td>  @subpage mindist </td> <td>  This tutorial explains how to calculate the minimum distance between groups of atoms and serves as an introduction to MultiColvars </td> </tr>
+<tr> <td>  @subpage moving </td> <td>  This tutorial explains how plumed 1 input files can be translated into the new plumed 2 syntax. </td> </tr>
+</table>
+
+In addition, the following websites contain resources that might be helpful
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td>  http://en.wikipedia.org/wiki/Metadynamics </td> <td>  A wikipedia article on metadynamics </td> </tr>
+</table>
+
+*/

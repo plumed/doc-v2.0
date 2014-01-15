@@ -1,0 +1,505 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/Pbc.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Pbc.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_pbc_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_pbc_8h.html">Pbc.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_tools_8h.html">Tools.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_exception_8h.html">Exception.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_lattice_reduction_8h.html">LatticeReduction.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_random_8h.html">Random.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a7cc14335a4bba89e5a7a56b5828b1555">   32</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_pbc.html#a7cc14335a4bba89e5a7a56b5828b1555">Pbc::Pbc</a>():</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  type(unset)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#aa4b13d9be3c85acd76265455ee1abe8e">zero</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">invBox</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#aa4b13d9be3c85acd76265455ee1abe8e">zero</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a79408191757b22c19ee777c8efae94b4">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a79408191757b22c19ee777c8efae94b4">Pbc::buildShifts</a>(std::vector&lt;Vector&gt; shifts[2][2][2])<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> small=1e-28;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// clear all shifts</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;2;i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;2;j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;2;k++) shifts[i][j][k].clear();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// enumerate all possible shifts</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// since box is reduced, only 27 shifts have to be attempted</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> l=-1;l&lt;=1;l++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>=-1;<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>&lt;=1;<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>=-1;<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>&lt;=1;<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>++){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// int/double shift vectors</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> ishift[3]={l,<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>,<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> dshift(l,<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>,<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// count how many components are != 0</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">unsigned</span> count=0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> s=0;s&lt;3;s++) <span class="keywordflow">if</span>(ishift[s]!=0) count++;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// skips trivial (0,0,0) and cases with three shifts</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// only 18 shifts survive past this point</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span>(count==0 || count==3) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// check if that Wigner-Seitz face is perpendicular to the axis.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// this allows to eliminate shifts in symmetric cells.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// e.g., if one lactice vector is orthogonal to the plane spanned</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// by the other two vectors, that shift should never be tried</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> cosdir=<a class="code" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">matmul</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>,<a class="code" href="namespace_p_l_m_d.html#a26a49b1d405987e7116c298b8f423f1a">transpose</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>),dshift);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">double</span> dp=<a class="code" href="namespace_p_l_m_d.html#aecf7a0ec0d18132a3d336d7bd085a583">dotProduct</a>(dshift,cosdir);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">double</span> ref=<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(dshift)*<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(cosdir);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span>(std::fabs(ref-dp*dp)&lt;small) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// here we start pruning depending on the sign of the scaled coordinate</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;2;i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;2;j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;2;k++){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordtype">int</span> block[3]={2*i-1,2*j-1,2*k-1};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// skip cases where shift would bring too far from origin</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordtype">bool</span> skip=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> s=0;s&lt;3;s++) if(ishift[s]*block[s]&gt;0) skip=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">if</span>(skip) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      skip=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> s=0;s&lt;3;s++){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// check that the components of cosdir along the non-shifted directions</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// have the proper sign</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span>(((1-ishift[s]*ishift[s])*block[s])*cosdir[s]&lt;-small) skip=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordflow">if</span>(skip)<span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// if we arrive to this point, shift is eligible and is added to the list</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      shifts[i][j][k].push_back(<a class="code" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">matmul</a>(<a class="code" href="namespace_p_l_m_d.html#a26a49b1d405987e7116c298b8f423f1a">transpose</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>),dshift));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#ace4311db7975faa2e651239bbc8900b6">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ace4311db7975faa2e651239bbc8900b6">Pbc::fullSearch</a>(<a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;d)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;   <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>==<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac">unset</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> s=<a class="code" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">matmul</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a72d5629e168310a3fd88d212b0ca7932">invReduced</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a28b0359f5943b94d1951ac3ea768f6e7">transpose</a>(),d);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;3;i++) s[i]=<a class="code" href="class_p_l_m_d_1_1_tools.html#a1037840d1e50feb5c3f16eef347f0a01">Tools::pbc</a>(s[i]);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   d=<a class="code" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">matmul</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a28b0359f5943b94d1951ac3ea768f6e7">transpose</a>(),s);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <span class="keyword">const</span> <span class="keywordtype">int</span> smax=4;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> a0(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#aea112963d389d5b240073259725b9467">getRow</a>(0));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> a1(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#aea112963d389d5b240073259725b9467">getRow</a>(1));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> a2(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#aea112963d389d5b240073259725b9467">getRow</a>(2));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> best(d);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   <span class="keywordtype">double</span> lbest=d.<a class="code" href="class_p_l_m_d_1_1_vector_generic.html#a27b431838b097f32b7aedc707eaeafea">modulo2</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=-smax;i&lt;=smax;i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=-smax;j&lt;=smax;j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=-smax;k&lt;=smax;k++){</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;     <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> trial=d+i*a0+j*a1+k*a2;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;     <span class="keywordtype">double</span> ltrial=trial.<a class="code" href="class_p_l_m_d_1_1_vector_generic.html#a27b431838b097f32b7aedc707eaeafea">modulo2</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;     <span class="keywordflow">if</span>(ltrial&lt;lbest){</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;       best=trial;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;       lbest=ltrial;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;     }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;   }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   d=best;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a55f92a299591c7ef03c86338734c25a1">  115</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a55f92a299591c7ef03c86338734c25a1">Pbc::setBox</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp;b){</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>=b;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">// detect type:</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespace_p_l_m_d.html#a4ef3dd99dc89348c1a0e80ab31171966">epsilon</a>=1e-28;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>=<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac">unset</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">double</span> det=<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#ad55f70611d4c0f61c50ffd968a66baa1">determinant</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">if</span>(det*det&lt;epsilon) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">bool</span> cxy=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">bool</span> cxz=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">bool</span> cyz=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(0,1)*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(0,1)&lt;epsilon &amp;&amp; <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(1,0)*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(1,0)&lt;epsilon) cxy=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(0,2)*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(0,2)&lt;epsilon &amp;&amp; <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(2,0)*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(2,0)&lt;epsilon) cxz=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(1,2)*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(1,2)&lt;epsilon &amp;&amp; <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(2,1)*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(2,1)&lt;epsilon) cyz=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">invBox</a>=<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#ac96af03543412ee4b3976440296fa5e8">inverse</a>();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordflow">if</span>(cxy &amp;&amp; cxz &amp;&amp; cyz) <a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>=<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4">orthorombic</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>=<span class="keyword">generic</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>==<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4">orthorombic</a>){</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>=<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_pbc.html#a72d5629e168310a3fd88d212b0ca7932">invReduced</a>=<a class="code" href="namespace_p_l_m_d.html#af1e1cce2da1a88aebdc59379744d238d">inverse</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;3;i++){</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_pbc.html#aafdada62675c823939ea786b833809af">diag</a>[i]=<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>[i][i];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_pbc.html#aae6fbef02d8d572b7c091a82be0ccaf0">hdiag</a>[i]=0.5*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>[i][i];</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_pbc.html#a43b744acef085149e16bcc08fb493d2a">mdiag</a>[i]=-0.5*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>[i][i];</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>=<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_lattice_reduction.html#a0748af4d4f2f7c9b184c6fea7e564649">LatticeReduction::reduce</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_pbc.html#a72d5629e168310a3fd88d212b0ca7932">invReduced</a>=<a class="code" href="namespace_p_l_m_d.html#af1e1cce2da1a88aebdc59379744d238d">inverse</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;   <a class="code" href="class_p_l_m_d_1_1_pbc.html#a79408191757b22c19ee777c8efae94b4">buildShifts</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#aeec0279fe315d2778c587a09e1ee9709">shifts</a>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a4581aed590ab1d4ccd255e93b5084c44">  153</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">Pbc::distance</a>( <span class="keyword">const</span> <span class="keywordtype">bool</span> pbc, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; v1, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; v2 )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordflow">if</span>(pbc){ <span class="keywordflow">return</span> ( <a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">distance</a>(v1,v2) ).<a class="code" href="class_p_l_m_d_1_1_vector_generic.html#a0d6969e96aed319e8c266b0ecc1f30ce">modulo</a>(); }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordflow">else</span>{ <span class="keywordflow">return</span> ( <a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>(v1,v2) ).modulo(); }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">  158</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">Pbc::distance</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;v1,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;v2,<span class="keywordtype">int</span>*nshifts)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> d=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>(v1,v2);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>==<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac">unset</a>){</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>==<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4">orthorombic</a>) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;3;i++) d[i]=<a class="code" href="class_p_l_m_d_1_1_tools.html#a1037840d1e50feb5c3f16eef347f0a01">Tools::pbc</a>(d[i]*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">invBox</a>(i,i))*<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>(i,i);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">// this is another possibility:</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">//   for(unsigned i=0;i&lt;3;i++){</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">//     while(d[i]&gt;hdiag[i]) d[i]-=diag[i];</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">//     while(d[i]&lt;=mdiag[i]) d[i]+=diag[i];</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">//   }</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>==<span class="keyword">generic</span>) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> s=<a class="code" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">matmul</a>(d,<a class="code" href="class_p_l_m_d_1_1_pbc.html#a72d5629e168310a3fd88d212b0ca7932">invReduced</a>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">// check if images have to be computed:</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">//    if((std::fabs(s[0])+std::fabs(s[1])+std::fabs(s[2])&gt;0.5)){</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">// NOTICE: the check in the previous line, albeit correct, is breaking many regtest</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">//         since it does not apply Tools::pbc in many cases. Moreover, it does not</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">//         introduce a significant gain. I thus leave it out for the moment.</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      <span class="keywordflow">if</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">// bring to -0.5,+0.5 region in scaled coordinates:</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;3;i++) s[i]=<a class="code" href="class_p_l_m_d_1_1_tools.html#a1037840d1e50feb5c3f16eef347f0a01">Tools::pbc</a>(s[i]);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      d=<a class="code" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">matmul</a>(s,<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">// check if shifts have to be attempted:</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      <span class="keywordflow">if</span>((std::fabs(s[0])+std::fabs(s[1])+std::fabs(s[2])&gt;0.5)){</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">// list of shifts is specific for that &quot;octant&quot; (depends on signs of s[i]):</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; myshifts(<a class="code" href="class_p_l_m_d_1_1_pbc.html#aeec0279fe315d2778c587a09e1ee9709">shifts</a>[(s[0]&gt;0?1:0)][(s[1]&gt;0?1:0)][(s[2]&gt;0?1:0)]);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> best(d);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordtype">double</span> lbest(<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(best));</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">// loop over possible shifts:</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span>(nshifts) *nshifts+=myshifts.size();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;myshifts.size();i++){</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;          <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> trial=d+myshifts[i];</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;          <span class="keywordtype">double</span> ltrial=<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(trial);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;          <span class="keywordflow">if</span>(ltrial&lt;lbest){</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            lbest=ltrial;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            best=trial;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;          }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        d=best;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  } <span class="keywordflow">else</span> plumed_merror(<span class="stringliteral">&quot;unknown pbc type&quot;</span>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">return</span> d;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#abafac5821f333766624fc24df1efd5d7">  202</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#abafac5821f333766624fc24df1efd5d7">Pbc::realToScaled</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;d)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">matmul</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">invBox</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a28b0359f5943b94d1951ac3ea768f6e7">transpose</a>(),d);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#ab787ff25a848df90cd9002506d98786f">  206</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ab787ff25a848df90cd9002506d98786f">Pbc::scaledToReal</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;d)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">matmul</a>(<a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a28b0359f5943b94d1951ac3ea768f6e7">transpose</a>(),d);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#adc5952b4bb03ac07559b6f54340b5337">  210</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#adc5952b4bb03ac07559b6f54340b5337">Pbc::isOrthorombic</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>==<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4">orthorombic</a>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#ab9afdc58238255f829d10d113d4fbd4f">  214</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; <a class="code" href="class_p_l_m_d_1_1_pbc.html#ab9afdc58238255f829d10d113d4fbd4f">Pbc::getBox</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#aedf25704d2d64ab65371a06e570a2c1c">  218</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; <a class="code" href="class_p_l_m_d_1_1_pbc.html#aedf25704d2d64ab65371a06e570a2c1c">Pbc::getInvBox</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">invBox</a>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a5e4013695c6fd2028e151a2051f7f3ad">  222</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a5e4013695c6fd2028e151a2051f7f3ad">Pbc::test</a>(){</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_random.html">Random</a> r;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  r.<a class="code" href="class_p_l_m_d_1_1_random.html#aac7a25dd0c8fa92594789d580487163a">setSeed</a>(-20);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;1000;i++){</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">// random matrix with some zero element</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;3;j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;3;k++) <span class="keywordflow">if</span>(r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()&gt;0.2){</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      box[j][k]=2.0*r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()-1.0;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">int</span> boxtype=i%10;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">switch</span>(boxtype){</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">// cubic</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;3;j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;3;k++) <span class="keywordflow">if</span>(j!=k) box[j][k]=0.0;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=1;j&lt;3;j++) box[j][j]=box[0][0];</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// orthorombic</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;3;j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;3;k++) <span class="keywordflow">if</span>(j!=k) box[j][k]=0.0;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">// hexagonal</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="keywordtype">int</span> perm=r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()*100;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>(0)=r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()*2-2; <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>(1)=0.0;<a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>(2)=0.0;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      <span class="keywordtype">double</span> d=r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()*2-2;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> b(0.0,d,0.0);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> c(0.0,0.5*d,sqrt(3.0)*d*0.5);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+0)%3,a);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+1)%3,b);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+2)%3,c);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">// bcc</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <span class="keywordtype">int</span> perm=r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()*100;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <span class="keywordtype">double</span> d=r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()*2-2;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>(d,d,d);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> b(d,-d,d);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> c(d,d,-d);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+0)%3,a);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+1)%3,b);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+2)%3,c);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">// fcc</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordtype">int</span> perm=r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()*100;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      <span class="keywordtype">double</span> d=r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()*2-2;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>(d,d,0);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> b(d,0,d);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> c(0,d,d);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+0)%3,a);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+1)%3,b);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      box.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">setRow</a>((perm+2)%3,c);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">// triclinic</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_pbc.html">Pbc</a> pbc;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    pbc.<a class="code" href="class_p_l_m_d_1_1_pbc.html#a55f92a299591c7ef03c86338734c25a1">setBox</a>(box);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;( &quot;</span>&lt;&lt;boxtype&lt;&lt;<span class="stringliteral">&quot; )\n&quot;</span>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;Box:&quot;</span>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;3;j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;3;k++) std::cerr&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;box[j][k];</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;Determinant: &quot;</span>&lt;&lt;<a class="code" href="namespace_p_l_m_d.html#ac972de1097bdfbd2a2a763a0f377d5e0">determinant</a>(box)&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;Shifts:&quot;</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;2;j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;2;k++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> l=0;l&lt;2;l++) std::cerr&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;pbc.<a class="code" href="class_p_l_m_d_1_1_pbc.html#aeec0279fe315d2778c587a09e1ee9709">shifts</a>[j][k][l].size();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordtype">int</span> nshifts=0;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordtype">int</span> ntot=10000;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;ntot;j++){</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> v(r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()-0.5,r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()-0.5,r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()-0.5);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;      v*=5;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;3;j++) <span class="keywordflow">if</span>(r.<a class="code" href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">U01</a>()&gt;0.2) v(j)=0.0;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> full(v);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> fast=pbc.<a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">distance</a>(<a class="code" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a>(0,0,0),v,&amp;nshifts);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      full=fast;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      pbc.<a class="code" href="class_p_l_m_d_1_1_pbc.html#ace4311db7975faa2e651239bbc8900b6">fullSearch</a>(full);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;     <span class="keywordflow">if</span>(<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(fast-full)&gt;1e-10) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        std::cerr&lt;&lt;<span class="stringliteral">&quot;orig &quot;</span>&lt;&lt;v[0]&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;v[1]&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;v[2]&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        std::cerr&lt;&lt;<span class="stringliteral">&quot;fast &quot;</span>&lt;&lt;fast[0]&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;fast[1]&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;fast[2]&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        std::cerr&lt;&lt;<span class="stringliteral">&quot;full &quot;</span>&lt;&lt;full[0]&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;full[1]&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;full[2]&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        std::cerr&lt;&lt;<span class="stringliteral">&quot;diff &quot;</span>&lt;&lt;<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(fast)-<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(full)&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">if</span>(std::fabs(<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(fast)-<a class="code" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">modulo2</a>(full))&gt;1e-15) plumed_error();</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;     }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;Average number of shifts: &quot;</span>&lt;&lt;double(nshifts)/double(ntot)&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a33d584a17e1201958bf6e8eb326f0c61"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">PLMD::Pbc::invBox</a></div><div class="ttdeci">Tensor invBox</div><div class="ttdoc">Inverse box. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00044">Pbc.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html_aa4b13d9be3c85acd76265455ee1abe8e"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html#aa4b13d9be3c85acd76265455ee1abe8e">PLMD::TensorGeneric::zero</a></div><div class="ttdeci">void zero()</div><div class="ttdoc">set it to zero </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00198">Tensor.h:198</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_ac972de1097bdfbd2a2a763a0f377d5e0"><div class="ttname"><a href="namespace_p_l_m_d.html#ac972de1097bdfbd2a2a763a0f377d5e0">PLMD::determinant</a></div><div class="ttdeci">double determinant(const TensorGeneric&lt; 3, 3 &gt; &amp;t)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00381">Tensor.h:381</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a4ef3dd99dc89348c1a0e80ab31171966"><div class="ttname"><a href="namespace_p_l_m_d.html#a4ef3dd99dc89348c1a0e80ab31171966">PLMD::epsilon</a></div><div class="ttdeci">const double epsilon</div><div class="ttdef"><b>Definition:</b> <a href="_lattice_reduction_8cpp_source.html#l00027">LatticeReduction.cpp:27</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_af1e1cce2da1a88aebdc59379744d238d"><div class="ttname"><a href="namespace_p_l_m_d.html#af1e1cce2da1a88aebdc59379744d238d">PLMD::inverse</a></div><div class="ttdeci">TensorGeneric&lt; 3, 3 &gt; inverse(const TensorGeneric&lt; 3, 3 &gt; &amp;t)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00386">Tensor.h:386</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html_a0d6969e96aed319e8c266b0ecc1f30ce"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html#a0d6969e96aed319e8c266b0ecc1f30ce">PLMD::VectorGeneric::modulo</a></div><div class="ttdeci">double modulo() const </div><div class="ttdoc">Compute the modulo. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00325">Vector.h:325</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html_a28b0359f5943b94d1951ac3ea768f6e7"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html#a28b0359f5943b94d1951ac3ea768f6e7">PLMD::TensorGeneric::transpose</a></div><div class="ttdeci">TensorGeneric&lt; m, n &gt; transpose() const </div><div class="ttdoc">return the transpose matrix </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00325">Tensor.h:325</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html">PLMD::TensorGeneric</a></div><div class="ttdoc">Class implementing fixed size matrices of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00070">Tensor.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a2e850e2f52d2e400b3ed3b44d7694150"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">PLMD::Pbc::type</a></div><div class="ttdeci">enum PLMD::Pbc::@6 type</div><div class="ttdoc">Type of box. </div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a7c4a2a4cfd362744463b3960504faf2a"><div class="ttname"><a href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">PLMD::matmul</a></div><div class="ttdeci">TensorGeneric&lt; n, l &gt; matmul(const TensorGeneric&lt; n, m &gt; &amp;a, const TensorGeneric&lt; m, l &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00343">Tensor.h:343</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a1572dcd9d92fd0e543179b609640bd78"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">PLMD::Pbc::box</a></div><div class="ttdeci">Tensor box</div><div class="ttdoc">Box. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00042">Pbc.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ab787ff25a848df90cd9002506d98786f"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ab787ff25a848df90cd9002506d98786f">PLMD::Pbc::scaledToReal</a></div><div class="ttdeci">Vector scaledToReal(const Vector &amp;) const </div><div class="ttdoc">Transform a vector in scaled coordinates to a vector in real space. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00206">Pbc.cpp:206</a></div></div>
+<div class="ttc" id="tools_2_pbc_8h_html"><div class="ttname"><a href="tools_2_pbc_8h.html">Pbc.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a1523c38102af4b7b77099a684d62929f"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">PLMD::Pbc::reduced</a></div><div class="ttdeci">Tensor reduced</div><div class="ttdoc">Reduced box. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00048">Pbc.h:48</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a43b744acef085149e16bcc08fb493d2a"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a43b744acef085149e16bcc08fb493d2a">PLMD::Pbc::mdiag</a></div><div class="ttdeci">Vector mdiag</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00058">Pbc.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tools_html_a1037840d1e50feb5c3f16eef347f0a01"><div class="ttname"><a href="class_p_l_m_d_1_1_tools.html#a1037840d1e50feb5c3f16eef347f0a01">PLMD::Tools::pbc</a></div><div class="ttdeci">static double pbc(double)</div><div class="ttdoc">Apply pbc for a unitary cell. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tools_8h_source.html#l00170">Tools.h:170</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_aafdada62675c823939ea786b833809af"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#aafdada62675c823939ea786b833809af">PLMD::Pbc::diag</a></div><div class="ttdeci">Vector diag</div><div class="ttdoc">Alternative representation for orthorombic cells. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00058">Pbc.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a83a3faa028b6b8b880bd86a25325e4ea"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a83a3faa028b6b8b880bd86a25325e4ea">PLMD::Random::U01</a></div><div class="ttdeci">double U01()</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00069">Random.cpp:69</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html">PLMD::Random</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00031">Random.h:31</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a72d5629e168310a3fd88d212b0ca7932"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a72d5629e168310a3fd88d212b0ca7932">PLMD::Pbc::invReduced</a></div><div class="ttdeci">Tensor invReduced</div><div class="ttdoc">Inverse of the reduced box. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00050">Pbc.h:50</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a130c0fe8bb10a3931a3f8a41bbce3ec3"><div class="ttname"><a href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a></div><div class="ttdeci">void const char const char int * n</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html">PLMD::Pbc</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00038">Pbc.h:38</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a26a49b1d405987e7116c298b8f423f1a"><div class="ttname"><a href="namespace_p_l_m_d.html#a26a49b1d405987e7116c298b8f423f1a">PLMD::transpose</a></div><div class="ttdeci">void transpose(const Matrix&lt; T &gt; &amp;A, Matrix&lt; T &gt; &amp;AT)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00185">Matrix.h:185</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ae028707665734f0e6b7404c211b88393"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">PLMD::Pbc::distance</a></div><div class="ttdeci">Vector distance(const Vector &amp;, const Vector &amp;, int *nshifts) const </div><div class="ttdoc">internal version of distance, also returns the number of attempted shifts (used in Pbc::test())...</div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00158">Pbc.cpp:158</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html_ad55f70611d4c0f61c50ffd968a66baa1"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html#ad55f70611d4c0f61c50ffd968a66baa1">PLMD::TensorGeneric::determinant</a></div><div class="ttdeci">double determinant() const </div><div class="ttdoc">returns the determinant </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_aac7a25dd0c8fa92594789d580487163a"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#aac7a25dd0c8fa92594789d580487163a">PLMD::Random::setSeed</a></div><div class="ttdeci">void setSeed(int idum)</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00046">Random.cpp:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_aeec0279fe315d2778c587a09e1ee9709"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#aeec0279fe315d2778c587a09e1ee9709">PLMD::Pbc::shifts</a></div><div class="ttdeci">std::vector&lt; Vector &gt; shifts[2][2][2]</div><div class="ttdoc">List of shifts that should be attempted. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00054">Pbc.h:54</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a2a1cf3a4fea01e78626f761aa04abd90"><div class="ttname"><a href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">PLMD::delta</a></div><div class="ttdeci">VectorGeneric&lt; n &gt; delta(const VectorGeneric&lt; n &gt; &amp;v1, const VectorGeneric&lt; n &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00262">Vector.h:262</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_aecf7a0ec0d18132a3d336d7bd085a583"><div class="ttname"><a href="namespace_p_l_m_d.html#aecf7a0ec0d18132a3d336d7bd085a583">PLMD::dotProduct</a></div><div class="ttdeci">T dotProduct(const std::vector&lt; T &gt; &amp;A, const std::vector&lt; T &gt; &amp;B)</div><div class="ttdoc">Calculate the dot product between two vectors. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00054">Matrix.h:54</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_aedf25704d2d64ab65371a06e570a2c1c"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#aedf25704d2d64ab65371a06e570a2c1c">PLMD::Pbc::getInvBox</a></div><div class="ttdeci">const Tensor &amp; getInvBox() const </div><div class="ttdoc">Returns the inverse matrix of box. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00218">Pbc.cpp:218</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html_a27b431838b097f32b7aedc707eaeafea"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html#a27b431838b097f32b7aedc707eaeafea">PLMD::VectorGeneric::modulo2</a></div><div class="ttdeci">double modulo2() const </div><div class="ttdoc">compute the squared modulo </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00267">Vector.h:267</a></div></div>
+<div class="ttc" id="tools_2_exception_8h_html"><div class="ttname"><a href="tools_2_exception_8h.html">Exception.h</a></div></div>
+<div class="ttc" id="tools_2_random_8h_html"><div class="ttname"><a href="tools_2_random_8h.html">Random.h</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a1c84391078c7c01428434a647cdf16fb"><div class="ttname"><a href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">PLMD::modulo2</a></div><div class="ttdeci">double modulo2(const VectorGeneric&lt; n &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00330">Vector.h:330</a></div></div>
+<div class="ttc" id="tools_2_tools_8h_html"><div class="ttname"><a href="tools_2_tools_8h.html">Tools.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a5e4013695c6fd2028e151a2051f7f3ad"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a5e4013695c6fd2028e151a2051f7f3ad">PLMD::Pbc::test</a></div><div class="ttdeci">static void test()</div><div class="ttdoc">Perform some check. Useful for debugging. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00222">Pbc.cpp:222</a></div></div>
+<div class="ttc" id="tools_2_lattice_reduction_8h_html"><div class="ttname"><a href="tools_2_lattice_reduction_8h.html">LatticeReduction.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a79408191757b22c19ee777c8efae94b4"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a79408191757b22c19ee777c8efae94b4">PLMD::Pbc::buildShifts</a></div><div class="ttdeci">void buildShifts(std::vector&lt; Vector &gt; shifts[2][2][2]) const </div><div class="ttdoc">Build list of shifts. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00039">Pbc.cpp:39</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a31e2cd1661cd1e272dddf5da4086e01c"><div class="ttname"><a href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a></div><div class="ttdeci">void const char const char int double int double double int int double int * m</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ace4311db7975faa2e651239bbc8900b6"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ace4311db7975faa2e651239bbc8900b6">PLMD::Pbc::fullSearch</a></div><div class="ttdeci">void fullSearch(Vector &amp;) const </div><div class="ttdoc">Full search (for testing) </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00093">Pbc.cpp:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_lattice_reduction_html_a0748af4d4f2f7c9b184c6fea7e564649"><div class="ttname"><a href="class_p_l_m_d_1_1_lattice_reduction.html#a0748af4d4f2f7c9b184c6fea7e564649">PLMD::LatticeReduction::reduce</a></div><div class="ttdeci">static void reduce(Vector &amp;a, Vector &amp;b)</div><div class="ttdoc">Gaussian reduction. </div><div class="ttdef"><b>Definition:</b> <a href="_lattice_reduction_8cpp_source.html#l00036">LatticeReduction.cpp:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_adc5952b4bb03ac07559b6f54340b5337"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#adc5952b4bb03ac07559b6f54340b5337">PLMD::Pbc::isOrthorombic</a></div><div class="ttdeci">bool isOrthorombic() const </div><div class="ttdoc">Returns true if the box vectors are orthogonal. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00210">Pbc.cpp:210</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html_a3f7608f0299492511a034a3fa9fbec04"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html#a3f7608f0299492511a034a3fa9fbec04">PLMD::TensorGeneric::setRow</a></div><div class="ttdeci">TensorGeneric &amp; setRow(unsigned i, const VectorGeneric&lt; m &gt; &amp;r)</div><div class="ttdoc">set i-th row </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00254">Tensor.h:254</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a7cc14335a4bba89e5a7a56b5828b1555"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a7cc14335a4bba89e5a7a56b5828b1555">PLMD::Pbc::Pbc</a></div><div class="ttdeci">Pbc()</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00032">Pbc.cpp:32</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_abbbe73d1c8be35369721e93ad9999266"><div class="ttname"><a href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a></div><div class="ttdeci">void const char const char int double * a</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_aae6fbef02d8d572b7c091a82be0ccaf0"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#aae6fbef02d8d572b7c091a82be0ccaf0">PLMD::Pbc::hdiag</a></div><div class="ttdeci">Vector hdiag</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00058">Pbc.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4">PLMD::Pbc::orthorombic</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00040">Pbc.h:40</a></div></div>
+<div class="ttc" id="group___t_o_o_l_b_o_x_html_ga0bda8bd67354d8dbf8b13466e0287666"><div class="ttname"><a href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">PLMD::Vector</a></div><div class="ttdeci">Vector3d Vector</div><div class="ttdoc">Alias for three dimensional vectors. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00351">Vector.h:351</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_abafac5821f333766624fc24df1efd5d7"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#abafac5821f333766624fc24df1efd5d7">PLMD::Pbc::realToScaled</a></div><div class="ttdeci">Vector realToScaled(const Vector &amp;) const </div><div class="ttdoc">Transform a vector in real space to a vector in scaled coordinates. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00202">Pbc.cpp:202</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html_aea112963d389d5b240073259725b9467"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html#aea112963d389d5b240073259725b9467">PLMD::TensorGeneric::getRow</a></div><div class="ttdeci">VectorGeneric&lt; m &gt; getRow(unsigned i) const </div><div class="ttdoc">get i-th row </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00267">Tensor.h:267</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html_ac96af03543412ee4b3976440296fa5e8"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html#ac96af03543412ee4b3976440296fa5e8">PLMD::TensorGeneric::inverse</a></div><div class="ttdeci">TensorGeneric inverse() const </div><div class="ttdoc">return the matrix inverse </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ab9afdc58238255f829d10d113d4fbd4f"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ab9afdc58238255f829d10d113d4fbd4f">PLMD::Pbc::getBox</a></div><div class="ttdeci">const Tensor &amp; getBox() const </div><div class="ttdoc">Returns the box. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00214">Pbc.cpp:214</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac">PLMD::Pbc::unset</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00040">Pbc.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a55f92a299591c7ef03c86338734c25a1"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a55f92a299591c7ef03c86338734c25a1">PLMD::Pbc::setBox</a></div><div class="ttdeci">void setBox(const Tensor &amp;b)</div><div class="ttdoc">Set the lattice vectors. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00115">Pbc.cpp:115</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

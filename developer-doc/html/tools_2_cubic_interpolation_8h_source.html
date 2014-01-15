@@ -1,0 +1,274 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/CubicInterpolation.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">CubicInterpolation.h</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_cubic_interpolation_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_tools_CubicInterpolation_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_tools_CubicInterpolation_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_matrix_8h.html">Matrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;core/Value.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Abstract base class for cubic interpolation</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_c_interpolation.html">CInterpolation</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#aecaab5ead459abe11bf00726de22aedf">   34</a></span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#aecaab5ead459abe11bf00726de22aedf">bold</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">   35</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a9c76e20d7aa4df73cb81a24233167d58">search1</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; kk, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; jold ) <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#ac018d7147d915421333b09d8c42dec5f">   38</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a7824b6e9b39dc844bdb8890eb00a588f">lb</a>, <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#ac018d7147d915421333b09d8c42dec5f">ub</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#a398dadb26d1ad0339bc0f8645dc652f4">   39</a></span>&#160;  std::vector&lt;unsigned&gt; <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a5ab321e254ac631c98f18d1fbed167de">np</a>, <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a398dadb26d1ad0339bc0f8645dc652f4">stride</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#ae75f47f08e1e1940de1b615992603d55">findBox</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; pos );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#ae65a7b07fab9a922f77b806357ba4247">getPointSpacing</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> dir, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> k ) <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a5cfafd165d113dda932bafbff430a57a">getCrossTermDenominator</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> j ) <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#ae0420d56bf42a4fe89a2349748af08dd">CInterpolation</a>( <span class="keyword">const</span> std::vector&lt;unsigned&gt;&amp; dd, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; fmin, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; fmax );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a4356dafe98fc0c946c0a7afe8124da73">~CInterpolation</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#acddbeb118747fc9c7edc57b11000f73b">getNumberOfSplinePoints</a>() <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#ab467bfd92f41a49b2d1438e675796d40">getNumbersOfPoints</a>( std::vector&lt;unsigned&gt;&amp; nspline ) <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a9cf2a6696e92b08a2400c56453c1d248">getSplinePoint</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> nn, std::vector&lt;double&gt;&amp; pp ) <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a2f7259dc5c84671a69329e70ae4f4f31">getGridBoundaries</a>( std::vector&lt;double&gt;&amp; gmin, std::vector&lt;double&gt;&amp; gmax ) <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#aa6c33eef2f5426680eb31d50e66fece4">set_table</a>( <span class="keyword">const</span> std::vector&lt;Value&gt;&amp; ff )=0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#ac5b2df5aa43642543fbe9f509884a5fc">get_fdf</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; pos )=0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#acddbeb118747fc9c7edc57b11000f73b">   55</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#acddbeb118747fc9c7edc57b11000f73b">CInterpolation::getNumberOfSplinePoints</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>.<a class="code" href="class_p_l_m_d_1_1_matrix.html#a57c51f8cdd72a2ff29ff43838ba8d34a">nrows</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#a9cf2a6696e92b08a2400c56453c1d248">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a9cf2a6696e92b08a2400c56453c1d248">CInterpolation::getSplinePoint</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> nn, std::vector&lt;double&gt;&amp; pp )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  plumed_dbg_assert( nn&lt;<a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>.<a class="code" href="class_p_l_m_d_1_1_matrix.html#a57c51f8cdd72a2ff29ff43838ba8d34a">nrows</a>() &amp;&amp; pp.size()==<a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a5ab321e254ac631c98f18d1fbed167de">np</a>.size() );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a5ab321e254ac631c98f18d1fbed167de">np</a>.size();++i) pp[i]=<a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>(nn,i); </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#ae65a7b07fab9a922f77b806357ba4247">   66</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#ae65a7b07fab9a922f77b806357ba4247">CInterpolation::getPointSpacing</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> dir, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> k )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">unsigned</span> i=k*<a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a398dadb26d1ad0339bc0f8645dc652f4">stride</a>[dir];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>(i+stride[dir], dir) - <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>(i, dir); </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#a5cfafd165d113dda932bafbff430a57a">   72</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a5cfafd165d113dda932bafbff430a57a">CInterpolation::getCrossTermDenominator</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> j )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  plumed_dbg_assert( <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>.<a class="code" href="class_p_l_m_d_1_1_matrix.html#a10870f82c6dfa09f1e5d6e14d5d10520">ncols</a>()==2 );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">unsigned</span> iplus, iminus; iplus=(i+1)*<a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a398dadb26d1ad0339bc0f8645dc652f4">stride</a>[0]; iminus=(i-1)*<a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a398dadb26d1ad0339bc0f8645dc652f4">stride</a>[0];</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> ( <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>(iplus,0) - <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>(iminus,0) ) * ( <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>(iplus+j+1,1) - <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>(iplus+j-1,1) );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_interpolation.html#a2f7259dc5c84671a69329e70ae4f4f31">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a2f7259dc5c84671a69329e70ae4f4f31">CInterpolation::getGridBoundaries</a>( std::vector&lt;double&gt;&amp; gmin, std::vector&lt;double&gt;&amp; gmax )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a9cf2a6696e92b08a2400c56453c1d248">getSplinePoint</a>( 0, gmin ); <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a9cf2a6696e92b08a2400c56453c1d248">getSplinePoint</a>( <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">splinepoints</a>.<a class="code" href="class_p_l_m_d_1_1_matrix.html#a57c51f8cdd72a2ff29ff43838ba8d34a">nrows</a>()-1, gmax );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_interpolate_cubic.html">   83</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_interpolate_cubic.html">InterpolateCubic</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html">CInterpolation</a> {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_interpolate_cubic.html#a2c1cdfb3667e5a6419fff278f25b20f0">   85</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_interpolate_cubic.html#a2c1cdfb3667e5a6419fff278f25b20f0">clist</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_interpolate_cubic.html#a1d1524cbb185fe2531b850c0329e0c7a">InterpolateCubic</a>( <span class="keyword">const</span> std::vector&lt;unsigned&gt;&amp; dd, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; fmin, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; fmax );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_interpolate_cubic.html#a701446b89d63eab3b268def9990a9ff6">set_table</a>( <span class="keyword">const</span> std::vector&lt;Value&gt;&amp; ff );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_interpolate_cubic.html#a7a8f6b6a43530ae8f3facfb65913d4ec">get_fdf</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; pos );</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_interpolate_bicubic.html">   92</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html">InterpolateBicubic</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_c_interpolation.html">CInterpolation</a> {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_interpolate_bicubic.html#a05dd80882a9d7227be865ce553fa3316">   94</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;int&gt;</a> <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#a05dd80882a9d7227be865ce553fa3316">wt</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_interpolate_bicubic.html#adb66a4ca6775bc949fcc3711eac26a76">   95</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#a207eb370e727ac24f1b1782bd0f09da5">t1</a>, <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#adb66a4ca6775bc949fcc3711eac26a76">t2</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_interpolate_bicubic.html#a2ea0c26ba8c546450e5fb0d9ab10a2bd">   96</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#a2ea0c26ba8c546450e5fb0d9ab10a2bd">dcross</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_interpolate_bicubic.html#ae8f3c5786e163441e4e258f28b37d60e">   97</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#ae8f3c5786e163441e4e258f28b37d60e">clist</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#a06ecb1ddc559f0c076245c6c691ebde4">IBicCoeff</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; y, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; dy1, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; dy2,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                  <span class="keyword">const</span> std::vector&lt;double&gt;&amp; d2y12, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; d1, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; d2, <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a>&amp; c );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#a9eba7fb869b624c8f7331b751902889d">InterpolateBicubic</a>( <span class="keyword">const</span> std::vector&lt;unsigned&gt;&amp; dd, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; fmin, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; fmax );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#ad4da65550eec1c3b0496be1250c253f7">set_table</a>( <span class="keyword">const</span> std::vector&lt;Value&gt;&amp; ff );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_interpolate_bicubic.html#a8a911f245e9bb4b1862b944d719183dd">get_fdf</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; pos );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_aa6c33eef2f5426680eb31d50e66fece4"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#aa6c33eef2f5426680eb31d50e66fece4">PLMD::CInterpolation::set_table</a></div><div class="ttdeci">virtual void set_table(const std::vector&lt; Value &gt; &amp;ff)=0</div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_ae65a7b07fab9a922f77b806357ba4247"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#ae65a7b07fab9a922f77b806357ba4247">PLMD::CInterpolation::getPointSpacing</a></div><div class="ttdeci">double getPointSpacing(const unsigned dir, const unsigned k) const </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00066">CubicInterpolation.h:66</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a4356dafe98fc0c946c0a7afe8124da73"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a4356dafe98fc0c946c0a7afe8124da73">PLMD::CInterpolation::~CInterpolation</a></div><div class="ttdeci">virtual ~CInterpolation()</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00051">CubicInterpolation.cpp:51</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a84f713ee28292c202c9f00e4c64a0810"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a84f713ee28292c202c9f00e4c64a0810">PLMD::CInterpolation::splinepoints</a></div><div class="ttdeci">Matrix&lt; double &gt; splinepoints</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00035">CubicInterpolation.h:35</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html"><div class="ttname"><a href="tools_2_matrix_8h.html">Matrix.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_aecaab5ead459abe11bf00726de22aedf"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#aecaab5ead459abe11bf00726de22aedf">PLMD::CInterpolation::bold</a></div><div class="ttdeci">unsigned bold</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00034">CubicInterpolation.h:34</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_matrix_html_a10870f82c6dfa09f1e5d6e14d5d10520"><div class="ttname"><a href="class_p_l_m_d_1_1_matrix.html#a10870f82c6dfa09f1e5d6e14d5d10520">PLMD::Matrix::ncols</a></div><div class="ttdeci">unsigned ncols() const </div><div class="ttdoc">Return the number of columns. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00110">Matrix.h:110</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a5cfafd165d113dda932bafbff430a57a"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a5cfafd165d113dda932bafbff430a57a">PLMD::CInterpolation::getCrossTermDenominator</a></div><div class="ttdeci">double getCrossTermDenominator(const unsigned i, const unsigned j) const </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00072">CubicInterpolation.h:72</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html">PLMD::CInterpolation</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00032">CubicInterpolation.h:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_a9eba7fb869b624c8f7331b751902889d"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#a9eba7fb869b624c8f7331b751902889d">PLMD::InterpolateBicubic::InterpolateBicubic</a></div><div class="ttdeci">InterpolateBicubic(const std::vector&lt; unsigned &gt; &amp;dd, const std::vector&lt; double &gt; &amp;fmin, const std::vector&lt; double &gt; &amp;fmax)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00139">CubicInterpolation.cpp:139</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_adb66a4ca6775bc949fcc3711eac26a76"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#adb66a4ca6775bc949fcc3711eac26a76">PLMD::InterpolateBicubic::t2</a></div><div class="ttdeci">std::vector&lt; double &gt; t2</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00095">CubicInterpolation.h:95</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_cubic_html_a7a8f6b6a43530ae8f3facfb65913d4ec"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_cubic.html#a7a8f6b6a43530ae8f3facfb65913d4ec">PLMD::InterpolateCubic::get_fdf</a></div><div class="ttdeci">double get_fdf(const std::vector&lt; double &gt; &amp;pos)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00127">CubicInterpolation.cpp:127</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_ae8f3c5786e163441e4e258f28b37d60e"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#ae8f3c5786e163441e4e258f28b37d60e">PLMD::InterpolateBicubic::clist</a></div><div class="ttdeci">std::vector&lt; double &gt; clist</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00097">CubicInterpolation.h:97</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_cubic_html_a701446b89d63eab3b268def9990a9ff6"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_cubic.html#a701446b89d63eab3b268def9990a9ff6">PLMD::InterpolateCubic::set_table</a></div><div class="ttdeci">void set_table(const std::vector&lt; Value &gt; &amp;ff)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00112">CubicInterpolation.cpp:112</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_ab467bfd92f41a49b2d1438e675796d40"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#ab467bfd92f41a49b2d1438e675796d40">PLMD::CInterpolation::getNumbersOfPoints</a></div><div class="ttdeci">void getNumbersOfPoints(std::vector&lt; unsigned &gt; &amp;nspline) const </div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00055">CubicInterpolation.cpp:55</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a5ab321e254ac631c98f18d1fbed167de"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a5ab321e254ac631c98f18d1fbed167de">PLMD::CInterpolation::np</a></div><div class="ttdeci">std::vector&lt; unsigned &gt; np</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00039">CubicInterpolation.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_ae75f47f08e1e1940de1b615992603d55"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#ae75f47f08e1e1940de1b615992603d55">PLMD::CInterpolation::findBox</a></div><div class="ttdeci">unsigned findBox(const std::vector&lt; double &gt; &amp;pos)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00060">CubicInterpolation.cpp:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a9c76e20d7aa4df73cb81a24233167d58"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a9c76e20d7aa4df73cb81a24233167d58">PLMD::CInterpolation::search1</a></div><div class="ttdeci">unsigned search1(const unsigned &amp;kk, const double &amp;x, const unsigned &amp;jold) const </div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00075">CubicInterpolation.cpp:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_ac5b2df5aa43642543fbe9f509884a5fc"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#ac5b2df5aa43642543fbe9f509884a5fc">PLMD::CInterpolation::get_fdf</a></div><div class="ttdeci">virtual double get_fdf(const std::vector&lt; double &gt; &amp;pos)=0</div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_matrix_html_a57c51f8cdd72a2ff29ff43838ba8d34a"><div class="ttname"><a href="class_p_l_m_d_1_1_matrix.html#a57c51f8cdd72a2ff29ff43838ba8d34a">PLMD::Matrix::nrows</a></div><div class="ttdeci">unsigned nrows() const </div><div class="ttdoc">Return the number of rows. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00108">Matrix.h:108</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a7824b6e9b39dc844bdb8890eb00a588f"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a7824b6e9b39dc844bdb8890eb00a588f">PLMD::CInterpolation::lb</a></div><div class="ttdeci">std::vector&lt; double &gt; lb</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00038">CubicInterpolation.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a398dadb26d1ad0339bc0f8645dc652f4"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a398dadb26d1ad0339bc0f8645dc652f4">PLMD::CInterpolation::stride</a></div><div class="ttdeci">std::vector&lt; unsigned &gt; stride</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00039">CubicInterpolation.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_a8a911f245e9bb4b1862b944d719183dd"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#a8a911f245e9bb4b1862b944d719183dd">PLMD::InterpolateBicubic::get_fdf</a></div><div class="ttdeci">double get_fdf(const std::vector&lt; double &gt; &amp;pos)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00211">CubicInterpolation.cpp:211</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_acddbeb118747fc9c7edc57b11000f73b"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#acddbeb118747fc9c7edc57b11000f73b">PLMD::CInterpolation::getNumberOfSplinePoints</a></div><div class="ttdeci">unsigned getNumberOfSplinePoints() const </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00055">CubicInterpolation.h:55</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_cubic_html_a2c1cdfb3667e5a6419fff278f25b20f0"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_cubic.html#a2c1cdfb3667e5a6419fff278f25b20f0">PLMD::InterpolateCubic::clist</a></div><div class="ttdeci">std::vector&lt; double &gt; clist</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00085">CubicInterpolation.h:85</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html">PLMD::InterpolateBicubic</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00092">CubicInterpolation.h:92</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_a05dd80882a9d7227be865ce553fa3316"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#a05dd80882a9d7227be865ce553fa3316">PLMD::InterpolateBicubic::wt</a></div><div class="ttdeci">Matrix&lt; int &gt; wt</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00094">CubicInterpolation.h:94</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_cubic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_cubic.html">PLMD::InterpolateCubic</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00083">CubicInterpolation.h:83</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_ac018d7147d915421333b09d8c42dec5f"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#ac018d7147d915421333b09d8c42dec5f">PLMD::CInterpolation::ub</a></div><div class="ttdeci">std::vector&lt; double &gt; ub</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00038">CubicInterpolation.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_a207eb370e727ac24f1b1782bd0f09da5"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#a207eb370e727ac24f1b1782bd0f09da5">PLMD::InterpolateBicubic::t1</a></div><div class="ttdeci">std::vector&lt; double &gt; t1</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00095">CubicInterpolation.h:95</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_ad4da65550eec1c3b0496be1250c253f7"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#ad4da65550eec1c3b0496be1250c253f7">PLMD::InterpolateBicubic::set_table</a></div><div class="ttdeci">void set_table(const std::vector&lt; Value &gt; &amp;ff)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00168">CubicInterpolation.cpp:168</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a2f7259dc5c84671a69329e70ae4f4f31"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a2f7259dc5c84671a69329e70ae4f4f31">PLMD::CInterpolation::getGridBoundaries</a></div><div class="ttdeci">void getGridBoundaries(std::vector&lt; double &gt; &amp;gmin, std::vector&lt; double &gt; &amp;gmax) const </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00079">CubicInterpolation.h:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_a9cf2a6696e92b08a2400c56453c1d248"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#a9cf2a6696e92b08a2400c56453c1d248">PLMD::CInterpolation::getSplinePoint</a></div><div class="ttdeci">void getSplinePoint(const unsigned nn, std::vector&lt; double &gt; &amp;pp) const </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00060">CubicInterpolation.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_interpolation_html_ae0420d56bf42a4fe89a2349748af08dd"><div class="ttname"><a href="class_p_l_m_d_1_1_c_interpolation.html#ae0420d56bf42a4fe89a2349748af08dd">PLMD::CInterpolation::CInterpolation</a></div><div class="ttdeci">CInterpolation(const std::vector&lt; unsigned &gt; &amp;dd, const std::vector&lt; double &gt; &amp;fmin, const std::vector&lt; double &gt; &amp;fmax)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00026">CubicInterpolation.cpp:26</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_a06ecb1ddc559f0c076245c6c691ebde4"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#a06ecb1ddc559f0c076245c6c691ebde4">PLMD::InterpolateBicubic::IBicCoeff</a></div><div class="ttdeci">void IBicCoeff(const std::vector&lt; double &gt; &amp;y, const std::vector&lt; double &gt; &amp;dy1, const std::vector&lt; double &gt; &amp;dy2, const std::vector&lt; double &gt; &amp;d2y12, const double &amp;d1, const double &amp;d2, Matrix&lt; double &gt; &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00203">CubicInterpolation.cpp:203</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_matrix_html"><div class="ttname"><a href="class_p_l_m_d_1_1_matrix.html">PLMD::Matrix&lt; double &gt;</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_cubic_html_a1d1524cbb185fe2531b850c0329e0c7a"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_cubic.html#a1d1524cbb185fe2531b850c0329e0c7a">PLMD::InterpolateCubic::InterpolateCubic</a></div><div class="ttdeci">InterpolateCubic(const std::vector&lt; unsigned &gt; &amp;dd, const std::vector&lt; double &gt; &amp;fmin, const std::vector&lt; double &gt; &amp;fmax)</div><div class="ttdef"><b>Definition:</b> <a href="_cubic_interpolation_8cpp_source.html#l00105">CubicInterpolation.cpp:105</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_interpolate_bicubic_html_a2ea0c26ba8c546450e5fb0d9ab10a2bd"><div class="ttname"><a href="class_p_l_m_d_1_1_interpolate_bicubic.html#a2ea0c26ba8c546450e5fb0d9ab10a2bd">PLMD::InterpolateBicubic::dcross</a></div><div class="ttdeci">Matrix&lt; double &gt; dcross</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_cubic_interpolation_8h_source.html#l00096">CubicInterpolation.h:96</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

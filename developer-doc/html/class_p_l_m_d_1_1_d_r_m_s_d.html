@@ -1,0 +1,425 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: PLMD::DRMSD Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_p_l_m_d.html">PLMD</a></li><li class="navelem"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html">DRMSD</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="class_p_l_m_d_1_1_d_r_m_s_d-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">PLMD::DRMSD Class Reference</div>  </div>
+</div>
+<div class="contents">
+
+<p>A class that implements <a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html" title="A class that implements DRMSD calculations. ">DRMSD</a> calculations.  
+ <a href="class_p_l_m_d_1_1_d_r_m_s_d.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="tools_2_d_r_m_s_d_8h_source.html">DRMSD.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a5bbe27603e36ee23d76ca39b3f5a9c76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a5bbe27603e36ee23d76ca39b3f5a9c76">DRMSD</a> ()</td></tr>
+<tr class="memdesc:a5bbe27603e36ee23d76ca39b3f5a9c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a5bbe27603e36ee23d76ca39b3f5a9c76">More...</a><br/></td></tr>
+<tr class="separator:a5bbe27603e36ee23d76ca39b3f5a9c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaae72e1727f0ad0c82fb89805925b0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html#abaae72e1727f0ad0c82fb89805925b0f">clear</a> ()</td></tr>
+<tr class="memdesc:abaae72e1727f0ad0c82fb89805925b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the structure  <a href="#abaae72e1727f0ad0c82fb89805925b0f">More...</a><br/></td></tr>
+<tr class="separator:abaae72e1727f0ad0c82fb89805925b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f49b2897bf426198ebc361eb009237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a66f49b2897bf426198ebc361eb009237">setFromPDB</a> (const <a class="el" href="class_p_l_m_d_1_1_p_d_b.html">PDB</a> &amp;, double lbound=0.0, double ubound=std::numeric_limits&lt; double &gt;::max())</td></tr>
+<tr class="memdesc:a66f49b2897bf426198ebc361eb009237"><td class="mdescLeft">&#160;</td><td class="mdescRight">set reference, align and displace from input pdb structure  <a href="#a66f49b2897bf426198ebc361eb009237">More...</a><br/></td></tr>
+<tr class="separator:a66f49b2897bf426198ebc361eb009237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21762dbd163b41150f8453ab71ec3be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a21762dbd163b41150f8453ab71ec3be5">setReference</a> (const std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;reference, double lbound=0.0, double ubound=std::numeric_limits&lt; double &gt;::max())</td></tr>
+<tr class="memdesc:a21762dbd163b41150f8453ab71ec3be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">set reference coordinates  <a href="#a21762dbd163b41150f8453ab71ec3be5">More...</a><br/></td></tr>
+<tr class="separator:a21762dbd163b41150f8453ab71ec3be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b9b3b5945584ad8a7a54a335fd3804"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a35b9b3b5945584ad8a7a54a335fd3804">calculate</a> (const std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;positions, std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;derivatives, <a class="el" href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">Tensor</a> &amp;virial) const </td></tr>
+<tr class="memdesc:a35b9b3b5945584ad8a7a54a335fd3804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute drmsd ( no pbc )  <a href="#a35b9b3b5945584ad8a7a54a335fd3804">More...</a><br/></td></tr>
+<tr class="separator:a35b9b3b5945584ad8a7a54a335fd3804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839d8cee27e6da527a86f1a03ebaa6ed"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a839d8cee27e6da527a86f1a03ebaa6ed">calculate</a> (const std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;positions, const <a class="el" href="class_p_l_m_d_1_1_pbc.html">Pbc</a> &amp;pbc, std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;derivatives, <a class="el" href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">Tensor</a> &amp;virial, bool do_pbc=true) const </td></tr>
+<tr class="memdesc:a839d8cee27e6da527a86f1a03ebaa6ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute drmsd ( with pbc )  <a href="#a839d8cee27e6da527a86f1a03ebaa6ed">More...</a><br/></td></tr>
+<tr class="separator:a839d8cee27e6da527a86f1a03ebaa6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a64963f65df440f7ce016770509b1f81f"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::pair&lt; unsigned, <br class="typebreak"/>
+unsigned &gt;, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a64963f65df440f7ce016770509b1f81f">targets</a></td></tr>
+<tr class="separator:a64963f65df440f7ce016770509b1f81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac894c49a043245eef75d2deb7f2fb332"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html#ac894c49a043245eef75d2deb7f2fb332">natoms</a></td></tr>
+<tr class="separator:ac894c49a043245eef75d2deb7f2fb332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class that implements <a class="el" href="class_p_l_m_d_1_1_d_r_m_s_d.html" title="A class that implements DRMSD calculations. ">DRMSD</a> calculations. </p>
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8h_source.html#l00037">37</a> of file <a class="el" href="tools_2_d_r_m_s_d_8h_source.html">DRMSD.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a5bbe27603e36ee23d76ca39b3f5a9c76"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PLMD::DRMSD::DRMSD </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8h_source.html#l00042">42</a> of file <a class="el" href="tools_2_d_r_m_s_d_8h_source.html">DRMSD.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a35b9b3b5945584ad8a7a54a335fd3804"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PLMD::DRMSD::calculate </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>positions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>derivatives</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>virial</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute drmsd ( no pbc ) </p>
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html#l00051">51</a> of file <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html">DRMSD.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a839d8cee27e6da527a86f1a03ebaa6ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PLMD::DRMSD::calculate </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>positions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_p_l_m_d_1_1_pbc.html">Pbc</a> &amp;&#160;</td>
+          <td class="paramname"><em>pbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>derivatives</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>virial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>do_pbc</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute drmsd ( with pbc ) </p>
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html#l00058">58</a> of file <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html">DRMSD.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abaae72e1727f0ad0c82fb89805925b0f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::DRMSD::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>clear the structure </p>
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html#l00034">34</a> of file <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html">DRMSD.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a66f49b2897bf426198ebc361eb009237"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::DRMSD::setFromPDB </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_p_l_m_d_1_1_p_d_b.html">PDB</a> &amp;&#160;</td>
+          <td class="paramname"><em>pdb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lbound</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ubound</em> = <code>std::numeric_limits&lt;double&gt;::max(&#160;)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set reference, align and displace from input pdb structure </p>
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html#l00030">30</a> of file <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html">DRMSD.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a21762dbd163b41150f8453ab71ec3be5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::DRMSD::setReference </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">Vector</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>reference</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lbound</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ubound</em> = <code>std::numeric_limits&lt;double&gt;::max(&#160;)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set reference coordinates </p>
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html#l00038">38</a> of file <a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html">DRMSD.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ac894c49a043245eef75d2deb7f2fb332"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned PLMD::DRMSD::natoms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8h_source.html#l00039">39</a> of file <a class="el" href="tools_2_d_r_m_s_d_8h_source.html">DRMSD.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a64963f65df440f7ce016770509b1f81f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::pair &lt;unsigned,unsigned&gt; , double&gt; PLMD::DRMSD::targets</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_d_r_m_s_d_8h_source.html#l00038">38</a> of file <a class="el" href="tools_2_d_r_m_s_d_8h_source.html">DRMSD.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>tools/<a class="el" href="tools_2_d_r_m_s_d_8h_source.html">DRMSD.h</a></li>
+<li>tools/<a class="el" href="tools_2_d_r_m_s_d_8cpp_source.html">DRMSD.cpp</a></li>
+</ul>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

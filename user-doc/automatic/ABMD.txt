@@ -1,0 +1,93 @@
+/**
+\page ABMD ABMD
+Adds a ratchet-and-pawl like restraint on one or more variables.
+
+This action can be used to evolve a system towards a target value in
+CV space using an harmonic potential moving with the thermal fluctuations of the CV
+\cite ballone \cite provasi10abmd \cite camilloni11abmd. The biasing potential in this
+method is as follows:
+
+\f$
+V(\rho(t)) = \left \{ \begin{array}{ll} \frac{K}{2}\left(\rho(t)-\rho_m(t)\right)^2, &\rho(t)>\rho_m(t)\\
+0, & \rho(t)\le\rho_m(t), \end{array} \right .
+\f$
+
+
+where
+
+
+\f$
+\rho(t)=\left(CV(t)-TO\right)^2
+\f$
+
+
+and
+
+
+\f$
+\rho_m(t)=\min_{0\le\tau\le t}\rho(\tau)+\eta(t)
+\f$.
+
+The method is based on the introduction of a biasing potential which is zero when
+the system is moving towards the desired arrival point and which damps the
+fluctuations when the system attempts to move in the opposite direction. As in the
+case of the ratchet and pawl system, propelled by thermal motion of the solvent
+molecules, the biasing potential does not exert work on the system. \f$\eta(t)\f$ is
+an additional white noise acting on the minimum position of the bias.
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+<tr>
+<td width=15%> <b> TO </b></td>
+<td> The array of target values </td>
+</tr>
+<tr>
+<td width=15%> <b> KAPPA </b></td>
+<td> The array of force constants. </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> MIN </b></td>
+<td> Array of starting values for the bias (set rho_m(t), otherwise it is set using the current value of ARG) </td>
+</tr>
+<tr>
+<td width=15%> <b> NOISE </b></td>
+<td> Array of white noise intensities (add a temperature to the ABMD) </td>
+</tr>
+<tr>
+<td width=15%> <b> SEED </b></td>
+<td> Array of seeds for the white noise (add a temperature to the ABMD) </td>
+</tr>
+
+</table>
+
+\par Examples
+The following input sets up two biases, one on the distance between atoms 3 and 5
+and another on the distance between atoms 2 and 4. The two target values are defined
+using TO and the two strength using KAPPA. The total energy of the bias is printed.
+\verbatim
+DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+ABMD ARG=d1,d2 TO=1.0,1.5 KAPPA=5.0,5.0 LABEL=abmd
+PRINT ARG=abmd.bias
+\endverbatim
+(See also \ref DISTANCE and \ref PRINT).
+
+*/

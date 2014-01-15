@@ -1,0 +1,294 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: vatom/Center.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_71784ac3f22d3c4ee78d8dceb0cddada.html">vatom</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Center.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_center_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vatom_2_action_with_virtual_atom_8h.html">ActionWithVirtualAtom.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vatom_2_action_register_8h.html">ActionRegister.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;core/PlumedMain.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;core/Atoms.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>vatom{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//+PLUMEDOC VATOM CENTER</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">Calculate the center for a group of atoms, with arbitraty weights.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">The computed</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">center is stored as a virtual atom that can be accessed in</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">an atom list through the label for the CENTER action that creates it.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">Notice that the generated virtual atom has charge equal to the sum of the</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">charges and mass equal to the sum of the masses. If used with the MASS flag,</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">then it provides a result identical to \ref COM.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">\par Examples</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">\verbatim</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"># a point which is on the line connecting atoms 1 and 10, so that its distance</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"># from 10 is twice its distance from 1:</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">c1: CENTER ATOMS=1,1,10</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"># this is another way of stating the same:</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">c1bis: CENTER ATOMS=1,10 WEIGHTS=2,1</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"># center of mass among these atoms:</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">c2: CENTER ATOMS=2,3,4,5 MASS</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">d1: DISTANCE ATOMS=c1,c2</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">PRINT ARG=d1</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">\endverbatim</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">(See also \ref DISTANCE, \ref COM and \ref PRINT).</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//+ENDPLUMEDOC</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vatom_1_1_center.html">   65</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html">Center</a>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_with_virtual_atom.html">ActionWithVirtualAtom</a></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">   68</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vatom_1_1_center.html#adc62570d3dcf0a50157f81495d0cff12">   69</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#adc62570d3dcf0a50157f81495d0cff12">weight_mass</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html">Center</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;ao);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> calculate();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> registerKeywords( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;PLUMED_REGISTER_ACTION(<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html">Center</a>,<span class="stringliteral">&quot;CENTER&quot;</span>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vatom_1_1_center.html#ab938e5606330164c0e6069251bc6d6b9">   78</a></span>&#160;void <a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html">Center</a>::registerKeywords(<a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys){</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  ActionWithVirtualAtom::registerKeywords(keys);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  keys.add(<span class="stringliteral">&quot;optional&quot;</span>,<span class="stringliteral">&quot;WEIGHTS&quot;</span>,<span class="stringliteral">&quot;Center is computed as a weighted average.&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  keys.addFlag(<span class="stringliteral">&quot;MASS&quot;</span>,<span class="keyword">false</span>,<span class="stringliteral">&quot;If set center is mass weighted&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vatom_1_1_center.html#a6d1f998f8da57b03d2014f47ce043fd7">   84</a></span>&#160;Center::Center(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;ao):</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html">Action</a>(ao),</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_virtual_atom.html">ActionWithVirtualAtom</a>(ao),</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  weight_mass(false)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  vector&lt;AtomNumber&gt; <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a0f46760435a7aa0933fba5f38c17ae4e">atoms</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">parseAtomList</a>(<span class="stringliteral">&quot;ATOMS&quot;</span>,atoms);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">if</span>(atoms.size()==0) <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;at least one atom should be specified&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a31b0be7c8476c86e53f3f784dec1a66f">parseVector</a>(<span class="stringliteral">&quot;WEIGHTS&quot;</span>,<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">parseFlag</a>(<span class="stringliteral">&quot;MASS&quot;</span>,<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#adc62570d3dcf0a50157f81495d0cff12">weight_mass</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">checkRead</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  of atoms&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;atoms.size();++i) <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot; %d&quot;</span>,atoms[i].serial());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#adc62570d3dcf0a50157f81495d0cff12">weight_mass</a>){</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot;  mass weighted\n&quot;</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>.size()!=0) <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;WEIGHTS and MASS keywords should not be used simultaneously&quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot; with weights&quot;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>.size()!=atoms.size() ) <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;number of elements in weight vector does not match the number of atoms&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>.size();++i) <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot; %f&quot;</span>,<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>[i]);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a3bf8b6d0a3f54c1371bdc28f00f8c1f8">requestAtoms</a>(atoms);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vatom_1_1_center.html#a0a35e4380f1c42cb4707a90da11c187a">  109</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a0a35e4380f1c42cb4707a90da11c187a">Center::calculate</a>(){</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> pos;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">double</span> mass(0.0);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  vector&lt;Tensor&gt; deriv(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>());</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>();i++) mass+=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a9a2d7dc014df12aa9525d2f2fd6159f5">getMass</a>(i);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="structplumed.html">plumed</a>.getAtoms().chargesWereSet() ){</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;     <span class="keywordtype">double</span> charge(0.0);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;     <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>();i++) charge+=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a85cc4a3edf1d2735ed175d33d0ce0ace">getCharge</a>(i);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;     <a class="code" href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a26dc2dfb362ecc863de2664cd9ea10dd">setCharge</a>(charge);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;     <a class="code" href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a26dc2dfb362ecc863de2664cd9ea10dd">setCharge</a>(0.0);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">double</span> wtot=0.0;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>.size();i++) wtot+=<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>[i];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>();i++){</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="tools_2_matrix_8h.html#aa3aae573c2ea5a540ba27e4ae356c3dd">w</a>=0;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#adc62570d3dcf0a50157f81495d0cff12">weight_mass</a>) w=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a9a2d7dc014df12aa9525d2f2fd6159f5">getMass</a>(i)/mass;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">else</span> w=<a class="code" href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">weights</a>[i]/wtot;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    pos+=w*<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(i);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    deriv[i]=w*<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#ae71eabdd51c31d4549b7157f459ce415">Tensor::identity</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a3fd61fc1f92dbfe831fce689928c5e5a">setPosition</a>(pos);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_virtual_atom.html#aaf7d697325c0432294985df783b6c24e">setMass</a>(mass);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a67d7beb3a462793ae417aba26f41d7f1">setAtomsDerivatives</a>(deriv);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1vatom_1_1_center_html_a7f1e582316bae64f208af04d99ec9f96"><div class="ttname"><a href="class_p_l_m_d_1_1vatom_1_1_center.html#a7f1e582316bae64f208af04d99ec9f96">PLMD::vatom::Center::weights</a></div><div class="ttdeci">std::vector&lt; double &gt; weights</div><div class="ttdef"><b>Definition:</b> <a href="_center_8cpp_source.html#l00068">Center.cpp:68</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_ad5680e139003df022ce068a967a8bd2b"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">PLMD::ActionAtomistic::getPosition</a></div><div class="ttdeci">const Vector &amp; getPosition(int) const </div><div class="ttdoc">Get position of i-th atom. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00132">ActionAtomistic.h:132</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a5540be9c95bc8bf9f1ec567c047afddb"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">PLMD::Action::parseFlag</a></div><div class="ttdeci">void parseFlag(const std::string &amp;key, bool &amp;t)</div><div class="ttdoc">Parse one keyword as boolean flag. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00104">Action.cpp:104</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a31215215cfe4b1078c8f566688964346"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">PLMD::Action::log</a></div><div class="ttdeci">Log &amp; log</div><div class="ttdoc">Reference to the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00093">Action.h:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_virtual_atom_html_a3fd61fc1f92dbfe831fce689928c5e5a"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a3fd61fc1f92dbfe831fce689928c5e5a">PLMD::ActionWithVirtualAtom::setPosition</a></div><div class="ttdeci">void setPosition(const Vector &amp;)</div><div class="ttdoc">Set position of the virtual atom. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_virtual_atom_8h_source.html#l00075">ActionWithVirtualAtom.h:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="vatom_2_action_register_8h_html"><div class="ttname"><a href="vatom_2_action_register_8h.html">ActionRegister.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a94c1c30fbc92747b8828aa6f1e3d207d"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">PLMD::Action::error</a></div><div class="ttdeci">void error(const std::string &amp;msg) const </div><div class="ttdoc">Crash calculation and print documentation. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00195">Action.cpp:195</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a8ffc4538dce6f51e1505a0a300d204e2"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">PLMD::Action::checkRead</a></div><div class="ttdeci">void checkRead()</div><div class="ttdoc">Check if Action was properly read. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00161">Action.cpp:161</a></div></div>
+<div class="ttc" id="vatom_2_action_with_virtual_atom_8h_html"><div class="ttname"><a href="vatom_2_action_with_virtual_atom_8h.html">ActionWithVirtualAtom.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_acb6fb7fffbb8884852bae0c88f9f9777"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">PLMD::ActionAtomistic::parseAtomList</a></div><div class="ttdeci">void parseAtomList(const std::string &amp;key, std::vector&lt; AtomNumber &gt; &amp;t)</div><div class="ttdoc">Parse a list of atoms without a numbered keyword. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00141">ActionAtomistic.cpp:141</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_virtual_atom_html_aaf7d697325c0432294985df783b6c24e"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_virtual_atom.html#aaf7d697325c0432294985df783b6c24e">PLMD::ActionWithVirtualAtom::setMass</a></div><div class="ttdeci">void setMass(double)</div><div class="ttdoc">Set its mass. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_virtual_atom_8h_source.html#l00080">ActionWithVirtualAtom.h:80</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_virtual_atom_html_a3bf8b6d0a3f54c1371bdc28f00f8c1f8"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a3bf8b6d0a3f54c1371bdc28f00f8c1f8">PLMD::ActionWithVirtualAtom::requestAtoms</a></div><div class="ttdeci">void requestAtoms(const std::vector&lt; AtomNumber &gt; &amp;a)</div><div class="ttdoc">Request atoms on which the calculation depends. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_virtual_atom_8cpp_source.html#l00052">ActionWithVirtualAtom.cpp:52</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vatom_1_1_center_html_a0a35e4380f1c42cb4707a90da11c187a"><div class="ttname"><a href="class_p_l_m_d_1_1vatom_1_1_center.html#a0a35e4380f1c42cb4707a90da11c187a">PLMD::vatom::Center::calculate</a></div><div class="ttdeci">void calculate()</div><div class="ttdoc">Calculate an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_center_8cpp_source.html#l00109">Center.cpp:109</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html_ae71eabdd51c31d4549b7157f459ce415"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html#ae71eabdd51c31d4549b7157f459ce415">PLMD::TensorGeneric::identity</a></div><div class="ttdeci">static TensorGeneric&lt; n, n &gt; identity()</div><div class="ttdoc">return an identity tensor </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00318">Tensor.h:318</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_virtual_atom_html_a67d7beb3a462793ae417aba26f41d7f1"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a67d7beb3a462793ae417aba26f41d7f1">PLMD::ActionWithVirtualAtom::setAtomsDerivatives</a></div><div class="ttdeci">void setAtomsDerivatives(const std::vector&lt; Tensor &gt; &amp;d)</div><div class="ttdoc">Set the derivatives of virtual atom coordinate wrt atoms on which it dependes. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_virtual_atom_8h_source.html#l00090">ActionWithVirtualAtom.h:90</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a0f46760435a7aa0933fba5f38c17ae4e"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a0f46760435a7aa0933fba5f38c17ae4e">PLMD::ActionAtomistic::atoms</a></div><div class="ttdeci">Atoms &amp; atoms</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00059">ActionAtomistic.h:59</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_o_file_html_a1ad29d0ba5b7ceb7c1949f33c6ccd29f"><div class="ttname"><a href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">PLMD::OFile::printf</a></div><div class="ttdeci">int printf(const char *fmt,...)</div><div class="ttdoc">Formatted output with explicit format - a la printf. </div><div class="ttdef"><b>Definition:</b> <a href="_o_file_8cpp_source.html#l00082">OFile.cpp:82</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html">PLMD::Action</a></div><div class="ttdoc">Base class for all the input Actions. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00060">Action.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a31b0be7c8476c86e53f3f784dec1a66f"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a31b0be7c8476c86e53f3f784dec1a66f">PLMD::Action::parseVector</a></div><div class="ttdeci">void parseVector(const std::string &amp;key, std::vector&lt; T &gt; &amp;t)</div><div class="ttdoc">Parse one keyword as std::vector. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00311">Action.h:311</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_virtual_atom_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_virtual_atom.html">PLMD::ActionWithVirtualAtom</a></div><div class="ttdoc">Inherit from here if you are calculating the position of a virtual atom (eg a center of mass) ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_virtual_atom_8h_source.html#l00040">ActionWithVirtualAtom.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vatom_1_1_center_html"><div class="ttname"><a href="class_p_l_m_d_1_1vatom_1_1_center.html">PLMD::vatom::Center</a></div><div class="ttdoc">Provides the keyword CENTER  </div><div class="ttdef"><b>Definition:</b> <a href="_center_8cpp_source.html#l00065">Center.cpp:65</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_aa3aae573c2ea5a540ba27e4ae356c3dd"><div class="ttname"><a href="tools_2_matrix_8h.html#aa3aae573c2ea5a540ba27e4ae356c3dd">w</a></div><div class="ttdeci">void const char const char int double int double double int int double int double * w</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a85cc4a3edf1d2735ed175d33d0ce0ace"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a85cc4a3edf1d2735ed175d33d0ce0ace">PLMD::ActionAtomistic::getCharge</a></div><div class="ttdeci">double getCharge(int i) const </div><div class="ttdoc">Get charge of i-th atom. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00142">ActionAtomistic.h:142</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_virtual_atom_html_a26dc2dfb362ecc863de2664cd9ea10dd"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_virtual_atom.html#a26dc2dfb362ecc863de2664cd9ea10dd">PLMD::ActionWithVirtualAtom::setCharge</a></div><div class="ttdeci">void setCharge(double)</div><div class="ttdoc">Set its charge. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_virtual_atom_8h_source.html#l00085">ActionWithVirtualAtom.h:85</a></div></div>
+<div class="ttc" id="structplumed_html"><div class="ttname"><a href="structplumed.html">plumed</a></div><div class="ttdoc">Main plumed object. </div><div class="ttdef"><b>Definition:</b> <a href="wrapper_2_plumed_8h_source.html#l00201">Plumed.h:201</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vatom_1_1_center_html_adc62570d3dcf0a50157f81495d0cff12"><div class="ttname"><a href="class_p_l_m_d_1_1vatom_1_1_center.html#adc62570d3dcf0a50157f81495d0cff12">PLMD::vatom::Center::weight_mass</a></div><div class="ttdeci">bool weight_mass</div><div class="ttdef"><b>Definition:</b> <a href="_center_8cpp_source.html#l00069">Center.cpp:69</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a7d0c94f88e93c9ffa208af8b8fbef6cb"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">PLMD::ActionAtomistic::getNumberOfAtoms</a></div><div class="ttdeci">unsigned getNumberOfAtoms() const </div><div class="ttdoc">Get number of available atoms. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00088">ActionAtomistic.h:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a9a2d7dc014df12aa9525d2f2fd6159f5"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a9a2d7dc014df12aa9525d2f2fd6159f5">PLMD::ActionAtomistic::getMass</a></div><div class="ttdeci">double getMass(int i) const </div><div class="ttdoc">Get mass of i-th atom. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00137">ActionAtomistic.h:137</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

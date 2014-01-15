@@ -1,0 +1,25 @@
+/**
+\page FUNCPATHMSD FUNCPATHMSD
+This function calculates path collective variables. 
+
+This is the Path Collective Variables implementation 
+( see \cite brand07 ).
+This variable computes the progress along a given set of frames that is provided  
+in input ("s" component) and the distance from them ("z" component). 
+It is a function of MSD that are obtained by the joint use of MSD variable and SQUARED flag 
+(see below).
+
+\par Examples
+
+Here below is a case where you have defined three frames and you want to  
+calculate the progress alng the path and the distance from it in p1
+
+\verbatim
+t1: RMSD REFERENCE=frame_1.dat TYPE=OPTIMAL SQUARED
+t2: RMSD REFERENCE=frame_21.dat TYPE=OPTIMAL SQUARED
+t3: RMSD REFERENCE=frame_42.dat TYPE=OPTIMAL SQUARED
+p1: FUNCPATHMSD ARG=t1,t2,t3 LAMBDA=500.0 
+PRINT ARG=t1,t2,t3,p1.s,p1.z STRIDE=1 FILE=colvar FMT=%8.4f
+\endverbatim
+
+*/

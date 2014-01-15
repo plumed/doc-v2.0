@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: EXTERNAL</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="_bias.html">Bias</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">EXTERNAL </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>Calculate a restraint that is defined on a grid that is read during start up</p>
+<dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> ARG </b> </td><td>the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken. If * or *.* appears the information from all arguments is taken. Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z. To take just the x component you should use dist.x, if you wish to take all three components then use dist.*   </td></tr>
+<tr>
+<td width="15%"><b> FILE </b> </td><td>the name of the file containing the external potential.   </td></tr>
+</table>
+<dl class="section user"><dt>Options</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> NUMERICAL_DERIVATIVES </b> </td><td>( default=off ) calculate the derivatives for these quantities numerically   </td></tr>
+<tr>
+<td width="15%"><b> NOSPLINE </b> </td><td>( default=off ) specifies that no spline interpolation is to be used when calculating the energy and forces due to the external potential   </td></tr>
+<tr>
+<td width="15%"><b> SPARSE </b> </td><td><p class="starttd">( default=off ) specifies that the external potential uses a sparse grid  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd>The following is an input for a calculation with an external potential that is defined in the file bias.dat and that acts on the distance between atoms 3 and 5. <pre class="fragment">DISTANCE ATOMS=3,5 LABEL=d1
+EXTERNAL ARG=d1 FILENAME=bias.dat LABEL=external
+</pre> (See also <a class="el" href="_d_i_s_t_a_n_c_e.html">DISTANCE</a> <a class="el" href="_p_r_i_n_t.html">PRINT</a>).</dd></dl>
+<p>The header in the file bias.dat should read: </p>
+<pre class="fragment">#! FIELDS d1 external.bias der_d1
+#! SET min_d1 0.0
+#! SET max_d1 1.0
+#! SET nbins_d1 100
+#! SET periodic_d1 false
+</pre><p>This should then be followed by the value of the potential and its derivative at 100 equally spaced points along the distance between 0 and 1. If you run with NOSPLINE you do not need to provide derivative information.</p>
+<p>You can also include grids that are a function of more than one collective variable. For instance the following would be the input for an external potential acting on two torsional angles: </p>
+<pre class="fragment">TORSION ATOMS=4,5,6,7 LABEL=t1
+TORSION ATOMS=6,7,8,9 LABEL=t2
+EXTERNAL ARG=t1,t2 FILENAME=bias.dat LABEL=ext
+</pre><p>The header in the file bias.dat for this calculation would read: </p>
+<pre class="fragment">#! FIELDS t1 t2 ext.bias der_t1 der_t2
+#! SET min_t1 -pi
+#! SET max_t1 +pi
+#! SET nbins_t1 100
+#! SET peirodic_t1 true
+#! SET min_t2 -pi
+#! SET max_t2 +pi
+#! SET nbins_t2 100
+#! SET peirodic_t2 true
+</pre><p>This would be then followed by 100 blocks of data. In the first block of data the value of t1 (the value in the first column) is kept fixed and the value of the function is given at 100 equally spaced values for t2 between \(-pi\) and \(+pi\). In the second block of data t1 is fixed at \(-pi + \frac{2pi}{100}\) and the value of the function is given at 100 equally spaced values for t2 between \(-pi\) and \(+pi\). In the third block of data the same is done but t1 is fixed at \(-pi + \frac{4pi}{100}\) and so on untill you get to the 100th block of data where t1 is fixed at \(+pi\).</p>
+<p>Please note the order that the order of arguments in the plumed.dat file must be the same as the order of arguments in the header of the grid file. </p>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

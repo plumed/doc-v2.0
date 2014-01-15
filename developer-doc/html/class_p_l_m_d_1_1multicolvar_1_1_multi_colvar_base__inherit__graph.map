@@ -1,0 +1,14 @@
+<map id="PLMD::multicolvar::MultiColvarBase" name="PLMD::multicolvar::MultiColvarBase">
+<area shape="rect" id="node13" href="$class_p_l_m_d_1_1multicolvar_1_1_multi_colvar.html" title="This is the abstract base class to use for creating distributions of colvars and functions thereof..." alt="" coords="571,178,709,225"/>
+<area shape="rect" id="node27" href="$class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html" title="PLMD::multicolvar::\lMultiColvarFunction" alt="" coords="571,247,709,294"/>
+<area shape="rect" id="node2" href="$class_p_l_m_d_1_1_action_atomistic.html" title="Action used to create objects that access the positions of the atoms from the MD code. " alt="" coords="168,168,325,197"/>
+<area shape="rect" id="node4" href="$class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. " alt="" coords="5,221,109,251"/>
+<area shape="rect" id="node6" href="$class_p_l_m_d_1_1_action_with_value.html" title="Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ..." alt="" coords="165,221,328,251"/>
+<area shape="rect" id="node9" href="$class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html" title="This is used to create PLMD::Action objects that are computed by calculating the same function multip..." alt="" coords="157,274,336,321"/>
+<area shape="rect" id="node15" href="$class_p_l_m_d_1_1multicolvar_1_1_alpha_beta.html" title="Provides the keyword ALPHABETA &#160;" alt="" coords="763,5,901,51"/>
+<area shape="rect" id="node17" href="$class_p_l_m_d_1_1multicolvar_1_1_angles.html" title="Provides the keyword ANGLES &#160;" alt="" coords="763,74,901,121"/>
+<area shape="rect" id="node19" href="$class_p_l_m_d_1_1multicolvar_1_1_bridge.html" title="Provides the keyword BRIDGE &#160;" alt="" coords="763,143,901,190"/>
+<area shape="rect" id="node21" href="$class_p_l_m_d_1_1multicolvar_1_1_coordination_numbers.html" title="Provides the keyword COORDINATIONNUMBER &#160;" alt="" coords="759,213,905,259"/>
+<area shape="rect" id="node23" href="$class_p_l_m_d_1_1multicolvar_1_1_density.html" title="Provides the keyword DENSITY &#160;" alt="" coords="763,282,901,329"/>
+<area shape="rect" id="node25" href="$class_p_l_m_d_1_1multicolvar_1_1_distances.html" title="Provides the keyword DISTANCES &#160;" alt="" coords="763,351,901,398"/>
+</map>

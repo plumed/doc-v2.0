@@ -1,0 +1,49 @@
+/**
+\page DEBUG DEBUG
+Set some debug options.
+
+Can be used while debugging or optimizing plumed.
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> STRIDE </b></td>
+<td> ( default=1 ) the frequency with which this action is to be performed </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> logActivity </b></td>
+<td> ( default=off ) write in the log which actions are inactive and which are inactive </td>
+</tr>
+<tr>
+<td width=15%> <b> logRequestedAtoms </b></td>
+<td> ( default=off ) write in the log which atoms have been requested at a given time </td>
+</tr>
+<tr>
+<td width=15%> <b> NOVIRIAL </b></td>
+<td> ( default=off ) switch off the virial contribution for the entirity of the simulation </td>
+</tr>
+<tr>
+<td width=15%> <b> DETAILED_TIMERS </b></td>
+<td> ( default=off ) switch on detailed timers </td>
+</tr>
+
+</table>
+
+</table>
+
+\par Examples
+
+\verbatim
+# print detailed (action-by-action) timers at the end of simulation
+DEBUG DETAILED_TIMERS
+# dump every two steps which are the atoms required from the MD code
+DEBUG logRequestedAtoms STRIDE=2
+\endverbatim
+
+*/

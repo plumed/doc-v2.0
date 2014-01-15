@@ -1,0 +1,75 @@
+/**
+\page GYRATION GYRATION
+Calculate the radius of gyration, or other properties related to it.
+
+The different properties can be calculated and selected by the TYPE keyword:
+the Radius of Gyration (RADIUS); the Trace of the Gyration Tensor (TRACE);
+the Largest Principal Moment of the Gyration Tensor (GTPC_1); the middle Principal Moment of the Gyration Tensor (GTPC_2);
+the Smallest Principal Moment of the Gyration Tensor (GTPC_3); the Asphericiry (ASPHERICITY); the Acylindricity (ACYLINDRICITY);
+the Relative Shape Anisotropy (KAPPA2); the Smallest Principal Radius Of Gyration (GYRATION_3);
+the Middle Principal Radius of Gyration (GYRATION_2); the Largest Principal Radius of Gyration (GYRATION_1).
+A derivation of all these different variants can be found in \cite Vymetal:2011gv
+
+The radius of gyration is calculated using:
+
+\f[
+s_{\rm Gyr}=\Big ( \frac{\sum_i^{n}
+\vert {r}_i -{r}_{\rm COM} \vert ^2 }{\sum_i^{n} m_i} \Big)^{1/2}
+\f]
+
+with the position of the center of mass \f${r}_{\rm COM}\f$ given by:
+
+\f[
+{r}_{\rm COM}=\frac{\sum_i^{n} {r}_i\ m_i }{\sum_i^{n} m_i}
+\f]
+
+
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ATOMS </b></td>
+<td> the group of atoms that you are calculating the Gyration Tensor for </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TYPE </b></td>
+<td> ( default=RADIUS ) The type of calculation relative to the Gyration Tensor you want to perform </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> NOT_MASS_WEIGHTED </b></td>
+<td> ( default=off ) set the masses of all the atoms equal to one </td>
+</tr>
+
+</table>
+
+</table>
+
+\par Examples
+
+The following input tells plumed to print the radius of gyration of the
+chain containing atoms 10 to 20.
+\verbatim
+GYRATION TYPE=RADIUS ATOMS=10-20 LABEL=rg
+PRINT ARG=rg STRIDE=1 FILE=colvar
+\endverbatim
+(See also \ref PRINT)
+
+*/

@@ -1,0 +1,414 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: Namespace Members</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Namespace&#160;List</span></a></li>
+      <li class="current"><a href="namespacemembers.html"><span>Namespace&#160;Members</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li class="current"><a href="namespacemembers.html"><span>All</span></a></li>
+      <li><a href="namespacemembers_func.html"><span>Functions</span></a></li>
+      <li><a href="namespacemembers_vars.html"><span>Variables</span></a></li>
+      <li><a href="namespacemembers_type.html"><span>Typedefs</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_k"><span>k</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_q"><span>q</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_v"><span>v</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+<div class="textblock">Here is a list of all namespace members with links to the namespace documentation for each member:</div>
+
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>actionRegister()
+: <a class="el" href="namespace_p_l_m_d.html#a4fad70cdc3986234252cc2d9ef662c19">PLMD</a>
+</li>
+<li>add()
+: <a class="el" href="namespace_p_l_m_d.html#a8c890ace862f7e84f1c6410e36103dbe">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>checks
+: <a class="el" href="namespace_p_l_m_d.html#a6b6e873ec5a443ee7bca009983add5c1">PLMD</a>
+</li>
+<li>chol_elsolve()
+: <a class="el" href="namespace_p_l_m_d.html#ae589d59e8523835dd73c02fbd36b92e1">PLMD</a>
+</li>
+<li>cholesky()
+: <a class="el" href="namespace_p_l_m_d.html#a9c377c020264d1106c5b5cd154463b4a">PLMD</a>
+</li>
+<li>cltoolRegister()
+: <a class="el" href="namespace_p_l_m_d.html#a502aa0b8b8efedb68738430653570a05">PLMD</a>
+</li>
+<li>copy()
+: <a class="el" href="namespace_p_l_m_d.html#a034f6feeac144e3aaf2858312aa8ba41">PLMD</a>
+</li>
+<li>crossProduct()
+: <a class="el" href="namespace_p_l_m_d.html#aa6211057bc5e144dcac7891dd234f750">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>dcrossDv1()
+: <a class="el" href="namespace_p_l_m_d.html#a7cd40764cf044202cc73573254b07ee4">PLMD</a>
+</li>
+<li>dcrossDv2()
+: <a class="el" href="namespace_p_l_m_d.html#a3bedfff099c48929cc79d4028de594b2">PLMD</a>
+</li>
+<li>delta()
+: <a class="el" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">PLMD</a>
+</li>
+<li>determinant()
+: <a class="el" href="namespace_p_l_m_d.html#ac972de1097bdfbd2a2a763a0f377d5e0">PLMD</a>
+</li>
+<li>diagMat()
+: <a class="el" href="namespace_p_l_m_d.html#ad7f66dbb1f6e5248149fd2544418eeec">PLMD</a>
+</li>
+<li>dotProduct()
+: <a class="el" href="namespace_p_l_m_d.html#ade830b20113685d4b47f0505c246cfc1">PLMD</a>
+</li>
+<li>DriverDouble
+: <a class="el" href="namespace_p_l_m_d_1_1cltools.html#a6a60419ba7c5c52eceab8ab94019dd88">PLMD::cltools</a>
+</li>
+<li>DriverFloat
+: <a class="el" href="namespace_p_l_m_d_1_1cltools.html#a0146e1b650c87b5b9c3da62f537cbd7c">PLMD::cltools</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>epsilon
+: <a class="el" href="namespace_p_l_m_d.html#a4ef3dd99dc89348c1a0e80ab31171966">PLMD</a>
+</li>
+<li>extProduct()
+: <a class="el" href="namespace_p_l_m_d.html#acff9b2ac64832d07b378de77e4ef38cf">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>getMakefile()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#a74bfa65032b3a2336d4b508050a08ea9">PLMD::config</a>
+</li>
+<li>getPlumedRoot()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#ac912fda233a0fc65f8ffa814b9af13b1">PLMD::config</a>
+</li>
+<li>getSoExt()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#a7080396c9ae414ea8177c900d346839f">PLMD::config</a>
+</li>
+<li>getVersion()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#a21b1a77d58a591195cc899cc5098a201">PLMD::config</a>
+</li>
+<li>getVersionLong()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#ab08ffddf07ed9f5f34befb4ff64ad6e2">PLMD::config</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>hasAlmost()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#a46fc4cb100de5daa68c2f2e49e6af6e9">PLMD::config</a>
+</li>
+<li>hasCregex()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#a2ee478073e3c9830358b957b3f6b0485">PLMD::config</a>
+</li>
+<li>hasDlopen()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#abdee7a8903a53ba1c889acfff62fbb10">PLMD::config</a>
+</li>
+<li>hasMatheval()
+: <a class="el" href="namespace_p_l_m_d_1_1config.html#aaac2777fa74de8578cf4e44d2b3e4555">PLMD::config</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>inverse()
+: <a class="el" href="namespace_p_l_m_d.html#af1e1cce2da1a88aebdc59379744d238d">PLMD</a>
+</li>
+<li>Invert()
+: <a class="el" href="namespace_p_l_m_d.html#a026d5267b3be658f2140748b1a89edba">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
+<li>kBoltzmann()
+: <a class="el" href="group___t_o_o_l_b_o_x.html#ga9809c2392210c0d1d73a6c8098f94288">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>logdet()
+: <a class="el" href="namespace_p_l_m_d.html#ad20979eb50e804bcf3e871ec53a257bd">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>matmul()
+: <a class="el" href="namespace_p_l_m_d.html#a7c4a2a4cfd362744463b3960504faf2a">PLMD</a>
+</li>
+<li>matrixOut()
+: <a class="el" href="namespace_p_l_m_d.html#a72330b99c024a3d62dde5cd7fd86b1c4">PLMD</a>
+</li>
+<li>modulo()
+: <a class="el" href="namespace_p_l_m_d.html#ab2cb342dddeabef001a9335fd27ede1b">PLMD</a>
+</li>
+<li>modulo2()
+: <a class="el" href="namespace_p_l_m_d.html#a1c84391078c7c01428434a647cdf16fb">PLMD</a>
+</li>
+<li>MolInfo
+: <a class="el" href="namespace_p_l_m_d_1_1setup.html#a6ad276a20f616e33c340a9d26f822025">PLMD::setup</a>
+</li>
+<li>mpi_gatherActiveMembers()
+: <a class="el" href="namespace_p_l_m_d.html#a83935895f6c14e54adee6de3b66e4ab5">PLMD</a>
+</li>
+<li>mult()
+: <a class="el" href="namespace_p_l_m_d.html#a3c79a0fc4c5cc5e2a9e870ae7fa3500b">PLMD</a>
+</li>
+<li>mylog()
+: <a class="el" href="namespace_p_l_m_d_1_1function.html#aaead2c27e3ff8d7a3b90216a1ddb9adf">PLMD::function</a>
+</li>
+<li>mylogder()
+: <a class="el" href="namespace_p_l_m_d_1_1function.html#af69f0506304c719483dfb680f63455bd">PLMD::function</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>norm()
+: <a class="el" href="namespace_p_l_m_d.html#acaf5c28c95cf6a02daefd7297cf56b60">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>operator!=()
+: <a class="el" href="namespace_p_l_m_d.html#a6505ad196f4aff4233c35c6057be09a4">PLMD</a>
+</li>
+<li>operator*()
+: <a class="el" href="namespace_p_l_m_d.html#a4411dac3f17389ae9bfecab8ae450662">PLMD</a>
+</li>
+<li>operator+()
+: <a class="el" href="namespace_p_l_m_d.html#a3b81e875e04f4954e2676f5e0b2b14fe">PLMD</a>
+</li>
+<li>operator-()
+: <a class="el" href="namespace_p_l_m_d.html#a0f4752a0ed7b7b0356c79d790da4f820">PLMD</a>
+</li>
+<li>operator/()
+: <a class="el" href="namespace_p_l_m_d.html#a9cc8c5c7a48808f9dcc663b676dcf221">PLMD</a>
+</li>
+<li>operator&lt;()
+: <a class="el" href="namespace_p_l_m_d.html#a5c8f05210ddac18a97b1f166fe096136">PLMD</a>
+</li>
+<li>operator&lt;&lt;()
+: <a class="el" href="namespace_p_l_m_d.html#a03a455aca3a844ed16ad8e30afda1af2">PLMD</a>
+</li>
+<li>operator&lt;=()
+: <a class="el" href="namespace_p_l_m_d.html#a7b4c81a54dcde43e6da6b8a90a105e91">PLMD</a>
+</li>
+<li>operator==()
+: <a class="el" href="namespace_p_l_m_d.html#abe78fcdfc31a72e86abd27fb7dc1dc04">PLMD</a>
+</li>
+<li>operator&gt;()
+: <a class="el" href="namespace_p_l_m_d.html#a000eecbbea62894a1675c7074263d01d">PLMD</a>
+</li>
+<li>operator&gt;=()
+: <a class="el" href="namespace_p_l_m_d.html#a1de6b2598b0e80d11d28a2c7103b42cf">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>pi()
+: <a class="el" href="group___t_o_o_l_b_o_x.html#gaa50651e79f86ffa6cd1029b64c3ec96d">PLMD</a>
+</li>
+<li>product()
+: <a class="el" href="namespace_p_l_m_d.html#a77104aba3d865f7bea4389c9df744933">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
+<li>quotient()
+: <a class="el" href="namespace_p_l_m_d.html#ac35ad5211d30bb34235baecb640a17ae">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>RegisterMe
+: <a class="el" href="namespace_p_l_m_d.html#a58a6b9fdc777a0669aacee7da32bf5b0">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>Tensor
+: <a class="el" href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">PLMD</a>
+</li>
+<li>Tensor2d
+: <a class="el" href="group___t_o_o_l_b_o_x.html#ga24dc42de039d002320c55e3454f0861e">PLMD</a>
+</li>
+<li>Tensor3d
+: <a class="el" href="group___t_o_o_l_b_o_x.html#gae1a16040e3fd9f1617d37445541ba76b">PLMD</a>
+</li>
+<li>Tensor4d
+: <a class="el" href="group___t_o_o_l_b_o_x.html#gace59eadbf99565dbeb810aa94ee51a19">PLMD</a>
+</li>
+<li>transpose()
+: <a class="el" href="namespace_p_l_m_d.html#a26a49b1d405987e7116c298b8f423f1a">PLMD</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>Vector
+: <a class="el" href="group___t_o_o_l_b_o_x.html#ga0bda8bd67354d8dbf8b13466e0287666">PLMD</a>
+</li>
+<li>Vector2d
+: <a class="el" href="group___t_o_o_l_b_o_x.html#gabeebe72484e1487b961a8d6033d91332">PLMD</a>
+</li>
+<li>Vector3d
+: <a class="el" href="group___t_o_o_l_b_o_x.html#gad4e0b5fe7191132a91221f60c6301294">PLMD</a>
+</li>
+<li>Vector4d
+: <a class="el" href="group___t_o_o_l_b_o_x.html#gacc658b6ada6037e84c4bef084661727d">PLMD</a>
+</li>
+<li>vesselRegister()
+: <a class="el" href="namespace_p_l_m_d_1_1vesselbase.html#a56003bf5b3b48b6ca1389eecb485b49f">PLMD::vesselbase</a>
+</li>
+</ul>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

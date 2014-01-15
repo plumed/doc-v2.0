@@ -1,0 +1,60 @@
+/**
+\page kernelfunctions kernelfunctions
+Functions that are used to construct histograms
+Functions that are used to construct histograms
+</td> </tr>
+
+Constructing histograms is something you learnt to do relatively early in life. You perform an experiment a number of times, 
+count the number of times each result comes up and then draw a bar graph that describes how often each of the results came up.  
+This only works when there are a finite number of possible results.  If the result a number between 0 and 1 the bar chart is 
+less easy to draw as there are as many possible results as there are numbers between zero and one - an infinite number.  
+To resolve this problem we replace probability, \f$P\f$ with probability density, \f$\pi\f$, and write the probability of getting 
+a number between \f$a\f$ and \f$b\f$ as:
+
+\f[
+P = \int_{a}^b \textrm{d}x \pi(x)   
+\f]
+
+To calculate probability densities from a set of results we use a process called kernel density estimation.  
+Histograms are accumulated by adding up kernel functions, \f$K\f$, with finite spatial extent, that integrate to one.
+These functions are centered on each of the \f$n\f$-dimensional data points, \f$\mathbf{x}_i\f$. The overall effect of this
+is that each result we obtain in our experiments contributes to the probability density in a finite sized region of the space.  
+
+Expressing all this mathematically in kernel density estimation we write the probability density as:
+
+\f[
+\pi(\mathbf{x}) =  \sum_i K\left[ (\mathbf{x} - \mathbf{x}_i)^T \Sigma (\mathbf{x} - \mathbf{x}_i) \right]
+\f]
+
+where \f$\Sigma\f$ is an \f$n \times n\f$ matrix called the bandwidth that controls the spatial extent of 
+the kernel. Whenever we accumulate a histogram (e.g. in \ref HISTOGRAM or in \ref METAD) we use this 
+technique. 
+
+There is thus some flexibility in the particular function we use for \f$K[\mathbf{r}]\f$ in the above.
+The following variants are available.
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> 
+<td> TYPE </td> <td> FUNCTION </td> 
+</tr> <tr> 
+<td> gaussian </td> <td> \f$f(r) = \frac{1}{(2 \pi)^{n} \sqrt{|\Sigma^{-1}|}} \exp\left(-0.5 r^2 \right)\f$ </td>
+</tr> <tr>
+<td> triangular </td> <td> \f$f(r) = \frac{3}{V} ( 1 - | r | )H(1-|r|) \f$ </td>
+</tr> <tr>
+<td> uniform </td> <td> \f$f(r) = \frac{1}{V}H(1-|r|)\f$ </td>
+</tr>
+</table>
+
+In the above \f$H(y)\f$ is a function that is equal to one when \f$y>0\f$ and zero when \f$y \le 0\f$. \f$n\f$ is
+the dimensionality of the vector \f$\mathbf{x}\f$ and \f$V\f$ is the volume of an elipse in an \f$n\f$ dimensional
+space which is given by:
+
+\f{eqnarray*}{
+V &=& | \Sigma^{-1} | \frac{ \pi^{\frac{n}{2}} }{\left( \frac{n}{2} \right)! } \qquad \textrm{for even} \quad n \\
+V &=& | \Sigma^{-1} | \frac{ 2^{\frac{n+1}{2}} \pi^{\frac{n-1}{2}} }{ n!! } 
+\f}
+
+In \ref METAD the normalization constants are ignored so that the value of the function at \f$r=0\f$ is equal
+to one.  In addition in \ref METAD we must be able to differentiate the bias in order to get forces.  This limits 
+the kernels we can use in this method.
+*/

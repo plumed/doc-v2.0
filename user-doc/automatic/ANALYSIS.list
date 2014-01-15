@@ -1,0 +1,18 @@
+<tr> <td width=5%> \subpage  HISTOGRAM </td> <td>
+Calculate the probability density as a function of a few CVs using kernel density estimation
+</td> </tr>
+<tr> <td width=5%> \subpage  DUMPATOMS </td> <td>
+Dump selected atoms on a file.
+</td> </tr>
+<tr> <td width=5%> \subpage  DUMPDERIVATIVES </td> <td>
+Dump the derivatives with respect to the input parameters for one or more objects (generally CVs, functions or biases).
+</td> </tr>
+<tr> <td width=5%> \subpage  DUMPFORCES </td> <td>
+Dump the force acting on one of a values in a file.  
+</td> </tr>
+<tr> <td width=5%> \subpage  DUMPPROJECTIONS </td> <td>
+Dump the derivatives with respect to the input parameters for one or more objects (generally CVs, functions or biases).
+</td> </tr>
+<tr> <td width=5%> \subpage  PRINT </td> <td>
+Print quantities to a file.
+</td> </tr>

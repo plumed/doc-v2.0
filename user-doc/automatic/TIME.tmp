@@ -1,0 +1,13 @@
+/**
+\page TIME TIME
+retrieve the time of the simulation to be used elsewere
+
+\par Examples
+
+\verbatim
+TIME            LABEL=t1
+PRINT ARG=t1
+\endverbatim
+(See also \ref PRINT).
+
+*/

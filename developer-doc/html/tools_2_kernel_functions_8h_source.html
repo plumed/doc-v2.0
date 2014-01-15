@@ -1,0 +1,238 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/KernelFunctions.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">KernelFunctions.h</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_kernel_functions_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_tools_KernelFunctions_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_tools_KernelFunctions_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_tools_8h.html">Tools.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_matrix_8h.html">Matrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;core/Value.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_kernel_functions.html">KernelFunctions</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/// Is the metric matrix diagonal</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html#a19a737af55689697aee9dbc9f4206565">   35</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a19a737af55689697aee9dbc9f4206565">diagonal</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/// What type of kernel are we using</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaa669933622477332169edc84687db3266">   37</a></span>&#160;<span class="comment"></span>  <span class="keyword">enum</span> {<a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaae610fc9a544dc1aa010143877c50d61e">gaussian</a>,<a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaa669933622477332169edc84687db3266">uniform</a>,<a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaaa77f5ae1a0e8e48e737e4b50c5327800">triangular</a>} <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a92f566ef3a7d8b90495ed44a022317a5">ktype</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/// The center of the kernel function</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html#a779ad28a3c65059934754dc0b2e8163b">   39</a></span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a779ad28a3c65059934754dc0b2e8163b">center</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/// The width of the kernel</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html#a0da3ccb5a7bbae0acbb5fcf25ca6a0c3">   41</a></span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a0da3ccb5a7bbae0acbb5fcf25ca6a0c3">width</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/// The height of the kernel</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html#a5eb62b270620cfe046eb89461585a444">   43</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a5eb62b270620cfe046eb89461585a444">height</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/// Convert the width into matrix form</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a70d939367a9a1521c17b7b54c1555b95">getMatrix</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/// Get the cutoff for a kernel</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a4af7c57ec74bcca7fd7d113ec6dabbc1">getCutoff</a>( <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a0da3ccb5a7bbae0acbb5fcf25ca6a0c3">width</a> ) <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#aa503edc5eb4193ae1562024bb111ef4b">KernelFunctions</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; at, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; sig, <span class="keyword">const</span> std::string&amp; type, <span class="keyword">const</span> <span class="keywordtype">bool</span> multivariate ,<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; <a class="code" href="tools_2_matrix_8h.html#aa3aae573c2ea5a540ba27e4ae356c3dd">w</a>, <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d.html#acaf5c28c95cf6a02daefd7297cf56b60">norm</a> );<span class="comment"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/// Get the dimensionality of the kernel</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a9a445b2806d025eb0c5c388503205e72">ndim</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/// Get the position of the center </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#aafd748823cf3610db5a320a2595cecf1">getCenter</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/// Get the support</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span>  std::vector&lt;unsigned&gt; <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#aa3cf162d39965fdac203421a5240df59">getSupport</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; dx ) <span class="keyword">const</span>; <span class="comment"></span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/// get it in continuous form</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a555637abb6346b054b18d1d5de8e4e0d">getContinuousSupport</a>( ) <span class="keyword">const</span>; <span class="comment"></span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/// Evaluate the kernel function  </span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a970dd0793e5a76bab32bb7c968cf3f90">evaluate</a>( <span class="keyword">const</span> std::vector&lt;Value*&gt;&amp; pos, std::vector&lt;double&gt;&amp; derivatives, <span class="keywordtype">bool</span> usederiv=<span class="keyword">true</span> ) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/// Read a kernel function from a file</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span>  <span class="keyword">static</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html">KernelFunctions</a>* <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#ae9823b6170498f09aa926eb8256c93a7">read</a>( <a class="code" href="class_p_l_m_d_1_1_i_file.html">IFile</a>* ifile, <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; valnames );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html#a70d939367a9a1521c17b7b54c1555b95">   65</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a70d939367a9a1521c17b7b54c1555b95">KernelFunctions::getMatrix</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">unsigned</span> k=0, ncv=<a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a9a445b2806d025eb0c5c388503205e72">ndim</a>(); <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> mymatrix(ncv,ncv); </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;ncv;i++){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=i;j&lt;ncv;j++){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        mymatrix(i,j)=mymatrix(j,i)=<a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a0da3ccb5a7bbae0acbb5fcf25ca6a0c3">width</a>[k]; <span class="comment">// recompose the full inverse matrix</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        k++;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">return</span> mymatrix;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html#a9a445b2806d025eb0c5c388503205e72">   77</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a9a445b2806d025eb0c5c388503205e72">KernelFunctions::ndim</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a779ad28a3c65059934754dc0b2e8163b">center</a>.size();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kernel_functions.html#aafd748823cf3610db5a320a2595cecf1">   82</a></span>&#160;std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#aafd748823cf3610db5a320a2595cecf1">KernelFunctions::getCenter</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html#a779ad28a3c65059934754dc0b2e8163b">center</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a8164ce2237e8a7a019836d3237231dbaa669933622477332169edc84687db3266"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaa669933622477332169edc84687db3266">PLMD::KernelFunctions::uniform</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00037">KernelFunctions.h:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_aa3cf162d39965fdac203421a5240df59"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#aa3cf162d39965fdac203421a5240df59">PLMD::KernelFunctions::getSupport</a></div><div class="ttdeci">std::vector&lt; unsigned &gt; getSupport(const std::vector&lt; double &gt; &amp;dx) const </div><div class="ttdoc">Get the support. </div><div class="ttdef"><b>Definition:</b> <a href="_kernel_functions_8cpp_source.html#l00173">KernelFunctions.cpp:173</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_aafd748823cf3610db5a320a2595cecf1"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#aafd748823cf3610db5a320a2595cecf1">PLMD::KernelFunctions::getCenter</a></div><div class="ttdeci">std::vector&lt; double &gt; getCenter() const </div><div class="ttdoc">Get the position of the center. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00082">KernelFunctions.h:82</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_ae9823b6170498f09aa926eb8256c93a7"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#ae9823b6170498f09aa926eb8256c93a7">PLMD::KernelFunctions::read</a></div><div class="ttdeci">static KernelFunctions * read(IFile *ifile, const std::vector&lt; std::string &gt; &amp;valnames)</div><div class="ttdoc">Read a kernel function from a file. </div><div class="ttdef"><b>Definition:</b> <a href="_kernel_functions_8cpp_source.html#l00232">KernelFunctions.cpp:232</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a970dd0793e5a76bab32bb7c968cf3f90"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a970dd0793e5a76bab32bb7c968cf3f90">PLMD::KernelFunctions::evaluate</a></div><div class="ttdeci">double evaluate(const std::vector&lt; Value * &gt; &amp;pos, std::vector&lt; double &gt; &amp;derivatives, bool usederiv=true) const </div><div class="ttdoc">Evaluate the kernel function. </div><div class="ttdef"><b>Definition:</b> <a href="_kernel_functions_8cpp_source.html#l00181">KernelFunctions.cpp:181</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a5eb62b270620cfe046eb89461585a444"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a5eb62b270620cfe046eb89461585a444">PLMD::KernelFunctions::height</a></div><div class="ttdeci">double height</div><div class="ttdoc">The height of the kernel. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00043">KernelFunctions.h:43</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a70d939367a9a1521c17b7b54c1555b95"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a70d939367a9a1521c17b7b54c1555b95">PLMD::KernelFunctions::getMatrix</a></div><div class="ttdeci">Matrix&lt; double &gt; getMatrix() const </div><div class="ttdoc">Convert the width into matrix form. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00065">KernelFunctions.h:65</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html"><div class="ttname"><a href="tools_2_matrix_8h.html">Matrix.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a4af7c57ec74bcca7fd7d113ec6dabbc1"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a4af7c57ec74bcca7fd7d113ec6dabbc1">PLMD::KernelFunctions::getCutoff</a></div><div class="ttdeci">double getCutoff(const double &amp;width) const </div><div class="ttdoc">Get the cutoff for a kernel. </div><div class="ttdef"><b>Definition:</b> <a href="_kernel_functions_8cpp_source.html#l00141">KernelFunctions.cpp:141</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a555637abb6346b054b18d1d5de8e4e0d"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a555637abb6346b054b18d1d5de8e4e0d">PLMD::KernelFunctions::getContinuousSupport</a></div><div class="ttdeci">std::vector&lt; double &gt; getContinuousSupport() const </div><div class="ttdoc">get it in continuous form </div><div class="ttdef"><b>Definition:</b> <a href="_kernel_functions_8cpp_source.html#l00150">KernelFunctions.cpp:150</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html">PLMD::KernelFunctions</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00032">KernelFunctions.h:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a8164ce2237e8a7a019836d3237231dbaaa77f5ae1a0e8e48e737e4b50c5327800"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaaa77f5ae1a0e8e48e737e4b50c5327800">PLMD::KernelFunctions::triangular</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00037">KernelFunctions.h:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a9a445b2806d025eb0c5c388503205e72"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a9a445b2806d025eb0c5c388503205e72">PLMD::KernelFunctions::ndim</a></div><div class="ttdeci">unsigned ndim() const </div><div class="ttdoc">Get the dimensionality of the kernel. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00077">KernelFunctions.h:77</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a779ad28a3c65059934754dc0b2e8163b"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a779ad28a3c65059934754dc0b2e8163b">PLMD::KernelFunctions::center</a></div><div class="ttdeci">std::vector&lt; double &gt; center</div><div class="ttdoc">The center of the kernel function. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00039">KernelFunctions.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a92f566ef3a7d8b90495ed44a022317a5"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a92f566ef3a7d8b90495ed44a022317a5">PLMD::KernelFunctions::ktype</a></div><div class="ttdeci">enum PLMD::KernelFunctions::@4 ktype</div><div class="ttdoc">What type of kernel are we using. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a0da3ccb5a7bbae0acbb5fcf25ca6a0c3"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a0da3ccb5a7bbae0acbb5fcf25ca6a0c3">PLMD::KernelFunctions::width</a></div><div class="ttdeci">std::vector&lt; double &gt; width</div><div class="ttdoc">The width of the kernel. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00041">KernelFunctions.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_file_html"><div class="ttname"><a href="class_p_l_m_d_1_1_i_file.html">PLMD::IFile</a></div><div class="ttdoc">Class for input files. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_i_file_8h_source.html#l00040">IFile.h:40</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_aa3aae573c2ea5a540ba27e4ae356c3dd"><div class="ttname"><a href="tools_2_matrix_8h.html#aa3aae573c2ea5a540ba27e4ae356c3dd">w</a></div><div class="ttdeci">void const char const char int double int double double int int double int double * w</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a19a737af55689697aee9dbc9f4206565"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a19a737af55689697aee9dbc9f4206565">PLMD::KernelFunctions::diagonal</a></div><div class="ttdeci">bool diagonal</div><div class="ttdoc">Is the metric matrix diagonal. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00035">KernelFunctions.h:35</a></div></div>
+<div class="ttc" id="tools_2_tools_8h_html"><div class="ttname"><a href="tools_2_tools_8h.html">Tools.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_a8164ce2237e8a7a019836d3237231dbaae610fc9a544dc1aa010143877c50d61e"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaae610fc9a544dc1aa010143877c50d61e">PLMD::KernelFunctions::gaussian</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00037">KernelFunctions.h:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_aa503edc5eb4193ae1562024bb111ef4b"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#aa503edc5eb4193ae1562024bb111ef4b">PLMD::KernelFunctions::KernelFunctions</a></div><div class="ttdeci">KernelFunctions(const std::vector&lt; double &gt; &amp;at, const std::vector&lt; double &gt; &amp;sig, const std::string &amp;type, const bool multivariate, const double &amp;w, const bool norm)</div><div class="ttdef"><b>Definition:</b> <a href="_kernel_functions_8cpp_source.html#l00089">KernelFunctions.cpp:89</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_matrix_html"><div class="ttname"><a href="class_p_l_m_d_1_1_matrix.html">PLMD::Matrix&lt; double &gt;</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_acaf5c28c95cf6a02daefd7297cf56b60"><div class="ttname"><a href="namespace_p_l_m_d.html#acaf5c28c95cf6a02daefd7297cf56b60">PLMD::norm</a></div><div class="ttdeci">T norm(const std::vector&lt; T &gt; &amp;A)</div><div class="ttdoc">Calculate the dot product between a vector and itself. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00061">Matrix.h:61</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

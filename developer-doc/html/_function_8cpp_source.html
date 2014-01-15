@@ -1,0 +1,235 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: function/Function.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_640e9702c32703bc504777ae0c1029cd.html">function</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Function.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_function_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_function_8h.html">Function.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>function{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1function_1_1_function.html#a6b849f0185ccfc1308bd44e3215367d5">   28</a></span>&#160;<span class="keywordtype">void</span> Function::registerKeywords(<a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  Action::registerKeywords(keys);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ActionWithValue::registerKeywords(keys);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  ActionWithArguments::registerKeywords(keys);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  keys.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a77adffbdd8ab26b3df57a5fffcab436b">reserve</a>(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;PERIODIC&quot;</span>,<span class="stringliteral">&quot;if the output of your function is periodic then you should specify the periodicity of the function.  If the output is not periodic you must state this using PERIODIC=NO&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1function_1_1_function.html#a5b0cca2fc8bb9b2032f0045c154145e1">   35</a></span>&#160;Function::Function(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;ao):</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="class_p_l_m_d_1_1_action.html">Action</a>(ao),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html">ActionWithValue</a>(ao),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html">ActionWithArguments</a>(ao)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1function_1_1_function.html#adaa5c81859598607c2da4f8d308a3d58">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1function_1_1_function.html#adaa5c81859598607c2da4f8d308a3d58">Function::addValueWithDerivatives</a>(){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  plumed_massert( <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>()!=0, <span class="stringliteral">&quot;for functions you must requestArguments before adding values&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a21d7521c7a5da4065b67904c809067b7">ActionWithValue::addValueWithDerivatives</a>();  </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a6bb81817872d9bd5a0553cddd56a6216">getPntrToValue</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#afde67f240884ada9b4cb2338589bca4f">resizeDerivatives</a>(<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1_action.html#a6e538d1551222af05fe56ea52c3ca4b8">keywords</a>.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a299bd9376569bf5f40ba0b3067f7fa8f">exists</a>(<span class="stringliteral">&quot;PERIODIC&quot;</span>) ){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     std::vector&lt;std::string&gt; period;  </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;     <a class="code" href="class_p_l_m_d_1_1_action.html#a31b0be7c8476c86e53f3f784dec1a66f">parseVector</a>(<span class="stringliteral">&quot;PERIODIC&quot;</span>,period);  </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     <span class="keywordflow">if</span>(period.size()==1 &amp;&amp; period[0]==<span class="stringliteral">&quot;NO&quot;</span>){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a8eb10877f2789470a248586484fca62c">setNotPeriodic</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(period.size()==2){</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a5c87fea4d9a3400c843e9d95dfbb8ad4">setPeriodic</a>(period[0],period[1]);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;     } <span class="keywordflow">else</span> <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;missing PERIODIC keyword&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;} </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1function_1_1_function.html#acfaa97be790451ba1e9aa67edc3fc121">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1function_1_1_function.html#acfaa97be790451ba1e9aa67edc3fc121">Function::addComponentWithDerivatives</a>( <span class="keyword">const</span> std::string&amp; name ){</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  plumed_massert( <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>()!=0, <span class="stringliteral">&quot;for functions you must requestArguments before adding values&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#ac10df9db81c4b5e341d133a58e4c84c4">ActionWithValue::addComponentWithDerivatives</a>(name);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a941067e77f2e85df09ef69c65dede725">getPntrToComponent</a>(name)-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#afde67f240884ada9b4cb2338589bca4f">resizeDerivatives</a>(<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1function_1_1_function.html#ac4824c358cb1df5f1c85660bc458201c">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1function_1_1_function.html#ac4824c358cb1df5f1c85660bc458201c">Function::apply</a>(){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  vector&lt;double&gt;   f(<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>(),0.0);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span> at_least_one_forced=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::vector&lt;double&gt; forces( <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>() );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a95602d9f365abac60b0165dc63bf778b">getNumberOfComponents</a>();++i){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a941067e77f2e85df09ef69c65dede725">getPntrToComponent</a>(i)-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#a0c35d44ce93cb194dc1dc4369b988b50">applyForce</a>( forces ) ){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;       at_least_one_forced=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;       <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;forces.size();j++){ f[j]+=forces[j]; }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">if</span>(at_least_one_forced) <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>();++i){</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a2b59e207640fc3a6389bac25867673fe">getPntrToArgument</a>(i)-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#a4e687a47ad892c90e5317a6caf49b9a4">addForce</a>(f[i]);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html_a4e687a47ad892c90e5317a6caf49b9a4"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html#a4e687a47ad892c90e5317a6caf49b9a4">PLMD::Value::addForce</a></div><div class="ttdeci">void addForce(double f)</div><div class="ttdoc">Add some force on this value. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00247">Value.h:247</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a8eb10877f2789470a248586484fca62c"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a8eb10877f2789470a248586484fca62c">PLMD::ActionWithValue::setNotPeriodic</a></div><div class="ttdeci">void setNotPeriodic()</div><div class="ttdoc">Set your default value to have no periodicity. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00090">ActionWithValue.cpp:90</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html_a0c35d44ce93cb194dc1dc4369b988b50"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html#a0c35d44ce93cb194dc1dc4369b988b50">PLMD::Value::applyForce</a></div><div class="ttdeci">bool applyForce(std::vector&lt; double &gt; &amp;forces) const </div><div class="ttdoc">Apply the forces to the derivatives using the chain rule (if there are no forces this routine returns...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8cpp_source.html#l00080">Value.cpp:80</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a94c1c30fbc92747b8828aa6f1e3d207d"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">PLMD::Action::error</a></div><div class="ttdeci">void error(const std::string &amp;msg) const </div><div class="ttdoc">Crash calculation and print documentation. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00195">Action.cpp:195</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a6bb81817872d9bd5a0553cddd56a6216"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a6bb81817872d9bd5a0553cddd56a6216">PLMD::ActionWithValue::getPntrToValue</a></div><div class="ttdeci">Value * getPntrToValue()</div><div class="ttdoc">Get a pointer to the default value. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00103">ActionWithValue.cpp:103</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a2b59e207640fc3a6389bac25867673fe"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a2b59e207640fc3a6389bac25867673fe">PLMD::ActionWithArguments::getPntrToArgument</a></div><div class="ttdeci">Value * getPntrToArgument(const unsigned n)</div><div class="ttdoc">Return a pointer to specific argument. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00088">ActionWithArguments.h:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a21d7521c7a5da4065b67904c809067b7"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a21d7521c7a5da4065b67904c809067b7">PLMD::ActionWithValue::addValueWithDerivatives</a></div><div class="ttdeci">void addValueWithDerivatives()</div><div class="ttdoc">Add a value with the name label that has derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00085">ActionWithValue.cpp:85</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html">PLMD::ActionWithArguments</a></div><div class="ttdoc">This is used to create PLMD::Action objects that take the output from some other Action as input...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00042">ActionWithArguments.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html">PLMD::ActionWithValue</a></div><div class="ttdoc">Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00065">ActionWithValue.h:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1function_1_1_function_html_acfaa97be790451ba1e9aa67edc3fc121"><div class="ttname"><a href="class_p_l_m_d_1_1function_1_1_function.html#acfaa97be790451ba1e9aa67edc3fc121">PLMD::function::Function::addComponentWithDerivatives</a></div><div class="ttdeci">void addComponentWithDerivatives(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_function_8cpp_source.html#l00058">Function.cpp:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a5c87fea4d9a3400c843e9d95dfbb8ad4"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a5c87fea4d9a3400c843e9d95dfbb8ad4">PLMD::ActionWithValue::setPeriodic</a></div><div class="ttdeci">void setPeriodic(const std::string &amp;min, const std::string &amp;max)</div><div class="ttdoc">Set the value to be periodic with a particular domain. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00097">ActionWithValue.cpp:97</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html">PLMD::Action</a></div><div class="ttdoc">Base class for all the input Actions. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00060">Action.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a31b0be7c8476c86e53f3f784dec1a66f"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a31b0be7c8476c86e53f3f784dec1a66f">PLMD::Action::parseVector</a></div><div class="ttdeci">void parseVector(const std::string &amp;key, std::vector&lt; T &gt; &amp;t)</div><div class="ttdoc">Parse one keyword as std::vector. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00311">Action.h:311</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html_afde67f240884ada9b4cb2338589bca4f"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html#afde67f240884ada9b4cb2338589bca4f">PLMD::Value::resizeDerivatives</a></div><div class="ttdeci">void resizeDerivatives(int n)</div><div class="ttdoc">Set the number of derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00218">Value.h:218</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_a77adffbdd8ab26b3df57a5fffcab436b"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#a77adffbdd8ab26b3df57a5fffcab436b">PLMD::Keywords::reserve</a></div><div class="ttdeci">void reserve(const std::string &amp;t, const std::string &amp;k, const std::string &amp;d, const bool isvessel=false)</div><div class="ttdoc">Reserve a keyword. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00100">Keywords.cpp:100</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1function_1_1_function_html_ac4824c358cb1df5f1c85660bc458201c"><div class="ttname"><a href="class_p_l_m_d_1_1function_1_1_function.html#ac4824c358cb1df5f1c85660bc458201c">PLMD::function::Function::apply</a></div><div class="ttdeci">void apply()</div><div class="ttdoc">Apply an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_function_8cpp_source.html#l00064">Function.cpp:64</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1function_1_1_function_html_adaa5c81859598607c2da4f8d308a3d58"><div class="ttname"><a href="class_p_l_m_d_1_1function_1_1_function.html#adaa5c81859598607c2da4f8d308a3d58">PLMD::function::Function::addValueWithDerivatives</a></div><div class="ttdeci">void addValueWithDerivatives()</div><div class="ttdef"><b>Definition:</b> <a href="_function_8cpp_source.html#l00042">Function.cpp:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_a299bd9376569bf5f40ba0b3067f7fa8f"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#a299bd9376569bf5f40ba0b3067f7fa8f">PLMD::Keywords::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;k) const </div><div class="ttdoc">Check if there is a keyword with name k. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00229">Keywords.cpp:229</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_ac10df9db81c4b5e341d133a58e4c84c4"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#ac10df9db81c4b5e341d133a58e4c84c4">PLMD::ActionWithValue::addComponentWithDerivatives</a></div><div class="ttdeci">void addComponentWithDerivatives(const std::string &amp;name)</div><div class="ttdoc">Add a value with a name like label.name that has derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00122">ActionWithValue.cpp:122</a></div></div>
+<div class="ttc" id="_function_8h_html"><div class="ttname"><a href="_function_8h.html">Function.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a95602d9f365abac60b0165dc63bf778b"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a95602d9f365abac60b0165dc63bf778b">PLMD::ActionWithValue::getNumberOfComponents</a></div><div class="ttdeci">int getNumberOfComponents() const </div><div class="ttdoc">Returns the number of values defined. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00186">ActionWithValue.h:186</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a941067e77f2e85df09ef69c65dede725"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a941067e77f2e85df09ef69c65dede725">PLMD::ActionWithValue::getPntrToComponent</a></div><div class="ttdeci">Value * getPntrToComponent(int i)</div><div class="ttdoc">Return a pointer to the component by index. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00183">ActionWithValue.cpp:183</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_ac759d81efea580cc19220472484bda0d"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">PLMD::ActionWithArguments::getNumberOfArguments</a></div><div class="ttdeci">unsigned getNumberOfArguments() const </div><div class="ttdoc">Returns the number of arguments. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00098">ActionWithArguments.h:98</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a6e538d1551222af05fe56ea52c3ca4b8"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a6e538d1551222af05fe56ea52c3ca4b8">PLMD::Action::keywords</a></div><div class="ttdeci">const Keywords &amp; keywords</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00161">Action.h:161</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

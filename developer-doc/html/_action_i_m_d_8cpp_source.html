@@ -1,0 +1,454 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: imd/ActionIMD.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_624d1c9cdc63eb9b6ea2f02b0fc798b7.html">imd</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">ActionIMD.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_action_i_m_d_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../core/ActionRegister.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../core/ActionAtomistic.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../core/ActionPilot.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../core/PlumedMain.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;../core/Atoms.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../tools/Exception.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;vmdsock.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;imd.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//+PLUMEDOC GENERIC IMD</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">Use interactive molecular dynamics with VMD</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">\par Examples</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">\verbatim</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"># listen to port 1112 of localhost</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">IMD PORT=1112</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">\endverbatim</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">\verbatim</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"># listen to port 1112 of pippo</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">IMD HOST=pippo PORT=1112</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">\endverbatim</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">\verbatim</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"># listen to port 1112 of localhost and run only when connected</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">IMD PORT=1112 WAIT</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">\endverbatim</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">\attention</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">The IMB object only works if the IMD routines have been downloaded</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">and properly linked with PLUMED</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//+ENDPLUMEDOC</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html">   64</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_i_m_d.html">IMD</a> :</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html">ActionAtomistic</a>,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_pilot.html">ActionPilot</a></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  {</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#ad573bd38e14cbf9e53f88dceb029a856">   68</a></span>&#160;  std::string <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad573bd38e14cbf9e53f88dceb029a856">host</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#adeae0d00a28b294e5a1c1227e9288d7c">   69</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adeae0d00a28b294e5a1c1227e9288d7c">port</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#aa8981449309270634032cd77363c953d">   70</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8981449309270634032cd77363c953d">wait</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#adc56b611acd2c03e46830f936b6eb92b">   71</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adc56b611acd2c03e46830f936b6eb92b">wrap</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#ad18cea044d10cb54505961c0ef69c0ea">   72</a></span>&#160;  <span class="keywordtype">void</span>* <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad18cea044d10cb54505961c0ef69c0ea">sock</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">   73</a></span>&#160;  <span class="keywordtype">void</span>* <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">   74</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">connected</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#af0f7877bc79bbeeefb08abf2e4507db9">   75</a></span>&#160;  std::vector&lt;float&gt; <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#af0f7877bc79bbeeefb08abf2e4507db9">coord</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">   76</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#a584532f481d051b10d147a8d20db8106">   77</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a584532f481d051b10d147a8d20db8106">natoms</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#a82fe2bdbe7bad1a229083ed6fc9265d1">   78</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a82fe2bdbe7bad1a229083ed6fc9265d1">transferRate</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#ab81fdc51d43c0a0220e9199b97ada6f1">   79</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ab81fdc51d43c0a0220e9199b97ada6f1">fscale</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ac179221ede79ff4f727d5e5b9eb824a7">connect</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8d328afd08c550a3c7b49a4cbf263d0">receive</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a0a75f6ca0c00088767d9850eb58fc566">sendCoordinates</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a83d1f63b0c3e90833ed6da7ef9eb51fa">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aef0611fe402608aea4ae5c5c5c3de32a">calculate</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a1791a7d91948f37bcd9edbb68a78767c">apply</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a1f24fa1632acb69c1059633b3d947274">IMD</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#aabc6a96c7686df0a9387568a73717c2c">   88</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aabc6a96c7686df0a9387568a73717c2c">~IMD</a>(){};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;PLUMED_REGISTER_ACTION(IMD,<span class="stringliteral">&quot;IMD&quot;</span>)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#a83d1f63b0c3e90833ed6da7ef9eb51fa">   93</a></span>&#160;void <a class="code" href="class_p_l_m_d_1_1_i_m_d.html">IMD</a>::registerKeywords( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  keys.addFlag(<span class="stringliteral">&quot;WAIT&quot;</span>,<span class="keyword">false</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  keys.addFlag(<span class="stringliteral">&quot;NOWAIT&quot;</span>,<span class="keyword">true</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  keys.addFlag(<span class="stringliteral">&quot;WRAP&quot;</span>,<span class="keyword">false</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;HOST&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;PORT&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;FSCALE&quot;</span>,<span class="stringliteral">&quot;1.0&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#a1f24fa1632acb69c1059633b3d947274">  102</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a1f24fa1632acb69c1059633b3d947274">IMD::IMD</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp; ao):</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html">Action</a>(ao),</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html">ActionAtomistic</a>(ao),</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_pilot.html">ActionPilot</a>(ao),</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  host(<span class="stringliteral">&quot;localhost&quot;</span>),</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  port(0),</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  wait(false),</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  wrap(false),</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  sock(NULL),</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  clientsock(NULL),</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  connected(false),</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  transferRate(100),</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  fscale(1.0)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a584532f481d051b10d147a8d20db8106">natoms</a>=<a class="code" href="structplumed.html">plumed</a>.getAtoms().getNatoms();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  std::vector&lt;AtomNumber&gt; index(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a584532f481d051b10d147a8d20db8106">natoms</a>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a584532f481d051b10d147a8d20db8106">natoms</a>;i++) index[i].setIndex(i);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a8e22ca9206b39a18ceeaea66e26c2690">requestAtoms</a>(index);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#af0f7877bc79bbeeefb08abf2e4507db9">coord</a>.resize(natoms*3,<span class="keywordtype">float</span>(0.0));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>.resize(natoms*3,0.0);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">parseFlag</a>(<span class="stringliteral">&quot;WAIT&quot;</span>,<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8981449309270634032cd77363c953d">wait</a>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">bool</span> nowait=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">parseFlag</a>(<span class="stringliteral">&quot;NOWAIT&quot;</span>,nowait);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">if</span>(nowait)<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8981449309270634032cd77363c953d">wait</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">parseFlag</a>(<span class="stringliteral">&quot;WRAP&quot;</span>,<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adc56b611acd2c03e46830f936b6eb92b">wrap</a>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;PORT&quot;</span>,<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adeae0d00a28b294e5a1c1227e9288d7c">port</a>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;HOST&quot;</span>,<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad573bd38e14cbf9e53f88dceb029a856">host</a>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;FSCALE&quot;</span>,<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ab81fdc51d43c0a0220e9199b97ada6f1">fscale</a>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">checkRead</a>();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  with host %s\n&quot;</span>,<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad573bd38e14cbf9e53f88dceb029a856">host</a>.c_str());</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  with port %d\n&quot;</span>,<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adeae0d00a28b294e5a1c1227e9288d7c">port</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8981449309270634032cd77363c953d">wait</a>) <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  waiting for a connection\n&quot;</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">else</span>     <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  not waiting for a connection\n&quot;</span>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adc56b611acd2c03e46830f936b6eb92b">wrap</a>) <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  wrapping atoms\n&quot;</span>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">else</span>     <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  not wrapping atoms\n&quot;</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  WMD forces will be scaled by %f\n&quot;</span>,<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ab81fdc51d43c0a0220e9199b97ada6f1">fscale</a>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a3d713a7ba1b12861a58d0ad34a1f4220">Get_rank</a>()==0){</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    vmdsock_init();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad18cea044d10cb54505961c0ef69c0ea">sock</a> = vmdsock_create();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    vmdsock_bind(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad18cea044d10cb54505961c0ef69c0ea">sock</a>, <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adeae0d00a28b294e5a1c1227e9288d7c">port</a>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    vmdsock_listen(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad18cea044d10cb54505961c0ef69c0ea">sock</a>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ac179221ede79ff4f727d5e5b9eb824a7">connect</a>();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#ac179221ede79ff4f727d5e5b9eb824a7">  153</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ac179221ede79ff4f727d5e5b9eb824a7">IMD::connect</a>(){</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a3d713a7ba1b12861a58d0ad34a1f4220">Get_rank</a>()==0) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8981449309270634032cd77363c953d">wait</a> &amp;&amp; <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>==NULL)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      fprintf(stderr,<span class="stringliteral">&quot;Waiting for IMD connection on %s:%d...\n&quot;</span>, <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad573bd38e14cbf9e53f88dceb029a856">host</a>.c_str(), <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adeae0d00a28b294e5a1c1227e9288d7c">port</a>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">do</span>{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <span class="keywordflow">if</span> (vmdsock_selread(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad18cea044d10cb54505961c0ef69c0ea">sock</a>,00) &gt; 0) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a> = vmdsock_accept(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ad18cea044d10cb54505961c0ef69c0ea">sock</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">if</span> (imd_handshake(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>)) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;          <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a> = NULL;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        };</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        sleep(1);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">int</span> length;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>){</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;          <span class="keywordflow">if</span> (vmdsock_selread(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>, 0) != 1 ||</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;              imd_recv_header(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>, &amp;length) != IMD_GO) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a> = NULL;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;          }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    } <span class="keywordflow">while</span>(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8981449309270634032cd77363c953d">wait</a> &amp;&amp; <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>==NULL);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">connected</a>=(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>!=NULL);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">int</span> c=<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">connected</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;c,1,0);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">int</span> c;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;c,1,0);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">connected</a>=c;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#aa8d328afd08c550a3c7b49a4cbf263d0">  183</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8d328afd08c550a3c7b49a4cbf263d0">IMD::receive</a>(){</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">connected</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>){</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    IMDType type;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">int</span> length;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">int</span> itype;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">while</span> (vmdsock_selread(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>,0) &gt; 0) {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      type = imd_recv_header(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>, &amp;length);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">if</span>(type==IMD_MDCOMM){</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        int32* vmd_atoms = <span class="keyword">new</span> int32[length];</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordtype">float</span>* vmd_forces = <span class="keyword">new</span> <span class="keywordtype">float</span>[3*length];</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        imd_recv_mdcomm(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>, length, vmd_atoms, vmd_forces);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;length;i++){</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[3*vmd_atoms[i]+0]=vmd_forces[3*i+0];</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;          <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[3*vmd_atoms[i]+1]=vmd_forces[3*i+1];</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;          <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[3*vmd_atoms[i]+2]=vmd_forces[3*i+2];</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keyword">delete</span> [] vmd_atoms;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keyword">delete</span> [] vmd_forces;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        itype=0;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;itype,1,0);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[0],<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>.size(),0);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(type==IMD_DISCONNECT){</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        vmdsock_destroy(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>=NULL;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>.size();i++) <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[i]=0.0;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">connected</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        itype=1;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;itype,1,0);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(type==IMD_TRATE){</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">if</span>(length&lt;1) length=1;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        itype=2;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;IMD: setting transfer rate to %d\n&quot;</span>,length);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a82fe2bdbe7bad1a229083ed6fc9265d1">transferRate</a>=length;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;itype,1,0);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a82fe2bdbe7bad1a229083ed6fc9265d1">transferRate</a>,1,0);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(type==IMD_KILL){</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;IMD: killing simulation\n&quot;</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        itype=3;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;itype,1,0);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <a class="code" href="structplumed.html">plumed</a>.exit();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    itype=-1;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;itype,1,0);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a3d713a7ba1b12861a58d0ad34a1f4220">Get_rank</a>()!=0){</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">int</span> itype;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;itype,1,0);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      <span class="keywordflow">if</span>(itype==-1)<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span>(itype==0) <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[0],<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>.size(),0);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span>(itype==1) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>.size();i++) <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[i]=0.0;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">connected</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span>(itype==2) <a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">Bcast</a>(&amp;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a82fe2bdbe7bad1a229083ed6fc9265d1">transferRate</a>,1,0);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span>(itype==3) <a class="code" href="structplumed.html">plumed</a>.exit();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="keywordflow">else</span> plumed_error();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#aef0611fe402608aea4ae5c5c5c3de32a">  251</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aef0611fe402608aea4ae5c5c5c3de32a">IMD::calculate</a>(){</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">comm</a>.<a class="code" href="class_p_l_m_d_1_1_communicator.html#a3d713a7ba1b12861a58d0ad34a1f4220">Get_rank</a>()==0 &amp;&amp; <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">connected</a> &amp;&amp; <a class="code" href="structplumed.html">plumed</a>.getStep()%<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a82fe2bdbe7bad1a229083ed6fc9265d1">transferRate</a>==0 &amp;&amp; vmdsock_selwrite(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>,0)) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">double</span> scale=10.0*<a class="code" href="structplumed.html">plumed</a>.getAtoms().getUnits().getLength();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> ref;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a584532f481d051b10d147a8d20db8106">natoms</a>;i++){</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> pos=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(i);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#adc56b611acd2c03e46830f936b6eb92b">wrap</a>) pos=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a35a986326d36a7925a91d091f7a01f4a">pbcDistance</a>(ref,pos);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#af0f7877bc79bbeeefb08abf2e4507db9">coord</a>[3*i+0]=<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>((pos[0]*scale));</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#af0f7877bc79bbeeefb08abf2e4507db9">coord</a>[3*i+1]=<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>((pos[1]*scale));</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#af0f7877bc79bbeeefb08abf2e4507db9">coord</a>[3*i+2]=<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>((pos[2]*scale));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    imd_send_fcoords(<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">clientsock</a>,natoms,&amp;<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#af0f7877bc79bbeeefb08abf2e4507db9">coord</a>[0]);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_i_m_d.html#a1791a7d91948f37bcd9edbb68a78767c">  266</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#a1791a7d91948f37bcd9edbb68a78767c">IMD::apply</a>(){</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  std::vector&lt;Vector&gt; &amp; f(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a1fef9f9846aea50ef541cf149582611f">modifyForces</a>());</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;   </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> scale=4.184/<a class="code" href="structplumed.html">plumed</a>.getAtoms().getUnits().getEnergy()</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;             /(0.1/<a class="code" href="structplumed.html">plumed</a>.getAtoms().getUnits().getLength())*<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ab81fdc51d43c0a0220e9199b97ada6f1">fscale</a>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;   </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;f.size();i++){</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    f[i][0]=<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[3*i+0]*<a class="code" href="class_p_l_m_d_1_1_action_pilot.html#a2b81e2d55b02ed1cf95f610feff08d8f">getStride</a>()*scale;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    f[i][1]=<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[3*i+1]*<a class="code" href="class_p_l_m_d_1_1_action_pilot.html#a2b81e2d55b02ed1cf95f610feff08d8f">getStride</a>()*scale;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    f[i][2]=<a class="code" href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">forces</a>[3*i+2]*<a class="code" href="class_p_l_m_d_1_1_action_pilot.html#a2b81e2d55b02ed1cf95f610feff08d8f">getStride</a>()*scale;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#ac179221ede79ff4f727d5e5b9eb824a7">connect</a>();</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_i_m_d.html#aa8d328afd08c550a3c7b49a4cbf263d0">receive</a>();</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_ad5680e139003df022ce068a967a8bd2b"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">PLMD::ActionAtomistic::getPosition</a></div><div class="ttdeci">const Vector &amp; getPosition(int) const </div><div class="ttdoc">Get position of i-th atom. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00132">ActionAtomistic.h:132</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a5540be9c95bc8bf9f1ec567c047afddb"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">PLMD::Action::parseFlag</a></div><div class="ttdeci">void parseFlag(const std::string &amp;key, bool &amp;t)</div><div class="ttdoc">Parse one keyword as boolean flag. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00104">Action.cpp:104</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a31215215cfe4b1078c8f566688964346"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">PLMD::Action::log</a></div><div class="ttdeci">Log &amp; log</div><div class="ttdoc">Reference to the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00093">Action.h:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_af0f7877bc79bbeeefb08abf2e4507db9"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#af0f7877bc79bbeeefb08abf2e4507db9">PLMD::IMD::coord</a></div><div class="ttdeci">std::vector&lt; float &gt; coord</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00075">ActionIMD.cpp:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_pilot_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_pilot.html">PLMD::ActionPilot</a></div><div class="ttdoc">This is used to create PLMD::Action objects that are run with some set frequency. ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_pilot_8h_source.html#l00039">ActionPilot.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_aef0611fe402608aea4ae5c5c5c3de32a"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#aef0611fe402608aea4ae5c5c5c3de32a">PLMD::IMD::calculate</a></div><div class="ttdeci">void calculate()</div><div class="ttdoc">Calculate an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00251">ActionIMD.cpp:251</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_aabc6a96c7686df0a9387568a73717c2c"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#aabc6a96c7686df0a9387568a73717c2c">PLMD::IMD::~IMD</a></div><div class="ttdeci">~IMD()</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00088">ActionIMD.cpp:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_a1f24fa1632acb69c1059633b3d947274"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#a1f24fa1632acb69c1059633b3d947274">PLMD::IMD::IMD</a></div><div class="ttdeci">IMD(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00102">ActionIMD.cpp:102</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_communicator_html_a923e4dfe806b69b0b2e0677cff7b408a"><div class="ttname"><a href="class_p_l_m_d_1_1_communicator.html#a923e4dfe806b69b0b2e0677cff7b408a">PLMD::Communicator::Bcast</a></div><div class="ttdeci">void Bcast(T *, int, int)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_communicator_8h_source.html#l00134">Communicator.h:134</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_adeae0d00a28b294e5a1c1227e9288d7c"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#adeae0d00a28b294e5a1c1227e9288d7c">PLMD::IMD::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00069">ActionIMD.cpp:69</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_a1791a7d91948f37bcd9edbb68a78767c"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#a1791a7d91948f37bcd9edbb68a78767c">PLMD::IMD::apply</a></div><div class="ttdeci">void apply()</div><div class="ttdoc">Apply an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00266">ActionIMD.cpp:266</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a8ffc4538dce6f51e1505a0a300d204e2"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">PLMD::Action::checkRead</a></div><div class="ttdeci">void checkRead()</div><div class="ttdoc">Check if Action was properly read. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00161">Action.cpp:161</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a7c787b25470ea3699f4c262c37225c83"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83">PLMD::Action::comm</a></div><div class="ttdeci">Communicator &amp; comm</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00158">Action.h:158</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_adc56b611acd2c03e46830f936b6eb92b"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#adc56b611acd2c03e46830f936b6eb92b">PLMD::IMD::wrap</a></div><div class="ttdeci">bool wrap</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00071">ActionIMD.cpp:71</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html">PLMD::IMD</a></div><div class="ttdoc">Provides the keyword IMD  </div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00064">ActionIMD.cpp:64</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_pilot_html_a2b81e2d55b02ed1cf95f610feff08d8f"><div class="ttname"><a href="class_p_l_m_d_1_1_action_pilot.html#a2b81e2d55b02ed1cf95f610feff08d8f">PLMD::ActionPilot::getStride</a></div><div class="ttdeci">int getStride() const </div><div class="ttdef"><b>Definition:</b> <a href="_action_pilot_8cpp_source.html#l00042">ActionPilot.cpp:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_ae0c8ed07593b5e242e34b32e0edc3a12"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">PLMD::Action::parse</a></div><div class="ttdeci">void parse(const std::string &amp;key, T &amp;t)</div><div class="ttdoc">Parse one keyword as generic type. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00273">Action.h:273</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_acaa9ecefce05186cecf94f435a7cc3c2"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#acaa9ecefce05186cecf94f435a7cc3c2">PLMD::IMD::forces</a></div><div class="ttdeci">std::vector&lt; double &gt; forces</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00076">ActionIMD.cpp:76</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_communicator_html_a3d713a7ba1b12861a58d0ad34a1f4220"><div class="ttname"><a href="class_p_l_m_d_1_1_communicator.html#a3d713a7ba1b12861a58d0ad34a1f4220">PLMD::Communicator::Get_rank</a></div><div class="ttdeci">int Get_rank() const </div><div class="ttdoc">Obtain the rank of the present process. </div><div class="ttdef"><b>Definition:</b> <a href="_communicator_8cpp_source.html#l00048">Communicator.cpp:48</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html">PLMD::ActionAtomistic</a></div><div class="ttdoc">Action used to create objects that access the positions of the atoms from the MD code. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00038">ActionAtomistic.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_a584532f481d051b10d147a8d20db8106"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#a584532f481d051b10d147a8d20db8106">PLMD::IMD::natoms</a></div><div class="ttdeci">int natoms</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00077">ActionIMD.cpp:77</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_o_file_html_a1ad29d0ba5b7ceb7c1949f33c6ccd29f"><div class="ttname"><a href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">PLMD::OFile::printf</a></div><div class="ttdeci">int printf(const char *fmt,...)</div><div class="ttdoc">Formatted output with explicit format - a la printf. </div><div class="ttdef"><b>Definition:</b> <a href="_o_file_8cpp_source.html#l00082">OFile.cpp:82</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_a6bfe255278829fa88ac536d1459213a7"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#a6bfe255278829fa88ac536d1459213a7">PLMD::IMD::clientsock</a></div><div class="ttdeci">void * clientsock</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00073">ActionIMD.cpp:73</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html">PLMD::Action</a></div><div class="ttdoc">Base class for all the input Actions. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00060">Action.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_ad18cea044d10cb54505961c0ef69c0ea"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#ad18cea044d10cb54505961c0ef69c0ea">PLMD::IMD::sock</a></div><div class="ttdeci">void * sock</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00072">ActionIMD.cpp:72</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_ac179221ede79ff4f727d5e5b9eb824a7"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#ac179221ede79ff4f727d5e5b9eb824a7">PLMD::IMD::connect</a></div><div class="ttdeci">void connect()</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00153">ActionIMD.cpp:153</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_a2ab30bba5406c3e97c82030226bc3612"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#a2ab30bba5406c3e97c82030226bc3612">PLMD::IMD::connected</a></div><div class="ttdeci">bool connected</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00074">ActionIMD.cpp:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_aa8981449309270634032cd77363c953d"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#aa8981449309270634032cd77363c953d">PLMD::IMD::wait</a></div><div class="ttdeci">bool wait</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00070">ActionIMD.cpp:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_a0a75f6ca0c00088767d9850eb58fc566"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#a0a75f6ca0c00088767d9850eb58fc566">PLMD::IMD::sendCoordinates</a></div><div class="ttdeci">void sendCoordinates()</div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_aa8d328afd08c550a3c7b49a4cbf263d0"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#aa8d328afd08c550a3c7b49a4cbf263d0">PLMD::IMD::receive</a></div><div class="ttdeci">void receive()</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00183">ActionIMD.cpp:183</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a35a986326d36a7925a91d091f7a01f4a"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a35a986326d36a7925a91d091f7a01f4a">PLMD::ActionAtomistic::pbcDistance</a></div><div class="ttdeci">Vector pbcDistance(const Vector &amp;, const Vector &amp;) const </div><div class="ttdoc">Compute the pbc distance between two positions. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00079">ActionAtomistic.cpp:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_a82fe2bdbe7bad1a229083ed6fc9265d1"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#a82fe2bdbe7bad1a229083ed6fc9265d1">PLMD::IMD::transferRate</a></div><div class="ttdeci">int transferRate</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00078">ActionIMD.cpp:78</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_a83d1f63b0c3e90833ed6da7ef9eb51fa"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#a83d1f63b0c3e90833ed6da7ef9eb51fa">PLMD::IMD::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00093">ActionIMD.cpp:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a8e22ca9206b39a18ceeaea66e26c2690"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a8e22ca9206b39a18ceeaea66e26c2690">PLMD::ActionAtomistic::requestAtoms</a></div><div class="ttdeci">void requestAtoms(const std::vector&lt; AtomNumber &gt; &amp;a)</div><div class="ttdoc">Request an array of atoms. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00059">ActionAtomistic.cpp:59</a></div></div>
+<div class="ttc" id="structplumed_html"><div class="ttname"><a href="structplumed.html">plumed</a></div><div class="ttdoc">Main plumed object. </div><div class="ttdef"><b>Definition:</b> <a href="wrapper_2_plumed_8h_source.html#l00201">Plumed.h:201</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a1fef9f9846aea50ef541cf149582611f"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a1fef9f9846aea50ef541cf149582611f">PLMD::ActionAtomistic::modifyForces</a></div><div class="ttdeci">std::vector&lt; Vector &gt; &amp; modifyForces()</div><div class="ttdoc">Get a reference to forces array. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00173">ActionAtomistic.h:173</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_ab81fdc51d43c0a0220e9199b97ada6f1"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#ab81fdc51d43c0a0220e9199b97ada6f1">PLMD::IMD::fscale</a></div><div class="ttdeci">double fscale</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00079">ActionIMD.cpp:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_m_d_html_ad573bd38e14cbf9e53f88dceb029a856"><div class="ttname"><a href="class_p_l_m_d_1_1_i_m_d.html#ad573bd38e14cbf9e53f88dceb029a856">PLMD::IMD::host</a></div><div class="ttdeci">std::string host</div><div class="ttdef"><b>Definition:</b> <a href="_action_i_m_d_8cpp_source.html#l00068">ActionIMD.cpp:68</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

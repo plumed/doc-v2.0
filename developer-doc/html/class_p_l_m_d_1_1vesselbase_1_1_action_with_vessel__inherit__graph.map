@@ -1,0 +1,20 @@
+<map id="PLMD::vesselbase::ActionWithVessel" name="PLMD::vesselbase::ActionWithVessel">
+<area shape="rect" id="node5" href="$class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html" title="PLMD::manyrestraints\l::ManyRestraintsBase" alt="" coords="401,39,553,86"/>
+<area shape="rect" id="node9" href="$class_p_l_m_d_1_1multicolvar_1_1_action_volume.html" title="This is the abstract base class to use for implementing a new way of definining a particular region o..." alt="" coords="408,109,547,155"/>
+<area shape="rect" id="node13" href="$class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html" title="PLMD::multicolvar::\lMultiColvarBase" alt="" coords="408,178,547,225"/>
+<area shape="rect" id="node31" href="$class_p_l_m_d_1_1secondarystructure_1_1_secondary_structure_r_m_s_d.html" title="Base action for calculating things like AlphRMSD, AntibetaRMSD, etc. " alt="" coords="385,351,569,398"/>
+<area shape="rect" id="node2" href="$class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. " alt="" coords="5,152,109,181"/>
+<area shape="rect" id="node7" href="$class_p_l_m_d_1_1manyrestraints_1_1_sphere.html" title="Provides the keyword SPHERICAL_RESTRAINT &#160;" alt="" coords="632,39,784,86"/>
+<area shape="rect" id="node11" href="$class_p_l_m_d_1_1multicolvar_1_1_volume_around.html" title="Provides the keyword AROUND &#160;" alt="" coords="639,109,777,155"/>
+<area shape="rect" id="node15" href="$class_p_l_m_d_1_1multicolvar_1_1_multi_colvar.html" title="This is the abstract base class to use for creating distributions of colvars and functions thereof..." alt="" coords="639,178,777,225"/>
+<area shape="rect" id="node29" href="$class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html" title="PLMD::multicolvar::\lMultiColvarFunction" alt="" coords="639,247,777,294"/>
+<area shape="rect" id="node17" href="$class_p_l_m_d_1_1multicolvar_1_1_alpha_beta.html" title="Provides the keyword ALPHABETA &#160;" alt="" coords="851,5,989,51"/>
+<area shape="rect" id="node19" href="$class_p_l_m_d_1_1multicolvar_1_1_angles.html" title="Provides the keyword ANGLES &#160;" alt="" coords="851,74,989,121"/>
+<area shape="rect" id="node21" href="$class_p_l_m_d_1_1multicolvar_1_1_bridge.html" title="Provides the keyword BRIDGE &#160;" alt="" coords="851,143,989,190"/>
+<area shape="rect" id="node23" href="$class_p_l_m_d_1_1multicolvar_1_1_coordination_numbers.html" title="Provides the keyword COORDINATIONNUMBER &#160;" alt="" coords="847,213,993,259"/>
+<area shape="rect" id="node25" href="$class_p_l_m_d_1_1multicolvar_1_1_density.html" title="Provides the keyword DENSITY &#160;" alt="" coords="851,282,989,329"/>
+<area shape="rect" id="node27" href="$class_p_l_m_d_1_1multicolvar_1_1_distances.html" title="Provides the keyword DISTANCES &#160;" alt="" coords="851,351,989,398"/>
+<area shape="rect" id="node33" href="$class_p_l_m_d_1_1secondarystructure_1_1_alpha_r_m_s_d.html" title="Provides the keyword ALPHARMSD &#160;" alt="" coords="619,317,797,363"/>
+<area shape="rect" id="node35" href="$class_p_l_m_d_1_1secondarystructure_1_1_antibeta_r_m_s_d.html" title="Provides the keyword ANTIBETARMSD &#160;" alt="" coords="619,386,797,433"/>
+<area shape="rect" id="node37" href="$class_p_l_m_d_1_1secondarystructure_1_1_parabeta_r_m_s_d.html" title="Provides the keyword PARABETARMSD &#160;" alt="" coords="619,455,797,502"/>
+</map>

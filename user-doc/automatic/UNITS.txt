@@ -1,0 +1,46 @@
+/**
+\page UNITS UNITS
+This command sets the internal units for the code.  A new unit can be set by either
+specifying how to convert from the plumed default unit into that new unit or by using
+the shortcuts described below.  This directive MUST appear at the BEGINNING of the
+plumed.dat file.  The same units must be used througout the plumed.dat file.
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NATURAL </b></td>
+<td> ( default=off ) use natural units </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> LENGTH </b></td>
+<td> the units of lengths.  Either specify a conversion factor from the default, nm, or A (for angstroms) or um </td>
+</tr>
+<tr>
+<td width=15%> <b> ENERGY </b></td>
+<td> the units of energy.  Either specify a conversion factor from the default, kj/mol, or use j/mol or kcal/mol </td>
+</tr>
+<tr>
+<td width=15%> <b> TIME </b></td>
+<td> the units of time.  Either specify a conversion factor from the default, ps, or use ns or fs </td>
+</tr>
+
+</table>
+
+\par Examples
+\verbatim
+# this is using nm - kj/mol - fs
+UNITS LENGTH=nm TIME=fs
+\endverbatim
+If a number, x, is found, the new unit is equal to x (default units)
+\verbatim
+# this is using nm - kj/mol - fs
+UNITS LENGTH=nm TIME=0.001
+\endverbatim
+
+
+*/

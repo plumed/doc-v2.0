@@ -1,0 +1,151 @@
+/**
+\page ANGLES ANGLES
+Calculate functions of the distribution of angles .
+
+You can use this command to calculate functions such as:
+
+\f[
+f(x) = \sum_{ijk} g( \theta_{ijk} )
+\f]
+
+Alternatively you can use this command to calculate functions such as:
+
+\f[
+f(x) = \sum_{ijk} s(r_{ij})s(r_{jk}) g(\theta_{ijk})
+\f]
+
+where \f$s(r)\f$ is a \ref switchingfunction.  This second form means that you can
+use this to calculate functions of the angles in the first coordination sphere of
+an atom / molecule \cite lj-recon.
+
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ATOMS </b></td>
+<td> the atoms involved in each of the collective variables you wish to calculate. Keywords like ATOMS1, ATOMS2, ATOMS3,... should be listed and one CV will be calculated for each ATOM keyword you specify (all ATOM keywords should define the same number of atoms).  The eventual number of quantities calculated by this action will depend on what functions of the distribution you choose to calculate. You can use multiple instances of this keyword i.e. ATOMS1, ATOMS2, ATOMS3... </td>
+</tr>
+</table>
+
+\par Or alternatively by using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> GROUP </b></td>
+<td> Calculate angles for each distinct set of three atoms in the group </td>
+</tr>
+</table>
+
+\par Or alternatively by using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> GROUPA </b></td>
+<td> A group of central atoms about which angles should be calculated </td>
+</tr>
+<tr>
+<td width=15%> <b> GROUPB </b></td>
+<td> When used in conjuction with GROUPA this keyword instructs plumed to calculate all distinct angles involving one atom from GROUPA and two atoms from GROUPB. The atom from GROUPA is the central atom. </td>
+</tr>
+</table>
+
+\par Or alternatively by using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> GROUPC </b></td>
+<td> This must be used in conjuction with GROUPA and GROUPB.  All angles involving one atom from GROUPA, one atom from GROUPB and one atom from GROUPC are calculated. The GROUPA atoms are assumed to be the central atoms </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> SERIAL </b></td>
+<td> ( default=off ) do the calculation in serial.  Do not parallelize </td>
+</tr>
+<tr>
+<td width=15%> <b> VERBOSE </b></td>
+<td> ( default=off ) write a more detailed output </td>
+</tr>
+<tr>
+<td width=15%> <b> MEAN </b></td>
+<td> ( default=off ) take the mean of these variables. The final value can be referenced using <em>label</em>.mean </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TOL </b></td>
+<td> this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum.  They can thus be safely ignored as can the the derivatives wrt these small quantities. </td>
+</tr>
+<tr>
+<td width=15%> <b> LESS_THAN </b></td>
+<td> calculate the number of variables less than a certain target value. This quantity is calculated using \f$\sum_i \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.less_than.  You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3...  The corresponding values are then referenced using <em>label</em>.less_than-1,  <em>label</em>.less_than-2,  <em>label</em>.less_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> BETWEEN </b></td>
+<td> calculate the number of values that are within a certain range. These quantities are calculated using kernel density estimation as described on \ref histogrambead. The final value can be referenced using <em>label</em>.between.  You can use multiple instances of this keyword i.e. BETWEEN1, BETWEEN2, BETWEEN3...  The corresponding values are then referenced using <em>label</em>.between-1,  <em>label</em>.between-2,  <em>label</em>.between-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> HISTOGRAM </b></td>
+<td> calculate a discretized histogram of the distribution of values. This shortcut allows you to calculates NBIN quantites like BETWEEN. </td>
+</tr>
+<tr>
+<td width=15%> <b> MORE_THAN </b></td>
+<td> calculate the number of variables more than a certain target value. This quantity is calculated using \f$\sum_i 1.0 - \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.more_than.  You can use multiple instances of this keyword i.e. MORE_THAN1, MORE_THAN2, MORE_THAN3...  The corresponding values are then referenced using <em>label</em>.more_than-1,  <em>label</em>.more_than-2,  <em>label</em>.more_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> SWITCH </b></td>
+<td> A switching function that ensures that only angles between atoms that are within a certain fixed cutoff are calculated. The following provides information on the \ref switchingfunction that are available. </td>
+</tr>
+<tr>
+<td width=15%> <b> SWITCHA </b></td>
+<td> A switching function on the distance between the atoms in group A and the atoms in group B </td>
+</tr>
+<tr>
+<td width=15%> <b> SWITCHB </b></td>
+<td> A switching function on the distance between the atoms in group A and the atoms in group B </td>
+</tr>
+
+</table>
+
+\par Examples
+
+The following example instructs plumed to find the average of two angles and to
+print it to a file
+
+\verbatim
+ANGLES ATOMS=1,2,3 ATOMS=4,5,6 MEAN LABEL=a1
+PRINT ARG=a1.mean FILE=colvar
+\endverbatim
+
+The following example tells plumed to calculate all angles involving
+at least one atom from GROUPA and two atoms from GROUPB in which the distances
+are less than 1.0. The number of angles between \f$\frac{\pi}{4}\f$ and
+\f$\frac{3\pi}{4}\f$ is then output
+
+\verbatim
+ANGLES GROUPA=1-10 GROUPB=11-100 BETWEEN={GAUSSIAN LOWER=0.25pi UPPER=0.75pi} SWITCH={GAUSSIAN R_0=1.0} LABEL=a1
+PRINT ARG=a1.between FILE=colvar
+\endverbatim
+
+This final example instructs plumed to calculate all the angles in the first coordination
+spheres of the atoms. A discretized-normalized histogram of the distribution is then output
+
+\verbatim
+ANGLE GROUP=1-38 HISTOGRAM={GAUSSIAN LOWER=0.0 UPPER=pi NBINS=20} SWTICH={GAUSSIAN R_0=1.0} LABEL=a1
+PRINT ARG=a1.* FILE=colvar
+\endverbatim
+
+*/

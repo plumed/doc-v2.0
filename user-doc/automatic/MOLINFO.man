@@ -1,0 +1,22 @@
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> CHAIN </b></td>
+<td> (for masochists ( mostly Davide Branduardi ) ) The atoms involved in each of the chains of interest in the structure. </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> STRUCTURE </b></td>
+<td> a file in pdb format containing a reference structure. This is used to defines the atoms in the various residues, chains, etc . For more details on the PDB file format visit http://www.wwpdb.org/docs.html </td>
+</tr>
+</table>
+
+</table>
+
+</table>
+

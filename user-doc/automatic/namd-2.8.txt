@@ -1,0 +1,7 @@
+/**
+\page namd-2_8 namd-2.8
+WARNING: NAMD does not currently take into account virial contributions
+from PLUMED. Please use constant volume simulations only
+
+For more information on NAMD you should visit http://www.ks.uiuc.edu/Research/namd/
+*/

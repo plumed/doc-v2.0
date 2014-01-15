@@ -1,0 +1,8 @@
+/**
+\page gromacs-4_6_5 gromacs-4.6.5
+
+PLUMED can be incorporated into gromacs using a simple patching procedure.
+Patching must be done _before_ the cmake command is invoked
+
+For more information on gromacs you should visit http://www.gromacs.org
+*/

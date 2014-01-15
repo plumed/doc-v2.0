@@ -1,0 +1,409 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: core/FlexibleBin.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">FlexibleBin.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_flexible_bin_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2_flexible_bin_8h.html">FlexibleBin.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2_action_with_arguments_8h.html">ActionWithArguments.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;tools/Matrix.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_flexible_bin.html#abe5084fd0ca24315cce1eebdfe5a2b04">   33</a></span>&#160;FlexibleBin::FlexibleBin(<span class="keywordtype">int</span> type, <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html">ActionWithArguments</a> *paction,  <span class="keywordtype">double</span> <span class="keyword">const</span> &amp;d , vector&lt;double&gt; &amp;smin, vector&lt;double&gt; &amp;smax):type(type),paction(paction),sigma(d),sigmamin(smin),sigmamax(smax){</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// initialize the averages and the variance matrices</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span>(type==<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a6db7c895a06d40e3acd72443273211edaa09b4d1b446ab862ea70d2331d1156f8">diffusion</a>){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordtype">unsigned</span> ncv=paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>();   </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">average</a>(ncv*(ncv+1)/2);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>(ncv*(ncv+1)/2);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot;  Limits for sigmas using adaptive hills:  \n&quot;</span>; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>();++i){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot;   CV  &quot;</span>&lt;&lt;paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a2b59e207640fc3a6389bac25867673fe">getPntrToArgument</a>(i)-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#a92d620a33cc1765d009109b0e2b720ec">getName</a>()&lt;&lt;<span class="stringliteral">&quot;:\n&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ac8346b9115750fc439607e64cc552632">sigmamin</a>[i]&gt;0.){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7d418f6ad6bea27fbbbed7536840a689">limitmin</a>.push_back(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot;       Min &quot;</span>&lt;&lt;<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ac8346b9115750fc439607e64cc552632">sigmamin</a>[i];       </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ac8346b9115750fc439607e64cc552632">sigmamin</a>[i]*=<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ac8346b9115750fc439607e64cc552632">sigmamin</a>[i];       <span class="comment">// this is because the matrix which is calculated is the sigmasquared   </span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7d418f6ad6bea27fbbbed7536840a689">limitmin</a>.push_back(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot;       Min No &quot;</span>; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a33db8ae19e558e3b96b928094b9ac4c5">sigmamax</a>[i]&gt;0.){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a5f75676956f9338bc45d3e6e7b40a324">limitmax</a>.push_back(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot;       Max &quot;</span>&lt;&lt;<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a33db8ae19e558e3b96b928094b9ac4c5">sigmamax</a>[i];       </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a33db8ae19e558e3b96b928094b9ac4c5">sigmamax</a>[i]*=<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a33db8ae19e558e3b96b928094b9ac4c5">sigmamax</a>[i];               </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a5f75676956f9338bc45d3e6e7b40a324">limitmax</a>.push_back(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot;       Max No &quot;</span>; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                paction-&gt;<a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>&lt;&lt;<span class="stringliteral">&quot; \n&quot;</span>;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// Update the flexible bin </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/// in case of diffusion based: update at every step</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// in case of gradient based: update only when you add the hill </span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_flexible_bin.html#abfdd613744d01ece7e69f79efb2d6e46">   66</a></span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#abfdd613744d01ece7e69f79efb2d6e46">FlexibleBin::update</a>(<span class="keywordtype">bool</span> nowAddAHill){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">unsigned</span> ncv=<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ad7b5b000fc01815ec2f5dbd8bf203258">paction</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">unsigned</span> dimension=ncv*(ncv+1)/2;       </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">// this is done all the times from scratch. It is not an accumulator </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">unsigned</span>  k=0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">unsigned</span> i,j;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        vector&lt;double&gt; cv;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        vector&lt;double&gt; <a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// if you use this below then the decay is in time units</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">//double decay=paction-&gt;getTimeStep()/sigma;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// to be consistent with the rest of the program: everything is better to be in timesteps</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">double</span> decay=1./<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a05513d17f2107c4aa72a3c483cf24811">sigma</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// here update the flexible bin according to the needs  </span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a0c55ac827111fd72c34b1c79f7d94315">type</a>){</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// This should be called every time</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a6db7c895a06d40e3acd72443273211edaa09b4d1b446ab862ea70d2331d1156f8">diffusion</a>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">// THE AVERAGE VALUE</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="comment">// beware: the pbc</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                delta.resize(ncv);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">for</span>(i=0;i&lt;ncv;i++)cv.push_back(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ad7b5b000fc01815ec2f5dbd8bf203258">paction</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aea45134a4a9907fb69a45b7462a5e2fa">getArgument</a>(i));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">average</a>.size()==0){ <span class="comment">// initial time: just set the initial vector</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">average</a>.resize(ncv);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keywordflow">for</span>(i=0;i&lt;ncv;i++)<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">average</a>[i]=cv[i];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                }<span class="keywordflow">else</span>{ <span class="comment">// accumulate</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <span class="keywordflow">for</span>(i=0;i&lt;ncv;i++){</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                delta[i]=<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ad7b5b000fc01815ec2f5dbd8bf203258">paction</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a9ba3af7c820e8f689b2442e3eee3fa0a">difference</a>(i,<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">average</a>[i],cv[i]);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">average</a>[i]+=decay*delta[i];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">average</a>[i]=<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ad7b5b000fc01815ec2f5dbd8bf203258">paction</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a64f8aaf196867c7c22e066a75f80b152">bringBackInPbc</a>(i,<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">average</a>[i]); <span class="comment">// equation 8 of &quot;Metadynamics with adaptive Gaussians&quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="comment">// THE VARIANCE</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>.size()==0){</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>.resize(dimension,0.); <span class="comment">// nonredundant members dimension=ncv*(ncv+1)/2;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                        k=0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        <span class="keywordflow">for</span>(i=0;i&lt;ncv;i++){</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                <span class="keywordflow">for</span>(j=i;j&lt;ncv;j++){ <span class="comment">// upper diagonal loop</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                        <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>[k]+=decay*(delta[i]*delta[j]-<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>[k]);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                        k++;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a6db7c895a06d40e3acd72443273211eda965c5ee8a5c8dda64406df320b36f8a8">geometry</a>:</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="comment">//this calculates in variance the \nabla CV_i \dot \nabla CV_j</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>.resize(dimension);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="comment">//cerr&lt;&lt; &quot;Doing geometry &quot;&lt;&lt;endl;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="comment">// now the signal for retrieving the gradients should be already given by checkNeedsGradients.</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="comment">// here just do the projections</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="comment">// note that the call  checkNeedsGradients() in BiasMetaD takes care of switching on the call to gradients</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">if</span> (nowAddAHill){<span class="comment">// geometry is sync with hill deposition</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        <span class="comment">//cerr&lt;&lt; &quot;add a hill &quot;&lt;&lt;endl;</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        k=0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;ncv;i++){</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=i;j&lt;ncv;j++){</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                        <span class="comment">// eq 12 of &quot;Metadynamics with adaptive Gaussians&quot;</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                        <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>[k]=<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a05513d17f2107c4aa72a3c483cf24811">sigma</a>*<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a05513d17f2107c4aa72a3c483cf24811">sigma</a>*(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ad7b5b000fc01815ec2f5dbd8bf203258">paction</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a7053412702fd980d2cc74c0a2520fd4f">getProjection</a>(i,j));</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                        k++;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        };</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                };</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                cerr&lt;&lt; <span class="stringliteral">&quot;This flexible bin is not recognized  &quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                exit(1) ;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_flexible_bin.html#a21bc9283fc992ce0b1676ddd4dd93425">  142</a></span>&#160;vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a21bc9283fc992ce0b1676ddd4dd93425">FlexibleBin::getMatrix</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">/// Calculate the matrix of  (dcv_i/dx)*(dcv_j/dx)^-1 </span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">/// that is needed for the metrics in metadynamics</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_flexible_bin.html#a604caf89c8a6fc5f72d5c3f53e236a11">  151</a></span>&#160;<span class="comment"></span>vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a604caf89c8a6fc5f72d5c3f53e236a11">FlexibleBin::getInverseMatrix</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">unsigned</span> ncv=<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ad7b5b000fc01815ec2f5dbd8bf203258">paction</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> matrix(ncv,ncv); </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordtype">unsigned</span> i,j,k; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        k=0;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">//paction-&gt;log&lt;&lt;&quot;------------ GET INVERSE MATRIX ---------------\n&quot;;</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">// place the matrix in a complete matrix for compatibility </span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">for</span> (i=0;i&lt;ncv;i++){</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">for</span> (j=i;j&lt;ncv;j++){</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                        matrix(j,i)=matrix(i,j)=<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">variance</a>[k];</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        k++;    </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">//      paction-&gt;log&lt;&lt;&quot;MATRIX\n&quot;;</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">//      matrixOut(paction-&gt;log,matrix); </span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#define NEWFLEX</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifdef NEWFLEX</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor"></span>        <span class="comment">// diagonalize to impose boundaries (only if boundaries are set)</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> eigenvecs(ncv,ncv);      </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        vector&lt;double&gt; eigenvals(ncv);          </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">//eigenvecs: first is eigenvec number, second is eigenvec component     </span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespace_p_l_m_d.html#ad7f66dbb1f6e5248149fd2544418eeec">diagMat</a>( matrix , eigenvals , eigenvecs )!=0){plumed_merror(<span class="stringliteral">&quot;diagonalization in FlexibleBin failed! This matrix is weird\n&quot;</span>);};      </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">//      paction-&gt;log&lt;&lt;&quot;EIGENVECS \n&quot;;</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//      matrixOut(paction-&gt;log,eigenvecs);</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">//for (i=0;i&lt;ncv;i++){//loop on the dimension   </span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">//      for (j=0;j&lt;ncv;j++){//loop on the dimension     </span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="comment">//      eigenvecs[i][j]=0.;</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">//      if(i==j)eigenvecs[i][j]=1.;</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">//      }       </span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="comment">//}</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">for</span> (i=0;i&lt;ncv;i++){<span class="comment">//loop on the dimension </span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;          <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a5f75676956f9338bc45d3e6e7b40a324">limitmax</a>[i] ){</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                  <span class="comment">//limit every  component that is larger</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                  <span class="keywordflow">for</span> (j=0;j&lt;ncv;j++){<span class="comment">//loop on components      </span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                        <span class="keywordflow">if</span>(pow(eigenvals[j]*eigenvecs[j][i],2)&gt;pow(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a33db8ae19e558e3b96b928094b9ac4c5">sigmamax</a>[i],2) ){</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                             eigenvals[j]=sqrt(pow(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a33db8ae19e558e3b96b928094b9ac4c5">sigmamax</a>[i]/(eigenvecs[j][i]),2))*copysign(1.,eigenvals[j]);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                        }                       </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                  }             </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;          }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">for</span> (i=0;i&lt;ncv;i++){<span class="comment">//loop on the dimension </span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;          <span class="comment">// find the largest one:  if it is smaller than min  then rescale</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;          <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#a7d418f6ad6bea27fbbbed7536840a689">limitmin</a>[i] ){</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                   <span class="keywordtype">unsigned</span> imax;               </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                   <span class="keywordtype">double</span> fmax=-1.e10;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                   <span class="keywordflow">for</span> (j=0;j&lt;ncv;j++){<span class="comment">//loop on components     </span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                        <span class="keywordtype">double</span> fact=pow(eigenvals[j]*eigenvecs[j][i],2);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                        <span class="keywordflow">if</span>(fact&gt;fmax){</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                         fmax=fact;imax=j;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        }       </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                   }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                   <span class="keywordflow">if</span>(fmax&lt;pow(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ac8346b9115750fc439607e64cc552632">sigmamin</a>[i],2) ){</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                             eigenvals[imax]=sqrt(pow(<a class="code" href="class_p_l_m_d_1_1_flexible_bin.html#ac8346b9115750fc439607e64cc552632">sigmamin</a>[i]/(eigenvecs[imax][i]),2))*copysign(1.,eigenvals[imax]);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                   }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;          }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }  </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="comment">// normalize eigenvecs</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> newinvmatrix(ncv,ncv);   </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">for</span> (i=0;i&lt;ncv;i++){</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <span class="keywordflow">for</span> (j=0;j&lt;ncv;j++){</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                        newinvmatrix[j][i]=eigenvecs[j][i]/eigenvals[j];</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        vector&lt;double&gt; uppervec(ncv*(ncv+1)/2);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        k=0;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">for</span> (i=0;i&lt;ncv;i++){</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="keywordflow">for</span> (j=i;j&lt;ncv;j++){</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                        <span class="keywordtype">double</span> scal=0;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> l=0;l&lt;ncv;++l){</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                scal+=eigenvecs[l][i]*newinvmatrix[l][j];</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                        }       </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        uppervec[k]=scal; k++;                  </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#else </span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor"></span>        <span class="comment">// get the inverted matrix</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_matrix.html">Matrix&lt;double&gt;</a> invmatrix(ncv,ncv);      </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="namespace_p_l_m_d.html#a026d5267b3be658f2140748b1a89edba">Invert</a>(matrix,invmatrix);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        vector&lt;double&gt; uppervec(ncv*(ncv+1)/2); </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="comment">// upper diagonal of the inverted matrix (that is symmetric) </span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        k=0;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">for</span> (i=0;i&lt;ncv;i++){</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <span class="keywordflow">for</span> (j=i;j&lt;ncv;j++){</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                        uppervec[k]=invmatrix(i,j);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                        <span class="comment">//paction-&gt;log&lt;&lt;&quot;VV &quot;&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;j&lt;&lt;&quot; &quot;&lt;&lt;uppervec[k]&lt;&lt;&quot;\n&quot;;       </span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                        k++;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">//paction-&gt;log&lt;&lt;&quot;------------ END GET INVERSE MATRIX ---------------\n&quot;;</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">return</span> uppervec;  </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_ad7b5b000fc01815ec2f5dbd8bf203258"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#ad7b5b000fc01815ec2f5dbd8bf203258">PLMD::FlexibleBin::paction</a></div><div class="ttdeci">ActionWithArguments * paction</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00035">FlexibleBin.h:35</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html_a92d620a33cc1765d009109b0e2b720ec"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html#a92d620a33cc1765d009109b0e2b720ec">PLMD::Value::getName</a></div><div class="ttdeci">const std::string &amp; getName() const </div><div class="ttdoc">Get the name of the quantity. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00196">Value.h:196</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a31215215cfe4b1078c8f566688964346"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">PLMD::Action::log</a></div><div class="ttdeci">Log &amp; log</div><div class="ttdoc">Reference to the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00093">Action.h:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a7828ec59223af645f9fe72491a86ef05"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a7828ec59223af645f9fe72491a86ef05">PLMD::FlexibleBin::variance</a></div><div class="ttdeci">std::vector&lt; double &gt; variance</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00038">FlexibleBin.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a21bc9283fc992ce0b1676ddd4dd93425"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a21bc9283fc992ce0b1676ddd4dd93425">PLMD::FlexibleBin::getMatrix</a></div><div class="ttdeci">std::vector&lt; double &gt; getMatrix() const </div><div class="ttdef"><b>Definition:</b> <a href="_flexible_bin_8cpp_source.html#l00142">FlexibleBin.cpp:142</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_ac8346b9115750fc439607e64cc552632"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#ac8346b9115750fc439607e64cc552632">PLMD::FlexibleBin::sigmamin</a></div><div class="ttdeci">std::vector&lt; double &gt; sigmamin</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00042">FlexibleBin.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a05513d17f2107c4aa72a3c483cf24811"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a05513d17f2107c4aa72a3c483cf24811">PLMD::FlexibleBin::sigma</a></div><div class="ttdeci">double sigma</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00036">FlexibleBin.h:36</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a026d5267b3be658f2140748b1a89edba"><div class="ttname"><a href="namespace_p_l_m_d.html#a026d5267b3be658f2140748b1a89edba">PLMD::Invert</a></div><div class="ttdeci">int Invert(const Matrix&lt; T &gt; &amp;A, Matrix&lt; double &gt; &amp;inverse)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00246">Matrix.h:246</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a9ba3af7c820e8f689b2442e3eee3fa0a"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a9ba3af7c820e8f689b2442e3eee3fa0a">PLMD::ActionWithArguments::difference</a></div><div class="ttdeci">double difference(int, double, double) const </div><div class="ttdoc">Takes the difference taking into account pbc for arg i. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00103">ActionWithArguments.h:103</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_aef2dc687069e1cb70531cdacc03268d1"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#aef2dc687069e1cb70531cdacc03268d1">PLMD::FlexibleBin::average</a></div><div class="ttdeci">std::vector&lt; double &gt; average</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00040">FlexibleBin.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a2b59e207640fc3a6389bac25867673fe"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a2b59e207640fc3a6389bac25867673fe">PLMD::ActionWithArguments::getPntrToArgument</a></div><div class="ttdeci">Value * getPntrToArgument(const unsigned n)</div><div class="ttdoc">Return a pointer to specific argument. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00088">ActionWithArguments.h:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html">PLMD::ActionWithArguments</a></div><div class="ttdoc">This is used to create PLMD::Action objects that take the output from some other Action as input...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00042">ActionWithArguments.h:42</a></div></div>
+<div class="ttc" id="core_2_action_with_arguments_8h_html"><div class="ttname"><a href="core_2_action_with_arguments_8h.html">ActionWithArguments.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a5f75676956f9338bc45d3e6e7b40a324"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a5f75676956f9338bc45d3e6e7b40a324">PLMD::FlexibleBin::limitmax</a></div><div class="ttdeci">std::vector&lt; bool &gt; limitmax</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00044">FlexibleBin.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a64f8aaf196867c7c22e066a75f80b152"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a64f8aaf196867c7c22e066a75f80b152">PLMD::ActionWithArguments::bringBackInPbc</a></div><div class="ttdeci">double bringBackInPbc(int i, double d1) const </div><div class="ttdoc">Takes one value and brings it back into the pbc of argument i. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00108">ActionWithArguments.h:108</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a2a1cf3a4fea01e78626f761aa04abd90"><div class="ttname"><a href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">PLMD::delta</a></div><div class="ttdeci">VectorGeneric&lt; n &gt; delta(const VectorGeneric&lt; n &gt; &amp;v1, const VectorGeneric&lt; n &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00262">Vector.h:262</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a7053412702fd980d2cc74c0a2520fd4f"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a7053412702fd980d2cc74c0a2520fd4f">PLMD::ActionWithArguments::getProjection</a></div><div class="ttdeci">double getProjection(unsigned i, unsigned j) const </div><div class="ttdoc">Get the scalar product between the gradients of two variables. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00264">ActionWithArguments.cpp:264</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a7d418f6ad6bea27fbbbed7536840a689"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a7d418f6ad6bea27fbbbed7536840a689">PLMD::FlexibleBin::limitmin</a></div><div class="ttdeci">std::vector&lt; bool &gt; limitmin</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00045">FlexibleBin.h:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a33db8ae19e558e3b96b928094b9ac4c5"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a33db8ae19e558e3b96b928094b9ac4c5">PLMD::FlexibleBin::sigmamax</a></div><div class="ttdeci">std::vector&lt; double &gt; sigmamax</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00043">FlexibleBin.h:43</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_ad7f66dbb1f6e5248149fd2544418eeec"><div class="ttname"><a href="namespace_p_l_m_d.html#ad7f66dbb1f6e5248149fd2544418eeec">PLMD::diagMat</a></div><div class="ttdeci">int diagMat(const Matrix&lt; T &gt; &amp;A, std::vector&lt; double &gt; &amp;eigenvals, Matrix&lt; double &gt; &amp;eigenvecs)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00203">Matrix.h:203</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_aea45134a4a9907fb69a45b7462a5e2fa"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#aea45134a4a9907fb69a45b7462a5e2fa">PLMD::ActionWithArguments::getArgument</a></div><div class="ttdeci">double getArgument(const unsigned n) const </div><div class="ttdoc">Returns the value of an argument. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00093">ActionWithArguments.h:93</a></div></div>
+<div class="ttc" id="core_2_flexible_bin_8h_html"><div class="ttname"><a href="core_2_flexible_bin_8h.html">FlexibleBin.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a6db7c895a06d40e3acd72443273211eda965c5ee8a5c8dda64406df320b36f8a8"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a6db7c895a06d40e3acd72443273211eda965c5ee8a5c8dda64406df320b36f8a8">PLMD::FlexibleBin::geometry</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00053">FlexibleBin.h:53</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a604caf89c8a6fc5f72d5c3f53e236a11"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a604caf89c8a6fc5f72d5c3f53e236a11">PLMD::FlexibleBin::getInverseMatrix</a></div><div class="ttdeci">std::vector&lt; double &gt; getInverseMatrix() const </div><div class="ttdoc">Calculate the matrix of (dcv_i/dx)*(dcv_j/dx)^-1 that is needed for the metrics in metadynamics...</div><div class="ttdef"><b>Definition:</b> <a href="_flexible_bin_8cpp_source.html#l00151">FlexibleBin.cpp:151</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_abfdd613744d01ece7e69f79efb2d6e46"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#abfdd613744d01ece7e69f79efb2d6e46">PLMD::FlexibleBin::update</a></div><div class="ttdeci">void update(bool nowAddAHill)</div><div class="ttdoc">update the average (always for diffusion) or calculate the geom covariance ( only when do_when_zero i...</div><div class="ttdef"><b>Definition:</b> <a href="_flexible_bin_8cpp_source.html#l00066">FlexibleBin.cpp:66</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a0c55ac827111fd72c34b1c79f7d94315"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a0c55ac827111fd72c34b1c79f7d94315">PLMD::FlexibleBin::type</a></div><div class="ttdeci">const int type</div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00033">FlexibleBin.h:33</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_matrix_html"><div class="ttname"><a href="class_p_l_m_d_1_1_matrix.html">PLMD::Matrix&lt; double &gt;</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_ac759d81efea580cc19220472484bda0d"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">PLMD::ActionWithArguments::getNumberOfArguments</a></div><div class="ttdeci">unsigned getNumberOfArguments() const </div><div class="ttdoc">Returns the number of arguments. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00098">ActionWithArguments.h:98</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_flexible_bin_html_a6db7c895a06d40e3acd72443273211edaa09b4d1b446ab862ea70d2331d1156f8"><div class="ttname"><a href="class_p_l_m_d_1_1_flexible_bin.html#a6db7c895a06d40e3acd72443273211edaa09b4d1b446ab862ea70d2331d1156f8">PLMD::FlexibleBin::diffusion</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2_flexible_bin_8h_source.html#l00053">FlexibleBin.h:53</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

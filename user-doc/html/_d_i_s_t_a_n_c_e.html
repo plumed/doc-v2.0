@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: DISTANCE</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="_colvar.html">Collective Variables</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">DISTANCE </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>Calculate the distance between a pair of atoms. By default the distance is computed taking into account periodic boundary conditions. This behavior can be changed with the NOPBC flag. Moreover, single components (x,y, and z) can be also computed.</p>
+<p>Notice that single components will not have the proper periodicity! A possible hack is shown in one of the examples below.</p>
+<dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> ATOMS </b> </td><td>the pair of atom that we are calculating the distance between   </td></tr>
+</table>
+<dl class="section user"><dt>Options</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> NUMERICAL_DERIVATIVES </b> </td><td>( default=off ) calculate the derivatives for these quantities numerically   </td></tr>
+<tr>
+<td width="15%"><b> NOPBC </b> </td><td>( default=off ) ignore the periodic boundary conditions when calculating distances   </td></tr>
+<tr>
+<td width="15%"><b> COMPONENTS </b> </td><td><p class="starttd">( default=off ) calculate the x, y and z components of the distance separately and store them as label.x, label.y and label.z  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<p>The following input tells plumed to print the distance between atoms 3 and 5, the distance between atoms 2 and 4 and the x component of the distance between atoms 2 and 4. </p>
+<pre class="fragment">d1:  DISTANCE ATOMS=3,5
+d2:  DISTANCE ATOMS=2,4
+d2c: DISTANCE ATOMS=2,4 COMPONENTS
+PRINT ARG=d1,d2,d2c.x
+</pre><p> (See also <a class="el" href="_p_r_i_n_t.html">PRINT</a>).</p>
+<p>The following input computes the end-to-end distance for a polymer of 100 atoms and keeps it at a value around 5. </p>
+<pre class="fragment">WHOLEMOLECULES ENTITY0=1-100
+e2e: DISTANCE ATOMS=1,100 NOPBC
+RESTRAINT ARG=e2e KAPPA=1 AT=5
+</pre><p> (See also <a class="el" href="_w_h_o_l_e_m_o_l_e_c_u_l_e_s.html">WHOLEMOLECULES</a> and <a class="el" href="_r_e_s_t_r_a_i_n_t.html">RESTRAINT</a>).</p>
+<p>Notice that NOPBC is used to be sure that if the end-to-end distance is larger than half the simulation box the distance is compute properly. Also notice that, since many MD codes break molecules across cell boundary, it might be necessary to use the <a class="el" href="_w_h_o_l_e_m_o_l_e_c_u_l_e_s.html">WHOLEMOLECULES</a> keyword (also notice that it should be <em>before</em> distance). The list of atoms provided to WHOLEMOLECULES here contains all the atoms between 1 and 100. Strictly speaking, this is not necessary. If you know for sure that atoms with difference in the index say equal to 10 are <em>not</em> going to be farther than half cell you can e.g. use </p>
+<pre class="fragment">WHOLEMOLECULES ENTITY0=1,10,20,30,40,50,60,70,80,90,100
+e2e: DISTANCE ATOMS=1,100 NOPBC
+RESTRAINT ARG=e2e KAPPA=1 AT=5
+</pre><p> Just be sure that the ordered list provide to WHOLEMOLECULES has the following properties:</p>
+<ul>
+<li>Consecutive atoms should be closer than half-cell throughout the entire simulation.</li>
+<li>Atoms required later for the distance (e.g. 1 and 100) should be included in the list</li>
+</ul>
+<p>The following example shows how to take into account periodicity e.g. in z-component of a distance </p>
+<pre class="fragment"># this is a center of mass of a large group
+c: COM ATOMS=1-100
+# this is the distance between atom 101 and the group
+d: DISTANCE ATOMS=c,101 COMPONENTS
+# this makes a new variable, dd, equal to d and periodic, with domain -10,10
+# this is the right choise if e.g. the cell is orthorombic and its size in
+# z direction is 20.
+dz: COMBINE ARG=d.z PERIODIC=-10,10
+# metadynamics on dd
+METAD ARG=dz SIGMA=0.1 HEIGHT=0.1 PACE=200
+</pre><p> (see also <a class="el" href="_c_o_m.html">COM</a>, <a class="el" href="_c_o_m_b_i_n_e.html">COMBINE</a>, and <a class="el" href="_m_e_t_a_d.html">METAD</a>) </p>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

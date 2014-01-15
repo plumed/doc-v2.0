@@ -1,0 +1,39 @@
+/**
+\page SORT SORT
+This function can be used to sort colvars according to their magnitudes.
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+
+</table>
+
+</table>
+
+\par Examples
+The following input tells plumed to print the distance of the closest and of
+the farthest atoms to atom 1, chosen among atoms from 2 to 5
+\verbatim
+d12:  DISTANCE ATOMS=1,2
+d13:  DISTANCE ATOMS=1,3
+d14:  DISTANCE ATOMS=1,4
+d15:  DISTANCE ATOMS=1,5
+sort: SORT ARG=d12,d13,d14,d15
+PRINT ARG=sort.1,sort.4
+\endverbatim
+(See also \ref PRINT and \ref DISTANCE).
+
+*/

@@ -1,0 +1,62 @@
+/**
+\page switchingfunction switchingfunction
+Functions that measure whether values are less than a certain quantity.
+Functions that measure whether values are less than a certain quantity.
+</td> </tr>
+
+Switching functions \f$s(r)\f$ take a minimum of one input parameter \f$d_0\f$.
+For \f$r \le d_0 \quad s(r)=1.0\f$ while for \f$r > d_0\f$ the function decays smoothly to 0.
+The various switching functions available in plumed differ in terms of how this decay is performed.
+
+Where there is an accepted convention in the literature (e.g. \ref COORDINATION) on the form of the 
+switching function we use the convention as the default.  However, the flexibility to use different
+switching functions is always present generally through a single keyword. This keyword generally 
+takes an input with the following form:
+
+\verbatim
+KEYWORD={TYPE <list of parameters>}
+\endverbatim  
+
+The following table contains a list of the various switching functions that are available in plumed 2
+together with an example input.
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> 
+<td> TYPE </td> <td> FUNCTION </td> <td> EXAMPLE INPUT </td> <td> DEFAULT PARAMETERS </td>
+</tr> <tr> <td>RATIONAL </td> <td>
+\f$
+s(r)=\frac{ 1 - \left(\frac{ r - d_0 }{ r_0 }\right)^{n} }{ 1 - \left(\frac{ r - d_0 }{ r_0 }\right)^{m} } 
+\f$
+</td> <td>
+{RATIONAL R_0=\f$r_0\f$ D_0=\f$d_0\f$ NN=\f$n\f$ MM=\f$m\f$}
+</td> <td> \f$d_0=0.0\f$, \f$n=6\f$, \f$m=12\f$ </td>
+</tr> <tr>
+<td> EXP </td> <td>
+\f$
+s(r)=\exp\left(-\frac{ r - d_0 }{ r_0 }\right)
+\f$
+</td> <td> 
+{EXP  R_0=\f$r_0\f$ D_0=\f$d_0\f$}
+</td> <td> \f$d_0=0.0\f$ </td>
+</tr> <tr>
+<td> GAUSSIAN </td> <td>
+\f$
+s(r)=\exp\left(-\frac{ (r - d_0)^2 }{ 2r_0^2 }\right)
+\f$
+</td> <td>
+{GAUSSIAN R_0=\f$r_0\f$ D_0=\f$d_0\f$} 
+</td> <td> \f$d_0=0.0\f$ </td>
+</tr> <tr> 
+<td> SMAP </td> <td>
+\f$
+s(r) = \left[ 1 + ( 2^{a/b} -1 )\left( \frac{r-d_0}{r_0} \right)\right]^{-b/a}
+\f$
+</td> <td>
+{SMAP R_0=\f$r_0\f$ D_0=\f$d_0\f$ A=\f$a\f$ B=\f$b\f$}
+</td> <td> \f$d_0=0.0\f$ </td>
+</tr> 
+</table>
+
+For all the switching functions in the above table one can also specify a further (optional) parameter using the parameter
+keyword D_MAX to assert that for \f$r>d_{\textrm{max}}\f$ the switching function can be assumed equal to zero. 
+*/

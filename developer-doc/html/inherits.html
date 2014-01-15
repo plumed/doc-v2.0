@@ -1,0 +1,449 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: Class Hierarchy</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li class="current"><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Class Hierarchy</div>  </div>
+</div>
+<div class="contents">
+<div class="textblock">
+<p><a href="hierarchy.html">Go to the textual class hierarchy</a></p>
+</div><table border="0" cellspacing="10" cellpadding="0">
+<tr><td><img src="inherit_graph_0.png" border="0" alt="" usemap="#_p_l_m_d_1_1_action"/>
+<map name="_p_l_m_d_1_1_action" id="_p_l_m_d_1_1_action">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. " alt="" coords="5,1385,109,1415"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_action_atomistic.html" title="Action used to create objects that access the positions of the atoms from the MD code. " alt="" coords="195,1355,352,1384"/><area shape="rect" id="node99" href="class_p_l_m_d_1_1_action_pilot.html" title="This is used to create PLMD::Action objects that are run with some set frequency. ..." alt="" coords="208,485,339,515"/><area shape="rect" id="node141" href="class_p_l_m_d_1_1_action_setup.html" title="Action used to create a PLMD::Action that do something during setup only e.g. " alt="" coords="204,1669,343,1699"/><area shape="rect" id="node150" href="class_p_l_m_d_1_1_action_with_arguments.html" title="This is used to create PLMD::Action objects that take the output from some other Action as input..." alt="" coords="176,325,371,355"/><area shape="rect" id="node174" href="class_p_l_m_d_1_1_action_with_value.html" title="Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ..." alt="" coords="192,1271,355,1300"/><area shape="rect" id="node186" href="class_p_l_m_d_1_1generic_1_1_include.html" title="Provides the keyword INCLUDE &#160;" alt="" coords="195,1723,352,1752"/><area shape="rect" id="node188" href="class_p_l_m_d_1_1generic_1_1_random_exchanges.html" title="Provides the keyword RANDOM_EXCHANGES &#160;" alt="" coords="159,1776,388,1805"/><area shape="rect" id="node190" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html" title="This is used to create PLMD::Action objects that are computed by calculating the same function multip..." alt="" coords="184,1407,363,1454"/><area shape="rect" id="node5" href="class_p_l_m_d_1_1_action_with_virtual_atom.html" title="Inherit from here if you are calculating the position of a virtual atom (eg a center of mass) ..." alt="" coords="448,1547,645,1576"/><area shape="rect" id="node13" href="class_p_l_m_d_1_1_colvar.html" title="This is the abstract base class to use for implementing new collective variables, within it there is ..." alt="" coords="495,1301,599,1331"/><area shape="rect" id="node55" href="class_p_l_m_d_1_1generic_1_1_dump_atoms.html" title="Provides the keyword DUMPATOMS &#160;" alt="" coords="452,1125,641,1155"/><area shape="rect" id="node57" href="class_p_l_m_d_1_1generic_1_1_group.html" title="Provides the keyword GROUP &#160;" alt="" coords="471,1355,623,1384"/><area shape="rect" id="node59" href="class_p_l_m_d_1_1generic_1_1_whole_molecules.html" title="Provides the keyword WHOLEMOLECULES &#160;" alt="" coords="440,1179,653,1208"/><area shape="rect" id="node61" href="class_p_l_m_d_1_1_i_m_d.html" title="Provides the keyword IMD &#160;" alt="" coords="501,885,592,915"/><area shape="rect" id="node63" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html" title="PLMD::manyrestraints\l::ManyRestraintsBase" alt="" coords="471,1231,623,1278"/><area shape="rect" id="node67" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html" title="This is the abstract base class to use for implementing a new way of definining a particular region o..." alt="" coords="477,1477,616,1523"/><area shape="rect" id="node71" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html" title="PLMD::multicolvar::\lMultiColvarBase" alt="" coords="477,1599,616,1646"/><area shape="rect" id="node89" href="class_p_l_m_d_1_1secondarystructure_1_1_secondary_structure_r_m_s_d.html" title="Base action for calculating things like AlphRMSD, AntibetaRMSD, etc. " alt="" coords="455,1407,639,1454"/><area shape="rect" id="node97" href="class_p_l_m_d_1_1_setup_mol_info.html" title="PLMD::SetupMolInfo" alt="" coords="475,1669,619,1699"/><area shape="rect" id="node7" href="class_p_l_m_d_1_1vatom_1_1_center.html" title="Provides the keyword CENTER &#160;" alt="" coords="736,2059,885,2088"/><area shape="rect" id="node9" href="class_p_l_m_d_1_1vatom_1_1_c_o_m.html" title="Provides the keyword COM &#160;" alt="" coords="740,2112,881,2141"/><area shape="rect" id="node11" href="class_p_l_m_d_1_1vatom_1_1_ghost.html" title="Provides the keyword GHOST &#160;" alt="" coords="737,2165,884,2195"/><area shape="rect" id="node15" href="class_p_l_m_d_1_1colvar_1_1_angle.html" title="Provides the keyword ANGLE &#160;" alt="" coords="740,1248,881,1277"/><area shape="rect" id="node17" href="class_p_l_m_d_1_1colvar_1_1_cell.html" title="Provides the keyword CELL &#160;" alt="" coords="744,1301,877,1331"/><area shape="rect" id="node19" href="class_p_l_m_d_1_1colvar_1_1_colvar_fake.html" title="Provides the keyword FAKE &#160;" alt="" coords="723,1355,899,1384"/><area shape="rect" id="node21" href="class_p_l_m_d_1_1colvar_1_1_constant.html" title="Provides the keyword CONSTANT &#160;" alt="" coords="729,1408,892,1437"/><area shape="rect" id="node23" href="class_p_l_m_d_1_1colvar_1_1_contact_map.html" title="Provides the keyword CONTACTMAP &#160;" alt="" coords="720,1461,901,1491"/><area shape="rect" id="node25" href="class_p_l_m_d_1_1colvar_1_1_coordination_base.html" title="PLMD::colvar::CoordinationBase" alt="" coords="704,1515,917,1544"/><area shape="rect" id="node31" href="class_p_l_m_d_1_1colvar_1_1_dipole.html" title="Provides the keyword DIPOLE &#160;" alt="" coords="737,1568,884,1597"/><area shape="rect" id="node33" href="class_p_l_m_d_1_1colvar_1_1_distance.html" title="Provides the keyword DISTANCE &#160;" alt="" coords="729,1621,892,1651"/><area shape="rect" id="node35" href="class_p_l_m_d_1_1colvar_1_1_d_r_m_s_d.html" title="Provides the keyword DRMSD &#160;" alt="" coords="731,1675,891,1704"/><area shape="rect" id="node37" href="class_p_l_m_d_1_1colvar_1_1_energy.html" title="Provides the keyword ENERGY &#160;" alt="" coords="736,1728,885,1757"/><area shape="rect" id="node39" href="class_p_l_m_d_1_1colvar_1_1_gyration.html" title="Provides the keyword GYRATION &#160;" alt="" coords="732,928,889,957"/><area shape="rect" id="node41" href="class_p_l_m_d_1_1colvar_1_1_path_m_s_d_base.html" title="PLMD::colvar::PathMSDBase" alt="" coords="712,981,909,1011"/><area shape="rect" id="node47" href="class_p_l_m_d_1_1colvar_1_1_r_m_s_d.html" title="Provides the keyword RMSD &#160;" alt="" coords="736,1035,885,1064"/><area shape="rect" id="node49" href="class_p_l_m_d_1_1colvar_1_1_template.html" title="Provides the keyword TEMPLATE &#160;" alt="" coords="729,1088,892,1117"/><area shape="rect" id="node51" href="class_p_l_m_d_1_1colvar_1_1_torsion.html" title="Provides the keyword TORSION &#160;" alt="" coords="735,1141,887,1171"/><area shape="rect" id="node53" href="class_p_l_m_d_1_1colvar_1_1_volume.html" title="Provides the keyword VOLUME &#160;" alt="" coords="733,1195,888,1224"/><area shape="rect" id="node27" href="class_p_l_m_d_1_1colvar_1_1_coordination.html" title="Provides the keyword COORDINATION &#160;" alt="" coords="967,1488,1148,1517"/><area shape="rect" id="node29" href="class_p_l_m_d_1_1colvar_1_1_d_h_energy.html" title="Provides the keyword DHENERGY &#160;" alt="" coords="972,1541,1143,1571"/><area shape="rect" id="node43" href="class_p_l_m_d_1_1colvar_1_1_path_m_s_d.html" title="Provides the keyword PATHMSD &#160;" alt="" coords="975,955,1140,984"/><area shape="rect" id="node45" href="class_p_l_m_d_1_1colvar_1_1_property_map.html" title="Provides the keyword PROPERTYMAP &#160;" alt="" coords="965,1008,1149,1037"/><area shape="rect" id="node65" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html" title="Provides the keyword SPHERICAL_RESTRAINT &#160;" alt="" coords="735,858,887,905"/><area shape="rect" id="node69" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html" title="Provides the keyword AROUND &#160;" alt="" coords="741,1989,880,2035"/><area shape="rect" id="node73" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar.html" title="This is the abstract base class to use for creating distributions of colvars and functions thereof..." alt="" coords="741,2287,880,2334"/><area shape="rect" id="node87" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html" title="PLMD::multicolvar::\lMultiColvarFunction" alt="" coords="741,2218,880,2265"/><area shape="rect" id="node75" href="class_p_l_m_d_1_1multicolvar_1_1_alpha_beta.html" title="Provides the keyword ALPHABETA &#160;" alt="" coords="988,2391,1127,2438"/><area shape="rect" id="node77" href="class_p_l_m_d_1_1multicolvar_1_1_angles.html" title="Provides the keyword ANGLES &#160;" alt="" coords="988,2461,1127,2507"/><area shape="rect" id="node79" href="class_p_l_m_d_1_1multicolvar_1_1_bridge.html" title="Provides the keyword BRIDGE &#160;" alt="" coords="988,2114,1127,2161"/><area shape="rect" id="node81" href="class_p_l_m_d_1_1multicolvar_1_1_coordination_numbers.html" title="Provides the keyword COORDINATIONNUMBER &#160;" alt="" coords="984,2183,1131,2230"/><area shape="rect" id="node83" href="class_p_l_m_d_1_1multicolvar_1_1_density.html" title="Provides the keyword DENSITY &#160;" alt="" coords="988,2253,1127,2299"/><area shape="rect" id="node85" href="class_p_l_m_d_1_1multicolvar_1_1_distances.html" title="Provides the keyword DISTANCES &#160;" alt="" coords="988,2322,1127,2369"/><area shape="rect" id="node91" href="class_p_l_m_d_1_1secondarystructure_1_1_alpha_r_m_s_d.html" title="Provides the keyword ALPHARMSD &#160;" alt="" coords="721,1781,900,1827"/><area shape="rect" id="node93" href="class_p_l_m_d_1_1secondarystructure_1_1_antibeta_r_m_s_d.html" title="Provides the keyword ANTIBETARMSD &#160;" alt="" coords="721,1850,900,1897"/><area shape="rect" id="node95" href="class_p_l_m_d_1_1secondarystructure_1_1_parabeta_r_m_s_d.html" title="Provides the keyword PARABETARMSD &#160;" alt="" coords="721,1919,900,1966"/><area shape="rect" id="node101" href="class_p_l_m_d_1_1analysis_1_1_analysis.html" title="This is the abstract base class to use for implementing new methods for analyzing the trajectory..." alt="" coords="460,352,633,381"/><area shape="rect" id="node105" href="class_p_l_m_d_1_1bias_1_1_bias.html" title="This is the abstract base class to use for implementing new simulation biases, within it there is inf..." alt="" coords="484,512,609,541"/><area shape="rect" id="node123" href="class_p_l_m_d_1_1generic_1_1_debug.html" title="Provides the keyword DEBUG &#160;" alt="" coords="469,405,624,435"/><area shape="rect" id="node126" href="class_p_l_m_d_1_1generic_1_1_dump_derivatives.html" title="Provides the keyword DUMPDERIVATIVES &#160;" alt="" coords="437,139,656,168"/><area shape="rect" id="node128" href="class_p_l_m_d_1_1generic_1_1_dump_forces.html" title="Provides the keyword DUMPFORCES &#160;" alt="" coords="451,192,643,221"/><area shape="rect" id="node130" href="class_p_l_m_d_1_1generic_1_1_dump_projections.html" title="Provides the keyword DUMPPROJECTIONS &#160;" alt="" coords="439,245,655,275"/><area shape="rect" id="node132" href="class_p_l_m_d_1_1generic_1_1_flush.html" title="Provides the keyword FLUSH &#160;" alt="" coords="472,459,621,488"/><area shape="rect" id="node134" href="class_p_l_m_d_1_1generic_1_1_print.html" title="Provides the keyword PRINT &#160;" alt="" coords="475,299,619,328"/><area shape="rect" id="node136" href="class_p_l_m_d_1_1generic_1_1_read.html" title="Provides the keyword READ &#160;" alt="" coords="473,765,620,795"/><area shape="rect" id="node103" href="class_p_l_m_d_1_1analysis_1_1_histogram.html" title="Provides the keyword HISTOGRAM &#160;" alt="" coords="720,5,901,35"/><area shape="rect" id="node107" href="class_p_l_m_d_1_1bias_1_1_a_b_m_d.html" title="Provides the keyword ABMD &#160;" alt="" coords="741,112,880,141"/><area shape="rect" id="node109" href="class_p_l_m_d_1_1bias_1_1_bias_value.html" title="Provides the keyword BIASVALUE &#160;" alt="" coords="732,165,889,195"/><area shape="rect" id="node111" href="class_p_l_m_d_1_1bias_1_1_external.html" title="Provides the keyword EXTERNAL &#160;" alt="" coords="737,219,884,248"/><area shape="rect" id="node113" href="class_p_l_m_d_1_1bias_1_1_l_walls.html" title="Provides the keyword LOWER_WALLS &#160;" alt="" coords="741,272,880,301"/><area shape="rect" id="node115" href="class_p_l_m_d_1_1bias_1_1_meta_d.html" title="Provides the keyword METAD &#160;" alt="" coords="741,325,880,355"/><area shape="rect" id="node117" href="class_p_l_m_d_1_1bias_1_1_moving_restraint.html" title="Provides the keyword MOVINGRESTRAINT &#160;" alt="" coords="713,379,908,408"/><area shape="rect" id="node119" href="class_p_l_m_d_1_1bias_1_1_restraint.html" title="Provides the keyword RESTRAINT &#160;" alt="" coords="735,432,887,461"/><area shape="rect" id="node121" href="class_p_l_m_d_1_1bias_1_1_u_walls.html" title="Provides the keyword UPPER_WALLS &#160;" alt="" coords="740,59,881,88"/><area shape="rect" id="node143" href="class_p_l_m_d_1_1setup_1_1_load.html" title="Provides the keyword LOAD &#160;" alt="" coords="480,1776,613,1805"/><area shape="rect" id="node145" href="class_p_l_m_d_1_1setup_1_1_restart.html" title="Provides the keyword RESTART &#160;" alt="" coords="472,1829,621,1859"/><area shape="rect" id="node147" href="class_p_l_m_d_1_1setup_1_1_units.html" title="Provides the keyword UNITS &#160;" alt="" coords="477,1723,616,1752"/><area shape="rect" id="node154" href="class_p_l_m_d_1_1function_1_1_function.html" title="This is the abstract base class to use for implementing new CV function, within it there is informati..." alt="" coords="461,645,632,675"/><area shape="rect" id="node156" href="class_p_l_m_d_1_1function_1_1_combine.html" title="Provides the keyword COMBINE &#160;" alt="" coords="724,805,897,835"/><area shape="rect" id="node158" href="class_p_l_m_d_1_1function_1_1_func_path_m_s_d.html" title="Provides the keyword FUNCPATHMSD &#160;" alt="" coords="708,485,913,515"/><area shape="rect" id="node160" href="class_p_l_m_d_1_1function_1_1_func_sum_hills.html" title="Provides the keyword FUNCSUMHILLS &#160;" alt="" coords="709,539,912,568"/><area shape="rect" id="node162" href="class_p_l_m_d_1_1function_1_1_matheval.html" title="Provides the keyword MATHEVAL &#160;" alt="" coords="724,592,897,621"/><area shape="rect" id="node164" href="class_p_l_m_d_1_1function_1_1_piecewise.html" title="Provides the keyword PIECEWISE &#160;" alt="" coords="720,645,901,675"/><area shape="rect" id="node166" href="class_p_l_m_d_1_1function_1_1_sort.html" title="Provides the keyword SORT &#160;" alt="" coords="739,699,883,728"/><area shape="rect" id="node168" href="class_p_l_m_d_1_1function_1_1_target.html" title="Provides the keyword TARGET &#160;" alt="" coords="732,752,889,781"/><area shape="rect" id="node180" href="class_p_l_m_d_1_1generic_1_1_time.html" title="Provides the keyword TIME &#160;" alt="" coords="473,1072,620,1101"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#_p_l_m_d_1_1_action_options"/>
+<map name="_p_l_m_d_1_1_action_options" id="_p_l_m_d_1_1_action_options">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_action_options.html" title="This class is used to bring the relevant information to the Action constructor. " alt="" coords="5,5,155,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#_p_l_m_d_1_1_action_register"/>
+<map name="_p_l_m_d_1_1_action_register" id="_p_l_m_d_1_1_action_register">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_action_register.html" title="Register holding all the allowed keywords. " alt="" coords="7,5,159,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#_p_l_m_d_1_1_action_set"/>
+<map name="_p_l_m_d_1_1_action_set" id="_p_l_m_d_1_1_action_set">
+<area shape="rect" id="node1" title="STL class. " alt="" coords="7,5,121,35"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_action_set.html" title="std::vector containing the sequence of Action to be done. " alt="" coords="172,5,295,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#_p_l_m_d_1_1_angle"/>
+<map name="_p_l_m_d_1_1_angle" id="_p_l_m_d_1_1_angle">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_angle.html" title="Class to compute angles. " alt="" coords="7,5,105,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_5.png" border="0" alt="" usemap="#_p_l_m_d_1_1_atom_number"/>
+<map name="_p_l_m_d_1_1_atom_number" id="_p_l_m_d_1_1_atom_number">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_atom_number.html" title="Simple class to store the index of an atom. " alt="" coords="5,5,149,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_6.png" border="0" alt="" usemap="#_p_l_m_d_1_1_atoms"/>
+<map name="_p_l_m_d_1_1_atoms" id="_p_l_m_d_1_1_atoms">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_atoms.html" title="Class containing atom related quantities from the MD code. " alt="" coords="7,5,111,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_7.png" border="0" alt="" usemap="#_p_l_m_d_1_1bias_1_1_meta_d_1_1_gaussian"/>
+<map name="_p_l_m_d_1_1bias_1_1_meta_d_1_1_gaussian" id="_p_l_m_d_1_1bias_1_1_meta_d_1_1_gaussian">
+<area shape="rect" id="node1" href="struct_p_l_m_d_1_1bias_1_1_meta_d_1_1_gaussian.html" title="PLMD::bias::MetaD::\lGaussian" alt="" coords="5,5,152,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_8.png" border="0" alt="" usemap="#_p_l_m_d_1_1_bias_representation"/>
+<map name="_p_l_m_d_1_1_bias_representation" id="_p_l_m_d_1_1_bias_representation">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_bias_representation.html" title="this class implements a general purpose class that aims to provide a Grid/list transparently add gaus..." alt="" coords="5,5,187,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_9.png" border="0" alt="" usemap="#_p_l_m_d_1_1_c_interpolation"/>
+<map name="_p_l_m_d_1_1_c_interpolation" id="_p_l_m_d_1_1_c_interpolation">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_c_interpolation.html" title="PLMD::CInterpolation" alt="" coords="7,32,153,61"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_interpolate_bicubic.html" title="PLMD::InterpolateBicubic" alt="" coords="203,5,373,35"/><area shape="rect" id="node5" href="class_p_l_m_d_1_1_interpolate_cubic.html" title="PLMD::InterpolateCubic" alt="" coords="207,59,369,88"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_10.png" border="0" alt="" usemap="#_p_l_m_d_1_1_citations"/>
+<map name="_p_l_m_d_1_1_citations" id="_p_l_m_d_1_1_citations">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_citations.html" title="Class taking care of bibliography. " alt="" coords="7,5,124,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_11.png" border="0" alt="" usemap="#_p_l_m_d_1_1_c_l_tool"/>
+<map name="_p_l_m_d_1_1_c_l_tool" id="_p_l_m_d_1_1_c_l_tool">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_c_l_tool.html" title="This is the abstract base class to use for implementing new command line tool, within it there is inf..." alt="" coords="5,171,115,200"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1cltools_1_1_c_l_tool_sum_hills.html" title="PLMD::cltools::CLToolSum\lHills" alt="" coords="168,5,349,51"/><area shape="rect" id="node5" href="class_p_l_m_d_1_1cltools_1_1_driver.html" title="PLMD::cltools::Driver\l\&lt; real \&gt;" alt="" coords="185,74,332,121"/><area shape="rect" id="node7" href="class_p_l_m_d_1_1cltools_1_1_gen_template.html" title="PLMD::cltools::GenTemplate" alt="" coords="164,144,353,173"/><area shape="rect" id="node9" href="class_p_l_m_d_1_1cltools_1_1_info.html" title="PLMD::cltools::Info" alt="" coords="192,197,325,227"/><area shape="rect" id="node11" href="class_p_l_m_d_1_1cltools_1_1_manual.html" title="PLMD::cltools::Manual" alt="" coords="181,251,336,280"/><area shape="rect" id="node13" href="class_p_l_m_d_1_1cltools_1_1_simple_m_d.html" title="PLMD::cltools::SimpleMD" alt="" coords="172,304,345,333"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_12.png" border="0" alt="" usemap="#_p_l_m_d_1_1_c_l_tool_options"/>
+<map name="_p_l_m_d_1_1_c_l_tool_options" id="_p_l_m_d_1_1_c_l_tool_options">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_c_l_tool_options.html" title="PLMD::CLToolOptions" alt="" coords="5,5,160,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_13.png" border="0" alt="" usemap="#_p_l_m_d_1_1_c_l_tool_register"/>
+<map name="_p_l_m_d_1_1_c_l_tool_register" id="_p_l_m_d_1_1_c_l_tool_register">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_c_l_tool_register.html" title="Same as ActionRegister, but for CLTools. " alt="" coords="7,5,164,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_14.png" border="0" alt="" usemap="#_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1_image_path"/>
+<map name="_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1_image_path" id="_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1_image_path">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1_image_path.html" title="this class is a general container for path stuff " alt="" coords="5,5,203,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_15.png" border="0" alt="" usemap="#_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1img_order_by_dist"/>
+<map name="_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1img_order_by_dist" id="_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1img_order_by_dist">
+<area shape="rect" id="node1" href="struct_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1img_order_by_dist.html" title="PLMD::colvar::PathMSDBase\l::imgOrderByDist" alt="" coords="5,5,203,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_16.png" border="0" alt="" usemap="#_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1img_order_by_similarity"/>
+<map name="_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1img_order_by_similarity" id="_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1img_order_by_similarity">
+<area shape="rect" id="node1" href="struct_p_l_m_d_1_1colvar_1_1_path_m_s_d_base_1_1img_order_by_similarity.html" title="PLMD::colvar::PathMSDBase\l::imgOrderBySimilarity" alt="" coords="5,5,203,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_17.png" border="0" alt="" usemap="#_p_l_m_d_1_1_communicator"/>
+<map name="_p_l_m_d_1_1_communicator" id="_p_l_m_d_1_1_communicator">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_communicator.html" title="Class containing wrappers to MPI. " alt="" coords="5,5,157,35"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_atoms_1_1_domain_decomposition.html" title="PLMD::Atoms::DomainDecomposition" alt="" coords="205,5,451,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_18.png" border="0" alt="" usemap="#_p_l_m_d_1_1_communicator_1_1_request"/>
+<map name="_p_l_m_d_1_1_communicator_1_1_request" id="_p_l_m_d_1_1_communicator_1_1_request">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_communicator_1_1_request.html" title="PLMD::Communicator\l::Request" alt="" coords="5,5,157,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_19.png" border="0" alt="" usemap="#_p_l_m_d_1_1_communicator_1_1_status"/>
+<map name="_p_l_m_d_1_1_communicator_1_1_status" id="_p_l_m_d_1_1_communicator_1_1_status">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_communicator_1_1_status.html" title="PLMD::Communicator\l::Status" alt="" coords="5,5,157,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_20.png" border="0" alt="" usemap="#_p_l_m_d_1_1_c_s2_backbone"/>
+<map name="_p_l_m_d_1_1_c_s2_backbone" id="_p_l_m_d_1_1_c_s2_backbone">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_c_s2_backbone.html" title="Provides the keyword CS2BACKBONE &#160;" alt="" coords="7,5,156,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_21.png" border="0" alt="" usemap="#_p_l_m_d_1_1_d_l_loader"/>
+<map name="_p_l_m_d_1_1_d_l_loader" id="_p_l_m_d_1_1_d_l_loader">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_d_l_loader.html" title="Class taking care of dynamic loading. " alt="" coords="5,5,128,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_22.png" border="0" alt="" usemap="#_p_l_m_d_1_1_d_r_m_s_d"/>
+<map name="_p_l_m_d_1_1_d_r_m_s_d" id="_p_l_m_d_1_1_d_r_m_s_d">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_d_r_m_s_d.html" title="A class that implements DRMSD calculations. " alt="" coords="5,5,123,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_23.png" border="0" alt="" usemap="#_p_l_m_d_1_1_dynamic_list_3_01_p_l_m_d_1_1_atom_number_01_4"/>
+<map name="_p_l_m_d_1_1_dynamic_list_3_01_p_l_m_d_1_1_atom_number_01_4" id="_p_l_m_d_1_1_dynamic_list_3_01_p_l_m_d_1_1_atom_number_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_dynamic_list.html" title="PLMD::DynamicList\&lt;\l PLMD::AtomNumber \&gt;" alt="" coords="5,5,165,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_24.png" border="0" alt="" usemap="#_p_l_m_d_1_1_dynamic_list_3_01_t_01_4"/>
+<map name="_p_l_m_d_1_1_dynamic_list_3_01_t_01_4" id="_p_l_m_d_1_1_dynamic_list_3_01_t_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_dynamic_list.html" title="A class for storing a list that changes which members are active as a function of time..." alt="" coords="7,5,177,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_25.png" border="0" alt="" usemap="#_p_l_m_d_1_1_dynamic_list_3_01unsigned_01_4"/>
+<map name="_p_l_m_d_1_1_dynamic_list_3_01unsigned_01_4" id="_p_l_m_d_1_1_dynamic_list_3_01unsigned_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_dynamic_list.html" title="PLMD::DynamicList\&lt;\l unsigned \&gt;" alt="" coords="7,5,153,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_26.png" border="0" alt="" usemap="#_p_l_m_d_1_1_exception"/>
+<map name="_p_l_m_d_1_1_exception" id="_p_l_m_d_1_1_exception">
+<area shape="rect" id="node1" title="STL class. " alt="" coords="5,5,109,35"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_exception.html" title="Class to deal with Plumed runtime errors. " alt="" coords="157,5,283,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_27.png" border="0" alt="" usemap="#_p_l_m_d_1_1_exchange_patterns"/>
+<map name="_p_l_m_d_1_1_exchange_patterns" id="_p_l_m_d_1_1_exchange_patterns">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_exchange_patterns.html" title="PLMD::ExchangePatterns" alt="" coords="7,5,180,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_28.png" border="0" alt="" usemap="#_p_l_m_d_1_1_file_base"/>
+<map name="_p_l_m_d_1_1_file_base" id="_p_l_m_d_1_1_file_base">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_file_base.html" title="Base class for dealing with files. " alt="" coords="7,32,124,61"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_i_file.html" title="Class for input files. " alt="" coords="177,5,268,35"/><area shape="rect" id="node5" href="class_p_l_m_d_1_1_o_file.html" title="Class for output files. " alt="" coords="173,59,272,88"/><area shape="rect" id="node7" href="class_p_l_m_d_1_1_log.html" title="Class containing the log stream. " alt="" coords="320,59,408,88"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_29.png" border="0" alt="" usemap="#_p_l_m_d_1_1_file_base_1_1_field_base"/>
+<map name="_p_l_m_d_1_1_file_base_1_1_field_base" id="_p_l_m_d_1_1_file_base_1_1_field_base">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_file_base_1_1_field_base.html" title="Internal tool. " alt="" coords="5,5,189,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_30.png" border="0" alt="" usemap="#_p_l_m_d_1_1_flexible_bin"/>
+<map name="_p_l_m_d_1_1_flexible_bin" id="_p_l_m_d_1_1_flexible_bin">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_flexible_bin.html" title="PLMD::FlexibleBin" alt="" coords="5,5,136,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_31.png" border="0" alt="" usemap="#_p_l_m_d_1_1function_1_1_files_handler"/>
+<map name="_p_l_m_d_1_1function_1_1_files_handler" id="_p_l_m_d_1_1function_1_1_files_handler">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1function_1_1_files_handler.html" title="PLMD::function::FilesHandler" alt="" coords="5,5,200,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_32.png" border="0" alt="" usemap="#_p_l_m_d_1_1function_1_1_func_path_m_s_d_1_1ordering"/>
+<map name="_p_l_m_d_1_1function_1_1_func_path_m_s_d_1_1ordering" id="_p_l_m_d_1_1function_1_1_func_path_m_s_d_1_1ordering">
+<area shape="rect" id="node1" href="struct_p_l_m_d_1_1function_1_1_func_path_m_s_d_1_1ordering.html" title="PLMD::function::FuncPath\lMSD::ordering" alt="" coords="7,5,183,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_33.png" border="0" alt="" usemap="#_p_l_m_d_1_1function_1_1_func_path_m_s_d_1_1pairordering"/>
+<map name="_p_l_m_d_1_1function_1_1_func_path_m_s_d_1_1pairordering" id="_p_l_m_d_1_1function_1_1_func_path_m_s_d_1_1pairordering">
+<area shape="rect" id="node1" href="struct_p_l_m_d_1_1function_1_1_func_path_m_s_d_1_1pairordering.html" title="PLMD::function::FuncPath\lMSD::pairordering" alt="" coords="7,5,183,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_34.png" border="0" alt="" usemap="#_p_l_m_d_1_1_grid"/>
+<map name="_p_l_m_d_1_1_grid" id="_p_l_m_d_1_1_grid">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_grid.html" title="PLMD::Grid" alt="" coords="5,5,96,35"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_sparse_grid.html" title="PLMD::SparseGrid" alt="" coords="145,5,276,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_35.png" border="0" alt="" usemap="#_p_l_m_d_1_1_histogram_bead"/>
+<map name="_p_l_m_d_1_1_histogram_bead" id="_p_l_m_d_1_1_histogram_bead">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_histogram_bead.html" title="A class for calculating whether or not values are within a given range using : . " alt="" coords="5,5,163,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_36.png" border="0" alt="" usemap="#_p_l_m_d_1_1_i_file_1_1_field"/>
+<map name="_p_l_m_d_1_1_i_file_1_1_field" id="_p_l_m_d_1_1_i_file_1_1_field">
+<area shape="rect" id="node3" href="class_p_l_m_d_1_1_i_file_1_1_field.html" title="PLMD::IFile::Field" alt="" coords="137,5,265,35"/><area shape="rect" id="node5" href="class_p_l_m_d_1_1_o_file_1_1_field.html" title="Class identifying a single field for fielded output. " alt="" coords="135,59,268,88"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_37.png" border="0" alt="" usemap="#_p_l_m_d_1_1_kearsley"/>
+<map name="_p_l_m_d_1_1_kearsley" id="_p_l_m_d_1_1_kearsley">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_kearsley.html" title="PLMD::Kearsley" alt="" coords="7,5,124,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_38.png" border="0" alt="" usemap="#_p_l_m_d_1_1_kernel_functions"/>
+<map name="_p_l_m_d_1_1_kernel_functions" id="_p_l_m_d_1_1_kernel_functions">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_kernel_functions.html" title="PLMD::KernelFunctions" alt="" coords="7,5,167,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_39.png" border="0" alt="" usemap="#_p_l_m_d_1_1_keywords"/>
+<map name="_p_l_m_d_1_1_keywords" id="_p_l_m_d_1_1_keywords">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_keywords.html" title="This class holds the keywords and their documentation. " alt="" coords="5,5,131,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_40.png" border="0" alt="" usemap="#_p_l_m_d_1_1_keywords_1_1_key_type"/>
+<map name="_p_l_m_d_1_1_keywords_1_1_key_type" id="_p_l_m_d_1_1_keywords_1_1_key_type">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_keywords_1_1_key_type.html" title="This class lets me pass keyword types easily. " alt="" coords="7,5,191,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_41.png" border="0" alt="" usemap="#_p_l_m_d_1_1_lattice_reduction"/>
+<map name="_p_l_m_d_1_1_lattice_reduction" id="_p_l_m_d_1_1_lattice_reduction">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_lattice_reduction.html" title="Class implementing algorithms for lattice reduction. " alt="" coords="5,5,171,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_42.png" border="0" alt="" usemap="#_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01double_01_4_00_01double_01_4"/>
+<map name="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01double_01_4_00_01double_01_4" id="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01double_01_4_00_01double_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_matrix_square_brackets_access.html" title="PLMD::MatrixSquareBrackets\lAccess\&lt; Matrix\&lt; double\l \&gt;, double \&gt;" alt="" coords="7,5,201,69"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_matrix.html" title="PLMD::Matrix\&lt; double \&gt;" alt="" coords="251,23,416,52"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_43.png" border="0" alt="" usemap="#_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01int_01_4_00_01int_01_4"/>
+<map name="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01int_01_4_00_01int_01_4" id="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01int_01_4_00_01int_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_matrix_square_brackets_access.html" title="PLMD::MatrixSquareBrackets\lAccess\&lt; Matrix\&lt; int \&gt;, int \&gt;" alt="" coords="7,5,201,51"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_matrix.html" title="PLMD::Matrix\&lt; int \&gt;" alt="" coords="251,13,392,43"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_44.png" border="0" alt="" usemap="#_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01_t_01_4_00_01_t_01_4"/>
+<map name="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01_t_01_4_00_01_t_01_4" id="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_matrix_3_01_t_01_4_00_01_t_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_matrix_square_brackets_access.html" title="PLMD::MatrixSquareBrackets\lAccess\&lt; Matrix\&lt; T \&gt;, T \&gt;" alt="" coords="7,5,201,51"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_matrix.html" title="This class stores a full matrix and allows one to do some simple matrix operations. " alt="" coords="252,13,385,43"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_45.png" border="0" alt="" usemap="#_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4"/>
+<map name="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4" id="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_matrix_square_brackets_access.html" title="Utility class to add [][] access. " alt="" coords="7,5,201,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_46.png" border="0" alt="" usemap="#_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4_1_1_const__row"/>
+<map name="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4_1_1_const__row" id="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4_1_1_const__row">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_matrix_square_brackets_access_1_1_const__row.html" title="Small utility class which just contains a pointer to the T and the row number. " alt="" coords="7,5,220,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_47.png" border="0" alt="" usemap="#_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4_1_1_row"/>
+<map name="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4_1_1_row" id="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_t_00_01_c_00_01_i_00_01_j_01_4_1_1_row">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_matrix_square_brackets_access_1_1_row.html" title="Small utility class which just contains a pointer to the T and the row number. " alt="" coords="7,5,201,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_48.png" border="0" alt="" usemap="#_p_l_m_d_1_1_matrix_square_brackets_access_3_01_tensor_generic_3_01n_00_01m_01_4_00_01double_01_4"/>
+<map name="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_tensor_generic_3_01n_00_01m_01_4_00_01double_01_4" id="_p_l_m_d_1_1_matrix_square_brackets_access_3_01_tensor_generic_3_01n_00_01m_01_4_00_01double_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_matrix_square_brackets_access.html" title="PLMD::MatrixSquareBrackets\lAccess\&lt; TensorGeneric\&lt;\l n, m \&gt;, double \&gt;" alt="" coords="7,5,201,69"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_tensor_generic.html" title="Class implementing fixed size matrices of doubles. " alt="" coords="251,14,403,61"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_49.png" border="0" alt="" usemap="#_p_l_m_d_1_1_m_d_atoms_base"/>
+<map name="_p_l_m_d_1_1_m_d_atoms_base" id="_p_l_m_d_1_1_m_d_atoms_base">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_m_d_atoms_base.html" title="Class containing interface to MDAtomsTyped. " alt="" coords="7,5,161,35"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_m_d_atoms_typed.html" title="Class containing the pointers to the MD data It is templated so that single and double precision vers..." alt="" coords="211,5,405,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_50.png" border="0" alt="" usemap="#_p_l_m_d_1_1_m_p_i___comm"/>
+<map name="_p_l_m_d_1_1_m_p_i___comm" id="_p_l_m_d_1_1_m_p_i___comm">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_m_p_i___comm.html" title="Surrogate of MPI types when MPI library is not available. " alt="" coords="7,5,143,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_51.png" border="0" alt="" usemap="#_p_l_m_d_1_1_neighbor_list"/>
+<map name="_p_l_m_d_1_1_neighbor_list" id="_p_l_m_d_1_1_neighbor_list">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_neighbor_list.html" title="A class that implements neighbor lists from two lists or a single list of atoms. " alt="" coords="7,5,145,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_52.png" border="0" alt="" usemap="#_p_l_m_d_1_1_optimal_alignment"/>
+<map name="_p_l_m_d_1_1_optimal_alignment" id="_p_l_m_d_1_1_optimal_alignment">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_optimal_alignment.html" title="A class that is intended to include or combine various optimal alignment algorithms. " alt="" coords="5,5,176,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_53.png" border="0" alt="" usemap="#_p_l_m_d_1_1_pbc"/>
+<map name="_p_l_m_d_1_1_pbc" id="_p_l_m_d_1_1_pbc">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_pbc.html" title="PLMD::Pbc" alt="" coords="5,5,96,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_54.png" border="0" alt="" usemap="#_p_l_m_d_1_1_p_d_b"/>
+<map name="_p_l_m_d_1_1_p_d_b" id="_p_l_m_d_1_1_p_d_b">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_p_d_b.html" title="Minimalistic pdb parser. " alt="" coords="7,5,100,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_55.png" border="0" alt="" usemap="#_p_l_m_d_1_1_plumed"/>
+<map name="_p_l_m_d_1_1_plumed" id="_p_l_m_d_1_1_plumed">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_plumed.html" title="C++ wrapper for plumed. " alt="" coords="7,5,116,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_56.png" border="0" alt="" usemap="#_p_l_m_d_1_1_plumed_main_initializer"/>
+<map name="_p_l_m_d_1_1_plumed_main_initializer" id="_p_l_m_d_1_1_plumed_main_initializer">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_plumed_main_initializer.html" title="Static object which registers Plumed. " alt="" coords="7,5,196,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_57.png" border="0" alt="" usemap="#_p_l_m_d_1_1_random"/>
+<map name="_p_l_m_d_1_1_random" id="_p_l_m_d_1_1_random">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_random.html" title="PLMD::Random" alt="" coords="7,5,121,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_58.png" border="0" alt="" usemap="#_p_l_m_d_1_1_r_m_s_d"/>
+<map name="_p_l_m_d_1_1_r_m_s_d" id="_p_l_m_d_1_1_r_m_s_d">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_r_m_s_d.html" title="A class that implements RMSD calculations This is a class that implements the various infrastructure ..." alt="" coords="5,5,112,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_59.png" border="0" alt="" usemap="#_p_l_m_d_1_1setup_1_1_mol_info"/>
+<map name="_p_l_m_d_1_1setup_1_1_mol_info" id="_p_l_m_d_1_1setup_1_1_mol_info">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1setup_1_1_mol_info.html" title="Provides the keyword MOLINFO &#160;" alt="" coords="7,5,156,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_60.png" border="0" alt="" usemap="#_p_l_m_d_1_1_stopwatch"/>
+<map name="_p_l_m_d_1_1_stopwatch" id="_p_l_m_d_1_1_stopwatch">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_stopwatch.html" title="Class implementing stopwatch to time execution. " alt="" coords="7,5,135,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_61.png" border="0" alt="" usemap="#_p_l_m_d_1_1_stopwatch_1_1_time"/>
+<map name="_p_l_m_d_1_1_stopwatch_1_1_time" id="_p_l_m_d_1_1_stopwatch_1_1_time">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_stopwatch_1_1_time.html" title="Class to hold the value of absolute time. " alt="" coords="7,5,172,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_62.png" border="0" alt="" usemap="#_p_l_m_d_1_1_stopwatch_1_1_watch"/>
+<map name="_p_l_m_d_1_1_stopwatch_1_1_watch" id="_p_l_m_d_1_1_stopwatch_1_1_watch">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_stopwatch_1_1_watch.html" title="Class to store a single stopwatch. " alt="" coords="7,5,180,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_63.png" border="0" alt="" usemap="#_p_l_m_d_1_1_switching_function"/>
+<map name="_p_l_m_d_1_1_switching_function" id="_p_l_m_d_1_1_switching_function">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_switching_function.html" title="Small class to compure switching functions in the form In the future we might extend it so as to be s..." alt="" coords="7,5,180,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_64.png" border="0" alt="" usemap="#_p_l_m_d_1_1_target_dist"/>
+<map name="_p_l_m_d_1_1_target_dist" id="_p_l_m_d_1_1_target_dist">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_target_dist.html" title="PLMD::TargetDist" alt="" coords="5,5,133,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_65.png" border="0" alt="" usemap="#_p_l_m_d_1_1_tensor_checks"/>
+<map name="_p_l_m_d_1_1_tensor_checks" id="_p_l_m_d_1_1_tensor_checks">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_tensor_checks.html" title="Small auxiliary class. " alt="" coords="5,5,157,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_66.png" border="0" alt="" usemap="#_p_l_m_d_1_1_tools"/>
+<map name="_p_l_m_d_1_1_tools" id="_p_l_m_d_1_1_tools">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_tools.html" title="Empty class which just contains several (static) tools. " alt="" coords="5,5,104,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_67.png" border="0" alt="" usemap="#_p_l_m_d_1_1_torsion"/>
+<map name="_p_l_m_d_1_1_torsion" id="_p_l_m_d_1_1_torsion">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_torsion.html" title="Class to compute torsional angles. " alt="" coords="7,5,116,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_68.png" border="0" alt="" usemap="#_p_l_m_d_1_1_units"/>
+<map name="_p_l_m_d_1_1_units" id="_p_l_m_d_1_1_units">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_units.html" title="Small utility class. " alt="" coords="5,5,104,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_69.png" border="0" alt="" usemap="#_p_l_m_d_1_1_value"/>
+<map name="_p_l_m_d_1_1_value" id="_p_l_m_d_1_1_value">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_value.html" title="A class for holding the value of a function together with its derivatives. " alt="" coords="7,5,105,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_70.png" border="0" alt="" usemap="#_p_l_m_d_1_1_vector_checks"/>
+<map name="_p_l_m_d_1_1_vector_checks" id="_p_l_m_d_1_1_vector_checks">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_vector_checks.html" title="Small auxiliary class. " alt="" coords="7,5,156,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_71.png" border="0" alt="" usemap="#_p_l_m_d_1_1_vector_generic_3_01n_01_4"/>
+<map name="_p_l_m_d_1_1_vector_generic_3_01n_01_4" id="_p_l_m_d_1_1_vector_generic_3_01n_01_4">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_vector_generic.html" title="Class implementing fixed size vectors of doubles. " alt="" coords="5,5,187,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_72.png" border="0" alt="" usemap="#_p_l_m_d_1_1vesselbase_1_1_vessel"/>
+<map name="_p_l_m_d_1_1vesselbase_1_1_vessel" id="_p_l_m_d_1_1vesselbase_1_1_vessel">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html" title="PLMD::vesselbase::Vessel" alt="" coords="5,181,187,211"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html" title="PLMD::multicolvar::\lStoreCentralAtomsVessel" alt="" coords="244,34,417,81"/><area shape="rect" id="node5" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html" title="PLMD::multicolvar::\lStoreColvarVessel" alt="" coords="261,103,400,150"/><area shape="rect" id="node9" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html" title="This class allows you to calculate the vessel in one ActionWithVessel. " alt="" coords="241,173,420,219"/><area shape="rect" id="node11" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html" title="Objects that inherit from FunctionVessel can be used (in tandem with PLMD::ActionWithVessel) to calcu..." alt="" coords="236,242,425,289"/><area shape="rect" id="node27" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html" title="PLMD::vesselbase::Shortcut\lVessel" alt="" coords="236,383,425,430"/><area shape="rect" id="node7" href="class_p_l_m_d_1_1multicolvar_1_1_moments.html" title="PLMD::multicolvar::\lMoments" alt="" coords="507,5,645,51"/><area shape="rect" id="node13" href="class_p_l_m_d_1_1multicolvar_1_1_d_h_energy.html" title="PLMD::multicolvar::\lDHEnergy" alt="" coords="507,74,645,121"/><area shape="rect" id="node15" href="class_p_l_m_d_1_1vesselbase_1_1_between.html" title="PLMD::vesselbase::Between" alt="" coords="480,144,672,173"/><area shape="rect" id="node17" href="class_p_l_m_d_1_1vesselbase_1_1_less_than.html" title="PLMD::vesselbase::LessThan" alt="" coords="477,197,675,227"/><area shape="rect" id="node19" href="class_p_l_m_d_1_1vesselbase_1_1_mean.html" title="PLMD::vesselbase::Mean" alt="" coords="489,251,663,280"/><area shape="rect" id="node21" href="class_p_l_m_d_1_1vesselbase_1_1_min.html" title="PLMD::vesselbase::Min" alt="" coords="495,304,657,333"/><area shape="rect" id="node23" href="class_p_l_m_d_1_1vesselbase_1_1_more_than.html" title="PLMD::vesselbase::MoreThan" alt="" coords="477,357,675,387"/><area shape="rect" id="node25" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html" title="PLMD::vesselbase::Sum" alt="" coords="492,411,660,440"/><area shape="rect" id="node29" href="class_p_l_m_d_1_1vesselbase_1_1_histogram.html" title="PLMD::vesselbase::Histogram" alt="" coords="476,464,676,493"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_73.png" border="0" alt="" usemap="#_p_l_m_d_1_1vesselbase_1_1_vessel_options"/>
+<map name="_p_l_m_d_1_1vesselbase_1_1_vessel_options" id="_p_l_m_d_1_1vesselbase_1_1_vessel_options">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html" title="This class is used to pass the input to Vessels. " alt="" coords="5,5,187,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_74.png" border="0" alt="" usemap="#_p_l_m_d_1_1vesselbase_1_1_vessel_register"/>
+<map name="_p_l_m_d_1_1vesselbase_1_1_vessel_register" id="_p_l_m_d_1_1vesselbase_1_1_vessel_register">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html" title="PLMD::vesselbase::Vessel\lRegister" alt="" coords="5,5,187,51"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_75.png" border="0" alt="" usemap="#_p_l_m_d_1_1_weight_base"/>
+<map name="_p_l_m_d_1_1_weight_base" id="_p_l_m_d_1_1_weight_base">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_weight_base.html" title="PLMD::WeightBase" alt="" coords="5,32,144,61"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_bias_weight.html" title="PLMD::BiasWeight" alt="" coords="193,5,327,35"/><area shape="rect" id="node5" href="class_p_l_m_d_1_1_prob_weight.html" title="PLMD::ProbWeight" alt="" coords="193,59,327,88"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_76.png" border="0" alt="" usemap="#_p_l_m_d_1_1_with_cmd"/>
+<map name="_p_l_m_d_1_1_with_cmd" id="_p_l_m_d_1_1_with_cmd">
+<area shape="rect" id="node1" href="class_p_l_m_d_1_1_with_cmd.html" title="Base for classes with cmd() method. " alt="" coords="5,59,128,88"/><area shape="rect" id="node3" href="class_p_l_m_d_1_1_c_l_tool_main.html" title="Class providing cmd() access to command line tools. " alt="" coords="177,5,313,35"/><area shape="rect" id="node5" href="class_p_l_m_d_1_1_g_r_e_x.html" title="PLMD::GREX" alt="" coords="193,59,297,88"/><area shape="rect" id="node7" href="class_p_l_m_d_1_1_plumed_main.html" title="Main plumed object. " alt="" coords="176,112,315,141"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_77.png" border="0" alt="" usemap="#plumed"/>
+<map name="plumed" id="plumed">
+<area shape="rect" id="node1" href="structplumed.html" title="Main plumed object. " alt="" coords="5,5,69,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_78.png" border="0" alt="" usemap="#plumed__function__holder"/>
+<map name="plumed__function__holder" id="plumed__function__holder">
+<area shape="rect" id="node1" href="structplumed__function__holder.html" title="Holder for function pointer. " alt="" coords="7,5,164,35"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_79.png" border="0" alt="" usemap="#plumed__plumedmain__function__holder"/>
+<map name="plumed__plumedmain__function__holder" id="plumed__plumedmain__function__holder">
+<area shape="rect" id="node1" href="structplumed__plumedmain__function__holder.html" title="Container for plumedmain function pointers (create, cmd and finalize). " alt="" coords="5,5,200,51"/></map>
+</td></tr>
+</table>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

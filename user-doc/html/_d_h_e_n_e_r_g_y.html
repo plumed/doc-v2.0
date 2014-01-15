@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: DHENERGY</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="_colvar.html">Collective Variables</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">DHENERGY </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>Calculate Debye-Huckel interaction energy among GROUPA and GROUPB.</p>
+<p>This collective variable can be used to analyze or induce electrostatically driven reactions <a class="el" href="citelist.html#CITEREF_do13jctc">[10]</a>. The two atom groups should be disjointed. Notice that the value of the DHENERGY is returned in plumed units (see <a class="el" href="_u_n_i_t_s.html">UNITS</a>).</p>
+<dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> GROUPA </b> </td><td>First list of atoms   </td></tr>
+<tr>
+<td width="15%"><b> GROUPB </b> </td><td>Second list of atoms   </td></tr>
+</table>
+<dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> I </b> </td><td>( default=1.0 ) Ionic strength (M)   </td></tr>
+<tr>
+<td width="15%"><b> TEMP </b> </td><td>( default=300.0 ) Simulation temperature (K)   </td></tr>
+<tr>
+<td width="15%"><b> EPSILON </b> </td><td>( default=80.0 ) Dielectric constant of solvent   </td></tr>
+</table>
+<dl class="section user"><dt>Options</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> NUMERICAL_DERIVATIVES </b> </td><td>( default=off ) calculate the derivatives for these quantities numerically   </td></tr>
+<tr>
+<td width="15%"><b> NOPBC </b> </td><td>( default=off ) ignore the periodic boundary conditions when calculating distances   </td></tr>
+<tr>
+<td width="15%"><b> SERIAL </b> </td><td>( default=off ) Perform the calculation in serial - for debug purpose   </td></tr>
+<tr>
+<td width="15%"><b> PAIR </b> </td><td>( default=off ) Pair only 1st element of the 1st group with 1st element in the second, etc   </td></tr>
+<tr>
+<td width="15%"><b> NLIST </b> </td><td><p class="starttd">( default=off ) Use a neighbour list to speed up the calculation  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> NL_CUTOFF </b> </td><td>The cutoff for the neighbour list   </td></tr>
+<tr>
+<td width="15%"><b> NL_STRIDE </b> </td><td><p class="starttd">The frequency with which we are updating the atoms in the neighbour list  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd><pre class="fragment"># this is printing the electrostatic interaction between two groups of atoms
+dh: DHENERGY GROUPA=1-10 GROUPB=11-20 EPSILON=80.0 I=0.1 TEMP=300.0
+PRINT ARG=dh
+</pre> (see also <a class="el" href="_p_r_i_n_t.html">PRINT</a>) </dd></dl>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

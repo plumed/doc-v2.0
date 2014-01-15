@@ -1,0 +1,74 @@
+\par The following options are available
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> --help/-h </b></td>
+<td> ( default=off ) print this help </td>
+</tr>
+<tr>
+<td width=15%> <b> --help-debug </b></td>
+<td> ( default=off ) print special options that can be used to create regtests </td>
+</tr>
+<tr>
+<td width=15%> <b> --negbias </b></td>
+<td> ( default=off )  print the negative bias instead of the free energy (only needed with welltempered runs and flexible hills)  </td>
+</tr>
+<tr>
+<td width=15%> <b> --nohistory </b></td>
+<td> ( default=off )  to be used with --stride:  it splits the bias/histogram in pieces without previous history  </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> --hills </b></td>
+<td> specify the name of the hills file </td>
+</tr>
+<tr>
+<td width=15%> <b> --histo </b></td>
+<td> specify the name of the file for histogram a colvar/hills file is good </td>
+</tr>
+<tr>
+<td width=15%> <b> --stride </b></td>
+<td> specify the stride for integrating hills file (default 0=never) </td>
+</tr>
+<tr>
+<td width=15%> <b> --min </b></td>
+<td> the lower bounds for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> --max </b></td>
+<td> the upper bounds for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> --bin </b></td>
+<td> the number of bins for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> --idw </b></td>
+<td> specify the variables to be integrated (default is all) </td>
+</tr>
+<tr>
+<td width=15%> <b> --outfile </b></td>
+<td> specify the outputfile for sumhills </td>
+</tr>
+<tr>
+<td width=15%> <b> --outhisto </b></td>
+<td> specify the outputfile for the histogram </td>
+</tr>
+<tr>
+<td width=15%> <b> --kt </b></td>
+<td> specify temperature for integrating out variables </td>
+</tr>
+<tr>
+<td width=15%> <b> --sigma </b></td>
+<td>  a vector that specify the sigma for binning (only needed when doing histogram  </td>
+</tr>
+<tr>
+<td width=15%> <b> --fmt </b></td>
+<td> specify the output format </td>
+</tr>
+
+</table>
+

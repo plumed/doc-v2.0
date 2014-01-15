@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: vesselbase/ShortcutVessel.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7685edf5d18a1f720e5764f1be2af464.html">vesselbase</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">ShortcutVessel.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_shortcut_vessel_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vesselbase_2_shortcut_vessel_8h.html">ShortcutVessel.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vesselbase_2_action_with_vessel_8h.html">ActionWithVessel.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>vesselbase{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#ac891b95de9285290e171f35e40f3f536">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#ac891b95de9285290e171f35e40f3f536">ShortcutVessel::registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#ac4e0dc40b744180e4cf713d2c34a3b82">Vessel::registerKeywords</a>( keys );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  plumed_assert( keys.<a class="code" href="class_p_l_m_d_1_1_keywords.html#acb259069c981032339f4533f7e595f19">size</a>()==0 );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#aeea429a928ef06954cb707dc5893560b">   33</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#aeea429a928ef06954cb707dc5893560b">ShortcutVessel::ShortcutVessel</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a>&amp; <a class="code" href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a>):</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">Vessel</a>(da)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#a766804f01b22a7ff7e593675b4298f7f">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#a766804f01b22a7ff7e593675b4298f7f">ShortcutVessel::addVessel</a>( <span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::string&amp; input ){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a08fe1e9f06a06575bc2ee19bf192b232">numlab</a>=1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a441ea9057fe7b5475cde49f850bfa76e">functions</a>).size();++i){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;     <span class="keywordflow">if</span>( (<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;functions[i])-&gt;getName()==name ) numlab++;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a2cbaaa5a8efbd7ca2343d67a13707e49">addVessel</a>( name, input, numlab );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="vesselbase_2_action_with_vessel_8h_html"><div class="ttname"><a href="vesselbase_2_action_with_vessel_8h.html">ActionWithVessel.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel_html_aeea429a928ef06954cb707dc5893560b"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#aeea429a928ef06954cb707dc5893560b">PLMD::vesselbase::ShortcutVessel::ShortcutVessel</a></div><div class="ttdeci">ShortcutVessel(const VesselOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_shortcut_vessel_8cpp_source.html#l00033">ShortcutVessel.cpp:33</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a441ea9057fe7b5475cde49f850bfa76e"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a441ea9057fe7b5475cde49f850bfa76e">PLMD::vesselbase::ActionWithVessel::functions</a></div><div class="ttdeci">std::vector&lt; Vessel * &gt; functions</div><div class="ttdoc">Pointers to the functions we are using on each value. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00070">ActionWithVessel.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_ac4e0dc40b744180e4cf713d2c34a3b82"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#ac4e0dc40b744180e4cf713d2c34a3b82">PLMD::vesselbase::Vessel::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdoc">Reserve any keywords for this particular vessel. </div><div class="ttdef"><b>Definition:</b> <a href="_vessel_8cpp_source.html#l00053">Vessel.cpp:53</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel_html_ac891b95de9285290e171f35e40f3f536"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#ac891b95de9285290e171f35e40f3f536">PLMD::vesselbase::ShortcutVessel::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_shortcut_vessel_8cpp_source.html#l00028">ShortcutVessel.cpp:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a2cbaaa5a8efbd7ca2343d67a13707e49"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a2cbaaa5a8efbd7ca2343d67a13707e49">PLMD::vesselbase::ActionWithVessel::addVessel</a></div><div class="ttdeci">void addVessel(const std::string &amp;name, const std::string &amp;input, const int numlab=0, const std::string thislab=&quot;&quot;)</div><div class="ttdoc">Add a vessel to the list of vessels. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_vessel_8cpp_source.html#l00073">ActionWithVessel.cpp:73</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel_html_a766804f01b22a7ff7e593675b4298f7f"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#a766804f01b22a7ff7e593675b4298f7f">PLMD::vesselbase::ShortcutVessel::addVessel</a></div><div class="ttdeci">void addVessel(const std::string &amp;name, const std::string &amp;intput)</div><div class="ttdef"><b>Definition:</b> <a href="_shortcut_vessel_8cpp_source.html#l00038">ShortcutVessel.cpp:38</a></div></div>
+<div class="ttc" id="vesselbase_2_shortcut_vessel_8h_html"><div class="ttname"><a href="vesselbase_2_shortcut_vessel_8h.html">ShortcutVessel.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">PLMD::vesselbase::VesselOptions</a></div><div class="ttdoc">This class is used to pass the input to Vessels. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00053">Vessel.h:53</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a0756f10f12a549c19f52f54e219b1cfe"><div class="ttname"><a href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a></div><div class="ttdeci">void int double * da</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00047">Matrix.h:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">PLMD::vesselbase::Vessel</a></div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00075">Vessel.h:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a08fe1e9f06a06575bc2ee19bf192b232"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a08fe1e9f06a06575bc2ee19bf192b232">PLMD::vesselbase::Vessel::numlab</a></div><div class="ttdeci">const int numlab</div><div class="ttdoc">The numerical label for this object. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00083">Vessel.h:83</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_acb259069c981032339f4533f7e595f19"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#acb259069c981032339f4533f7e595f19">PLMD::Keywords::size</a></div><div class="ttdeci">unsigned size() const </div><div class="ttdoc">Return the number of defined keywords. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00220">Keywords.cpp:220</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a2ee21116a09e152e7a933794a8907664"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">PLMD::vesselbase::Vessel::getAction</a></div><div class="ttdeci">ActionWithVessel * getAction()</div><div class="ttdoc">Return a pointer to the action we are working in. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00236">Vessel.h:236</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<tr> <td width=5%> \subpage  DEBUG </td> <td>
+Set some debug options.
+</td> </tr>
+<tr> <td width=5%> \subpage  FLUSH </td> <td>
+This command instructs plumed to flush all the open files with a user specified frequency.
+Notice that all files are flushed anyway every 10000 steps.
+</td> </tr>
+<tr> <td width=5%> \subpage  GROUP </td> <td>
+Define a group of atoms so that a particular list of atoms can be referenced with a single label
+in definitions of CVs or virtual atoms.
+</td> </tr>
+<tr> <td width=5%> \subpage  INCLUDE </td> <td>
+Includes an external input file, similar to "#include" in C preprocessor.
+</td> </tr>
+<tr> <td width=5%> \subpage  RANDOM_EXCHANGES </td> <td>
+Set random pattern for exchanges.
+</td> </tr>
+<tr> <td width=5%> \subpage  READ </td> <td>
+Read quantities from a colvar file.
+</td> </tr>
+<tr> <td width=5%> \subpage  TIME </td> <td>
+retrieve the time of the simulation to be used elsewere
+</td> </tr>
+<tr> <td width=5%> \subpage  WHOLEMOLECULES </td> <td>
+This action is used to rebuild molecules that can become split by the periodic
+boundary conditions.
+</td> </tr>
+<tr> <td width=5%> \subpage  IMD </td> <td>
+Use interactive molecular dynamics with VMD
+</td> </tr>
+<tr> <td width=5%> \subpage  LOAD </td> <td>
+Loads a library, possibly defining new actions.
+</td> </tr>
+<tr> <td width=5%> \subpage  RESTART </td> <td>
+Activate restart.
+</td> </tr>
+<tr> <td width=5%> \subpage  UNITS </td> <td>
+This command sets the internal units for the code.  A new unit can be set by either
+specifying how to convert from the plumed default unit into that new unit or by using
+the shortcuts described below.  This directive MUST appear at the BEGINNING of the 
+plumed.dat file.  The same units must be used througout the plumed.dat file.
+</td> </tr>

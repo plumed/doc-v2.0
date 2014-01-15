@@ -1,0 +1,96 @@
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ATOM </b></td>
+<td> the atom whose vicinity we are interested in examining </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the label of the action that calculates the multicolvar we are interested in </td>
+</tr>
+<tr>
+<td width=15%> <b> SIGMA </b></td>
+<td> the width of the function to be used for kernel density estimation </td>
+</tr>
+<tr>
+<td width=15%> <b> KERNEL </b></td>
+<td> ( default=gaussian ) the type of kernel function to be used </td>
+</tr>
+<tr>
+<td width=15%> <b> XLOWER </b></td>
+<td> ( default=0.0 ) the lower boundary in x relative to the x coordinate of the atom (0 indicates use full extent of box). </td>
+</tr>
+<tr>
+<td width=15%> <b> XUPPER </b></td>
+<td> ( default=0.0 ) the upper boundary in x relative to the x coordinate of the atom (0 indicates use full extent of box). </td>
+</tr>
+<tr>
+<td width=15%> <b> YLOWER </b></td>
+<td> ( default=0.0 ) the lower boundary in y relative to the y coordinate of the atom (0 indicates use full extent of box). </td>
+</tr>
+<tr>
+<td width=15%> <b> YUPPER </b></td>
+<td> ( default=0.0 ) the upper boundary in y relative to the y coordinate of the atom (0 indicates use full extent of box). </td>
+</tr>
+<tr>
+<td width=15%> <b> ZLOWER </b></td>
+<td> ( default=0.0 ) the lower boundary in z relative to the z coordinate of the atom (0 indicates use full extent of box). </td>
+</tr>
+<tr>
+<td width=15%> <b> ZUPPER </b></td>
+<td> ( default=0.0 ) the upper boundary in z relative to the z coordinate of the atom (0 indicates use full extent of box). </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> SERIAL </b></td>
+<td> ( default=off ) do the calculation in serial.  Do not parallelize </td>
+</tr>
+<tr>
+<td width=15%> <b> MEAN </b></td>
+<td> ( default=off ) take the mean of these variables. The final value can be referenced using <em>label</em>.mean </td>
+</tr>
+<tr>
+<td width=15%> <b> OUTSIDE </b></td>
+<td> ( default=off ) calculate quantities for colvars that are on atoms outside the region of interest </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TOL </b></td>
+<td> this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum.  They can thus be safely ignored as can the the derivatives wrt these small quantities. </td>
+</tr>
+<tr>
+<td width=15%> <b> LESS_THAN </b></td>
+<td> calculate the number of variables less than a certain target value. This quantity is calculated using \f$\sum_i \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.less_than.  You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3...  The corresponding values are then referenced using <em>label</em>.less_than-1,  <em>label</em>.less_than-2,  <em>label</em>.less_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> MORE_THAN </b></td>
+<td> calculate the number of variables more than a certain target value. This quantity is calculated using \f$\sum_i 1.0 - \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.more_than.  You can use multiple instances of this keyword i.e. MORE_THAN1, MORE_THAN2, MORE_THAN3...  The corresponding values are then referenced using <em>label</em>.more_than-1,  <em>label</em>.more_than-2,  <em>label</em>.more_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> BETWEEN </b></td>
+<td> calculate the number of values that are within a certain range. These quantities are calculated using kernel density estimation as described on \ref histogrambead. The final value can be referenced using <em>label</em>.between.  You can use multiple instances of this keyword i.e. BETWEEN1, BETWEEN2, BETWEEN3...  The corresponding values are then referenced using <em>label</em>.between-1,  <em>label</em>.between-2,  <em>label</em>.between-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> HISTOGRAM </b></td>
+<td> calculate a discretized histogram of the distribution of values. This shortcut allows you to calculates NBIN quantites like BETWEEN. </td>
+</tr>
+
+</table>
+

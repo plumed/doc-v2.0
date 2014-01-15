@@ -1,0 +1,298 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: manyrestraints/Sphere.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_cecd3024e16e92546a6d0f0d2e05976e.html">manyrestraints</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Sphere.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_sphere_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_many_restraints_base_8h.html">ManyRestraintsBase.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;core/ActionRegister.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>manyrestraints {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html">Sphere</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html">ManyRestraintsBase</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#af3da7d66869f6a5cd3e543333e86e2ae">   30</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#af3da7d66869f6a5cd3e543333e86e2ae">at</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a7f4bfa50f260ba3cbcb58f317da67dc5">   31</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a7f4bfa50f260ba3cbcb58f317da67dc5">kappa</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae7523c729b133591d04ba85fb66db1a1">   32</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae7523c729b133591d04ba85fb66db1a1">exp</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a914ee22d3933c15e540e34031233cfe9">   33</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a914ee22d3933c15e540e34031233cfe9">eps</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a633cc9faaf3c9b63a6a0d2c2fbf2f43a">   34</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a633cc9faaf3c9b63a6a0d2c2fbf2f43a">offset</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ac71fff083903ca99aa874ffa1d7e4968">   35</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ac71fff083903ca99aa874ffa1d7e4968">nopbc</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae65aa92f6e91614e8ba144184f9e81e2">   36</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae65aa92f6e91614e8ba144184f9e81e2">com</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ad8771fde0b995855fa05181703d40967">   37</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ad8771fde0b995855fa05181703d40967">com_deriv</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a1394947ca5fb683421eae8add8c3914d">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a16297bb69cee246acfef5ebd037188d1">Sphere</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp; );</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae190894d395c9048eb510c692403aa40">   41</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae190894d395c9048eb510c692403aa40">isPeriodic</a>(){ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a8c82355339bd0244a824379524b4dcc0">performTask</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; j );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae2a8fec2538d1149cda95590ed7e12e9">calculate</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;PLUMED_REGISTER_ACTION(Sphere,<span class="stringliteral">&quot;SPHERICAL_RESTRAINT&quot;</span>)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a1394947ca5fb683421eae8add8c3914d">   48</a></span>&#160;void <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html">Sphere</a>::registerKeywords( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a4c12aa8b1be33a9d7adbea5cb33ef4fe">ManyRestraintsBase::registerKeywords</a>( keys );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  keys.add(<span class="stringliteral">&quot;atoms&quot;</span>,<span class="stringliteral">&quot;ATOMS&quot;</span>,<span class="stringliteral">&quot;the atoms that are being confined to the sphere&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;RADIUS&quot;</span>,<span class="stringliteral">&quot;the radius of the sphere&quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;KAPPA&quot;</span>,<span class="stringliteral">&quot;the force constant for the wall.  The k_i in the expression for a wall.&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;OFFSET&quot;</span>,<span class="stringliteral">&quot;0.0&quot;</span>,<span class="stringliteral">&quot;the offset for the start of the wall.  The o_i in the expression for a wall.&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;EXP&quot;</span>,<span class="stringliteral">&quot;2.0&quot;</span>,<span class="stringliteral">&quot;the powers for the walls.  The e_i in the expression for a wall.&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;EPS&quot;</span>,<span class="stringliteral">&quot;1.0&quot;</span>,<span class="stringliteral">&quot;the values for s_i in the expression for a wall&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  keys.addFlag(<span class="stringliteral">&quot;NOPBC&quot;</span>,<span class="keyword">false</span>,<span class="stringliteral">&quot;turn off periodic boundary conditions&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a16297bb69cee246acfef5ebd037188d1">   59</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a16297bb69cee246acfef5ebd037188d1">Sphere::Sphere</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp; ao):</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<a class="code" href="class_p_l_m_d_1_1_action.html">Action</a>(ao),</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html">ManyRestraintsBase</a>(ao)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::vector&lt;AtomNumber&gt; <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a0f46760435a7aa0933fba5f38c17ae4e">atoms</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">parseAtomList</a>(<span class="stringliteral">&quot;ATOMS&quot;</span>,atoms);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ad8771fde0b995855fa05181703d40967">com_deriv</a>.resize( atoms.size() );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;RADIUS&quot;</span>,<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#af3da7d66869f6a5cd3e543333e86e2ae">at</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;OFFSET&quot;</span>,<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a633cc9faaf3c9b63a6a0d2c2fbf2f43a">offset</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;EPS&quot;</span>,<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a914ee22d3933c15e540e34031233cfe9">eps</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;EXP&quot;</span>,<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae7523c729b133591d04ba85fb66db1a1">exp</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;KAPPA&quot;</span>,<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a7f4bfa50f260ba3cbcb58f317da67dc5">kappa</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">parseFlag</a>(<span class="stringliteral">&quot;NOPBC&quot;</span>,<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ac71fff083903ca99aa874ffa1d7e4968">nopbc</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">checkRead</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a8e22ca9206b39a18ceeaea66e26c2690">requestAtoms</a>( atoms ); </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a3ab560828c7061fc373326d6c3de0b30">createRestraints</a>( atoms.size() );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae2a8fec2538d1149cda95590ed7e12e9">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae2a8fec2538d1149cda95590ed7e12e9">Sphere::calculate</a>(){</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// Calculate position of the center of mass</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">double</span> mass=0; <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae65aa92f6e91614e8ba144184f9e81e2">com</a>.<a class="code" href="class_p_l_m_d_1_1_vector_generic.html#a263d2062d5453e3309a0a370db7509ef">zero</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>();i++) mass+=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a9a2d7dc014df12aa9525d2f2fd6159f5">getMass</a>(i);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>();i++){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae65aa92f6e91614e8ba144184f9e81e2">com</a>+=(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a9a2d7dc014df12aa9525d2f2fd6159f5">getMass</a>(i)/mass)*<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(i);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ad8771fde0b995855fa05181703d40967">com_deriv</a>[i]=(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a9a2d7dc014df12aa9525d2f2fd6159f5">getMass</a>(i)/mass);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// Now run the full set of tasks</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a261b8542c47d206f7f8c4a2734b4655e">runAllTasks</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a8c82355339bd0244a824379524b4dcc0">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a8c82355339bd0244a824379524b4dcc0">Sphere::performTask</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; j ){</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> distance;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ac71fff083903ca99aa874ffa1d7e4968">nopbc</a>){</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    distance=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a35a986326d36a7925a91d091f7a01f4a">pbcDistance</a>(<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae65aa92f6e91614e8ba144184f9e81e2">com</a>,<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    distance=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>(<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae65aa92f6e91614e8ba144184f9e81e2">com</a>,<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">double</span> value=distance.<a class="code" href="class_p_l_m_d_1_1_vector_generic.html#a0d6969e96aed319e8c266b0ecc1f30ce">modulo</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">double</span> uscale = (value - <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#af3da7d66869f6a5cd3e543333e86e2ae">at</a> + <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a633cc9faaf3c9b63a6a0d2c2fbf2f43a">offset</a>)/<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a914ee22d3933c15e540e34031233cfe9">eps</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">if</span>( uscale &gt; 0. ){</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;     <span class="keywordtype">double</span> invvalue= 1.0 / value ;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;     <span class="keywordtype">double</span> power = pow( uscale, <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae7523c729b133591d04ba85fb66db1a1">exp</a> );</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;     <span class="keywordtype">double</span> f = invvalue * ( <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a7f4bfa50f260ba3cbcb58f317da67dc5">kappa</a> / <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a914ee22d3933c15e540e34031233cfe9">eps</a> ) * <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae7523c729b133591d04ba85fb66db1a1">exp</a> * power / uscale;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;     <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a8d37e2293a4b3f30e8a4efcf6bd9f1f8">setElementValue</a>( 0, <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a7f4bfa50f260ba3cbcb58f317da67dc5">kappa</a>*power ); <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a8d37e2293a4b3f30e8a4efcf6bd9f1f8">setElementValue</a>( 1, 1.0 );</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;     <span class="comment">// Add derivatives for com</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;     <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>();++i) <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a111952715ad57e9eccbb5a65db2de179">addAtomsDerivatives</a>( i, -<a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ad8771fde0b995855fa05181703d40967">com_deriv</a>[i]*f*distance );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;     <span class="comment">// Add derivatives for other atom </span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;     <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a111952715ad57e9eccbb5a65db2de179">addAtomsDerivatives</a>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>, f*distance );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;     <span class="comment">// Add derivatives for virial</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;     <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a01f036d42e12d4013aee746514d2298d">addBoxDerivatives</a>( -f*<a class="code" href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">Tensor</a>(distance,distance) );</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;     <span class="comment">// We need to accumulate derivatives</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;     <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">// We need do nothing more if this is not true</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a8d37e2293a4b3f30e8a4efcf6bd9f1f8">setElementValue</a>( 1, 0.0 );</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_ae2a8fec2538d1149cda95590ed7e12e9"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae2a8fec2538d1149cda95590ed7e12e9">PLMD::manyrestraints::Sphere::calculate</a></div><div class="ttdeci">void calculate()</div><div class="ttdoc">Calculate an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00079">Sphere.cpp:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_ad5680e139003df022ce068a967a8bd2b"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">PLMD::ActionAtomistic::getPosition</a></div><div class="ttdeci">const Vector &amp; getPosition(int) const </div><div class="ttdoc">Get position of i-th atom. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00132">ActionAtomistic.h:132</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_ae65aa92f6e91614e8ba144184f9e81e2"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae65aa92f6e91614e8ba144184f9e81e2">PLMD::manyrestraints::Sphere::com</a></div><div class="ttdeci">Vector com</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00036">Sphere.cpp:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a5540be9c95bc8bf9f1ec567c047afddb"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">PLMD::Action::parseFlag</a></div><div class="ttdeci">void parseFlag(const std::string &amp;key, bool &amp;t)</div><div class="ttdoc">Parse one keyword as boolean flag. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00104">Action.cpp:104</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_ac001ea5fa3ba2f6f0ec6a2f50214701b"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">PLMD::vesselbase::ActionWithVessel::current</a></div><div class="ttdeci">unsigned current</div><div class="ttdoc">The numerical index of the task we are curently performing. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00079">ActionWithVessel.h:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_a914ee22d3933c15e540e34031233cfe9"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a914ee22d3933c15e540e34031233cfe9">PLMD::manyrestraints::Sphere::eps</a></div><div class="ttdeci">double eps</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00033">Sphere.cpp:33</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html_a0d6969e96aed319e8c266b0ecc1f30ce"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html#a0d6969e96aed319e8c266b0ecc1f30ce">PLMD::VectorGeneric::modulo</a></div><div class="ttdeci">double modulo() const </div><div class="ttdoc">Compute the modulo. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00325">Vector.h:325</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_ac71fff083903ca99aa874ffa1d7e4968"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ac71fff083903ca99aa874ffa1d7e4968">PLMD::manyrestraints::Sphere::nopbc</a></div><div class="ttdeci">bool nopbc</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00035">Sphere.cpp:35</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html">PLMD::manyrestraints::ManyRestraintsBase</a></div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00033">ManyRestraintsBase.h:33</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a111952715ad57e9eccbb5a65db2de179"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a111952715ad57e9eccbb5a65db2de179">PLMD::manyrestraints::ManyRestraintsBase::addAtomsDerivatives</a></div><div class="ttdeci">void addAtomsDerivatives(const int &amp;, const Vector &amp;)</div><div class="ttdoc">Add some derivatives to a particular atom. </div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00062">ManyRestraintsBase.h:62</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a8ffc4538dce6f51e1505a0a300d204e2"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">PLMD::Action::checkRead</a></div><div class="ttdeci">void checkRead()</div><div class="ttdoc">Check if Action was properly read. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00161">Action.cpp:161</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_ae7523c729b133591d04ba85fb66db1a1"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae7523c729b133591d04ba85fb66db1a1">PLMD::manyrestraints::Sphere::exp</a></div><div class="ttdeci">double exp</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00032">Sphere.cpp:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_acb6fb7fffbb8884852bae0c88f9f9777"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">PLMD::ActionAtomistic::parseAtomList</a></div><div class="ttdeci">void parseAtomList(const std::string &amp;key, std::vector&lt; AtomNumber &gt; &amp;t)</div><div class="ttdoc">Parse a list of atoms without a numbered keyword. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00141">ActionAtomistic.cpp:141</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html">PLMD::manyrestraints::Sphere</a></div><div class="ttdoc">Provides the keyword SPHERICAL_RESTRAINT  </div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00028">Sphere.cpp:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_a1394947ca5fb683421eae8add8c3914d"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a1394947ca5fb683421eae8add8c3914d">PLMD::manyrestraints::Sphere::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00048">Sphere.cpp:48</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a261b8542c47d206f7f8c4a2734b4655e"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a261b8542c47d206f7f8c4a2734b4655e">PLMD::vesselbase::ActionWithVessel::runAllTasks</a></div><div class="ttdeci">void runAllTasks()</div><div class="ttdoc">Calculate the values of all the vessels. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_vessel_8cpp_source.html#l00171">ActionWithVessel.cpp:171</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_a16297bb69cee246acfef5ebd037188d1"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a16297bb69cee246acfef5ebd037188d1">PLMD::manyrestraints::Sphere::Sphere</a></div><div class="ttdeci">Sphere(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00059">Sphere.cpp:59</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html_a263d2062d5453e3309a0a370db7509ef"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html#a263d2062d5453e3309a0a370db7509ef">PLMD::VectorGeneric::zero</a></div><div class="ttdeci">void zero()</div><div class="ttdoc">set it to zero </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00173">Vector.h:173</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_ae0c8ed07593b5e242e34b32e0edc3a12"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">PLMD::Action::parse</a></div><div class="ttdeci">void parse(const std::string &amp;key, T &amp;t)</div><div class="ttdoc">Parse one keyword as generic type. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00273">Action.h:273</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_a633cc9faaf3c9b63a6a0d2c2fbf2f43a"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a633cc9faaf3c9b63a6a0d2c2fbf2f43a">PLMD::manyrestraints::Sphere::offset</a></div><div class="ttdeci">double offset</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00034">Sphere.cpp:34</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_ad8771fde0b995855fa05181703d40967"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ad8771fde0b995855fa05181703d40967">PLMD::manyrestraints::Sphere::com_deriv</a></div><div class="ttdeci">std::vector&lt; double &gt; com_deriv</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00037">Sphere.cpp:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a0f46760435a7aa0933fba5f38c17ae4e"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a0f46760435a7aa0933fba5f38c17ae4e">PLMD::ActionAtomistic::atoms</a></div><div class="ttdeci">Atoms &amp; atoms</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00059">ActionAtomistic.h:59</a></div></div>
+<div class="ttc" id="_many_restraints_base_8h_html"><div class="ttname"><a href="_many_restraints_base_8h.html">ManyRestraintsBase.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a8d37e2293a4b3f30e8a4efcf6bd9f1f8"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a8d37e2293a4b3f30e8a4efcf6bd9f1f8">PLMD::vesselbase::ActionWithVessel::setElementValue</a></div><div class="ttdeci">void setElementValue(const unsigned &amp;, const double &amp;)</div><div class="ttdoc">Set the value of the element. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00182">ActionWithVessel.h:182</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html">PLMD::Action</a></div><div class="ttdoc">Base class for all the input Actions. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00060">Action.h:60</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a2a1cf3a4fea01e78626f761aa04abd90"><div class="ttname"><a href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">PLMD::delta</a></div><div class="ttdeci">VectorGeneric&lt; n &gt; delta(const VectorGeneric&lt; n &gt; &amp;v1, const VectorGeneric&lt; n &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00262">Vector.h:262</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_a8c82355339bd0244a824379524b4dcc0"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a8c82355339bd0244a824379524b4dcc0">PLMD::manyrestraints::Sphere::performTask</a></div><div class="ttdeci">void performTask(const unsigned &amp;j)</div><div class="ttdoc">Calculate one of the functions in the distribution. </div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00093">Sphere.cpp:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a35a986326d36a7925a91d091f7a01f4a"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a35a986326d36a7925a91d091f7a01f4a">PLMD::ActionAtomistic::pbcDistance</a></div><div class="ttdeci">Vector pbcDistance(const Vector &amp;, const Vector &amp;) const </div><div class="ttdoc">Compute the pbc distance between two positions. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00079">ActionAtomistic.cpp:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_af3da7d66869f6a5cd3e543333e86e2ae"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#af3da7d66869f6a5cd3e543333e86e2ae">PLMD::manyrestraints::Sphere::at</a></div><div class="ttdeci">double at</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00030">Sphere.cpp:30</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a8e22ca9206b39a18ceeaea66e26c2690"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a8e22ca9206b39a18ceeaea66e26c2690">PLMD::ActionAtomistic::requestAtoms</a></div><div class="ttdeci">void requestAtoms(const std::vector&lt; AtomNumber &gt; &amp;a)</div><div class="ttdoc">Request an array of atoms. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00059">ActionAtomistic.cpp:59</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a01f036d42e12d4013aee746514d2298d"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a01f036d42e12d4013aee746514d2298d">PLMD::manyrestraints::ManyRestraintsBase::addBoxDerivatives</a></div><div class="ttdeci">void addBoxDerivatives(const Tensor &amp;)</div><div class="ttdoc">Add some derivatives to the virial. </div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00070">ManyRestraintsBase.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_a7f4bfa50f260ba3cbcb58f317da67dc5"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a7f4bfa50f260ba3cbcb58f317da67dc5">PLMD::manyrestraints::Sphere::kappa</a></div><div class="ttdeci">double kappa</div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00031">Sphere.cpp:31</a></div></div>
+<div class="ttc" id="group___t_o_o_l_b_o_x_html_gafe97bb8171dbb8831404177925fee28f"><div class="ttname"><a href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">PLMD::Tensor</a></div><div class="ttdeci">Tensor3d Tensor</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00425">Tensor.h:425</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a7d0c94f88e93c9ffa208af8b8fbef6cb"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">PLMD::ActionAtomistic::getNumberOfAtoms</a></div><div class="ttdeci">unsigned getNumberOfAtoms() const </div><div class="ttdoc">Get number of available atoms. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00088">ActionAtomistic.h:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a3ab560828c7061fc373326d6c3de0b30"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a3ab560828c7061fc373326d6c3de0b30">PLMD::manyrestraints::ManyRestraintsBase::createRestraints</a></div><div class="ttdeci">void createRestraints(const unsigned &amp;nrestraints)</div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8cpp_source.html#l00047">ManyRestraintsBase.cpp:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a9a2d7dc014df12aa9525d2f2fd6159f5"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a9a2d7dc014df12aa9525d2f2fd6159f5">PLMD::ActionAtomistic::getMass</a></div><div class="ttdeci">double getMass(int i) const </div><div class="ttdoc">Get mass of i-th atom. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00137">ActionAtomistic.h:137</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a4c12aa8b1be33a9d7adbea5cb33ef4fe"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a4c12aa8b1be33a9d7adbea5cb33ef4fe">PLMD::manyrestraints::ManyRestraintsBase::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8cpp_source.html#l00028">ManyRestraintsBase.cpp:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_sphere_html_ae190894d395c9048eb510c692403aa40"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae190894d395c9048eb510c692403aa40">PLMD::manyrestraints::Sphere::isPeriodic</a></div><div class="ttdeci">bool isPeriodic()</div><div class="ttdoc">Are the base quantities periodic. </div><div class="ttdef"><b>Definition:</b> <a href="_sphere_8cpp_source.html#l00041">Sphere.cpp:41</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

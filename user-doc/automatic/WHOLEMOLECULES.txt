@@ -1,0 +1,89 @@
+/**
+\page WHOLEMOLECULES WHOLEMOLECULES
+This action is used to rebuild molecules that can become split by the periodic
+boundary conditions.
+
+It is similar to the ALIGN_ATOMS keyword of plumed1, and is needed since some
+MD dynamics code (e.g. GROMACS) can break molecules during the calculation.
+
+Running some CVs without this command can cause there to be discontinuities changes
+in the CV value and artifacts in the calculations.  This command can be applied
+more than once.  To see what effect is has use a variable without pbc or use
+the \ref DUMPATOMS directive to output the atomic positions.
+
+\attention
+This directive modifies the stored position at the precise moment
+it is executed. This means that only collective variables
+which are below it in the input script will see the corrected positions.
+As a general rule, put it at the top of the input file. Also, unless you
+know exactly what you are doing, leave the default stride (1), so that
+this action is performed at every MD step.
+
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ENTITY </b></td>
+<td> the atoms that make up a molecule that you wish to align. To specify multiple molecules use a list of ENTITY keywords: ENTITY1, ENTITY2,... You can use multiple instances of this keyword i.e. ENTITY1, ENTITY2, ENTITY3... </td>
+</tr>
+</table>
+
+\par Or alternatively by using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> RESIDUES </b></td>
+<td> this command specifies a set of residues which all must be aligned. It must be used in tandem with the \ref MOLINFO action and the RES_ATOMS keyword. If you wish to use all the residues from all the chains in your system you can do so by specifying all. Alternatively, if you wish to use a subset of the residues you can specify the particular residues you are interested in as a list of numbers </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> STRIDE </b></td>
+<td> ( default=1 ) the frequency with which molecules are reassembled.  Unless you are completely certain about what you are doing leave this set equal to 1! </td>
+</tr>
+</table>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> RES_ATOMS </b></td>
+<td> this command tells plumed what atoms should be aligned in each of the residues that are being aligned </td>
+</tr>
+
+</table>
+
+\par Examples
+
+This command instructs plumed to reconstruct the molecule containing atoms 1-20
+at every step of the calculation and dump them on a file.
+
+\verbatim
+# to see the effect, one could dump the atoms as they were before molecule reconstruction:
+# DUMPATOMS FILE=dump-broken.xyz ATOMS=1-20
+WHOLEMOLECULES STRIDE=1 ENTITY0=1-20
+DUMPATOMS FILE=dump.xyz ATOMS=1-20
+\endverbatim
+(see also \ref DUMPATOMS)
+
+This command instructs plumed to reconstruct two molecules containing atoms 1-20 and 30-40
+
+\verbatim
+WHOLEMOLECULES STRIDE=1 ENTITY0=1-20 ENTITY1=30-40
+DUMPATOMS FILE=dump.xyz ATOMS=1-20,30-40
+\endverbatim
+(see also \ref DUMPATOMS)
+
+This command instructs plumed to reconstruct the chain of backbone atoms in a
+protein
+
+\verbatim
+MOLINFO REFERENCE=helix.pdb
+WHOLEMOLECULES STRIDE=1 RESIDUES=ALL RES_ATOMS=N,CA,CB,C,O
+\endverbatim
+(See also \ref MOLINFO)
+
+*/

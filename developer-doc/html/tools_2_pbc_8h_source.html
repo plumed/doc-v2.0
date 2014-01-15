@@ -1,0 +1,258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/Pbc.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Pbc.h</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_pbc_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_tools_Pbc_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_tools_Pbc_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_vector_8h.html">Vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_tensor_8h.html">Tensor.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">Tool to deal with periodic boundary conditions.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">This class is useful to apply periodic boundary conditions on interatomic</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">distances. It stores privately information about reduced lattice vectors</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_pbc.html">Pbc</a>{<span class="comment"></span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/// Type of box</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac">   40</a></span>&#160;<span class="comment"></span>  <span class="keyword">enum</span> {<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac">unset</a>,<a class="code" href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4">orthorombic</a>,<span class="keyword">generic</span>} <a class="code" href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">type</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/// Box</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">   42</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">box</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/// Inverse box</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">   44</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">invBox</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/// Reduced box.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/// This is a set of lattice vectors generating the same lattice</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/// but &quot;minimally skewed&quot;. Useful to optimize image search.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">   48</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">reduced</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/// Inverse of the reduced box</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a72d5629e168310a3fd88d212b0ca7932">   50</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a72d5629e168310a3fd88d212b0ca7932">invReduced</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// List of shifts that should be attempted.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/// Depending on the sign of the scaled coordinates representing</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// a distance vector, a different set of shifts must be tried.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#aeec0279fe315d2778c587a09e1ee9709">   54</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_pbc.html#aeec0279fe315d2778c587a09e1ee9709">shifts</a>[2][2][2];<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// Alternative representation for orthorombic cells.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/// Not really used, but could be used to optimize search in</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// orthorombic cells.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a43b744acef085149e16bcc08fb493d2a">   58</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#aafdada62675c823939ea786b833809af">diag</a>,<a class="code" href="class_p_l_m_d_1_1_pbc.html#aae6fbef02d8d572b7c091a82be0ccaf0">hdiag</a>,<a class="code" href="class_p_l_m_d_1_1_pbc.html#a43b744acef085149e16bcc08fb493d2a">mdiag</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// Build list of shifts.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/// This is expensive, and must be called only when box is</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// reset. It allows building a minimal set of shifts</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/// depending on the sign of the scaled coordinates representing</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// a distance vector.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a79408191757b22c19ee777c8efae94b4">buildShifts</a>(std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_pbc.html#aeec0279fe315d2778c587a09e1ee9709">shifts</a>[2][2][2])<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// Full search (for testing)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ace4311db7975faa2e651239bbc8900b6">fullSearch</a>(<a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;)<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// internal version of distance, also returns the number</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/// of attempted shifts (used in Pbc::test()).</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">distance</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;,<span class="keywordtype">int</span>*nshifts)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">/// Perform some check. Useful for debugging.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"></span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a5e4013695c6fd2028e151a2051f7f3ad">test</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">/// Constructor</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_pbc.html#a7cc14335a4bba89e5a7a56b5828b1555">Pbc</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/// Compute modulo of (v2-v1), using or not pbc depending on bool pbc.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">distance</a>( <span class="keyword">const</span> <span class="keywordtype">bool</span> pbc, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; v1, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; v2 ) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/// Computes v2-v1, using minimal image convention</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">distance</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; v1,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; v2)<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/// Set the lattice vectors.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/// b[i][j] is the j-th component of the i-th vector</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#a55f92a299591c7ef03c86338734c25a1">setBox</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp;b);<span class="comment"></span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/// Returns the box</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; <a class="code" href="class_p_l_m_d_1_1_pbc.html#ab9afdc58238255f829d10d113d4fbd4f">getBox</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">/// Returns the inverse matrix of box.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/// Thus: pbc.getInvBox() == inverse(pbc.getBox()).</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; <a class="code" href="class_p_l_m_d_1_1_pbc.html#aedf25704d2d64ab65371a06e570a2c1c">getInvBox</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/// Transform a vector in real space to a vector in scaled coordinates.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/// Thus:pbc.realToScaled(v) == matmul(transpose(inverse(pbc.getBox(),v)));</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#abafac5821f333766624fc24df1efd5d7">realToScaled</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;)<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">/// Transform a vector in scaled coordinates to a vector in real space.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/// Thus:pbc.scaledToRead(v) == matmul(transpose(pbc.getBox()),v);</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ab787ff25a848df90cd9002506d98786f">scaledToReal</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;)<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/// Returns true if the box vectors are orthogonal</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#adc5952b4bb03ac07559b6f54340b5337">isOrthorombic</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_pbc.html#a6380ec490ca0a6590758f85b6d6403a6">   98</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">Pbc::distance</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; v1,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; v2)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">distance</a>(v1,v2,NULL);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a33d584a17e1201958bf6e8eb326f0c61"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a33d584a17e1201958bf6e8eb326f0c61">PLMD::Pbc::invBox</a></div><div class="ttdeci">Tensor invBox</div><div class="ttdoc">Inverse box. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00044">Pbc.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html">PLMD::TensorGeneric</a></div><div class="ttdoc">Class implementing fixed size matrices of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00070">Tensor.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a2e850e2f52d2e400b3ed3b44d7694150"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a2e850e2f52d2e400b3ed3b44d7694150">PLMD::Pbc::type</a></div><div class="ttdeci">enum PLMD::Pbc::@6 type</div><div class="ttdoc">Type of box. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a1572dcd9d92fd0e543179b609640bd78"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a1572dcd9d92fd0e543179b609640bd78">PLMD::Pbc::box</a></div><div class="ttdeci">Tensor box</div><div class="ttdoc">Box. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00042">Pbc.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ab787ff25a848df90cd9002506d98786f"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ab787ff25a848df90cd9002506d98786f">PLMD::Pbc::scaledToReal</a></div><div class="ttdeci">Vector scaledToReal(const Vector &amp;) const </div><div class="ttdoc">Transform a vector in scaled coordinates to a vector in real space. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00206">Pbc.cpp:206</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a1523c38102af4b7b77099a684d62929f"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f">PLMD::Pbc::reduced</a></div><div class="ttdeci">Tensor reduced</div><div class="ttdoc">Reduced box. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00048">Pbc.h:48</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a43b744acef085149e16bcc08fb493d2a"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a43b744acef085149e16bcc08fb493d2a">PLMD::Pbc::mdiag</a></div><div class="ttdeci">Vector mdiag</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00058">Pbc.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_aafdada62675c823939ea786b833809af"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#aafdada62675c823939ea786b833809af">PLMD::Pbc::diag</a></div><div class="ttdeci">Vector diag</div><div class="ttdoc">Alternative representation for orthorombic cells. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00058">Pbc.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a72d5629e168310a3fd88d212b0ca7932"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a72d5629e168310a3fd88d212b0ca7932">PLMD::Pbc::invReduced</a></div><div class="ttdeci">Tensor invReduced</div><div class="ttdoc">Inverse of the reduced box. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00050">Pbc.h:50</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html">PLMD::Pbc</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00038">Pbc.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ae028707665734f0e6b7404c211b88393"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">PLMD::Pbc::distance</a></div><div class="ttdeci">Vector distance(const Vector &amp;, const Vector &amp;, int *nshifts) const </div><div class="ttdoc">internal version of distance, also returns the number of attempted shifts (used in Pbc::test())...</div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00158">Pbc.cpp:158</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_aeec0279fe315d2778c587a09e1ee9709"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#aeec0279fe315d2778c587a09e1ee9709">PLMD::Pbc::shifts</a></div><div class="ttdeci">std::vector&lt; Vector &gt; shifts[2][2][2]</div><div class="ttdoc">List of shifts that should be attempted. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00054">Pbc.h:54</a></div></div>
+<div class="ttc" id="tools_2_tensor_8h_html"><div class="ttname"><a href="tools_2_tensor_8h.html">Tensor.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_aedf25704d2d64ab65371a06e570a2c1c"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#aedf25704d2d64ab65371a06e570a2c1c">PLMD::Pbc::getInvBox</a></div><div class="ttdeci">const Tensor &amp; getInvBox() const </div><div class="ttdoc">Returns the inverse matrix of box. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00218">Pbc.cpp:218</a></div></div>
+<div class="ttc" id="tools_2_vector_8h_html"><div class="ttname"><a href="tools_2_vector_8h.html">Vector.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a5e4013695c6fd2028e151a2051f7f3ad"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a5e4013695c6fd2028e151a2051f7f3ad">PLMD::Pbc::test</a></div><div class="ttdeci">static void test()</div><div class="ttdoc">Perform some check. Useful for debugging. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00222">Pbc.cpp:222</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a79408191757b22c19ee777c8efae94b4"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a79408191757b22c19ee777c8efae94b4">PLMD::Pbc::buildShifts</a></div><div class="ttdeci">void buildShifts(std::vector&lt; Vector &gt; shifts[2][2][2]) const </div><div class="ttdoc">Build list of shifts. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00039">Pbc.cpp:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ace4311db7975faa2e651239bbc8900b6"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ace4311db7975faa2e651239bbc8900b6">PLMD::Pbc::fullSearch</a></div><div class="ttdeci">void fullSearch(Vector &amp;) const </div><div class="ttdoc">Full search (for testing) </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00093">Pbc.cpp:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_adc5952b4bb03ac07559b6f54340b5337"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#adc5952b4bb03ac07559b6f54340b5337">PLMD::Pbc::isOrthorombic</a></div><div class="ttdeci">bool isOrthorombic() const </div><div class="ttdoc">Returns true if the box vectors are orthogonal. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00210">Pbc.cpp:210</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a7cc14335a4bba89e5a7a56b5828b1555"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a7cc14335a4bba89e5a7a56b5828b1555">PLMD::Pbc::Pbc</a></div><div class="ttdeci">Pbc()</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00032">Pbc.cpp:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_aae6fbef02d8d572b7c091a82be0ccaf0"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#aae6fbef02d8d572b7c091a82be0ccaf0">PLMD::Pbc::hdiag</a></div><div class="ttdeci">Vector hdiag</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00058">Pbc.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480ad7b2e82b782fa523e025e2793af9c2e4">PLMD::Pbc::orthorombic</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00040">Pbc.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_abafac5821f333766624fc24df1efd5d7"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#abafac5821f333766624fc24df1efd5d7">PLMD::Pbc::realToScaled</a></div><div class="ttdeci">Vector realToScaled(const Vector &amp;) const </div><div class="ttdoc">Transform a vector in real space to a vector in scaled coordinates. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00202">Pbc.cpp:202</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ab9afdc58238255f829d10d113d4fbd4f"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ab9afdc58238255f829d10d113d4fbd4f">PLMD::Pbc::getBox</a></div><div class="ttdeci">const Tensor &amp; getBox() const </div><div class="ttdoc">Returns the box. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00214">Pbc.cpp:214</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480a22e9f117a355ca6ef03e4e88d98c3aac">PLMD::Pbc::unset</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00040">Pbc.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_a55f92a299591c7ef03c86338734c25a1"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#a55f92a299591c7ef03c86338734c25a1">PLMD::Pbc::setBox</a></div><div class="ttdeci">void setBox(const Tensor &amp;b)</div><div class="ttdoc">Set the lattice vectors. </div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00115">Pbc.cpp:115</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

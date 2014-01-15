@@ -1,0 +1,158 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: WHOLEMOLECULES</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="_colvar.html">Collective Variables</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">WHOLEMOLECULES </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>This action is used to rebuild molecules that can become split by the periodic boundary conditions.</p>
+<p>It is similar to the ALIGN_ATOMS keyword of plumed1, and is needed since some MD dynamics code (e.g. GROMACS) can break molecules during the calculation.</p>
+<p>Running some CVs without this command can cause there to be discontinuities changes in the CV value and artifacts in the calculations. This command can be applied more than once. To see what effect is has use a variable without pbc or use the <a class="el" href="_d_u_m_p_a_t_o_m_s.html">DUMPATOMS</a> directive to output the atomic positions.</p>
+<dl class="section attention"><dt>Attention</dt><dd>This directive modifies the stored position at the precise moment it is executed. This means that only collective variables which are below it in the input script will see the corrected positions. As a general rule, put it at the top of the input file. Also, unless you know exactly what you are doing, leave the default stride (1), so that this action is performed at every MD step.</dd></dl>
+<dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> ENTITY </b> </td><td>the atoms that make up a molecule that you wish to align. To specify multiple molecules use a list of ENTITY keywords: ENTITY1, ENTITY2,... You can use multiple instances of this keyword i.e. ENTITY1, ENTITY2, ENTITY3...   </td></tr>
+</table>
+<dl class="section user"><dt>Or alternatively by using</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> RESIDUES </b> </td><td>this command specifies a set of residues which all must be aligned. It must be used in tandem with the <a class="el" href="_m_o_l_i_n_f_o.html">MOLINFO</a> action and the RES_ATOMS keyword. If you wish to use all the residues from all the chains in your system you can do so by specifying all. Alternatively, if you wish to use a subset of the residues you can specify the particular residues you are interested in as a list of numbers   </td></tr>
+</table>
+<dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> STRIDE </b> </td><td>( default=1 ) the frequency with which molecules are reassembled. Unless you are completely certain about what you are doing leave this set equal to 1!   </td></tr>
+</table>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> RES_ATOMS </b> </td><td><p class="starttd">this command tells plumed what atoms should be aligned in each of the residues that are being aligned  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<p>This command instructs plumed to reconstruct the molecule containing atoms 1-20 at every step of the calculation and dump them on a file.</p>
+<pre class="fragment"># to see the effect, one could dump the atoms as they were before molecule reconstruction:
+# DUMPATOMS FILE=dump-broken.xyz ATOMS=1-20
+WHOLEMOLECULES STRIDE=1 ENTITY0=1-20
+DUMPATOMS FILE=dump.xyz ATOMS=1-20
+</pre><p> (see also <a class="el" href="_d_u_m_p_a_t_o_m_s.html">DUMPATOMS</a>)</p>
+<p>This command instructs plumed to reconstruct two molecules containing atoms 1-20 and 30-40</p>
+<pre class="fragment">WHOLEMOLECULES STRIDE=1 ENTITY0=1-20 ENTITY1=30-40
+DUMPATOMS FILE=dump.xyz ATOMS=1-20,30-40
+</pre><p> (see also <a class="el" href="_d_u_m_p_a_t_o_m_s.html">DUMPATOMS</a>)</p>
+<p>This command instructs plumed to reconstruct the chain of backbone atoms in a protein</p>
+<pre class="fragment">MOLINFO REFERENCE=helix.pdb
+WHOLEMOLECULES STRIDE=1 RESIDUES=ALL RES_ATOMS=N,CA,CB,C,O
+</pre><p> (See also <a class="el" href="_m_o_l_i_n_f_o.html">MOLINFO</a>) </p>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

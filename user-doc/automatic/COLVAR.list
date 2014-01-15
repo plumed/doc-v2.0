@@ -1,0 +1,74 @@
+<tr> <td width=5%> \subpage  ANGLE </td> <td>
+Calculate an angle.
+</td> </tr>
+<tr> <td width=5%> \subpage  CELL </td> <td>
+Calculate the components of the simulation cell
+</td> </tr>
+<tr> <td width=5%> \subpage  CONSTANT </td> <td>
+Return a constant quantity.
+</td> </tr>
+<tr> <td width=5%> \subpage  CONTACTMAP </td> <td>
+Calculate the distances between a number of pairs of atoms and transform each distance by a switching function.
+</td> </tr>
+<tr> <td width=5%> \subpage  COORDINATION </td> <td>
+Calculate coordination numbers.
+</td> </tr>
+<tr> <td width=5%> \subpage  CS2BACKBONE </td> <td>
+This collective variable calculates a scoring function based on the comparison of backcalculated and
+experimental backbone chemical shifts for a protein (CA, CB, C', H, HA, N).
+</td> </tr>
+<tr> <td width=5%> \subpage  DHENERGY </td> <td>
+Calculate Debye-Huckel interaction energy among GROUPA and GROUPB.
+</td> </tr>
+<tr> <td width=5%> \subpage  DIPOLE </td> <td>
+Calcualte the dipole moment for a group of atoms.
+</td> </tr>
+<tr> <td width=5%> \subpage  DISTANCE </td> <td>
+Calculate the distance between a pair of atoms.
+By default the distance is computed taking into account periodic
+boundary conditions. This behavior can be changed with the NOPBC flag.
+Moreover, single components (x,y, and z) can be also computed.
+</td> </tr>
+<tr> <td width=5%> \subpage  DRMSD </td> <td>
+Calculate the distance RMSD with respect to a reference structure. 
+</td> </tr>
+<tr> <td width=5%> \subpage  ENERGY </td> <td>
+Calculate the total energy of the simulation box.
+</td> </tr>
+<tr> <td width=5%> \subpage  FAKE </td> <td>
+This is a fake colvar container used by cltools or various other actions
+and just support input and period definition
+</td> </tr>
+<tr> <td width=5%> \subpage  GYRATION </td> <td>
+Calculate the radius of gyration, or other properties related to it.
+</td> </tr>
+<tr> <td width=5%> \subpage  PATHMSD </td> <td>
+This Colvar calculates path collective variables. 
+</td> </tr>
+<tr> <td width=5%> \subpage  PROPERTYMAP </td> <td>
+Calculate generic property maps.
+</td> </tr>
+<tr> <td width=5%> \subpage  RMSD </td> <td>
+Calculate the RMSD with respect to a reference structure.  
+</td> </tr>
+<tr> <td width=5%> \subpage  TEMPLATE </td> <td>
+This file provides a template for if you want to introduce a new CV.
+</td> </tr>
+<tr> <td width=5%> \subpage  TORSION </td> <td>
+Calculate a torsional angle.
+</td> </tr>
+<tr> <td width=5%> \subpage  VOLUME </td> <td>
+Calculate the volume of the simulation box.
+</td> </tr>
+<tr> <td width=5%> \subpage  ALPHABETA </td> <td>
+Measures a distance including pbc between the instantaneous values of a set of torsional angles and set of reference values.
+</td> </tr>
+<tr> <td width=5%> \subpage  ALPHARMSD </td> <td>
+Probe the alpha helical content of a protein structure.
+</td> </tr>
+<tr> <td width=5%> \subpage  ANTIBETARMSD </td> <td>
+Probe the antiparallel beta sheet content of your protein structure.
+</td> </tr>
+<tr> <td width=5%> \subpage  PARABETARMSD </td> <td>
+Probe the parallel beta sheet content of your protein structure.
+</td> </tr>

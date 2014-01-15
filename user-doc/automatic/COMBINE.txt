@@ -1,0 +1,64 @@
+/**
+\page COMBINE COMBINE
+Calculate a polynomial combination of a set of other variables.
+
+The functional form of this function is
+\f[
+C=\sum_{i=1}^{N_{arg}} c_i x_i^{p_i}
+\f]
+
+The coefficients c and powers p are provided as vectors.
+
+
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+<tr>
+<td width=15%> <b> PERIODIC </b></td>
+<td> if the output of your function is periodic then you should specify the periodicity of the function.  If the output is not periodic you must state this using PERIODIC=NO </td>
+</tr>
+<tr>
+<td width=15%> <b> COEFFICIENTS </b></td>
+<td> ( default=1.0 ) the coefficients of the arguments in your function </td>
+</tr>
+<tr>
+<td width=15%> <b> POWERS </b></td>
+<td> ( default=1.0 ) the powers to which you are raising each of the arguments in your function </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NORMALIZE </b></td>
+<td> ( default=off ) normalize all the coefficents so that in total they are equal to one </td>
+</tr>
+
+</table>
+
+</table>
+
+\par Examples
+The following input tells plumed to print the distance between atoms 3 and 5
+its square (as computed from the x,y,z components) and the distance
+again as computed from the square root of the square.
+\verbatim
+DISTANCE LABEL=dist      ATOMS=3,5 COMPONENTS
+COMBINE  LABEL=distance2 ARG=dist.x,dist.y,dist.z POWERS=2,2,2 PERIODIC=NO
+COMBINE  LABEL=distance  ARG=distance2 POWERS=0.5 PERIODIC=NO
+PRINT ARG=distance,distance2
+\endverbatim
+(See also \ref PRINT and \ref DISTANCE).
+
+
+*/

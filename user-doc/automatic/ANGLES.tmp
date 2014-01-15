@@ -1,0 +1,49 @@
+/**
+\page ANGLES ANGLES
+Calculate functions of the distribution of angles .
+
+You can use this command to calculate functions such as:
+
+\f[
+ f(x) = \sum_{ijk} g( \theta_{ijk} )
+\f] 
+
+Alternatively you can use this command to calculate functions such as:
+
+\f[
+f(x) = \sum_{ijk} s(r_{ij})s(r_{jk}) g(\theta_{ijk})
+\f]
+
+where \f$s(r)\f$ is a \ref switchingfunction.  This second form means that you can
+use this to calculate functions of the angles in the first coordination sphere of 
+an atom / molecule \cite lj-recon.
+
+\par Examples
+
+The following example instructs plumed to find the average of two angles and to
+print it to a file
+
+\verbatim
+ANGLES ATOMS=1,2,3 ATOMS=4,5,6 MEAN LABEL=a1
+PRINT ARG=a1.mean FILE=colvar 
+\endverbatim
+
+The following example tells plumed to calculate all angles involving
+at least one atom from GROUPA and two atoms from GROUPB in which the distances
+are less than 1.0. The number of angles between \f$\frac{\pi}{4}\f$ and
+\f$\frac{3\pi}{4}\f$ is then output  
+
+\verbatim
+ANGLES GROUPA=1-10 GROUPB=11-100 BETWEEN={GAUSSIAN LOWER=0.25pi UPPER=0.75pi} SWITCH={GAUSSIAN R_0=1.0} LABEL=a1
+PRINT ARG=a1.between FILE=colvar
+\endverbatim 
+
+This final example instructs plumed to calculate all the angles in the first coordination
+spheres of the atoms. A discretized-normalized histogram of the distribution is then output
+
+\verbatim
+ANGLE GROUP=1-38 HISTOGRAM={GAUSSIAN LOWER=0.0 UPPER=pi NBINS=20} SWTICH={GAUSSIAN R_0=1.0} LABEL=a1
+PRINT ARG=a1.* FILE=colvar
+\endverbatim
+
+*/

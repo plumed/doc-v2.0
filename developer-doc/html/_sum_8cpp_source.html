@@ -1,0 +1,233 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: vesselbase/Sum.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7685edf5d18a1f720e5764f1be2af464.html">vesselbase</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Sum.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_sum_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vesselbase_2_function_vessel_8h.html">FunctionVessel.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vesselbase_2_vessel_register_8h.html">VesselRegister.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>vesselbase{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html">Sum</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html">FunctionVessel</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ad5b2cea875e79b0aefdf4151cd4fc132">   30</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ad5b2cea875e79b0aefdf4151cd4fc132">df</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a531bb2012ac769aff951ac5efa218e70">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a730b59dfc599ee639ba52ee50de9094d">reserveKeyword</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#aeedf012a4b78b6af280e780f21fdc576">Sum</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a>&amp; <a class="code" href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a> );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  std::string <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a022039755d857e3b5449b30a4ece27f9">function_description</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#aa1eebe38c0dc0d30bf0a7107aa504f47">calculate</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ab4bcf5965597a888a7ae0d3f06e16ba2">finish</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="vesselbase_2_vessel_register_8h.html#a5913cc4192ce3d1509d5430071158998">PLUMED_REGISTER_VESSEL</a>(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html">Sum</a>,<span class="stringliteral">&quot;SUM&quot;</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a531bb2012ac769aff951ac5efa218e70">   42</a></span>&#160;void <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html">Sum</a>::registerKeywords( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a8f9d97dd4adf740697d72eb6ef664200">FunctionVessel::registerKeywords</a>( keys );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a730b59dfc599ee639ba52ee50de9094d">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a730b59dfc599ee639ba52ee50de9094d">Sum::reserveKeyword</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  keys.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a76ce8a7e568edc0edcf44979b82b2e2b">reserveFlag</a>(<span class="stringliteral">&quot;SUM&quot;</span>,<span class="keyword">false</span>,<span class="stringliteral">&quot;calculate the sum of all the quantities.&quot;</span>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#aeedf012a4b78b6af280e780f21fdc576">   50</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#aeedf012a4b78b6af280e780f21fdc576">Sum::Sum</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a>&amp; <a class="code" href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a> ) :</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html">FunctionVessel</a>(da),</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;df(2)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a022039755d857e3b5449b30a4ece27f9">   56</a></span>&#160;std::string <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a022039755d857e3b5449b30a4ece27f9">Sum::function_description</a>(){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> <span class="stringliteral">&quot;the sum of all the values&quot;</span>; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#aa1eebe38c0dc0d30bf0a7107aa504f47">   60</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#aa1eebe38c0dc0d30bf0a7107aa504f47">Sum::calculate</a>(){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">double</span> weight=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a55276a1dd8d1b3dfcb96d510732e2d25">getElementValue</a>(1);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  plumed_dbg_assert( weight&gt;=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2b9f977233242587163d465c71080a84">getTolerance</a>() );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">double</span> val=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a55276a1dd8d1b3dfcb96d510732e2d25">getElementValue</a>(0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#ab1b58c23788cddb110ac04ac612a00b7">addValueIgnoringTolerance</a>(0,weight*val);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a19a967b78f1e5f6073528937f6aa8d24">chainRuleForElementDerivatives</a>( 0, 0, weight, <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a10480380c3eb064f1cb93f92db504788">diffweight</a>) <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a19a967b78f1e5f6073528937f6aa8d24">chainRuleForElementDerivatives</a>(0, 1, val, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ab4bcf5965597a888a7ae0d3f06e16ba2">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ab4bcf5965597a888a7ae0d3f06e16ba2">Sum::finish</a>(){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a98833df0d562580742308b0c0888102e">setOutputValue</a>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#aba8a3875f20a3d308414704c2de1832b">getFinalValue</a>(0) ); </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ad5b2cea875e79b0aefdf4151cd4fc132">df</a>[0]=1.0; <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ad5b2cea875e79b0aefdf4151cd4fc132">df</a>[1]=0.0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc466b9b91abbdf7d8a798c90e06841">mergeFinalDerivatives</a>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ad5b2cea875e79b0aefdf4151cd4fc132">df</a> );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a2b9f977233242587163d465c71080a84"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2b9f977233242587163d465c71080a84">PLMD::vesselbase::Vessel::getTolerance</a></div><div class="ttdeci">double getTolerance() const </div><div class="ttdoc">Return the value of the tolerance. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00226">Vessel.h:226</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_aba8a3875f20a3d308414704c2de1832b"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#aba8a3875f20a3d308414704c2de1832b">PLMD::vesselbase::FunctionVessel::getFinalValue</a></div><div class="ttdeci">double getFinalValue(const unsigned &amp;j)</div><div class="ttdoc">Get the nth value in the distribution. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00088">FunctionVessel.h:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a10480380c3eb064f1cb93f92db504788"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a10480380c3eb064f1cb93f92db504788">PLMD::vesselbase::FunctionVessel::diffweight</a></div><div class="ttdeci">bool diffweight</div><div class="ttdoc">Are the derivatives differentiable. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00049">FunctionVessel.h:49</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a19a967b78f1e5f6073528937f6aa8d24"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a19a967b78f1e5f6073528937f6aa8d24">PLMD::vesselbase::ActionWithVessel::chainRuleForElementDerivatives</a></div><div class="ttdeci">void chainRuleForElementDerivatives(const unsigned &amp;, const unsigned &amp;, const double &amp;, Vessel *)</div><div class="ttdoc">Merge the derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_vessel_8cpp_source.html#l00239">ActionWithVessel.cpp:239</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_sum_html_a022039755d857e3b5449b30a4ece27f9"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a022039755d857e3b5449b30a4ece27f9">PLMD::vesselbase::Sum::function_description</a></div><div class="ttdeci">std::string function_description()</div><div class="ttdoc">The rest of the description of what we are calculating. </div><div class="ttdef"><b>Definition:</b> <a href="_sum_8cpp_source.html#l00056">Sum.cpp:56</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a98833df0d562580742308b0c0888102e"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a98833df0d562580742308b0c0888102e">PLMD::vesselbase::FunctionVessel::setOutputValue</a></div><div class="ttdeci">void setOutputValue(const double &amp;val)</div><div class="ttdoc">Set the final value. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00094">FunctionVessel.h:94</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html">PLMD::vesselbase::FunctionVessel</a></div><div class="ttdoc">Objects that inherit from FunctionVessel can be used (in tandem with PLMD::ActionWithVessel) to calcu...</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00041">FunctionVessel.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a8f9d97dd4adf740697d72eb6ef664200"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a8f9d97dd4adf740697d72eb6ef664200">PLMD::vesselbase::FunctionVessel::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_function_vessel_8cpp_source.html#l00028">FunctionVessel.cpp:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a9bc466b9b91abbdf7d8a798c90e06841"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc466b9b91abbdf7d8a798c90e06841">PLMD::vesselbase::FunctionVessel::mergeFinalDerivatives</a></div><div class="ttdeci">void mergeFinalDerivatives(const std::vector&lt; double &gt; &amp;df)</div><div class="ttdoc">This does a combination of the product and chain rules. </div><div class="ttdef"><b>Definition:</b> <a href="_function_vessel_8cpp_source.html#l00060">FunctionVessel.cpp:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_sum_html_a730b59dfc599ee639ba52ee50de9094d"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a730b59dfc599ee639ba52ee50de9094d">PLMD::vesselbase::Sum::reserveKeyword</a></div><div class="ttdeci">static void reserveKeyword(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_sum_8cpp_source.html#l00046">Sum.cpp:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_ab1b58c23788cddb110ac04ac612a00b7"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#ab1b58c23788cddb110ac04ac612a00b7">PLMD::vesselbase::FunctionVessel::addValueIgnoringTolerance</a></div><div class="ttdeci">void addValueIgnoringTolerance(const unsigned &amp;jval, const double &amp;val)</div><div class="ttdoc">Add some value to the accumulator and ignore the tolerance. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00083">FunctionVessel.h:83</a></div></div>
+<div class="ttc" id="vesselbase_2_vessel_register_8h_html"><div class="ttname"><a href="vesselbase_2_vessel_register_8h.html">VesselRegister.h</a></div></div>
+<div class="ttc" id="vesselbase_2_vessel_register_8h_html_a5913cc4192ce3d1509d5430071158998"><div class="ttname"><a href="vesselbase_2_vessel_register_8h.html#a5913cc4192ce3d1509d5430071158998">PLUMED_REGISTER_VESSEL</a></div><div class="ttdeci">#define PLUMED_REGISTER_VESSEL(classname, keyword)</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_register_8h_source.html#l00067">VesselRegister.h:67</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_sum_html_ad5b2cea875e79b0aefdf4151cd4fc132"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ad5b2cea875e79b0aefdf4151cd4fc132">PLMD::vesselbase::Sum::df</a></div><div class="ttdeci">std::vector&lt; double &gt; df</div><div class="ttdef"><b>Definition:</b> <a href="_sum_8cpp_source.html#l00030">Sum.cpp:30</a></div></div>
+<div class="ttc" id="vesselbase_2_function_vessel_8h_html"><div class="ttname"><a href="vesselbase_2_function_vessel_8h.html">FunctionVessel.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_sum_html_ab4bcf5965597a888a7ae0d3f06e16ba2"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#ab4bcf5965597a888a7ae0d3f06e16ba2">PLMD::vesselbase::Sum::finish</a></div><div class="ttdeci">void finish()</div><div class="ttdoc">Complete the calculation once the loop is finished. </div><div class="ttdef"><b>Definition:</b> <a href="_sum_8cpp_source.html#l00071">Sum.cpp:71</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_sum_html_aa1eebe38c0dc0d30bf0a7107aa504f47"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#aa1eebe38c0dc0d30bf0a7107aa504f47">PLMD::vesselbase::Sum::calculate</a></div><div class="ttdeci">bool calculate()</div><div class="ttdoc">Calculate the part of the vessel that is done in the loop. </div><div class="ttdef"><b>Definition:</b> <a href="_sum_8cpp_source.html#l00060">Sum.cpp:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_sum_html_a531bb2012ac769aff951ac5efa218e70"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#a531bb2012ac769aff951ac5efa218e70">PLMD::vesselbase::Sum::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_sum_8cpp_source.html#l00042">Sum.cpp:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">PLMD::vesselbase::VesselOptions</a></div><div class="ttdoc">This class is used to pass the input to Vessels. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00053">Vessel.h:53</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_a76ce8a7e568edc0edcf44979b82b2e2b"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#a76ce8a7e568edc0edcf44979b82b2e2b">PLMD::Keywords::reserveFlag</a></div><div class="ttdeci">void reserveFlag(const std::string &amp;k, const bool def, const std::string &amp;d, const bool isvessel=false)</div><div class="ttdoc">Reserve a flag. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00130">Keywords.cpp:130</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a0756f10f12a549c19f52f54e219b1cfe"><div class="ttname"><a href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a></div><div class="ttdeci">void int double * da</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00047">Matrix.h:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_sum_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_sum.html">PLMD::vesselbase::Sum</a></div><div class="ttdef"><b>Definition:</b> <a href="_sum_8cpp_source.html#l00028">Sum.cpp:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_sum_html_aeedf012a4b78b6af280e780f21fdc576"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_sum.html#aeedf012a4b78b6af280e780f21fdc576">PLMD::vesselbase::Sum::Sum</a></div><div class="ttdeci">Sum(const VesselOptions &amp;da)</div><div class="ttdef"><b>Definition:</b> <a href="_sum_8cpp_source.html#l00050">Sum.cpp:50</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a55276a1dd8d1b3dfcb96d510732e2d25"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a55276a1dd8d1b3dfcb96d510732e2d25">PLMD::vesselbase::ActionWithVessel::getElementValue</a></div><div class="ttdeci">double getElementValue(const unsigned &amp;ival) const </div><div class="ttdoc">Get the value of this element. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00177">ActionWithVessel.h:177</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a2ee21116a09e152e7a933794a8907664"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">PLMD::vesselbase::Vessel::getAction</a></div><div class="ttdeci">ActionWithVessel * getAction()</div><div class="ttdoc">Return a pointer to the action we are working in. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00236">Vessel.h:236</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

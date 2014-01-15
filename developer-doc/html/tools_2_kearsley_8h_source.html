@@ -1,0 +1,399 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/Kearsley.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Kearsley.h</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_kearsley_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_tools_Kearsley_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_tools_Kearsley_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_vector_8h.html">Vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_tensor_8h.html">Tensor.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">class </span>Log;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/*! A class that implements Kearsley&#39;s calculation</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> which is optimal alignment via quaternion and</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> analytical derivatives via perturbation theory</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">In Kearsley algorithm (see, S. K. Kearsley, Acta Crystallogr., Sect. A: Found. Crystallogr. 45, 208 1989 ),</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">here adapted to included the COM reset,</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">one first calculates the COM reset position respect to frame  \f$ \{x_0,y_0,z_0\} \f$ (running frame),</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">being \f$ w_{tot}^{al}=\sum_i w_{al}^i \f$</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">\f{eqnarray}</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">\tilde x_0^i=x_0^i-\sum_i \frac{w_{al}^i}{w_{tot}^{al}} x_0^i\\</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">\tilde y_0^i=y_0^i-\sum_i \frac{w_{al}^i}{w_{tot}^{al}} y_0^i\\</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">\tilde z_0^i=z_0^i-\sum_i \frac{w_{al}^i}{w_{tot}^{al}} z_0^i</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">and the same is done with the reference one \f$ \{x_1,y_1,z_1\} \f$</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">\f{eqnarray}</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">\tilde x_1^i=x_1^i-\sum_i \frac{w_{al}^i}{w_{tot}^{al}} x_1^i\\</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">\tilde y_1^i=y_1^i-\sum_i \frac{w_{al}^i}{w_{tot}^{al}} y_1^i\\</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">\tilde z_1^i=z_1^i-\sum_i \frac{w_{al}^i}{w_{tot}^{al}} z_1^i</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">Then one can build the \f$ \{x_p,y_p,z_p\} \f$ and \f$ \{x_m,y_m,z_m\} \f$</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">vectors of weighted summation and differences:</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">\f{eqnarray}</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">x_m^i=w_{al}^i(\tilde x_0^i-\tilde x_1^i)\\</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">y_m^i=w_{al}^i(\tilde y_0^i-\tilde y_1^i)\\</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">z_m^i=w_{al}^i(\tilde z_0^i-\tilde z_1^i)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">\f{eqnarray}</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">x_p^i=w_{al}^i(x_0^i+x_1^i)\\</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">y_p^i=w_{al}^i(y_0^i+y_1^i)\\</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">z_p^i=w_{al}^i(z_0^i+z_1^i)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">Then one build the COM-resetted matrix</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">\mathbf{M}=\left[</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">\begin{array}{cccc}</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">\sum ( {x}_{m}^{2}+{y}_{m}^{2}+{z}_{m}^{2})      &amp;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> \sum (y_{p}z_{m} -y_{m}z_{p})   &amp;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> \sum ( x_{m}z_{p} -x_{p}z_{m}) &amp;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> \sum (x_{p}y_{m}-x_{m}y_{p} ) \\</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">  \sum ( y_{p}z_{m} -y_{m}z_{p}) &amp;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">\sum (  {x}_{m}^{2}+{y}_{p}^{2}+{z}_{p}^{2}) &amp;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">\sum ( x_{m}y_{m} -x_{p}y_{p} ) &amp;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> \sum (x_{m}z_{m}-x_{p}z_{p} ) \\</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">  \sum (x_m z_p - x_p z_m ) &amp;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">\sum ( x_m y_m -x_p y_p) &amp;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">\sum (  {x}_{p}^{2}+{y}_{m}^{2}+{z}_{p}^{2}) &amp;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">\sum ( y_m z_m -y_p z_p) \\</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">  \sum (x_p y_m -x_m y_p ) &amp;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">\sum (x_m z_m - x_p z_p ) &amp;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">\sum (y_m z_m- y_p z_p ) &amp;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">\sum (  {x}_{p}^{2}+{y}_{p}^{2}+{z}_{m}^{2}) \\</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">\end{array}</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">\right]</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">by diagonalizing one obtains the mean square deviation by using the lowest eigenvalue \f$ \lambda_0 \f$</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">\f{equation}</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">MSD=  \frac{\lambda_{0}}{w_{tot}^{al}}</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">The rotation matrix is obtained from the eigenvector corresponding to \f$ \lambda_0 \f$ eigenvalue</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">having components \f$ q_1, q_2, q_3, q_4 \f$</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">\mathbf{R}=\left[</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">\begin{array}{ccc}</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">q_1 ^2 + q_2 ^2 - q_3 ^2 - q_4^2 &amp;</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">2(q_2 q_3 + q_1 q_4) &amp;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">2(q_1 q_4 -q_1 q_3 )\\</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">2(q_2 q_3 - q_1 q_4) &amp;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">q_1 ^2 +q_3 ^2 -q_2 ^2 -q_4^2  &amp;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">2(q_3 q_4 - q_1 q_2)\\</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">2( q_2 q_4 + q_1 q_3) &amp;</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">2( q_3 q_4 - q_1 q_2) &amp;</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">q_1^2 +q_4 ^2 - q_2^2 - q_3 ^2 \\</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">\end{array}</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">\right]</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">by using the perturbation theory one can retrieve the various derivatives:</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">In derivative calculation we exploited the classical Perturbation Theory up to the first order.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">In extensive manner, we introduce a perturbation over \f$\lambda_{0}\f$ correlated with</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">a pertubation of the states \f$\vert q_{0}\rangle \f$ (in bra-ket notation):</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">[\mathbf{M}+d\mathbf{M}][\vert q_{0}\rangle + \vert dq_{0}\rangle ]=</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">[\lambda_{0}+d\lambda_{0}][\vert q_{0}\rangle +\vert dq_{0}\rangle ]</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">Grouping the zero order we recollect the unperturbed equation(see before).</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">To the first order:</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">d\mathbf{M}q_{0}+\mathbf{M}\vert dq_{0}\rangle =d\lambda_{0}\vert q_{0}\rangle +\lambda_{0} \vert dq_{0}\rangle</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">Now we express \f$dq_{0}\f$ as linear combination of the other ortogonal eigenvectors:</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">\vert dq_{0}\rangle =\sum_{j\neq0}c_{j}\vert q_{j}\rangle</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">thus we have</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">d\mathbf{M}\vert q_{0}\rangle +\sum_{j\neq0}c_{j}\mathbf{M}\vert q_{j}\rangle=</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">d\lambda_{0}\vert q_{0}\rangle+\lambda_{0}\sum_{j\neq0}c_{j}\vert q_{j}\rangle</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">projecting onto the \f$q_{0}\f$ state and deleting the projection onto \f$\vert dq_{0}\rangle\f$ beacuse</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">of ortogonality:</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">\langle q_{0}\vert d\mathbf{M}\vert q_{0}\rangle +\sum_{j\neq0}c_{j}\lambda_{j}\langle q_{0} \vert q_{j}\rangle=</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">d\lambda_{0}\langle q_{0}\vert q_{0}\rangle+\lambda_{0}\sum_{j\neq0}c_{j}\langle q_{0}\vert q_{j}\rangle</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">we get</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">\langle q_{0}\vert d\mathbf{M}\vert q_{0}\rangle=d\lambda_{0}</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">So, using simple chain rules:</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">\langle q_{0}\vert \frac{d\mathbf{M}}{dr_{k}^{\gamma}}\vert q_{0}\rangle</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">dr_{k}^{\gamma}=d\lambda_{0}</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">where here we used the notation \f$r_{k}^{\gamma}\f$ to denote an arbitrary position which can be</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">\f$\tilde x_0 ,\tilde y_0,\tilde z_0\f$ or   \f$\tilde x_1 ,\tilde y_1,\tilde z_1\f$</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">we get</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">\langle q_{0}\vert \frac{d\mathbf{M}}{dr_{k}^{\gamma}}\vert q_{0}\rangle</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">=\frac{d\lambda_{0}}{dr_{k}^{\gamma}}</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">The derivatives of the matrix \f$\frac{d\mathbf{M}}{dr_{k}^{\gamma}} \f$ can be readily obtained via the</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">chain rule</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">\f{displaymath}</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">\frac{d\mathbf{M}}{dr_{k}^{\gamma}}=\sum_{\l}^{nat}\sum_{\alpha}^{x,y,z} \frac{d\mathbf{M}}{dP_{l}^{\alpha}}\frac{dP_{l}^{\alpha}}{dr_{k}^{\gamma}} +\\</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">\frac{d\mathbf{M}}{dM_{l}^{\alpha}}\frac{dM_{l}^{\alpha}}{dr_{k}^{\gamma}}</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">\f}</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">where \f$ M_{l}^{\alpha} \f$ corresponds to \f$ x_m^{l},y_m^{l},z_m^{l} \f$   and</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">\f$ P_{l}^{\alpha} \f$ corresponds to \f$ x_p^{l},y_p^{l},z_p^{l} \f$ according to the \f$ \alpha \f$ component.</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html">  177</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_kearsley.html">Kearsley</a></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{<span class="comment"></span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">  /// general log reference that needs to be initialized when constructed</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a446275e6a39207bc8777c5453c013d97">  180</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_log.html">Log</a>* <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a446275e6a39207bc8777c5453c013d97">log</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">  /// position of atoms (first frame. In md is the running frame)</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#ae18afbccfc1f57e98a9c13a7ebcbf0d4">  182</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#ae18afbccfc1f57e98a9c13a7ebcbf0d4">p0</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">  /// position of atoms (second frame. In md is the  reference frame)</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#acddb46ca383f1a7cba553b1bc75bd649">  184</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#acddb46ca383f1a7cba553b1bc75bd649">p1</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">  /// alignment weight: the rmsd/msd that it provides is only based on this scalar</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a7f953bad330b134dcdc1012933c69caf">  186</a></span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a7f953bad330b134dcdc1012933c69caf">align</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a647fdbae363d3cb48af0d24cef9c95c1">  188</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a647fdbae363d3cb48af0d24cef9c95c1">com0_is_removed</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a89e291e9747cf5952b52f129263d5523">  189</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a89e291e9747cf5952b52f129263d5523">com1_is_removed</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">  /// error: the distance between two frames (might be rmsd/msd. See below)</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a9d76bf540b05931ae15ce76150df6258">  193</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a9d76bf540b05931ae15ce76150df6258">err</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">  /// displacement: the vector that goes from the p0 onto p1</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a581e891c92210852044ab81e3c6d5181">  195</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a581e891c92210852044ab81e3c6d5181">diff0on1</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">  /// displacement: the vector that goes from the p1 onto p0 (via inverse rotation)</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a65305c38be57534d940f74340e51677e">  197</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a65305c38be57534d940f74340e51677e">diff1on0</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">  /// center of mass of p0</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#afa791dc2f446abb47fd78e188da4c577">  200</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#afa791dc2f446abb47fd78e188da4c577">com0</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">  /// center of mass of p1</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a92489c3e167c93a88491aefca3983f51">  202</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a92489c3e167c93a88491aefca3983f51">com1</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">  /// position resetted wrt coms p0</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#aa92d65a71a416506612240c47adc94a9">  204</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#aa92d65a71a416506612240c47adc94a9">p0reset</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">  /// position resetted wrt coms p1</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a8699495213654a67b71e96805dfc3588">  206</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a8699495213654a67b71e96805dfc3588">p1reset</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">  /// position rotated: p0</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a59c5c85ef3fe0fbb15af28f7725454ed">  208</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a59c5c85ef3fe0fbb15af28f7725454ed">p0rotated</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">  /// position rotated: p1</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a38252646e81ab5dce6e905ea46528927">  210</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a38252646e81ab5dce6e905ea46528927">p1rotated</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">  /// rotation matrices p0 on p1 and reverse (p1 over p0)</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a3f49a6d9d0681d1a0c5b53ac4fb6215c">  212</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a481dc79b025ebb85a9dcc0aad71119ba">rotmat0on1</a>,<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a3f49a6d9d0681d1a0c5b53ac4fb6215c">rotmat1on0</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">  /// derivatives: derivative of the error respect p0</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a19680e7c013b8510f26a7cb3afbe0b9c">  214</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a19680e7c013b8510f26a7cb3afbe0b9c">derrdp0</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">  /// derivatives: derivative of the error respect p1</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a556b97cfd9d050f394476739f585da27">  216</a></span>&#160;<span class="comment"></span>  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a556b97cfd9d050f394476739f585da27">derrdp1</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">  /// derivative of the rotation matrix</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">  /// note the dimension 3x3 x 3 x N</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#add810c5ea32d16728ba3afc257382a06">  219</a></span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#add810c5ea32d16728ba3afc257382a06">dmatdp0</a>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_kearsley.html#a81557ebd5f551e247f6c41ec7e6888e5">  220</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a81557ebd5f551e247f6c41ec7e6888e5">dmatdp1</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">  /// constructor: need the two structure, the alignment vector and  the log reference</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_kearsley.html#afb5fde054a4bc02167de61936d757ccf">Kearsley</a>(  <span class="keyword">const</span> std::vector&lt;Vector&gt; &amp;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#ae18afbccfc1f57e98a9c13a7ebcbf0d4">p0</a>, <span class="keyword">const</span> std::vector&lt;Vector&gt; &amp;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#acddb46ca383f1a7cba553b1bc75bd649">p1</a>,  <span class="keyword">const</span> std::vector&lt;double&gt; &amp;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a7f953bad330b134dcdc1012933c69caf">align</a> , <a class="code" href="class_p_l_m_d_1_1_log.html">Log</a>* &amp;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a446275e6a39207bc8777c5453c013d97">log</a>);<span class="comment"></span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">  /// switch the assignment of the structure p0 (e.g. at each md step)</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a3bad6c7722967f7ac63520120fad9494">assignP0</a>(<span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#ae18afbccfc1f57e98a9c13a7ebcbf0d4">p0</a>);<span class="comment"></span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">  /// derivatives: derivative of the error respect p1</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#ab074f13510544532018db04ed819b066">assignP1</a>(<span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#acddb46ca383f1a7cba553b1bc75bd649">p1</a>);<span class="comment"></span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">  /// transfer the alignment vector</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a4ed767e89ba09227d51b661fe9444a5f">assignAlign</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp; <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a7f953bad330b134dcdc1012933c69caf">align</a>);<span class="comment"></span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">  /// finite differences of all the relevant quantities: takes a bool which decides if giving back rmsd or not (msd in this case)</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a977bf00a50e5a0e31d3ee04339faba6e">finiteDifferenceInterface</a>(<span class="keywordtype">bool</span> rmsd);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="comment">// this makes the real calculation: the rmsd bool decides wether doing rmsd or msd</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html#a79ac46bc4d19c0ae87479f4c1529c09f">calculate</a>( <span class="keywordtype">bool</span> rmsd );</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;};</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a38252646e81ab5dce6e905ea46528927"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a38252646e81ab5dce6e905ea46528927">PLMD::Kearsley::p1rotated</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p1rotated</div><div class="ttdoc">position rotated: p1 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00210">Kearsley.h:210</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a81557ebd5f551e247f6c41ec7e6888e5"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a81557ebd5f551e247f6c41ec7e6888e5">PLMD::Kearsley::dmatdp1</a></div><div class="ttdeci">std::vector&lt; double &gt; dmatdp1</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00220">Kearsley.h:220</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a89e291e9747cf5952b52f129263d5523"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a89e291e9747cf5952b52f129263d5523">PLMD::Kearsley::com1_is_removed</a></div><div class="ttdeci">bool com1_is_removed</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00189">Kearsley.h:189</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html">PLMD::TensorGeneric</a></div><div class="ttdoc">Class implementing fixed size matrices of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00070">Tensor.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a3f49a6d9d0681d1a0c5b53ac4fb6215c"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a3f49a6d9d0681d1a0c5b53ac4fb6215c">PLMD::Kearsley::rotmat1on0</a></div><div class="ttdeci">Tensor rotmat1on0</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00212">Kearsley.h:212</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a9d76bf540b05931ae15ce76150df6258"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a9d76bf540b05931ae15ce76150df6258">PLMD::Kearsley::err</a></div><div class="ttdeci">double err</div><div class="ttdoc">error: the distance between two frames (might be rmsd/msd. See below) </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00193">Kearsley.h:193</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_log_html"><div class="ttname"><a href="class_p_l_m_d_1_1_log.html">PLMD::Log</a></div><div class="ttdoc">Class containing the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_log_8h_source.html#l00037">Log.h:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a8699495213654a67b71e96805dfc3588"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a8699495213654a67b71e96805dfc3588">PLMD::Kearsley::p1reset</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p1reset</div><div class="ttdoc">position resetted wrt coms p1 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00206">Kearsley.h:206</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a647fdbae363d3cb48af0d24cef9c95c1"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a647fdbae363d3cb48af0d24cef9c95c1">PLMD::Kearsley::com0_is_removed</a></div><div class="ttdeci">bool com0_is_removed</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00188">Kearsley.h:188</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a556b97cfd9d050f394476739f585da27"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a556b97cfd9d050f394476739f585da27">PLMD::Kearsley::derrdp1</a></div><div class="ttdeci">std::vector&lt; Vector &gt; derrdp1</div><div class="ttdoc">derivatives: derivative of the error respect p1 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00216">Kearsley.h:216</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a59c5c85ef3fe0fbb15af28f7725454ed"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a59c5c85ef3fe0fbb15af28f7725454ed">PLMD::Kearsley::p0rotated</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p0rotated</div><div class="ttdoc">position rotated: p0 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00208">Kearsley.h:208</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_afb5fde054a4bc02167de61936d757ccf"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#afb5fde054a4bc02167de61936d757ccf">PLMD::Kearsley::Kearsley</a></div><div class="ttdeci">Kearsley(const std::vector&lt; Vector &gt; &amp;p0, const std::vector&lt; Vector &gt; &amp;p1, const std::vector&lt; double &gt; &amp;align, Log *&amp;log)</div><div class="ttdoc">constructor: need the two structure, the alignment vector and the log reference </div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00037">Kearsley.cpp:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a446275e6a39207bc8777c5453c013d97"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a446275e6a39207bc8777c5453c013d97">PLMD::Kearsley::log</a></div><div class="ttdeci">Log * log</div><div class="ttdoc">general log reference that needs to be initialized when constructed </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00180">Kearsley.h:180</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a3bad6c7722967f7ac63520120fad9494"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a3bad6c7722967f7ac63520120fad9494">PLMD::Kearsley::assignP0</a></div><div class="ttdeci">void assignP0(const std::vector&lt; Vector &gt; &amp;p0)</div><div class="ttdoc">switch the assignment of the structure p0 (e.g. at each md step) </div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00729">Kearsley.cpp:729</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a79ac46bc4d19c0ae87479f4c1529c09f"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a79ac46bc4d19c0ae87479f4c1529c09f">PLMD::Kearsley::calculate</a></div><div class="ttdeci">double calculate(bool rmsd)</div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00065">Kearsley.cpp:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a65305c38be57534d940f74340e51677e"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a65305c38be57534d940f74340e51677e">PLMD::Kearsley::diff1on0</a></div><div class="ttdeci">std::vector&lt; Vector &gt; diff1on0</div><div class="ttdoc">displacement: the vector that goes from the p1 onto p0 (via inverse rotation) </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00197">Kearsley.h:197</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_ae18afbccfc1f57e98a9c13a7ebcbf0d4"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#ae18afbccfc1f57e98a9c13a7ebcbf0d4">PLMD::Kearsley::p0</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p0</div><div class="ttdoc">position of atoms (first frame. In md is the running frame) </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00182">Kearsley.h:182</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a7f953bad330b134dcdc1012933c69caf"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a7f953bad330b134dcdc1012933c69caf">PLMD::Kearsley::align</a></div><div class="ttdeci">std::vector&lt; double &gt; align</div><div class="ttdoc">alignment weight: the rmsd/msd that it provides is only based on this scalar </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00186">Kearsley.h:186</a></div></div>
+<div class="ttc" id="tools_2_tensor_8h_html"><div class="ttname"><a href="tools_2_tensor_8h.html">Tensor.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_aa92d65a71a416506612240c47adc94a9"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#aa92d65a71a416506612240c47adc94a9">PLMD::Kearsley::p0reset</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p0reset</div><div class="ttdoc">position resetted wrt coms p0 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00204">Kearsley.h:204</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_afa791dc2f446abb47fd78e188da4c577"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#afa791dc2f446abb47fd78e188da4c577">PLMD::Kearsley::com0</a></div><div class="ttdeci">Vector com0</div><div class="ttdoc">center of mass of p0 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00200">Kearsley.h:200</a></div></div>
+<div class="ttc" id="tools_2_vector_8h_html"><div class="ttname"><a href="tools_2_vector_8h.html">Vector.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_ab074f13510544532018db04ed819b066"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#ab074f13510544532018db04ed819b066">PLMD::Kearsley::assignP1</a></div><div class="ttdeci">void assignP1(const std::vector&lt; Vector &gt; &amp;p1)</div><div class="ttdoc">derivatives: derivative of the error respect p1 </div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00725">Kearsley.cpp:725</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a581e891c92210852044ab81e3c6d5181"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a581e891c92210852044ab81e3c6d5181">PLMD::Kearsley::diff0on1</a></div><div class="ttdeci">std::vector&lt; Vector &gt; diff0on1</div><div class="ttdoc">displacement: the vector that goes from the p0 onto p1 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00195">Kearsley.h:195</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a92489c3e167c93a88491aefca3983f51"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a92489c3e167c93a88491aefca3983f51">PLMD::Kearsley::com1</a></div><div class="ttdeci">Vector com1</div><div class="ttdoc">center of mass of p1 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00202">Kearsley.h:202</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a4ed767e89ba09227d51b661fe9444a5f"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a4ed767e89ba09227d51b661fe9444a5f">PLMD::Kearsley::assignAlign</a></div><div class="ttdeci">void assignAlign(const std::vector&lt; double &gt; &amp;align)</div><div class="ttdoc">transfer the alignment vector </div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00734">Kearsley.cpp:734</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_add810c5ea32d16728ba3afc257382a06"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#add810c5ea32d16728ba3afc257382a06">PLMD::Kearsley::dmatdp0</a></div><div class="ttdeci">std::vector&lt; double &gt; dmatdp0</div><div class="ttdoc">derivative of the rotation matrix note the dimension 3x3 x 3 x N </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00219">Kearsley.h:219</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a481dc79b025ebb85a9dcc0aad71119ba"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a481dc79b025ebb85a9dcc0aad71119ba">PLMD::Kearsley::rotmat0on1</a></div><div class="ttdeci">Tensor rotmat0on1</div><div class="ttdoc">rotation matrices p0 on p1 and reverse (p1 over p0) </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00212">Kearsley.h:212</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html">PLMD::Kearsley</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00177">Kearsley.h:177</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_acddb46ca383f1a7cba553b1bc75bd649"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#acddb46ca383f1a7cba553b1bc75bd649">PLMD::Kearsley::p1</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p1</div><div class="ttdoc">position of atoms (second frame. In md is the reference frame) </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00184">Kearsley.h:184</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a19680e7c013b8510f26a7cb3afbe0b9c"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a19680e7c013b8510f26a7cb3afbe0b9c">PLMD::Kearsley::derrdp0</a></div><div class="ttdeci">std::vector&lt; Vector &gt; derrdp0</div><div class="ttdoc">derivatives: derivative of the error respect p0 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00214">Kearsley.h:214</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a977bf00a50e5a0e31d3ee04339faba6e"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a977bf00a50e5a0e31d3ee04339faba6e">PLMD::Kearsley::finiteDifferenceInterface</a></div><div class="ttdeci">void finiteDifferenceInterface(bool rmsd)</div><div class="ttdoc">finite differences of all the relevant quantities: takes a bool which decides if giving back rmsd or ...</div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00738">Kearsley.cpp:738</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

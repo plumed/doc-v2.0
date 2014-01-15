@@ -1,0 +1,232 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/DRMSD.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">DRMSD.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_d_r_m_s_d_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_d_r_m_s_d_8h.html">DRMSD.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_p_d_b_8h.html">PDB.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_pbc_8h.html">Pbc.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a66f49b2897bf426198ebc361eb009237">   30</a></span>&#160;<span class="keywordtype">void</span> DRMSD::setFromPDB(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html">PDB</a>&amp;pdb, <span class="keywordtype">double</span> lbound, <span class="keywordtype">double</span> ubound){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  setReference(pdb.<a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a3cf8eebf51a996c9709935f67c45722f">getPositions</a>(), lbound, ubound);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_d_r_m_s_d.html#abaae72e1727f0ad0c82fb89805925b0f">   34</a></span>&#160;<span class="keywordtype">void</span> DRMSD::clear(){</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  targets.clear();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a21762dbd163b41150f8453ab71ec3be5">   38</a></span>&#160;<span class="keywordtype">void</span> DRMSD::setReference(<span class="keyword">const</span> vector&lt;Vector&gt; &amp; reference, <span class="keywordtype">double</span> lbound, <span class="keywordtype">double</span> ubound)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; natoms = reference.size();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;natoms-1;++i){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=i+1;j&lt;natoms;++j){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="keywordtype">double</span> distance = <a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>(reference[i],reference[j]).modulo();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keywordflow">if</span>(distance &gt; lbound &amp;&amp; distance &lt; ubound){ </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;     targets[make_pair(i,j)] = distance; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a35b9b3b5945584ad8a7a54a335fd3804">   51</a></span>&#160;<span class="keywordtype">double</span> DRMSD::calculate(<span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; positions,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        std::vector&lt;Vector&gt; &amp;derivatives, <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; virial)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; <a class="code" href="class_p_l_m_d_1_1_pbc.html">Pbc</a> fake_pbc;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; <span class="keywordflow">return</span> DRMSD::calculate(positions,fake_pbc,derivatives,virial,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_d_r_m_s_d.html#a839d8cee27e6da527a86f1a03ebaa6ed">   58</a></span>&#160;<span class="keywordtype">double</span> DRMSD::calculate(<span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; positions, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_pbc.html">Pbc</a>&amp; pbc,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        std::vector&lt;Vector&gt; &amp;derivatives, <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; virial, <span class="keywordtype">bool</span> do_pbc)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  plumed_assert(positions.size()==natoms &amp;&amp; derivatives.size()==natoms );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> distance;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">double</span> drmsd=0.; virial.<a class="code" href="class_p_l_m_d_1_1_tensor_generic.html#aa4b13d9be3c85acd76265455ee1abe8e">zero</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;derivatives.size();++i) derivatives[i].zero();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">for</span>(map&lt; pair &lt;unsigned,unsigned&gt; , <span class="keywordtype">double</span>&gt;::const_iterator it=targets.begin();it!=targets.end();++it){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">unsigned</span> i=it-&gt;first.first;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">unsigned</span> j=it-&gt;first.second;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span>(do_pbc){distance=pbc.<a class="code" href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">distance</a>( positions[i] , positions[j] );}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">else</span>{distance=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>( positions[i] , positions[j] );}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">double</span> len = distance.modulo();  </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">double</span> diff = len - it-&gt;second;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    drmsd += diff * diff;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    derivatives[i] += -( diff / len ) * distance;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    derivatives[j] +=  ( diff / len ) * distance;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    virial -=  ( diff / len ) * <a class="code" href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">Tensor</a>(distance,distance); </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">double</span> npairs = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(targets.size());</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  drmsd=sqrt( drmsd / npairs );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">double</span> idrmsd=1.0/( drmsd * npairs );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  virial *= idrmsd;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;natoms;++i){derivatives[i] *= idrmsd;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">return</span> drmsd;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html_aa4b13d9be3c85acd76265455ee1abe8e"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html#aa4b13d9be3c85acd76265455ee1abe8e">PLMD::TensorGeneric::zero</a></div><div class="ttdeci">void zero()</div><div class="ttdoc">set it to zero </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00198">Tensor.h:198</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html">PLMD::TensorGeneric</a></div><div class="ttdoc">Class implementing fixed size matrices of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00070">Tensor.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="tools_2_pbc_8h_html"><div class="ttname"><a href="tools_2_pbc_8h.html">Pbc.h</a></div></div>
+<div class="ttc" id="tools_2_p_d_b_8h_html"><div class="ttname"><a href="tools_2_p_d_b_8h.html">PDB.h</a></div></div>
+<div class="ttc" id="tools_2_d_r_m_s_d_8h_html"><div class="ttname"><a href="tools_2_d_r_m_s_d_8h.html">DRMSD.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html">PLMD::Pbc</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_pbc_8h_source.html#l00038">Pbc.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_pbc_html_ae028707665734f0e6b7404c211b88393"><div class="ttname"><a href="class_p_l_m_d_1_1_pbc.html#ae028707665734f0e6b7404c211b88393">PLMD::Pbc::distance</a></div><div class="ttdeci">Vector distance(const Vector &amp;, const Vector &amp;, int *nshifts) const </div><div class="ttdoc">internal version of distance, also returns the number of attempted shifts (used in Pbc::test())...</div><div class="ttdef"><b>Definition:</b> <a href="_pbc_8cpp_source.html#l00158">Pbc.cpp:158</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a3cf8eebf51a996c9709935f67c45722f"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a3cf8eebf51a996c9709935f67c45722f">PLMD::PDB::getPositions</a></div><div class="ttdeci">const std::vector&lt; Vector &gt; &amp; getPositions() const </div><div class="ttdoc">Access to the position array. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00031">PDB.cpp:31</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a2a1cf3a4fea01e78626f761aa04abd90"><div class="ttname"><a href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">PLMD::delta</a></div><div class="ttdeci">VectorGeneric&lt; n &gt; delta(const VectorGeneric&lt; n &gt; &amp;v1, const VectorGeneric&lt; n &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00262">Vector.h:262</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html">PLMD::PDB</a></div><div class="ttdoc">Minimalistic pdb parser. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00038">PDB.h:38</a></div></div>
+<div class="ttc" id="group___t_o_o_l_b_o_x_html_gafe97bb8171dbb8831404177925fee28f"><div class="ttname"><a href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">PLMD::Tensor</a></div><div class="ttdeci">Tensor3d Tensor</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00425">Tensor.h:425</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

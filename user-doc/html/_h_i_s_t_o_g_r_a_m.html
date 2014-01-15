@@ -1,0 +1,200 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: HISTOGRAM</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="_analysis.html">Analysis</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">HISTOGRAM </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>Calculate the probability density as a function of a few CVs using kernel density estimation</p>
+<dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> ARG </b> </td><td>the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken. If * or *.* appears the information from all arguments is taken. Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z. To take just the x component you should use dist.x, if you wish to take all three components then use dist.*   </td></tr>
+<tr>
+<td width="15%"><b> STRIDE </b> </td><td>( default=1 ) the frequency with which data should be stored for analysis   </td></tr>
+<tr>
+<td width="15%"><b> RUN </b> </td><td>the frequency with which to run the analysis algorithm. This is not required if you specify USE_ALL_DATA   </td></tr>
+<tr>
+<td width="15%"><b> GRID_MIN </b> </td><td>the lower bounds for the grid   </td></tr>
+<tr>
+<td width="15%"><b> GRID_MAX </b> </td><td>the upper bounds for the grid   </td></tr>
+<tr>
+<td width="15%"><b> GRID_BIN </b> </td><td>the number of bins for the grid   </td></tr>
+<tr>
+<td width="15%"><b> KERNEL </b> </td><td>( default=gaussian ) the kernel function you are using. More details on the kernels available in plumed can be found in <a class="el" href="kernelfunctions.html">kernelfunctions</a>.   </td></tr>
+<tr>
+<td width="15%"><b> BANDWIDTH </b> </td><td>the bandwdith for kernel density estimation   </td></tr>
+<tr>
+<td width="15%"><b> GRID_WFILE </b> </td><td>( default=histogram ) the file on which to write the grid   </td></tr>
+</table>
+<dl class="section user"><dt>Options</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> USE_ALL_DATA </b> </td><td>( default=off ) use the data from the entire trajectory to perform the analysis   </td></tr>
+<tr>
+<td width="15%"><b> REWEIGHT_BIAS </b> </td><td>( default=off ) reweight the data using all the biases acting on the dynamics. For more information see <a class="el" href="reweighting.html">reweighting</a>.   </td></tr>
+<tr>
+<td width="15%"><b> WRITE_CHECKPOINT </b> </td><td>( default=off ) write out a checkpoint so that the analysis can be restarted in a later run   </td></tr>
+<tr>
+<td width="15%"><b> NOMEMORY </b> </td><td><p class="starttd">( default=off ) analyse each block of data separately  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> FMT </b> </td><td>the format that should be used in analysis output files   </td></tr>
+<tr>
+<td width="15%"><b> TEMP </b> </td><td>the system temperature. This is required if you are reweighting.   </td></tr>
+<tr>
+<td width="15%"><b> REWEIGHT_TEMP </b> </td><td><p class="starttd">reweight data from a trajectory at one temperature and output the probability distribution at a second temperature. For more information see <a class="el" href="reweighting.html">reweighting</a>. This is not possible during postprocessing.  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<p>The following input monitors two torsional angles during a simulation and outputs a histogram as a function of them at the end of the simulation. </p>
+<pre class="fragment">TORSION ATOMS=1,2,3,4 LABEL=r1
+TORSION ATOMS=2,3,4,5 LABEL=r2
+HISTOGRAM ...
+ARG=r1,r2
+USE_ALL_DATA
+GRID_MIN=-3.14,-3.14
+GRID_MAX=3.14,3.14
+GRID_BIN=200,200
+BANDWIDTH=0.05,0.05
+GRID_WFILE=histo
+... HISTOGRAM
+</pre><p>The following input monitors two torsional angles during a simulation and outputs the histogram accumulated thus far every 100000 steps. </p>
+<pre class="fragment">TORSION ATOMS=1,2,3,4 LABEL=r1
+TORSION ATOMS=2,3,4,5 LABEL=r2
+HISTOGRAM ...
+ARG=r1,r2
+RUN=100000
+GRID_MIN=-3.14,-3.14
+GRID_MAX=3.14,3.14
+GRID_BIN=200,200
+BANDWIDTH=0.05,0.05
+GRID_WFILE=histo
+... HISTOGRAM
+</pre><p>The following input monitors two torsional angles during a simulation and outputs a separate histogram for each 100000 steps worth of trajectory. </p>
+<pre class="fragment">TORSION ATOMS=1,2,3,4 LABEL=r1
+TORSION ATOMS=2,3,4,5 LABEL=r2
+HISTOGRAM ...
+ARG=r1,r2
+RUN=100000 NOMEMORY
+GRID_MIN=-3.14,-3.14
+GRID_MAX=3.14,3.14
+GRID_BIN=200,200
+BANDWIDTH=0.05,0.05
+GRID_WFILE=histo
+... HISTOGRAM
+</pre> </div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

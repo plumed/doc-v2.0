@@ -1,0 +1,80 @@
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> RESIDUES </b></td>
+<td> this command is used to specify the set of residues that could conceivably form part of the secondary structure. It is possible to use residues numbers as the various chains and residues should have been identified else using an instance of the \ref MOLINFO action. If you wish to use all the residues from all the chains in your system you can do so by specifying all. Alternatively, if you wish to use a subset of the residues you can specify the particular residues you are interested in as a list of numbers. Please be aware that to form secondary structure elements your chain must contain at least N residues, where N is dependent on the particular secondary structure you are interested in. As such if you define portions of the chain with fewer than N residues the code will crash. </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TYPE </b></td>
+<td> ( default=DRMSD ) the manner in which RMSD alignment is performed. Should be OPTIMAL, SIMPLE or DRMSD. For more details on the OPTIMAL and SIMPLE methods see \ref RMSD. For more details on the DRMSD method see \ref DRMSD. </td>
+</tr>
+<tr>
+<td width=15%> <b> R_0 </b></td>
+<td> The r_0 parameter of the switching function. </td>
+</tr>
+<tr>
+<td width=15%> <b> D_0 </b></td>
+<td> ( default=0.0 ) The d_0 parameter of the switching function </td>
+</tr>
+<tr>
+<td width=15%> <b> NN </b></td>
+<td> ( default=8 ) The n parameter of the switching function </td>
+</tr>
+<tr>
+<td width=15%> <b> MM </b></td>
+<td> ( default=12 ) The m parameter of the switching function </td>
+</tr>
+<tr>
+<td width=15%> <b> STYLE </b></td>
+<td> ( default=all ) Antiparallel beta sheets can either form in a single chain or from a pair of chains. If STYLE=all all chain configuration with the appropriate geometry are counted.  If STYLE=inter only sheet-like configurations involving two chains are counted, while if STYLE=intra only sheet-like configurations involving a single chain are counted </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> VERBOSE </b></td>
+<td> ( default=off ) write a more detailed output </td>
+</tr>
+<tr>
+<td width=15%> <b> SERIAL </b></td>
+<td> ( default=off ) do the calculation in serial.  Do not parallelize </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TOL </b></td>
+<td> this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum.  They can thus be safely ignored as can the the derivatives wrt these small quantities. </td>
+</tr>
+<tr>
+<td width=15%> <b> LESS_THAN </b></td>
+<td> calculate the number of variables less than a certain target value. This quantity is calculated using \f$\sum_i \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.less_than.  You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3...  The corresponding values are then referenced using <em>label</em>.less_than-1,  <em>label</em>.less_than-2,  <em>label</em>.less_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> MIN </b></td>
+<td>  The final value can be referenced using  <em>label</em>.min. </td>
+</tr>
+<tr>
+<td width=15%> <b> STRANDS_CUTOFF </b></td>
+<td> If in a segment of protein the two strands are further apart then the calculation of the actual RMSD is skipped as the structure is very far from being beta-sheet like. This keyword speeds up the calculation enormously when you are using the LESS_THAN option. However, if you are using some other option, then this cannot be used </td>
+</tr>
+
+</table>
+

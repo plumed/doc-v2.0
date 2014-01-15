@@ -1,0 +1,173 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: ALPHARMSD</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="_colvar.html">Collective Variables</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">ALPHARMSD </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>Probe the alpha helical content of a protein structure.</p>
+<p>Any chain of six contiguous residues in a protein chain can form an alpha helix. This colvar thus generates the set of all possible six residue sections and calculates the RMSD distance between the configuration in which the residues find themselves and an idealized alpha helical structure. These distances can be calculated by either aligning the instantaneous structure with the reference structure and measuring each atomic displacement or by calculating differences between the set of interatomic distances in the reference and instantaneous structures.</p>
+<p>This colvar is based on the following reference <a class="el" href="citelist.html#CITEREF_pietrucci09jctc">[19]</a>. The authors of this paper use the set of distances from the alpha helix configurations to measure the number of segments that have an alpha helical configuration. This is done by calculating the following sum of functions of the rmsd distances:</p>
+<p class="formulaDsp">
+\[ s = \sum_i \frac{ 1 - \left(\frac{r_i-d_0}{r_0}\right)^n } { 1 - \left(\frac{r_i-d_0}{r_0}\right)^m } \]
+</p>
+<p>where the sum runs over all possible segments of alpha helix. By default the NN, MM and D_0 parameters are set equal to those used in <a class="el" href="citelist.html#CITEREF_pietrucci09jctc">[19]</a>. The R_0 parameter must be set by the user - the value used in <a class="el" href="citelist.html#CITEREF_pietrucci09jctc">[19]</a> was 0.08 nm.</p>
+<p>If you change the function in the above sum you can calculate quantities such as the average distance from a purely the alpha helical configuration or the distance between the set of residues that is closest to an alpha helix and the reference configuration. To do these sorts of calculations you can use the AVERAGE and MIN keywords. In addition you can use the LESS_THAN keyword if you would like to change the form of the switching function. If you use any of these options you no longer need to specify NN, R_0, MM and D_0.</p>
+<p>Please be aware that for codes like gromacs you must ensure that plumed reconstructs the chains involved in your CV when you calculate this CV using anthing other than TYPE=DRMSD. For more details as to how to do this see <a class="el" href="_w_h_o_l_e_m_o_l_e_c_u_l_e_s.html">WHOLEMOLECULES</a>.</p>
+<dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> RESIDUES </b> </td><td>this command is used to specify the set of residues that could conceivably form part of the secondary structure. It is possible to use residues numbers as the various chains and residues should have been identified else using an instance of the <a class="el" href="_m_o_l_i_n_f_o.html">MOLINFO</a> action. If you wish to use all the residues from all the chains in your system you can do so by specifying all. Alternatively, if you wish to use a subset of the residues you can specify the particular residues you are interested in as a list of numbers. Please be aware that to form secondary structure elements your chain must contain at least N residues, where N is dependent on the particular secondary structure you are interested in. As such if you define portions of the chain with fewer than N residues the code will crash.   </td></tr>
+</table>
+<dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> TYPE </b> </td><td>( default=DRMSD ) the manner in which RMSD alignment is performed. Should be OPTIMAL, SIMPLE or DRMSD. For more details on the OPTIMAL and SIMPLE methods see <a class="el" href="_r_m_s_d.html">RMSD</a>. For more details on the DRMSD method see <a class="el" href="_d_r_m_s_d.html">DRMSD</a>.   </td></tr>
+<tr>
+<td width="15%"><b> R_0 </b> </td><td>The r_0 parameter of the switching function.   </td></tr>
+<tr>
+<td width="15%"><b> D_0 </b> </td><td>( default=0.0 ) The d_0 parameter of the switching function   </td></tr>
+<tr>
+<td width="15%"><b> NN </b> </td><td>( default=8 ) The n parameter of the switching function   </td></tr>
+<tr>
+<td width="15%"><b> MM </b> </td><td>( default=12 ) The m parameter of the switching function   </td></tr>
+</table>
+<dl class="section user"><dt>Options</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> NUMERICAL_DERIVATIVES </b> </td><td>( default=off ) calculate the derivatives for these quantities numerically   </td></tr>
+<tr>
+<td width="15%"><b> NOPBC </b> </td><td>( default=off ) ignore the periodic boundary conditions when calculating distances   </td></tr>
+<tr>
+<td width="15%"><b> VERBOSE </b> </td><td>( default=off ) write a more detailed output   </td></tr>
+<tr>
+<td width="15%"><b> SERIAL </b> </td><td><p class="starttd">( default=off ) do the calculation in serial. Do not parallelize  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> TOL </b> </td><td>this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum. They can thus be safely ignored as can the the derivatives wrt these small quantities.   </td></tr>
+<tr>
+<td width="15%"><b> LESS_THAN </b> </td><td>calculate the number of variables less than a certain target value. This quantity is calculated using \(\sum_i \sigma(s_i)\), where \(\sigma(s)\) is a <a class="el" href="switchingfunction.html">switchingfunction</a>. The final value can be referenced using <em>label</em>.less_than. You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3... The corresponding values are then referenced using <em>label</em>.less_than-1, <em>label</em>.less_than-2, <em>label</em>.less_than-3...   </td></tr>
+<tr>
+<td width="15%"><b> MIN </b> </td><td><p class="starttd">The final value can be referenced using <em>label</em>.min.  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<p>The following input calculates the number of six residue segments of protein that are in an alpha helical configuration.</p>
+<pre class="fragment">MOLINFO STRUCTURE=helix.pdb
+ALPHARMSD RESIDUES=all TYPE=DRMSD LESS_THAN={RATIONAL R_0=0.08 NN=8 MM=12} LABEL=a
+</pre><p> (see also <a class="el" href="_m_o_l_i_n_f_o.html">MOLINFO</a>) </p>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

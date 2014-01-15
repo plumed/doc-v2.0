@@ -1,0 +1,1195 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: PLMD::vesselbase::Histogram Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_p_l_m_d.html">PLMD</a></li><li class="navelem"><a class="el" href="namespace_p_l_m_d_1_1vesselbase.html">vesselbase</a></li><li class="navelem"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_histogram.html">Histogram</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="class_p_l_m_d_1_1vesselbase_1_1_histogram-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">PLMD::vesselbase::Histogram Class Reference</div>  </div>
+</div>
+<div class="contents">
+<div class="dynheader">
+Inheritance diagram for PLMD::vesselbase::Histogram:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_p_l_m_d_1_1vesselbase_1_1_histogram__inherit__graph.png" border="0" usemap="#_p_l_m_d_1_1vesselbase_1_1_histogram_inherit__map" alt="Inheritance graph"/></div>
+<map name="_p_l_m_d_1_1vesselbase_1_1_histogram_inherit__map" id="_p_l_m_d_1_1vesselbase_1_1_histogram_inherit__map">
+<area shape="rect" id="node2" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html" title="PLMD::vesselbase::Shortcut\lVessel" alt="" coords="11,83,200,130"/><area shape="rect" id="node4" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html" title="PLMD::vesselbase::Vessel" alt="" coords="15,5,196,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0648bb46cd0bd51c13e48b7513058501"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_histogram.html#a0648bb46cd0bd51c13e48b7513058501">Histogram</a> (const <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a> &amp;<a class="el" href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a>)</td></tr>
+<tr class="separator:a0648bb46cd0bd51c13e48b7513058501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e731c168e7a9e5d88a5f5d12b67ab4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#ab7e731c168e7a9e5d88a5f5d12b67ab4">description</a> ()</td></tr>
+<tr class="memdesc:ab7e731c168e7a9e5d88a5f5d12b67ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a description of the vessel contents.  <a href="#ab7e731c168e7a9e5d88a5f5d12b67ab4">More...</a><br/></td></tr>
+<tr class="separator:ab7e731c168e7a9e5d88a5f5d12b67ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35430f19f6d20ece1d04b012ecead346"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#a35430f19f6d20ece1d04b012ecead346">getNumberOfTerms</a> ()</td></tr>
+<tr class="memdesc:a35430f19f6d20ece1d04b012ecead346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of terms we need to accumulate.  <a href="#a35430f19f6d20ece1d04b012ecead346">More...</a><br/></td></tr>
+<tr class="separator:a35430f19f6d20ece1d04b012ecead346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab50a080d64c5dbaa3911d8a0d15529b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#aab50a080d64c5dbaa3911d8a0d15529b">resize</a> ()</td></tr>
+<tr class="memdesc:aab50a080d64c5dbaa3911d8a0d15529b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the size of the buffers.  <a href="#aab50a080d64c5dbaa3911d8a0d15529b">More...</a><br/></td></tr>
+<tr class="separator:aab50a080d64c5dbaa3911d8a0d15529b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a027307046499156f2380de470d3b62ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#a027307046499156f2380de470d3b62ba">calculate</a> ()</td></tr>
+<tr class="memdesc:a027307046499156f2380de470d3b62ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the part of the vessel that is done in the loop.  <a href="#a027307046499156f2380de470d3b62ba">More...</a><br/></td></tr>
+<tr class="separator:a027307046499156f2380de470d3b62ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0176a3be7ced52edb66f180071b359e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#a0176a3be7ced52edb66f180071b359e9">finish</a> ()</td></tr>
+<tr class="memdesc:a0176a3be7ced52edb66f180071b359e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete the calculation once the loop is finished.  <a href="#a0176a3be7ced52edb66f180071b359e9">More...</a><br/></td></tr>
+<tr class="separator:a0176a3be7ced52edb66f180071b359e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35254ddce3974fa71ee75cb7acf5ddc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#ad35254ddce3974fa71ee75cb7acf5ddc">applyForce</a> (std::vector&lt; double &gt; &amp;forces)</td></tr>
+<tr class="memdesc:ad35254ddce3974fa71ee75cb7acf5ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the forces on the quantities in the vessel.  <a href="#ad35254ddce3974fa71ee75cb7acf5ddc">More...</a><br/></td></tr>
+<tr class="separator:ad35254ddce3974fa71ee75cb7acf5ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a533858d475b73cf3246a82f77ad1ef77"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a533858d475b73cf3246a82f77ad1ef77">getName</a> () const </td></tr>
+<tr class="memdesc:a533858d475b73cf3246a82f77ad1ef77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the name.  <a href="#a533858d475b73cf3246a82f77ad1ef77">More...</a><br/></td></tr>
+<tr class="separator:a533858d475b73cf3246a82f77ad1ef77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe46dd9565c246824b52fa8f3bc7e4ab"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#abe46dd9565c246824b52fa8f3bc7e4ab">getLabel</a> () const </td></tr>
+<tr class="memdesc:abe46dd9565c246824b52fa8f3bc7e4ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the label.  <a href="#abe46dd9565c246824b52fa8f3bc7e4ab">More...</a><br/></td></tr>
+<tr class="separator:abe46dd9565c246824b52fa8f3bc7e4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d3390481abe9501474b6c0e37c755c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2d3390481abe9501474b6c0e37c755c0">checkRead</a> ()</td></tr>
+<tr class="memdesc:a2d3390481abe9501474b6c0e37c755c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that readin was fine.  <a href="#a2d3390481abe9501474b6c0e37c755c0">More...</a><br/></td></tr>
+<tr class="separator:a2d3390481abe9501474b6c0e37c755c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0927de806649d59078b8d737888291a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a0927de806649d59078b8d737888291a9">zero</a> ()</td></tr>
+<tr class="memdesc:a0927de806649d59078b8d737888291a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all the buffer elements to zero.  <a href="#a0927de806649d59078b8d737888291a9">More...</a><br/></td></tr>
+<tr class="separator:a0927de806649d59078b8d737888291a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afccf6c895e735ca4065f5dc13c55ebda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#afccf6c895e735ca4065f5dc13c55ebda">addToBufferElement</a> (const unsigned &amp;i, const double &amp;val)</td></tr>
+<tr class="memdesc:afccf6c895e735ca4065f5dc13c55ebda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add something to the ith element in the buffer.  <a href="#afccf6c895e735ca4065f5dc13c55ebda">More...</a><br/></td></tr>
+<tr class="separator:afccf6c895e735ca4065f5dc13c55ebda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7cd91c1731631ca4f02627c9fece60"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#abe7cd91c1731631ca4f02627c9fece60">prepare</a> ()</td></tr>
+<tr class="memdesc:abe7cd91c1731631ca4f02627c9fece60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do something before the loop.  <a href="#abe7cd91c1731631ca4f02627c9fece60">More...</a><br/></td></tr>
+<tr class="separator:abe7cd91c1731631ca4f02627c9fece60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:adc634e7d286964ac5fef102c66f68529"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_histogram.html#adc634e7d286964ac5fef102c66f68529">registerKeywords</a> (<a class="el" href="class_p_l_m_d_1_1_keywords.html">Keywords</a> &amp;keys)</td></tr>
+<tr class="separator:adc634e7d286964ac5fef102c66f68529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71ff70db510ffab56d0d535da8063880"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_histogram.html#a71ff70db510ffab56d0d535da8063880">reserveKeyword</a> (<a class="el" href="class_p_l_m_d_1_1_keywords.html">Keywords</a> &amp;keys)</td></tr>
+<tr class="separator:a71ff70db510ffab56d0d535da8063880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a3ea2f8882738837c1d9f04ab29072f92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_l_m_d_1_1_log.html">Log</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a3ea2f8882738837c1d9f04ab29072f92">log</a></td></tr>
+<tr class="memdesc:a3ea2f8882738837c1d9f04ab29072f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the log on which to output details.  <a href="#a3ea2f8882738837c1d9f04ab29072f92">More...</a><br/></td></tr>
+<tr class="separator:a3ea2f8882738837c1d9f04ab29072f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a766804f01b22a7ff7e593675b4298f7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_shortcut_vessel.html#a766804f01b22a7ff7e593675b4298f7f">addVessel</a> (const std::string &amp;name, const std::string &amp;intput)</td></tr>
+<tr class="separator:a766804f01b22a7ff7e593675b4298f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3023dd056e2acd982449d607c16925ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a3023dd056e2acd982449d607c16925ef">getNumericalLabel</a> () const </td></tr>
+<tr class="memdesc:a3023dd056e2acd982449d607c16925ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the numerical label.  <a href="#a3023dd056e2acd982449d607c16925ef">More...</a><br/></td></tr>
+<tr class="separator:a3023dd056e2acd982449d607c16925ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad08d6db0d9b0dcbe03add8f09d17355b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#ad08d6db0d9b0dcbe03add8f09d17355b">error</a> (const std::string &amp;errmsg)</td></tr>
+<tr class="memdesc:ad08d6db0d9b0dcbe03add8f09d17355b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report an error.  <a href="#ad08d6db0d9b0dcbe03add8f09d17355b">More...</a><br/></td></tr>
+<tr class="separator:ad08d6db0d9b0dcbe03add8f09d17355b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad589e1dc6d48a7e19ff8d81214a2297"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aad589e1dc6d48a7e19ff8d81214a2297"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#aad589e1dc6d48a7e19ff8d81214a2297">parse</a> (const std::string &amp;key, T &amp;t)</td></tr>
+<tr class="memdesc:aad589e1dc6d48a7e19ff8d81214a2297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse something from the input.  <a href="#aad589e1dc6d48a7e19ff8d81214a2297">More...</a><br/></td></tr>
+<tr class="separator:aad589e1dc6d48a7e19ff8d81214a2297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0200636d280ab4b1d5d769e601f9b2fc"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0200636d280ab4b1d5d769e601f9b2fc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a0200636d280ab4b1d5d769e601f9b2fc">parseVector</a> (const std::string &amp;key, std::vector&lt; T &gt; &amp;t)</td></tr>
+<tr class="memdesc:a0200636d280ab4b1d5d769e601f9b2fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse one keyword as std::vector.  <a href="#a0200636d280ab4b1d5d769e601f9b2fc">More...</a><br/></td></tr>
+<tr class="separator:a0200636d280ab4b1d5d769e601f9b2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb677874eeb85535b1fa37ace99047b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#aebb677874eeb85535b1fa37ace99047b">parseFlag</a> (const std::string &amp;key, bool &amp;t)</td></tr>
+<tr class="memdesc:aebb677874eeb85535b1fa37ace99047b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse one keyword as boolean flag.  <a href="#aebb677874eeb85535b1fa37ace99047b">More...</a><br/></td></tr>
+<tr class="separator:aebb677874eeb85535b1fa37ace99047b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7570691393a0356e01d3773d0823b27c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a7570691393a0356e01d3773d0823b27c">getAllInput</a> ()</td></tr>
+<tr class="memdesc:a7570691393a0356e01d3773d0823b27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This returns the whole input line (it is used for less_than/more_than/between)  <a href="#a7570691393a0356e01d3773d0823b27c">More...</a><br/></td></tr>
+<tr class="separator:a7570691393a0356e01d3773d0823b27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ee21116a09e152e7a933794a8907664"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html">ActionWithVessel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a> ()</td></tr>
+<tr class="memdesc:a2ee21116a09e152e7a933794a8907664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a pointer to the action we are working in.  <a href="#a2ee21116a09e152e7a933794a8907664">More...</a><br/></td></tr>
+<tr class="separator:a2ee21116a09e152e7a933794a8907664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9f977233242587163d465c71080a84"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2b9f977233242587163d465c71080a84">getTolerance</a> () const </td></tr>
+<tr class="memdesc:a2b9f977233242587163d465c71080a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the value of the tolerance.  <a href="#a2b9f977233242587163d465c71080a84">More...</a><br/></td></tr>
+<tr class="separator:a2b9f977233242587163d465c71080a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ceb746eea16aceaeeb62323862a4ed7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a0ceb746eea16aceaeeb62323862a4ed7">getNLTolerance</a> () const </td></tr>
+<tr class="memdesc:a0ceb746eea16aceaeeb62323862a4ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the value of the neighbor list tolerance.  <a href="#a0ceb746eea16aceaeeb62323862a4ed7">More...</a><br/></td></tr>
+<tr class="separator:a0ceb746eea16aceaeeb62323862a4ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e5a1219e9918dc26df41eac07396318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2e5a1219e9918dc26df41eac07396318">resizeBuffer</a> (const unsigned &amp;<a class="el" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>)</td></tr>
+<tr class="memdesc:a2e5a1219e9918dc26df41eac07396318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of the data buffer.  <a href="#a2e5a1219e9918dc26df41eac07396318">More...</a><br/></td></tr>
+<tr class="separator:a2e5a1219e9918dc26df41eac07396318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb70e5c5d553860e041939c53947b86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#afdb70e5c5d553860e041939c53947b86">setBufferElement</a> (const unsigned &amp;i, const double &amp;val)</td></tr>
+<tr class="memdesc:afdb70e5c5d553860e041939c53947b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of the ith element in the buffer.  <a href="#afdb70e5c5d553860e041939c53947b86">More...</a><br/></td></tr>
+<tr class="separator:afdb70e5c5d553860e041939c53947b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d24f0a9a69d99feeffa56876b11cd1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a91d24f0a9a69d99feeffa56876b11cd1">getBufferElement</a> (const unsigned &amp;i) const </td></tr>
+<tr class="memdesc:a91d24f0a9a69d99feeffa56876b11cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value in the ith element of the buffer.  <a href="#a91d24f0a9a69d99feeffa56876b11cd1">More...</a><br/></td></tr>
+<tr class="separator:a91d24f0a9a69d99feeffa56876b11cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6703588d3cc62667f04d00e19a33d0d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a6703588d3cc62667f04d00e19a33d0d2">stashBuffers</a> ()</td></tr>
+<tr class="memdesc:a6703588d3cc62667f04d00e19a33d0d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store everything that is the buffers.  <a href="#a6703588d3cc62667f04d00e19a33d0d2">More...</a><br/></td></tr>
+<tr class="separator:a6703588d3cc62667f04d00e19a33d0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cec328e6ff9eba9abfb5f102228fb09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a5cec328e6ff9eba9abfb5f102228fb09">setBufferFromStash</a> ()</td></tr>
+<tr class="memdesc:a5cec328e6ff9eba9abfb5f102228fb09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the contents of the stash to the buffer.  <a href="#a5cec328e6ff9eba9abfb5f102228fb09">More...</a><br/></td></tr>
+<tr class="separator:a5cec328e6ff9eba9abfb5f102228fb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a793c75e03ce59e1b50d05dd54b8f39d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_l_m_d_1_1_communicator.html">Communicator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a793c75e03ce59e1b50d05dd54b8f39d7">comm</a></td></tr>
+<tr class="memdesc:a793c75e03ce59e1b50d05dd54b8f39d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A copy of the communicator.  <a href="#a793c75e03ce59e1b50d05dd54b8f39d7">More...</a><br/></td></tr>
+<tr class="separator:a793c75e03ce59e1b50d05dd54b8f39d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="vesselbase_2_histogram_8cpp_source.html#l00029">29</a> of file <a class="el" href="vesselbase_2_histogram_8cpp_source.html">Histogram.cpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a0648bb46cd0bd51c13e48b7513058501"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PLMD::vesselbase::Histogram::Histogram </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a> &amp;&#160;</td>
+          <td class="paramname"><em>da</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="vesselbase_2_histogram_8cpp_source.html#l00050">50</a> of file <a class="el" href="vesselbase_2_histogram_8cpp_source.html">Histogram.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afccf6c895e735ca4065f5dc13c55ebda"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::addToBufferElement </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add something to the ith element in the buffer. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00252">252</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a766804f01b22a7ff7e593675b4298f7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::ShortcutVessel::addVessel </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>intput</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shortcut_vessel_8cpp_source.html#l00038">38</a> of file <a class="el" href="_shortcut_vessel_8cpp_source.html">ShortcutVessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad35254ddce3974fa71ee75cb7acf5ddc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PLMD::vesselbase::ShortcutVessel::applyForce </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>forces</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the forces on the quantities in the vessel. </p>
+
+<p>Implements <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#ae182fffb2638ee735c47b4ec8531a832">PLMD::vesselbase::Vessel</a>.</p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html#l00045">45</a> of file <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html">ShortcutVessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a027307046499156f2380de470d3b62ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PLMD::vesselbase::ShortcutVessel::calculate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate the part of the vessel that is done in the loop. </p>
+
+<p>Implements <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a19d812b190dda37cd122c0f3549a02b6">PLMD::vesselbase::Vessel</a>.</p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html#l00043">43</a> of file <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html">ShortcutVessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d3390481abe9501474b6c0e37c755c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::checkRead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check that readin was fine. </p>
+
+<p>Definition at line <a class="el" href="_vessel_8cpp_source.html#l00111">111</a> of file <a class="el" href="_vessel_8cpp_source.html">Vessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7e731c168e7a9e5d88a5f5d12b67ab4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string PLMD::vesselbase::ShortcutVessel::description </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a description of the vessel contents. </p>
+
+<p>Implements <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#adf05cd534ce324a8d4524ff70cf5c8d6">PLMD::vesselbase::Vessel</a>.</p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html#l00040">40</a> of file <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html">ShortcutVessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad08d6db0d9b0dcbe03add8f09d17355b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>errmsg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Report an error. </p>
+
+<p>Definition at line <a class="el" href="_vessel_8cpp_source.html#l00122">122</a> of file <a class="el" href="_vessel_8cpp_source.html">Vessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0176a3be7ced52edb66f180071b359e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::ShortcutVessel::finish </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Complete the calculation once the loop is finished. </p>
+
+<p>Implements <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2260ef1101685b6cd5ef9c414b29ec4f">PLMD::vesselbase::Vessel</a>.</p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html#l00044">44</a> of file <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html">ShortcutVessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ee21116a09e152e7a933794a8907664"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html">ActionWithVessel</a> * PLMD::vesselbase::Vessel::getAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a pointer to the action we are working in. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00236">236</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7570691393a0356e01d3773d0823b27c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string PLMD::vesselbase::Vessel::getAllInput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This returns the whole input line (it is used for less_than/more_than/between) </p>
+
+<p>Definition at line <a class="el" href="_vessel_8cpp_source.html#l00084">84</a> of file <a class="el" href="_vessel_8cpp_source.html">Vessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91d24f0a9a69d99feeffa56876b11cd1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PLMD::vesselbase::Vessel::getBufferElement </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the value in the ith element of the buffer. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00258">258</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe46dd9565c246824b52fa8f3bc7e4ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string PLMD::vesselbase::Vessel::getLabel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the label. </p>
+
+<p>Definition at line <a class="el" href="_vessel_8cpp_source.html#l00080">80</a> of file <a class="el" href="_vessel_8cpp_source.html">Vessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a533858d475b73cf3246a82f77ad1ef77"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string PLMD::vesselbase::Vessel::getName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the name. </p>
+
+<p>Definition at line <a class="el" href="_vessel_8cpp_source.html#l00076">76</a> of file <a class="el" href="_vessel_8cpp_source.html">Vessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ceb746eea16aceaeeb62323862a4ed7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PLMD::vesselbase::Vessel::getNLTolerance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the value of the neighbor list tolerance. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00231">231</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a35430f19f6d20ece1d04b012ecead346"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned PLMD::vesselbase::ShortcutVessel::getNumberOfTerms </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the number of terms we need to accumulate. </p>
+
+<p>Implements <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a4f9b00235e0041efe2efed52fc3da118">PLMD::vesselbase::Vessel</a>.</p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html#l00041">41</a> of file <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html">ShortcutVessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3023dd056e2acd982449d607c16925ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PLMD::vesselbase::Vessel::getNumericalLabel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the numerical label. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00216">216</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b9f977233242587163d465c71080a84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PLMD::vesselbase::Vessel::getTolerance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the value of the tolerance. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00226">226</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad589e1dc6d48a7e19ff8d81214a2297"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::parse </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse something from the input. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00169">169</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aebb677874eeb85535b1fa37ace99047b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::parseFlag </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse one keyword as boolean flag. </p>
+
+<p>Definition at line <a class="el" href="_vessel_8cpp_source.html#l00093">93</a> of file <a class="el" href="_vessel_8cpp_source.html">Vessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0200636d280ab4b1d5d769e601f9b2fc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::parseVector </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse one keyword as std::vector. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00184">184</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe7cd91c1731631ca4f02627c9fece60"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void PLMD::vesselbase::Vessel::prepare </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Do something before the loop. </p>
+
+<p>Reimplemented in <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a315b2c73ac26b5891022d8a4575dc48a">PLMD::vesselbase::BridgeVessel</a>.</p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00155">155</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc634e7d286964ac5fef102c66f68529"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Histogram::registerKeywords </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_p_l_m_d_1_1_keywords.html">Keywords</a> &amp;&#160;</td>
+          <td class="paramname"><em>keys</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="vesselbase_2_histogram_8cpp_source.html#l00038">38</a> of file <a class="el" href="vesselbase_2_histogram_8cpp_source.html">Histogram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a71ff70db510ffab56d0d535da8063880"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Histogram::reserveKeyword </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_p_l_m_d_1_1_keywords.html">Keywords</a> &amp;&#160;</td>
+          <td class="paramname"><em>keys</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="vesselbase_2_histogram_8cpp_source.html#l00045">45</a> of file <a class="el" href="vesselbase_2_histogram_8cpp_source.html">Histogram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aab50a080d64c5dbaa3911d8a0d15529b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::ShortcutVessel::resize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the size of the buffers. </p>
+
+<p>Implements <a class="el" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a286e32582e4288b836938181a0ef643e">PLMD::vesselbase::Vessel</a>.</p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html#l00042">42</a> of file <a class="el" href="vesselbase_2_shortcut_vessel_8h_source.html">ShortcutVessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e5a1219e9918dc26df41eac07396318"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::resizeBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the size of the data buffer. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00221">221</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afdb70e5c5d553860e041939c53947b86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::setBufferElement </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the value of the ith element in the buffer. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00246">246</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5cec328e6ff9eba9abfb5f102228fb09"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::setBufferFromStash </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add the contents of the stash to the buffer. </p>
+
+<p>Definition at line <a class="el" href="_vessel_8cpp_source.html#l00133">133</a> of file <a class="el" href="_vessel_8cpp_source.html">Vessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6703588d3cc62667f04d00e19a33d0d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::stashBuffers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Store everything that is the buffers. </p>
+
+<p>Definition at line <a class="el" href="_vessel_8cpp_source.html#l00128">128</a> of file <a class="el" href="_vessel_8cpp_source.html">Vessel.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0927de806649d59078b8d737888291a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::vesselbase::Vessel::zero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set all the buffer elements to zero. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00241">241</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a793c75e03ce59e1b50d05dd54b8f39d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_l_m_d_1_1_communicator.html">Communicator</a>&amp; PLMD::vesselbase::Vessel::comm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A copy of the communicator. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00102">102</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ea2f8882738837c1d9f04ab29072f92"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_l_m_d_1_1_log.html">Log</a>&amp; PLMD::vesselbase::Vessel::log</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reference to the log on which to output details. </p>
+
+<p>Definition at line <a class="el" href="vesselbase_2_vessel_8h_source.html#l00135">135</a> of file <a class="el" href="vesselbase_2_vessel_8h_source.html">Vessel.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>vesselbase/<a class="el" href="vesselbase_2_histogram_8cpp_source.html">Histogram.cpp</a></li>
+</ul>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

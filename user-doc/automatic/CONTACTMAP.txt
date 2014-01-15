@@ -1,0 +1,55 @@
+/**
+\page CONTACTMAP CONTACTMAP
+Calculate the distances between a number of pairs of atoms and transform each distance by a switching function.
+
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ATOMS </b></td>
+<td> the atoms involved in each of the contacts you wish to calculate. Keywords like ATOMS1, ATOMS2, ATOMS3,... should be listed and one contact will be calculated for each ATOM keyword you specify. You can use multiple instances of this keyword i.e. ATOMS1, ATOMS2, ATOMS3... </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> SWITCH </b></td>
+<td> The switching functions to use for each of the contacts in your map. You can either specify a global switching function using SWITCH or one switching function for each contact. Details of the various switching functions you can use are provided on \ref switchingfunction. You can use multiple instances of this keyword i.e. SWITCH1, SWITCH2, SWITCH3... </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> SUM </b></td>
+<td> ( default=off ) calculate the sum of all the contacts in the input </td>
+</tr>
+
+</table>
+
+</table>
+
+\par Examples
+
+The following example calculates switching functions based on the distances between atoms
+1 and 2, 3 and 4 and 4 and 5. The values of these three switching functions are then output
+to a file named colvar.
+
+\verbatim
+CONTACTMAP ATOMS1=1,2 ATOMS2=3,4 ATOMS3=4,5 ATOMS4=5,6 SWITCH=(RATIONAL R_0=1.5) LABEL=f1
+PRINT ARG=f1.* FILE=colvar
+\endverbatim
+(See also \ref PRINT)
+
+*/

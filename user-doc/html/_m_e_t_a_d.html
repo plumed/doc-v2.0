@@ -1,0 +1,239 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: METAD</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="_bias.html">Bias</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">METAD </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>Used to performed MetaDynamics on one or more collective variables.</p>
+<p>In a metadynamics simulations a history dependent bias composed of intermittently added Gaussian functions is added to the potential <a class="el" href="citelist.html#CITEREF_metad">[16]</a>.</p>
+<p class="formulaDsp">
+\[ V(\vec{s},t) = \sum_{ k \tau &lt; t} W(k \tau) \exp\left( -\sum_{i=1}^{d} \frac{(s_i-s_i^{(0)}(k \tau))^2}{2\sigma_i^2} \right). \]
+</p>
+<p>This potential forces the system away from the kinetic traps in the potential energy surface and out into the unexplored parts of the energy landscape. Information on the Gaussian functions from which this potential is composed is output to a file called HILLS, which is used both the restart the calculation and to reconstruct the free energy as a function of the CVs. The free energy can be reconstructed from a metadynamics calculation because the final bias is given by:</p>
+<p class="formulaDsp">
+\[ V(\vec{s}) = -F(\vec(s)) \]
+</p>
+<p>During post processing the free energy can be calculated in this way using the <a class="el" href="sum_hills.html">sum_hills</a> utility.</p>
+<p>In the simplest possible implementation of a metadynamics calculation the expense of a metadynamics calculation increases with the length of the simulation as one has to, at every step, evaluate the values of a larger and larger number of Gaussians. To avoid this issue you can in plumed 2.0 store the bias on a grid. This approach is similar to that proposed in <a class="el" href="citelist.html#CITEREF_babi">babi</a>+08jcp but has the advantage that the grid spacing is independent on the Gaussian width.</p>
+<p>Another option that is available in plumed 2.0 is well-tempered metadynamics <a class="el" href="citelist.html#CITEREF_Barducci:2008">[2]</a>. In this varient of metadynamics the heights of the Gaussian hills are rescaled at each step so the bias is now given by:</p>
+<p class="formulaDsp">
+\[ V({s},t)= \sum_{t&#39;=0,\tau_G,2\tau_G,\dots}^{t&#39;&lt;t} W e^{-V({s}({q}(t&#39;),t&#39;)/\Delta T} \exp\left( -\sum_{i=1}^{d} \frac{(s_i({q})-s_i({q}(t&#39;))^2}{2\sigma_i^2} \right), \]
+</p>
+<p>This method ensures that the bias converges more smoothly.</p>
+<p>Note that you can use here also the flexible gaussian approach <a class="el" href="citelist.html#CITEREF_Branduardi:2012dl">[6]</a> in which you can adapt the gaussian to the extent of Cartesian space covered by a variable or to the space in collective variable covered in a given time. In this case the width of the deposited gaussian potential is denoted by one value only that is a Cartesian space (ADAPTIVE=GEOM) or a time (ADAPTIVE=DIFF). Note that a specific integration technique for the deposited gaussians should be used in this case. Check the documentation for utility sum_hills.</p>
+<p>With the keyword INTERVAL one changes the metadynamics algorithm setting the bias force equal to zero outside boundary <a class="el" href="citelist.html#CITEREF_baftizadeh2012protein">[1]</a>. If, for example, metadynamics is performed on a CV s and one is interested only to the free energy for s &gt; sw, the history dependent potential is still updated according to the above equations but the metadynamics force is set to zero for s &lt; sw. Notice that Gaussians are added also if s &lt; sw, as the tails of these Gaussians influence VG in the relevant region s &gt; sw. In this way, the force on the system in the region s &gt; sw comes from both metadynamics and the force field, in the region s &lt; sw only from the latter. This approach allows obtaining a history-dependent bias potential VG that fluctuates around a stable estimator, equal to the negative of the free energy far enough from the boundaries. Note that:</p>
+<ul>
+<li>It works only for one-dimensional biases;</li>
+<li>It works with GRID but automatically turn off the SPLINES so set a higher number of BINS;</li>
+<li>The interval limit sw in a region where the free energy derivative is not large;</li>
+<li>If in the region outside the limit sw the system has a free energy minimum, the INTERVAL keyword should be used together with a soft wall at sw</li>
+</ul>
+<p>Multiple walkers <a class="el" href="citelist.html#CITEREF_multiplewalkers">[21]</a> can also be used. See below the examples.</p>
+<dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> ARG </b> </td><td>the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken. If * or *.* appears the information from all arguments is taken. Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z. To take just the x component you should use dist.x, if you wish to take all three components then use dist.*   </td></tr>
+<tr>
+<td width="15%"><b> SIGMA </b> </td><td>the widths of the Gaussian hills   </td></tr>
+<tr>
+<td width="15%"><b> HEIGHT </b> </td><td>the heights of the Gaussian hills   </td></tr>
+<tr>
+<td width="15%"><b> PACE </b> </td><td>the frequency for hill addition   </td></tr>
+<tr>
+<td width="15%"><b> FILE </b> </td><td>( default=HILLS ) a file in which the list of added hills is stored   </td></tr>
+</table>
+<dl class="section user"><dt>Options</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> NUMERICAL_DERIVATIVES </b> </td><td>( default=off ) calculate the derivatives for these quantities numerically   </td></tr>
+<tr>
+<td width="15%"><b> GRID_SPARSE </b> </td><td>( default=off ) use a sparse grid to store hills   </td></tr>
+<tr>
+<td width="15%"><b> GRID_NOSPLINE </b> </td><td>( default=off ) don't use spline interpolation with grids   </td></tr>
+<tr>
+<td width="15%"><b> STORE_GRIDS </b> </td><td><p class="starttd">( default=off ) store all the grid files the calculation generates. They will be deleted if this keyword is not present  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> FMT </b> </td><td>specify format for HILLS files (useful for decrease the number of digits in regtests)   </td></tr>
+<tr>
+<td width="15%"><b> BIASFACTOR </b> </td><td>use well tempered metadynamics and use this biasfactor. Please note you must also specify temp   </td></tr>
+<tr>
+<td width="15%"><b> TEMP </b> </td><td>the system temperature - this is only needed if you are doing well-tempered metadynamics   </td></tr>
+<tr>
+<td width="15%"><b> GRID_MIN </b> </td><td>the lower bounds for the grid   </td></tr>
+<tr>
+<td width="15%"><b> GRID_MAX </b> </td><td>the upper bounds for the grid   </td></tr>
+<tr>
+<td width="15%"><b> GRID_BIN </b> </td><td>the number of bins for the grid   </td></tr>
+<tr>
+<td width="15%"><b> GRID_WSTRIDE </b> </td><td>write the grid to a file every N steps   </td></tr>
+<tr>
+<td width="15%"><b> GRID_WFILE </b> </td><td>the file on which to write the grid   </td></tr>
+<tr>
+<td width="15%"><b> ADAPTIVE </b> </td><td>use a geometric (=GEOM) or diffusion (=DIFF) based hills width scheme. Sigma is one number that has distance units or timestep dimensions   </td></tr>
+<tr>
+<td width="15%"><b> WALKERS_ID </b> </td><td>walker id   </td></tr>
+<tr>
+<td width="15%"><b> WALKERS_N </b> </td><td>number of walkers   </td></tr>
+<tr>
+<td width="15%"><b> WALKERS_DIR </b> </td><td>shared directory with the hills files from all the walkers   </td></tr>
+<tr>
+<td width="15%"><b> WALKERS_RSTRIDE </b> </td><td>stride for reading hills files   </td></tr>
+<tr>
+<td width="15%"><b> INTERVAL </b> </td><td>monodimensional lower and upper limits, outside the limits the system will not fell the bias (when used together with grid SPLINES are automatically deactivated)   </td></tr>
+<tr>
+<td width="15%"><b> GRID_RFILE </b> </td><td>a grid file from which the bias should be read at the initial step of the simulation   </td></tr>
+<tr>
+<td width="15%"><b> SIGMA_MAX </b> </td><td>the upper bounds for the sigmas (in CV units) when using adaptive hills. Negative number means no bounds   </td></tr>
+<tr>
+<td width="15%"><b> SIGMA_MIN </b> </td><td><p class="starttd">the lower bounds for the sigmas (in CV units) when using adaptive hills. Negative number means no bounds  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd>The following input is for a standard metadynamics calculation using as collective variables the distance between atoms 3 and 5 and the distance between atoms 2 and 4. The value of the CVs and the metadynamics bias potential are written to the COLVAR file every 100 steps. <pre class="fragment">DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+METAD ARG=d1,d2 SIGMA=0.2,0.2 HEIGHT=0.3 PACE=500 LABEL=restraint
+PRINT ARG=d1,d2,restraint.bias STRIDE=100  FILE=COLVAR
+</pre> (See also <a class="el" href="_d_i_s_t_a_n_c_e.html">DISTANCE</a> <a class="el" href="_p_r_i_n_t.html">PRINT</a>).</dd></dl>
+<dl class="section user"><dt></dt><dd>If you use adaptive Gaussians, with diffusion scheme where you use a Gaussian that should cover the space of 20 timesteps in collective variables. Note that in this case the histogram correction is needed when summing up hills. <pre class="fragment">DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+METAD ARG=d1,d2 SIGMA=20 HEIGHT=0.3 PACE=500 LABEL=restraint ADAPTIVE=DIFF
+PRINT ARG=d1,d2,restraint.bias STRIDE=100  FILE=COLVAR
+</pre></dd></dl>
+<dl class="section user"><dt></dt><dd>If you use adaptive Gaussians, with geometrical scheme where you use a Gaussian that should cover the space of 0.05 nm in Cartesian space. Note that in this case the histogram correction is needed when summing up hills. <pre class="fragment">DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+METAD ARG=d1,d2 SIGMA=0.05 HEIGHT=0.3 PACE=500 LABEL=restraint ADAPTIVE=GEOM
+PRINT ARG=d1,d2,restraint.bias STRIDE=100  FILE=COLVAR
+</pre></dd></dl>
+<dl class="section user"><dt></dt><dd>When using adaptive Gaussians you might want to limit how the hills width can change. You can use SIGMA_MIN and SIGMA_MAX keywords. The sigmas should specified in terms of CV so you should use the CV units. Note that if you use a negative number, this means that the limit is not set. Note also that in this case the histogram correction is needed when summing up hills. <pre class="fragment">DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+METAD ...
+ARG=d1,d2 SIGMA=0.05 HEIGHT=0.3 PACE=500 LABEL=restraint ADAPTIVE=GEOM
+SIGMA_MIN=0.2,0.1 SIGMA_MAX=0.5,1.0
+... METAD
+PRINT ARG=d1,d2,restraint.bias STRIDE=100  FILE=COLVAR
+</pre></dd></dl>
+<dl class="section user"><dt></dt><dd>Multiple walkers can be also use as in <a class="el" href="citelist.html#CITEREF_multiplewalkers">[21]</a> These are enabled by setting the number of walker used, the id of the current walker which interprets the input file, the directory where the hills containing files resides, and the frequency to read the other walkers. Here is an example <pre class="fragment">DISTANCE ATOMS=3,5 LABEL=d1
+METAD ...
+ARG=d1 SIGMA=0.05 HEIGHT=0.3 PACE=500 LABEL=restraint
+WALKERS_N=10
+WALKERS_ID=3
+WALKERS_DIR=../
+WALKERS_RSTRIDE=100
+... METAD
+</pre> where WALKERS_N is the total number of walkers, WALKERS_ID is the id of the present walker (starting from 0 ) and the WALKERS_DIR is the directory where all the walkers are located. WALKERS_RSTRIDE is the number of step between one update and the other. </dd></dl>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

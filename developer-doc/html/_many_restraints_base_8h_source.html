@@ -1,0 +1,233 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: manyrestraints/ManyRestraintsBase.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_cecd3024e16e92546a6d0f0d2e05976e.html">manyrestraints</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">ManyRestraintsBase.h</div>  </div>
+</div>
+<div class="contents">
+<a href="_many_restraints_base_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_manyrestraints_ManyRestraintsBase_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_manyrestraints_ManyRestraintsBase_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;core/ActionAtomistic.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;core/ActionWithValue.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;core/ActionPilot.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;vesselbase/ActionWithVessel.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>manyrestraints {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html">ManyRestraintsBase</a> :</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html">ActionAtomistic</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_with_value.html">ActionWithValue</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_pilot.html">ActionPilot</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html">vesselbase::ActionWithVessel</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#afbb566fe9f51ca57386b364ce0c94625">   40</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#afbb566fe9f51ca57386b364ce0c94625">forcesToApply</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a3ab560828c7061fc373326d6c3de0b30">createRestraints</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; nrestraints );<span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/// Add some derivatives to a particular atom</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a111952715ad57e9eccbb5a65db2de179">addAtomsDerivatives</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;);<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/// Add some derivatives to the virial</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a01f036d42e12d4013aee746514d2298d">addBoxDerivatives</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp;);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a4c12aa8b1be33a9d7adbea5cb33ef4fe">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a8b1ce42f8e6d362b6d2ddb8d3a3b2eb4">ManyRestraintsBase</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a5c410bf47d700c780569050461201d7a">getNumberOfDerivatives</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// Deactivate task now does nothing</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a434c5ddaeaf69c8d46cc7fc4dc03a697">   52</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a434c5ddaeaf69c8d46cc7fc4dc03a697">deactivate_task</a>(){}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a5b10c4a19c042b76e6cd935a8c321cb2">apply</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a5c410bf47d700c780569050461201d7a">   57</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a5c410bf47d700c780569050461201d7a">ManyRestraintsBase::getNumberOfDerivatives</a>(){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">return</span> 3*<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>() + 9;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a111952715ad57e9eccbb5a65db2de179">   62</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a111952715ad57e9eccbb5a65db2de179">ManyRestraintsBase::addAtomsDerivatives</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iatom, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; der){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  plumed_dbg_assert( iatom&lt;<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>() );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*iatom+0, der[0] );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*iatom+1, der[1] );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*iatom+2, der[2] );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a01f036d42e12d4013aee746514d2298d">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a01f036d42e12d4013aee746514d2298d">ManyRestraintsBase::addBoxDerivatives</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; vir){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> natoms=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+0, vir(0,0) );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+1, vir(0,1) );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+2, vir(0,2) );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+3, vir(1,0) );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+4, vir(1,1) );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+5, vir(1,2) );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+6, vir(2,0) );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+7, vir(2,1) );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">addElementDerivative</a>( 3*natoms+8, vir(2,2) );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_afbb566fe9f51ca57386b364ce0c94625"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#afbb566fe9f51ca57386b364ce0c94625">PLMD::manyrestraints::ManyRestraintsBase::forcesToApply</a></div><div class="ttdeci">std::vector&lt; double &gt; forcesToApply</div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00040">ManyRestraintsBase.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_pilot_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_pilot.html">PLMD::ActionPilot</a></div><div class="ttdoc">This is used to create PLMD::Action objects that are run with some set frequency. ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_pilot_8h_source.html#l00039">ActionPilot.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html">PLMD::TensorGeneric</a></div><div class="ttdoc">Class implementing fixed size matrices of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00070">Tensor.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a5b10c4a19c042b76e6cd935a8c321cb2"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a5b10c4a19c042b76e6cd935a8c321cb2">PLMD::manyrestraints::ManyRestraintsBase::apply</a></div><div class="ttdeci">void apply()</div><div class="ttdoc">Apply an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8cpp_source.html#l00056">ManyRestraintsBase.cpp:56</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html">PLMD::manyrestraints::ManyRestraintsBase</a></div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00033">ManyRestraintsBase.h:33</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a111952715ad57e9eccbb5a65db2de179"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a111952715ad57e9eccbb5a65db2de179">PLMD::manyrestraints::ManyRestraintsBase::addAtomsDerivatives</a></div><div class="ttdeci">void addAtomsDerivatives(const int &amp;, const Vector &amp;)</div><div class="ttdoc">Add some derivatives to a particular atom. </div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00062">ManyRestraintsBase.h:62</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a6c53bcfaee334ef9d6d6e7932b9d3b3b"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a6c53bcfaee334ef9d6d6e7932b9d3b3b">PLMD::vesselbase::ActionWithVessel::addElementDerivative</a></div><div class="ttdeci">void addElementDerivative(const unsigned &amp;, const double &amp;)</div><div class="ttdoc">Add some derivative of the quantity in the sum wrt to a numbered element. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00197">ActionWithVessel.h:197</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a5c410bf47d700c780569050461201d7a"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a5c410bf47d700c780569050461201d7a">PLMD::manyrestraints::ManyRestraintsBase::getNumberOfDerivatives</a></div><div class="ttdeci">unsigned getNumberOfDerivatives()</div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00057">ManyRestraintsBase.h:57</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html">PLMD::ActionWithValue</a></div><div class="ttdoc">Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00065">ActionWithValue.h:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html">PLMD::ActionAtomistic</a></div><div class="ttdoc">Action used to create objects that access the positions of the atoms from the MD code. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00038">ActionAtomistic.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a434c5ddaeaf69c8d46cc7fc4dc03a697"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a434c5ddaeaf69c8d46cc7fc4dc03a697">PLMD::manyrestraints::ManyRestraintsBase::deactivate_task</a></div><div class="ttdeci">void deactivate_task()</div><div class="ttdoc">Deactivate task now does nothing. </div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00052">ManyRestraintsBase.h:52</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a01f036d42e12d4013aee746514d2298d"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a01f036d42e12d4013aee746514d2298d">PLMD::manyrestraints::ManyRestraintsBase::addBoxDerivatives</a></div><div class="ttdeci">void addBoxDerivatives(const Tensor &amp;)</div><div class="ttdoc">Add some derivatives to the virial. </div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8h_source.html#l00070">ManyRestraintsBase.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a7d0c94f88e93c9ffa208af8b8fbef6cb"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">PLMD::ActionAtomistic::getNumberOfAtoms</a></div><div class="ttdeci">unsigned getNumberOfAtoms() const </div><div class="ttdoc">Get number of available atoms. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00088">ActionAtomistic.h:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a3ab560828c7061fc373326d6c3de0b30"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a3ab560828c7061fc373326d6c3de0b30">PLMD::manyrestraints::ManyRestraintsBase::createRestraints</a></div><div class="ttdeci">void createRestraints(const unsigned &amp;nrestraints)</div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8cpp_source.html#l00047">ManyRestraintsBase.cpp:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a8b1ce42f8e6d362b6d2ddb8d3a3b2eb4"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a8b1ce42f8e6d362b6d2ddb8d3a3b2eb4">PLMD::manyrestraints::ManyRestraintsBase::ManyRestraintsBase</a></div><div class="ttdeci">ManyRestraintsBase(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8cpp_source.html#l00038">ManyRestraintsBase.cpp:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base_html_a4c12aa8b1be33a9d7adbea5cb33ef4fe"><div class="ttname"><a href="class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html#a4c12aa8b1be33a9d7adbea5cb33ef4fe">PLMD::manyrestraints::ManyRestraintsBase::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_many_restraints_base_8cpp_source.html#l00028">ManyRestraintsBase.cpp:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html">PLMD::vesselbase::ActionWithVessel</a></div><div class="ttdoc">This is used to create PLMD::Action objects that are computed by calculating the same function multip...</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00045">ActionWithVessel.h:45</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

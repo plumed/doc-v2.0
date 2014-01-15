@@ -1,0 +1,221 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: vesselbase/BridgeVessel.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7685edf5d18a1f720e5764f1be2af464.html">vesselbase</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">BridgeVessel.h</div>  </div>
+</div>
+<div class="contents">
+<a href="vesselbase_2_bridge_vessel_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_vesselbase_BridgeVessel_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_vesselbase_BridgeVessel_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vesselbase_2_vessel_8h.html">Vessel.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;core/Value.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>vesselbase {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">\ingroup TOOLBOX</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">This class allows you to calculate the vessel in one ActionWithVessel.  The user thinks</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">it is created in a different Action however.  At the moment this is used for region </span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html">BridgeVessel</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">Vessel</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#ad6ad74beed81f380f7502e9fdc064568">   42</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#ad6ad74beed81f380f7502e9fdc064568">forces</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a2cfe7f8b432b744483c8c968a384d18b">   43</a></span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a2cfe7f8b432b744483c8c968a384d18b">inum</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a4df9b10f65edde5aba7fe20ed21f2c21">   44</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a4df9b10f65edde5aba7fe20ed21f2c21">mynumerical_values</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a93adacaaf675b67e18ffe482aac8c19a">   45</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html">ActionWithVessel</a>* <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a93adacaaf675b67e18ffe482aac8c19a">myOutputAction</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#ab7985f06cf291d8b87c8d5dd330d4c62">   46</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html">ActionWithValue</a>* <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#ab7985f06cf291d8b87c8d5dd330d4c62">myOutputValues</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a8b3baeea8c7d6dead8d3e58a792ac0d6">BridgeVessel</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a>&amp; );<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/// Resize the quantities in the vessel</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a243601123ca82b3f07b20acdbbd12e2e">resize</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// Setup the action we are outputting to</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a04f610ffad48cd248d5870d929982f93">setOutputAction</a>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html">ActionWithVessel</a>* <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a93adacaaf675b67e18ffe482aac8c19a">myOutputAction</a> );<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// Apply some force </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a3ac8077dd3407bcfc16e7d9efca63932">applyForce</a>( std::vector&lt;double&gt;&amp; <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#ad6ad74beed81f380f7502e9fdc064568">forces</a> );<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// Should not be called</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a94f7bcbdc8dc4c367961f635bcd70508">description</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// Want to get rid of this function</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a11acdbcf75dcdf3c8b54f8734bd90500">   58</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a11acdbcf75dcdf3c8b54f8734bd90500">getNumberOfTerms</a>(){ <span class="keywordflow">return</span> 2; }<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// Jobs to do before the task list starts</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a315b2c73ac26b5891022d8a4575dc48a">prepare</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// Actually do the calculation</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#aff569ae36145409a74d6e2ec52f6f98f">calculate</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// Finish the calculation</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a347badd814023a30d9a73b3a66235d6e">finish</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// Calculate numerical derivatives</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a5ad55178ec3b09c0752ac5faa04ee86c">completeNumericalDerivatives</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a94f7bcbdc8dc4c367961f635bcd70508"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a94f7bcbdc8dc4c367961f635bcd70508">PLMD::vesselbase::BridgeVessel::description</a></div><div class="ttdeci">std::string description()</div><div class="ttdoc">Should not be called. </div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00051">BridgeVessel.cpp:51</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_aff569ae36145409a74d6e2ec52f6f98f"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#aff569ae36145409a74d6e2ec52f6f98f">PLMD::vesselbase::BridgeVessel::calculate</a></div><div class="ttdeci">bool calculate()</div><div class="ttdoc">Actually do the calculation. </div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00059">BridgeVessel.cpp:59</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a2cfe7f8b432b744483c8c968a384d18b"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a2cfe7f8b432b744483c8c968a384d18b">PLMD::vesselbase::BridgeVessel::inum</a></div><div class="ttdeci">unsigned inum</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_bridge_vessel_8h_source.html#l00043">BridgeVessel.h:43</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a315b2c73ac26b5891022d8a4575dc48a"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a315b2c73ac26b5891022d8a4575dc48a">PLMD::vesselbase::BridgeVessel::prepare</a></div><div class="ttdeci">void prepare()</div><div class="ttdoc">Jobs to do before the task list starts. </div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00055">BridgeVessel.cpp:55</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html">PLMD::ActionWithValue</a></div><div class="ttdoc">Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00065">ActionWithValue.h:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a04f610ffad48cd248d5870d929982f93"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a04f610ffad48cd248d5870d929982f93">PLMD::vesselbase::BridgeVessel::setOutputAction</a></div><div class="ttdeci">void setOutputAction(ActionWithVessel *myOutputAction)</div><div class="ttdoc">Setup the action we are outputting to. </div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00045">BridgeVessel.cpp:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html">PLMD::vesselbase::BridgeVessel</a></div><div class="ttdoc">This class allows you to calculate the vessel in one ActionWithVessel. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_bridge_vessel_8h_source.html#l00040">BridgeVessel.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a243601123ca82b3f07b20acdbbd12e2e"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a243601123ca82b3f07b20acdbbd12e2e">PLMD::vesselbase::BridgeVessel::resize</a></div><div class="ttdeci">void resize()</div><div class="ttdoc">Resize the quantities in the vessel. </div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00036">BridgeVessel.cpp:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a3ac8077dd3407bcfc16e7d9efca63932"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a3ac8077dd3407bcfc16e7d9efca63932">PLMD::vesselbase::BridgeVessel::applyForce</a></div><div class="ttdeci">bool applyForce(std::vector&lt; double &gt; &amp;forces)</div><div class="ttdoc">Apply some force. </div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00143">BridgeVessel.cpp:143</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a11acdbcf75dcdf3c8b54f8734bd90500"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a11acdbcf75dcdf3c8b54f8734bd90500">PLMD::vesselbase::BridgeVessel::getNumberOfTerms</a></div><div class="ttdeci">unsigned getNumberOfTerms()</div><div class="ttdoc">Want to get rid of this function. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_bridge_vessel_8h_source.html#l00058">BridgeVessel.h:58</a></div></div>
+<div class="ttc" id="vesselbase_2_vessel_8h_html"><div class="ttname"><a href="vesselbase_2_vessel_8h.html">Vessel.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">PLMD::vesselbase::VesselOptions</a></div><div class="ttdoc">This class is used to pass the input to Vessels. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00053">Vessel.h:53</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a347badd814023a30d9a73b3a66235d6e"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a347badd814023a30d9a73b3a66235d6e">PLMD::vesselbase::BridgeVessel::finish</a></div><div class="ttdeci">void finish()</div><div class="ttdoc">Finish the calculation. </div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00069">BridgeVessel.cpp:69</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_ab7985f06cf291d8b87c8d5dd330d4c62"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#ab7985f06cf291d8b87c8d5dd330d4c62">PLMD::vesselbase::BridgeVessel::myOutputValues</a></div><div class="ttdeci">ActionWithValue * myOutputValues</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_bridge_vessel_8h_source.html#l00046">BridgeVessel.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a5ad55178ec3b09c0752ac5faa04ee86c"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a5ad55178ec3b09c0752ac5faa04ee86c">PLMD::vesselbase::BridgeVessel::completeNumericalDerivatives</a></div><div class="ttdeci">void completeNumericalDerivatives()</div><div class="ttdoc">Calculate numerical derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00084">BridgeVessel.cpp:84</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">PLMD::vesselbase::Vessel</a></div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00075">Vessel.h:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a93adacaaf675b67e18ffe482aac8c19a"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a93adacaaf675b67e18ffe482aac8c19a">PLMD::vesselbase::BridgeVessel::myOutputAction</a></div><div class="ttdeci">ActionWithVessel * myOutputAction</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_bridge_vessel_8h_source.html#l00045">BridgeVessel.h:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a4df9b10f65edde5aba7fe20ed21f2c21"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a4df9b10f65edde5aba7fe20ed21f2c21">PLMD::vesselbase::BridgeVessel::mynumerical_values</a></div><div class="ttdeci">std::vector&lt; double &gt; mynumerical_values</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_bridge_vessel_8h_source.html#l00044">BridgeVessel.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_ad6ad74beed81f380f7502e9fdc064568"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#ad6ad74beed81f380f7502e9fdc064568">PLMD::vesselbase::BridgeVessel::forces</a></div><div class="ttdeci">std::vector&lt; double &gt; forces</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_bridge_vessel_8h_source.html#l00042">BridgeVessel.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html">PLMD::vesselbase::ActionWithVessel</a></div><div class="ttdoc">This is used to create PLMD::Action objects that are computed by calculating the same function multip...</div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00045">ActionWithVessel.h:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel_html_a8b3baeea8c7d6dead8d3e58a792ac0d6"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_bridge_vessel.html#a8b3baeea8c7d6dead8d3e58a792ac0d6">PLMD::vesselbase::BridgeVessel::BridgeVessel</a></div><div class="ttdeci">BridgeVessel(const VesselOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_bridge_vessel_8cpp_source.html#l00029">BridgeVessel.cpp:29</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

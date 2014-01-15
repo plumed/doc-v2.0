@@ -1,0 +1,287 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: multicolvar/MultiColvarFunction.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4edf87903dfade8d550ff22836b1ec12.html">multicolvar</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">MultiColvarFunction.h</div>  </div>
+</div>
+<div class="contents">
+<a href="_multi_colvar_function_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_multicolvar_MultiColvarFunction_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_multicolvar_MultiColvarFunction_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_multi_colvar_base_8h.html">MultiColvarBase.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_store_central_atoms_vessel_8h.html">StoreCentralAtomsVessel.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>multicolvar {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html">MultiColvarFunction</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html">MultiColvarBase</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/// The multicolvar from which we construct these quantities</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#af2352261345b3b86e60de8b1e4223738">   34</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html">multicolvar::MultiColvarBase</a>* <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#af2352261345b3b86e60de8b1e4223738">mycolv</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/// The central atom positions</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ab68c6bcf5a47102b29c3904cd417e912">   36</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html">multicolvar::StoreCentralAtomsVessel</a>* <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ab68c6bcf5a47102b29c3904cd417e912">catoms</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">protected</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/// Get the number of functions in the multicolvar we are operating on</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a0a1228ba50f912555665f754acf84211">getNumberOfBaseFunctions</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/// Return a pointer to the multicolvar we are using as a base function</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html">MultiColvarBase</a>* <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a5e6d850955d3b734f50caade0e649370">getPntrToMultiColvar</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/// Finish off the setup of the VectorFunction</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a8c86fdd6d7fe20eaa90bf02beac96dec">completeSetup</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/// Get the position of one of the central atoms</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#adc81ddde1c7bc0a124f8993ab1f4b090">getPositionOfCentralAtom</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp;) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/// Add derivatives of value wrt to an atomic position </span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a459c7954734b861e29d3a84dda59bccf">addCentralAtomsDerivatives</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; , <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; );<span class="comment"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/// Add derivatives of weight wrt to an atomic position</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a865c1585f6aac7d836b5c0760d095039">addCentralAtomsDerivativesOfWeight</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; , <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; );<span class="comment"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/// We use the distance from mycolv as otherwise numerical derivatives dont work</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#aac882cdcc3ff7752198ab05dac2303d1">getSeparation</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; vec1, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; vec2 ) <span class="keyword">const</span> ;<span class="comment"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/// Add derivative wrt to the position of the central atom</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ac7fcee2cdd5b667deee1402d07a4b9f8">addDerivativeOfCentralAtomPos</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; iatom, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; der );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a4234dc78c21f2eecb164fbd0cfd7af3c">MultiColvarFunction</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#aa02d6fc58936cb2c73cee982fcd66b18">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// Used to make sure we are calculating everything during neighbor list update step</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a863d36cf8ecab3683804aff411c32b8f">unlockContributors</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ace15999dee57b7ab518dee289c111073">lockContributors</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/// Active element in atoms_with_derivatives</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a27f193ade7dc716bd41ab4c4265e6138">atomHasDerivative</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; iatom );<span class="comment"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/// Resize the dynamic arrays </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a561aa40cb4ca5a66113c8984d64367c8">resizeDynamicArrays</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/// Regular calculate</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a4e8ea72bcf5d4ab60dae3667de914b37">calculate</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/// Calculate the numerical derivatives for this action</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ae81526e2d4d99ece9b88e289aae63bbc">calculateNumericalDerivatives</a>( <a class="code" href="class_p_l_m_d_1_1_action_with_value.html">ActionWithValue</a>* <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>=NULL );<span class="comment"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/// Do the calculation</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#afae4b88b5f0fbe0fac2941726976b5da">doCalculation</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; j );<span class="comment"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/// Actually compute the colvar</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a037f93a0fbbe7b4447e3c320537fdb9b">compute</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; j )=0;<span class="comment"></span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/// Calculate the position of the central atom</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a162b35c52a72f8284f962c6eaa10a06b">calculateCentralAtomPosition</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/// Get the position of the central atom</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#aa9ff529cb63833e7fc3f48dc70b034a5">getCentralAtom</a>()=0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a0a1228ba50f912555665f754acf84211">   79</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a0a1228ba50f912555665f754acf84211">MultiColvarFunction::getNumberOfBaseFunctions</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#af2352261345b3b86e60de8b1e4223738">mycolv</a>-&gt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">colvar_atoms</a>.size();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a5e6d850955d3b734f50caade0e649370">   84</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html">MultiColvarBase</a>* <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a5e6d850955d3b734f50caade0e649370">MultiColvarFunction::getPntrToMultiColvar</a>(){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#af2352261345b3b86e60de8b1e4223738">mycolv</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#adc81ddde1c7bc0a124f8993ab1f4b090">   89</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#adc81ddde1c7bc0a124f8993ab1f4b090">MultiColvarFunction::getPositionOfCentralAtom</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; iatom )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  plumed_dbg_assert( iatom&lt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">colvar_atoms</a>[<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>].getNumberActive() );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ab68c6bcf5a47102b29c3904cd417e912">catoms</a>-&gt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html#ad047a4d42525bbf8bfd6681a954b6907">getPosition</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">colvar_atoms</a>[<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>][iatom] );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a459c7954734b861e29d3a84dda59bccf">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a459c7954734b861e29d3a84dda59bccf">MultiColvarFunction::addCentralAtomsDerivatives</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; iatom, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; der ){</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  plumed_dbg_assert( iatom&lt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">colvar_atoms</a>[<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>].getNumberActive() );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ab68c6bcf5a47102b29c3904cd417e912">catoms</a>-&gt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html#aadd3516ccae8d9dde21d51312cb78d70">addAtomsDerivatives</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">colvar_atoms</a>[<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>][iatom], der, <span class="keyword">this</span> ); </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a865c1585f6aac7d836b5c0760d095039">  101</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a865c1585f6aac7d836b5c0760d095039">MultiColvarFunction::addCentralAtomsDerivativesOfWeight</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; iatom, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; der ){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  plumed_dbg_assert( iatom&lt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">colvar_atoms</a>[<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>].getNumberActive() );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ab68c6bcf5a47102b29c3904cd417e912">catoms</a>-&gt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html#adf68341b3253730a68087ae0fe10a6df">addAtomsDerivativeOfWeight</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">colvar_atoms</a>[<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>][iatom], der, <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a27f193ade7dc716bd41ab4c4265e6138">  107</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a27f193ade7dc716bd41ab4c4265e6138">MultiColvarFunction::atomHasDerivative</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; iatom ){</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#afccb1b88635e9a845193e5bb67f0ec18">atoms_with_derivatives</a>.<a class="code" href="class_p_l_m_d_1_1_dynamic_list.html#ae9ebdf5a4c17a81fa5a01678a76ad418">activate</a>( iatom );</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ac7fcee2cdd5b667deee1402d07a4b9f8">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ac7fcee2cdd5b667deee1402d07a4b9f8">MultiColvarFunction::addDerivativeOfCentralAtomPos</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; iatom, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp; der ){</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ab68c6bcf5a47102b29c3904cd417e912">catoms</a>-&gt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html#aeed691578605e21fd289c377d7e7d00d">addDerivativeOfCentralAtomPos</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">colvar_atoms</a>[<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">current</a>][iatom], der, <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a865c1585f6aac7d836b5c0760d095039"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a865c1585f6aac7d836b5c0760d095039">PLMD::multicolvar::MultiColvarFunction::addCentralAtomsDerivativesOfWeight</a></div><div class="ttdeci">void addCentralAtomsDerivativesOfWeight(const unsigned &amp;, const Vector &amp;)</div><div class="ttdoc">Add derivatives of weight wrt to an atomic position. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00101">MultiColvarFunction.h:101</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_aac882cdcc3ff7752198ab05dac2303d1"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#aac882cdcc3ff7752198ab05dac2303d1">PLMD::multicolvar::MultiColvarFunction::getSeparation</a></div><div class="ttdeci">Vector getSeparation(const Vector &amp;vec1, const Vector &amp;vec2) const </div><div class="ttdoc">We use the distance from mycolv as otherwise numerical derivatives dont work. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00062">MultiColvarFunction.cpp:62</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a162b35c52a72f8284f962c6eaa10a06b"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a162b35c52a72f8284f962c6eaa10a06b">PLMD::multicolvar::MultiColvarFunction::calculateCentralAtomPosition</a></div><div class="ttdeci">Vector calculateCentralAtomPosition()</div><div class="ttdoc">Calculate the position of the central atom. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00135">MultiColvarFunction.cpp:135</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_ac001ea5fa3ba2f6f0ec6a2f50214701b"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#ac001ea5fa3ba2f6f0ec6a2f50214701b">PLMD::vesselbase::ActionWithVessel::current</a></div><div class="ttdeci">unsigned current</div><div class="ttdoc">The numerical index of the task we are curently performing. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00079">ActionWithVessel.h:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel_html_adf68341b3253730a68087ae0fe10a6df"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html#adf68341b3253730a68087ae0fe10a6df">PLMD::multicolvar::StoreCentralAtomsVessel::addAtomsDerivativeOfWeight</a></div><div class="ttdeci">void addAtomsDerivativeOfWeight(const unsigned &amp;iatom, const Vector &amp;df, MultiColvarFunction *funcout) const </div><div class="ttdoc">Add derivatives of the weight wrt to the central atom position. </div><div class="ttdef"><b>Definition:</b> <a href="_store_central_atoms_vessel_8cpp_source.html#l00120">StoreCentralAtomsVessel.cpp:120</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html">PLMD::TensorGeneric</a></div><div class="ttdoc">Class implementing fixed size matrices of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00070">Tensor.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel_html_aadd3516ccae8d9dde21d51312cb78d70"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html#aadd3516ccae8d9dde21d51312cb78d70">PLMD::multicolvar::StoreCentralAtomsVessel::addAtomsDerivatives</a></div><div class="ttdeci">void addAtomsDerivatives(const unsigned &amp;iatom, const Vector &amp;df, MultiColvarFunction *funcout) const </div><div class="ttdoc">Add derivatives to central atom position. </div><div class="ttdef"><b>Definition:</b> <a href="_store_central_atoms_vessel_8cpp_source.html#l00103">StoreCentralAtomsVessel.cpp:103</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a863d36cf8ecab3683804aff411c32b8f"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a863d36cf8ecab3683804aff411c32b8f">PLMD::multicolvar::MultiColvarFunction::unlockContributors</a></div><div class="ttdeci">void unlockContributors()</div><div class="ttdoc">Used to make sure we are calculating everything during neighbor list update step. ...</div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00066">MultiColvarFunction.cpp:66</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html">PLMD::multicolvar::MultiColvarFunction</a></div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00031">MultiColvarFunction.h:31</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a5e6d850955d3b734f50caade0e649370"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a5e6d850955d3b734f50caade0e649370">PLMD::multicolvar::MultiColvarFunction::getPntrToMultiColvar</a></div><div class="ttdeci">MultiColvarBase * getPntrToMultiColvar()</div><div class="ttdoc">Return a pointer to the multicolvar we are using as a base function. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00084">MultiColvarFunction.h:84</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_ab68c6bcf5a47102b29c3904cd417e912"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ab68c6bcf5a47102b29c3904cd417e912">PLMD::multicolvar::MultiColvarFunction::catoms</a></div><div class="ttdeci">multicolvar::StoreCentralAtomsVessel * catoms</div><div class="ttdoc">The central atom positions. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00036">MultiColvarFunction.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html">PLMD::multicolvar::StoreCentralAtomsVessel</a></div><div class="ttdef"><b>Definition:</b> <a href="_store_central_atoms_vessel_8h_source.html#l00034">StoreCentralAtomsVessel.h:34</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_dynamic_list_html_ae9ebdf5a4c17a81fa5a01678a76ad418"><div class="ttname"><a href="class_p_l_m_d_1_1_dynamic_list.html#ae9ebdf5a4c17a81fa5a01678a76ad418">PLMD::DynamicList::activate</a></div><div class="ttdeci">void activate(const unsigned ii)</div><div class="ttdoc">Make something active. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_dynamic_list_8h_source.html#l00263">DynamicList.h:263</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel_html_aeed691578605e21fd289c377d7e7d00d"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html#aeed691578605e21fd289c377d7e7d00d">PLMD::multicolvar::StoreCentralAtomsVessel::addDerivativeOfCentralAtomPos</a></div><div class="ttdeci">void addDerivativeOfCentralAtomPos(const unsigned &amp;iatom, const Tensor &amp;df, MultiColvarFunction *funcout) const </div><div class="ttdoc">Add derivative to the central atom position. </div><div class="ttdef"><b>Definition:</b> <a href="_store_central_atoms_vessel_8cpp_source.html#l00137">StoreCentralAtomsVessel.cpp:137</a></div></div>
+<div class="ttc" id="_store_central_atoms_vessel_8h_html"><div class="ttname"><a href="_store_central_atoms_vessel_8h.html">StoreCentralAtomsVessel.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_aa9ff529cb63833e7fc3f48dc70b034a5"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#aa9ff529cb63833e7fc3f48dc70b034a5">PLMD::multicolvar::MultiColvarFunction::getCentralAtom</a></div><div class="ttdeci">virtual Vector getCentralAtom()=0</div><div class="ttdoc">Get the position of the central atom. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html">PLMD::ActionWithValue</a></div><div class="ttdoc">Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00065">ActionWithValue.h:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_ac7fcee2cdd5b667deee1402d07a4b9f8"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ac7fcee2cdd5b667deee1402d07a4b9f8">PLMD::multicolvar::MultiColvarFunction::addDerivativeOfCentralAtomPos</a></div><div class="ttdeci">void addDerivativeOfCentralAtomPos(const unsigned &amp;iatom, const Tensor &amp;der)</div><div class="ttdoc">Add derivative wrt to the position of the central atom. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00112">MultiColvarFunction.h:112</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a037f93a0fbbe7b4447e3c320537fdb9b"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a037f93a0fbbe7b4447e3c320537fdb9b">PLMD::multicolvar::MultiColvarFunction::compute</a></div><div class="ttdeci">virtual double compute(const unsigned &amp;j)=0</div><div class="ttdoc">Actually compute the colvar. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base_html_a40522add084b9e38cbbe01ee874b4f5f"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#a40522add084b9e38cbbe01ee874b4f5f">PLMD::multicolvar::MultiColvarBase::colvar_atoms</a></div><div class="ttdeci">std::vector&lt; DynamicList&lt; unsigned &gt; &gt; colvar_atoms</div><div class="ttdoc">The lists of the atoms involved in each of the individual colvars note these refer to the atoms in al...</div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_base_8h_source.html#l00058">MultiColvarBase.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a459c7954734b861e29d3a84dda59bccf"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a459c7954734b861e29d3a84dda59bccf">PLMD::multicolvar::MultiColvarFunction::addCentralAtomsDerivatives</a></div><div class="ttdeci">void addCentralAtomsDerivatives(const unsigned &amp;, const Vector &amp;)</div><div class="ttdoc">Add derivatives of value wrt to an atomic position. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00095">MultiColvarFunction.h:95</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a8c86fdd6d7fe20eaa90bf02beac96dec"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a8c86fdd6d7fe20eaa90bf02beac96dec">PLMD::multicolvar::MultiColvarFunction::completeSetup</a></div><div class="ttdeci">void completeSetup()</div><div class="ttdoc">Finish off the setup of the VectorFunction. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00054">MultiColvarFunction.cpp:54</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a561aa40cb4ca5a66113c8984d64367c8"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a561aa40cb4ca5a66113c8984d64367c8">PLMD::multicolvar::MultiColvarFunction::resizeDynamicArrays</a></div><div class="ttdeci">void resizeDynamicArrays()</div><div class="ttdoc">Resize the dynamic arrays. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00099">MultiColvarFunction.cpp:99</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_ace15999dee57b7ab518dee289c111073"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ace15999dee57b7ab518dee289c111073">PLMD::multicolvar::MultiColvarFunction::lockContributors</a></div><div class="ttdeci">void lockContributors()</div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00071">MultiColvarFunction.cpp:71</a></div></div>
+<div class="ttc" id="_multi_colvar_base_8h_html"><div class="ttname"><a href="_multi_colvar_base_8h.html">MultiColvarBase.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel_html_ad047a4d42525bbf8bfd6681a954b6907"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_central_atoms_vessel.html#ad047a4d42525bbf8bfd6681a954b6907">PLMD::multicolvar::StoreCentralAtomsVessel::getPosition</a></div><div class="ttdeci">Vector getPosition(const unsigned &amp;) const </div><div class="ttdoc">Get the orientation of the ith vector. </div><div class="ttdef"><b>Definition:</b> <a href="_store_central_atoms_vessel_8cpp_source.html#l00092">StoreCentralAtomsVessel.cpp:92</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_af2352261345b3b86e60de8b1e4223738"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#af2352261345b3b86e60de8b1e4223738">PLMD::multicolvar::MultiColvarFunction::mycolv</a></div><div class="ttdeci">multicolvar::MultiColvarBase * mycolv</div><div class="ttdoc">The multicolvar from which we construct these quantities. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00034">MultiColvarFunction.h:34</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_ae81526e2d4d99ece9b88e289aae63bbc"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#ae81526e2d4d99ece9b88e289aae63bbc">PLMD::multicolvar::MultiColvarFunction::calculateNumericalDerivatives</a></div><div class="ttdeci">void calculateNumericalDerivatives(ActionWithValue *a=NULL)</div><div class="ttdoc">Calculate the numerical derivatives for this action. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00131">MultiColvarFunction.cpp:131</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_afae4b88b5f0fbe0fac2941726976b5da"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#afae4b88b5f0fbe0fac2941726976b5da">PLMD::multicolvar::MultiColvarFunction::doCalculation</a></div><div class="ttdeci">double doCalculation(const unsigned &amp;j)</div><div class="ttdoc">Do the calculation. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00125">MultiColvarFunction.cpp:125</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a0a1228ba50f912555665f754acf84211"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a0a1228ba50f912555665f754acf84211">PLMD::multicolvar::MultiColvarFunction::getNumberOfBaseFunctions</a></div><div class="ttdeci">unsigned getNumberOfBaseFunctions() const </div><div class="ttdoc">Get the number of functions in the multicolvar we are operating on. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00079">MultiColvarFunction.h:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base_html"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html">PLMD::multicolvar::MultiColvarBase</a></div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_base_8h_source.html#l00035">MultiColvarBase.h:35</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base_html_afccb1b88635e9a845193e5bb67f0ec18"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html#afccb1b88635e9a845193e5bb67f0ec18">PLMD::multicolvar::MultiColvarBase::atoms_with_derivatives</a></div><div class="ttdeci">DynamicList&lt; unsigned &gt; atoms_with_derivatives</div><div class="ttdoc">A dynamic list containing those atoms with derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_base_8h_source.html#l00055">MultiColvarBase.h:55</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a4234dc78c21f2eecb164fbd0cfd7af3c"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a4234dc78c21f2eecb164fbd0cfd7af3c">PLMD::multicolvar::MultiColvarFunction::MultiColvarFunction</a></div><div class="ttdeci">MultiColvarFunction(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00035">MultiColvarFunction.cpp:35</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_aa02d6fc58936cb2c73cee982fcd66b18"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#aa02d6fc58936cb2c73cee982fcd66b18">PLMD::multicolvar::MultiColvarFunction::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00030">MultiColvarFunction.cpp:30</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_abbbe73d1c8be35369721e93ad9999266"><div class="ttname"><a href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a></div><div class="ttdeci">void const char const char int double * a</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_adc81ddde1c7bc0a124f8993ab1f4b090"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#adc81ddde1c7bc0a124f8993ab1f4b090">PLMD::multicolvar::MultiColvarFunction::getPositionOfCentralAtom</a></div><div class="ttdeci">Vector getPositionOfCentralAtom(const unsigned &amp;) const </div><div class="ttdoc">Get the position of one of the central atoms. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00089">MultiColvarFunction.h:89</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a4e8ea72bcf5d4ab60dae3667de914b37"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a4e8ea72bcf5d4ab60dae3667de914b37">PLMD::multicolvar::MultiColvarFunction::calculate</a></div><div class="ttdeci">void calculate()</div><div class="ttdoc">Regular calculate. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8cpp_source.html#l00114">MultiColvarFunction.cpp:114</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function_html_a27f193ade7dc716bd41ab4c4265e6138"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html#a27f193ade7dc716bd41ab4c4265e6138">PLMD::multicolvar::MultiColvarFunction::atomHasDerivative</a></div><div class="ttdeci">void atomHasDerivative(const unsigned &amp;iatom)</div><div class="ttdoc">Active element in atoms_with_derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_function_8h_source.html#l00107">MultiColvarFunction.h:107</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

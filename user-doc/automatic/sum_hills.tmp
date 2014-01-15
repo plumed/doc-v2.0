@@ -1,0 +1,144 @@
+/**
+\page sum_hills sum_hills
+sum_hills is a tool that allows one to to use plumed to post-process an existing hills/colvar file 
+
+\par Examples
+
+a typical case is about the integration of a hills file: 
+
+\verbatim
+plumed sum_hills  --hills PATHTOMYHILLSFILE 
+\endverbatim
+
+The default name for the output file will be fes.dat 
+Note that starting from this version plumed will automatically detect the 
+number of the variables you have and their periodicity. 
+Additionally, if you use flexible hills (multivariate gaussians), plumed will understand it from the HILLS file.
+
+now sum_hills tool accepts als multiple files that will be integrated one after the other 
+
+\verbatim
+plumed sum_hills  --hills PATHTOMYHILLSFILE1,PATHTOMYHILLSFILE2,PATHTOMYHILLSFILE3 
+\endverbatim
+
+if you want to integrate out some variable you do
+
+\verbatim
+plumed sum_hills  --hills PATHTOMYHILLSFILE   --idw t1 --kt 0.6 
+\endverbatim
+
+where with --idw you define the variables that you want
+all the others will be integrated out. --kt defines the temperature of the system in energy units.
+(be consistent with the units you have in your hills: plumed will not check this for you)  
+If you need more variables then you may use a comma separated syntax
+
+\verbatim
+plumed sum_hills  --hills PATHTOMYHILLSFILE   --idw t1,t2 --kt 0.6  
+\endverbatim
+
+You can define the output grid only with the number of bins you want 
+while min/max will be detected for you
+
+\verbatim
+plumed sum_hills --bin 99,99 --hills PATHTOMYHILLSFILE   
+\endverbatim
+
+or full grid specification
+
+\verbatim
+plumed sum_hills --bin 99,99 --min -pi,-pi --max pi,pi --hills PATHTOMYHILLSFILE   
+\endverbatim
+
+You can of course use numbers instead of -pi/pi.
+
+You can use a --stride keyword to have a dump each bunch of hills you read 
+\verbatim
+plumed sum_hills --stride 300 --hills PATHTOMYHILLSFILE   
+\endverbatim
+ 
+You can also have, in case of welltempered metadynamics, only the negative 
+bias instead of the free energy through the keyword --negbias
+
+\verbatim
+plumed sum_hills --negbias --hills PATHTOMYHILLSFILE   
+\endverbatim
+
+Here the default name will be negativebias.dat 
+
+From time to time you might need to use HILLS or a COLVAR file 
+as it was just a simple set  of points from which you want to build 
+a free energy by using -(1/beta)log(P)
+then you use --histo
+
+\verbatim
+plumed sum_hills --histo PATHTOMYCOLVARORHILLSFILE  --sigma 0.2,0.2 --kt 0.6  
+\endverbatim
+
+in this case you need a --kt to do the reweighting and then you
+need also some width (with the --sigma keyword) for the histogram calculation (actually will be done with 
+gaussians, so it will be a continuous histogram)
+Here the default output will be correction.dat.
+Note that also here you can have multiple input files separated by a comma.
+
+Additionally, if you want to do histogram and hills from the same file you can do as this   
+\verbatim
+plumed sum_hills --hills --histo PATHTOMYCOLVARORHILLSFILE  --sigma 0.2,0.2 --kt 0.6  
+\endverbatim
+The two files can be eventually the same 
+
+Another interesting thing one can do is monitor the difference in blocks as a metadynamics goes on. 
+When the bias deposited is constant over the whole domain one can consider to be at convergence. 
+This can be done with the --nohistory keyword 
+
+\verbatim
+plumed sum_hills --stride 300 --hills PATHTOMYHILLSFILE  --nohistory 
+\endverbatim
+
+and similarly one can do the same for an histogram file 
+
+\verbatim
+plumed sum_hills --histo PATHTOMYCOLVARORHILLSFILE  --sigma 0.2,0.2 --kt 0.6 --nohistory 
+\endverbatim
+
+just to check the hypothetical free energy calculated in single blocks of time during a simulation
+and not in a cumulative way
+
+Output format can be controlled via the --fmt field
+
+\verbatim
+plumed sum_hills --hills PATHTOMYHILLSFILE  --fmt %8.3f 
+\endverbatim
+
+where here we chose a float with length of 8 and 3 digits 
+
+The output can be named in a arbitrary way  : 
+
+\verbatim
+plumed sum_hills --hills PATHTOMYHILLSFILE  --outfile myfes.dat 
+\endverbatim
+
+will produce a file myfes.dat which contains the free energy.
+
+If you use stride, this keyword is the suffix 
+
+\verbatim
+plumed sum_hills --hills PATHTOMYHILLSFILE  --outfile myfes_ --stride 100
+\endverbatim
+
+will produce myfes_0.dat,  myfes_1.dat, myfes_2.dat etc.
+
+The same is true for the output coming from histogram corrections 
+\verbatim
+plumed sum_hills --histo HILLS --kt 2.5 --sigma 0.01 --outhisto mycorrection.dat
+\endverbatim
+
+is producing a file mycorrection.dat
+while, when using stride, this is the suffix 
+
+\verbatim
+plumed sum_hills --histo HILLS --kt 2.5 --sigma 0.01 --outhisto mycorrection_ --stride 100 
+\endverbatim
+
+that gives  mycorrection_0.dat,  mycorrection_1.dat,  mycorrection_3.dat etc..
+
+*/

@@ -1,0 +1,134 @@
+/**
+\page DISTANCES DISTANCES
+Calculate the distances between one or many pairs of atoms.  You can then calculate functions of the distribution of
+distances such as the minimum, the number less than a certain quantity and so on.
+
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ATOMS </b></td>
+<td> the atoms involved in each of the collective variables you wish to calculate. Keywords like ATOMS1, ATOMS2, ATOMS3,... should be listed and one CV will be calculated for each ATOM keyword you specify (all ATOM keywords should define the same number of atoms).  The eventual number of quantities calculated by this action will depend on what functions of the distribution you choose to calculate. You can use multiple instances of this keyword i.e. ATOMS1, ATOMS2, ATOMS3... </td>
+</tr>
+</table>
+
+\par Or alternatively by using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> GROUP </b></td>
+<td> Calculate the distance between each distinct pair of atoms in the group </td>
+</tr>
+</table>
+
+\par Or alternatively by using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> GROUPA </b></td>
+<td> Calculate the distances between all the atoms in GROUPA and all the atoms in GROUPB. This must be used in conjuction with GROUPB. </td>
+</tr>
+<tr>
+<td width=15%> <b> GROUPB </b></td>
+<td> Calculate the distances between all the atoms in GROUPA and all the atoms in GROUPB. This must be used in conjuction with GROUPA. </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> SERIAL </b></td>
+<td> ( default=off ) do the calculation in serial.  Do not parallelize </td>
+</tr>
+<tr>
+<td width=15%> <b> VERBOSE </b></td>
+<td> ( default=off ) write a more detailed output </td>
+</tr>
+<tr>
+<td width=15%> <b> MEAN </b></td>
+<td> ( default=off ) take the mean of these variables. The final value can be referenced using <em>label</em>.mean </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TOL </b></td>
+<td> this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum.  They can thus be safely ignored as can the the derivatives wrt these small quantities. </td>
+</tr>
+<tr>
+<td width=15%> <b> MIN </b></td>
+<td>  The final value can be referenced using  <em>label</em>.min. </td>
+</tr>
+<tr>
+<td width=15%> <b> LESS_THAN </b></td>
+<td> calculate the number of variables less than a certain target value. This quantity is calculated using \f$\sum_i \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.less_than.  You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3...  The corresponding values are then referenced using <em>label</em>.less_than-1,  <em>label</em>.less_than-2,  <em>label</em>.less_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> DHENERGY </b></td>
+<td> calculate the Debye-Huckel interaction energy. This is a alternative implementation of \ref DHENERGY that is particularly useful if you want to calculate the Debye-Huckel interaction energy and some other function of set of distances between the atoms in the two groups. The input for this keyword should read DHENERGY={I=\f$I\f$ TEMP=\f$T\f$ EPSILON=\f$\epsilon\f$}. You can use multiple instances of this keyword i.e. DHENERGY1, DHENERGY2, DHENERGY3... </td>
+</tr>
+<tr>
+<td width=15%> <b> MORE_THAN </b></td>
+<td> calculate the number of variables more than a certain target value. This quantity is calculated using \f$\sum_i 1.0 - \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.more_than.  You can use multiple instances of this keyword i.e. MORE_THAN1, MORE_THAN2, MORE_THAN3...  The corresponding values are then referenced using <em>label</em>.more_than-1,  <em>label</em>.more_than-2,  <em>label</em>.more_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> BETWEEN </b></td>
+<td> calculate the number of values that are within a certain range. These quantities are calculated using kernel density estimation as described on \ref histogrambead. The final value can be referenced using <em>label</em>.between.  You can use multiple instances of this keyword i.e. BETWEEN1, BETWEEN2, BETWEEN3...  The corresponding values are then referenced using <em>label</em>.between-1,  <em>label</em>.between-2,  <em>label</em>.between-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> HISTOGRAM </b></td>
+<td> calculate a discretized histogram of the distribution of values. This shortcut allows you to calculates NBIN quantites like BETWEEN. </td>
+</tr>
+<tr>
+<td width=15%> <b> MOMENTS </b></td>
+<td> calculate the moments of the distribution of collective variables. The \f$m\f$th moment of a distribution is calculated using \f$\frac{1}{N} \sum_{i=1}^N ( s_i - \overline{s} )^m \f$, where \f$\overline{s}\f$ is the average for the distribution. The moments keyword takes a lists of integers as input or a range. Each integer is a value of \f$m\f$. The final calculated values can be referenced using moment-\f$m\f$. </td>
+</tr>
+
+</table>
+
+\par Examples
+
+The following input tells plumed to calculate the distances between atoms 3 and 5 and between atoms 1 and 2 and to
+print the minimum for these two distances.
+\verbatim
+DISTANCES ATOMS1=3,5 ATOMS2=1,2 MIN={BETA=0.1} LABEL=d1
+PRINT ARG=d1.min
+\endverbatim
+(See also \ref PRINT).
+
+The following input tells plumed to calculate the distances between atoms 3 and 5 and between atoms 1 and 2
+and then to calculate the number of these distances that are less than 0.1 nm.  The number of distances
+less than 0.1nm is then printed to a file.
+\verbatim
+DISTANCES ATOMS1=3,5 ATOMS2=1,2 LABEL=d1 LESS_THAN={RATIONAL R_0=0.1}
+PRINT ARG=d1.lt0.1
+\endverbatim
+(See also \ref PRINT \ref switchingfunction).
+
+The following input tells plumed to calculate all the distances between atoms 1, 2 and 3 (i.e. the distances between atoms
+1 and 2, atoms 1 and 3 and atoms 2 and 3).  The average of these distances is then calculated.
+\verbatim
+DISTANCES GROUP=1-3 AVERAGE LABEL=d1
+PRINT ARG=d1.average
+\endverbatim
+(See also \ref PRINT)
+
+The following input tells plumed to calculate all the distances between the atoms in GROUPA and the atoms in GROUPB.
+In other words the distances between atoms 1 and 2 and the distance between atoms 1 and 3.  The number of distances
+more than 0.1 is then printed to a file.
+\verbatim
+DISTANCES GROUPA=1 GROUPB=2,3 MORE_THAN={RATIONAL R_0=0.1}
+PRINT ARG=d1.gt0.1
+\endverbatim
+(See also \ref PRINT \ref switchingfunction)
+*/

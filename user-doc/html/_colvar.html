@@ -1,0 +1,232 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: Collective Variables</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Collective Variables </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>Chemical systems contain an enormous number atoms, which, in most cases makes it simply impossible for us to understand anything by monitoring the atom postions directly. Consquentially, we introduce Collective variables (CVs) that describe the chemical processes we are interested in and monitor these simpler quantities instead. These CVs are used in all of the methods implemented in PLUMED - they're values can be monitored using <a class="el" href="_p_r_i_n_t.html">PRINT</a>, <a class="el" href="_function.html">Functions</a> of them can be calculated or they can be analyzed or biased using the <a class="el" href="_analysis.html">Analysis</a> and <a class="el" href="_bias.html">Biasing</a> methods implemented in PLUMED. Before doing any of these things however we first have to inform PLUMED how to calculate them.</p>
+<h1><a class="anchor" id="atomSpecs"></a>
+Specifying Atoms</h1>
+<p>The vast majority of the CVs implemented in PLUMED are calculated from a list of atom positions. Within PLUMED atoms are always specified according to their numerical indices in the molecular dynamics input file. This can be done either using a comma separated list of numbers or, if a long list atom of contiguous atoms is required, by using the shortcut 10-100, which specifies all the atom indexes between 10 and 100 (including 10 and 100). So for example:</p>
+<pre class="fragment">TORSION ATOMS=1,2,3,4
+</pre><p>could also be specified using:</p>
+<pre class="fragment">TORIONS ATOMS=1-4
+</pre><p>Ranges of atom can also be defined with a stride. For example:</p>
+<pre class="fragment">COM ATOMS=1,11,21,31,41,51
+</pre><p>could also be specified using:</p>
+<pre class="fragment">COM ATOMS=1-51:10
+</pre><p>In addition, for certain colvars, pdb files can be read in using the following keywords:</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><a class="el" href="_m_o_l_i_n_f_o.html">MOLINFO</a>  </td><td>This command is used to provide information on the molecules that are present in your system.   </td></tr>
+</table>
+<p>The read in pdb files are used by PLUMED to define things like residues, the backbone atoms and so on. These can then be used within the input to colvars to make inputting the lists of atoms involved more straightforward. Documentation for how these shortcuts can be used can be found in the documentation for the various CVs.</p>
+<p>Lastly, if you have a list of colvar that is particularly laborious to write out that you need to use multiple times in the input you can create a static group of atoms and then use the label of the group to specify the correpsonding list of atoms in your various colvars. For more details see <a class="el" href="_g_r_o_u_p.html">GROUP</a>.</p>
+<h1><a class="anchor" id="vatoms"></a>
+Virtual Atoms</h1>
+<p>Sometimes, when calculating a colvar, you may not want to use the positions of a number of atoms directly. Instead you may wish to use the position of a virtual atom whose position is generated based on the positions of a collection of other atoms. For example you might want to use the center of mass of a group of atoms. Plumed has a number of routines for calculating the positions of these virtual atoms from lists of atoms:</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><a class="el" href="_c_e_n_t_e_r.html">CENTER</a>  </td><td>Calculate the center for a group of atoms, with arbitraty weights.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_c_o_m.html">COM</a>  </td><td>Calculate the center of mass for a group of atoms.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_g_h_o_s_t.html">GHOST</a>  </td><td>Calculate the absolute position of a ghost atom with fixed coordinates in the local reference frame formed by three atoms. The computed ghost atom is stored as a virtual atom that can be accessed in an atom list through the the label for the GHOST action that creates it.   </td></tr>
+</table>
+<p>To specify to a colvar that you want to use the position of a virtual atom to calculate a colvar rather than one of the atoms in your system you simply use the label for your virtual atom in place of the usual numerical index. Virtual atoms and normal atoms can be mixed together in the input to colvars as shown below:</p>
+<pre class="fragment">COM ATOMS=1,10 LABEL=com1
+DISTANCE ATOMS=11,com1
+</pre><p>If you don't want to calculate CVs from the virtual atom. That is to say you just want to monitor the position of a virtual atom (or any set of atoms) over the course of your trajectory you can do this using <a class="el" href="_d_u_m_p_a_t_o_m_s.html">DUMPATOMS</a>.</p>
+<h1><a class="anchor" id="mols"></a>
+Molecules</h1>
+<p>PLUMED is designed so that for the majority of the CVs implemented the periodic boundary conditions are treated in the same manner as they would be treated in the host code. In some codes this can be problematic when the colvars you are using involve some property of a molecule. These codes allow the atoms in the molecules to become separated by periodic boundaries, a fact which PLUMED could only deal with were the topology passed from the MD code to PLUMED. Making this work would involve a lot laborious programming and goes against our original aim of having a general patch that can be implemented in a wide variety of MD codes. Consequentially, we have implemented a more pragmatic solution to this probem - the user specifies in input any molecules (or parts of molecules) that must be kept in tact throughout the simulation run. In PLUMED 1 this was done using the ALIGN_ATOMS keyword. In PLUMED 2 the same effect can be acchieved using the <a class="el" href="_w_h_o_l_e_m_o_l_e_c_u_l_e_s.html">WHOLEMOLECULES</a> command.</p>
+<h1><a class="anchor" id="cvavail"></a>
+CV Documentation</h1>
+<p>The following list contains all the colvars that are currently implemented in PLUMED 2.</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><a class="el" href="_a_n_g_l_e.html">ANGLE</a>  </td><td>Calculate an angle.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_c_e_l_l.html">CELL</a>  </td><td>Calculate the components of the simulation cell   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_c_o_n_s_t_a_n_t.html">CONSTANT</a>  </td><td>Return a constant quantity.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_c_o_n_t_a_c_t_m_a_p.html">CONTACTMAP</a>  </td><td>Calculate the distances between a number of pairs of atoms and transform each distance by a switching function.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_c_o_o_r_d_i_n_a_t_i_o_n.html">COORDINATION</a>  </td><td>Calculate coordination numbers.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_c_s2_b_a_c_k_b_o_n_e.html">CS2BACKBONE</a>  </td><td>This collective variable calculates a scoring function based on the comparison of backcalculated and experimental backbone chemical shifts for a protein (CA, CB, C', H, HA, N).   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_d_h_e_n_e_r_g_y.html">DHENERGY</a>  </td><td>Calculate Debye-Huckel interaction energy among GROUPA and GROUPB.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_d_i_p_o_l_e.html">DIPOLE</a>  </td><td>Calcualte the dipole moment for a group of atoms.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_d_i_s_t_a_n_c_e.html">DISTANCE</a>  </td><td>Calculate the distance between a pair of atoms. By default the distance is computed taking into account periodic boundary conditions. This behavior can be changed with the NOPBC flag. Moreover, single components (x,y, and z) can be also computed.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_d_r_m_s_d.html">DRMSD</a>  </td><td>Calculate the distance RMSD with respect to a reference structure.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_e_n_e_r_g_y.html">ENERGY</a>  </td><td>Calculate the total energy of the simulation box.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_f_a_k_e.html">FAKE</a>  </td><td>This is a fake colvar container used by cltools or various other actions and just support input and period definition   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_g_y_r_a_t_i_o_n.html">GYRATION</a>  </td><td>Calculate the radius of gyration, or other properties related to it.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_p_a_t_h_m_s_d.html">PATHMSD</a>  </td><td>This Colvar calculates path collective variables.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_p_r_o_p_e_r_t_y_m_a_p.html">PROPERTYMAP</a>  </td><td>Calculate generic property maps.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_r_m_s_d.html">RMSD</a>  </td><td>Calculate the RMSD with respect to a reference structure.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_t_e_m_p_l_a_t_e.html">TEMPLATE</a>  </td><td>This file provides a template for if you want to introduce a new CV.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_t_o_r_s_i_o_n.html">TORSION</a>  </td><td>Calculate a torsional angle.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_v_o_l_u_m_e.html">VOLUME</a>  </td><td>Calculate the volume of the simulation box.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_a_l_p_h_a_b_e_t_a.html">ALPHABETA</a>  </td><td>Measures a distance including pbc between the instantaneous values of a set of torsional angles and set of reference values.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_a_l_p_h_a_r_m_s_d.html">ALPHARMSD</a>  </td><td>Probe the alpha helical content of a protein structure.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_a_n_t_i_b_e_t_a_r_m_s_d.html">ANTIBETARMSD</a>  </td><td>Probe the antiparallel beta sheet content of your protein structure.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_p_a_r_a_b_e_t_a_r_m_s_d.html">PARABETARMSD</a>  </td><td>Probe the parallel beta sheet content of your protein structure.   </td></tr>
+</table>
+<h1><a class="anchor" id="mcolv"></a>
+MultiColvar Documentation</h1>
+<p>Often you do not need one of the collective variables described in the previous section. What you want instead is a function of a distribution of collective variables of a particular type. For instance you might need to calculate a minimum distance or the number of coordination numbers greater than a 3.0. To avoid dupilcating the code to calculate an angle or distance many times and to make it easier to implement very complex collective variables PLUMED provides these sort of collective variables using so-called MultiColvars. MultiColvars are named in this way because a single PLUMED action can be used to calculate a number of different collective variables. For instance the <a class="el" href="_d_i_s_t_a_n_c_e_s.html">DISTANCES</a> action can be used to calculate the minimum distance, the number of distances less than a certain value, the number of distances within a certain range... Descriptions as to how to use PLUMED to calculate these kinds of CVs are given below:</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><a class="el" href="_a_n_g_l_e_s.html">ANGLES</a>  </td><td>Calculate functions of the distribution of angles .   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_b_r_i_d_g_e.html">BRIDGE</a>  </td><td>Calculate the number of atoms that bridge two parts of a structure   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_c_o_o_r_d_i_n_a_t_i_o_n_n_u_m_b_e_r.html">COORDINATIONNUMBER</a>  </td><td>Calculate the coordination numbers of atoms so that you can then calculate functions of the distribution of coordination numbers such as the minimum, the number less than a certain quantity and so on.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_d_e_n_s_i_t_y.html">DENSITY</a>  </td><td>Calculate functions of the density of atoms as a function of the box. This allows one to calculate the number of atoms in half the box.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_d_i_s_t_a_n_c_e_s.html">DISTANCES</a>  </td><td>Calculate the distances between one or many pairs of atoms. You can then calculate functions of the distribution of distances such as the minimum, the number less than a certain quantity and so on.   </td></tr>
+</table>
+<p>To instruct PLUMED to calculate a multicolvar you give an instruction that looks something like this:</p>
+<pre class="fragment">NAME &lt;atoms involved&gt; &lt;parameters&gt; &lt;what am I calculating&gt; TOL=0.001 LABEL=label
+</pre><p>Oftentimes the simplest way to specify the atoms involved is to use multiple instances of the ATOMS keyword i.e. ATOMS1, ATOMS2, ATOMS3,... Separate instances of the quantity specified by NAME are then calculated for each of the sets of atoms. For example if the command issued contains the following:</p>
+<pre class="fragment">DISTANCES ATOMS1=1,2 ATOMS2=3,4 ATOMS3=5,6
+</pre><p>The distances between atoms 1 and 2, atoms 3 and 4, and atoms 5 and 6 are calculated. Obviously, generating this sort of input is rather tedious so short cuts are also available many of the collective variables. These are described on the manual pages for the actions.</p>
+<p>After specifying the atoms involved you sometimes need to specify some parameters that required in the calculation. For instance, for <a class="el" href="_c_o_o_r_d_i_n_a_t_i_o_n_n_u_m_b_e_r.html">COORDINATIONNUMBER</a> - the number of atoms in the first coordination sphere of each of the atoms in the system - you need to specify the parameters for a <a class="el" href="switchingfunction.html">switchingfunction</a> that will tell us whether or not an atom is in the first coordination sphere. Details as to how to do this are provided on the manual pages.</p>
+<p>One of the most important keywords for multicolvars is the TOL keyword. This specifies that terms in sums that contribute less than a certain value can be ignored. In addition, it is assumed that the derivative with respect to these terms are essentially zero. By increasing the TOL parameter you can increase the speed of the calculation. Be aware, however, that this increase in speed is only possible because you are lowering the accuracy with which you are computing the quantity of interest.</p>
+<p>Once you have specified the base quanties that are to be calculated from the atoms involved and any parameters you need to specify what function of these base quanties is to be calculated. For most multicolvars you can calculate the minimum, the number less than a target value, the number within a certain range, the number more than a target value and the average value directly. In addition, the following more complex functions of the distribution of values can be computed:</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><a class="el" href="_a_r_o_u_n_d.html">AROUND</a>  </td><td>This quantity can be used to calculate functions of the distribution of collective variables for the atoms that lie in a particular, user-specified part of of the cell.   </td></tr>
+</table>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: core/Colvar.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Colvar.h</div>  </div>
+</div>
+<div class="contents">
+<a href="core_2_colvar_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_core_Colvar_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_core_Colvar_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2_action_atomistic_8h.html">ActionAtomistic.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2_action_with_value_8h.html">ActionWithValue.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="core_2_colvar_8h.html#aa95e2f515fc3d4e1693bfa2f0199a971">   29</a></span>&#160;<span class="preprocessor">#define PLUMED_COLVAR_INIT(ao) Action(ao),Colvar(ao)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">\ingroup INHERIT</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">This is the abstract base class to use for implementing new collective variables, within it there is </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">\ref AddingAColvar &quot;information&quot; as to how to go about implementing a new CV. </span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_colvar.html">Colvar</a> :</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html">ActionAtomistic</a>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_with_value.html">ActionWithValue</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/// This is used by apply to retrive the forces on the atoms</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#a336ac0deb58e630b7f281ff6dfa99113">   45</a></span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_colvar.html#a336ac0deb58e630b7f281ff6dfa99113">forces</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#aac2fb5f227d891e1b9a269a76d591924">   47</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#aac2fb5f227d891e1b9a269a76d591924">isEnergy</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#af1bb03650fe9aec207af6b6bee87316b">requestAtoms</a>(<span class="keyword">const</span> std::vector&lt;AtomNumber&gt; &amp; <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Set the derivatives for a particular atom equal to the input Vector</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// This routine is called setAtomsDerivatives because not because you</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// are setting the derivative of many atoms but because you are setting</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// the derivatives of a particular atom.  The s is an apostrophe s </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// but you can&#39;t put apostrophes in function names</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span>           <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(<span class="keywordtype">int</span>,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span>           <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(<a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>*,<span class="keywordtype">int</span>,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span>           <a class="code" href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">setBoxDerivatives</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp;);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span>           <a class="code" href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">setBoxDerivatives</a>(<a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>*,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp;);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a> &amp; <a class="code" href="class_p_l_m_d_1_1_colvar.html#a4944a425d7bc9fdddc1830a141c96d74">getBoxDerivatives</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; <a class="code" href="class_p_l_m_d_1_1_colvar.html#a4064e07a13d95274e31f518e4c78654e">getForce</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#abcf0dee5fac68006d8476ca9ec7f8aa7">apply</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// Set box derivatives automatically.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/// It should be called after the setAtomsDerivatives has been used for all</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// single atoms.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/// \warning It only works for collective variable NOT using PBCs!</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span>           <a class="code" href="class_p_l_m_d_1_1_colvar.html#ac548174fb4e8b595e93a8b48f6ac41a0">setBoxDerivativesNoPbc</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span>           <a class="code" href="class_p_l_m_d_1_1_colvar.html#ac548174fb4e8b595e93a8b48f6ac41a0">setBoxDerivativesNoPbc</a>(<a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>*);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#aa5bcac08d13aff86f0b88df755797385">   68</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa5bcac08d13aff86f0b88df755797385">checkIsEnergy</a>(){<span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#aac2fb5f227d891e1b9a269a76d591924">isEnergy</a>;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#a436d638ce2bfb16291acfda0178cb052">Colvar</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#a2bd833000481f1619fdf003a37f0d5fe">   70</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#a2bd833000481f1619fdf003a37f0d5fe">~Colvar</a>(){}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#a2c83483dd966f7c44edbc35f46919645">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#a3e166ecfdce9e225743007439da3716b">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">Colvar::setAtomsDerivatives</a>(<a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>*v,<span class="keywordtype">int</span> i,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;d){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*i+0,d[0]);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*i+1,d[1]);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*i+2,d[2]);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#a416033daafcc34451cf87326e4720d59">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">Colvar::setBoxDerivatives</a>(<a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>* v,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp;d){</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">unsigned</span> nat=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">getNumberOfAtoms</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+0,d(0,0));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+1,d(0,1));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+2,d(0,2));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+3,d(1,0));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+4,d(1,1));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+5,d(1,2));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+6,d(2,0));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+7,d(2,1));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  v-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>(3*nat+8,d(2,2));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">Colvar::setAtomsDerivatives</a>(<span class="keywordtype">int</span> i,<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp;d){</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a6bb81817872d9bd5a0553cddd56a6216">getPntrToValue</a>(),i,d);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">Colvar::setBoxDerivatives</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_tensor_generic.html">Tensor</a>&amp;d){</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">setBoxDerivatives</a>(<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a6bb81817872d9bd5a0553cddd56a6216">getPntrToValue</a>(),d);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_colvar.html#ac548174fb4e8b595e93a8b48f6ac41a0">  107</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html#ac548174fb4e8b595e93a8b48f6ac41a0">Colvar::setBoxDerivativesNoPbc</a>(){</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#ac548174fb4e8b595e93a8b48f6ac41a0">setBoxDerivativesNoPbc</a>(<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a6bb81817872d9bd5a0553cddd56a6216">getPntrToValue</a>());</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tensor_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_tensor_generic.html">PLMD::TensorGeneric</a></div><div class="ttdoc">Class implementing fixed size matrices of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00070">Tensor.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html">PLMD::Value</a></div><div class="ttdoc">A class for holding the value of a function together with its derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00046">Value.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_aa19fdcbe9b9be274ed87d9600d43f6f7"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">PLMD::Colvar::setAtomsDerivatives</a></div><div class="ttdeci">void setAtomsDerivatives(int, const Vector &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00097">Colvar.h:97</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_aac2fb5f227d891e1b9a269a76d591924"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#aac2fb5f227d891e1b9a269a76d591924">PLMD::Colvar::isEnergy</a></div><div class="ttdeci">bool isEnergy</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00047">Colvar.h:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a6bb81817872d9bd5a0553cddd56a6216"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a6bb81817872d9bd5a0553cddd56a6216">PLMD::ActionWithValue::getPntrToValue</a></div><div class="ttdeci">Value * getPntrToValue()</div><div class="ttdoc">Get a pointer to the default value. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00103">ActionWithValue.cpp:103</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_a436d638ce2bfb16291acfda0178cb052"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#a436d638ce2bfb16291acfda0178cb052">PLMD::Colvar::Colvar</a></div><div class="ttdeci">Colvar(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_colvar_8cpp_source.html#l00029">Colvar.cpp:29</a></div></div>
+<div class="ttc" id="core_2_action_with_value_8h_html"><div class="ttname"><a href="core_2_action_with_value_8h.html">ActionWithValue.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_a4064e07a13d95274e31f518e4c78654e"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#a4064e07a13d95274e31f518e4c78654e">PLMD::Colvar::getForce</a></div><div class="ttdeci">const double &amp; getForce() const </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_a2bd833000481f1619fdf003a37f0d5fe"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#a2bd833000481f1619fdf003a37f0d5fe">PLMD::Colvar::~Colvar</a></div><div class="ttdeci">~Colvar()</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00070">Colvar.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_af1bb03650fe9aec207af6b6bee87316b"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#af1bb03650fe9aec207af6b6bee87316b">PLMD::Colvar::requestAtoms</a></div><div class="ttdeci">void requestAtoms(const std::vector&lt; AtomNumber &gt; &amp;a)</div><div class="ttdef"><b>Definition:</b> <a href="_colvar_8cpp_source.html#l00044">Colvar.cpp:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_a042d306245aa9742daa44876c88833fc"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">PLMD::Colvar::setBoxDerivatives</a></div><div class="ttdeci">void setBoxDerivatives(const Tensor &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00102">Colvar.h:102</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html">PLMD::ActionWithValue</a></div><div class="ttdoc">Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00065">ActionWithValue.h:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html">PLMD::ActionAtomistic</a></div><div class="ttdoc">Action used to create objects that access the positions of the atoms from the MD code. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00038">ActionAtomistic.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_a4944a425d7bc9fdddc1830a141c96d74"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#a4944a425d7bc9fdddc1830a141c96d74">PLMD::Colvar::getBoxDerivatives</a></div><div class="ttdeci">const Tensor &amp; getBoxDerivatives() const </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html">PLMD::Colvar</a></div><div class="ttdoc">This is the abstract base class to use for implementing new collective variables, within it there is ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00039">Colvar.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_a2c83483dd966f7c44edbc35f46919645"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#a2c83483dd966f7c44edbc35f46919645">PLMD::Colvar::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_colvar_8cpp_source.html#l00037">Colvar.cpp:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_ac548174fb4e8b595e93a8b48f6ac41a0"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#ac548174fb4e8b595e93a8b48f6ac41a0">PLMD::Colvar::setBoxDerivativesNoPbc</a></div><div class="ttdeci">void setBoxDerivativesNoPbc()</div><div class="ttdoc">Set box derivatives automatically. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00107">Colvar.h:107</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_aa5bcac08d13aff86f0b88df755797385"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#aa5bcac08d13aff86f0b88df755797385">PLMD::Colvar::checkIsEnergy</a></div><div class="ttdeci">bool checkIsEnergy()</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00068">Colvar.h:68</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_a336ac0deb58e630b7f281ff6dfa99113"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#a336ac0deb58e630b7f281ff6dfa99113">PLMD::Colvar::forces</a></div><div class="ttdeci">std::vector&lt; double &gt; forces</div><div class="ttdoc">This is used by apply to retrive the forces on the atoms. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00045">Colvar.h:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a7d0c94f88e93c9ffa208af8b8fbef6cb"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a7d0c94f88e93c9ffa208af8b8fbef6cb">PLMD::ActionAtomistic::getNumberOfAtoms</a></div><div class="ttdeci">unsigned getNumberOfAtoms() const </div><div class="ttdoc">Get number of available atoms. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00088">ActionAtomistic.h:88</a></div></div>
+<div class="ttc" id="core_2_action_atomistic_8h_html"><div class="ttname"><a href="core_2_action_atomistic_8h.html">ActionAtomistic.h</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_abbbe73d1c8be35369721e93ad9999266"><div class="ttname"><a href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a></div><div class="ttdeci">void const char const char int double * a</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_abcf0dee5fac68006d8476ca9ec7f8aa7"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#abcf0dee5fac68006d8476ca9ec7f8aa7">PLMD::Colvar::apply</a></div><div class="ttdeci">void apply()</div><div class="ttdoc">Apply an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_colvar_8cpp_source.html#l00054">Colvar.cpp:54</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html_af45029b57fadfc01b38fe129ef1ea817"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">PLMD::Value::addDerivative</a></div><div class="ttdeci">void addDerivative(unsigned i, double d)</div><div class="ttdoc">Add some derivative to the ith component of the derivatives array. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00224">Value.h:224</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

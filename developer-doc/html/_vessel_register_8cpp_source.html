@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: vesselbase/VesselRegister.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7685edf5d18a1f720e5764f1be2af464.html">vesselbase</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">VesselRegister.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_vessel_register_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vesselbase_2_vessel_8h.html">Vessel.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vesselbase_2_vessel_register_8h.html">VesselRegister.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>vesselbase{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#aff10e7508b2643b8722d56b28be99be9">   29</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#aff10e7508b2643b8722d56b28be99be9">VesselRegister::~VesselRegister</a>(){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.size()&gt;0){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::string names=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span>(std::map&lt;std::string,creator_pointer&gt;::iterator p=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.begin();p!=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.end();++p) names+=p-&gt;first+<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;WARNING: Vessel &quot;</span>+ names +<span class="stringliteral">&quot; has not been properly unregistered. This might lead to memory leak!!\n&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1vesselbase.html#a56003bf5b3b48b6ca1389eecb485b49f">   37</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html">VesselRegister</a>&amp; <a class="code" href="namespace_p_l_m_d_1_1vesselbase.html#a56003bf5b3b48b6ca1389eecb485b49f">vesselRegister</a>(){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">static</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html">VesselRegister</a> ans;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a918f78d6f66336a2b27cd170a0cf25f9">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a918f78d6f66336a2b27cd170a0cf25f9">VesselRegister::remove</a>(creator_pointer f){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">for</span>(std::map&lt;std::string,creator_pointer&gt;::iterator p=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.begin();p!=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.end();++p){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span>((*p).second==f){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.erase(p); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a420c610e078a6ab4da850cf47562d71c">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a420c610e078a6ab4da850cf47562d71c">VesselRegister::add</a>(std::string keyword,creator_pointer f,keyword_pointer k,keyword_pointer ik){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  plumed_massert(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.count(keyword)==0,<span class="stringliteral">&quot;keyword has already been registered&quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.insert(std::pair&lt;std::string,creator_pointer&gt;(keyword,f));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  k( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a9f0a3ab76dfc251dbb0bdfba5d618385">keywords</a> );   <span class="comment">// Store the keywords for all the things</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Store a pointer to the function that creates keywords</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// A pointer is stored and not the keywords because all</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// Vessels must be dynamically loaded before the actions.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#abeaf4a904162c3da2bb5c4db85f3183a">mk</a>.insert(std::pair&lt;std::string,keyword_pointer&gt;(keyword,ik));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#ad660c351ba209e17d83b34c6ddc6b876">   60</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#ad660c351ba209e17d83b34c6ddc6b876">VesselRegister::check</a>(std::string key){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>.count(key)&gt;0 ) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a2054b47f051b4b20bd599d1c755f08f5">   65</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">Vessel</a>* <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a2054b47f051b4b20bd599d1c755f08f5">VesselRegister::create</a>(std::string keyword, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a>&amp;<a class="code" href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a>){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">Vessel</a>* df;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#ad660c351ba209e17d83b34c6ddc6b876">check</a>(keyword)){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a> keys; <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#abeaf4a904162c3da2bb5c4db85f3183a">mk</a>[keyword](keys);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a> nda( da,keys );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      df=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">m</a>[keyword](nda);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      keys.<a class="code" href="class_p_l_m_d_1_1_keywords.html#ad0f69141f7709f6b5c520cb6f653b240">destroyData</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">else</span> df=NULL;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> df;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a1ee1ed3c68a0ce8246eb3c0668219aa6">   77</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a1ee1ed3c68a0ce8246eb3c0668219aa6">VesselRegister::getKeywords</a>(){</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a9f0a3ab76dfc251dbb0bdfba5d618385">keywords</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_ad660c351ba209e17d83b34c6ddc6b876"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#ad660c351ba209e17d83b34c6ddc6b876">PLMD::vesselbase::VesselRegister::check</a></div><div class="ttdeci">bool check(std::string keyname)</div><div class="ttdoc">Verify if a distribution keyword is present in the register. </div><div class="ttdef"><b>Definition:</b> <a href="_vessel_register_8cpp_source.html#l00060">VesselRegister.cpp:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_a918f78d6f66336a2b27cd170a0cf25f9"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a918f78d6f66336a2b27cd170a0cf25f9">PLMD::vesselbase::VesselRegister::remove</a></div><div class="ttdeci">void remove(creator_pointer f)</div><div class="ttdoc">Remove a distribution function from the register of distribution functions. </div><div class="ttdef"><b>Definition:</b> <a href="_vessel_register_8cpp_source.html#l00042">VesselRegister.cpp:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_a2054b47f051b4b20bd599d1c755f08f5"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a2054b47f051b4b20bd599d1c755f08f5">PLMD::vesselbase::VesselRegister::create</a></div><div class="ttdeci">Vessel * create(std::string keyword, const VesselOptions &amp;da)</div><div class="ttdoc">Create a distribution function of the specified type. </div><div class="ttdef"><b>Definition:</b> <a href="_vessel_register_8cpp_source.html#l00065">VesselRegister.cpp:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_ad0f69141f7709f6b5c520cb6f653b240"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#ad0f69141f7709f6b5c520cb6f653b240">PLMD::Keywords::destroyData</a></div><div class="ttdeci">void destroyData()</div><div class="ttdoc">Clear everything from the keywords object. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00504">Keywords.cpp:504</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_a9f0a3ab76dfc251dbb0bdfba5d618385"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a9f0a3ab76dfc251dbb0bdfba5d618385">PLMD::vesselbase::VesselRegister::keywords</a></div><div class="ttdeci">Keywords keywords</div><div class="ttdoc">A vector of function pointers - this is used to create the documentation. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_register_8h_source.html#l00049">VesselRegister.h:49</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_a420c610e078a6ab4da850cf47562d71c"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a420c610e078a6ab4da850cf47562d71c">PLMD::vesselbase::VesselRegister::add</a></div><div class="ttdeci">void add(std::string keyword, creator_pointer, keyword_pointer k, keyword_pointer ik)</div><div class="ttdoc">Add a new distribution function option to the register of distribution functions. ...</div><div class="ttdef"><b>Definition:</b> <a href="_vessel_register_8cpp_source.html#l00050">VesselRegister.cpp:50</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_aff10e7508b2643b8722d56b28be99be9"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#aff10e7508b2643b8722d56b28be99be9">PLMD::vesselbase::VesselRegister::~VesselRegister</a></div><div class="ttdeci">~VesselRegister()</div><div class="ttdoc">The destructor. </div><div class="ttdef"><b>Definition:</b> <a href="_vessel_register_8cpp_source.html#l00029">VesselRegister.cpp:29</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="vesselbase_2_vessel_register_8h_html"><div class="ttname"><a href="vesselbase_2_vessel_register_8h.html">VesselRegister.h</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_1_1vesselbase_html_a56003bf5b3b48b6ca1389eecb485b49f"><div class="ttname"><a href="namespace_p_l_m_d_1_1vesselbase.html#a56003bf5b3b48b6ca1389eecb485b49f">PLMD::vesselbase::vesselRegister</a></div><div class="ttdeci">VesselRegister &amp; vesselRegister()</div><div class="ttdef"><b>Definition:</b> <a href="_vessel_register_8cpp_source.html#l00037">VesselRegister.cpp:37</a></div></div>
+<div class="ttc" id="vesselbase_2_vessel_8h_html"><div class="ttname"><a href="vesselbase_2_vessel_8h.html">Vessel.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">PLMD::vesselbase::VesselOptions</a></div><div class="ttdoc">This class is used to pass the input to Vessels. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00053">Vessel.h:53</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_abeaf4a904162c3da2bb5c4db85f3183a"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#abeaf4a904162c3da2bb5c4db85f3183a">PLMD::vesselbase::VesselRegister::mk</a></div><div class="ttdeci">std::map&lt; std::string, keyword_pointer &gt; mk</div><div class="ttdoc">Map action to a function which documents the related object. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_register_8h_source.html#l00047">VesselRegister.h:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html">PLMD::vesselbase::VesselRegister</a></div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_register_8h_source.html#l00038">VesselRegister.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_a1ee1ed3c68a0ce8246eb3c0668219aa6"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a1ee1ed3c68a0ce8246eb3c0668219aa6">PLMD::vesselbase::VesselRegister::getKeywords</a></div><div class="ttdeci">Keywords getKeywords()</div><div class="ttdoc">Return the keywords. </div><div class="ttdef"><b>Definition:</b> <a href="_vessel_register_8cpp_source.html#l00077">VesselRegister.cpp:77</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a0756f10f12a549c19f52f54e219b1cfe"><div class="ttname"><a href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a></div><div class="ttdeci">void int double * da</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00047">Matrix.h:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_register_html_a56093334974ff38e64ae280e9ca0532e"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_register.html#a56093334974ff38e64ae280e9ca0532e">PLMD::vesselbase::VesselRegister::m</a></div><div class="ttdeci">std::map&lt; std::string, creator_pointer &gt; m</div><div class="ttdoc">The set of possible distribution functions we can work with. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_register_8h_source.html#l00045">VesselRegister.h:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">PLMD::vesselbase::Vessel</a></div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00075">Vessel.h:75</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/**
+\page MATHEVAL MATHEVAL
+Calculate a combination of variables using a matheval expression.
+
+If you are using a time dependent expression you can get the time using
+\subpage TIME   
+
+\par Examples
+The following input tells plumed to print the angle between vectors
+identified by atoms 1,2 and atoms 2,3
+its square (as computed from the x,y,z components) and the distance
+again as computed from the square root of the square.
+\verbatim
+DISTANCE LABEL=d1 ATOMS=1,2 COMPONENTS
+DISTANCE LABEL=d2 ATOMS=2,3 COMPONENTS
+MATHEVAL ...
+  LABEL=theta
+  ARG=d1.x,d1.y,d1.z,d2.x,d2.y,d2.z
+  VAR=ax,ay,az,bx,by,bz
+  FUNC=acos((ax*bx+ay*by+az*bz)/sqrt((ax*ax+ay*ay+az*az)*(bx*bx+by*by+bz*bz))
+... MATHEVAL
+PRINT ARG=theta
+\endverbatim
+(See also \ref PRINT and \ref DISTANCE).
+
+\attention
+The MATHEVAL object only works if libmatheval is installed on the system and
+PLUMED has been linked to it
+
+*/

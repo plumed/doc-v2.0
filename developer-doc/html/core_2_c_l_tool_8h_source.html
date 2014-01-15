@@ -1,0 +1,326 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: core/CLTool.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">CLTool.h</div>  </div>
+</div>
+<div class="contents">
+<a href="core_2_c_l_tool_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_core_CLTool_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_core_CLTool_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;tools/Tools.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;tools/Keywords.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">class </span>Communicator;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool_options.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_c_l_tool_options.html">CLToolOptions</a>{</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool_options.html#a9fe4ee8b1ee5f393576704faa273afa9">   37</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_c_l_tool.html">CLTool</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool_options.html#a87bbdb4a3be623d34043a301e86f0d6a">   38</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_c_l_tool_register.html">CLToolRegister</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool_options.html#ae57e0faa9cb955472515354cba29b8a7">   40</a></span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_p_l_m_d_1_1_c_l_tool_options.html#ae57e0faa9cb955472515354cba29b8a7">line</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/// The documentation for this command line tool</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool_options.html#a6d8956c738909b3a92533297542a2cc9">   42</a></span>&#160;<span class="comment"></span>  <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; <a class="code" href="class_p_l_m_d_1_1_c_l_tool_options.html#a6d8956c738909b3a92533297542a2cc9">keys</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool_options.html#a1e2f3ca00d210443ed982ad6ed2adfd9">   43</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a> <a class="code" href="class_p_l_m_d_1_1_c_l_tool_options.html#a1e2f3ca00d210443ed982ad6ed2adfd9">emptyKeys</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_c_l_tool_options.html#a1437d051d4b426c2d5cb2202012fa776">CLToolOptions</a>(<span class="keyword">const</span> std::string &amp;name);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_c_l_tool_options.html#a1437d051d4b426c2d5cb2202012fa776">CLToolOptions</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool_options.html">CLToolOptions</a>&amp; co, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; k);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">\ingroup INHERIT</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">This is the abstract base class to use for implementing new command line tool, within it there</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">is \ref AddingACLTool &quot;information&quot; as to how to go about implemneting a new tool.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_c_l_tool.html">CLTool</a> {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// The name of this command line tool</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a8dc8649dd317c3cf78db6f5e0dd064b8">   58</a></span>&#160;<span class="comment"></span>  <span class="keyword">const</span> std::string <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a8dc8649dd317c3cf78db6f5e0dd064b8">name</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// The list of keywords for this CLTool</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#ae6d15b1899d4581816a86a2230bb88f6">   60</a></span>&#160;<span class="comment"></span>  <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ae6d15b1899d4581816a86a2230bb88f6">keywords</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// The data read in from the command line stored in a map with the keywords</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">   62</a></span>&#160;<span class="comment"></span>  std::map&lt;std::string,std::string&gt; <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// Read the arguments from the command line</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ac3d4f76dd9408a92ba848b573561b705">readCommandLineArgs</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>**argv, FILE*out );<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// Read the arguments from an input file specified on the command line</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ad6a4688ae0a23bb5f83628d93fc04361">readInputFile</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>**argv, FILE* in, FILE*out );<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// Set arguments from the default options provided to Keywords</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a4b965d1b4a55a4420e0ab84830fe79ca">setRemainingToDefault</a>(FILE* out);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/// Set the input data:</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a8d55189f6009bb26835111bf6db3cab1">   71</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a8d55189f6009bb26835111bf6db3cab1">setInputData</a>(<span class="keyword">const</span> std::map&lt;std::string,std::string&gt;&amp;<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    this-&gt;inputData=<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a97ab67809937fe10e801a90b6ed3f60b">   74</a></span>&#160;  <span class="keyword">const</span> std::map&lt;std::string,std::string&gt;&amp;<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a97ab67809937fe10e801a90b6ed3f60b">getInputData</a>(){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">protected</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/// Get the value of one of the command line arguments </span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"></span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a0f45c63c1a0c5d0664d703e26150328a">parse</a>(<span class="keyword">const</span> std::string&amp;key,T&amp;t);<span class="comment"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/// Find out whether one of the command line flags is present or not</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a40a84090e736500ebedcaffc218d2581">parseFlag</a>(<span class="keyword">const</span> std::string&amp;key,<span class="keywordtype">bool</span>&amp;t);  <span class="comment"></span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/// Crash the command line tool with an error</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#afb5f5f07064891f46297632a65f114c6">error</a>(<span class="keyword">const</span> std::string&amp; msg);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a6fffb94971e9bb5b041e919245d5b733">parseVector</a>(<span class="keyword">const</span> std::string&amp;key,std::vector&lt;T&gt;&amp;t);  </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/// How is the input specified on the command line or in an input file</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a8a89856a0d422c0d1d7df2dafc7f2c2b">   89</a></span>&#160;<span class="comment"></span>  <span class="keyword">enum</span> {<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a8a89856a0d422c0d1d7df2dafc7f2c2b">unset</a>,<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a0511c02c198f5109570c7433065f5063">commandline</a>,<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a7fb7fc6aed4400d56c2d6cb6cbe33c1e">ifile</a>} <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a0e197fd101a186b702359f92dd40fad1">inputdata</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">/// Create the help keywords </span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#aad60bf6b9eb1ce44b3f389b960aebd6b">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a7abad371bdf604159e2b4209dcaaacdf">CLTool</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool_options.html">CLToolOptions</a>&amp; co ); <span class="comment"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/// Read the arguments from the command line</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a45df2a217f67a6cc912523727ed35509">readInput</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>**argv, FILE* in, FILE*out );<span class="comment"></span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/// virtual function mapping to the specific main for each tool</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ae1e90f31c5a71fbc33d0bdd46d6a870e">main</a>( FILE* in, FILE*out, <a class="code" href="class_p_l_m_d_1_1_communicator.html">Communicator</a>&amp;pc )=0;<span class="comment"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/// virtual function returning a one-line descriptor for the tool</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a5f4baef926c4da5711feca13edd61e6a">   98</a></span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> std::string <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a5f4baef926c4da5711feca13edd61e6a">description</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> <span class="stringliteral">&quot;(no description available)&quot;</span>;}<span class="comment"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/// virtual destructor to allow inheritance</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a22a4cac0431302d1663cf515c0a89cc6">  100</a></span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a22a4cac0431302d1663cf515c0a89cc6">~CLTool</a>(){}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a0f45c63c1a0c5d0664d703e26150328a">  104</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a0f45c63c1a0c5d0664d703e26150328a">CLTool::parse</a>(<span class="keyword">const</span> std::string&amp;key,T&amp;t){</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  plumed_massert(<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ae6d15b1899d4581816a86a2230bb88f6">keywords</a>.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a299bd9376569bf5f40ba0b3067f7fa8f">exists</a>(key),<span class="stringliteral">&quot;keyword &quot;</span> + key + <span class="stringliteral">&quot; has not been registered&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ae6d15b1899d4581816a86a2230bb88f6">keywords</a>.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a8aeae18d33a3d80f07ab15d7d19c9137">style</a>(key,<span class="stringliteral">&quot;compulsory&quot;</span>) ){</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;     <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>.count(key)==0) <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#afb5f5f07064891f46297632a65f114c6">error</a>(<span class="stringliteral">&quot;missing data for keyword &quot;</span> + key);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;     <span class="keywordtype">bool</span> check=<a class="code" href="class_p_l_m_d_1_1_tools.html#ac532f156c0c4956d71a29054ed11c277">Tools::convert</a>(<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>[key],t);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;     <span class="keywordflow">if</span>(!check) <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#afb5f5f07064891f46297632a65f114c6">error</a>(<span class="stringliteral">&quot;data input for keyword &quot;</span> + key + <span class="stringliteral">&quot; has wrong type&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;     <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>.count(key)==0 ) <span class="keywordflow">return</span> <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_tools.html#ac532f156c0c4956d71a29054ed11c277">Tools::convert</a>(<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>[key],t);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">// very limited support and check: take more from core/Action.h parseVector  </span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_c_l_tool.html#a6fffb94971e9bb5b041e919245d5b733">  118</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a6fffb94971e9bb5b041e919245d5b733">CLTool::parseVector</a>(<span class="keyword">const</span> std::string&amp;key,std::vector&lt;T&gt;&amp;t){</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">// Check keyword has been registered</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  plumed_massert(<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ae6d15b1899d4581816a86a2230bb88f6">keywords</a>.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a299bd9376569bf5f40ba0b3067f7fa8f">exists</a>(key), <span class="stringliteral">&quot;keyword &quot;</span> + key + <span class="stringliteral">&quot; has not been registered&quot;</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="comment">// initial size</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">unsigned</span> size=t.size(); </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">bool</span> skipcheck=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span>(size==0) skipcheck=<span class="keyword">true</span>; <span class="comment">// if the vector in input has size zero, skip the check if size of input vector is the same of argument read </span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="comment">// check if there is some value</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  plumed_massert(<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>[key]!=<span class="stringliteral">&quot;false&quot;</span>,<span class="stringliteral">&quot;compulsory keyword &quot;</span>+std::string(key)+<span class="stringliteral">&quot;has no data&quot;</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  std::vector&lt;std::string&gt; words=<a class="code" href="class_p_l_m_d_1_1_tools.html#a1a59ab7e411989c1fe5f4abe0be7c401">Tools::getWords</a>(<a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">inputData</a>[key],<span class="stringliteral">&quot;\t\n ,&quot;</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  t.resize(0); </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">if</span>(words.size()==0)<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;words.size();++i){</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    T v;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_tools.html#ac532f156c0c4956d71a29054ed11c277">Tools::convert</a>(words[i],v);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    t.push_back(v);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="comment">// check the size</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">if</span>( !skipcheck &amp;&amp; t.size()!=size ) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;     plumed_merror(<span class="stringliteral">&quot;vector read in for keyword  &quot;</span>+key+<span class="stringliteral">&quot; has wrong size&quot;</span> );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  std::string def;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  T val;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordflow">if</span> ( <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ae6d15b1899d4581816a86a2230bb88f6">keywords</a>.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a8aeae18d33a3d80f07ab15d7d19c9137">style</a>(key,<span class="stringliteral">&quot;compulsory&quot;</span>) &amp;&amp; t.size()==0 ){</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;       <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1_c_l_tool.html#ae6d15b1899d4581816a86a2230bb88f6">keywords</a>.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a394db90592c1cd1f5be57a48f5e39469">getDefaultValue</a>(key,def) ){</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          <span class="keywordflow">if</span>( def.length()==0 || !<a class="code" href="class_p_l_m_d_1_1_tools.html#ac532f156c0c4956d71a29054ed11c277">Tools::convert</a>(def,val) ){</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;             plumed_merror(<span class="stringliteral">&quot;ERROR in keyword &quot;</span>+key+ <span class="stringliteral">&quot; has weird default value&quot;</span> );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;             <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;t.size();++i) t[i]=val;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          }          </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;       } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          plumed_merror(<span class="stringliteral">&quot;keyword &quot;</span> + key + <span class="stringliteral">&quot; is compulsory for this action&quot;</span>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;       }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  } </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a90512549015d8586a9fad819be622879a8a89856a0d422c0d1d7df2dafc7f2c2b"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a8a89856a0d422c0d1d7df2dafc7f2c2b">PLMD::CLTool::unset</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00089">CLTool.h:89</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_aad60bf6b9eb1ce44b3f389b960aebd6b"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#aad60bf6b9eb1ce44b3f389b960aebd6b">PLMD::CLTool::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdoc">Create the help keywords. </div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00040">CLTool.cpp:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a4b965d1b4a55a4420e0ab84830fe79ca"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a4b965d1b4a55a4420e0ab84830fe79ca">PLMD::CLTool::setRemainingToDefault</a></div><div class="ttdeci">void setRemainingToDefault(FILE *out)</div><div class="ttdoc">Set arguments from the default options provided to Keywords. </div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00128">CLTool.cpp:128</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a45df2a217f67a6cc912523727ed35509"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a45df2a217f67a6cc912523727ed35509">PLMD::CLTool::readInput</a></div><div class="ttdeci">bool readInput(int argc, char **argv, FILE *in, FILE *out)</div><div class="ttdoc">Read the arguments from the command line. </div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00060">CLTool.cpp:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tools_html_ac532f156c0c4956d71a29054ed11c277"><div class="ttname"><a href="class_p_l_m_d_1_1_tools.html#ac532f156c0c4956d71a29054ed11c277">PLMD::Tools::convert</a></div><div class="ttdeci">static bool convert(const std::string &amp;str, double &amp;t)</div><div class="ttdoc">Convert a string to a double, reading it. </div><div class="ttdef"><b>Definition:</b> <a href="_tools_8cpp_source.html#l00074">Tools.cpp:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_ae1e90f31c5a71fbc33d0bdd46d6a870e"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#ae1e90f31c5a71fbc33d0bdd46d6a870e">PLMD::CLTool::main</a></div><div class="ttdeci">virtual int main(FILE *in, FILE *out, Communicator &amp;pc)=0</div><div class="ttdoc">virtual function mapping to the specific main for each tool </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_communicator_html"><div class="ttname"><a href="class_p_l_m_d_1_1_communicator.html">PLMD::Communicator</a></div><div class="ttdoc">Class containing wrappers to MPI. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_communicator_8h_source.html#l00044">Communicator.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_options_html_ae57e0faa9cb955472515354cba29b8a7"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool_options.html#ae57e0faa9cb955472515354cba29b8a7">PLMD::CLToolOptions::line</a></div><div class="ttdeci">std::vector&lt; std::string &gt; line</div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00040">CLTool.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a6fffb94971e9bb5b041e919245d5b733"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a6fffb94971e9bb5b041e919245d5b733">PLMD::CLTool::parseVector</a></div><div class="ttdeci">bool parseVector(const std::string &amp;key, std::vector&lt; T &gt; &amp;t)</div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00118">CLTool.h:118</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_a394db90592c1cd1f5be57a48f5e39469"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#a394db90592c1cd1f5be57a48f5e39469">PLMD::Keywords::getDefaultValue</a></div><div class="ttdeci">bool getDefaultValue(std::string key, std::string &amp;def) const </div><div class="ttdoc">Get the value of the default for the keyword named key. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00493">Keywords.cpp:493</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_options_html_a1437d051d4b426c2d5cb2202012fa776"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool_options.html#a1437d051d4b426c2d5cb2202012fa776">PLMD::CLToolOptions::CLToolOptions</a></div><div class="ttdeci">CLToolOptions(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00028">CLTool.cpp:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html">PLMD::CLTool</a></div><div class="ttdoc">This is the abstract base class to use for implementing new command line tool, within it there is inf...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00055">CLTool.h:55</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool_options.html">PLMD::CLToolOptions</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00036">CLTool.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_ad6a4688ae0a23bb5f83628d93fc04361"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#ad6a4688ae0a23bb5f83628d93fc04361">PLMD::CLTool::readInputFile</a></div><div class="ttdeci">bool readInputFile(int argc, char **argv, FILE *in, FILE *out)</div><div class="ttdoc">Read the arguments from an input file specified on the command line. </div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00146">CLTool.cpp:146</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a8dc8649dd317c3cf78db6f5e0dd064b8"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a8dc8649dd317c3cf78db6f5e0dd064b8">PLMD::CLTool::name</a></div><div class="ttdeci">const std::string name</div><div class="ttdoc">The name of this command line tool. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00058">CLTool.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_options_html_a6d8956c738909b3a92533297542a2cc9"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool_options.html#a6d8956c738909b3a92533297542a2cc9">PLMD::CLToolOptions::keys</a></div><div class="ttdeci">const Keywords &amp; keys</div><div class="ttdoc">The documentation for this command line tool. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00042">CLTool.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_tools_html_a1a59ab7e411989c1fe5f4abe0be7c401"><div class="ttname"><a href="class_p_l_m_d_1_1_tools.html#a1a59ab7e411989c1fe5f4abe0be7c401">PLMD::Tools::getWords</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; getWords(const std::string &amp;line, const char *sep=NULL, int *parlevel=NULL, const char *parenthesis=&quot;{&quot;)</div><div class="ttdoc">Split the line in words using separators. </div><div class="ttdef"><b>Definition:</b> <a href="_tools_8cpp_source.html#l00112">Tools.cpp:112</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a7abad371bdf604159e2b4209dcaaacdf"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a7abad371bdf604159e2b4209dcaaacdf">PLMD::CLTool::CLTool</a></div><div class="ttdeci">CLTool(const CLToolOptions &amp;co)</div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00044">CLTool.cpp:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_ae6d15b1899d4581816a86a2230bb88f6"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#ae6d15b1899d4581816a86a2230bb88f6">PLMD::CLTool::keywords</a></div><div class="ttdeci">const Keywords &amp; keywords</div><div class="ttdoc">The list of keywords for this CLTool. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00060">CLTool.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a8d55189f6009bb26835111bf6db3cab1"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a8d55189f6009bb26835111bf6db3cab1">PLMD::CLTool::setInputData</a></div><div class="ttdeci">void setInputData(const std::map&lt; std::string, std::string &gt; &amp;inputData)</div><div class="ttdoc">Set the input data: </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00071">CLTool.h:71</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_a8aeae18d33a3d80f07ab15d7d19c9137"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#a8aeae18d33a3d80f07ab15d7d19c9137">PLMD::Keywords::style</a></div><div class="ttdeci">bool style(const std::string &amp;k, const std::string &amp;t) const </div><div class="ttdoc">Check if the keyword with name k has style t. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00213">Keywords.cpp:213</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_a299bd9376569bf5f40ba0b3067f7fa8f"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#a299bd9376569bf5f40ba0b3067f7fa8f">PLMD::Keywords::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;k) const </div><div class="ttdoc">Check if there is a keyword with name k. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00229">Keywords.cpp:229</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a0f45c63c1a0c5d0664d703e26150328a"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a0f45c63c1a0c5d0664d703e26150328a">PLMD::CLTool::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;key, T &amp;t)</div><div class="ttdoc">Get the value of one of the command line arguments. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00104">CLTool.h:104</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a40a84090e736500ebedcaffc218d2581"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a40a84090e736500ebedcaffc218d2581">PLMD::CLTool::parseFlag</a></div><div class="ttdeci">void parseFlag(const std::string &amp;key, bool &amp;t)</div><div class="ttdoc">Find out whether one of the command line flags is present or not. </div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00051">CLTool.cpp:51</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a5f4baef926c4da5711feca13edd61e6a"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a5f4baef926c4da5711feca13edd61e6a">PLMD::CLTool::description</a></div><div class="ttdeci">virtual std::string description() const </div><div class="ttdoc">virtual function returning a one-line descriptor for the tool </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00098">CLTool.h:98</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a22a4cac0431302d1663cf515c0a89cc6"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a22a4cac0431302d1663cf515c0a89cc6">PLMD::CLTool::~CLTool</a></div><div class="ttdeci">virtual ~CLTool()</div><div class="ttdoc">virtual destructor to allow inheritance </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00100">CLTool.h:100</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_register_html"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool_register.html">PLMD::CLToolRegister</a></div><div class="ttdoc">Same as ActionRegister, but for CLTools. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_register_8h_source.html#l00038">CLToolRegister.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a95cc2400d04a99c371281f394bc1bc18"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18">PLMD::CLTool::inputData</a></div><div class="ttdeci">std::map&lt; std::string, std::string &gt; inputData</div><div class="ttdoc">The data read in from the command line stored in a map with the keywords. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00062">CLTool.h:62</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a90512549015d8586a9fad819be622879a0511c02c198f5109570c7433065f5063"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a0511c02c198f5109570c7433065f5063">PLMD::CLTool::commandline</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00089">CLTool.h:89</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a0e197fd101a186b702359f92dd40fad1"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a0e197fd101a186b702359f92dd40fad1">PLMD::CLTool::inputdata</a></div><div class="ttdeci">enum PLMD::CLTool::@0 inputdata</div><div class="ttdoc">How is the input specified on the command line or in an input file. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a90512549015d8586a9fad819be622879a7fb7fc6aed4400d56c2d6cb6cbe33c1e"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a7fb7fc6aed4400d56c2d6cb6cbe33c1e">PLMD::CLTool::ifile</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00089">CLTool.h:89</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_afb5f5f07064891f46297632a65f114c6"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#afb5f5f07064891f46297632a65f114c6">PLMD::CLTool::error</a></div><div class="ttdeci">void error(const std::string &amp;msg)</div><div class="ttdoc">Crash the command line tool with an error. </div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00206">CLTool.cpp:206</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_ac3d4f76dd9408a92ba848b573561b705"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#ac3d4f76dd9408a92ba848b573561b705">PLMD::CLTool::readCommandLineArgs</a></div><div class="ttdeci">bool readCommandLineArgs(int argc, char **argv, FILE *out)</div><div class="ttdoc">Read the arguments from the command line. </div><div class="ttdef"><b>Definition:</b> <a href="_c_l_tool_8cpp_source.html#l00070">CLTool.cpp:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_html_a97ab67809937fe10e801a90b6ed3f60b"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool.html#a97ab67809937fe10e801a90b6ed3f60b">PLMD::CLTool::getInputData</a></div><div class="ttdeci">const std::map&lt; std::string, std::string &gt; &amp; getInputData()</div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00074">CLTool.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_c_l_tool_options_html_a1e2f3ca00d210443ed982ad6ed2adfd9"><div class="ttname"><a href="class_p_l_m_d_1_1_c_l_tool_options.html#a1e2f3ca00d210443ed982ad6ed2adfd9">PLMD::CLToolOptions::emptyKeys</a></div><div class="ttdeci">static Keywords emptyKeys</div><div class="ttdef"><b>Definition:</b> <a href="core_2_c_l_tool_8h_source.html#l00043">CLTool.h:43</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

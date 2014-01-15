@@ -1,0 +1,55 @@
+/**
+\page HISTOGRAM HISTOGRAM
+Calculate the probability density as a function of a few CVs using kernel density estimation
+
+\par Examples
+
+The following input monitors two torsional angles during a simulation
+and outputs a histogram as a function of them at the end of the simulation.
+\verbatim
+TORSION ATOMS=1,2,3,4 LABEL=r1
+TORSION ATOMS=2,3,4,5 LABEL=r2
+HISTOGRAM ...
+  ARG=r1,r2 
+  USE_ALL_DATA 
+  GRID_MIN=-3.14,-3.14 
+  GRID_MAX=3.14,3.14 
+  GRID_BIN=200,200
+  BANDWIDTH=0.05,0.05 
+  GRID_WFILE=histo
+... HISTOGRAM
+\endverbatim
+
+The following input monitors two torsional angles during a simulation
+and outputs the histogram accumulated thus far every 100000 steps.
+\verbatim
+TORSION ATOMS=1,2,3,4 LABEL=r1
+TORSION ATOMS=2,3,4,5 LABEL=r2
+HISTOGRAM ...
+  ARG=r1,r2 
+  RUN=100000
+  GRID_MIN=-3.14,-3.14  
+  GRID_MAX=3.14,3.14 
+  GRID_BIN=200,200
+  BANDWIDTH=0.05,0.05 
+  GRID_WFILE=histo
+... HISTOGRAM
+\endverbatim
+
+The following input monitors two torsional angles during a simulation
+and outputs a separate histogram for each 100000 steps worth of trajectory.
+\verbatim
+TORSION ATOMS=1,2,3,4 LABEL=r1
+TORSION ATOMS=2,3,4,5 LABEL=r2
+HISTOGRAM ...
+  ARG=r1,r2 
+  RUN=100000 NOMEMORY
+  GRID_MIN=-3.14,-3.14  
+  GRID_MAX=3.14,3.14 
+  GRID_BIN=200,200
+  BANDWIDTH=0.05,0.05 
+  GRID_WFILE=histo
+... HISTOGRAM
+\endverbatim
+
+*/

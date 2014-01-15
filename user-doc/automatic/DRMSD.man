@@ -1,0 +1,33 @@
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> REFERENCE </b></td>
+<td> a file in pdb format containing the reference structure and the atoms involved in the CV. </td>
+</tr>
+<tr>
+<td width=15%> <b> LOWER_CUTOFF </b></td>
+<td> only pairs of atoms further than LOWER_CUTOFF are considered in the calculation. </td>
+</tr>
+<tr>
+<td width=15%> <b> UPPER_CUTOFF </b></td>
+<td> only pairs of atoms closer than UPPER_CUTOFF are considered in the calculation. </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+
+</table>
+
+</table>
+

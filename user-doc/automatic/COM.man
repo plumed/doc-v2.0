@@ -1,0 +1,13 @@
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ATOMS </b></td>
+<td> the list of atoms which are involved the virtual atom's definition </td>
+</tr>
+</table>
+
+</table>
+
+</table>
+

@@ -1,0 +1,65 @@
+/**
+\page MATHEVAL MATHEVAL
+Calculate a combination of variables using a matheval expression.
+
+If you are using a time dependent expression you can get the time using
+\subpage TIME
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+<tr>
+<td width=15%> <b> PERIODIC </b></td>
+<td> if the output of your function is periodic then you should specify the periodicity of the function.  If the output is not periodic you must state this using PERIODIC=NO </td>
+</tr>
+<tr>
+<td width=15%> <b> FUNC </b></td>
+<td> the function you wish to evaluate </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> VAR </b></td>
+<td> the names to give each of the arguments in the function.  If you have up to three arguments in your function you can use x, y and z to refer to them.  Otherwise you must use this flag to give your variables names. </td>
+</tr>
+
+</table>
+
+\par Examples
+The following input tells plumed to print the angle between vectors
+identified by atoms 1,2 and atoms 2,3
+its square (as computed from the x,y,z components) and the distance
+again as computed from the square root of the square.
+\verbatim
+DISTANCE LABEL=d1 ATOMS=1,2 COMPONENTS
+DISTANCE LABEL=d2 ATOMS=2,3 COMPONENTS
+MATHEVAL ...
+LABEL=theta
+ARG=d1.x,d1.y,d1.z,d2.x,d2.y,d2.z
+VAR=ax,ay,az,bx,by,bz
+FUNC=acos((ax*bx+ay*by+az*bz)/sqrt((ax*ax+ay*ay+az*az)*(bx*bx+by*by+bz*bz))
+... MATHEVAL
+PRINT ARG=theta
+\endverbatim
+(See also \ref PRINT and \ref DISTANCE).
+
+\attention
+The MATHEVAL object only works if libmatheval is installed on the system and
+PLUMED has been linked to it
+
+*/

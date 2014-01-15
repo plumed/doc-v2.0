@@ -1,0 +1,25 @@
+/**
+\page BRIDGE BRIDGE
+Calculate the number of atoms that bridge two parts of a structure
+
+This quantity calculates:
+
+\f[
+ f(x) = \sum_{ijk} s_A(r_{ij})s_B(r_{ik})
+\f] 
+
+where the sum over \f$i\f$ is over all the ``bridging atoms" and 
+\f$s_A\f$ and \f$s_B\f$ are \ref switchingfunction.
+
+\par Examples
+
+The following example instructs plumed to calculate the number of water molecules
+that are bridging betweeen atoms 1-10 and atoms 11-20 and to print the value 
+to a file
+
+\verbatim
+BRIDGE BRIDGING_ATOMS=100-200 GROUPA=1-10 GROUPB=11-20 LABEL=w1
+PRINT ARG=a1.mean FILE=colvar 
+\endverbatim
+
+*/

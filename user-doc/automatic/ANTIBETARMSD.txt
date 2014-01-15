@@ -1,0 +1,130 @@
+/**
+\page ANTIBETARMSD ANTIBETARMSD
+Probe the antiparallel beta sheet content of your protein structure.
+
+Two protein segments containing three continguous residues can form an antiparallel beta sheet.
+Although if the two segments are part of the same protein chain they must be separated by
+a minimum of 2 residues to make room for the turn. This colvar thus generates the set of
+all possible six residue sections that could conceivably form an antiparallel beta sheet
+and calculates the RMSD distance between the configuration in which the residues find themselves
+and an idealized antiparallel beta sheet structure. These distances can be calculated by either
+aligning the instantaneous structure with the reference structure and measuring each
+atomic displacement or by calculating differences between the set of interatomic
+distances in the reference and instantaneous structures.
+
+This colvar is based on the following reference \cite pietrucci09jctc.  The authors of
+this paper use the set of distances from the anti parallel beta sheet configurations to measure
+the number of segments that have an configuration that resemebles an anti paralel beta sheet. This is done by calculating
+the following sum of functions of the rmsd distances:
+
+\f[
+s = \sum_i \frac{ 1 - \left(\frac{r_i-d_0}{r_0}\right)^n } { 1 - \left(\frac{r_i-d_0}{r_0}\right)^m }
+\f]
+
+where the sum runs over all possible segments of antiparallel beta sheet.  By default the
+NN, MM and D_0 parameters are set equal to those used in \cite pietrucci09jctc.  The R_0
+parameter must be set by the user - the value used in \cite pietrucci09jctc was 0.08 nm.
+
+If you change the function in the above sum you can calculate quantities such as the average
+distance from a purely configuration composed of pure anti-parallel beta sheets or the distance between the set of
+residues that is closest to an anti-parallel beta sheet and the reference configuration. To do these sorts of
+calculations you can use the AVERAGE and MIN keywords. In addition you can use the LESS_THAN
+keyword if you would like to change the form of the switching function. If you use any of these
+options you no longer need to specify NN, R_0, MM and D_0.
+
+Please be aware that for codes like gromacs you must ensure that plumed
+reconstructs the chains involved in your CV when you calculate this CV using
+anthing other than TYPE=DRMSD.  For more details as to how to do this see \ref WHOLEMOLECULES.
+
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> RESIDUES </b></td>
+<td> this command is used to specify the set of residues that could conceivably form part of the secondary structure. It is possible to use residues numbers as the various chains and residues should have been identified else using an instance of the \ref MOLINFO action. If you wish to use all the residues from all the chains in your system you can do so by specifying all. Alternatively, if you wish to use a subset of the residues you can specify the particular residues you are interested in as a list of numbers. Please be aware that to form secondary structure elements your chain must contain at least N residues, where N is dependent on the particular secondary structure you are interested in. As such if you define portions of the chain with fewer than N residues the code will crash. </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TYPE </b></td>
+<td> ( default=DRMSD ) the manner in which RMSD alignment is performed. Should be OPTIMAL, SIMPLE or DRMSD. For more details on the OPTIMAL and SIMPLE methods see \ref RMSD. For more details on the DRMSD method see \ref DRMSD. </td>
+</tr>
+<tr>
+<td width=15%> <b> R_0 </b></td>
+<td> The r_0 parameter of the switching function. </td>
+</tr>
+<tr>
+<td width=15%> <b> D_0 </b></td>
+<td> ( default=0.0 ) The d_0 parameter of the switching function </td>
+</tr>
+<tr>
+<td width=15%> <b> NN </b></td>
+<td> ( default=8 ) The n parameter of the switching function </td>
+</tr>
+<tr>
+<td width=15%> <b> MM </b></td>
+<td> ( default=12 ) The m parameter of the switching function </td>
+</tr>
+<tr>
+<td width=15%> <b> STYLE </b></td>
+<td> ( default=all ) Antiparallel beta sheets can either form in a single chain or from a pair of chains. If STYLE=all all chain configuration with the appropriate geometry are counted.  If STYLE=inter only sheet-like configurations involving two chains are counted, while if STYLE=intra only sheet-like configurations involving a single chain are counted </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> VERBOSE </b></td>
+<td> ( default=off ) write a more detailed output </td>
+</tr>
+<tr>
+<td width=15%> <b> SERIAL </b></td>
+<td> ( default=off ) do the calculation in serial.  Do not parallelize </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TOL </b></td>
+<td> this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum.  They can thus be safely ignored as can the the derivatives wrt these small quantities. </td>
+</tr>
+<tr>
+<td width=15%> <b> LESS_THAN </b></td>
+<td> calculate the number of variables less than a certain target value. This quantity is calculated using \f$\sum_i \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.less_than.  You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3...  The corresponding values are then referenced using <em>label</em>.less_than-1,  <em>label</em>.less_than-2,  <em>label</em>.less_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> MIN </b></td>
+<td>  The final value can be referenced using  <em>label</em>.min. </td>
+</tr>
+<tr>
+<td width=15%> <b> STRANDS_CUTOFF </b></td>
+<td> If in a segment of protein the two strands are further apart then the calculation of the actual RMSD is skipped as the structure is very far from being beta-sheet like. This keyword speeds up the calculation enormously when you are using the LESS_THAN option. However, if you are using some other option, then this cannot be used </td>
+</tr>
+
+</table>
+
+\par Examples
+
+The following input calculates the number of six residue segments of
+protein that are in an antiparallel beta sheet configuration.
+
+\verbatim
+MOLINFO STRUCTURE=helix.pdb
+ANTIBETARMSD RESIDUES=all TYPE=DRMSD LESS_THAN={RATIONAL R_0=0.08 NN=8 MM=12} LABEL=a
+\endverbatim
+(see also \ref MOLINFO)
+
+*/

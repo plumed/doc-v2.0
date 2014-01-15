@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: vesselbase/FunctionVessel.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7685edf5d18a1f720e5764f1be2af464.html">vesselbase</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">FunctionVessel.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_function_vessel_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vesselbase_2_function_vessel_8h.html">FunctionVessel.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;core/ActionWithValue.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>vesselbase{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a8f9d97dd4adf740697d72eb6ef664200">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a8f9d97dd4adf740697d72eb6ef664200">FunctionVessel::registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#ac4e0dc40b744180e4cf713d2c34a3b82">Vessel::registerKeywords</a>( keys );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  plumed_assert( keys.<a class="code" href="class_p_l_m_d_1_1_keywords.html#acb259069c981032339f4533f7e595f19">size</a>()==0 );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#aa41396e88978a7ce653baff99cac0c96">   33</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#aa41396e88978a7ce653baff99cac0c96">FunctionVessel::FunctionVessel</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">VesselOptions</a>&amp; <a class="code" href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a> ):</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">Vessel</a>(da)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html">ActionWithValue</a>* <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>=<span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_p_l_m_d_1_1_action_with_value.html">ActionWithValue</a>*<span class="keyword">&gt;</span>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>() );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  plumed_massert(a,<span class="stringliteral">&quot;cannot create passable values as base action does not inherit from ActionWithValue&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">int</span> numval = <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a3023dd056e2acd982449d607c16925ef">getNumericalLabel</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">if</span>( numval&lt;0 ){   <span class="comment">// This allows us to make multicolvars pretend to be colvars - this is used in AlphaRMSD etc</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;     plumed_massert( a-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a95602d9f365abac60b0165dc63bf778b">getNumberOfComponents</a>()==0,<span class="stringliteral">&quot;you can&#39;t multiple values with the action label&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;     a-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a21d7521c7a5da4065b67904c809067b7">addValueWithDerivatives</a>();  a-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a8eb10877f2789470a248586484fca62c">setNotPeriodic</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;     plumed_massert( !a-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a7349ecbc2c8cfc41e2d21d39bddba8b0">exists</a>(<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#abe46dd9565c246824b52fa8f3bc7e4ab">getLabel</a>() + <span class="stringliteral">&quot;.&quot;</span> + <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#abe46dd9565c246824b52fa8f3bc7e4ab">getLabel</a>() ), <span class="stringliteral">&quot;you can&#39;t create the name multiple times&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     a-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#ac10df9db81c4b5e341d133a58e4c84c4">addComponentWithDerivatives</a>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#abe46dd9565c246824b52fa8f3bc7e4ab">getLabel</a>() ); a-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#aa3f79d0da67f44297e1a4efd1970bac2">componentIsNotPeriodic</a>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#abe46dd9565c246824b52fa8f3bc7e4ab">getLabel</a>() );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a74f7535ea04a455a36698ed2b595579b">final_value</a>=a-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a60e89fb915f66baf662c50ee38e4fb3b">copyOutput</a>( a-&gt;<a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a95602d9f365abac60b0165dc63bf778b">getNumberOfComponents</a>()-1 );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a10480380c3eb064f1cb93f92db504788">diffweight</a>=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a5cd7e02b22473dbe383c06128166df28">weightHasDerivatives</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a09c9d603e695ce79e0269be7e613cf00">   50</a></span>&#160;std::string <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a09c9d603e695ce79e0269be7e613cf00">FunctionVessel::description</a>(){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">return</span> <span class="stringliteral">&quot;value &quot;</span> + <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1_action.html#a83ff3bbc47b66f3b91cf66ed54a135e3">getLabel</a>() + <span class="stringliteral">&quot;.&quot;</span> + <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#abe46dd9565c246824b52fa8f3bc7e4ab">getLabel</a>() + <span class="stringliteral">&quot; contains &quot;</span> + <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a505b9357799e337ec5301f1bd00124da">function_description</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#aa822586d0f29ecbe3987255ce24046e3">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#aa822586d0f29ecbe3987255ce24046e3">FunctionVessel::resize</a>(){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a4ee690d288c52b5da940bef508145a23">nderivatives</a>=<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">getAction</a>()-&gt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a278e25fe4a86369a4831aaee14998e6f">getNumberOfDerivatives</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2e5a1219e9918dc26df41eac07396318">resizeBuffer</a>( (1+<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a4ee690d288c52b5da940bef508145a23">nderivatives</a>)*<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc220db606b97ec08e3fece7fefdd2e">getNumberOfTerms</a>() ); </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a74f7535ea04a455a36698ed2b595579b">final_value</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#afde67f240884ada9b4cb2338589bca4f">resizeDerivatives</a>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a4ee690d288c52b5da940bef508145a23">nderivatives</a> );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc466b9b91abbdf7d8a798c90e06841">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc466b9b91abbdf7d8a798c90e06841">FunctionVessel::mergeFinalDerivatives</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; df ){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  plumed_dbg_assert( df.size()==<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc220db606b97ec08e3fece7fefdd2e">getNumberOfTerms</a>() ); </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc220db606b97ec08e3fece7fefdd2e">getNumberOfTerms</a>();++i){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordtype">unsigned</span> ider=i*( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a4ee690d288c52b5da940bef508145a23">nderivatives</a> + 1 ) + 1;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> k=0;k&lt;<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a4ee690d288c52b5da940bef508145a23">nderivatives</a>;++k){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;         <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a74f7535ea04a455a36698ed2b595579b">final_value</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">addDerivative</a>( k, df[i]*<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a91d24f0a9a69d99feeffa56876b11cd1">getBufferElement</a>( ider ) ); ider++;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a5b357b5ad1b8c8180703e5f2053ca149">   70</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a5b357b5ad1b8c8180703e5f2053ca149">FunctionVessel::applyForce</a>( std::vector&lt;double&gt;&amp; forces ){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  std::vector&lt;double&gt; tmpforce( forces.size() );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  forces.assign(forces.size(),0.0); <span class="keywordtype">bool</span> wasforced=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a74f7535ea04a455a36698ed2b595579b">final_value</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_value.html#a0c35d44ce93cb194dc1dc4369b988b50">applyForce</a>( tmpforce ) ){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      wasforced=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;forces.size();++j) forces[j]+=tmpforce[j];</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">return</span> wasforced;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a8eb10877f2789470a248586484fca62c"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a8eb10877f2789470a248586484fca62c">PLMD::ActionWithValue::setNotPeriodic</a></div><div class="ttdeci">void setNotPeriodic()</div><div class="ttdoc">Set your default value to have no periodicity. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00090">ActionWithValue.cpp:90</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a9bc220db606b97ec08e3fece7fefdd2e"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc220db606b97ec08e3fece7fefdd2e">PLMD::vesselbase::FunctionVessel::getNumberOfTerms</a></div><div class="ttdeci">virtual unsigned getNumberOfTerms()</div><div class="ttdoc">Return number of terms. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00072">FunctionVessel.h:72</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a5b357b5ad1b8c8180703e5f2053ca149"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a5b357b5ad1b8c8180703e5f2053ca149">PLMD::vesselbase::FunctionVessel::applyForce</a></div><div class="ttdeci">bool applyForce(std::vector&lt; double &gt; &amp;forces)</div><div class="ttdoc">This applies all the forces. </div><div class="ttdef"><b>Definition:</b> <a href="_function_vessel_8cpp_source.html#l00070">FunctionVessel.cpp:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html_a0c35d44ce93cb194dc1dc4369b988b50"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html#a0c35d44ce93cb194dc1dc4369b988b50">PLMD::Value::applyForce</a></div><div class="ttdeci">bool applyForce(std::vector&lt; double &gt; &amp;forces) const </div><div class="ttdoc">Apply the forces to the derivatives using the chain rule (if there are no forces this routine returns...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8cpp_source.html#l00080">Value.cpp:80</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_aa3f79d0da67f44297e1a4efd1970bac2"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#aa3f79d0da67f44297e1a4efd1970bac2">PLMD::ActionWithValue::componentIsNotPeriodic</a></div><div class="ttdeci">void componentIsNotPeriodic(const std::string &amp;name)</div><div class="ttdoc">Set your value component to have no periodicity. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00161">ActionWithValue.cpp:161</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a10480380c3eb064f1cb93f92db504788"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a10480380c3eb064f1cb93f92db504788">PLMD::vesselbase::FunctionVessel::diffweight</a></div><div class="ttdeci">bool diffweight</div><div class="ttdoc">Are the derivatives differentiable. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00049">FunctionVessel.h:49</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a09c9d603e695ce79e0269be7e613cf00"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a09c9d603e695ce79e0269be7e613cf00">PLMD::vesselbase::FunctionVessel::description</a></div><div class="ttdeci">std::string description()</div><div class="ttdoc">The description for the log. </div><div class="ttdef"><b>Definition:</b> <a href="_function_vessel_8cpp_source.html#l00050">FunctionVessel.cpp:50</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a278e25fe4a86369a4831aaee14998e6f"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a278e25fe4a86369a4831aaee14998e6f">PLMD::vesselbase::ActionWithVessel::getNumberOfDerivatives</a></div><div class="ttdeci">virtual unsigned getNumberOfDerivatives()=0</div><div class="ttdoc">Get the number of derivatives for final calculated quantity. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_ac4e0dc40b744180e4cf713d2c34a3b82"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#ac4e0dc40b744180e4cf713d2c34a3b82">PLMD::vesselbase::Vessel::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdoc">Reserve any keywords for this particular vessel. </div><div class="ttdef"><b>Definition:</b> <a href="_vessel_8cpp_source.html#l00053">Vessel.cpp:53</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a91d24f0a9a69d99feeffa56876b11cd1"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a91d24f0a9a69d99feeffa56876b11cd1">PLMD::vesselbase::Vessel::getBufferElement</a></div><div class="ttdeci">double getBufferElement(const unsigned &amp;i) const </div><div class="ttdoc">Get the value in the ith element of the buffer. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00258">Vessel.h:258</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a83ff3bbc47b66f3b91cf66ed54a135e3"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a83ff3bbc47b66f3b91cf66ed54a135e3">PLMD::Action::getLabel</a></div><div class="ttdeci">const std::string &amp; getLabel() const </div><div class="ttdoc">Returns the label. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00263">Action.h:263</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a74f7535ea04a455a36698ed2b595579b"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a74f7535ea04a455a36698ed2b595579b">PLMD::vesselbase::FunctionVessel::final_value</a></div><div class="ttdeci">Value * final_value</div><div class="ttdoc">This is the pointer to the value we are creating. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00046">FunctionVessel.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a21d7521c7a5da4065b67904c809067b7"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a21d7521c7a5da4065b67904c809067b7">PLMD::ActionWithValue::addValueWithDerivatives</a></div><div class="ttdeci">void addValueWithDerivatives()</div><div class="ttdoc">Add a value with the name label that has derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00085">ActionWithValue.cpp:85</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a8f9d97dd4adf740697d72eb6ef664200"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a8f9d97dd4adf740697d72eb6ef664200">PLMD::vesselbase::FunctionVessel::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_function_vessel_8cpp_source.html#l00028">FunctionVessel.cpp:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a9bc466b9b91abbdf7d8a798c90e06841"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a9bc466b9b91abbdf7d8a798c90e06841">PLMD::vesselbase::FunctionVessel::mergeFinalDerivatives</a></div><div class="ttdeci">void mergeFinalDerivatives(const std::vector&lt; double &gt; &amp;df)</div><div class="ttdoc">This does a combination of the product and chain rules. </div><div class="ttdef"><b>Definition:</b> <a href="_function_vessel_8cpp_source.html#l00060">FunctionVessel.cpp:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_aa41396e88978a7ce653baff99cac0c96"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#aa41396e88978a7ce653baff99cac0c96">PLMD::vesselbase::FunctionVessel::FunctionVessel</a></div><div class="ttdeci">FunctionVessel(const VesselOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_function_vessel_8cpp_source.html#l00033">FunctionVessel.cpp:33</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_abe46dd9565c246824b52fa8f3bc7e4ab"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#abe46dd9565c246824b52fa8f3bc7e4ab">PLMD::vesselbase::Vessel::getLabel</a></div><div class="ttdeci">std::string getLabel() const </div><div class="ttdoc">Return the label. </div><div class="ttdef"><b>Definition:</b> <a href="_vessel_8cpp_source.html#l00080">Vessel.cpp:80</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_a5cd7e02b22473dbe383c06128166df28"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#a5cd7e02b22473dbe383c06128166df28">PLMD::vesselbase::ActionWithVessel::weightHasDerivatives</a></div><div class="ttdeci">bool weightHasDerivatives</div><div class="ttdoc">Does the weight have derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00077">ActionWithVessel.h:77</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_aa822586d0f29ecbe3987255ce24046e3"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#aa822586d0f29ecbe3987255ce24046e3">PLMD::vesselbase::FunctionVessel::resize</a></div><div class="ttdeci">void resize()</div><div class="ttdoc">This does the resizing of the buffer. </div><div class="ttdef"><b>Definition:</b> <a href="_function_vessel_8cpp_source.html#l00054">FunctionVessel.cpp:54</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html">PLMD::ActionWithValue</a></div><div class="ttdoc">Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00065">ActionWithValue.h:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a7349ecbc2c8cfc41e2d21d39bddba8b0"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a7349ecbc2c8cfc41e2d21d39bddba8b0">PLMD::ActionWithValue::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name) const </div><div class="ttdoc">Check if a value with a particular name is present. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00058">ActionWithValue.cpp:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a2e5a1219e9918dc26df41eac07396318"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2e5a1219e9918dc26df41eac07396318">PLMD::vesselbase::Vessel::resizeBuffer</a></div><div class="ttdeci">void resizeBuffer(const unsigned &amp;n)</div><div class="ttdoc">Set the size of the data buffer. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00221">Vessel.h:221</a></div></div>
+<div class="ttc" id="vesselbase_2_function_vessel_8h_html"><div class="ttname"><a href="vesselbase_2_function_vessel_8h.html">FunctionVessel.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a3023dd056e2acd982449d607c16925ef"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a3023dd056e2acd982449d607c16925ef">PLMD::vesselbase::Vessel::getNumericalLabel</a></div><div class="ttdeci">int getNumericalLabel() const </div><div class="ttdoc">Return the numerical label. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00216">Vessel.h:216</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a60e89fb915f66baf662c50ee38e4fb3b"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a60e89fb915f66baf662c50ee38e4fb3b">PLMD::ActionWithValue::copyOutput</a></div><div class="ttdeci">Value * copyOutput(const std::string &amp;name) const </div><div class="ttdoc">Return a pointer to the value with name (this is used to retrieve values in other PLMD::Actions) You ...</div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00065">ActionWithValue.cpp:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a505b9357799e337ec5301f1bd00124da"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a505b9357799e337ec5301f1bd00124da">PLMD::vesselbase::FunctionVessel::function_description</a></div><div class="ttdeci">virtual std::string function_description()=0</div><div class="ttdoc">The rest of the description of what we are calculating. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html_afde67f240884ada9b4cb2338589bca4f"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html#afde67f240884ada9b4cb2338589bca4f">PLMD::Value::resizeDerivatives</a></div><div class="ttdeci">void resizeDerivatives(int n)</div><div class="ttdoc">Set the number of derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00218">Value.h:218</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">PLMD::vesselbase::VesselOptions</a></div><div class="ttdoc">This class is used to pass the input to Vessels. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00053">Vessel.h:53</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_function_vessel_html_a4ee690d288c52b5da940bef508145a23"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_function_vessel.html#a4ee690d288c52b5da940bef508145a23">PLMD::vesselbase::FunctionVessel::nderivatives</a></div><div class="ttdeci">unsigned nderivatives</div><div class="ttdoc">The number of derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_function_vessel_8h_source.html#l00044">FunctionVessel.h:44</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a0756f10f12a549c19f52f54e219b1cfe"><div class="ttname"><a href="tools_2_matrix_8h.html#a0756f10f12a549c19f52f54e219b1cfe">da</a></div><div class="ttdeci">void int double * da</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00047">Matrix.h:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_ac10df9db81c4b5e341d133a58e4c84c4"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#ac10df9db81c4b5e341d133a58e4c84c4">PLMD::ActionWithValue::addComponentWithDerivatives</a></div><div class="ttdeci">void addComponentWithDerivatives(const std::string &amp;name)</div><div class="ttdoc">Add a value with a name like label.name that has derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00122">ActionWithValue.cpp:122</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a95602d9f365abac60b0165dc63bf778b"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a95602d9f365abac60b0165dc63bf778b">PLMD::ActionWithValue::getNumberOfComponents</a></div><div class="ttdeci">int getNumberOfComponents() const </div><div class="ttdoc">Returns the number of values defined. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00186">ActionWithValue.h:186</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">PLMD::vesselbase::Vessel</a></div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00075">Vessel.h:75</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_abbbe73d1c8be35369721e93ad9999266"><div class="ttname"><a href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a></div><div class="ttdeci">void const char const char int double * a</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html_af45029b57fadfc01b38fe129ef1ea817"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html#af45029b57fadfc01b38fe129ef1ea817">PLMD::Value::addDerivative</a></div><div class="ttdeci">void addDerivative(unsigned i, double d)</div><div class="ttdoc">Add some derivative to the ith component of the derivatives array. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00224">Value.h:224</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html_acb259069c981032339f4533f7e595f19"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#acb259069c981032339f4533f7e595f19">PLMD::Keywords::size</a></div><div class="ttdeci">unsigned size() const </div><div class="ttdoc">Return the number of defined keywords. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00220">Keywords.cpp:220</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a2ee21116a09e152e7a933794a8907664"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a2ee21116a09e152e7a933794a8907664">PLMD::vesselbase::Vessel::getAction</a></div><div class="ttdeci">ActionWithVessel * getAction()</div><div class="ttdoc">Return a pointer to the action we are working in. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00236">Vessel.h:236</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

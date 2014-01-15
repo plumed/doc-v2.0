@@ -1,0 +1,254 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/PDB.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">PDB.h</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_p_d_b_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_tools_PDB_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_tools_PDB_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_atom_number_8h.html">AtomNumber.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_vector_8h.html">Vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_log_8h.html">Log.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/// Minimalistic pdb parser.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/// Contain positions, atomic indexes, occupancy and beta.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/// We should also add other info (e.g. residue name etc).</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html">   38</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_p_d_b.html">PDB</a>{</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#aa9bfd151c2c11bf118c8de2b14c92cdb">   39</a></span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#aba8bdb40daaec348dde559927ca2711c">atomsymb</a>, <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#aa9bfd151c2c11bf118c8de2b14c92cdb">chain</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#a3dd1ae51af0d59e567d1867e14766f16">   40</a></span>&#160;  std::vector&lt;unsigned&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a3dd1ae51af0d59e567d1867e14766f16">residue</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#a9e8c7d193f917c4ee0f9a4f70ec6aadf">   41</a></span>&#160;  std::vector&lt;Vector&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a9e8c7d193f917c4ee0f9a4f70ec6aadf">positions</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#a22644fee80ff349b27f1696cbfc8cd31">   42</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a22644fee80ff349b27f1696cbfc8cd31">occupancy</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#aa2c83ac8be688169ed63b59d2d5c681a">   43</a></span>&#160;  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#aa2c83ac8be688169ed63b59d2d5c681a">beta</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#aee57c74aee9200e604b10f7250167611">   44</a></span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#aee57c74aee9200e604b10f7250167611">remark</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#ad5add9a9fa755d84a0fb91a773ee92ba">   45</a></span>&#160;  std::vector&lt;AtomNumber&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#ad5add9a9fa755d84a0fb91a773ee92ba">numbers</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#a2555c1becf9da5ae68842b9b9fa727f1">   46</a></span>&#160;  std::map&lt;AtomNumber,unsigned&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a2555c1becf9da5ae68842b9b9fa727f1">number2index</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_p_d_b.html#a341c5768d4394f13d596271c0942b7d1">   47</a></span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a341c5768d4394f13d596271c0942b7d1">residuenames</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/// Read the pdb from a file, scaling positions by a factor scale</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#ac5a722ba63319312391ad41f9f02bb41">read</a>(<span class="keyword">const</span> std::string&amp;file,<span class="keywordtype">bool</span> naturalUnits,<span class="keywordtype">double</span> scale);<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// Read from a file pointer</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#ab48c2868a2019402bac32c35a24c385c">readFromFilepointer</a>(FILE *fp,<span class="keywordtype">bool</span> naturalUnits,<span class="keywordtype">double</span> scale);<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// Access to the position array</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> std::vector&lt;Vector&gt;     &amp; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a3cf8eebf51a996c9709935f67c45722f">getPositions</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// Access to the occupancy array</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> std::vector&lt;double&gt;     &amp; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#ab8f81ad9a0c5ba9d71726bf66d4e6968">getOccupancy</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// Access to the beta array</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> std::vector&lt;double&gt;     &amp; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a3161f43ea19c3dc6a510dcd6dea3013b">getBeta</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// This is used to set the keyword ARG - this is so we</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/// we can use a1.* in the input for reference configurations </span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a7cc7a1c5b0386cbfc59ca19d03a17964">setArgKeyword</a>( <span class="keyword">const</span> std::string&amp; new_args );<span class="comment"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/// Access to the lines of REMARK </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> std::vector&lt;std::string&gt;     &amp; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#ad4f59b09dc5ee2633ba8884895732aae">getRemark</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/// Access to the indexes</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> std::vector&lt;AtomNumber&gt; &amp; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a90553bb50dfe6b31a6c57d9f5a87ecfb">getAtomNumbers</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/// Returns the number of atoms</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span>                        <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a3dfe1959ce888788e0d84c80660e010b">size</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/// Get the names of all the chains in the pdb file</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#aa993a41f979d97267d1294050da6a43c">getChainNames</a>( std::vector&lt;std::string&gt;&amp; chains ) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/// Get the residues in each of the chains</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a80e8abf0c1dde65c58011ef2dee0d876">getResidueRange</a>( <span class="keyword">const</span> std::string&amp; chainname, <span class="keywordtype">unsigned</span>&amp; res_start, <span class="keywordtype">unsigned</span>&amp; res_end, std::string&amp; errmsg ) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/// Get the atoms in each of the chains </span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a658b71db1aceb9499ab2bee0e3051ff4">getAtomRange</a>( <span class="keyword">const</span> std::string&amp; chainname, <a class="code" href="class_p_l_m_d_1_1_atom_number.html">AtomNumber</a>&amp; a_start, <a class="code" href="class_p_l_m_d_1_1_atom_number.html">AtomNumber</a>&amp; a_end, std::string&amp; errmsg ) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/// Get the atoms in the backbone of a particular residue</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#affb48683dad7882972939057708baf97">getBackbone</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; resnumber, <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; backnames, std::vector&lt;AtomNumber&gt;&amp; backnumbers ) <span class="keyword">const</span> ;  <span class="comment"></span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">/// Get the chain ID that a particular residue is a part of</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#abe4027ae9cb6286e418bcd3777fc6f30">getChainID</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; resnumber) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/// This allows you to give atoms a new name - this is used to rename the HB1 atoms in GLY residues CB so that alpharmsd works</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#adcf7576e201eb6c91f63d6859e299f2c">renameAtoms</a>( <span class="keyword">const</span> std::string&amp; old_name, <span class="keyword">const</span> std::string&amp; new_name );<span class="comment"></span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">///use the log to dump information  </span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"></span>  <span class="keyword">friend</span> <a class="code" href="class_p_l_m_d_1_1_log.html">Log</a>&amp; <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a3f0caf9b8f907e7e08f8e94d77586441">operator&lt;&lt;</a>(<a class="code" href="class_p_l_m_d_1_1_log.html">Log</a>&amp; ostr, <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html">PDB</a>&amp; pdb);<span class="comment"></span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/// return the name of a specific atom</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#ae84971b75bfadc998eb99e1c384d8a81">getAtomName</a>(<a class="code" href="class_p_l_m_d_1_1_atom_number.html">AtomNumber</a> <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">/// return the residue number for a specific atom</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a81dc14b07085c247f20f52943ca41206">getResidueNumber</a>(<a class="code" href="class_p_l_m_d_1_1_atom_number.html">AtomNumber</a> <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/// return the residue name for a specific atom</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1_p_d_b.html#a28353337fb44b38b79a470bd08477131">getResidueName</a>(<a class="code" href="class_p_l_m_d_1_1_atom_number.html">AtomNumber</a> <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_atom_number_html"><div class="ttname"><a href="class_p_l_m_d_1_1_atom_number.html">PLMD::AtomNumber</a></div><div class="ttdoc">Simple class to store the index of an atom. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_atom_number_8h_source.html#l00039">AtomNumber.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_aba8bdb40daaec348dde559927ca2711c"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#aba8bdb40daaec348dde559927ca2711c">PLMD::PDB::atomsymb</a></div><div class="ttdeci">std::vector&lt; std::string &gt; atomsymb</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00039">PDB.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a341c5768d4394f13d596271c0942b7d1"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a341c5768d4394f13d596271c0942b7d1">PLMD::PDB::residuenames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; residuenames</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00047">PDB.h:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_ac5a722ba63319312391ad41f9f02bb41"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#ac5a722ba63319312391ad41f9f02bb41">PLMD::PDB::read</a></div><div class="ttdeci">bool read(const std::string &amp;file, bool naturalUnits, double scale)</div><div class="ttdoc">Read the pdb from a file, scaling positions by a factor scale. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00144">PDB.cpp:144</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a81dc14b07085c247f20f52943ca41206"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a81dc14b07085c247f20f52943ca41206">PLMD::PDB::getResidueNumber</a></div><div class="ttdeci">unsigned getResidueNumber(AtomNumber a) const </div><div class="ttdoc">return the residue number for a specific atom </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00058">PDB.cpp:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a658b71db1aceb9499ab2bee0e3051ff4"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a658b71db1aceb9499ab2bee0e3051ff4">PLMD::PDB::getAtomRange</a></div><div class="ttdeci">void getAtomRange(const std::string &amp;chainname, AtomNumber &amp;a_start, AtomNumber &amp;a_end, std::string &amp;errmsg) const </div><div class="ttdoc">Get the atoms in each of the chains. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00177">PDB.cpp:177</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a3f0caf9b8f907e7e08f8e94d77586441"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a3f0caf9b8f907e7e08f8e94d77586441">PLMD::PDB::operator&lt;&lt;</a></div><div class="ttdeci">friend Log &amp; operator&lt;&lt;(Log &amp;ostr, const PDB &amp;pdb)</div><div class="ttdoc">use the log to dump information </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00225">PDB.cpp:225</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_ae84971b75bfadc998eb99e1c384d8a81"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#ae84971b75bfadc998eb99e1c384d8a81">PLMD::PDB::getAtomName</a></div><div class="ttdeci">std::string getAtomName(AtomNumber a) const </div><div class="ttdoc">return the name of a specific atom </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00051">PDB.cpp:51</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_aa993a41f979d97267d1294050da6a43c"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#aa993a41f979d97267d1294050da6a43c">PLMD::PDB::getChainNames</a></div><div class="ttdeci">void getChainNames(std::vector&lt; std::string &gt; &amp;chains) const </div><div class="ttdoc">Get the names of all the chains in the pdb file. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00152">PDB.cpp:152</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_log_html"><div class="ttname"><a href="class_p_l_m_d_1_1_log.html">PLMD::Log</a></div><div class="ttdoc">Class containing the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_log_8h_source.html#l00037">Log.h:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_adcf7576e201eb6c91f63d6859e299f2c"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#adcf7576e201eb6c91f63d6859e299f2c">PLMD::PDB::renameAtoms</a></div><div class="ttdeci">void renameAtoms(const std::string &amp;old_name, const std::string &amp;new_name)</div><div class="ttdoc">This allows you to give atoms a new name - this is used to rename the HB1 atoms in GLY residues CB so...</div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00219">PDB.cpp:219</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_aa2c83ac8be688169ed63b59d2d5c681a"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#aa2c83ac8be688169ed63b59d2d5c681a">PLMD::PDB::beta</a></div><div class="ttdeci">std::vector&lt; double &gt; beta</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00043">PDB.h:43</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a3cf8eebf51a996c9709935f67c45722f"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a3cf8eebf51a996c9709935f67c45722f">PLMD::PDB::getPositions</a></div><div class="ttdeci">const std::vector&lt; Vector &gt; &amp; getPositions() const </div><div class="ttdoc">Access to the position array. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00031">PDB.cpp:31</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a7cc7a1c5b0386cbfc59ca19d03a17964"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a7cc7a1c5b0386cbfc59ca19d03a17964">PLMD::PDB::setArgKeyword</a></div><div class="ttdeci">void setArgKeyword(const std::string &amp;new_args)</div><div class="ttdoc">This is used to set the keyword ARG - this is so we we can use a1. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00134">PDB.cpp:134</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a3161f43ea19c3dc6a510dcd6dea3013b"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a3161f43ea19c3dc6a510dcd6dea3013b">PLMD::PDB::getBeta</a></div><div class="ttdeci">const std::vector&lt; double &gt; &amp; getBeta() const </div><div class="ttdoc">Access to the beta array. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00039">PDB.cpp:39</a></div></div>
+<div class="ttc" id="tools_2_log_8h_html"><div class="ttname"><a href="tools_2_log_8h.html">Log.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_ab8f81ad9a0c5ba9d71726bf66d4e6968"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#ab8f81ad9a0c5ba9d71726bf66d4e6968">PLMD::PDB::getOccupancy</a></div><div class="ttdeci">const std::vector&lt; double &gt; &amp; getOccupancy() const </div><div class="ttdoc">Access to the occupancy array. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00035">PDB.cpp:35</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a9e8c7d193f917c4ee0f9a4f70ec6aadf"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a9e8c7d193f917c4ee0f9a4f70ec6aadf">PLMD::PDB::positions</a></div><div class="ttdeci">std::vector&lt; Vector &gt; positions</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00041">PDB.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a28353337fb44b38b79a470bd08477131"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a28353337fb44b38b79a470bd08477131">PLMD::PDB::getResidueName</a></div><div class="ttdeci">std::string getResidueName(AtomNumber a) const </div><div class="ttdoc">return the residue name for a specific atom </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00065">PDB.cpp:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a22644fee80ff349b27f1696cbfc8cd31"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a22644fee80ff349b27f1696cbfc8cd31">PLMD::PDB::occupancy</a></div><div class="ttdeci">std::vector&lt; double &gt; occupancy</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00042">PDB.h:42</a></div></div>
+<div class="ttc" id="tools_2_vector_8h_html"><div class="ttname"><a href="tools_2_vector_8h.html">Vector.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html">PLMD::PDB</a></div><div class="ttdoc">Minimalistic pdb parser. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00038">PDB.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_aa9bfd151c2c11bf118c8de2b14c92cdb"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#aa9bfd151c2c11bf118c8de2b14c92cdb">PLMD::PDB::chain</a></div><div class="ttdeci">std::vector&lt; std::string &gt; chain</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00039">PDB.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a2555c1becf9da5ae68842b9b9fa727f1"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a2555c1becf9da5ae68842b9b9fa727f1">PLMD::PDB::number2index</a></div><div class="ttdeci">std::map&lt; AtomNumber, unsigned &gt; number2index</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00046">PDB.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_ad4f59b09dc5ee2633ba8884895732aae"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#ad4f59b09dc5ee2633ba8884895732aae">PLMD::PDB::getRemark</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getRemark() const </div><div class="ttdoc">Access to the lines of REMARK. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00043">PDB.cpp:43</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a3dd1ae51af0d59e567d1867e14766f16"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a3dd1ae51af0d59e567d1867e14766f16">PLMD::PDB::residue</a></div><div class="ttdeci">std::vector&lt; unsigned &gt; residue</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00040">PDB.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_affb48683dad7882972939057708baf97"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#affb48683dad7882972939057708baf97">PLMD::PDB::getBackbone</a></div><div class="ttdeci">bool getBackbone(const unsigned &amp;resnumber, const std::vector&lt; std::string &gt; &amp;backnames, std::vector&lt; AtomNumber &gt; &amp;backnumbers) const </div><div class="ttdoc">Get the atoms in the backbone of a particular residue. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00194">PDB.cpp:194</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_ab48c2868a2019402bac32c35a24c385c"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#ab48c2868a2019402bac32c35a24c385c">PLMD::PDB::readFromFilepointer</a></div><div class="ttdeci">bool readFromFilepointer(FILE *fp, bool naturalUnits, double scale)</div><div class="ttdoc">Read from a file pointer. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00076">PDB.cpp:76</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a3dfe1959ce888788e0d84c80660e010b"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a3dfe1959ce888788e0d84c80660e010b">PLMD::PDB::size</a></div><div class="ttdeci">unsigned size() const </div><div class="ttdoc">Returns the number of atoms. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00072">PDB.cpp:72</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a90553bb50dfe6b31a6c57d9f5a87ecfb"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a90553bb50dfe6b31a6c57d9f5a87ecfb">PLMD::PDB::getAtomNumbers</a></div><div class="ttdeci">const std::vector&lt; AtomNumber &gt; &amp; getAtomNumbers() const </div><div class="ttdoc">Access to the indexes. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00047">PDB.cpp:47</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_abe4027ae9cb6286e418bcd3777fc6f30"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#abe4027ae9cb6286e418bcd3777fc6f30">PLMD::PDB::getChainID</a></div><div class="ttdeci">std::string getChainID(const unsigned &amp;resnumber) const </div><div class="ttdoc">Get the chain ID that a particular residue is a part of. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00212">PDB.cpp:212</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_abbbe73d1c8be35369721e93ad9999266"><div class="ttname"><a href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a></div><div class="ttdeci">void const char const char int double * a</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_a80e8abf0c1dde65c58011ef2dee0d876"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#a80e8abf0c1dde65c58011ef2dee0d876">PLMD::PDB::getResidueRange</a></div><div class="ttdeci">void getResidueRange(const std::string &amp;chainname, unsigned &amp;res_start, unsigned &amp;res_end, std::string &amp;errmsg) const </div><div class="ttdoc">Get the residues in each of the chains. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_8cpp_source.html#l00160">PDB.cpp:160</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_ad5add9a9fa755d84a0fb91a773ee92ba"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#ad5add9a9fa755d84a0fb91a773ee92ba">PLMD::PDB::numbers</a></div><div class="ttdeci">std::vector&lt; AtomNumber &gt; numbers</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00045">PDB.h:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html_aee57c74aee9200e604b10f7250167611"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html#aee57c74aee9200e604b10f7250167611">PLMD::PDB::remark</a></div><div class="ttdeci">std::vector&lt; std::string &gt; remark</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00044">PDB.h:44</a></div></div>
+<div class="ttc" id="tools_2_atom_number_8h_html"><div class="ttname"><a href="tools_2_atom_number_8h.html">AtomNumber.h</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

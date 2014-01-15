@@ -1,0 +1,139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: Bias</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Bias </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>Once you have calculated a number of collective variables PLUMED allows you to run a number of enhanced sampling algorithms. The list of available enhanced sampling algorithms contains:</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><a class="el" href="_a_b_m_d.html">ABMD</a>  </td><td>Adds a ratchet-and-pawl like restraint on one or more variables.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_e_x_t_e_r_n_a_l.html">EXTERNAL</a>  </td><td>Calculate a restraint that is defined on a grid that is read during start up   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_l_o_w_e_r__w_a_l_l_s.html">LOWER_WALLS</a>  </td><td>The LOWER_WALLS and UPPER_WALLS keywords define a wall for the value of one or more collective variables, which limits the region of the phase space accessible during the simulation.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_m_e_t_a_d.html">METAD</a>  </td><td>Used to performed MetaDynamics on one or more collective variables.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_m_o_v_i_n_g_r_e_s_t_r_a_i_n_t.html">MOVINGRESTRAINT</a>  </td><td>Add a time-dependent, harmonic restraint on one or more variables.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_r_e_s_t_r_a_i_n_t.html">RESTRAINT</a>  </td><td>Adds harmonic and/or linear restraints on one or more variables.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_u_p_p_e_r__w_a_l_l_s.html">UPPER_WALLS</a>  </td><td>The LOWER_WALLS and UPPER_WALLS keywords define a wall for the value of one or more collective variables, which limits the region of the phase space accessible during the simulation.   </td></tr>
+<tr>
+<td width="5%"><a class="el" href="_b_i_a_s_v_a_l_u_e.html">BIASVALUE</a>  </td><td>Takes the value of one variable and use it as a bias   </td></tr>
+</table>
+<p>Methods, such as <a class="el" href="_m_e_t_a_d.html">METAD</a>, that introduce a history dependent bias can be restarted using the <a class="el" href="_r_e_s_t_a_r_t.html">RESTART</a> keyword</p>
+<p>You can also use PLUMED in conjunction with VMD's interactive MD module by taking advantage of the <a class="el" href="_i_m_d.html">IMD</a> action. </p>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

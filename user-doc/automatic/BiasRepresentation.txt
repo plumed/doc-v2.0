@@ -1,0 +1,7 @@
+/**
+\page BiasRepresentation BiasRepresentation
+An internal tool in plumed that is used to represent a bias
+An internal tool in plumed that is used to represent a bias
+</td> </tr>
+
+*/

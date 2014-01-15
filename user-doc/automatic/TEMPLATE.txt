@@ -1,0 +1,59 @@
+/**
+\page TEMPLATE TEMPLATE
+This file provides a template for if you want to introduce a new CV.
+
+<!-----You should add a description of your CV here---->
+
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TEMPLATE_INPUT </b></td>
+<td> the keyword with which you specify what atoms to use should be added like this </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TEMPLATE_COMPULSORY </b></td>
+<td> all compulsory keywords should be added like this with a description here </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> TEMPLATE_DEFAULT_OFF_FLAG </b></td>
+<td> ( default=off ) flags that are by default not performed should be specified like this </td>
+</tr>
+<tr>
+<td width=15%> <b> TEMPLATE_DEFAULT_ON_FLAG </b></td>
+<td> ( default=on ) flags that are by default performed should be specified like this </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TEMPLATE_OPTIONAL </b></td>
+<td> all optional keywords that have input should be added like a description here </td>
+</tr>
+
+</table>
+
+\par Examples
+
+<!---You should put an example of how to use your CV here--->
+
+*/

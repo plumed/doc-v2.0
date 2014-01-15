@@ -1,0 +1,12 @@
+<tr> <td width=5%> \subpage  CENTER </td> <td>
+Calculate the center for a group of atoms, with arbitraty weights.
+</td> </tr>
+<tr> <td width=5%> \subpage  COM </td> <td>
+Calculate the center of mass for a group of atoms.
+</td> </tr>
+<tr> <td width=5%> \subpage  GHOST </td> <td>
+Calculate the absolute position of a ghost atom with fixed coordinates
+in the local reference frame formed by three atoms. 
+The computed ghost atom is stored as a virtual atom that can be accessed in
+an atom list through the the label for the GHOST action that creates it.
+</td> </tr>

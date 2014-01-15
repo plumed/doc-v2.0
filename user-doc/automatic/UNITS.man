@@ -1,0 +1,26 @@
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NATURAL </b></td>
+<td> ( default=off ) use natural units </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> LENGTH </b></td>
+<td> the units of lengths.  Either specify a conversion factor from the default, nm, or A (for angstroms) or um </td>
+</tr>
+<tr>
+<td width=15%> <b> ENERGY </b></td>
+<td> the units of energy.  Either specify a conversion factor from the default, kj/mol, or use j/mol or kcal/mol </td>
+</tr>
+<tr>
+<td width=15%> <b> TIME </b></td>
+<td> the units of time.  Either specify a conversion factor from the default, ps, or use ns or fs </td>
+</tr>
+
+</table>
+

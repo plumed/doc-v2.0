@@ -1,0 +1,2 @@
+<tr> <td>  @subpage mindist </td> <td>  This tutorial explains how to calculate the minimum distance between groups of atoms and serves as an introduction to MultiColvars </td> </tr>
+<tr> <td>  @subpage moving </td> <td>  This tutorial explains how plumed 1 input files can be translated into the new plumed 2 syntax. </td> </tr>

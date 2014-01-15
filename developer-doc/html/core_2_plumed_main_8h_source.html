@@ -1,0 +1,532 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: core/PlumedMain.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">PlumedMain.h</div>  </div>
+</div>
+<div class="contents">
+<a href="core_2_plumed_main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_core_PlumedMain_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_core_PlumedMain_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2_with_cmd_8h.html">WithCmd.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// !!!!!!!!!!!!!!!!!!!!!!    DANGER   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// THE FOLLOWING ARE DEFINITIONS WHICH ARE NECESSARY FOR DYNAMIC LOADING OF THE PLUMED KERNEL:</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// This section should be consistent with the Plumed.h file.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Since the Plumed.h file may be included in host MD codes, **NEVER** MODIFY THE CODE DOWN HERE</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/* Generic function pointer */</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="core_2_plumed_main_8h.html#abc532a080009cec5cb6df86362566d4e">   38</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="core_2_plumed_main_8h.html#abc532a080009cec5cb6df86362566d4e">plumed_function_pointer</a>)(void);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/* Holder for function pointer */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structplumed__function__holder.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structplumed__function__holder.html#a96c1517ea864c3e6414c509830ee81cf">   42</a></span>&#160;  <a class="code" href="core_2_plumed_main_8h.html#abc532a080009cec5cb6df86362566d4e">plumed_function_pointer</a> <a class="code" href="structplumed__function__holder.html#a96c1517ea864c3e6414c509830ee81cf">p</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <a class="code" href="structplumed__function__holder.html">plumed_function_holder</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// END OF DANGER</span><span class="comment"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">class </span>ActionAtomistic;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">class </span>ActionPilot;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">class </span>Log;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">class </span>Atoms;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span>ActionSet;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">class </span>DLLoader;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">class </span>Communicator;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">class </span>Stopwatch;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">class </span>Citations;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">class </span>ExchangePatterns;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">class </span>FileBase;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">Main plumed object.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">In MD engines this object is not manipulated directly but it is wrapped in</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">plumed or PLMD::Plumed objects. Its main method is cmd(),</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">which defines completely the external plumed interface.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">It does not contain any static data.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html">   71</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_plumed_main.html">PlumedMain</a>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_with_cmd.html">WithCmd</a></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/// Communicator for plumed.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">/// Includes all the processors used by plumed.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a1994fd167a4706ff873a27d0cae962ee">   77</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_communicator.html">Communicator</a>&amp;<a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a1994fd167a4706ff873a27d0cae962ee">comm</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a89af87c1dd392ae3f70c7739b2b9266f">   78</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_communicator.html">Communicator</a>&amp;<a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a89af87c1dd392ae3f70c7739b2b9266f">multi_sim_comm</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a3bfd9b07cea975e1b9053889bff0510d">   81</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_d_l_loader.html">DLLoader</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a3bfd9b07cea975e1b9053889bff0510d">dlloader</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a28e112b37a24d5ef2379bed08aa35e46">   83</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_with_cmd.html">WithCmd</a>* <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a28e112b37a24d5ef2379bed08aa35e46">cltool</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a58dc96ec24de17bb5cb9be42f290f533">   84</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_stopwatch.html">Stopwatch</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a58dc96ec24de17bb5cb9be42f290f533">stopwatch</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a552e1c492f7c443d30885c9770961a30">   85</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_with_cmd.html">WithCmd</a>* <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a552e1c492f7c443d30885c9770961a30">grex</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/// Flag to avoid double initialization</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a55a37c8ff05e85ca3f198687d6571afa">   87</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span>  <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a55a37c8ff05e85ca3f198687d6571afa">initialized</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/// Name of MD engine</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#aa3c09f56d57257ab2115c9b658269553">   89</a></span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#aa3c09f56d57257ab2115c9b658269553">MDEngine</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">/// Log stream</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#ae8a60cb86738d9b423f79dcb4ab2e36a">   91</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_log.html">Log</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ae8a60cb86738d9b423f79dcb4ab2e36a">log</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">/// tools/Citations.holder</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#ab8241a5ddb602c0823808cba242712f8">   93</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_citations.html">Citations</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ab8241a5ddb602c0823808cba242712f8">citations</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/// Present step number.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a87fe5ceb03917ba5d1c5d96db1ead644">   96</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a87fe5ceb03917ba5d1c5d96db1ead644">step</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/// Condition for plumed to be active.</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/// At every step, PlumedMain is checking if there are Action&#39;s requiring some work.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/// If at least one Action requires some work, this variable is set to true.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a9a95b9abb93935c7ec614566f75abec4">  101</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a9a95b9abb93935c7ec614566f75abec4">active</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/// Name of the input file</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a1227cade813f9c101e5e67cb8f53b812">  104</a></span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a1227cade813f9c101e5e67cb8f53b812">plumedDat</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">/// Object containing information about atoms (such as positions,...).</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a73a3e8f6536c02e71060aab758072a80">  107</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_atoms.html">Atoms</a>&amp;    <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a73a3e8f6536c02e71060aab758072a80">atoms</a>;           <span class="comment">// atomic coordinates</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/// Set of actions found in plumed.dat file</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a3ae9d0b73289f666fe3f9a641c3df346">  110</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_action_set.html">ActionSet</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a3ae9d0b73289f666fe3f9a641c3df346">actionSet</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/// Set of Pilot actions.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">/// These are the action the, if they are Pilot::onStep(), can trigger execution</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a11df540c3f39813000804fafb833dd5b">  114</a></span>&#160;<span class="comment"></span>  std::vector&lt;ActionPilot*&gt; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a11df540c3f39813000804fafb833dd5b">pilots</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">/// Suffix string for file opening, useful for multiple simulations in the same directory</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a942791283ecb38a6ebbbaf6fa7fd1712">  117</a></span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a942791283ecb38a6ebbbaf6fa7fd1712">suffix</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">/// The total bias (=total energy of the restraints)</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#ad9bcd43093a2bc0c0fa3ba16edb64c78">  120</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ad9bcd43093a2bc0c0fa3ba16edb64c78">bias</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">/// Class of possible exchange patterns, used for BIASEXCHANGE but also for future parallel tempering</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a6ac45de72a5891379fb993cac7178b62">  123</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_exchange_patterns.html">ExchangePatterns</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a6ac45de72a5891379fb993cac7178b62">exchangePatterns</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">/// Set to true if on an exchange step</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#ad024c0428d69511a88206673b591b58f">  126</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ad024c0428d69511a88206673b591b58f">exchangeStep</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">/// Flag for restart</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a30efd73a9f0679df3ee035720952bc90">  129</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a30efd73a9f0679df3ee035720952bc90">restart</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a33c5d94b8d2ec486995c46f287a609f5">  131</a></span>&#160;  std::set&lt;FileBase*&gt; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a33c5d94b8d2ec486995c46f287a609f5">files</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a24ca413bb2e8f7f85c2e77054790464a">  132</a></span>&#160;  <span class="keyword">typedef</span> std::set&lt;FileBase*&gt;::iterator <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a24ca413bb2e8f7f85c2e77054790464a">files_iterator</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">/// Stuff to make plumed stop the MD code cleanly</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a241b500a2e8808638f784b09e2a2bfb2">  135</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">int</span>* <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a241b500a2e8808638f784b09e2a2bfb2">stopFlag</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#afd9303d165d1d82ae2a6909bbc62ac7a">  136</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#afd9303d165d1d82ae2a6909bbc62ac7a">stopNow</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">/// Flag to switch off virial calculation (for debug and MD codes with no barostat)</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#af1d4daf25fc5d0cf47d58d9d0aab019d">  140</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#af1d4daf25fc5d0cf47d58d9d0aab019d">novirial</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">/// Flag to switch on detailed timers</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a32c8ac72b557f05688a7c1ad7cd0fcdd">  143</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a32c8ac72b557f05688a7c1ad7cd0fcdd">detailedTimers</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">/// Add a citation, returning a string containing the reference number, something like &quot;[10]&quot;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a581a7d5133c1156bb60d8c2de4fa229c">cite</a>(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a11cf846f00d74d957485f46bb1f240e2">PlumedMain</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">// this is to access to WithCmd versions of cmd (allowing overloading of a virtual method)</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keyword">using</span> <a class="code" href="class_p_l_m_d_1_1_with_cmd.html#ab0279dbfd9ea1d99de3a69406fd8b89f">WithCmd::cmd</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"> cmd method, accessible with standard Plumed.h interface.</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment"> \param key The name of the command to be executed.</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"> \param val The argument of the command to be executed.</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment"> It is called as plumed_cmd() or as PLMD::Plumed::cmd()</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"> It is the interpreter for plumed commands. It basically contains the definition of the plumed interface.</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"> If you want to add a new functionality to the interface between plumed</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"> and an MD engine, this is the right place</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"> Notice that this interface should always keep retro-compatibility</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a689ffac637dfb62aa0aff43a907cf6dc">cmd</a>(<span class="keyword">const</span> std::string&amp;key,<span class="keywordtype">void</span>*val=NULL);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ab6bbd832f7af9495acc28eefec2f44ba">~PlumedMain</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">  Read an input file.</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">  \param str name of the file</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a2e2e2642fa053facbd3cda6c9f181f1f">readInputFile</a>(std::string str);<span class="comment"></span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">  Read an input string.</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">  \param str name of the string</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a364194626aeda4ed3d944f5a64f8759a">readInputWords</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;  str);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">  Initialize the object.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">  Should be called once.</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a2a1ce2bb523f1d96d9c32b04726a394f">init</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">  Prepare the calculation.</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">  Here it is checked which are the active Actions and communication of the relevant atoms is initiated.</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">  Shortcut for prepareDependencies() + shareData()</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a78fef97c32675cacfb08bde46d2bde25">prepareCalc</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">  Prepare the list of active Actions and needed atoms.</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">  Scan the Actions to see which are active and which are not, so as to prepare a list of</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">  the atoms needed at this step.</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a0b0f058aaaa97162fa0c780d24fc89ed">prepareDependencies</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">  Share the needed atoms.</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">  In asynchronous implementations, this method sends the required atoms to all the plumed processes,</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">  without waiting for the communication to complete.</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ac328b774e782a296c38fa263b541c74c">shareData</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">  Perform the calculation.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">  Shortcut for waitData() + justCalculate() + justApply()</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a325fd9d510bff10b89ebe55e61267d7d">performCalc</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">  Complete PLUMED calculation.</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">  Shortcut for prepareCalc() + performCalc()</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ab6d77b07b010b8fff0ac690f5d569268">calc</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">  Scatters the needed atoms.</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">  In asynchronous implementations, this method waits for the communications started in shareData()</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">  to be completed. Otherwise, just send around needed atoms.</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a27f82df66683c192eb52bc3727e8e598">waitData</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">  Perform the forward loop on active actions.</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a5a167cb5e8f914aa6dfa03453e81e488">justCalculate</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">  Perform the backward loop on active actions.</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">  Needed to apply the forces back.</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ac950de7d11b024431ef33ee816b9dfe9">justApply</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">  If there are calculations that need to be done at the very end of the calculations this</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">  makes sures they are done</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a056130adae811df872177fe6de39b46b">runJobsAtEndOfCalculation</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">/// Reference to atoms object</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_atoms.html">Atoms</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a1958af6bdeb1d98942b0715d7b8c57a6">getAtoms</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">/// Reference to the list of Action&#39;s</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_set.html">ActionSet</a> &amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a9f293f88cbb75ca8cd8bf962e31a7348">getActionSet</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">/// Referenge to the log stream</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_log.html">Log</a> &amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a779fb8f9e5bd8f5923f164fe5dccfbc4">getLog</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">/// Return the number of the step</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a0958c3e4e6bd7044ea81f9fa2ea24090">  235</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a0958c3e4e6bd7044ea81f9fa2ea24090">getStep</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a87fe5ceb03917ba5d1c5d96db1ead644">step</a>;}<span class="comment"></span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">/// Stop the run</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ac85cb9c8bea7ea775cea4793246390d5">exit</a>(<span class="keywordtype">int</span> c=0);<span class="comment"></span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">/// Load a shared library</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a47f66032610a9a28a12eea1a8df63c04">load</a>(<span class="keyword">const</span> std::string&amp;);<span class="comment"></span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">/// Get the suffix string</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> std::string &amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#aaaa017f9076eb2c11b281771d5aa1ec3">getSuffix</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">/// Set the suffix string</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#abb75791c9016cc766d1d3877b5f06832">setSuffix</a>(<span class="keyword">const</span> std::string&amp;);<span class="comment"></span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">/// get the value of the bias</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a932fd6402b08b526a3ab0dd850321a54">getBias</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">/// Opens a file.</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment">/// Similar to plain fopen, but, if it finds an error in opening the file, it also tries with</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment">/// path+suffix.  This trick is useful for multiple replica simulations.</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment"></span>  FILE* <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#afa473a2eaba3aefaec1573ba52928578">fopen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keyword">const</span> <span class="keywordtype">char</span> *mode);<span class="comment"></span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">/// Closes a file opened with PlumedMain::fopen()</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment"></span>  <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#aa525970c27a462e2ca6d4a95ff505f46">fclose</a>(FILE*fp);<span class="comment"></span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">/// Insert a file</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#af8ca0da0566d2328483f1b71e4f37729">insertFile</a>(<a class="code" href="class_p_l_m_d_1_1_file_base.html">FileBase</a>&amp;);<span class="comment"></span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">/// Erase a file</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a1f13f01d8a57d7d7540448120fa5b3db">eraseFile</a>(<a class="code" href="class_p_l_m_d_1_1_file_base.html">FileBase</a>&amp;);<span class="comment"></span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">/// Flush all files</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a4da81a378216f0739fe50bf620d72655">fflush</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">/// Check if restarting</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a9b3e61f646e270670e30943afe035d26">getRestart</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">/// Set restart flag</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#af7a43cbca2156323347c27e27712384e">  261</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#af7a43cbca2156323347c27e27712384e">setRestart</a>(<span class="keywordtype">bool</span> f){<a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a30efd73a9f0679df3ee035720952bc90">restart</a>=f;}<span class="comment"></span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">/// Set exchangeStep flag</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a6e4e90cc531341156329e6f2da6b92cf">setExchangeStep</a>(<span class="keywordtype">bool</span> f);<span class="comment"></span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">/// Get exchangeStep flag</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#acf1d265971fdefaf20fb0c1e5279626a">getExchangeStep</a>()<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">/// Stop the calculation cleanly (both the MD code and plumed)</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#acc9786e5a504114771290ceb089e0c52">stop</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">/// Enforce active flag.</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">/// This is a (bit dirty) hack to solve a bug. When there is no active ActionPilot,</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">/// several shortcuts are used. However, these shortcuts can block GREX module.</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">/// This function allows to enforce active plumed when doing exchanges,</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">/// thus fixing the bug.</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a98c694ded216d25a9f7a263564d5d14b">resetActive</a>(<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a9a95b9abb93935c7ec614566f75abec4">active</a>);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">/// Access to exchange patterns</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a97eb4301dbaf49aa9e9ea8b1f9474ffc">  276</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_exchange_patterns.html">ExchangePatterns</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a97eb4301dbaf49aa9e9ea8b1f9474ffc">getExchangePatterns</a>(){<span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a6ac45de72a5891379fb993cac7178b62">exchangePatterns</a>;}</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;};</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">/////</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment"></span><span class="comment">// FAST INLINE METHODS:</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a9f293f88cbb75ca8cd8bf962e31a7348">  283</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_set.html">ActionSet</a> &amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a9f293f88cbb75ca8cd8bf962e31a7348">PlumedMain::getActionSet</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a3ae9d0b73289f666fe3f9a641c3df346">actionSet</a>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a1958af6bdeb1d98942b0715d7b8c57a6">  288</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_atoms.html">Atoms</a>&amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a1958af6bdeb1d98942b0715d7b8c57a6">PlumedMain::getAtoms</a>(){</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a73a3e8f6536c02e71060aab758072a80">atoms</a>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#aaaa017f9076eb2c11b281771d5aa1ec3">  293</a></span>&#160;<span class="keyword">const</span> std::string &amp; <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#aaaa017f9076eb2c11b281771d5aa1ec3">PlumedMain::getSuffix</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a942791283ecb38a6ebbbaf6fa7fd1712">suffix</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#abb75791c9016cc766d1d3877b5f06832">  298</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#abb75791c9016cc766d1d3877b5f06832">PlumedMain::setSuffix</a>(<span class="keyword">const</span> std::string&amp;s){</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a942791283ecb38a6ebbbaf6fa7fd1712">suffix</a>=s;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a9b3e61f646e270670e30943afe035d26">  303</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a9b3e61f646e270670e30943afe035d26">PlumedMain::getRestart</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a30efd73a9f0679df3ee035720952bc90">restart</a>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a6e4e90cc531341156329e6f2da6b92cf">  308</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a6e4e90cc531341156329e6f2da6b92cf">PlumedMain::setExchangeStep</a>(<span class="keywordtype">bool</span> s){</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ad024c0428d69511a88206673b591b58f">exchangeStep</a>=s;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#acf1d265971fdefaf20fb0c1e5279626a">  313</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#acf1d265971fdefaf20fb0c1e5279626a">PlumedMain::getExchangeStep</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#ad024c0428d69511a88206673b591b58f">exchangeStep</a>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_plumed_main.html#a98c694ded216d25a9f7a263564d5d14b">  318</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a98c694ded216d25a9f7a263564d5d14b">PlumedMain::resetActive</a>(<span class="keywordtype">bool</span> active){</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  this-&gt;active=<a class="code" href="class_p_l_m_d_1_1_plumed_main.html#a9a95b9abb93935c7ec614566f75abec4">active</a>;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a87fe5ceb03917ba5d1c5d96db1ead644"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a87fe5ceb03917ba5d1c5d96db1ead644">PLMD::PlumedMain::step</a></div><div class="ttdeci">long int step</div><div class="ttdoc">Present step number. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00096">PlumedMain.h:96</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a28e112b37a24d5ef2379bed08aa35e46"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a28e112b37a24d5ef2379bed08aa35e46">PLMD::PlumedMain::cltool</a></div><div class="ttdeci">WithCmd * cltool</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00083">PlumedMain.h:83</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a2a1ce2bb523f1d96d9c32b04726a394f"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a2a1ce2bb523f1d96d9c32b04726a394f">PLMD::PlumedMain::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initialize the object. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00348">PlumedMain.cpp:348</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a1227cade813f9c101e5e67cb8f53b812"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a1227cade813f9c101e5e67cb8f53b812">PLMD::PlumedMain::plumedDat</a></div><div class="ttdeci">std::string plumedDat</div><div class="ttdoc">Name of the input file. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00104">PlumedMain.h:104</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_d_l_loader_html"><div class="ttname"><a href="class_p_l_m_d_1_1_d_l_loader.html">PLMD::DLLoader</a></div><div class="ttdoc">Class taking care of dynamic loading. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_d_l_loader_8h_source.html#l00040">DLLoader.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a6e4e90cc531341156329e6f2da6b92cf"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a6e4e90cc531341156329e6f2da6b92cf">PLMD::PlumedMain::setExchangeStep</a></div><div class="ttdeci">void setExchangeStep(bool f)</div><div class="ttdoc">Set exchangeStep flag. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00308">PlumedMain.h:308</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_set_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_set.html">PLMD::ActionSet</a></div><div class="ttdoc">std::vector containing the sequence of Action to be done. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_set_8h_source.html#l00038">ActionSet.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_af1d4daf25fc5d0cf47d58d9d0aab019d"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#af1d4daf25fc5d0cf47d58d9d0aab019d">PLMD::PlumedMain::novirial</a></div><div class="ttdeci">bool novirial</div><div class="ttdoc">Flag to switch off virial calculation (for debug and MD codes with no barostat) </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00140">PlumedMain.h:140</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ae8a60cb86738d9b423f79dcb4ab2e36a"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ae8a60cb86738d9b423f79dcb4ab2e36a">PLMD::PlumedMain::log</a></div><div class="ttdeci">Log &amp; log</div><div class="ttdoc">Log stream. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00091">PlumedMain.h:91</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a11df540c3f39813000804fafb833dd5b"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a11df540c3f39813000804fafb833dd5b">PLMD::PlumedMain::pilots</a></div><div class="ttdeci">std::vector&lt; ActionPilot * &gt; pilots</div><div class="ttdoc">Set of Pilot actions. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00114">PlumedMain.h:114</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_af7a43cbca2156323347c27e27712384e"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#af7a43cbca2156323347c27e27712384e">PLMD::PlumedMain::setRestart</a></div><div class="ttdeci">void setRestart(bool f)</div><div class="ttdoc">Set restart flag. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00261">PlumedMain.h:261</a></div></div>
+<div class="ttc" id="core_2_with_cmd_8h_html"><div class="ttname"><a href="core_2_with_cmd_8h.html">WithCmd.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a9b3e61f646e270670e30943afe035d26"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a9b3e61f646e270670e30943afe035d26">PLMD::PlumedMain::getRestart</a></div><div class="ttdeci">bool getRestart() const </div><div class="ttdoc">Check if restarting. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00303">PlumedMain.h:303</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a27f82df66683c192eb52bc3727e8e598"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a27f82df66683c192eb52bc3727e8e598">PLMD::PlumedMain::waitData</a></div><div class="ttdeci">void waitData()</div><div class="ttdoc">Scatters the needed atoms. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00499">PlumedMain.cpp:499</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a89af87c1dd392ae3f70c7739b2b9266f"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a89af87c1dd392ae3f70c7739b2b9266f">PLMD::PlumedMain::multi_sim_comm</a></div><div class="ttdeci">Communicator &amp; multi_sim_comm</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00078">PlumedMain.h:78</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a47f66032610a9a28a12eea1a8df63c04"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a47f66032610a9a28a12eea1a8df63c04">PLMD::PlumedMain::load</a></div><div class="ttdeci">void load(const std::string &amp;)</div><div class="ttdoc">Load a shared library. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00600">PlumedMain.cpp:600</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_communicator_html"><div class="ttname"><a href="class_p_l_m_d_1_1_communicator.html">PLMD::Communicator</a></div><div class="ttdoc">Class containing wrappers to MPI. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_communicator_8h_source.html#l00044">Communicator.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_acc9786e5a504114771290ceb089e0c52"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#acc9786e5a504114771290ceb089e0c52">PLMD::PlumedMain::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop the calculation cleanly (both the MD code and plumed) </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00669">PlumedMain.cpp:669</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_exchange_patterns_html"><div class="ttname"><a href="class_p_l_m_d_1_1_exchange_patterns.html">PLMD::ExchangePatterns</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2_exchange_patterns_8h_source.html#l00028">ExchangePatterns.h:28</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_atoms_html"><div class="ttname"><a href="class_p_l_m_d_1_1_atoms.html">PLMD::Atoms</a></div><div class="ttdoc">Class containing atom related quantities from the MD code. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_atoms_8h_source.html#l00045">Atoms.h:45</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ad9bcd43093a2bc0c0fa3ba16edb64c78"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ad9bcd43093a2bc0c0fa3ba16edb64c78">PLMD::PlumedMain::bias</a></div><div class="ttdeci">double bias</div><div class="ttdoc">The total bias (=total energy of the restraints) </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00120">PlumedMain.h:120</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_acf1d265971fdefaf20fb0c1e5279626a"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#acf1d265971fdefaf20fb0c1e5279626a">PLMD::PlumedMain::getExchangeStep</a></div><div class="ttdeci">bool getExchangeStep() const </div><div class="ttdoc">Get exchangeStep flag. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00313">PlumedMain.h:313</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a1958af6bdeb1d98942b0715d7b8c57a6"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a1958af6bdeb1d98942b0715d7b8c57a6">PLMD::PlumedMain::getAtoms</a></div><div class="ttdeci">Atoms &amp; getAtoms()</div><div class="ttdoc">Reference to atoms object. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00288">PlumedMain.h:288</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a241b500a2e8808638f784b09e2a2bfb2"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a241b500a2e8808638f784b09e2a2bfb2">PLMD::PlumedMain::stopFlag</a></div><div class="ttdeci">int * stopFlag</div><div class="ttdoc">Stuff to make plumed stop the MD code cleanly. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00135">PlumedMain.h:135</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_log_html"><div class="ttname"><a href="class_p_l_m_d_1_1_log.html">PLMD::Log</a></div><div class="ttdoc">Class containing the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_log_8h_source.html#l00037">Log.h:37</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a5a167cb5e8f914aa6dfa03453e81e488"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a5a167cb5e8f914aa6dfa03453e81e488">PLMD::PlumedMain::justCalculate</a></div><div class="ttdeci">void justCalculate()</div><div class="ttdoc">Perform the forward loop on active actions. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00507">PlumedMain.cpp:507</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ac950de7d11b024431ef33ee816b9dfe9"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ac950de7d11b024431ef33ee816b9dfe9">PLMD::PlumedMain::justApply</a></div><div class="ttdeci">void justApply()</div><div class="ttdoc">Perform the backward loop on active actions. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00547">PlumedMain.cpp:547</a></div></div>
+<div class="ttc" id="structplumed__function__holder_html"><div class="ttname"><a href="structplumed__function__holder.html">plumed_function_holder</a></div><div class="ttdoc">Holder for function pointer. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00041">PlumedMain.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a056130adae811df872177fe6de39b46b"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a056130adae811df872177fe6de39b46b">PLMD::PlumedMain::runJobsAtEndOfCalculation</a></div><div class="ttdeci">void runJobsAtEndOfCalculation()</div><div class="ttdoc">If there are calculations that need to be done at the very end of the calculations this makes sures t...</div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00673">PlumedMain.cpp:673</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a3bfd9b07cea975e1b9053889bff0510d"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a3bfd9b07cea975e1b9053889bff0510d">PLMD::PlumedMain::dlloader</a></div><div class="ttdeci">DLLoader &amp; dlloader</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00081">PlumedMain.h:81</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a1f13f01d8a57d7d7540448120fa5b3db"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a1f13f01d8a57d7d7540448120fa5b3db">PLMD::PlumedMain::eraseFile</a></div><div class="ttdeci">void eraseFile(FileBase &amp;)</div><div class="ttdoc">Erase a file. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00665">PlumedMain.cpp:665</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a0b0f058aaaa97162fa0c780d24fc89ed"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a0b0f058aaaa97162fa0c780d24fc89ed">PLMD::PlumedMain::prepareDependencies</a></div><div class="ttdeci">void prepareDependencies()</div><div class="ttdoc">Prepare the list of active Actions and needed atoms. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00448">PlumedMain.cpp:448</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a552e1c492f7c443d30885c9770961a30"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a552e1c492f7c443d30885c9770961a30">PLMD::PlumedMain::grex</a></div><div class="ttdeci">WithCmd * grex</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00085">PlumedMain.h:85</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a364194626aeda4ed3d944f5a64f8759a"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a364194626aeda4ed3d944f5a64f8759a">PLMD::PlumedMain::readInputWords</a></div><div class="ttdeci">void readInputWords(const std::vector&lt; std::string &gt; &amp;str)</div><div class="ttdoc">Read an input string. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00392">PlumedMain.cpp:392</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ac85cb9c8bea7ea775cea4793246390d5"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ac85cb9c8bea7ea775cea4793246390d5">PLMD::PlumedMain::exit</a></div><div class="ttdeci">void exit(int c=0)</div><div class="ttdoc">Stop the run. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00421">PlumedMain.cpp:421</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_with_cmd_html"><div class="ttname"><a href="class_p_l_m_d_1_1_with_cmd.html">PLMD::WithCmd</a></div><div class="ttdoc">Base for classes with cmd() method. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_with_cmd_8h_source.html#l00034">WithCmd.h:34</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a4da81a378216f0739fe50bf620d72655"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a4da81a378216f0739fe50bf620d72655">PLMD::PlumedMain::fflush</a></div><div class="ttdeci">void fflush()</div><div class="ttdoc">Flush all files. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00655">PlumedMain.cpp:655</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a55a37c8ff05e85ca3f198687d6571afa"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a55a37c8ff05e85ca3f198687d6571afa">PLMD::PlumedMain::initialized</a></div><div class="ttdeci">bool initialized</div><div class="ttdoc">Flag to avoid double initialization. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00087">PlumedMain.h:87</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_with_cmd_html_ab0279dbfd9ea1d99de3a69406fd8b89f"><div class="ttname"><a href="class_p_l_m_d_1_1_with_cmd.html#ab0279dbfd9ea1d99de3a69406fd8b89f">PLMD::WithCmd::cmd</a></div><div class="ttdeci">void cmd(const std::string &amp;key, const void *val)</div><div class="ttdoc">Const val version, which indeed just overrides the const and call the virtual method. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_with_cmd_8h_source.html#l00044">WithCmd.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_abb75791c9016cc766d1d3877b5f06832"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#abb75791c9016cc766d1d3877b5f06832">PLMD::PlumedMain::setSuffix</a></div><div class="ttdeci">void setSuffix(const std::string &amp;)</div><div class="ttdoc">Set the suffix string. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00298">PlumedMain.h:298</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ab8241a5ddb602c0823808cba242712f8"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ab8241a5ddb602c0823808cba242712f8">PLMD::PlumedMain::citations</a></div><div class="ttdeci">Citations &amp; citations</div><div class="ttdoc">tools/Citations.holder </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00093">PlumedMain.h:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a73a3e8f6536c02e71060aab758072a80"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a73a3e8f6536c02e71060aab758072a80">PLMD::PlumedMain::atoms</a></div><div class="ttdeci">Atoms &amp; atoms</div><div class="ttdoc">Object containing information about atoms (such as positions,...). </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00107">PlumedMain.h:107</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a30efd73a9f0679df3ee035720952bc90"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a30efd73a9f0679df3ee035720952bc90">PLMD::PlumedMain::restart</a></div><div class="ttdeci">bool restart</div><div class="ttdoc">Flag for restart. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00129">PlumedMain.h:129</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_af8ca0da0566d2328483f1b71e4f37729"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#af8ca0da0566d2328483f1b71e4f37729">PLMD::PlumedMain::insertFile</a></div><div class="ttdeci">void insertFile(FileBase &amp;)</div><div class="ttdoc">Insert a file. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00661">PlumedMain.cpp:661</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_citations_html"><div class="ttname"><a href="class_p_l_m_d_1_1_citations.html">PLMD::Citations</a></div><div class="ttdoc">Class taking care of bibliography. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_citations_8h_source.html#l00054">Citations.h:54</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a24ca413bb2e8f7f85c2e77054790464a"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a24ca413bb2e8f7f85c2e77054790464a">PLMD::PlumedMain::files_iterator</a></div><div class="ttdeci">std::set&lt; FileBase * &gt;::iterator files_iterator</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00132">PlumedMain.h:132</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ab6d77b07b010b8fff0ac690f5d569268"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ab6d77b07b010b8fff0ac690f5d569268">PLMD::PlumedMain::calc</a></div><div class="ttdeci">void calc()</div><div class="ttdoc">Complete PLUMED calculation. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00433">PlumedMain.cpp:433</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a9a95b9abb93935c7ec614566f75abec4"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a9a95b9abb93935c7ec614566f75abec4">PLMD::PlumedMain::active</a></div><div class="ttdeci">bool active</div><div class="ttdoc">Condition for plumed to be active. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00101">PlumedMain.h:101</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a78fef97c32675cacfb08bde46d2bde25"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a78fef97c32675cacfb08bde46d2bde25">PLMD::PlumedMain::prepareCalc</a></div><div class="ttdeci">void prepareCalc()</div><div class="ttdoc">Prepare the calculation. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00438">PlumedMain.cpp:438</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a1994fd167a4706ff873a27d0cae962ee"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a1994fd167a4706ff873a27d0cae962ee">PLMD::PlumedMain::comm</a></div><div class="ttdeci">Communicator &amp; comm</div><div class="ttdoc">Communicator for plumed. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00077">PlumedMain.h:77</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a2e2e2642fa053facbd3cda6c9f181f1f"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a2e2e2642fa053facbd3cda6c9f181f1f">PLMD::PlumedMain::readInputFile</a></div><div class="ttdeci">void readInputFile(std::string str)</div><div class="ttdoc">Read an input file. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00377">PlumedMain.cpp:377</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_afa473a2eaba3aefaec1573ba52928578"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#afa473a2eaba3aefaec1573ba52928578">PLMD::PlumedMain::fopen</a></div><div class="ttdeci">FILE * fopen(const char *path, const char *mode)</div><div class="ttdoc">Opens a file. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00636">PlumedMain.cpp:636</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a3ae9d0b73289f666fe3f9a641c3df346"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a3ae9d0b73289f666fe3f9a641c3df346">PLMD::PlumedMain::actionSet</a></div><div class="ttdeci">ActionSet &amp; actionSet</div><div class="ttdoc">Set of actions found in plumed.dat file. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00110">PlumedMain.h:110</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ab6bbd832f7af9495acc28eefec2f44ba"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ab6bbd832f7af9495acc28eefec2f44ba">PLMD::PlumedMain::~PlumedMain</a></div><div class="ttdeci">~PlumedMain()</div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00080">PlumedMain.cpp:80</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a9f293f88cbb75ca8cd8bf962e31a7348"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a9f293f88cbb75ca8cd8bf962e31a7348">PLMD::PlumedMain::getActionSet</a></div><div class="ttdeci">const ActionSet &amp; getActionSet() const </div><div class="ttdoc">Reference to the list of Action&amp;#39;s. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00283">PlumedMain.h:283</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a932fd6402b08b526a3ab0dd850321a54"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a932fd6402b08b526a3ab0dd850321a54">PLMD::PlumedMain::getBias</a></div><div class="ttdeci">double getBias() const </div><div class="ttdoc">get the value of the bias </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00632">PlumedMain.cpp:632</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a33c5d94b8d2ec486995c46f287a609f5"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a33c5d94b8d2ec486995c46f287a609f5">PLMD::PlumedMain::files</a></div><div class="ttdeci">std::set&lt; FileBase * &gt; files</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00131">PlumedMain.h:131</a></div></div>
+<div class="ttc" id="structplumed__function__holder_html_a96c1517ea864c3e6414c509830ee81cf"><div class="ttname"><a href="structplumed__function__holder.html#a96c1517ea864c3e6414c509830ee81cf">plumed_function_holder::p</a></div><div class="ttdeci">plumed_function_pointer p</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00042">PlumedMain.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a0958c3e4e6bd7044ea81f9fa2ea24090"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a0958c3e4e6bd7044ea81f9fa2ea24090">PLMD::PlumedMain::getStep</a></div><div class="ttdeci">long int getStep() const </div><div class="ttdoc">Return the number of the step. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00235">PlumedMain.h:235</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_aaaa017f9076eb2c11b281771d5aa1ec3"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#aaaa017f9076eb2c11b281771d5aa1ec3">PLMD::PlumedMain::getSuffix</a></div><div class="ttdeci">const std::string &amp; getSuffix() const </div><div class="ttdoc">Get the suffix string. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00293">PlumedMain.h:293</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a689ffac637dfb62aa0aff43a907cf6dc"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a689ffac637dfb62aa0aff43a907cf6dc">PLMD::PlumedMain::cmd</a></div><div class="ttdeci">void cmd(const std::string &amp;key, void *val=NULL)</div><div class="ttdoc">cmd method, accessible with standard Plumed.h interface. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00104">PlumedMain.cpp:104</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_aa525970c27a462e2ca6d4a95ff505f46"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#aa525970c27a462e2ca6d4a95ff505f46">PLMD::PlumedMain::fclose</a></div><div class="ttdeci">int fclose(FILE *fp)</div><div class="ttdoc">Closes a file opened with PlumedMain::fopen() </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00647">PlumedMain.cpp:647</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a11cf846f00d74d957485f46bb1f240e2"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a11cf846f00d74d957485f46bb1f240e2">PLMD::PlumedMain::PlumedMain</a></div><div class="ttdeci">PlumedMain()</div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00051">PlumedMain.cpp:51</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a32c8ac72b557f05688a7c1ad7cd0fcdd"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a32c8ac72b557f05688a7c1ad7cd0fcdd">PLMD::PlumedMain::detailedTimers</a></div><div class="ttdeci">bool detailedTimers</div><div class="ttdoc">Flag to switch on detailed timers. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00143">PlumedMain.h:143</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html">PLMD::PlumedMain</a></div><div class="ttdoc">Main plumed object. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00071">PlumedMain.h:71</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a942791283ecb38a6ebbbaf6fa7fd1712"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a942791283ecb38a6ebbbaf6fa7fd1712">PLMD::PlumedMain::suffix</a></div><div class="ttdeci">std::string suffix</div><div class="ttdoc">Suffix string for file opening, useful for multiple simulations in the same directory. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00117">PlumedMain.h:117</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_stopwatch_html"><div class="ttname"><a href="class_p_l_m_d_1_1_stopwatch.html">PLMD::Stopwatch</a></div><div class="ttdoc">Class implementing stopwatch to time execution. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_stopwatch_8h_source.html#l00098">Stopwatch.h:98</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ac328b774e782a296c38fa263b541c74c"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ac328b774e782a296c38fa263b541c74c">PLMD::PlumedMain::shareData</a></div><div class="ttdeci">void shareData()</div><div class="ttdoc">Share the needed atoms. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00485">PlumedMain.cpp:485</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_afd9303d165d1d82ae2a6909bbc62ac7a"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#afd9303d165d1d82ae2a6909bbc62ac7a">PLMD::PlumedMain::stopNow</a></div><div class="ttdeci">bool stopNow</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00136">PlumedMain.h:136</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a325fd9d510bff10b89ebe55e61267d7d"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a325fd9d510bff10b89ebe55e61267d7d">PLMD::PlumedMain::performCalc</a></div><div class="ttdeci">void performCalc()</div><div class="ttdoc">Perform the calculation. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00493">PlumedMain.cpp:493</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a98c694ded216d25a9f7a263564d5d14b"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a98c694ded216d25a9f7a263564d5d14b">PLMD::PlumedMain::resetActive</a></div><div class="ttdeci">void resetActive(bool active)</div><div class="ttdoc">Enforce active flag. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00318">PlumedMain.h:318</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_file_base_html"><div class="ttname"><a href="class_p_l_m_d_1_1_file_base.html">PLMD::FileBase</a></div><div class="ttdoc">Base class for dealing with files. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_file_base_8h_source.html#l00039">FileBase.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a581a7d5133c1156bb60d8c2de4fa229c"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a581a7d5133c1156bb60d8c2de4fa229c">PLMD::PlumedMain::cite</a></div><div class="ttdeci">std::string cite(const std::string &amp;)</div><div class="ttdoc">Add a citation, returning a string containing the reference number, something like &amp;quot;[10]&amp;quot;...</div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00651">PlumedMain.cpp:651</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a97eb4301dbaf49aa9e9ea8b1f9474ffc"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a97eb4301dbaf49aa9e9ea8b1f9474ffc">PLMD::PlumedMain::getExchangePatterns</a></div><div class="ttdeci">ExchangePatterns &amp; getExchangePatterns()</div><div class="ttdoc">Access to exchange patterns. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00276">PlumedMain.h:276</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a58dc96ec24de17bb5cb9be42f290f533"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a58dc96ec24de17bb5cb9be42f290f533">PLMD::PlumedMain::stopwatch</a></div><div class="ttdeci">Stopwatch &amp; stopwatch</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00084">PlumedMain.h:84</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a6ac45de72a5891379fb993cac7178b62"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a6ac45de72a5891379fb993cac7178b62">PLMD::PlumedMain::exchangePatterns</a></div><div class="ttdeci">ExchangePatterns &amp; exchangePatterns</div><div class="ttdoc">Class of possible exchange patterns, used for BIASEXCHANGE but also for future parallel tempering...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00123">PlumedMain.h:123</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_a779fb8f9e5bd8f5923f164fe5dccfbc4"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#a779fb8f9e5bd8f5923f164fe5dccfbc4">PLMD::PlumedMain::getLog</a></div><div class="ttdeci">Log &amp; getLog()</div><div class="ttdoc">Referenge to the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="_plumed_main_8cpp_source.html#l00425">PlumedMain.cpp:425</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_aa3c09f56d57257ab2115c9b658269553"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#aa3c09f56d57257ab2115c9b658269553">PLMD::PlumedMain::MDEngine</a></div><div class="ttdeci">std::string MDEngine</div><div class="ttdoc">Name of MD engine. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00089">PlumedMain.h:89</a></div></div>
+<div class="ttc" id="core_2_plumed_main_8h_html_abc532a080009cec5cb6df86362566d4e"><div class="ttname"><a href="core_2_plumed_main_8h.html#abc532a080009cec5cb6df86362566d4e">plumed_function_pointer</a></div><div class="ttdeci">void(* plumed_function_pointer)(void)</div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00038">PlumedMain.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_plumed_main_html_ad024c0428d69511a88206673b591b58f"><div class="ttname"><a href="class_p_l_m_d_1_1_plumed_main.html#ad024c0428d69511a88206673b591b58f">PLMD::PlumedMain::exchangeStep</a></div><div class="ttdeci">bool exchangeStep</div><div class="ttdoc">Set to true if on an exchange step. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_plumed_main_8h_source.html#l00126">PlumedMain.h:126</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

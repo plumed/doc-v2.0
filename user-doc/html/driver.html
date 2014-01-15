@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: driver</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">driver </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>driver is a tool that allows one to to use plumed to post-process an existing trajectory.</p>
+<p>The input to driver is specified using the command line arguments described below.</p>
+<p>In addition, you can use the special <a class="el" href="_r_e_a_d.html">READ</a> command inside your plumed input to read in colvar files that were generated during your MD simulation. The values read in can then be treated like calculated colvars.</p>
+<dl class="section user"><dt>The input trajectory is specified using one of the following</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> &ndash;ixyz </b> </td><td>the trajectory in xyz format   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;igro </b> </td><td>the trajectory in gro format   </td></tr>
+</table>
+<dl class="section user"><dt>The following must be present</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> &ndash;plumed </b> </td><td>( default=plumed.dat ) specify the name of the plumed input file   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;timestep </b> </td><td>( default=1.0 ) the timestep that was used in the calculation that produced this trajectory in picoseconds   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;trajectory-stride </b> </td><td>( default=1 ) the frequency with which frames were output to this trajectory during the simulation   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;multi </b> </td><td>( default=0 ) set number of replicas for multi environment (needs mpi)   </td></tr>
+</table>
+<dl class="section user"><dt>The following options are available</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> &ndash;help/-h </b> </td><td>( default=off ) print this help   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;help-debug </b> </td><td>( default=off ) print special options that can be used to create regtests   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;noatoms </b> </td><td><p class="starttd">( default=off ) don't read in a trajectory. Just use colvar files as specified in plumed.dat  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> &ndash;length-units </b> </td><td>units for length, either as a string or a number   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;dump-forces </b> </td><td>dump the forces on a file   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;dump-forces-fmt </b> </td><td>( default=%f ) the format to use to dump the forces   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;pdb </b> </td><td>provides a pdb with masses and charges   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;box </b> </td><td><p class="starttd">comma-separated box dimensions (3 for orthorombic, 9 for generic)  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<p>The following command tells plumed to postprocess the trajectory contained in trajectory.xyz by performing the actions described in the input file plumed.dat. If an action that takes the stride keyword is given a stride equal to \(n\) then it will be performed only on every \(n\)th frame in the trajectory file. </p>
+<pre class="fragment">plumed driver --plumed plumed.dat --ixyz trajectory.xyz
+</pre><p>The following command tells plumed to postprocess the trajectory contained in trajectory.xyz. by performing the actions described in the input file plumed.dat. Here though &ndash;trajectory-stride is set equal to the frequency with which frames were output during the trajectory and the &ndash;timestep is equal to the simulation timestep. As such the STRIDE parameters in the plumed.dat files are no longer ignored and any files output resemble those that would have been generated had we run the calculation we are running with driver when the MD simulation was running. </p>
+<pre class="fragment">plumed driver --plumed plumed.dat --ixyz trajectory.xyz --trajectory-stride 100 --timestep 0.001
+</pre> </div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

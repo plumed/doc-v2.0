@@ -1,0 +1,15 @@
+/**
+\page info info
+This tool allows you to obtain information about your plumed version
+
+You can specify the information you require using the following command line
+arguments
+
+\par Examples
+
+The following command returns the root directory for your plumed distribution.
+\verbatim
+plumed info --root
+\endverbatim
+
+*/

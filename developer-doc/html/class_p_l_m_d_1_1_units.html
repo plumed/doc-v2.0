@@ -1,0 +1,611 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: PLMD::Units Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_p_l_m_d.html">PLMD</a></li><li class="navelem"><a class="el" href="class_p_l_m_d_1_1_units.html">Units</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="class_p_l_m_d_1_1_units-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">PLMD::Units Class Reference</div>  </div>
+</div>
+<div class="contents">
+
+<p>Small utility class.  
+ <a href="class_p_l_m_d_1_1_units.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="tools_2_units_8h_source.html">Units.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa85efba722e27d320db44820c3eaa42b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#aa85efba722e27d320db44820c3eaa42b">Units</a> ()</td></tr>
+<tr class="separator:aa85efba722e27d320db44820c3eaa42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a4f80951a12c57493b536c20010167c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a7a4f80951a12c57493b536c20010167c">setEnergy</a> (const std::string &amp;)</td></tr>
+<tr class="separator:a7a4f80951a12c57493b536c20010167c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d7647ce42df59398a248f0e897d9f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#ae1d7647ce42df59398a248f0e897d9f6">setTime</a> (const std::string &amp;)</td></tr>
+<tr class="separator:ae1d7647ce42df59398a248f0e897d9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f2e039e9c511317b01b9f4e480b72e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a87f2e039e9c511317b01b9f4e480b72e">setLength</a> (const std::string &amp;)</td></tr>
+<tr class="separator:a87f2e039e9c511317b01b9f4e480b72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d4a72e23b8d7aa6da668c958703ce0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a99d4a72e23b8d7aa6da668c958703ce0">setEnergy</a> (const double)</td></tr>
+<tr class="separator:a99d4a72e23b8d7aa6da668c958703ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336ab09d99a8128ecd6fe413b9069b2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a336ab09d99a8128ecd6fe413b9069b2a">setTime</a> (const double)</td></tr>
+<tr class="separator:a336ab09d99a8128ecd6fe413b9069b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affcf8a02995dee15b8728dae3019e411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#affcf8a02995dee15b8728dae3019e411">setLength</a> (const double)</td></tr>
+<tr class="separator:affcf8a02995dee15b8728dae3019e411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4fd4b88bff2370e29ed26ced4be911"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a4c4fd4b88bff2370e29ed26ced4be911">getEnergy</a> () const </td></tr>
+<tr class="separator:a4c4fd4b88bff2370e29ed26ced4be911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a984aaa6be69ad033940259303451a74a"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a984aaa6be69ad033940259303451a74a">getLength</a> () const </td></tr>
+<tr class="separator:a984aaa6be69ad033940259303451a74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a10a2d4bc810d949cb0991dbafcf56"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a93a10a2d4bc810d949cb0991dbafcf56">getTime</a> () const </td></tr>
+<tr class="separator:a93a10a2d4bc810d949cb0991dbafcf56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059700292aa4ff27c29ecc61deaf785b"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a059700292aa4ff27c29ecc61deaf785b">getEnergyString</a> () const </td></tr>
+<tr class="separator:a059700292aa4ff27c29ecc61deaf785b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a37e1a404239ee7df637952696de5bd"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a3a37e1a404239ee7df637952696de5bd">getLengthString</a> () const </td></tr>
+<tr class="separator:a3a37e1a404239ee7df637952696de5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea58a9200e2c8881077d1539ce4abec"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#abea58a9200e2c8881077d1539ce4abec">getTimeString</a> () const </td></tr>
+<tr class="separator:abea58a9200e2c8881077d1539ce4abec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a31db2d0ce47becc9799b64ebfb4e6c75"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a31db2d0ce47becc9799b64ebfb4e6c75">energy</a></td></tr>
+<tr class="memdesc:a31db2d0ce47becc9799b64ebfb4e6c75"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_p_l_m_d_1_1_units.html" title="Small utility class. ">Units</a> for energy, expressed in kj/mol (e.g. 4.184 means kcal/mol)  <a href="#a31db2d0ce47becc9799b64ebfb4e6c75">More...</a><br/></td></tr>
+<tr class="separator:a31db2d0ce47becc9799b64ebfb4e6c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa989c32837427f55b813a85b47020b0a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#aa989c32837427f55b813a85b47020b0a">energyString</a></td></tr>
+<tr class="separator:aa989c32837427f55b813a85b47020b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8f2572ec26617948c578c772fd6c68"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a7b8f2572ec26617948c578c772fd6c68">length</a></td></tr>
+<tr class="memdesc:a7b8f2572ec26617948c578c772fd6c68"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_p_l_m_d_1_1_units.html" title="Small utility class. ">Units</a> for length, expressed in nm (e.g. 0.1 means A)  <a href="#a7b8f2572ec26617948c578c772fd6c68">More...</a><br/></td></tr>
+<tr class="separator:a7b8f2572ec26617948c578c772fd6c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c81d54ad5179e1be63ab6204fdbb85d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a1c81d54ad5179e1be63ab6204fdbb85d">lengthString</a></td></tr>
+<tr class="separator:a1c81d54ad5179e1be63ab6204fdbb85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c410c15dc64a15c0f0e6a77f2fda1f1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#a2c410c15dc64a15c0f0e6a77f2fda1f1">time</a></td></tr>
+<tr class="memdesc:a2c410c15dc64a15c0f0e6a77f2fda1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_p_l_m_d_1_1_units.html" title="Small utility class. ">Units</a> for time, expressed in ps (e.g. 0.001 means fs)  <a href="#a2c410c15dc64a15c0f0e6a77f2fda1f1">More...</a><br/></td></tr>
+<tr class="separator:a2c410c15dc64a15c0f0e6a77f2fda1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac634688769a62d2756b4cd736f9060bf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_units.html#ac634688769a62d2756b4cd736f9060bf">timeString</a></td></tr>
+<tr class="separator:ac634688769a62d2756b4cd736f9060bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Small utility class. </p>
+<p>It has no implemented methods, and all its data are public. It just simplify the syntax of functions which should pass the value of all the units. </p>
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00033">33</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa85efba722e27d320db44820c3eaa42b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PLMD::Units::Units </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8cpp_source.html#l00029">29</a> of file <a class="el" href="tools_2_units_8cpp_source.html">Units.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a4c4fd4b88bff2370e29ed26ced4be911"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double &amp; PLMD::Units::getEnergy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00061">61</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a059700292aa4ff27c29ecc61deaf785b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; PLMD::Units::getEnergyString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00076">76</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a984aaa6be69ad033940259303451a74a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double &amp; PLMD::Units::getLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00066">66</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a37e1a404239ee7df637952696de5bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; PLMD::Units::getLengthString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00081">81</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93a10a2d4bc810d949cb0991dbafcf56"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double &amp; PLMD::Units::getTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00071">71</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abea58a9200e2c8881077d1539ce4abec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; PLMD::Units::getTimeString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00086">86</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a4f80951a12c57493b536c20010167c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::Units::setEnergy </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8cpp_source.html#l00039">39</a> of file <a class="el" href="tools_2_units_8cpp_source.html">Units.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a99d4a72e23b8d7aa6da668c958703ce0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::Units::setEnergy </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8cpp_source.html#l00089">89</a> of file <a class="el" href="tools_2_units_8cpp_source.html">Units.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87f2e039e9c511317b01b9f4e480b72e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::Units::setLength </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8cpp_source.html#l00057">57</a> of file <a class="el" href="tools_2_units_8cpp_source.html">Units.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="affcf8a02995dee15b8728dae3019e411"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::Units::setLength </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8cpp_source.html#l00094">94</a> of file <a class="el" href="tools_2_units_8cpp_source.html">Units.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1d7647ce42df59398a248f0e897d9f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::Units::setTime </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8cpp_source.html#l00073">73</a> of file <a class="el" href="tools_2_units_8cpp_source.html">Units.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a336ab09d99a8128ecd6fe413b9069b2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PLMD::Units::setTime </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8cpp_source.html#l00099">99</a> of file <a class="el" href="tools_2_units_8cpp_source.html">Units.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a31db2d0ce47becc9799b64ebfb4e6c75"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PLMD::Units::energy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_p_l_m_d_1_1_units.html" title="Small utility class. ">Units</a> for energy, expressed in kj/mol (e.g. 4.184 means kcal/mol) </p>
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00035">35</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa989c32837427f55b813a85b47020b0a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string PLMD::Units::energyString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00036">36</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b8f2572ec26617948c578c772fd6c68"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PLMD::Units::length</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_p_l_m_d_1_1_units.html" title="Small utility class. ">Units</a> for length, expressed in nm (e.g. 0.1 means A) </p>
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00038">38</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c81d54ad5179e1be63ab6204fdbb85d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string PLMD::Units::lengthString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00039">39</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c410c15dc64a15c0f0e6a77f2fda1f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PLMD::Units::time</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_p_l_m_d_1_1_units.html" title="Small utility class. ">Units</a> for time, expressed in ps (e.g. 0.001 means fs) </p>
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00041">41</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac634688769a62d2756b4cd736f9060bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string PLMD::Units::timeString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tools_2_units_8h_source.html#l00042">42</a> of file <a class="el" href="tools_2_units_8h_source.html">Units.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>tools/<a class="el" href="tools_2_units_8h_source.html">Units.h</a></li>
+<li>tools/<a class="el" href="tools_2_units_8cpp_source.html">Units.cpp</a></li>
+</ul>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

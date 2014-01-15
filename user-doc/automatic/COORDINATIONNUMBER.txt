@@ -1,0 +1,132 @@
+/**
+\page COORDINATIONNUMBER COORDINATIONNUMBER
+Calculate the coordination numbers of atoms so that you can then calculate functions of the distribution of
+coordination numbers such as the minimum, the number less than a certain quantity and so on.
+
+To make the calculation of coordination numbers differentiable the following function is used:
+
+\f[
+s = \frac{ 1 - \left(\frac{r-d_0}{r_0}\right)^n } { 1 - \left(\frac{r-d_0}{r_0}\right)^m }
+\f]
+
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> SPECIES </b></td>
+<td> this keyword is used for colvars such as coordination number. In that context it specifies that plumed should calculate one coordination number for each of the atoms specified.  Each of these coordination numbers specifies how many of the other specified atoms are within a certain cutoff of the central atom. </td>
+</tr>
+</table>
+
+\par Or alternatively by using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> SPECIESA </b></td>
+<td> this keyword is used for colvars such as the coordination number.  In that context it species that plumed should calculate one coordination number for each of the atoms specified in SPECIESA.  Each of these cooordination numbers specifies how many of the atoms specifies using SPECIESB is within the specified cutoff </td>
+</tr>
+<tr>
+<td width=15%> <b> SPECIESB </b></td>
+<td> this keyword is used for colvars such as the coordination number.  It must appear with SPECIESA.  For a full explanation see the documentation for that keyword </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NN </b></td>
+<td> ( default=6 ) The n parameter of the switching function  </td>
+</tr>
+<tr>
+<td width=15%> <b> MM </b></td>
+<td> ( default=12 ) The m parameter of the switching function  </td>
+</tr>
+<tr>
+<td width=15%> <b> D_0 </b></td>
+<td> ( default=0.0 ) The d_0 parameter of the switching function </td>
+</tr>
+<tr>
+<td width=15%> <b> R_0 </b></td>
+<td> The r_0 parameter of the switching function </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> SERIAL </b></td>
+<td> ( default=off ) do the calculation in serial.  Do not parallelize </td>
+</tr>
+<tr>
+<td width=15%> <b> VERBOSE </b></td>
+<td> ( default=off ) write a more detailed output </td>
+</tr>
+<tr>
+<td width=15%> <b> MEAN </b></td>
+<td> ( default=off ) take the mean of these variables. The final value can be referenced using <em>label</em>.mean </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> TOL </b></td>
+<td> this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum.  They can thus be safely ignored as can the the derivatives wrt these small quantities. </td>
+</tr>
+<tr>
+<td width=15%> <b> SWITCH </b></td>
+<td> This keyword is used if you want to employ an alternative to the continuous swiching function defined above. The following provides information on the \ref switchingfunction that are available. When this keyword is present you no longer need the NN, MM, D_0 and R_0 keywords. </td>
+</tr>
+<tr>
+<td width=15%> <b> MORE_THAN </b></td>
+<td> calculate the number of variables more than a certain target value. This quantity is calculated using \f$\sum_i 1.0 - \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.more_than.  You can use multiple instances of this keyword i.e. MORE_THAN1, MORE_THAN2, MORE_THAN3...  The corresponding values are then referenced using <em>label</em>.more_than-1,  <em>label</em>.more_than-2,  <em>label</em>.more_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> LESS_THAN </b></td>
+<td> calculate the number of variables less than a certain target value. This quantity is calculated using \f$\sum_i \sigma(s_i)\f$, where \f$\sigma(s)\f$ is a \ref switchingfunction. The final value can be referenced using <em>label</em>.less_than.  You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3...  The corresponding values are then referenced using <em>label</em>.less_than-1,  <em>label</em>.less_than-2,  <em>label</em>.less_than-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> MIN </b></td>
+<td>  The final value can be referenced using  <em>label</em>.min. </td>
+</tr>
+<tr>
+<td width=15%> <b> BETWEEN </b></td>
+<td> calculate the number of values that are within a certain range. These quantities are calculated using kernel density estimation as described on \ref histogrambead. The final value can be referenced using <em>label</em>.between.  You can use multiple instances of this keyword i.e. BETWEEN1, BETWEEN2, BETWEEN3...  The corresponding values are then referenced using <em>label</em>.between-1,  <em>label</em>.between-2,  <em>label</em>.between-3... </td>
+</tr>
+<tr>
+<td width=15%> <b> HISTOGRAM </b></td>
+<td> calculate a discretized histogram of the distribution of values. This shortcut allows you to calculates NBIN quantites like BETWEEN. </td>
+</tr>
+<tr>
+<td width=15%> <b> MOMENTS </b></td>
+<td> calculate the moments of the distribution of collective variables. The \f$m\f$th moment of a distribution is calculated using \f$\frac{1}{N} \sum_{i=1}^N ( s_i - \overline{s} )^m \f$, where \f$\overline{s}\f$ is the average for the distribution. The moments keyword takes a lists of integers as input or a range. Each integer is a value of \f$m\f$. The final calculated values can be referenced using moment-\f$m\f$. </td>
+</tr>
+
+</table>
+
+\par Examples
+
+The following input tells plumed to calculate the coordination numbers of atoms 1-100 with themselves.
+The minimum coordination number is then calculated.
+\verbatim
+COORDINATIONNUMBER SPECIES=1-100 R_0=1.0 MIN={BETA=0.1}
+\endverbatim
+
+The following input tells plumed to calculate how many atoms from 1-100 are within 3.0 of each of the atoms
+from 101-110.  In the first 101 is the central atom, in the second 102 is the central atom and so on.  The
+number of coordination numbers more than 6 is then computed.
+\verbatim
+COORDINATIONNUMBER SPECIESA=101-110 SPECIESB=1-100 R_0=3.0 MORE_THAN={RATIONAL R_0=6.0 NN=6 MM=12 D_0=0}
+\endverbatim
+
+*/

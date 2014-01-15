@@ -1,0 +1,39 @@
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> LAMBDA </b></td>
+<td> the lambda parameter is needed for smoothing, is in the units of plumed </td>
+</tr>
+<tr>
+<td width=15%> <b> REFERENCE </b></td>
+<td> the pdb is needed to provide the various milestones </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NEIGH_SIZE </b></td>
+<td> size of the neighbor list </td>
+</tr>
+<tr>
+<td width=15%> <b> NEIGH_STRIDE </b></td>
+<td> how often the neighbor list needs to be calculated in time units </td>
+</tr>
+
+</table>
+

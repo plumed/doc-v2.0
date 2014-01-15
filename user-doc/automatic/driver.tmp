@@ -1,0 +1,31 @@
+/**
+\page driver driver
+driver is a tool that allows one to to use plumed to post-process an existing trajectory.
+
+The input to driver is specified using the command line arguments described below.
+
+In addition, you can use the special \subpage READ command inside your plumed input
+to read in colvar files that were generated during your MD simulation.  The values
+read in can then be treated like calculated colvars. 
+
+\par Examples
+
+The following command tells plumed to postprocess the trajectory contained in trajectory.xyz
+ by performing the actions described in the input file plumed.dat.  If an action that takes the
+stride keyword is given a stride equal to \f$n\f$ then it will be performed only on every \f$n\f$th
+frame in the trajectory file.
+\verbatim
+plumed driver --plumed plumed.dat --ixyz trajectory.xyz
+\endverbatim
+
+The following command tells plumed to postprocess the trajectory contained in trajectory.xyz.
+ by performing the actions described in the input file plumed.dat. Here though
+--trajectory-stride is set equal to the frequency with which frames were output during the trajectory
+and the --timestep is equal to the simulation timestep.  As such the STRIDE parameters in the plumed.dat
+files are no longer ignored and any files output resemble those that would have been generated
+had we run the calculation we are running with driver when the MD simulation was running.
+\verbatim
+plumed driver --plumed plumed.dat --ixyz trajectory.xyz --trajectory-stride 100 --timestep 0.001
+\endverbatim
+
+*/

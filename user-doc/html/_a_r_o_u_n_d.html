@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: AROUND</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="_colvar.html">Collective Variables</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">AROUND </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>This quantity can be used to calculate functions of the distribution of collective variables for the atoms that lie in a particular, user-specified part of of the cell.</p>
+<p>Each of the base quantities calculated by a multicolvar can can be assigned to a particular point in three dimensional space. For example, if we have the coordination numbers for all the atoms in the system each coordination number can be assumed to lie on the position of the central atom. Because each base quantity can be assigned to a particular point in space we can calculate functions of the distribution of base quantities in a particular part of the box by using:</p>
+<p class="formulaDsp">
+\[ \overline{s}_{\tau} = \frac{ \sum_i f(s_i) w(x_i,y_i,z_i) }{ \sum_i w(x_i,y_i,z_i) } \]
+</p>
+<p>where the sum is over the collective variables, \(s_i\), each of which can be thought to be at \( (x_i,y_i,z_i)\). The function \( w(x_i,y_i,z_i) \) measures whether or not the system is in the subregion of interest. It is equal to:</p>
+<p class="formulaDsp">
+\[ w(x_i,y_i,z_i) = \int_{xl}^{xu} \int_{yl}^{yu} \int_{zl}^{zu} \textrm{d}x\textrm{d}y\textrm{d}z K\left( \frac{x - x_i}{\sigma} \right)K\left( \frac{y - y_i}{\sigma} \right)K\left( \frac{z - z_i}{\sigma} \right) \]
+</p>
+<p>where \(K\) is one of the kernel functions described on <a class="el" href="histogrambead.html">histogrambead</a> and \(\sigma\) is a bandwidth parameter. The function \((s_i)\) can be any of the usual LESS_THAN, MORE_THAN, WITHIN etc that are used in all other multicolvars.</p>
+<p>When AROUND is used with the <a class="el" href="_d_e_n_s_i_t_y.html">DENSITY</a> action the number of atoms in the specified region is calculated</p>
+<dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> ATOM </b> </td><td>the atom whose vicinity we are interested in examining   </td></tr>
+</table>
+<dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> ARG </b> </td><td>the label of the action that calculates the multicolvar we are interested in   </td></tr>
+<tr>
+<td width="15%"><b> SIGMA </b> </td><td>the width of the function to be used for kernel density estimation   </td></tr>
+<tr>
+<td width="15%"><b> KERNEL </b> </td><td>( default=gaussian ) the type of kernel function to be used   </td></tr>
+<tr>
+<td width="15%"><b> XLOWER </b> </td><td>( default=0.0 ) the lower boundary in x relative to the x coordinate of the atom (0 indicates use full extent of box).   </td></tr>
+<tr>
+<td width="15%"><b> XUPPER </b> </td><td>( default=0.0 ) the upper boundary in x relative to the x coordinate of the atom (0 indicates use full extent of box).   </td></tr>
+<tr>
+<td width="15%"><b> YLOWER </b> </td><td>( default=0.0 ) the lower boundary in y relative to the y coordinate of the atom (0 indicates use full extent of box).   </td></tr>
+<tr>
+<td width="15%"><b> YUPPER </b> </td><td>( default=0.0 ) the upper boundary in y relative to the y coordinate of the atom (0 indicates use full extent of box).   </td></tr>
+<tr>
+<td width="15%"><b> ZLOWER </b> </td><td>( default=0.0 ) the lower boundary in z relative to the z coordinate of the atom (0 indicates use full extent of box).   </td></tr>
+<tr>
+<td width="15%"><b> ZUPPER </b> </td><td>( default=0.0 ) the upper boundary in z relative to the z coordinate of the atom (0 indicates use full extent of box).   </td></tr>
+</table>
+<dl class="section user"><dt>Options</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> NUMERICAL_DERIVATIVES </b> </td><td>( default=off ) calculate the derivatives for these quantities numerically   </td></tr>
+<tr>
+<td width="15%"><b> SERIAL </b> </td><td>( default=off ) do the calculation in serial. Do not parallelize   </td></tr>
+<tr>
+<td width="15%"><b> MEAN </b> </td><td>( default=off ) take the mean of these variables. The final value can be referenced using <em>label</em>.mean   </td></tr>
+<tr>
+<td width="15%"><b> OUTSIDE </b> </td><td><p class="starttd">( default=off ) calculate quantities for colvars that are on atoms outside the region of interest  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> TOL </b> </td><td>this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum. They can thus be safely ignored as can the the derivatives wrt these small quantities.   </td></tr>
+<tr>
+<td width="15%"><b> LESS_THAN </b> </td><td>calculate the number of variables less than a certain target value. This quantity is calculated using \(\sum_i \sigma(s_i)\), where \(\sigma(s)\) is a <a class="el" href="switchingfunction.html">switchingfunction</a>. The final value can be referenced using <em>label</em>.less_than. You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3... The corresponding values are then referenced using <em>label</em>.less_than-1, <em>label</em>.less_than-2, <em>label</em>.less_than-3...   </td></tr>
+<tr>
+<td width="15%"><b> MORE_THAN </b> </td><td>calculate the number of variables more than a certain target value. This quantity is calculated using \(\sum_i 1.0 - \sigma(s_i)\), where \(\sigma(s)\) is a <a class="el" href="switchingfunction.html">switchingfunction</a>. The final value can be referenced using <em>label</em>.more_than. You can use multiple instances of this keyword i.e. MORE_THAN1, MORE_THAN2, MORE_THAN3... The corresponding values are then referenced using <em>label</em>.more_than-1, <em>label</em>.more_than-2, <em>label</em>.more_than-3...   </td></tr>
+<tr>
+<td width="15%"><b> BETWEEN </b> </td><td>calculate the number of values that are within a certain range. These quantities are calculated using kernel density estimation as described on <a class="el" href="histogrambead.html">histogrambead</a>. The final value can be referenced using <em>label</em>.between. You can use multiple instances of this keyword i.e. BETWEEN1, BETWEEN2, BETWEEN3... The corresponding values are then referenced using <em>label</em>.between-1, <em>label</em>.between-2, <em>label</em>.between-3...   </td></tr>
+<tr>
+<td width="15%"><b> HISTOGRAM </b> </td><td><p class="starttd">calculate a discretized histogram of the distribution of values. This shortcut allows you to calculates NBIN quantites like BETWEEN.  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<p>The following commands tell plumed to calculate the average coordination number for the atoms that have x (in fractional coordinates) within 2.0 nm of the com of mass c1. The final value will be labeled s.mean. </p>
+<pre class="fragment">COM ATOMS=1-100 LABEL=c1
+COORDINATIONNUMBER SPECIES=1-100 R_0=1.0 LABEL=c
+AROUND ARG=c ORIGIN=c1 XLOWER=-2.0 XUPPER=2.0 SIGMA=0.1 MEAN LABEL=s
+</pre> </div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

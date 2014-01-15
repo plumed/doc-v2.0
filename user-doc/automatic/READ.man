@@ -1,0 +1,25 @@
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> STRIDE </b></td>
+<td> ( default=1 ) the frequency with which the file should be read. </td>
+</tr>
+<tr>
+<td width=15%> <b> EVERY </b></td>
+<td> ( default=1 ) only read every ith line of the colvar file. This should be used if the colvar was written more frequently than the trajectory. </td>
+</tr>
+<tr>
+<td width=15%> <b> VALUES </b></td>
+<td> the values to read from the file </td>
+</tr>
+<tr>
+<td width=15%> <b> FILE </b></td>
+<td> the name of the file from which to read these quantities </td>
+</tr>
+</table>
+
+</table>
+
+</table>
+

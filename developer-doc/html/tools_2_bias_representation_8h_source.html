@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/BiasRepresentation.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">BiasRepresentation.h</div>  </div>
+</div>
+<div class="contents">
+<a href="tools_2_bias_representation_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_tools_BiasRepresentation_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_tools_BiasRepresentation_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_exception_8h.html">Exception.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_kernel_functions_8h.html">KernelFunctions.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_file_8h.html">File.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_grid_8h.html">Grid.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//+PLUMEDOC INTERNAL biasrepresentation </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//+ENDPLUMEDOC</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/// this class implements a general purpose class that aims to </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/// provide a Grid/list  </span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/// transparently add gaussians to a bias  </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_bias_representation.html">BiasRepresentation</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">          /// create a bias representation from a list of pointer to values</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span>          <a class="code" href="class_p_l_m_d_1_1_bias_representation.html">BiasRepresentation</a>(vector&lt;Value*&gt; tmpvalues, <a class="code" href="class_p_l_m_d_1_1_communicator.html">Communicator</a> &amp;cc  ); <span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">          /// create a bias using explicit sigma in input (needed for histogram building) </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span>          <a class="code" href="class_p_l_m_d_1_1_bias_representation.html">BiasRepresentation</a>(vector&lt;Value*&gt; tmpvalues, <a class="code" href="class_p_l_m_d_1_1_communicator.html">Communicator</a> &amp;cc  ,  vector&lt;double&gt; sigma); <span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">          /// create a bias containing a grid representation </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span>          <a class="code" href="class_p_l_m_d_1_1_bias_representation.html">BiasRepresentation</a>(vector&lt;Value*&gt; tmpvalues, <a class="code" href="class_p_l_m_d_1_1_communicator.html">Communicator</a> &amp;cc , vector&lt;string&gt; gmin, vector&lt;string&gt; gmax, vector&lt;unsigned&gt; nbin );<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">          /// create a histogram with grid representation and sigmas in input</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span>          <a class="code" href="class_p_l_m_d_1_1_bias_representation.html">BiasRepresentation</a>(vector&lt;Value*&gt; tmpvalues, <a class="code" href="class_p_l_m_d_1_1_communicator.html">Communicator</a> &amp;cc , vector&lt;string&gt; gmin, vector&lt;string&gt; gmax, vector&lt;unsigned&gt; nbin , vector&lt;double&gt; sigma);<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">          /// retrieve the number of dimension of the representation</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span>          <span class="keywordtype">unsigned</span>      getNumberOfDimensions();<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">          /// add the grid to the representation</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>          <span class="keywordtype">void</span>          addGrid( vector&lt;string&gt; gmin, vector&lt;string&gt; gmax, vector&lt;unsigned&gt; nbin );<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">          /// push a kernel on the representation (includes widths and height)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span>          <span class="keywordtype">void</span>          pushKernel( <a class="code" href="class_p_l_m_d_1_1_i_file.html">IFile</a> * ff);<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">          /// set the flag that rescales the free energy to the bias </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>          <span class="keywordtype">void</span>          setRescaledToBias(<span class="keywordtype">bool</span> rescaled);<span class="comment"></span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">          /// check if the representation is rescaled to the bias </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>          <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;  isRescaledToBias();<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">          /// check if the sigma values are already provided (in case of a histogram representation with input sigmas)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span>          <span class="keywordtype">bool</span>          hasSigmaInInput();<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">          /// get the names of the variables</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span>          vector&lt;string&gt; getNames();<span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">          /// get the pointer to the values </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span>          <span class="keyword">const</span> vector&lt;Value*&gt; &amp; getPtrToValues();<span class="comment"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">          /// get the number of kernels contained in the representation</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"></span>          <span class="keywordtype">int</span>           getNumberOfKernels();<span class="comment"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">          /// get the name of the i-th value</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span>          <span class="keyword">const</span> <span class="keywordtype">string</span> &amp; getName(<span class="keywordtype">unsigned</span> i);<span class="comment"></span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">          /// get a pointer to a specific value</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"></span>          <a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>*        getPtrToValue(<span class="keywordtype">unsigned</span> i);<span class="comment"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">          /// get the pointer to the grid</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span>          <a class="code" href="class_p_l_m_d_1_1_grid.html">Grid</a>*         getGridPtr();<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">          /// get a new histogram point from a file </span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span>          <a class="code" href="class_p_l_m_d_1_1_kernel_functions.html">KernelFunctions</a>* readFromPoint(<a class="code" href="class_p_l_m_d_1_1_i_file.html">IFile</a> *ifile); <span class="comment"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">          /// get an automatic min/max from the set so to know how to configure the grid</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"></span>          <span class="keywordtype">void</span> getMinMaxBin(vector&lt;double&gt; &amp;vmin, vector&lt;double&gt; &amp;vmax, vector&lt;unsigned&gt; &amp;vbin);<span class="comment"></span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">          /// clear the representation (grid included)</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"></span>          <span class="keywordtype">void</span> clear(); </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#a00d7521234c1e9a98ae04fb4614ce0cb">   86</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#a00d7521234c1e9a98ae04fb4614ce0cb">ndim</a>; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#acb96a6e9d1032f225993080037c2443a">   87</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#acb96a6e9d1032f225993080037c2443a">hasgrid</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#a656c031b783fc7590a7388745337122a">   88</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#a656c031b783fc7590a7388745337122a">rescaledToBias</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#a0f80401036ded547789cf9128ddfd948">   89</a></span>&#160;    vector&lt;Value*&gt; <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#a0f80401036ded547789cf9128ddfd948">values</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#a25c1356d4c033aa666db94b85d39761e">   90</a></span>&#160;    vector&lt;string&gt; <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#a25c1356d4c033aa666db94b85d39761e">names</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#abb8ff3533fd877715b7b2cbd2f55cac7">   91</a></span>&#160;    vector&lt;KernelFunctions*&gt; <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#abb8ff3533fd877715b7b2cbd2f55cac7">hills</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#a3b58488ec406bb96119e35b6c0a689bf">   92</a></span>&#160;    vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#a3b58488ec406bb96119e35b6c0a689bf">biasf</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#aa05742014ed9f1f13b346a0bb15bf96b">   93</a></span>&#160;    vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#aa05742014ed9f1f13b346a0bb15bf96b">histosigma</a>;  </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#ac36d8634713d4f4e71f9f541aa0835b0">   94</a></span>&#160;    <a class="code" href="class_p_l_m_d_1_1_grid.html">Grid</a>* <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#ac36d8634713d4f4e71f9f541aa0835b0">BiasGrid_</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_bias_representation.html#a8dc09cc8fc4da1535e073e47585c0a7d">   95</a></span>&#160;    <a class="code" href="class_p_l_m_d_1_1_communicator.html">Communicator</a>&amp; <a class="code" href="class_p_l_m_d_1_1_bias_representation.html#a8dc09cc8fc4da1535e073e47585c0a7d">mycomm</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html">PLMD::Value</a></div><div class="ttdoc">A class for holding the value of a function together with its derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00046">Value.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_communicator_html"><div class="ttname"><a href="class_p_l_m_d_1_1_communicator.html">PLMD::Communicator</a></div><div class="ttdoc">Class containing wrappers to MPI. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_communicator_8h_source.html#l00044">Communicator.h:44</a></div></div>
+<div class="ttc" id="tools_2_file_8h_html"><div class="ttname"><a href="tools_2_file_8h.html">File.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html">PLMD::KernelFunctions</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kernel_functions_8h_source.html#l00032">KernelFunctions.h:32</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_a8dc09cc8fc4da1535e073e47585c0a7d"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#a8dc09cc8fc4da1535e073e47585c0a7d">PLMD::BiasRepresentation::mycomm</a></div><div class="ttdeci">Communicator &amp; mycomm</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00095">BiasRepresentation.h:95</a></div></div>
+<div class="ttc" id="tools_2_grid_8h_html"><div class="ttname"><a href="tools_2_grid_8h.html">Grid.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_acb96a6e9d1032f225993080037c2443a"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#acb96a6e9d1032f225993080037c2443a">PLMD::BiasRepresentation::hasgrid</a></div><div class="ttdeci">bool hasgrid</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00087">BiasRepresentation.h:87</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_a25c1356d4c033aa666db94b85d39761e"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#a25c1356d4c033aa666db94b85d39761e">PLMD::BiasRepresentation::names</a></div><div class="ttdeci">vector&lt; string &gt; names</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00090">BiasRepresentation.h:90</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_a00d7521234c1e9a98ae04fb4614ce0cb"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#a00d7521234c1e9a98ae04fb4614ce0cb">PLMD::BiasRepresentation::ndim</a></div><div class="ttdeci">int ndim</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00086">BiasRepresentation.h:86</a></div></div>
+<div class="ttc" id="tools_2_kernel_functions_8h_html"><div class="ttname"><a href="tools_2_kernel_functions_8h.html">KernelFunctions.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_i_file_html"><div class="ttname"><a href="class_p_l_m_d_1_1_i_file.html">PLMD::IFile</a></div><div class="ttdoc">Class for input files. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_i_file_8h_source.html#l00040">IFile.h:40</a></div></div>
+<div class="ttc" id="tools_2_exception_8h_html"><div class="ttname"><a href="tools_2_exception_8h.html">Exception.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_a3b58488ec406bb96119e35b6c0a689bf"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#a3b58488ec406bb96119e35b6c0a689bf">PLMD::BiasRepresentation::biasf</a></div><div class="ttdeci">vector&lt; double &gt; biasf</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00092">BiasRepresentation.h:92</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_abb8ff3533fd877715b7b2cbd2f55cac7"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#abb8ff3533fd877715b7b2cbd2f55cac7">PLMD::BiasRepresentation::hills</a></div><div class="ttdeci">vector&lt; KernelFunctions * &gt; hills</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00091">BiasRepresentation.h:91</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_aa05742014ed9f1f13b346a0bb15bf96b"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#aa05742014ed9f1f13b346a0bb15bf96b">PLMD::BiasRepresentation::histosigma</a></div><div class="ttdeci">vector&lt; double &gt; histosigma</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00093">BiasRepresentation.h:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_a656c031b783fc7590a7388745337122a"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#a656c031b783fc7590a7388745337122a">PLMD::BiasRepresentation::rescaledToBias</a></div><div class="ttdeci">bool rescaledToBias</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00088">BiasRepresentation.h:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_grid_html"><div class="ttname"><a href="class_p_l_m_d_1_1_grid.html">PLMD::Grid</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_grid_8h_source.html#l00069">Grid.h:69</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_ac36d8634713d4f4e71f9f541aa0835b0"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#ac36d8634713d4f4e71f9f541aa0835b0">PLMD::BiasRepresentation::BiasGrid_</a></div><div class="ttdeci">Grid * BiasGrid_</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00094">BiasRepresentation.h:94</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html_a0f80401036ded547789cf9128ddfd948"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html#a0f80401036ded547789cf9128ddfd948">PLMD::BiasRepresentation::values</a></div><div class="ttdeci">vector&lt; Value * &gt; values</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00089">BiasRepresentation.h:89</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_bias_representation_html"><div class="ttname"><a href="class_p_l_m_d_1_1_bias_representation.html">PLMD::BiasRepresentation</a></div><div class="ttdoc">this class implements a general purpose class that aims to provide a Grid/list transparently add gaus...</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_bias_representation_8h_source.html#l00045">BiasRepresentation.h:45</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

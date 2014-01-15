@@ -1,0 +1,88 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. " alt="" coords="5,1385,109,1415"/>
+<area shape="rect" id="node3" href="$class_p_l_m_d_1_1_action_atomistic.html" title="Action used to create objects that access the positions of the atoms from the MD code. " alt="" coords="195,1355,352,1384"/>
+<area shape="rect" id="node99" href="$class_p_l_m_d_1_1_action_pilot.html" title="This is used to create PLMD::Action objects that are run with some set frequency. ..." alt="" coords="208,485,339,515"/>
+<area shape="rect" id="node141" href="$class_p_l_m_d_1_1_action_setup.html" title="Action used to create a PLMD::Action that do something during setup only e.g. " alt="" coords="204,1669,343,1699"/>
+<area shape="rect" id="node150" href="$class_p_l_m_d_1_1_action_with_arguments.html" title="This is used to create PLMD::Action objects that take the output from some other Action as input..." alt="" coords="176,325,371,355"/>
+<area shape="rect" id="node174" href="$class_p_l_m_d_1_1_action_with_value.html" title="Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ..." alt="" coords="192,1271,355,1300"/>
+<area shape="rect" id="node186" href="$class_p_l_m_d_1_1generic_1_1_include.html" title="Provides the keyword INCLUDE &#160;" alt="" coords="195,1723,352,1752"/>
+<area shape="rect" id="node188" href="$class_p_l_m_d_1_1generic_1_1_random_exchanges.html" title="Provides the keyword RANDOM_EXCHANGES &#160;" alt="" coords="159,1776,388,1805"/>
+<area shape="rect" id="node190" href="$class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html" title="This is used to create PLMD::Action objects that are computed by calculating the same function multip..." alt="" coords="184,1407,363,1454"/>
+<area shape="rect" id="node5" href="$class_p_l_m_d_1_1_action_with_virtual_atom.html" title="Inherit from here if you are calculating the position of a virtual atom (eg a center of mass) ..." alt="" coords="448,1547,645,1576"/>
+<area shape="rect" id="node13" href="$class_p_l_m_d_1_1_colvar.html" title="This is the abstract base class to use for implementing new collective variables, within it there is ..." alt="" coords="495,1301,599,1331"/>
+<area shape="rect" id="node55" href="$class_p_l_m_d_1_1generic_1_1_dump_atoms.html" title="Provides the keyword DUMPATOMS &#160;" alt="" coords="452,1125,641,1155"/>
+<area shape="rect" id="node57" href="$class_p_l_m_d_1_1generic_1_1_group.html" title="Provides the keyword GROUP &#160;" alt="" coords="471,1355,623,1384"/>
+<area shape="rect" id="node59" href="$class_p_l_m_d_1_1generic_1_1_whole_molecules.html" title="Provides the keyword WHOLEMOLECULES &#160;" alt="" coords="440,1179,653,1208"/>
+<area shape="rect" id="node61" href="$class_p_l_m_d_1_1_i_m_d.html" title="Provides the keyword IMD &#160;" alt="" coords="501,885,592,915"/>
+<area shape="rect" id="node63" href="$class_p_l_m_d_1_1manyrestraints_1_1_many_restraints_base.html" title="PLMD::manyrestraints\l::ManyRestraintsBase" alt="" coords="471,1231,623,1278"/>
+<area shape="rect" id="node67" href="$class_p_l_m_d_1_1multicolvar_1_1_action_volume.html" title="This is the abstract base class to use for implementing a new way of definining a particular region o..." alt="" coords="477,1477,616,1523"/>
+<area shape="rect" id="node71" href="$class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html" title="PLMD::multicolvar::\lMultiColvarBase" alt="" coords="477,1599,616,1646"/>
+<area shape="rect" id="node89" href="$class_p_l_m_d_1_1secondarystructure_1_1_secondary_structure_r_m_s_d.html" title="Base action for calculating things like AlphRMSD, AntibetaRMSD, etc. " alt="" coords="455,1407,639,1454"/>
+<area shape="rect" id="node97" href="$class_p_l_m_d_1_1_setup_mol_info.html" title="PLMD::SetupMolInfo" alt="" coords="475,1669,619,1699"/>
+<area shape="rect" id="node7" href="$class_p_l_m_d_1_1vatom_1_1_center.html" title="Provides the keyword CENTER &#160;" alt="" coords="736,2059,885,2088"/>
+<area shape="rect" id="node9" href="$class_p_l_m_d_1_1vatom_1_1_c_o_m.html" title="Provides the keyword COM &#160;" alt="" coords="740,2112,881,2141"/>
+<area shape="rect" id="node11" href="$class_p_l_m_d_1_1vatom_1_1_ghost.html" title="Provides the keyword GHOST &#160;" alt="" coords="737,2165,884,2195"/>
+<area shape="rect" id="node15" href="$class_p_l_m_d_1_1colvar_1_1_angle.html" title="Provides the keyword ANGLE &#160;" alt="" coords="740,1248,881,1277"/>
+<area shape="rect" id="node17" href="$class_p_l_m_d_1_1colvar_1_1_cell.html" title="Provides the keyword CELL &#160;" alt="" coords="744,1301,877,1331"/>
+<area shape="rect" id="node19" href="$class_p_l_m_d_1_1colvar_1_1_colvar_fake.html" title="Provides the keyword FAKE &#160;" alt="" coords="723,1355,899,1384"/>
+<area shape="rect" id="node21" href="$class_p_l_m_d_1_1colvar_1_1_constant.html" title="Provides the keyword CONSTANT &#160;" alt="" coords="729,1408,892,1437"/>
+<area shape="rect" id="node23" href="$class_p_l_m_d_1_1colvar_1_1_contact_map.html" title="Provides the keyword CONTACTMAP &#160;" alt="" coords="720,1461,901,1491"/>
+<area shape="rect" id="node25" href="$class_p_l_m_d_1_1colvar_1_1_coordination_base.html" title="PLMD::colvar::CoordinationBase" alt="" coords="704,1515,917,1544"/>
+<area shape="rect" id="node31" href="$class_p_l_m_d_1_1colvar_1_1_dipole.html" title="Provides the keyword DIPOLE &#160;" alt="" coords="737,1568,884,1597"/>
+<area shape="rect" id="node33" href="$class_p_l_m_d_1_1colvar_1_1_distance.html" title="Provides the keyword DISTANCE &#160;" alt="" coords="729,1621,892,1651"/>
+<area shape="rect" id="node35" href="$class_p_l_m_d_1_1colvar_1_1_d_r_m_s_d.html" title="Provides the keyword DRMSD &#160;" alt="" coords="731,1675,891,1704"/>
+<area shape="rect" id="node37" href="$class_p_l_m_d_1_1colvar_1_1_energy.html" title="Provides the keyword ENERGY &#160;" alt="" coords="736,1728,885,1757"/>
+<area shape="rect" id="node39" href="$class_p_l_m_d_1_1colvar_1_1_gyration.html" title="Provides the keyword GYRATION &#160;" alt="" coords="732,928,889,957"/>
+<area shape="rect" id="node41" href="$class_p_l_m_d_1_1colvar_1_1_path_m_s_d_base.html" title="PLMD::colvar::PathMSDBase" alt="" coords="712,981,909,1011"/>
+<area shape="rect" id="node47" href="$class_p_l_m_d_1_1colvar_1_1_r_m_s_d.html" title="Provides the keyword RMSD &#160;" alt="" coords="736,1035,885,1064"/>
+<area shape="rect" id="node49" href="$class_p_l_m_d_1_1colvar_1_1_template.html" title="Provides the keyword TEMPLATE &#160;" alt="" coords="729,1088,892,1117"/>
+<area shape="rect" id="node51" href="$class_p_l_m_d_1_1colvar_1_1_torsion.html" title="Provides the keyword TORSION &#160;" alt="" coords="735,1141,887,1171"/>
+<area shape="rect" id="node53" href="$class_p_l_m_d_1_1colvar_1_1_volume.html" title="Provides the keyword VOLUME &#160;" alt="" coords="733,1195,888,1224"/>
+<area shape="rect" id="node27" href="$class_p_l_m_d_1_1colvar_1_1_coordination.html" title="Provides the keyword COORDINATION &#160;" alt="" coords="967,1488,1148,1517"/>
+<area shape="rect" id="node29" href="$class_p_l_m_d_1_1colvar_1_1_d_h_energy.html" title="Provides the keyword DHENERGY &#160;" alt="" coords="972,1541,1143,1571"/>
+<area shape="rect" id="node43" href="$class_p_l_m_d_1_1colvar_1_1_path_m_s_d.html" title="Provides the keyword PATHMSD &#160;" alt="" coords="975,955,1140,984"/>
+<area shape="rect" id="node45" href="$class_p_l_m_d_1_1colvar_1_1_property_map.html" title="Provides the keyword PROPERTYMAP &#160;" alt="" coords="965,1008,1149,1037"/>
+<area shape="rect" id="node65" href="$class_p_l_m_d_1_1manyrestraints_1_1_sphere.html" title="Provides the keyword SPHERICAL_RESTRAINT &#160;" alt="" coords="735,858,887,905"/>
+<area shape="rect" id="node69" href="$class_p_l_m_d_1_1multicolvar_1_1_volume_around.html" title="Provides the keyword AROUND &#160;" alt="" coords="741,1989,880,2035"/>
+<area shape="rect" id="node73" href="$class_p_l_m_d_1_1multicolvar_1_1_multi_colvar.html" title="This is the abstract base class to use for creating distributions of colvars and functions thereof..." alt="" coords="741,2287,880,2334"/>
+<area shape="rect" id="node87" href="$class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_function.html" title="PLMD::multicolvar::\lMultiColvarFunction" alt="" coords="741,2218,880,2265"/>
+<area shape="rect" id="node75" href="$class_p_l_m_d_1_1multicolvar_1_1_alpha_beta.html" title="Provides the keyword ALPHABETA &#160;" alt="" coords="988,2391,1127,2438"/>
+<area shape="rect" id="node77" href="$class_p_l_m_d_1_1multicolvar_1_1_angles.html" title="Provides the keyword ANGLES &#160;" alt="" coords="988,2461,1127,2507"/>
+<area shape="rect" id="node79" href="$class_p_l_m_d_1_1multicolvar_1_1_bridge.html" title="Provides the keyword BRIDGE &#160;" alt="" coords="988,2114,1127,2161"/>
+<area shape="rect" id="node81" href="$class_p_l_m_d_1_1multicolvar_1_1_coordination_numbers.html" title="Provides the keyword COORDINATIONNUMBER &#160;" alt="" coords="984,2183,1131,2230"/>
+<area shape="rect" id="node83" href="$class_p_l_m_d_1_1multicolvar_1_1_density.html" title="Provides the keyword DENSITY &#160;" alt="" coords="988,2253,1127,2299"/>
+<area shape="rect" id="node85" href="$class_p_l_m_d_1_1multicolvar_1_1_distances.html" title="Provides the keyword DISTANCES &#160;" alt="" coords="988,2322,1127,2369"/>
+<area shape="rect" id="node91" href="$class_p_l_m_d_1_1secondarystructure_1_1_alpha_r_m_s_d.html" title="Provides the keyword ALPHARMSD &#160;" alt="" coords="721,1781,900,1827"/>
+<area shape="rect" id="node93" href="$class_p_l_m_d_1_1secondarystructure_1_1_antibeta_r_m_s_d.html" title="Provides the keyword ANTIBETARMSD &#160;" alt="" coords="721,1850,900,1897"/>
+<area shape="rect" id="node95" href="$class_p_l_m_d_1_1secondarystructure_1_1_parabeta_r_m_s_d.html" title="Provides the keyword PARABETARMSD &#160;" alt="" coords="721,1919,900,1966"/>
+<area shape="rect" id="node101" href="$class_p_l_m_d_1_1analysis_1_1_analysis.html" title="This is the abstract base class to use for implementing new methods for analyzing the trajectory..." alt="" coords="460,352,633,381"/>
+<area shape="rect" id="node105" href="$class_p_l_m_d_1_1bias_1_1_bias.html" title="This is the abstract base class to use for implementing new simulation biases, within it there is inf..." alt="" coords="484,512,609,541"/>
+<area shape="rect" id="node123" href="$class_p_l_m_d_1_1generic_1_1_debug.html" title="Provides the keyword DEBUG &#160;" alt="" coords="469,405,624,435"/>
+<area shape="rect" id="node126" href="$class_p_l_m_d_1_1generic_1_1_dump_derivatives.html" title="Provides the keyword DUMPDERIVATIVES &#160;" alt="" coords="437,139,656,168"/>
+<area shape="rect" id="node128" href="$class_p_l_m_d_1_1generic_1_1_dump_forces.html" title="Provides the keyword DUMPFORCES &#160;" alt="" coords="451,192,643,221"/>
+<area shape="rect" id="node130" href="$class_p_l_m_d_1_1generic_1_1_dump_projections.html" title="Provides the keyword DUMPPROJECTIONS &#160;" alt="" coords="439,245,655,275"/>
+<area shape="rect" id="node132" href="$class_p_l_m_d_1_1generic_1_1_flush.html" title="Provides the keyword FLUSH &#160;" alt="" coords="472,459,621,488"/>
+<area shape="rect" id="node134" href="$class_p_l_m_d_1_1generic_1_1_print.html" title="Provides the keyword PRINT &#160;" alt="" coords="475,299,619,328"/>
+<area shape="rect" id="node136" href="$class_p_l_m_d_1_1generic_1_1_read.html" title="Provides the keyword READ &#160;" alt="" coords="473,765,620,795"/>
+<area shape="rect" id="node103" href="$class_p_l_m_d_1_1analysis_1_1_histogram.html" title="Provides the keyword HISTOGRAM &#160;" alt="" coords="720,5,901,35"/>
+<area shape="rect" id="node107" href="$class_p_l_m_d_1_1bias_1_1_a_b_m_d.html" title="Provides the keyword ABMD &#160;" alt="" coords="741,112,880,141"/>
+<area shape="rect" id="node109" href="$class_p_l_m_d_1_1bias_1_1_bias_value.html" title="Provides the keyword BIASVALUE &#160;" alt="" coords="732,165,889,195"/>
+<area shape="rect" id="node111" href="$class_p_l_m_d_1_1bias_1_1_external.html" title="Provides the keyword EXTERNAL &#160;" alt="" coords="737,219,884,248"/>
+<area shape="rect" id="node113" href="$class_p_l_m_d_1_1bias_1_1_l_walls.html" title="Provides the keyword LOWER_WALLS &#160;" alt="" coords="741,272,880,301"/>
+<area shape="rect" id="node115" href="$class_p_l_m_d_1_1bias_1_1_meta_d.html" title="Provides the keyword METAD &#160;" alt="" coords="741,325,880,355"/>
+<area shape="rect" id="node117" href="$class_p_l_m_d_1_1bias_1_1_moving_restraint.html" title="Provides the keyword MOVINGRESTRAINT &#160;" alt="" coords="713,379,908,408"/>
+<area shape="rect" id="node119" href="$class_p_l_m_d_1_1bias_1_1_restraint.html" title="Provides the keyword RESTRAINT &#160;" alt="" coords="735,432,887,461"/>
+<area shape="rect" id="node121" href="$class_p_l_m_d_1_1bias_1_1_u_walls.html" title="Provides the keyword UPPER_WALLS &#160;" alt="" coords="740,59,881,88"/>
+<area shape="rect" id="node143" href="$class_p_l_m_d_1_1setup_1_1_load.html" title="Provides the keyword LOAD &#160;" alt="" coords="480,1776,613,1805"/>
+<area shape="rect" id="node145" href="$class_p_l_m_d_1_1setup_1_1_restart.html" title="Provides the keyword RESTART &#160;" alt="" coords="472,1829,621,1859"/>
+<area shape="rect" id="node147" href="$class_p_l_m_d_1_1setup_1_1_units.html" title="Provides the keyword UNITS &#160;" alt="" coords="477,1723,616,1752"/>
+<area shape="rect" id="node154" href="$class_p_l_m_d_1_1function_1_1_function.html" title="This is the abstract base class to use for implementing new CV function, within it there is informati..." alt="" coords="461,645,632,675"/>
+<area shape="rect" id="node156" href="$class_p_l_m_d_1_1function_1_1_combine.html" title="Provides the keyword COMBINE &#160;" alt="" coords="724,805,897,835"/>
+<area shape="rect" id="node158" href="$class_p_l_m_d_1_1function_1_1_func_path_m_s_d.html" title="Provides the keyword FUNCPATHMSD &#160;" alt="" coords="708,485,913,515"/>
+<area shape="rect" id="node160" href="$class_p_l_m_d_1_1function_1_1_func_sum_hills.html" title="Provides the keyword FUNCSUMHILLS &#160;" alt="" coords="709,539,912,568"/>
+<area shape="rect" id="node162" href="$class_p_l_m_d_1_1function_1_1_matheval.html" title="Provides the keyword MATHEVAL &#160;" alt="" coords="724,592,897,621"/>
+<area shape="rect" id="node164" href="$class_p_l_m_d_1_1function_1_1_piecewise.html" title="Provides the keyword PIECEWISE &#160;" alt="" coords="720,645,901,675"/>
+<area shape="rect" id="node166" href="$class_p_l_m_d_1_1function_1_1_sort.html" title="Provides the keyword SORT &#160;" alt="" coords="739,699,883,728"/>
+<area shape="rect" id="node168" href="$class_p_l_m_d_1_1function_1_1_target.html" title="Provides the keyword TARGET &#160;" alt="" coords="732,752,889,781"/>
+<area shape="rect" id="node180" href="$class_p_l_m_d_1_1generic_1_1_time.html" title="Provides the keyword TIME &#160;" alt="" coords="473,1072,620,1101"/>
+</map>

@@ -1,0 +1,261 @@
+/**
+
+\page Colvar Collective Variables
+
+Chemical systems contain an enormous number atoms, which, in most cases makes it simply impossible for
+us to understand anything by monitoring the atom postions directly.  Consquentially,
+we introduce Collective variables (CVs) that describe the chemical processes we are
+interested in and monitor these simpler quantities instead.  These CVs are used in all of the methods
+implemented in PLUMED - they're values can be monitored using \ref PRINT, \ref Function of them can be calculated
+or they can be analyzed or biased using the \ref Analysis and \ref Bias "Biasing" methods implemented in PLUMED.
+Before doing any of these things however we first have to inform PLUMED how to calculate them.
+
+\section atomSpecs Specifying Atoms
+
+The vast majority of the CVs implemented in PLUMED are calculated from a list of atom positions.  Within PLUMED
+atoms are always specified according to their numerical indices in the molecular dynamics input file.  This can
+be done either using a comma separated list of numbers or, if a long list atom of contiguous atoms is required,
+by using the shortcut 10-100, which specifies all the atom indexes between 10 and 100 (including 10 and 100).  So for example:
+
+\verbatim
+TORSION ATOMS=1,2,3,4
+\endverbatim
+
+could also be specified using:
+
+\verbatim
+TORIONS ATOMS=1-4
+\endverbatim
+
+Ranges of atom can also be defined with a stride. For example:
+
+\verbatim
+COM ATOMS=1,11,21,31,41,51
+\endverbatim
+
+could also be specified using:
+
+\verbatim
+COM ATOMS=1-51:10
+\endverbatim
+
+In addition, for certain colvars, pdb files can be read in using the following keywords:
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td width=5%> \subpage  MOLINFO </td> <td>
+This command is used to provide information on the molecules that are present in your system.
+</td> </tr>
+</table>
+
+The read in pdb files are used by PLUMED to define things like residues, the backbone atoms and so on.  These can then be
+used within the input to colvars to make inputting the lists of atoms involved more straightforward.  Documentation for
+how these shortcuts can be used can be found in the documentation for the various CVs.
+
+Lastly, if you have a list of colvar that is particularly laborious to write out that you need to use multiple times in the
+input you can create a static group of atoms and then use the label of the group to specify the correpsonding list of
+atoms in your various colvars.  For more details see \subpage GROUP.
+
+\section vatoms Virtual Atoms
+
+Sometimes, when calculating a colvar, you may not want to use the positions of a number of atoms directly.  Instead
+you may wish to use the position of a virtual atom whose position is generated based on the positions of a collection
+of other atoms.  For example you might want to use the center of mass of a group of atoms.  Plumed has a number of routines
+for calculating the positions of these virtual atoms from lists of atoms:
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td width=5%> \subpage  CENTER </td> <td>
+Calculate the center for a group of atoms, with arbitraty weights.
+</td> </tr>
+<tr> <td width=5%> \subpage  COM </td> <td>
+Calculate the center of mass for a group of atoms.
+</td> </tr>
+<tr> <td width=5%> \subpage  GHOST </td> <td>
+Calculate the absolute position of a ghost atom with fixed coordinates
+in the local reference frame formed by three atoms. 
+The computed ghost atom is stored as a virtual atom that can be accessed in
+an atom list through the the label for the GHOST action that creates it.
+</td> </tr>
+</table>
+
+To specify to a colvar that you want to use the position of a virtual atom to calculate a colvar rather than one of the atoms
+in your system you simply use the label for your virtual atom in place of the usual numerical index.  Virtual
+atoms and normal atoms can be mixed together in the input to colvars as shown below:
+
+\verbatim
+COM ATOMS=1,10 LABEL=com1
+DISTANCE ATOMS=11,com1
+\endverbatim
+
+If you don't want to calculate CVs from the virtual atom.  That is to say you just want to monitor the position of a virtual atom
+(or any set of atoms) over the course of your trajectory you can do this using \ref DUMPATOMS.
+
+\section mols Molecules
+
+PLUMED is designed so that for the majority of the CVs implemented the periodic boundary conditions are treated
+in the same manner as they would be treated in the host code.  In some codes this can be problematic when the colvars
+you are using involve some property of a molecule.  These codes allow the atoms in the molecules to become separated by
+periodic boundaries, a fact which PLUMED could only deal with were the topology passed from the MD code to PLUMED.  Making this
+work would involve a lot laborious programming and goes against our original aim of having a general patch that can be implemented
+in a wide variety of MD codes.  Consequentially, we have implemented a more pragmatic solution to this probem - the user specifies
+in input any molecules (or parts of molecules) that must be kept in tact throughout the simulation run.  In PLUMED 1 this was done
+using the ALIGN_ATOMS keyword.  In PLUMED 2 the same effect can be acchieved using the \subpage WHOLEMOLECULES command.
+
+\section cvavail CV Documentation
+
+The following list contains all the colvars that are currently implemented in PLUMED 2.
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td width=5%> \subpage  ANGLE </td> <td>
+Calculate an angle.
+</td> </tr>
+<tr> <td width=5%> \subpage  CELL </td> <td>
+Calculate the components of the simulation cell
+</td> </tr>
+<tr> <td width=5%> \subpage  CONSTANT </td> <td>
+Return a constant quantity.
+</td> </tr>
+<tr> <td width=5%> \subpage  CONTACTMAP </td> <td>
+Calculate the distances between a number of pairs of atoms and transform each distance by a switching function.
+</td> </tr>
+<tr> <td width=5%> \subpage  COORDINATION </td> <td>
+Calculate coordination numbers.
+</td> </tr>
+<tr> <td width=5%> \subpage  CS2BACKBONE </td> <td>
+This collective variable calculates a scoring function based on the comparison of backcalculated and
+experimental backbone chemical shifts for a protein (CA, CB, C', H, HA, N).
+</td> </tr>
+<tr> <td width=5%> \subpage  DHENERGY </td> <td>
+Calculate Debye-Huckel interaction energy among GROUPA and GROUPB.
+</td> </tr>
+<tr> <td width=5%> \subpage  DIPOLE </td> <td>
+Calcualte the dipole moment for a group of atoms.
+</td> </tr>
+<tr> <td width=5%> \subpage  DISTANCE </td> <td>
+Calculate the distance between a pair of atoms.
+By default the distance is computed taking into account periodic
+boundary conditions. This behavior can be changed with the NOPBC flag.
+Moreover, single components (x,y, and z) can be also computed.
+</td> </tr>
+<tr> <td width=5%> \subpage  DRMSD </td> <td>
+Calculate the distance RMSD with respect to a reference structure. 
+</td> </tr>
+<tr> <td width=5%> \subpage  ENERGY </td> <td>
+Calculate the total energy of the simulation box.
+</td> </tr>
+<tr> <td width=5%> \subpage  FAKE </td> <td>
+This is a fake colvar container used by cltools or various other actions
+and just support input and period definition
+</td> </tr>
+<tr> <td width=5%> \subpage  GYRATION </td> <td>
+Calculate the radius of gyration, or other properties related to it.
+</td> </tr>
+<tr> <td width=5%> \subpage  PATHMSD </td> <td>
+This Colvar calculates path collective variables. 
+</td> </tr>
+<tr> <td width=5%> \subpage  PROPERTYMAP </td> <td>
+Calculate generic property maps.
+</td> </tr>
+<tr> <td width=5%> \subpage  RMSD </td> <td>
+Calculate the RMSD with respect to a reference structure.  
+</td> </tr>
+<tr> <td width=5%> \subpage  TEMPLATE </td> <td>
+This file provides a template for if you want to introduce a new CV.
+</td> </tr>
+<tr> <td width=5%> \subpage  TORSION </td> <td>
+Calculate a torsional angle.
+</td> </tr>
+<tr> <td width=5%> \subpage  VOLUME </td> <td>
+Calculate the volume of the simulation box.
+</td> </tr>
+<tr> <td width=5%> \subpage  ALPHABETA </td> <td>
+Measures a distance including pbc between the instantaneous values of a set of torsional angles and set of reference values.
+</td> </tr>
+<tr> <td width=5%> \subpage  ALPHARMSD </td> <td>
+Probe the alpha helical content of a protein structure.
+</td> </tr>
+<tr> <td width=5%> \subpage  ANTIBETARMSD </td> <td>
+Probe the antiparallel beta sheet content of your protein structure.
+</td> </tr>
+<tr> <td width=5%> \subpage  PARABETARMSD </td> <td>
+Probe the parallel beta sheet content of your protein structure.
+</td> </tr>
+</table>
+
+\section mcolv MultiColvar Documentation
+
+Often you do not need one of the collective variables described in the previous section.  What you want instead is a
+function of a distribution of collective variables of a particular type.  For instance you might need to calculate a
+minimum distance or the number of coordination numbers greater than a 3.0.  To avoid dupilcating the code to calculate
+an angle or distance many times and to make it easier to implement very complex collective variables PLUMED provides
+these sort of collective variables using so-called MultiColvars.  MultiColvars are named in this way because a single
+PLUMED action can be used to calculate a number of different collective variables.  For instance the \ref DISTANCES
+action can be used to calculate the minimum distance, the number of distances less than a certain value, the number of
+distances within a certain range...  Descriptions as to how to use PLUMED to calculate these kinds of CVs are given
+below:
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td width=5%> \subpage  ANGLES </td> <td>
+Calculate functions of the distribution of angles .
+</td> </tr>
+<tr> <td width=5%> \subpage  BRIDGE </td> <td>
+Calculate the number of atoms that bridge two parts of a structure
+</td> </tr>
+<tr> <td width=5%> \subpage  COORDINATIONNUMBER </td> <td>
+Calculate the coordination numbers of atoms so that you can then calculate functions of the distribution of
+coordination numbers such as the minimum, the number less than a certain quantity and so on.   
+</td> </tr>
+<tr> <td width=5%> \subpage  DENSITY </td> <td>
+Calculate functions of the density of atoms as a function of the box.  This allows one to calculate
+the number of atoms in half the box.
+</td> </tr>
+<tr> <td width=5%> \subpage  DISTANCES </td> <td>
+Calculate the distances between one or many pairs of atoms.  You can then calculate functions of the distribution of
+distances such as the minimum, the number less than a certain quantity and so on. 
+</td> </tr>
+</table>
+
+To instruct PLUMED to calculate a multicolvar you give an instruction that looks something like this:
+
+\verbatim
+NAME <atoms involved> <parameters> <what am I calculating> TOL=0.001 LABEL=label
+\endverbatim
+
+Oftentimes the simplest way to specify the atoms involved is to use multiple instances of the ATOMS keyword
+i.e. ATOMS1, ATOMS2, ATOMS3,...  Separate instances of the quantity specified by NAME are then calculated for
+each of the sets of atoms.  For example if the command issued contains the following:
+
+\verbatim
+DISTANCES ATOMS1=1,2 ATOMS2=3,4 ATOMS3=5,6
+\endverbatim
+
+The distances between atoms 1 and 2, atoms 3 and 4, and atoms 5 and 6 are calculated. Obviously, generating
+this sort of input is rather tedious so short cuts are also available many of the collective variables.
+These are described on the manual pages for the actions.
+
+After specifying the atoms involved you sometimes need to specify some parameters that required in the
+calculation.  For instance, for \ref COORDINATIONNUMBER - the number of atoms in the first coordination
+sphere of each of the atoms in the system - you need to specify the parameters for a \ref switchingfunction
+that will tell us whether or not an atom is in the first coordination sphere.  Details as to how to do this
+are provided on the manual pages.
+
+One of the most important keywords for multicolvars is the TOL keyword.  This specifies that terms in sums
+that contribute less than a certain value can be ignored.  In addition, it is assumed that the derivative
+with respect to these terms are essentially zero.  By increasing the TOL parameter you can increase the speed
+of the calculation.  Be aware, however, that this increase in speed is only possible because you are lowering the
+accuracy with which you are computing the quantity of interest.
+
+Once you have specified the base quanties that are to be calculated from the atoms involved and any parameters
+you need to specify what function of these base quanties is to be calculated.  For most multicolvars you can calculate
+the minimum, the number less than a target value, the number within a certain range, the number more than a target
+value and the average value directly.  In addition, the following more complex functions of the distribution of values
+can be computed:
+
+<table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td width=5%> \subpage  AROUND </td> <td>
+This quantity can be used to calculate functions of the distribution of collective 
+variables for the atoms that lie in a particular, user-specified part of of the cell.
+</td> </tr>
+</table>
+
+*/
+

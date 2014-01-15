@@ -1,0 +1,287 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: core/ActionWithArguments.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">ActionWithArguments.h</div>  </div>
+</div>
+<div class="contents">
+<a href="core_2_action_with_arguments_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_core_ActionWithArguments_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_core_ActionWithArguments_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2_action_8h.html">Action.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2_value_8h.html">Value.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">\ingroup MULTIINHERIT</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">This is used to create PLMD::Action objects that take the output from some other Action as input.  </span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">This is used in PLMD::Function and PLMD::Bias</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> PLMD::Action objects that inherit from PLMD::ActionWithArguments take </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> values and components calculated in other PLMD::Action objects and</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> use this information to calculate some new function.  If you have </span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> only one list of arguments you should use the reserved keyword &lt;b&gt; ARG &lt;/b&gt; </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> when you use parseArgumentList.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html">ActionWithArguments</a>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="class_p_l_m_d_1_1_action.html">Action</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">   45</a></span>&#160;  std::vector&lt;Value*&gt; <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">arguments</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#a5672ecc2cd8d98edff8c68c4bec54ebc">   46</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a5672ecc2cd8d98edff8c68c4bec54ebc">lockRequestArguments</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">protected</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/// This changes the arg keyword in the pdb file</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#af3fa598b3bbedd7c53feb629d79171c3">expandArgKeywordInPDB</a>( <a class="code" href="class_p_l_m_d_1_1_p_d_b.html">PDB</a>&amp; pdb );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// Get the scalar product between the gradients of two variables</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a7053412702fd980d2cc74c0a2520fd4f">getProjection</a>(<span class="keywordtype">unsigned</span> i,<span class="keywordtype">unsigned</span> j)<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// Registers the list of keywords</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a72fe64a7d4012214902883806223c6ab">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// Returns the value of an argument</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aea45134a4a9907fb69a45b7462a5e2fa">getArgument</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a> ) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// Return a pointer to specific argument</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>* <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a2b59e207640fc3a6389bac25867673fe">getPntrToArgument</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a> );<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// Returns the number of arguments</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">getNumberOfArguments</a>() <span class="keyword">const</span> ;<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// Takes the difference taking into account pbc for arg i</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a9ba3af7c820e8f689b2442e3eee3fa0a">difference</a>(<span class="keywordtype">int</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span>) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// Takes one value and brings it back into the pbc of argument i </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a64f8aaf196867c7c22e066a75f80b152">bringBackInPbc</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">double</span> d1)<span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// Parse a list of arguments</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a781e7983d5d753754575e62726265cf2">parseArgumentList</a>(<span class="keyword">const</span> std::string&amp;key,std::vector&lt;Value*&gt;&amp;args);<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// Setup the dependencies</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ad5664b76c63c27d87add3d92f3465574">requestArguments</a>(<span class="keyword">const</span> std::vector&lt;Value*&gt; &amp;arg);<span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/// Add forces to arguments (used in apply)</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#afd874f073b0e901b047b18fbc4d20494">addForcesOnArguments</a>( <span class="keyword">const</span> std::vector&lt;double&gt;&amp; forces );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aa431e19c4da826bff8e327ccb6e822a7">ActionWithArguments</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#a2a0a6129985bbe83400cc74335ee5542">   73</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a2a0a6129985bbe83400cc74335ee5542">~ActionWithArguments</a>(){}<span class="comment"></span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/// Calculate the numerical derivatives</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/// N.B. only pass an ActionWithValue to this routine if you know exactly what you </span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">/// are doing.  The default will be correct for the vast majority of cases</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a3623c359b16f54e224aece2031862544">calculateNumericalDerivatives</a>( <a class="code" href="class_p_l_m_d_1_1_action_with_value.html">ActionWithValue</a>* <a class="code" href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a>=NULL );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aabc71d7b10eb18a830f94a4e92449009">lockRequests</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a41ba50ef1d5cdc9036391164c970e042">unlockRequests</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/// Returns an array of pointers to the arguments</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"></span>  std::vector&lt;Value*&gt;    &amp; <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a45a45a41e09dc19b7e6a153c5be55c6f">getArguments</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/// Convert a list of argument names into a list of pointers to the values</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a4e38bd58d95c6a07571499385449f516">interpretArgumentList</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; c, std::vector&lt;Value*&gt;&amp;arg);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#a2b59e207640fc3a6389bac25867673fe">   88</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>* <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a2b59e207640fc3a6389bac25867673fe">ActionWithArguments::getPntrToArgument</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a> ){</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">arguments</a>[<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#aea45134a4a9907fb69a45b7462a5e2fa">   93</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aea45134a4a9907fb69a45b7462a5e2fa">ActionWithArguments::getArgument</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">arguments</a>[<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>]-&gt;get();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">   98</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">ActionWithArguments::getNumberOfArguments</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">arguments</a>.size();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#a9ba3af7c820e8f689b2442e3eee3fa0a">  103</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a9ba3af7c820e8f689b2442e3eee3fa0a">ActionWithArguments::difference</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">double</span> d1,<span class="keywordtype">double</span> d2)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">arguments</a>[i]-&gt;difference(d1,d2);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#a64f8aaf196867c7c22e066a75f80b152">  108</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a64f8aaf196867c7c22e066a75f80b152">ActionWithArguments::bringBackInPbc</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">double</span> d1)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">arguments</a>[i]-&gt;bringBackInPbc(d1);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#aabc71d7b10eb18a830f94a4e92449009">  113</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aabc71d7b10eb18a830f94a4e92449009">ActionWithArguments::lockRequests</a>(){</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a5672ecc2cd8d98edff8c68c4bec54ebc">lockRequestArguments</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#a41ba50ef1d5cdc9036391164c970e042">  118</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a41ba50ef1d5cdc9036391164c970e042">ActionWithArguments::unlockRequests</a>(){</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a5672ecc2cd8d98edff8c68c4bec54ebc">lockRequestArguments</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_action_with_arguments.html#a45a45a41e09dc19b7e6a153c5be55c6f">  123</a></span>&#160;std::vector&lt;Value*&gt; &amp; <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a45a45a41e09dc19b7e6a153c5be55c6f">ActionWithArguments::getArguments</a>(){</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">arguments</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_aabc71d7b10eb18a830f94a4e92449009"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#aabc71d7b10eb18a830f94a4e92449009">PLMD::ActionWithArguments::lockRequests</a></div><div class="ttdeci">void lockRequests()</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00113">ActionWithArguments.h:113</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a3623c359b16f54e224aece2031862544"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a3623c359b16f54e224aece2031862544">PLMD::ActionWithArguments::calculateNumericalDerivatives</a></div><div class="ttdeci">virtual void calculateNumericalDerivatives(ActionWithValue *a=NULL)</div><div class="ttdoc">Calculate the numerical derivatives N.B. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00238">ActionWithArguments.cpp:238</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a781e7983d5d753754575e62726265cf2"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a781e7983d5d753754575e62726265cf2">PLMD::ActionWithArguments::parseArgumentList</a></div><div class="ttdeci">void parseArgumentList(const std::string &amp;key, std::vector&lt; Value * &gt; &amp;args)</div><div class="ttdoc">Parse a list of arguments. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00040">ActionWithArguments.cpp:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a5672ecc2cd8d98edff8c68c4bec54ebc"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a5672ecc2cd8d98edff8c68c4bec54ebc">PLMD::ActionWithArguments::lockRequestArguments</a></div><div class="ttdeci">bool lockRequestArguments</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00046">ActionWithArguments.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html">PLMD::Value</a></div><div class="ttdoc">A class for holding the value of a function together with its derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00046">Value.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a4e38bd58d95c6a07571499385449f516"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a4e38bd58d95c6a07571499385449f516">PLMD::ActionWithArguments::interpretArgumentList</a></div><div class="ttdeci">void interpretArgumentList(const std::vector&lt; std::string &gt; &amp;c, std::vector&lt; Value * &gt; &amp;arg)</div><div class="ttdoc">Convert a list of argument names into a list of pointers to the values. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00044">ActionWithArguments.cpp:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_ad5664b76c63c27d87add3d92f3465574"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#ad5664b76c63c27d87add3d92f3465574">PLMD::ActionWithArguments::requestArguments</a></div><div class="ttdeci">void requestArguments(const std::vector&lt; Value * &gt; &amp;arg)</div><div class="ttdoc">Setup the dependencies. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00202">ActionWithArguments.cpp:202</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a9ba3af7c820e8f689b2442e3eee3fa0a"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a9ba3af7c820e8f689b2442e3eee3fa0a">PLMD::ActionWithArguments::difference</a></div><div class="ttdeci">double difference(int, double, double) const </div><div class="ttdoc">Takes the difference taking into account pbc for arg i. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00103">ActionWithArguments.h:103</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a72fe64a7d4012214902883806223c6ab"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a72fe64a7d4012214902883806223c6ab">PLMD::ActionWithArguments::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdoc">Registers the list of keywords. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00036">ActionWithArguments.cpp:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a2b59e207640fc3a6389bac25867673fe"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a2b59e207640fc3a6389bac25867673fe">PLMD::ActionWithArguments::getPntrToArgument</a></div><div class="ttdeci">Value * getPntrToArgument(const unsigned n)</div><div class="ttdoc">Return a pointer to specific argument. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00088">ActionWithArguments.h:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html">PLMD::ActionWithArguments</a></div><div class="ttdoc">This is used to create PLMD::Action objects that take the output from some other Action as input...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00042">ActionWithArguments.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_aa4bcc84ec098ec9a7e9d872b7b7faf78"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#aa4bcc84ec098ec9a7e9d872b7b7faf78">PLMD::ActionWithArguments::arguments</a></div><div class="ttdeci">std::vector&lt; Value * &gt; arguments</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00045">ActionWithArguments.h:45</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a130c0fe8bb10a3931a3f8a41bbce3ec3"><div class="ttname"><a href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a></div><div class="ttdeci">void const char const char int * n</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html">PLMD::ActionWithValue</a></div><div class="ttdoc">Used to create a PLMD::Action that has some scalar or vectorial output that may or may not have some ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00065">ActionWithValue.h:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a41ba50ef1d5cdc9036391164c970e042"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a41ba50ef1d5cdc9036391164c970e042">PLMD::ActionWithArguments::unlockRequests</a></div><div class="ttdeci">void unlockRequests()</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00118">ActionWithArguments.h:118</a></div></div>
+<div class="ttc" id="core_2_value_8h_html"><div class="ttname"><a href="core_2_value_8h.html">Value.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a64f8aaf196867c7c22e066a75f80b152"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a64f8aaf196867c7c22e066a75f80b152">PLMD::ActionWithArguments::bringBackInPbc</a></div><div class="ttdeci">double bringBackInPbc(int i, double d1) const </div><div class="ttdoc">Takes one value and brings it back into the pbc of argument i. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00108">ActionWithArguments.h:108</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a45a45a41e09dc19b7e6a153c5be55c6f"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a45a45a41e09dc19b7e6a153c5be55c6f">PLMD::ActionWithArguments::getArguments</a></div><div class="ttdeci">std::vector&lt; Value * &gt; &amp; getArguments()</div><div class="ttdoc">Returns an array of pointers to the arguments. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00123">ActionWithArguments.h:123</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_afd874f073b0e901b047b18fbc4d20494"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#afd874f073b0e901b047b18fbc4d20494">PLMD::ActionWithArguments::addForcesOnArguments</a></div><div class="ttdeci">void addForcesOnArguments(const std::vector&lt; double &gt; &amp;forces)</div><div class="ttdoc">Add forces to arguments (used in apply) </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00272">ActionWithArguments.cpp:272</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a2a0a6129985bbe83400cc74335ee5542"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a2a0a6129985bbe83400cc74335ee5542">PLMD::ActionWithArguments::~ActionWithArguments</a></div><div class="ttdeci">virtual ~ActionWithArguments()</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00073">ActionWithArguments.h:73</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html">PLMD::Action</a></div><div class="ttdoc">Base class for all the input Actions. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00060">Action.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a7053412702fd980d2cc74c0a2520fd4f"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a7053412702fd980d2cc74c0a2520fd4f">PLMD::ActionWithArguments::getProjection</a></div><div class="ttdeci">double getProjection(unsigned i, unsigned j) const </div><div class="ttdoc">Get the scalar product between the gradients of two variables. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00264">ActionWithArguments.cpp:264</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_p_d_b_html"><div class="ttname"><a href="class_p_l_m_d_1_1_p_d_b.html">PLMD::PDB</a></div><div class="ttdoc">Minimalistic pdb parser. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_p_d_b_8h_source.html#l00038">PDB.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_aea45134a4a9907fb69a45b7462a5e2fa"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#aea45134a4a9907fb69a45b7462a5e2fa">PLMD::ActionWithArguments::getArgument</a></div><div class="ttdeci">double getArgument(const unsigned n) const </div><div class="ttdoc">Returns the value of an argument. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00093">ActionWithArguments.h:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_aa431e19c4da826bff8e327ccb6e822a7"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#aa431e19c4da826bff8e327ccb6e822a7">PLMD::ActionWithArguments::ActionWithArguments</a></div><div class="ttdeci">ActionWithArguments(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00221">ActionWithArguments.cpp:221</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_af3fa598b3bbedd7c53feb629d79171c3"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#af3fa598b3bbedd7c53feb629d79171c3">PLMD::ActionWithArguments::expandArgKeywordInPDB</a></div><div class="ttdeci">void expandArgKeywordInPDB(PDB &amp;pdb)</div><div class="ttdoc">This changes the arg keyword in the pdb file. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_arguments_8cpp_source.html#l00189">ActionWithArguments.cpp:189</a></div></div>
+<div class="ttc" id="core_2_action_8h_html"><div class="ttname"><a href="core_2_action_8h.html">Action.h</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_abbbe73d1c8be35369721e93ad9999266"><div class="ttname"><a href="tools_2_matrix_8h.html#abbbe73d1c8be35369721e93ad9999266">a</a></div><div class="ttdeci">void const char const char int double * a</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_ac759d81efea580cc19220472484bda0d"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">PLMD::ActionWithArguments::getNumberOfArguments</a></div><div class="ttdeci">unsigned getNumberOfArguments() const </div><div class="ttdoc">Returns the number of arguments. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00098">ActionWithArguments.h:98</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

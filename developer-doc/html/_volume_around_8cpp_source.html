@@ -1,0 +1,321 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: multicolvar/VolumeAround.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4edf87903dfade8d550ff22836b1ec12.html">multicolvar</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">VolumeAround.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_volume_around_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;core/ActionRegister.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;tools/Pbc.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_action_volume_8h.html">ActionVolume.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//+PLUMEDOC MCOLVARF AROUND</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">This quantity can be used to calculate functions of the distribution of collective </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">variables for the atoms that lie in a particular, user-specified part of of the cell.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">Each of the base quantities calculated by a multicolvar can can be assigned to a particular point in three </span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">dimensional space. For example, if we have the coordination numbers for all the atoms in the</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">system each coordination number can be assumed to lie on the position of the central atom. </span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">Because each base quantity can be assigned to a particular point in space we can calculate functions of the</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">distribution of base quantities in a particular part of the box by using:</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">\f[</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">\overline{s}_{\tau} = \frac{ \sum_i f(s_i) w(x_i,y_i,z_i) }{ \sum_i w(x_i,y_i,z_i) }  </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">\f]  </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">where the sum is over the collective variables, \f$s_i\f$, each of which can be thought to be at \f$ (x_i,y_i,z_i)\f$.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">The function \f$ w(x_i,y_i,z_i) \f$ measures whether or not the system is in the subregion of interest. It</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">is equal to:</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">\f[</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">w(x_i,y_i,z_i) = \int_{xl}^{xu} \int_{yl}^{yu} \int_{zl}^{zu} \textrm{d}x\textrm{d}y\textrm{d}z K\left( \frac{x - x_i}{\sigma} \right)K\left( \frac{y - y_i}{\sigma} \right)K\left( \frac{z - z_i}{\sigma} \right) </span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">\f]</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">where \f$K\f$ is one of the kernel functions described on \ref histogrambead and \f$\sigma\f$ is a bandwidth parameter.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">The function \f$(s_i)\f$ can be any of the usual LESS_THAN, MORE_THAN, WITHIN etc that are used in all other multicolvars.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">When AROUND is used with the \ref DENSITY action the number of atoms in the specified region is calculated  </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">\par Examples</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">The following commands tell plumed to calculate the average coordination number for the atoms</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">that have x (in fractional coordinates) within 2.0 nm of the com of mass c1. The final value will be labeled s.mean.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">\verbatim</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">COM ATOMS=1-100 LABEL=c1</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">COORDINATIONNUMBER SPECIES=1-100 R_0=1.0 LABEL=c</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">AROUND ARG=c ORIGIN=c1 XLOWER=-2.0 XUPPER=2.0 SIGMA=0.1 MEAN LABEL=s</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">\endverbatim</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//+ENDPLUMEDOC</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">namespace </span>multicolvar {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html">   70</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html">VolumeAround</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html">ActionVolume</a> {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a53f431e6ba157873a4519ee7c97cb820">   72</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a53f431e6ba157873a4519ee7c97cb820">origin</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#abfc66e4a7caee732dd6187bc5a13f0aa">   73</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#aba7688eb7e7c0de95e6dadc6ac244aa5">dox</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a6f1a6c6a90bbec6e87feaf1225e5fa37">doy</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#abfc66e4a7caee732dd6187bc5a13f0aa">doz</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a282719f9a99a9af5ec953321a2a916d6">   74</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a282719f9a99a9af5ec953321a2a916d6">xlow</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a99f46bdfd58cc5bcbe6c3cfb08c44750">xhigh</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#adeee3d0d5591932bf5c2433d1b440f48">   75</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#adeee3d0d5591932bf5c2433d1b440f48">ylow</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3f130f5350a18d33e769d09a45230152">yhigh</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a495bda36621ec23df7c19f3e7bf861fc">   76</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a495bda36621ec23df7c19f3e7bf861fc">zlow</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a0bf1ca1b049ca1c8cd3b1b4b7e546160">zhigh</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#ab15fcb86a0808193e5c7c4f65b9ca330">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a76c331def4cdd73b6cd581ac04ad849b">VolumeAround</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp; ao);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3e650c2545c40ebe9b200eff1113d21f">setupRegion</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a1c79e93e896eebb097b2cd2a2bac0804">calculateNumberInside</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; cpos, <a class="code" href="class_p_l_m_d_1_1_histogram_bead.html">HistogramBead</a>&amp; <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a68ce3181af2e12369e7aa41b70d71f88">bead</a>, <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#aa7ea9998754d6587833df00539d6ed68">derivatives</a> );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;PLUMED_REGISTER_ACTION(<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html">VolumeAround</a>,<span class="stringliteral">&quot;AROUND&quot;</span>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#ab15fcb86a0808193e5c7c4f65b9ca330">   86</a></span>&#160;void <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html">VolumeAround</a>::registerKeywords( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a9159e12fe3b72cd2709bcda49290720d">ActionVolume::registerKeywords</a>( keys );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  keys.add(<span class="stringliteral">&quot;atoms&quot;</span>,<span class="stringliteral">&quot;ATOM&quot;</span>,<span class="stringliteral">&quot;the atom whose vicinity we are interested in examining&quot;</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;XLOWER&quot;</span>,<span class="stringliteral">&quot;0.0&quot;</span>,<span class="stringliteral">&quot;the lower boundary in x relative to the x coordinate of the atom (0 indicates use full extent of box).&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;XUPPER&quot;</span>,<span class="stringliteral">&quot;0.0&quot;</span>,<span class="stringliteral">&quot;the upper boundary in x relative to the x coordinate of the atom (0 indicates use full extent of box).&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;YLOWER&quot;</span>,<span class="stringliteral">&quot;0.0&quot;</span>,<span class="stringliteral">&quot;the lower boundary in y relative to the y coordinate of the atom (0 indicates use full extent of box).&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;YUPPER&quot;</span>,<span class="stringliteral">&quot;0.0&quot;</span>,<span class="stringliteral">&quot;the upper boundary in y relative to the y coordinate of the atom (0 indicates use full extent of box).&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;ZLOWER&quot;</span>,<span class="stringliteral">&quot;0.0&quot;</span>,<span class="stringliteral">&quot;the lower boundary in z relative to the z coordinate of the atom (0 indicates use full extent of box).&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;ZUPPER&quot;</span>,<span class="stringliteral">&quot;0.0&quot;</span>,<span class="stringliteral">&quot;the upper boundary in z relative to the z coordinate of the atom (0 indicates use full extent of box).&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a76c331def4cdd73b6cd581ac04ad849b">   97</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a76c331def4cdd73b6cd581ac04ad849b">VolumeAround::VolumeAround</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp; ao):</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<a class="code" href="class_p_l_m_d_1_1_action.html">Action</a>(ao),</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html">ActionVolume</a>(ao)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  std::vector&lt;AtomNumber&gt; atom; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">parseAtomList</a>(<span class="stringliteral">&quot;ATOM&quot;</span>,atom);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">if</span>( atom.size()!=1 ) <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;should only be one atom specified&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  boundaries for region are calculated based on positions of atom : %d\n&quot;</span>,atom[0].<a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#aedc4e543d104cca995c0966c104e9fdd">serial</a>() );</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#aba7688eb7e7c0de95e6dadc6ac244aa5">dox</a>=<span class="keyword">true</span>; <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;XLOWER&quot;</span>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a282719f9a99a9af5ec953321a2a916d6">xlow</a>); <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;XUPPER&quot;</span>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a99f46bdfd58cc5bcbe6c3cfb08c44750">xhigh</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a6f1a6c6a90bbec6e87feaf1225e5fa37">doy</a>=<span class="keyword">true</span>; <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;YLOWER&quot;</span>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#adeee3d0d5591932bf5c2433d1b440f48">ylow</a>); <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;YUPPER&quot;</span>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3f130f5350a18d33e769d09a45230152">yhigh</a>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#abfc66e4a7caee732dd6187bc5a13f0aa">doz</a>=<span class="keyword">true</span>; <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;ZLOWER&quot;</span>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a495bda36621ec23df7c19f3e7bf861fc">zlow</a>); <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;ZUPPER&quot;</span>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a0bf1ca1b049ca1c8cd3b1b4b7e546160">zhigh</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a282719f9a99a9af5ec953321a2a916d6">xlow</a>==0.0 &amp;&amp; <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a99f46bdfd58cc5bcbe6c3cfb08c44750">xhigh</a>==0.0 ) <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#aba7688eb7e7c0de95e6dadc6ac244aa5">dox</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#adeee3d0d5591932bf5c2433d1b440f48">ylow</a>==0.0 &amp;&amp; <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3f130f5350a18d33e769d09a45230152">yhigh</a>==0.0 ) <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a6f1a6c6a90bbec6e87feaf1225e5fa37">doy</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a495bda36621ec23df7c19f3e7bf861fc">zlow</a>==0.0 &amp;&amp; <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a0bf1ca1b049ca1c8cd3b1b4b7e546160">zhigh</a>==0.0 ) <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#abfc66e4a7caee732dd6187bc5a13f0aa">doz</a>=<span class="keyword">false</span>; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">if</span>( !<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#aba7688eb7e7c0de95e6dadc6ac244aa5">dox</a> &amp;&amp; !<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a6f1a6c6a90bbec6e87feaf1225e5fa37">doy</a> &amp;&amp; !<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#abfc66e4a7caee732dd6187bc5a13f0aa">doz</a> ) <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;no subregion defined use XLOWER, XUPPER, YLOWER, YUPPER, ZLOWER, ZUPPER&quot;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  boundaries for region (region of interest about atom) : x %f %f, y %f %f, z %f %f \n&quot;</span>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a282719f9a99a9af5ec953321a2a916d6">xlow</a>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a99f46bdfd58cc5bcbe6c3cfb08c44750">xhigh</a>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#adeee3d0d5591932bf5c2433d1b440f48">ylow</a>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3f130f5350a18d33e769d09a45230152">yhigh</a>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a495bda36621ec23df7c19f3e7bf861fc">zlow</a>,<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a0bf1ca1b049ca1c8cd3b1b4b7e546160">zhigh</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">checkRead</a>(); <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a771d7bba7effc131b81dd714ba933990">requestAtoms</a>(atom); </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3e650c2545c40ebe9b200eff1113d21f">  117</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3e650c2545c40ebe9b200eff1113d21f">VolumeAround::setupRegion</a>(){ }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a1c79e93e896eebb097b2cd2a2bac0804">  119</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a1c79e93e896eebb097b2cd2a2bac0804">VolumeAround::calculateNumberInside</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; cpos, <a class="code" href="class_p_l_m_d_1_1_histogram_bead.html">HistogramBead</a>&amp; bead, <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a>&amp; derivatives ){</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">// Calculate position of atom wrt to origin</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> fpos=<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#ada73633274153a54b343b09f8d631fa8">pbcDistance</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#ab01d173c6fe4e6630a6df25e96194964">getPosition</a>(0), cpos );</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">double</span> xcontr, ycontr, zcontr, xder, yder, zder; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#aba7688eb7e7c0de95e6dadc6ac244aa5">dox</a> ){</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;     bead.<a class="code" href="class_p_l_m_d_1_1_histogram_bead.html#a78940f4cf61333ac4274e1e05553fbc1">set</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a282719f9a99a9af5ec953321a2a916d6">xlow</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a99f46bdfd58cc5bcbe6c3cfb08c44750">xhigh</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a98ff85ec7b4d23d63d0b883ca9632068">getSigma</a>() );</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;     xcontr=bead.<a class="code" href="class_p_l_m_d_1_1_histogram_bead.html#a1f546ad9df9835bf4832e6ec5dfb54bf">calculate</a>( fpos[0], xder ); </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;     xcontr=1.; xder=0.;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a6f1a6c6a90bbec6e87feaf1225e5fa37">doy</a> ){</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;     bead.<a class="code" href="class_p_l_m_d_1_1_histogram_bead.html#a78940f4cf61333ac4274e1e05553fbc1">set</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#adeee3d0d5591932bf5c2433d1b440f48">ylow</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3f130f5350a18d33e769d09a45230152">yhigh</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a98ff85ec7b4d23d63d0b883ca9632068">getSigma</a>() );</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;     ycontr=bead.<a class="code" href="class_p_l_m_d_1_1_histogram_bead.html#a1f546ad9df9835bf4832e6ec5dfb54bf">calculate</a>( fpos[1], yder );</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;     ycontr=1.; yder=0.;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#abfc66e4a7caee732dd6187bc5a13f0aa">doz</a> ){</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;     bead.<a class="code" href="class_p_l_m_d_1_1_histogram_bead.html#a78940f4cf61333ac4274e1e05553fbc1">set</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a495bda36621ec23df7c19f3e7bf861fc">zlow</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a0bf1ca1b049ca1c8cd3b1b4b7e546160">zhigh</a>, <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a98ff85ec7b4d23d63d0b883ca9632068">getSigma</a>() );</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;     zcontr=bead.<a class="code" href="class_p_l_m_d_1_1_histogram_bead.html#a1f546ad9df9835bf4832e6ec5dfb54bf">calculate</a>( fpos[2], zder );</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;     zcontr=1.; zder=0.;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  derivatives[0]=xder*ycontr*zcontr; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  derivatives[1]=xcontr*yder*zcontr; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  derivatives[2]=xcontr*ycontr*zder;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="comment">// Add derivatives wrt to position of origin atom</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a2b7487a7e71f89a8b4ddb7811f68e397">addReferenceAtomDerivatives</a>( 0, -derivatives );</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">// Add virial contribution</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a7bdba5a0ec4c4d53536e7f97c7dde32a">addBoxDerivatives</a>( -<a class="code" href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">Tensor</a>(fpos,derivatives) );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">return</span> xcontr*ycontr*zcontr;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a31215215cfe4b1078c8f566688964346"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">PLMD::Action::log</a></div><div class="ttdeci">Log &amp; log</div><div class="ttdoc">Reference to the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00093">Action.h:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html_a7bdba5a0ec4c4d53536e7f97c7dde32a"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a7bdba5a0ec4c4d53536e7f97c7dde32a">PLMD::multicolvar::ActionVolume::addBoxDerivatives</a></div><div class="ttdeci">void addBoxDerivatives(const Tensor &amp;vir)</div><div class="ttdoc">Add derivatives wrt to the virial. </div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8h_source.html#l00177">ActionVolume.h:177</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a3f130f5350a18d33e769d09a45230152"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3f130f5350a18d33e769d09a45230152">PLMD::multicolvar::VolumeAround::yhigh</a></div><div class="ttdeci">double yhigh</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00075">VolumeAround.cpp:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_ab15fcb86a0808193e5c7c4f65b9ca330"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#ab15fcb86a0808193e5c7c4f65b9ca330">PLMD::multicolvar::VolumeAround::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00086">VolumeAround.cpp:86</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a94c1c30fbc92747b8828aa6f1e3d207d"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">PLMD::Action::error</a></div><div class="ttdeci">void error(const std::string &amp;msg) const </div><div class="ttdoc">Crash calculation and print documentation. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00195">Action.cpp:195</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a8ffc4538dce6f51e1505a0a300d204e2"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">PLMD::Action::checkRead</a></div><div class="ttdeci">void checkRead()</div><div class="ttdoc">Check if Action was properly read. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00161">Action.cpp:161</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_acb6fb7fffbb8884852bae0c88f9f9777"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">PLMD::ActionAtomistic::parseAtomList</a></div><div class="ttdeci">void parseAtomList(const std::string &amp;key, std::vector&lt; AtomNumber &gt; &amp;t)</div><div class="ttdoc">Parse a list of atoms without a numbered keyword. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00141">ActionAtomistic.cpp:141</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html_a98ff85ec7b4d23d63d0b883ca9632068"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a98ff85ec7b4d23d63d0b883ca9632068">PLMD::multicolvar::ActionVolume::getSigma</a></div><div class="ttdeci">double getSigma() const </div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8h_source.html#l00150">ActionVolume.h:150</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_aba7688eb7e7c0de95e6dadc6ac244aa5"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#aba7688eb7e7c0de95e6dadc6ac244aa5">PLMD::multicolvar::VolumeAround::dox</a></div><div class="ttdeci">bool dox</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00073">VolumeAround.cpp:73</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_ae0c8ed07593b5e242e34b32e0edc3a12"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">PLMD::Action::parse</a></div><div class="ttdeci">void parse(const std::string &amp;key, T &amp;t)</div><div class="ttdoc">Parse one keyword as generic type. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00273">Action.h:273</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a3e650c2545c40ebe9b200eff1113d21f"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a3e650c2545c40ebe9b200eff1113d21f">PLMD::multicolvar::VolumeAround::setupRegion</a></div><div class="ttdeci">void setupRegion()</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00117">VolumeAround.cpp:117</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_histogram_bead_html"><div class="ttname"><a href="class_p_l_m_d_1_1_histogram_bead.html">PLMD::HistogramBead</a></div><div class="ttdoc">A class for calculating whether or not values are within a given range using : . </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_histogram_bead_8h_source.html#l00041">HistogramBead.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a53f431e6ba157873a4519ee7c97cb820"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a53f431e6ba157873a4519ee7c97cb820">PLMD::multicolvar::VolumeAround::origin</a></div><div class="ttdeci">Vector origin</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00072">VolumeAround.cpp:72</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_o_file_html_a1ad29d0ba5b7ceb7c1949f33c6ccd29f"><div class="ttname"><a href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">PLMD::OFile::printf</a></div><div class="ttdeci">int printf(const char *fmt,...)</div><div class="ttdoc">Formatted output with explicit format - a la printf. </div><div class="ttdef"><b>Definition:</b> <a href="_o_file_8cpp_source.html#l00082">OFile.cpp:82</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html">PLMD::Action</a></div><div class="ttdoc">Base class for all the input Actions. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00060">Action.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a282719f9a99a9af5ec953321a2a916d6"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a282719f9a99a9af5ec953321a2a916d6">PLMD::multicolvar::VolumeAround::xlow</a></div><div class="ttdeci">double xlow</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00074">VolumeAround.cpp:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html">PLMD::multicolvar::ActionVolume</a></div><div class="ttdoc">This is the abstract base class to use for implementing a new way of definining a particular region o...</div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8h_source.html#l00043">ActionVolume.h:43</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_histogram_bead_html_a78940f4cf61333ac4274e1e05553fbc1"><div class="ttname"><a href="class_p_l_m_d_1_1_histogram_bead.html#a78940f4cf61333ac4274e1e05553fbc1">PLMD::HistogramBead::set</a></div><div class="ttdeci">void set(const std::string &amp;params, const std::string &amp;dd, std::string &amp;errormsg)</div><div class="ttdef"><b>Definition:</b> <a href="_histogram_bead_8cpp_source.html#l00140">HistogramBead.cpp:140</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_abfc66e4a7caee732dd6187bc5a13f0aa"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#abfc66e4a7caee732dd6187bc5a13f0aa">PLMD::multicolvar::VolumeAround::doz</a></div><div class="ttdeci">bool doz</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00073">VolumeAround.cpp:73</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html">PLMD::multicolvar::VolumeAround</a></div><div class="ttdoc">Provides the keyword AROUND  </div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00070">VolumeAround.cpp:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html_a68ce3181af2e12369e7aa41b70d71f88"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a68ce3181af2e12369e7aa41b70d71f88">PLMD::multicolvar::ActionVolume::bead</a></div><div class="ttdeci">HistogramBead bead</div><div class="ttdoc">The bead for the histogram. </div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8h_source.html#l00057">ActionVolume.h:57</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a1c79e93e896eebb097b2cd2a2bac0804"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a1c79e93e896eebb097b2cd2a2bac0804">PLMD::multicolvar::VolumeAround::calculateNumberInside</a></div><div class="ttdeci">double calculateNumberInside(const Vector &amp;cpos, HistogramBead &amp;bead, Vector &amp;derivatives)</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00119">VolumeAround.cpp:119</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html_a2b7487a7e71f89a8b4ddb7811f68e397"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a2b7487a7e71f89a8b4ddb7811f68e397">PLMD::multicolvar::ActionVolume::addReferenceAtomDerivatives</a></div><div class="ttdeci">void addReferenceAtomDerivatives(const unsigned &amp;iatom, const Vector &amp;der)</div><div class="ttdoc">Add derivatinve to one of the reference atoms here. </div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8h_source.html#l00165">ActionVolume.h:165</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html_ada73633274153a54b343b09f8d631fa8"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#ada73633274153a54b343b09f8d631fa8">PLMD::multicolvar::ActionVolume::pbcDistance</a></div><div class="ttdeci">Vector pbcDistance(const Vector &amp;v1, const Vector &amp;v2) const </div><div class="ttdoc">Calculate distance between two points. </div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8h_source.html#l00131">ActionVolume.h:131</a></div></div>
+<div class="ttc" id="_action_volume_8h_html"><div class="ttname"><a href="_action_volume_8h.html">ActionVolume.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a0bf1ca1b049ca1c8cd3b1b4b7e546160"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a0bf1ca1b049ca1c8cd3b1b4b7e546160">PLMD::multicolvar::VolumeAround::zhigh</a></div><div class="ttdeci">double zhigh</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00076">VolumeAround.cpp:76</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_aedc4e543d104cca995c0966c104e9fdd"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#aedc4e543d104cca995c0966c104e9fdd">PLMD::vesselbase::ActionWithVessel::serial</a></div><div class="ttdeci">bool serial</div><div class="ttdoc">Do all calculations in serial. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00054">ActionWithVessel.h:54</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a495bda36621ec23df7c19f3e7bf861fc"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a495bda36621ec23df7c19f3e7bf861fc">PLMD::multicolvar::VolumeAround::zlow</a></div><div class="ttdeci">double zlow</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00076">VolumeAround.cpp:76</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a6f1a6c6a90bbec6e87feaf1225e5fa37"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a6f1a6c6a90bbec6e87feaf1225e5fa37">PLMD::multicolvar::VolumeAround::doy</a></div><div class="ttdeci">bool doy</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00073">VolumeAround.cpp:73</a></div></div>
+<div class="ttc" id="group___t_o_o_l_b_o_x_html_gafe97bb8171dbb8831404177925fee28f"><div class="ttname"><a href="group___t_o_o_l_b_o_x.html#gafe97bb8171dbb8831404177925fee28f">PLMD::Tensor</a></div><div class="ttdeci">Tensor3d Tensor</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00425">Tensor.h:425</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html_a9159e12fe3b72cd2709bcda49290720d"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a9159e12fe3b72cd2709bcda49290720d">PLMD::multicolvar::ActionVolume::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8cpp_source.html#l00029">ActionVolume.cpp:29</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a99f46bdfd58cc5bcbe6c3cfb08c44750"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a99f46bdfd58cc5bcbe6c3cfb08c44750">PLMD::multicolvar::VolumeAround::xhigh</a></div><div class="ttdeci">double xhigh</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00074">VolumeAround.cpp:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_adeee3d0d5591932bf5c2433d1b440f48"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#adeee3d0d5591932bf5c2433d1b440f48">PLMD::multicolvar::VolumeAround::ylow</a></div><div class="ttdeci">double ylow</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00075">VolumeAround.cpp:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel_html_aa7ea9998754d6587833df00539d6ed68"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_action_with_vessel.html#aa7ea9998754d6587833df00539d6ed68">PLMD::vesselbase::ActionWithVessel::derivatives</a></div><div class="ttdeci">std::vector&lt; double &gt; derivatives</div><div class="ttdoc">Vector of derivatives for the object. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_action_with_vessel_8h_source.html#l00064">ActionWithVessel.h:64</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_histogram_bead_html_a1f546ad9df9835bf4832e6ec5dfb54bf"><div class="ttname"><a href="class_p_l_m_d_1_1_histogram_bead.html#a1f546ad9df9835bf4832e6ec5dfb54bf">PLMD::HistogramBead::calculate</a></div><div class="ttdeci">double calculate(double x, double &amp;df) const </div><div class="ttdef"><b>Definition:</b> <a href="_histogram_bead_8cpp_source.html#l00171">HistogramBead.cpp:171</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_volume_around_html_a76c331def4cdd73b6cd581ac04ad849b"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_volume_around.html#a76c331def4cdd73b6cd581ac04ad849b">PLMD::multicolvar::VolumeAround::VolumeAround</a></div><div class="ttdeci">VolumeAround(const ActionOptions &amp;ao)</div><div class="ttdef"><b>Definition:</b> <a href="_volume_around_8cpp_source.html#l00097">VolumeAround.cpp:97</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html_ab01d173c6fe4e6630a6df25e96194964"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#ab01d173c6fe4e6630a6df25e96194964">PLMD::multicolvar::ActionVolume::getPosition</a></div><div class="ttdeci">const Vector &amp; getPosition(int iatom)</div><div class="ttdoc">Get position of atom. </div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8h_source.html#l00136">ActionVolume.h:136</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_action_volume_html_a771d7bba7effc131b81dd714ba933990"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_action_volume.html#a771d7bba7effc131b81dd714ba933990">PLMD::multicolvar::ActionVolume::requestAtoms</a></div><div class="ttdeci">void requestAtoms(const std::vector&lt; AtomNumber &gt; &amp;atoms)</div><div class="ttdoc">Request the atoms. </div><div class="ttdef"><b>Definition:</b> <a href="_action_volume_8cpp_source.html#l00098">ActionVolume.cpp:98</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

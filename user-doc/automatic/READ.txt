@@ -1,0 +1,45 @@
+/**
+\page READ READ
+Read quantities from a colvar file.
+
+This Action can be used with driver to read in a colvar file that was generated during
+an MD simulation
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> STRIDE </b></td>
+<td> ( default=1 ) the frequency with which the file should be read. </td>
+</tr>
+<tr>
+<td width=15%> <b> EVERY </b></td>
+<td> ( default=1 ) only read every ith line of the colvar file. This should be used if the colvar was written more frequently than the trajectory. </td>
+</tr>
+<tr>
+<td width=15%> <b> VALUES </b></td>
+<td> the values to read from the file </td>
+</tr>
+<tr>
+<td width=15%> <b> FILE </b></td>
+<td> the name of the file from which to read these quantities </td>
+</tr>
+</table>
+
+</table>
+
+</table>
+
+\par Examples
+
+This input reads in data from a file called input_colvar.data that was generated
+in a calculation that involved PLUMED.  The first command reads in the data from the
+column headed phi1 while the second reads in the data from the column headed phi2.
+
+\verbatim
+rphi1:       READ FILE=input_colvar.data  VALUES=phi1
+rphi2:       READ FILE=input_colvar.data  VALUES=phi2
+PRINT ARG=rphi1,rphi2 STRIDE=500  FILE=output_colvar.data
+\endverbatim
+
+*/

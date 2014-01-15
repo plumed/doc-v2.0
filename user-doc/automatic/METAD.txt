@@ -1,0 +1,264 @@
+/**
+\page METAD METAD
+Used to performed MetaDynamics on one or more collective variables.
+
+In a metadynamics simulations a history dependent bias composed of
+intermittently added Gaussian functions is added to the potential \cite metad.
+
+\f[
+V(\vec{s},t) = \sum_{ k \tau < t} W(k \tau)
+\exp\left(
+-\sum_{i=1}^{d} \frac{(s_i-s_i^{(0)}(k \tau))^2}{2\sigma_i^2}
+\right).
+\f]
+
+This potential forces the system away from the kinetic traps in the potential energy surface
+and out into the unexplored parts of the energy landscape. Information on the Gaussian
+functions from which this potential is composed is output to a file called HILLS, which
+is used both the restart the calculation and to reconstruct the free energy as a function of the CVs.
+The free energy can be reconstructed from a metadynamics calculation because the final bias is given
+by:
+
+\f[
+V(\vec{s}) = -F(\vec(s))
+\f]
+
+During post processing the free energy can be calculated in this way using the \ref sum_hills
+utility.
+
+In the simplest possible implementation of a metadynamics calculation the expense of a metadynamics
+calculation increases with the length of the simulation as one has to, at every step, evaluate
+the values of a larger and larger number of Gaussians. To avoid this issue you can in plumed 2.0
+store the bias on a grid.  This approach is similar to that proposed in \cite babi+08jcp but has the
+advantage that the grid spacing is independent on the Gaussian width.
+
+Another option that is available in plumed 2.0 is well-tempered metadynamics \cite Barducci:2008. In this
+varient of metadynamics the heights of the Gaussian hills are rescaled at each step so the bias is now
+given by:
+
+\f[
+V({s},t)= \sum_{t'=0,\tau_G,2\tau_G,\dots}^{t'<t} W e^{-V({s}({q}(t'),t')/\Delta T} \exp\left(
+-\sum_{i=1}^{d} \frac{(s_i({q})-s_i({q}(t'))^2}{2\sigma_i^2}
+\right),
+\f]
+
+This method ensures that the bias converges more smoothly.
+
+Note that you can use here also the flexible gaussian approach  \cite Branduardi:2012dl
+in which you can adapt the gaussian to the extent of Cartesian space covered by a variable or
+to the space in collective variable covered in a given time. In this case the width of the deposited
+gaussian potential is denoted by one value only that is a Cartesian space (ADAPTIVE=GEOM) or a time
+(ADAPTIVE=DIFF). Note that a specific integration technique for the deposited gaussians
+should be used in this case. Check the documentation for utility sum_hills.
+
+With the keyword INTERVAL one changes the metadynamics algorithm setting the bias force equal to zero
+outside boundary \cite baftizadeh2012protein. If, for example, metadynamics is performed on a CV s and one is interested only
+to the free energy for s > sw, the history dependent potential is still updated according to the above
+equations but the metadynamics force is set to zero for s < sw. Notice that Gaussians are added also
+if s < sw, as the tails of these Gaussians influence VG in the relevant region s > sw. In this way, the
+force on the system in the region s > sw comes from both metadynamics and the force field, in the region
+s < sw only from the latter. This approach allows obtaining a history-dependent bias potential VG that
+fluctuates around a stable estimator, equal to the negative of the free energy far enough from the
+boundaries. Note that:
+- It works only for one-dimensional biases;
+- It works with GRID but automatically turn off the SPLINES so set a higher number of BINS;
+- The interval limit sw in a region where the free energy derivative is not large;
+- If in the region outside the limit sw the system has a free energy minimum, the INTERVAL keyword should
+be used together with a soft wall at sw
+
+Multiple walkers  \cite multiplewalkers can also be used. See below the examples.
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+<tr>
+<td width=15%> <b> SIGMA </b></td>
+<td> the widths of the Gaussian hills </td>
+</tr>
+<tr>
+<td width=15%> <b> HEIGHT </b></td>
+<td> the heights of the Gaussian hills </td>
+</tr>
+<tr>
+<td width=15%> <b> PACE </b></td>
+<td> the frequency for hill addition </td>
+</tr>
+<tr>
+<td width=15%> <b> FILE </b></td>
+<td> ( default=HILLS ) a file in which the list of added hills is stored </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_SPARSE </b></td>
+<td> ( default=off ) use a sparse grid to store hills </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_NOSPLINE </b></td>
+<td> ( default=off ) don't use spline interpolation with grids </td>
+</tr>
+<tr>
+<td width=15%> <b> STORE_GRIDS </b></td>
+<td> ( default=off ) store all the grid files the calculation generates. They will be deleted if this keyword is not present </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> FMT </b></td>
+<td> specify format for HILLS files (useful for decrease the number of digits in regtests) </td>
+</tr>
+<tr>
+<td width=15%> <b> BIASFACTOR </b></td>
+<td> use well tempered metadynamics and use this biasfactor.  Please note you must also specify temp </td>
+</tr>
+<tr>
+<td width=15%> <b> TEMP </b></td>
+<td> the system temperature - this is only needed if you are doing well-tempered metadynamics </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_MIN </b></td>
+<td> the lower bounds for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_MAX </b></td>
+<td> the upper bounds for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_BIN </b></td>
+<td> the number of bins for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_WSTRIDE </b></td>
+<td> write the grid to a file every N steps </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_WFILE </b></td>
+<td> the file on which to write the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> ADAPTIVE </b></td>
+<td> use a geometric (=GEOM) or diffusion (=DIFF) based hills width scheme. Sigma is one number that has distance units or timestep dimensions </td>
+</tr>
+<tr>
+<td width=15%> <b> WALKERS_ID </b></td>
+<td> walker id </td>
+</tr>
+<tr>
+<td width=15%> <b> WALKERS_N </b></td>
+<td> number of walkers </td>
+</tr>
+<tr>
+<td width=15%> <b> WALKERS_DIR </b></td>
+<td> shared directory with the hills files from all the walkers </td>
+</tr>
+<tr>
+<td width=15%> <b> WALKERS_RSTRIDE </b></td>
+<td> stride for reading hills files </td>
+</tr>
+<tr>
+<td width=15%> <b> INTERVAL </b></td>
+<td> monodimensional lower and upper limits, outside the limits the system will not fell the bias (when used together with grid SPLINES are automatically deactivated) </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_RFILE </b></td>
+<td> a grid file from which the bias should be read at the initial step of the simulation </td>
+</tr>
+<tr>
+<td width=15%> <b> SIGMA_MAX </b></td>
+<td> the upper bounds for the sigmas (in CV units) when using adaptive hills. Negative number means no bounds  </td>
+</tr>
+<tr>
+<td width=15%> <b> SIGMA_MIN </b></td>
+<td> the lower bounds for the sigmas (in CV units) when using adaptive hills. Negative number means no bounds  </td>
+</tr>
+
+</table>
+
+\par Examples
+The following input is for a standard metadynamics calculation using as
+collective variables the distance between atoms 3 and 5
+and the distance between atoms 2 and 4. The value of the CVs and
+the metadynamics bias potential are written to the COLVAR file every 100 steps.
+\verbatim
+DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+METAD ARG=d1,d2 SIGMA=0.2,0.2 HEIGHT=0.3 PACE=500 LABEL=restraint
+PRINT ARG=d1,d2,restraint.bias STRIDE=100  FILE=COLVAR
+\endverbatim
+(See also \ref DISTANCE \ref PRINT).
+
+\par
+If you use adaptive Gaussians, with diffusion scheme where you use
+a Gaussian that should cover the space of 20 timesteps in collective variables.
+Note that in this case the histogram correction is needed when summing up hills.
+\verbatim
+DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+METAD ARG=d1,d2 SIGMA=20 HEIGHT=0.3 PACE=500 LABEL=restraint ADAPTIVE=DIFF
+PRINT ARG=d1,d2,restraint.bias STRIDE=100  FILE=COLVAR
+\endverbatim
+
+\par
+If you use adaptive Gaussians, with geometrical scheme where you use
+a Gaussian that should cover the space of 0.05 nm in Cartesian space.
+Note that in this case the histogram correction is needed when summing up hills.
+\verbatim
+DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+METAD ARG=d1,d2 SIGMA=0.05 HEIGHT=0.3 PACE=500 LABEL=restraint ADAPTIVE=GEOM
+PRINT ARG=d1,d2,restraint.bias STRIDE=100  FILE=COLVAR
+\endverbatim
+
+\par
+When using adaptive Gaussians you might want to limit how the hills width can change.
+You can use SIGMA_MIN and SIGMA_MAX keywords.
+The sigmas should specified in terms of CV so you should use the CV units.
+Note that if you use a negative number, this means that the limit is not set.
+Note also that in this case the histogram correction is needed when summing up hills.
+\verbatim
+DISTANCE ATOMS=3,5 LABEL=d1
+DISTANCE ATOMS=2,4 LABEL=d2
+METAD ...
+ARG=d1,d2 SIGMA=0.05 HEIGHT=0.3 PACE=500 LABEL=restraint ADAPTIVE=GEOM
+SIGMA_MIN=0.2,0.1 SIGMA_MAX=0.5,1.0
+... METAD
+PRINT ARG=d1,d2,restraint.bias STRIDE=100  FILE=COLVAR
+\endverbatim
+
+
+\par
+Multiple walkers can be also use as in  \cite multiplewalkers
+These are enabled by setting the number of walker used, the id of the
+current walker which interprets the input file, the directory where the
+hills containing files resides, and the frequency to read the other walkers.
+Here is an example
+\verbatim
+DISTANCE ATOMS=3,5 LABEL=d1
+METAD ...
+ARG=d1 SIGMA=0.05 HEIGHT=0.3 PACE=500 LABEL=restraint
+WALKERS_N=10
+WALKERS_ID=3
+WALKERS_DIR=../
+WALKERS_RSTRIDE=100
+... METAD
+\endverbatim
+where  WALKERS_N is the total number of walkers, WALKERS_ID is the
+id of the present walker (starting from 0 ) and the WALKERS_DIR is the directory
+where all the walkers are located. WALKERS_RSTRIDE is the number of step between
+one update and the other.
+
+
+*/

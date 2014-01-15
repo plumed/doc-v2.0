@@ -1,0 +1,45 @@
+/**
+\page INCLUDE INCLUDE
+Includes an external input file, similar to "#include" in C preprocessor.
+
+Useful to split very large plumed.dat files.
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> FILE </b></td>
+<td> file to be included </td>
+</tr>
+</table>
+
+</table>
+
+</table>
+
+\par Examples
+
+This input
+\verbatim
+c1: COM ATOMS=1-100
+c2: COM ATOMS=101-202
+d: DISTANCE ARG=c1,c2
+PRINT ARG=d
+\endverbatim
+
+can be replaced with
+\verbatim
+INCLUDE FILE=pippo.dat
+d: DISTANCE ARG=c1,c2
+PRINT ARG=d
+\endverbatim
+
+where the content of file pippo.dat is
+\verbatim
+c1: COM ATOMS=1-100
+c2: COM ATOMS=101-202
+\endverbatim
+
+(see also \ref COM, \ref DISTANCE, and \ref PRINT).
+
+*/

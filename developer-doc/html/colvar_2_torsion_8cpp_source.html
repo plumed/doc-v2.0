@@ -1,0 +1,325 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: colvar/Torsion.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_522821243a246e1e3c6d050e57ed13f6.html">colvar</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Torsion.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="colvar_2_torsion_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="colvar_2_colvar_8h.html">Colvar.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="colvar_2_action_register_8h.html">ActionRegister.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;tools/Torsion.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>colvar{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//+PLUMEDOC COLVAR TORSION</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">Calculate a torsional angle.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">This command can be used to compute the torsion between four atoms or alternatively</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">to calculate the angle between two vectors projected on the plane</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">orthogonal to an axis. </span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">\par Examples</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">This input tells plumed to print the torsional angle between atoms 1, 2, 3 and 4</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">on file COLVAR.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">\verbatim</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">t: TORSION ATOMS=1,2,3,4</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"># this is an alternative, equivalent, definition:</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"># t: TORSION VECTOR1=2,1 AXIS=2,3 VECTOR2=3,4</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">PRINT ARG=t FILE=COLVAR</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">\endverbatim</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//+ENDPLUMEDOC</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_torsion.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html">Torsion</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html">Colvar</a> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a6cbb61656f51165b9e972eb02b1c4318">   57</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a6cbb61656f51165b9e972eb02b1c4318">pbc</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a464f9df42a0dd2b82f727b97f0d17081">   58</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a464f9df42a0dd2b82f727b97f0d17081">do_cosine</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html">Torsion</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// active methods:</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> calculate();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> registerKeywords(<a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;PLUMED_REGISTER_ACTION(<a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html">Torsion</a>,<span class="stringliteral">&quot;TORSION&quot;</span>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#ad326e77dec205ba05a8f911fab13dc98">   69</a></span>&#160;void <a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html">Torsion</a>::registerKeywords(<a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   Colvar::registerKeywords( keys );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;   keys.add(<span class="stringliteral">&quot;atoms-1&quot;</span>,<span class="stringliteral">&quot;ATOMS&quot;</span>,<span class="stringliteral">&quot;the four atoms involved in the torsional angle&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   keys.add(<span class="stringliteral">&quot;atoms-2&quot;</span>,<span class="stringliteral">&quot;AXIS&quot;</span>,<span class="stringliteral">&quot;two atoms that define an axis.  You can use this to find the angle in the plane perpendicular to the axis between the vectors specified using the VECTOR1 and VECTOR2 keywords.&quot;</span>); </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   keys.add(<span class="stringliteral">&quot;atoms-2&quot;</span>,<span class="stringliteral">&quot;VECTOR1&quot;</span>,<span class="stringliteral">&quot;two atoms that define a vector.  You can use this in combination with VECTOR2 and AXIS&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   keys.add(<span class="stringliteral">&quot;atoms-2&quot;</span>,<span class="stringliteral">&quot;VECTOR2&quot;</span>,<span class="stringliteral">&quot;two atoms that define a vector.  You can use this in combination with VECTOR1 and AXIS&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   keys.addFlag(<span class="stringliteral">&quot;COSINE&quot;</span>,<span class="keyword">false</span>,<span class="stringliteral">&quot;calculate cosine instead of dihedral&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#ae012c85f6836b32971cd22a68693cb57">   78</a></span>&#160;Torsion::Torsion(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;ao):</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<a class="code" href="core_2_colvar_8h.html#aa95e2f515fc3d4e1693bfa2f0199a971">PLUMED_COLVAR_INIT</a>(ao),</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;pbc(true),</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;do_cosine(false)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  vector&lt;AtomNumber&gt; <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a0f46760435a7aa0933fba5f38c17ae4e">atoms</a>,v1,v2,axis;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">parseAtomList</a>(<span class="stringliteral">&quot;ATOMS&quot;</span>,atoms);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">parseAtomList</a>(<span class="stringliteral">&quot;VECTOR1&quot;</span>,v1);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">parseAtomList</a>(<span class="stringliteral">&quot;VECTOR2&quot;</span>,v2);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">parseAtomList</a>(<span class="stringliteral">&quot;AXIS&quot;</span>,axis);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">parseFlag</a>(<span class="stringliteral">&quot;COSINE&quot;</span>,<a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a464f9df42a0dd2b82f727b97f0d17081">do_cosine</a>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">bool</span> nopbc=!<a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a6cbb61656f51165b9e972eb02b1c4318">pbc</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">parseFlag</a>(<span class="stringliteral">&quot;NOPBC&quot;</span>,nopbc);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a6cbb61656f51165b9e972eb02b1c4318">pbc</a>=!nopbc;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">checkRead</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span>(atoms.size()==4){</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(!(v1.empty()) &amp;&amp; (v2.empty()) &amp;&amp; (axis.empty()))</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;ATOMS keyword is not compatible with VECTOR1, VECTOR2 and AXIS keywords&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  between atoms %d %d %d %d\n&quot;</span>,atoms[0].serial(),atoms[1].serial(),atoms[2].serial(),atoms[3].serial());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    atoms.resize(6);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    atoms[5]=atoms[3];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    atoms[4]=atoms[2];</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    atoms[3]=atoms[2];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    atoms[2]=atoms[1];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(atoms.empty()){</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span>(!(v1.size()==2 &amp;&amp; v2.size()==2 &amp;&amp; axis.size()==2))</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;VECTOR1, VECTOR2 and AXIS should specify 2 atoms each&quot;</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  between lines %d-%d and %d-%d, projected on the plane orthogonal to line %d-%d\n&quot;</span>,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                v1[0].serial(),v1[1].serial(),v2[0].serial(),v2[1].serial(),axis[0].serial(),axis[1].serial());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    atoms.resize(6);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    atoms[0]=v1[1];</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    atoms[1]=v1[0];</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    atoms[2]=axis[0];</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    atoms[3]=axis[1];</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    atoms[4]=v2[0];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    atoms[5]=v2[1];</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }<span class="keywordflow">else</span> <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;ATOMS should specify 4 atoms&quot;</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a6cbb61656f51165b9e972eb02b1c4318">pbc</a>) <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  using periodic boundary conditions\n&quot;</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">else</span>    <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  without periodic boundary conditions\n&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a464f9df42a0dd2b82f727b97f0d17081">do_cosine</a>) <a class="code" href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">log</a>.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;  calculating cosine instead of torsion\n&quot;</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a21d7521c7a5da4065b67904c809067b7">addValueWithDerivatives</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a464f9df42a0dd2b82f727b97f0d17081">do_cosine</a>) <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a5c87fea4d9a3400c843e9d95dfbb8ad4">setPeriodic</a>(<span class="stringliteral">&quot;-pi&quot;</span>,<span class="stringliteral">&quot;pi&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a8eb10877f2789470a248586484fca62c">setNotPeriodic</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#af1bb03650fe9aec207af6b6bee87316b">requestAtoms</a>(atoms);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">// calculator</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a931ab9d2d177586bd0167678c07c1956">  131</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a931ab9d2d177586bd0167678c07c1956">Torsion::calculate</a>(){</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> d0,d1,d2;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a6cbb61656f51165b9e972eb02b1c4318">pbc</a>){</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    d0=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a35a986326d36a7925a91d091f7a01f4a">pbcDistance</a>(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(1),<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(0));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    d1=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a35a986326d36a7925a91d091f7a01f4a">pbcDistance</a>(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(3),<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(2));</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    d2=<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a35a986326d36a7925a91d091f7a01f4a">pbcDistance</a>(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(5),<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(4));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    d0=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(1),<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(0));</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    d1=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(3),<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(2));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    d2=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>(<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(5),<a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">getPosition</a>(4));</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_vector_generic.html">Vector</a> dd0,dd1,dd2;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_torsion.html">PLMD::Torsion</a> t;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">double</span> torsion=t.<a class="code" href="class_p_l_m_d_1_1_torsion.html#ae9b7e85663a1405b3fc13ea459f63915">compute</a>(d0,d1,d2,dd0,dd1,dd2);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a464f9df42a0dd2b82f727b97f0d17081">do_cosine</a>){</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;   dd0 *= -sin(torsion);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;   dd1 *= -sin(torsion);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;   dd2 *= -sin(torsion);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;   torsion = cos(torsion);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(0,dd0);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(1,-dd0);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(2,dd1);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(3,-dd1);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(4,dd2);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">setAtomsDerivatives</a>(5,-dd2);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#adf1a88b3916a1512b44b15c3011d75b1">setValue</a>           (torsion);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">setBoxDerivatives</a>  (-(<a class="code" href="namespace_p_l_m_d.html#acff9b2ac64832d07b378de77e4ef38cf">extProduct</a>(d0,dd0)+<a class="code" href="namespace_p_l_m_d.html#acff9b2ac64832d07b378de77e4ef38cf">extProduct</a>(d1,dd1)+<a class="code" href="namespace_p_l_m_d.html#acff9b2ac64832d07b378de77e4ef38cf">extProduct</a>(d2,dd2)));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="ttc" id="class_p_l_m_d_1_1_torsion_html"><div class="ttname"><a href="class_p_l_m_d_1_1_torsion.html">PLMD::Torsion</a></div><div class="ttdoc">Class to compute torsional angles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_torsion_8h_source.html#l00039">Torsion.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_ad5680e139003df022ce068a967a8bd2b"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#ad5680e139003df022ce068a967a8bd2b">PLMD::ActionAtomistic::getPosition</a></div><div class="ttdeci">const Vector &amp; getPosition(int) const </div><div class="ttdoc">Get position of i-th atom. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00132">ActionAtomistic.h:132</a></div></div>
+<div class="ttc" id="colvar_2_colvar_8h_html"><div class="ttname"><a href="colvar_2_colvar_8h.html">Colvar.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a5540be9c95bc8bf9f1ec567c047afddb"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb">PLMD::Action::parseFlag</a></div><div class="ttdeci">void parseFlag(const std::string &amp;key, bool &amp;t)</div><div class="ttdoc">Parse one keyword as boolean flag. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00104">Action.cpp:104</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a8eb10877f2789470a248586484fca62c"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a8eb10877f2789470a248586484fca62c">PLMD::ActionWithValue::setNotPeriodic</a></div><div class="ttdeci">void setNotPeriodic()</div><div class="ttdoc">Set your default value to have no periodicity. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00090">ActionWithValue.cpp:90</a></div></div>
+<div class="ttc" id="colvar_2_action_register_8h_html"><div class="ttname"><a href="colvar_2_action_register_8h.html">ActionRegister.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a31215215cfe4b1078c8f566688964346"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a31215215cfe4b1078c8f566688964346">PLMD::Action::log</a></div><div class="ttdeci">Log &amp; log</div><div class="ttdoc">Reference to the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00093">Action.h:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_torsion_html_ae9b7e85663a1405b3fc13ea459f63915"><div class="ttname"><a href="class_p_l_m_d_1_1_torsion.html#ae9b7e85663a1405b3fc13ea459f63915">PLMD::Torsion::compute</a></div><div class="ttdeci">double compute(const Vector &amp;v1, const Vector &amp;v2, const Vector &amp;v3) const </div><div class="ttdoc">Compute the angle between the projections of v1 and v3 on the plane orthogonal to v2...</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_torsion_8cpp_source.html#l00030">Torsion.cpp:30</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_vector_generic_html"><div class="ttname"><a href="class_p_l_m_d_1_1_vector_generic.html">PLMD::VectorGeneric</a></div><div class="ttdoc">Class implementing fixed size vectors of doubles. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00074">Vector.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_aa19fdcbe9b9be274ed87d9600d43f6f7"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#aa19fdcbe9b9be274ed87d9600d43f6f7">PLMD::Colvar::setAtomsDerivatives</a></div><div class="ttdeci">void setAtomsDerivatives(int, const Vector &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00097">Colvar.h:97</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a94c1c30fbc92747b8828aa6f1e3d207d"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">PLMD::Action::error</a></div><div class="ttdeci">void error(const std::string &amp;msg) const </div><div class="ttdoc">Crash calculation and print documentation. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00195">Action.cpp:195</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_torsion_html"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_torsion.html">PLMD::colvar::Torsion</a></div><div class="ttdoc">Provides the keyword TORSION  </div><div class="ttdef"><b>Definition:</b> <a href="colvar_2_torsion_8cpp_source.html#l00056">Torsion.cpp:56</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a8ffc4538dce6f51e1505a0a300d204e2"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">PLMD::Action::checkRead</a></div><div class="ttdeci">void checkRead()</div><div class="ttdoc">Check if Action was properly read. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00161">Action.cpp:161</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_acb6fb7fffbb8884852bae0c88f9f9777"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#acb6fb7fffbb8884852bae0c88f9f9777">PLMD::ActionAtomistic::parseAtomList</a></div><div class="ttdeci">void parseAtomList(const std::string &amp;key, std::vector&lt; AtomNumber &gt; &amp;t)</div><div class="ttdoc">Parse a list of atoms without a numbered keyword. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00141">ActionAtomistic.cpp:141</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a21d7521c7a5da4065b67904c809067b7"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a21d7521c7a5da4065b67904c809067b7">PLMD::ActionWithValue::addValueWithDerivatives</a></div><div class="ttdeci">void addValueWithDerivatives()</div><div class="ttdoc">Add a value with the name label that has derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00085">ActionWithValue.cpp:85</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_af1bb03650fe9aec207af6b6bee87316b"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#af1bb03650fe9aec207af6b6bee87316b">PLMD::Colvar::requestAtoms</a></div><div class="ttdeci">void requestAtoms(const std::vector&lt; AtomNumber &gt; &amp;a)</div><div class="ttdef"><b>Definition:</b> <a href="_colvar_8cpp_source.html#l00044">Colvar.cpp:44</a></div></div>
+<div class="ttc" id="core_2_colvar_8h_html_aa95e2f515fc3d4e1693bfa2f0199a971"><div class="ttname"><a href="core_2_colvar_8h.html#aa95e2f515fc3d4e1693bfa2f0199a971">PLUMED_COLVAR_INIT</a></div><div class="ttdeci">#define PLUMED_COLVAR_INIT(ao)</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00029">Colvar.h:29</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html_a042d306245aa9742daa44876c88833fc"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html#a042d306245aa9742daa44876c88833fc">PLMD::Colvar::setBoxDerivatives</a></div><div class="ttdeci">void setBoxDerivatives(const Tensor &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00102">Colvar.h:102</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_torsion_html_a6cbb61656f51165b9e972eb02b1c4318"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a6cbb61656f51165b9e972eb02b1c4318">PLMD::colvar::Torsion::pbc</a></div><div class="ttdeci">bool pbc</div><div class="ttdef"><b>Definition:</b> <a href="colvar_2_torsion_8cpp_source.html#l00057">Torsion.cpp:57</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a0f46760435a7aa0933fba5f38c17ae4e"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a0f46760435a7aa0933fba5f38c17ae4e">PLMD::ActionAtomistic::atoms</a></div><div class="ttdeci">Atoms &amp; atoms</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_atomistic_8h_source.html#l00059">ActionAtomistic.h:59</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a5c87fea4d9a3400c843e9d95dfbb8ad4"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a5c87fea4d9a3400c843e9d95dfbb8ad4">PLMD::ActionWithValue::setPeriodic</a></div><div class="ttdeci">void setPeriodic(const std::string &amp;min, const std::string &amp;max)</div><div class="ttdoc">Set the value to be periodic with a particular domain. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00097">ActionWithValue.cpp:97</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_o_file_html_a1ad29d0ba5b7ceb7c1949f33c6ccd29f"><div class="ttname"><a href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">PLMD::OFile::printf</a></div><div class="ttdeci">int printf(const char *fmt,...)</div><div class="ttdoc">Formatted output with explicit format - a la printf. </div><div class="ttdef"><b>Definition:</b> <a href="_o_file_8cpp_source.html#l00082">OFile.cpp:82</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_colvar_html"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html">PLMD::Colvar</a></div><div class="ttdoc">This is the abstract base class to use for implementing new collective variables, within it there is ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00039">Colvar.h:39</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a2a1cf3a4fea01e78626f761aa04abd90"><div class="ttname"><a href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">PLMD::delta</a></div><div class="ttdeci">VectorGeneric&lt; n &gt; delta(const VectorGeneric&lt; n &gt; &amp;v1, const VectorGeneric&lt; n &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00262">Vector.h:262</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_adf1a88b3916a1512b44b15c3011d75b1"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#adf1a88b3916a1512b44b15c3011d75b1">PLMD::ActionWithValue::setValue</a></div><div class="ttdeci">void setValue(const double &amp;d)</div><div class="ttdoc">Set the default value (the one without name) </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_value_8h_source.html#l00179">ActionWithValue.h:179</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_acff9b2ac64832d07b378de77e4ef38cf"><div class="ttname"><a href="namespace_p_l_m_d.html#acff9b2ac64832d07b378de77e4ef38cf">PLMD::extProduct</a></div><div class="ttdeci">TensorGeneric&lt; n, m &gt; extProduct(const VectorGeneric&lt; n &gt; &amp;v1, const VectorGeneric&lt; m &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_tensor_8h_source.html#l00396">Tensor.h:396</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a35a986326d36a7925a91d091f7a01f4a"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a35a986326d36a7925a91d091f7a01f4a">PLMD::ActionAtomistic::pbcDistance</a></div><div class="ttdeci">Vector pbcDistance(const Vector &amp;, const Vector &amp;) const </div><div class="ttdoc">Compute the pbc distance between two positions. </div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00079">ActionAtomistic.cpp:79</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_torsion_html_a931ab9d2d177586bd0167678c07c1956"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a931ab9d2d177586bd0167678c07c1956">PLMD::colvar::Torsion::calculate</a></div><div class="ttdeci">virtual void calculate()</div><div class="ttdoc">Calculate an Action. </div><div class="ttdef"><b>Definition:</b> <a href="colvar_2_torsion_8cpp_source.html#l00131">Torsion.cpp:131</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_torsion_html_a464f9df42a0dd2b82f727b97f0d17081"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_torsion.html#a464f9df42a0dd2b82f727b97f0d17081">PLMD::colvar::Torsion::do_cosine</a></div><div class="ttdeci">bool do_cosine</div><div class="ttdef"><b>Definition:</b> <a href="colvar_2_torsion_8cpp_source.html#l00058">Torsion.cpp:58</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

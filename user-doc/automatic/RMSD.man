@@ -1,0 +1,33 @@
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> REFERENCE </b></td>
+<td> a file in pdb format containing the reference structure and the atoms involved in the CV. </td>
+</tr>
+<tr>
+<td width=15%> <b> TYPE </b></td>
+<td> ( default=SIMPLE ) the manner in which RMSD alignment is performed.  Should be OPTIMAL or SIMPLE. </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> SQUARED </b></td>
+<td> ( default=off )  This should be setted if you want MSD instead of RMSD  </td>
+</tr>
+
+</table>
+
+</table>
+

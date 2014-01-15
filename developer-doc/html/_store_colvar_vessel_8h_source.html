@@ -1,0 +1,244 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: multicolvar/StoreColvarVessel.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4edf87903dfade8d550ff22836b1ec12.html">multicolvar</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">StoreColvarVessel.h</div>  </div>
+</div>
+<div class="contents">
+<a href="_store_colvar_vessel_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_multicolvar_StoreColvarVessel_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_multicolvar_StoreColvarVessel_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;vesselbase/Vessel.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;tools/DynamicList.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>multicolvar{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">class </span>MultiColvarBase;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html">StoreColvarVessel</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">vesselbase::Vessel</a> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#aa8ad3ad57f7c33f3300e3297b11db92a">   38</a></span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#aa8ad3ad57f7c33f3300e3297b11db92a">bufsize</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ad8b3d746b0dab14bf2d41a5a971285bd">   39</a></span>&#160;  std::vector&lt;unsigned&gt; <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ad8b3d746b0dab14bf2d41a5a971285bd">start</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a1227dd9f8b52134b54c070ba824c4617">   40</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html">MultiColvarBase</a>* <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a1227dd9f8b52134b54c070ba824c4617">mycolv</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a51b08c1450f9aeab8e9ec87311c30471">   41</a></span>&#160;  std::vector&lt; DynamicList&lt;unsigned&gt; &gt; <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a51b08c1450f9aeab8e9ec87311c30471">active_atoms</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">protected</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/// Are the weights differentiable</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a57357e6adfbf852c2a512bd73d7df7cc">   44</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a57357e6adfbf852c2a512bd73d7df7cc">diffweight</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/// Get the number of stored colvar values</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a9ed3a903660a56ea4e7e670d89c4b176">getNumberOfStoredColvars</a>() <span class="keyword">const</span> ;<span class="comment"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/// Get the ith value in the vessel</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a3a97961bcad6710168ef4c47eebddd99">getValue</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; ) <span class="keyword">const</span> ;  <span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/// Get the weight of the ith quantity in the vessel</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#af08c561c0b74c1f3b1385298d14fc691">getWeight</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; ) <span class="keyword">const</span> ;<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// Add the derivatives from the value</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a774408646afc4f21816161a09aea47f5">addDerivatives</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; ival, <span class="keywordtype">double</span>&amp; pref, <a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>* value_out );<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// Add the derivatives from the weight of the value</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#aee3ff475f744537a96f55a8ec0d59cb5">addWeightDerivatives</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; ival, <span class="keywordtype">double</span>&amp; pref, <a class="code" href="class_p_l_m_d_1_1_value.html">Value</a>* value_out );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#aef97319a997452ce0a5ce278a5c97bd6">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// Constructor</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a298062359c69237bb7eafb6881f0d508">StoreColvarVessel</a>( <span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">vesselbase::VesselOptions</a>&amp; );<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// Return the number of terms</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a83a6b4a326dedff46f2588bf6a4f94a3">   60</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a83a6b4a326dedff46f2588bf6a4f94a3">getNumberOfTerms</a>(){ <span class="keywordflow">return</span> 2; }<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// This does the resizing of the buffer</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a5b92d558a406720bb10e6f4b1d8a045b">resize</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// This makes sure things further down the chain are resized</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a9c23d14d5e6789384b44ef2cf41f6a60">local_resizing</a>()=0;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// This makes sure all values are stored</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ae4983d410b998d13d7cb00484ce65a97">calculate</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// Makes sure the dynamic lists are gathered</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a03618afbce1770513f10ec4dcb865c57">finish</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/// Do the calculation</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a77b52210deed526ead2bbcfbaaa9b2f1">performCalculationUsingAllValues</a>()=0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a3a97961bcad6710168ef4c47eebddd99">   74</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a3a97961bcad6710168ef4c47eebddd99">StoreColvarVessel::getValue</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; ival )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  plumed_dbg_assert( ival&lt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ad8b3d746b0dab14bf2d41a5a971285bd">start</a>.size()-1 );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a91d24f0a9a69d99feeffa56876b11cd1">getBufferElement</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ad8b3d746b0dab14bf2d41a5a971285bd">start</a>[ival] );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#af08c561c0b74c1f3b1385298d14fc691">   80</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#af08c561c0b74c1f3b1385298d14fc691">StoreColvarVessel::getWeight</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; ival )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  plumed_dbg_assert( ival&lt;<a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ad8b3d746b0dab14bf2d41a5a971285bd">start</a>.size()-1 );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a91d24f0a9a69d99feeffa56876b11cd1">getBufferElement</a>( <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#aa8ad3ad57f7c33f3300e3297b11db92a">bufsize</a> + <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ad8b3d746b0dab14bf2d41a5a971285bd">start</a>[ival] );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a9ed3a903660a56ea4e7e670d89c4b176">   86</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a9ed3a903660a56ea4e7e670d89c4b176">StoreColvarVessel::getNumberOfStoredColvars</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ad8b3d746b0dab14bf2d41a5a971285bd">start</a>.size()-1;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a77b52210deed526ead2bbcfbaaa9b2f1"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a77b52210deed526ead2bbcfbaaa9b2f1">PLMD::multicolvar::StoreColvarVessel::performCalculationUsingAllValues</a></div><div class="ttdeci">virtual void performCalculationUsingAllValues()=0</div><div class="ttdoc">Do the calculation. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_value_html"><div class="ttname"><a href="class_p_l_m_d_1_1_value.html">PLMD::Value</a></div><div class="ttdoc">A class for holding the value of a function together with its derivatives. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_value_8h_source.html#l00046">Value.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_aa8ad3ad57f7c33f3300e3297b11db92a"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#aa8ad3ad57f7c33f3300e3297b11db92a">PLMD::multicolvar::StoreColvarVessel::bufsize</a></div><div class="ttdeci">unsigned bufsize</div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00038">StoreColvarVessel.h:38</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a9ed3a903660a56ea4e7e670d89c4b176"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a9ed3a903660a56ea4e7e670d89c4b176">PLMD::multicolvar::StoreColvarVessel::getNumberOfStoredColvars</a></div><div class="ttdeci">unsigned getNumberOfStoredColvars() const </div><div class="ttdoc">Get the number of stored colvar values. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00086">StoreColvarVessel.h:86</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html_a91d24f0a9a69d99feeffa56876b11cd1"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a91d24f0a9a69d99feeffa56876b11cd1">PLMD::vesselbase::Vessel::getBufferElement</a></div><div class="ttdeci">double getBufferElement(const unsigned &amp;i) const </div><div class="ttdoc">Get the value in the ith element of the buffer. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00258">Vessel.h:258</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_ae4983d410b998d13d7cb00484ce65a97"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ae4983d410b998d13d7cb00484ce65a97">PLMD::multicolvar::StoreColvarVessel::calculate</a></div><div class="ttdeci">bool calculate()</div><div class="ttdoc">This makes sure all values are stored. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8cpp_source.html#l00062">StoreColvarVessel.cpp:62</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a9c23d14d5e6789384b44ef2cf41f6a60"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a9c23d14d5e6789384b44ef2cf41f6a60">PLMD::multicolvar::StoreColvarVessel::local_resizing</a></div><div class="ttdeci">virtual void local_resizing()=0</div><div class="ttdoc">This makes sure things further down the chain are resized. </div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a5b92d558a406720bb10e6f4b1d8a045b"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a5b92d558a406720bb10e6f4b1d8a045b">PLMD::multicolvar::StoreColvarVessel::resize</a></div><div class="ttdeci">void resize()</div><div class="ttdoc">This does the resizing of the buffer. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8cpp_source.html#l00046">StoreColvarVessel.cpp:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a51b08c1450f9aeab8e9ec87311c30471"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a51b08c1450f9aeab8e9ec87311c30471">PLMD::multicolvar::StoreColvarVessel::active_atoms</a></div><div class="ttdeci">std::vector&lt; DynamicList&lt; unsigned &gt; &gt; active_atoms</div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00041">StoreColvarVessel.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a774408646afc4f21816161a09aea47f5"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a774408646afc4f21816161a09aea47f5">PLMD::multicolvar::StoreColvarVessel::addDerivatives</a></div><div class="ttdeci">void addDerivatives(const unsigned &amp;ival, double &amp;pref, Value *value_out)</div><div class="ttdoc">Add the derivatives from the value. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8cpp_source.html#l00103">StoreColvarVessel.cpp:103</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a3a97961bcad6710168ef4c47eebddd99"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a3a97961bcad6710168ef4c47eebddd99">PLMD::multicolvar::StoreColvarVessel::getValue</a></div><div class="ttdeci">double getValue(const unsigned &amp;) const </div><div class="ttdoc">Get the ith value in the vessel. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00074">StoreColvarVessel.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_aef97319a997452ce0a5ce278a5c97bd6"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#aef97319a997452ce0a5ce278a5c97bd6">PLMD::multicolvar::StoreColvarVessel::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8cpp_source.html#l00031">StoreColvarVessel.cpp:31</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_aee3ff475f744537a96f55a8ec0d59cb5"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#aee3ff475f744537a96f55a8ec0d59cb5">PLMD::multicolvar::StoreColvarVessel::addWeightDerivatives</a></div><div class="ttdeci">void addWeightDerivatives(const unsigned &amp;ival, double &amp;pref, Value *value_out)</div><div class="ttdoc">Add the derivatives from the weight of the value. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8cpp_source.html#l00117">StoreColvarVessel.cpp:117</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html">PLMD::multicolvar::StoreColvarVessel</a></div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00036">StoreColvarVessel.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a298062359c69237bb7eafb6881f0d508"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a298062359c69237bb7eafb6881f0d508">PLMD::multicolvar::StoreColvarVessel::StoreColvarVessel</a></div><div class="ttdeci">StoreColvarVessel(const vesselbase::VesselOptions &amp;)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8cpp_source.html#l00036">StoreColvarVessel.cpp:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel_options.html">PLMD::vesselbase::VesselOptions</a></div><div class="ttdoc">This class is used to pass the input to Vessels. </div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00053">Vessel.h:53</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a83a6b4a326dedff46f2588bf6a4f94a3"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a83a6b4a326dedff46f2588bf6a4f94a3">PLMD::multicolvar::StoreColvarVessel::getNumberOfTerms</a></div><div class="ttdeci">unsigned getNumberOfTerms()</div><div class="ttdoc">Return the number of terms. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00060">StoreColvarVessel.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base_html"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_multi_colvar_base.html">PLMD::multicolvar::MultiColvarBase</a></div><div class="ttdef"><b>Definition:</b> <a href="_multi_colvar_base_8h_source.html#l00035">MultiColvarBase.h:35</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1vesselbase_1_1_vessel_html"><div class="ttname"><a href="class_p_l_m_d_1_1vesselbase_1_1_vessel.html">PLMD::vesselbase::Vessel</a></div><div class="ttdef"><b>Definition:</b> <a href="vesselbase_2_vessel_8h_source.html#l00075">Vessel.h:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a03618afbce1770513f10ec4dcb865c57"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a03618afbce1770513f10ec4dcb865c57">PLMD::multicolvar::StoreColvarVessel::finish</a></div><div class="ttdeci">void finish()</div><div class="ttdoc">Makes sure the dynamic lists are gathered. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8cpp_source.html#l00098">StoreColvarVessel.cpp:98</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a1227dd9f8b52134b54c070ba824c4617"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a1227dd9f8b52134b54c070ba824c4617">PLMD::multicolvar::StoreColvarVessel::mycolv</a></div><div class="ttdeci">MultiColvarBase * mycolv</div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00040">StoreColvarVessel.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_a57357e6adfbf852c2a512bd73d7df7cc"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#a57357e6adfbf852c2a512bd73d7df7cc">PLMD::multicolvar::StoreColvarVessel::diffweight</a></div><div class="ttdeci">bool diffweight</div><div class="ttdoc">Are the weights differentiable. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00044">StoreColvarVessel.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_af08c561c0b74c1f3b1385298d14fc691"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#af08c561c0b74c1f3b1385298d14fc691">PLMD::multicolvar::StoreColvarVessel::getWeight</a></div><div class="ttdeci">double getWeight(const unsigned &amp;) const </div><div class="ttdoc">Get the weight of the ith quantity in the vessel. </div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00080">StoreColvarVessel.h:80</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel_html_ad8b3d746b0dab14bf2d41a5a971285bd"><div class="ttname"><a href="class_p_l_m_d_1_1multicolvar_1_1_store_colvar_vessel.html#ad8b3d746b0dab14bf2d41a5a971285bd">PLMD::multicolvar::StoreColvarVessel::start</a></div><div class="ttdeci">std::vector&lt; unsigned &gt; start</div><div class="ttdef"><b>Definition:</b> <a href="_store_colvar_vessel_8h_source.html#l00039">StoreColvarVessel.h:39</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/**
+\page DUMPFORCES DUMPFORCES
+Dump the force acting on one of a values in a file.
+
+For a CV this command will dump
+the force on the CV itself. Be aware that in order to have the forces on the atoms
+you should multiply the output from this argument by the output from DUMPDERIVATIVES.
+Furthermore, also note that you can output the forces on multiple quantities simultaneously
+by specifying more than one argument. You can control the buffering of output using the \ref FLUSH keyword.
+
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+<tr>
+<td width=15%> <b> STRIDE </b></td>
+<td> ( default=1 ) the frequency with which the forces should be output </td>
+</tr>
+<tr>
+<td width=15%> <b> FILE </b></td>
+<td> the name of the file on which to output the forces </td>
+</tr>
+</table>
+
+</table>
+
+</table>
+
+\par Examples
+The following input instructs plumed to write a file called forces that contains
+the force acting on the distance between atoms 1 and 2.
+\verbatim
+DISTANCE ATOM=1,2 LABEL=distance
+DUMPFORCES ARG=distance STRIDE=1 FILE=forces
+\endverbatim
+
+(See also \ref DISTANCE)
+
+*/

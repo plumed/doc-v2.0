@@ -1,0 +1,91 @@
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> ISCLTOOL </b></td>
+<td> ( default=on ) use via plumed commandline: calculate at read phase and then go </td>
+</tr>
+<tr>
+<td width=15%> <b> PARALLELREAD </b></td>
+<td> ( default=off ) read parallel HILLS file </td>
+</tr>
+<tr>
+<td width=15%> <b> NEGBIAS </b></td>
+<td> ( default=off ) dump  negative bias ( -bias )   instead of the free energy: needed in welltempered with flexible hills  </td>
+</tr>
+<tr>
+<td width=15%> <b> NOHISTORY </b></td>
+<td> ( default=off ) to be used with INITSTRIDE:  it splits the bias/histogram in pieces without previous history   </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> HILLSFILES </b></td>
+<td>  source file for hills creation(may be the same as HILLS) </td>
+</tr>
+<tr>
+<td width=15%> <b> HISTOFILES </b></td>
+<td>  source file for histogram creation(may be the same as HILLS) </td>
+</tr>
+<tr>
+<td width=15%> <b> HISTOSIGMA </b></td>
+<td>  sigmas for binning when the histogram correction is needed     </td>
+</tr>
+<tr>
+<td width=15%> <b> PROJ </b></td>
+<td>  only with sumhills: the projection on the cvs </td>
+</tr>
+<tr>
+<td width=15%> <b> KT </b></td>
+<td>  only with sumhills: the kt factor when projection on cvs </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_MIN </b></td>
+<td> the lower bounds for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_MAX </b></td>
+<td> the upper bounds for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_BIN </b></td>
+<td> the number of bins for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> OUTHILLS </b></td>
+<td>  output file for hills  </td>
+</tr>
+<tr>
+<td width=15%> <b> OUTHISTO </b></td>
+<td>  output file for histogram  </td>
+</tr>
+<tr>
+<td width=15%> <b> INITSTRIDE </b></td>
+<td>  stride if you want an initial dump  </td>
+</tr>
+<tr>
+<td width=15%> <b> STRIDE </b></td>
+<td>  stride when you do it on the fly  </td>
+</tr>
+<tr>
+<td width=15%> <b> FMT </b></td>
+<td> the format that should be used to output real numbers </td>
+</tr>
+
+</table>
+

@@ -1,0 +1,76 @@
+\par The input trajectory is specified using one of the following
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> --ixyz </b></td>
+<td> the trajectory in xyz format </td>
+</tr>
+<tr>
+<td width=15%> <b> --igro </b></td>
+<td> the trajectory in gro format </td>
+</tr>
+</table>
+
+\par The following must be present
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> --plumed </b></td>
+<td> ( default=plumed.dat ) specify the name of the plumed input file </td>
+</tr>
+<tr>
+<td width=15%> <b> --timestep </b></td>
+<td> ( default=1.0 ) the timestep that was used in the calculation that produced this trajectory in picoseconds </td>
+</tr>
+<tr>
+<td width=15%> <b> --trajectory-stride </b></td>
+<td> ( default=1 ) the frequency with which frames were output to this trajectory during the simulation </td>
+</tr>
+<tr>
+<td width=15%> <b> --multi </b></td>
+<td> ( default=0 ) set number of replicas for multi environment (needs mpi) </td>
+</tr>
+</table>
+
+\par The following options are available
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> --help/-h </b></td>
+<td> ( default=off ) print this help </td>
+</tr>
+<tr>
+<td width=15%> <b> --help-debug </b></td>
+<td> ( default=off ) print special options that can be used to create regtests </td>
+</tr>
+<tr>
+<td width=15%> <b> --noatoms </b></td>
+<td> ( default=off ) don't read in a trajectory.  Just use colvar files as specified in plumed.dat </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> --length-units </b></td>
+<td> units for length, either as a string or a number </td>
+</tr>
+<tr>
+<td width=15%> <b> --dump-forces </b></td>
+<td> dump the forces on a file </td>
+</tr>
+<tr>
+<td width=15%> <b> --dump-forces-fmt </b></td>
+<td> ( default=%%f ) the format to use to dump the forces </td>
+</tr>
+<tr>
+<td width=15%> <b> --pdb </b></td>
+<td> provides a pdb with masses and charges </td>
+</tr>
+<tr>
+<td width=15%> <b> --box </b></td>
+<td> comma-separated box dimensions (3 for orthorombic, 9 for generic) </td>
+</tr>
+
+</table>
+

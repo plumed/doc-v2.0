@@ -1,0 +1,68 @@
+\par The atoms involved can be specified using
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> GROUPA </b></td>
+<td> First list of atoms </td>
+</tr>
+<tr>
+<td width=15%> <b> GROUPB </b></td>
+<td> Second list of atoms </td>
+</tr>
+</table>
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> I </b></td>
+<td> ( default=1.0 ) Ionic strength (M) </td>
+</tr>
+<tr>
+<td width=15%> <b> TEMP </b></td>
+<td> ( default=300.0 ) Simulation temperature (K) </td>
+</tr>
+<tr>
+<td width=15%> <b> EPSILON </b></td>
+<td> ( default=80.0 ) Dielectric constant of solvent </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+<tr>
+<td width=15%> <b> NOPBC </b></td>
+<td> ( default=off ) ignore the periodic boundary conditions when calculating distances </td>
+</tr>
+<tr>
+<td width=15%> <b> SERIAL </b></td>
+<td> ( default=off ) Perform the calculation in serial - for debug purpose </td>
+</tr>
+<tr>
+<td width=15%> <b> PAIR </b></td>
+<td> ( default=off ) Pair only 1st element of the 1st group with 1st element in the second, etc </td>
+</tr>
+<tr>
+<td width=15%> <b> NLIST </b></td>
+<td> ( default=off ) Use a neighbour list to speed up the calculation </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NL_CUTOFF </b></td>
+<td> The cutoff for the neighbour list </td>
+</tr>
+<tr>
+<td width=15%> <b> NL_STRIDE </b></td>
+<td> The frequency with which we are updating the atoms in the neighbour list </td>
+</tr>
+
+</table>
+

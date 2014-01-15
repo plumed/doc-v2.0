@@ -1,0 +1,566 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: tools/OptimalAlignment.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">OptimalAlignment.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_optimal_alignment_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_optimal_alignment_8h.html">OptimalAlignment.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_kearsley_8h.html">Kearsley.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_log_8h.html">Log.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tools_2_random_8h.html">Random.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#a2e4dd71c38304b5c33f73c88f4421ed0">   33</a></span>&#160;OptimalAlignment::OptimalAlignment( <span class="keyword">const</span>  std::vector&lt;double&gt;  &amp; align, <span class="keyword">const</span>  std::vector&lt;double&gt;  &amp; displace, <span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; p0, <span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; p1 , <a class="code" href="class_p_l_m_d_1_1_log.html">Log</a>* &amp;log )</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;:log(log){</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// kearsley init to null</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>=NULL;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>==NULL) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>=<span class="keyword">new</span> <a class="code" href="class_p_l_m_d_1_1_kearsley.html">Kearsley</a>(p0,p1,align,log);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// copy the structure into place</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a3f4443c2d8ad39382118f28399a4c9b6">assignP0</a>(p0);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a922aebdc20f640dd65fdc9b1a21640cd">assignP1</a>(p1);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a572a4bcf03d8060cfe2fa827f3239cee">assignAlign</a>(align);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a135e8ef1970008384727b70ae2e3c06d">assignDisplace</a>(displace);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// basic check</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span>(p0.size() != p1.size()){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                (this-&gt;<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>)-&gt;printf(<span class="stringliteral">&quot;THE SIZE OF THE TWO FRAMES TO BE ALIGNED ARE DIFFERENT\n&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// fast behaviour: if all the alignment and displacement are 1.0 then go for fast </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a474c32d43f60fa886ee5fb1a306cc3a5">fast</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i=0;i&lt;align.size();i++ ){</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span>(align[i]!=displace[i] || align[i]!=1.0)<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a474c32d43f60fa886ee5fb1a306cc3a5">fast</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#abb907d36e28429ec1a57abb256538ea9">   59</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#abb907d36e28429ec1a57abb256538ea9">OptimalAlignment::~OptimalAlignment</a>(){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>!=NULL)<span class="keyword">delete</span> <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#a3f4443c2d8ad39382118f28399a4c9b6">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a3f4443c2d8ad39382118f28399a4c9b6">OptimalAlignment::assignP0</a>(  <span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; p0 ){</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        this-&gt;p0=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a9a044922a28220ba9e50add33c84a09f">p0</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>!=NULL){<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a3bad6c7722967f7ac63520120fad9494">assignP0</a>(p0);}<span class="keywordflow">else</span>{cerr&lt;&lt;<span class="stringliteral">&quot;kearsley is not initialized&quot;</span>&lt;&lt;endl; exit(0);}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#a922aebdc20f640dd65fdc9b1a21640cd">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a922aebdc20f640dd65fdc9b1a21640cd">OptimalAlignment::assignP1</a>(  <span class="keyword">const</span> std::vector&lt;Vector&gt; &amp; p1 ){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        this-&gt;p1=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ab30e4e70842fc54b5b681d5bac1de56e">p1</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>!=NULL){<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#ab074f13510544532018db04ed819b066">assignP1</a>(p1);}<span class="keywordflow">else</span>{cerr&lt;&lt;<span class="stringliteral">&quot;kearsley is not initialized&quot;</span>&lt;&lt;endl; exit(0);}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#a572a4bcf03d8060cfe2fa827f3239cee">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a572a4bcf03d8060cfe2fa827f3239cee">OptimalAlignment::assignAlign</a>(  <span class="keyword">const</span> std::vector&lt;double&gt; &amp; align ){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        this-&gt;align=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>!=NULL){<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a4ed767e89ba09227d51b661fe9444a5f">assignAlign</a>(align);}<span class="keywordflow">else</span>{cerr&lt;&lt;<span class="stringliteral">&quot;kearsley is not initialized&quot;</span>&lt;&lt;endl; exit(0);}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#a135e8ef1970008384727b70ae2e3c06d">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a135e8ef1970008384727b70ae2e3c06d">OptimalAlignment::assignDisplace</a>(  <span class="keyword">const</span> std::vector&lt;double&gt; &amp; displace ){</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        this-&gt;displace=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#a2176806348d0a336809246d75748e2de">   83</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a2176806348d0a336809246d75748e2de">OptimalAlignment::calculate</a>(<span class="keywordtype">bool</span> squared, std::vector&lt;Vector&gt; &amp; derivatives){</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">bool</span> rmsd=!squared ;  </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">double</span> err;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// at this point everything should be already in place for calculating the alignment (p1,p2,align)</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// here everything is done with kearsley algorithm. Extension to other optimal alignment algos is</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// possible here below with a switch</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        err=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a79ac46bc4d19c0ae87479f4c1529c09f">calculate</a>(rmsd);  <span class="comment">// this calculates the MSD: transform into RMSD</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">// check findiff alignment</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;         <span class="comment">//mykearsley-&gt;finiteDifferenceInterface(rmsd);</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a474c32d43f60fa886ee5fb1a306cc3a5">fast</a>){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">//log-&gt;printf(&quot;Doing fast: ERR %12.6f \n&quot;,err);</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a19680e7c013b8510f26a7cb3afbe0b9c">derrdp0</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a556b97cfd9d050f394476739f585da27">derrdp1</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                derivatives=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }<span class="keywordflow">else</span>{<span class="comment"></span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">                /// TODO this interface really sucks since is strongly asymmetric should be re-engineered.</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"></span>                err=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a6eada5d7b46d64ab228b8f403679ab02">weightedAlignment</a>(rmsd);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="comment">//log-&gt;printf(&quot;Doing slow: ERR %12.6f \n&quot;,err);</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                derivatives=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">// destroy the kearsley object?</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> err;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#ifdef __INTEL_COMPILER</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#pragma intel optimization_level 2</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor"></span><span class="comment">/// this does the weighed alignment if the vector of alignment is different from displacement</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#a6eada5d7b46d64ab228b8f403679ab02">  118</a></span>&#160;<span class="comment"></span><span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a6eada5d7b46d64ab228b8f403679ab02">OptimalAlignment::weightedAlignment</a>( <span class="keywordtype">bool</span> rmsd){</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">double</span> tmp0,tmp1,walign,wdisplace,const1,ret;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">unsigned</span>  i,k,l,<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>,<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>,o,oo,mm;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">unsigned</span> natoms=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a9a044922a28220ba9e50add33c84a09f">p0</a>.size();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_kearsley.html">Kearsley</a> *myk=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">mykearsley</a>;  <span class="comment">/// just a shortcut</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment"></span><span class="comment"></span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">        /// TODO : these two blocks can be calculated once forever after the initialization (exception for certain methods?)</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"></span><span class="comment"></span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">        /// clear derivatives</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"></span>        <span class="keywordflow">if</span> (<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>.size()!=natoms)<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>.resize(natoms);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>.size()!=natoms)<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>.resize(natoms);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">// clear the container</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">for</span>(i=0;i&lt;natoms;i++){</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][0]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][1]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][2]=0.;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][0]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][1]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][2]=0.;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        walign=0.;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        vector&lt;int&gt; alignmap;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">for</span>(i=0;i&lt;natoms;i++){</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i]&gt;0.){</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        alignmap.push_back(i);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        walign+=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i];</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i]&lt;0.){cerr&lt;&lt;<span class="stringliteral">&quot;FOUND ALIGNMENT WEIGHT NEGATIVE!&quot;</span>&lt;&lt;endl;exit(0);};</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        wdisplace=0.;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        vector&lt;int&gt; displacemap;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">for</span>(i=0;i&lt;natoms;i++){</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i]&gt;0.){</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                        displacemap.push_back(i);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                        wdisplace+=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i];</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i]&lt;0.){cerr&lt;&lt;<span class="stringliteral">&quot;FOUND ALIGNMENT WEIGHT NEGATIVE!&quot;</span>&lt;&lt;endl;exit(0);};</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        tmp0=0.;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        vector&lt;Vector&gt; array_n_3;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        array_n_3.resize(natoms);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">for</span>(i=0;i&lt;array_n_3.size();i++)array_n_3[i][0]=array_n_3[i][1]=array_n_3[i][2]=0.;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="comment">//    err= (1/totdisplace) sum_k_l   displace_k*((p0reset_k_l- sum_k_m rot_l_m*p1reset_k_m )**2)</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="comment">//for(kk=0;kk&lt;displacemap.size();kk++){</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="comment">//      k=displacemap[kk];</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">for</span>(k=0;k&lt;natoms;k++){</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keywordflow">for</span>(l=0;l&lt;3;l++){</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                        tmp1=0.;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                        <span class="comment">// contribution from rotated reference frame //</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        <span class="keywordflow">for</span>(m=0;m&lt;3;m++){</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                tmp1-=myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a481dc79b025ebb85a9dcc0aad71119ba">rotmat0on1</a>[l][<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>]*myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a8699495213654a67b71e96805dfc3588">p1reset</a>[k][<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>];</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        <span class="comment">// contribution from running centered frame //</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        tmp1+= myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#aa92d65a71a416506612240c47adc94a9">p0reset</a>[k][l];</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        array_n_3[k][l]=tmp1; <span class="comment">// store coefficents for derivative usage//</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                        tmp0+=tmp1*tmp1*<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[k]; <span class="comment">//squared distance added//</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        tmp0=tmp0/wdisplace;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">// log-&gt;printf(&quot; ERRR NEW %f \n&quot;,tmp0);</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        ret=tmp0;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="comment">/* DERIVATIVE CALCULATION:respect to running frame */</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">for</span>(k=0;k&lt;natoms;k++){</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="keywordflow">for</span>(l=0;l&lt;3;l++){</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        tmp1 =2.*array_n_3[k][l]*<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[k]/wdisplace ; <span class="comment">//ok</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                        const1=2.*<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[k]/(walign*wdisplace);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                        <span class="keywordflow">if</span>(const1&gt;0.){</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                <span class="keywordflow">for</span>(oo=0;oo&lt;displacemap.size();oo++){</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                        o=displacemap[oo];</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                        tmp1 -=const1*array_n_3[o][l]*<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[o];   <span class="comment">//ok</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                                }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        <span class="keywordflow">for</span>(mm=0;mm&lt;displacemap.size();mm++){</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                                m=displacemap[mm];</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                const1=2.* <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>]/wdisplace ;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                <span class="keywordflow">for</span>(n=0;n&lt;3;n++){</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                        tmp0=0.;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                        <span class="keywordflow">for</span>(o=0;o&lt;3;o++){</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                                <span class="keywordtype">int</span> ind=n*3*3*natoms+o*3*natoms+l*natoms+k;  <span class="comment">//ok</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                                tmp0+=myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#add810c5ea32d16728ba3afc257382a06">dmatdp0</a>[ind]*myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a8699495213654a67b71e96805dfc3588">p1reset</a>[<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>][o];</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                        }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                        tmp0*=-const1*array_n_3[<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>][<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>];</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                        tmp1+=tmp0;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[k][l]=tmp1;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="comment">//exit(0);</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="comment">//return ret;</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordtype">bool</span> do_frameref_der=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="comment">// derivatives of</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="comment">//    err= (1/totdisplace) sum_k_l   displace_k*((p0reset_k_l- sum_m rot_l_m*p1reset_k_m )**2)</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="comment">// respect p1:</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="comment">// derr_dp1=(1/totdisplace) sum_k_l 2*displace_k*(p0reset_k_l- sum_m rot_l_m*p1reset_k_m )</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="comment">//                                                                       *d/dp1 ( p0reset_k_l- sum_m rot_l_m*p1reset_k_m)</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="comment">// =</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="comment">// (1/totdisplace) sum_k_l 2*displace_k*(p0reset_k_l- sum_m rot_l_m*p1reset_k_m )*</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment">//                                                      *(d/dp1 p0reset_k_l</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="comment">//                                                              - sum_m (d/dp1  rot_l_m)*p1reset_k_m</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="comment">//                                                              - sum_m rot_l_m*(d/dp1 p1reset_k_m ) )</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="comment">// =</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="comment">//                              sum_k_l 2*displace_k/totdisplace* array_n_3_k_l</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="comment">//                                                      *(- sum_m (d/dp1  rot_l_m)*p1reset_k_m</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">//                                                              - sum_m rot_l_m*(d/dp1 p1reset_k_m ) )</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">if</span>(do_frameref_der){</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="keywordflow">for</span>(k=0;k&lt;natoms;k++){</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">//                      for(kk=0;kk&lt;displacemap.size();kk++){</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">//                              k=displacemap[kk];</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                        <span class="keywordflow">for</span>(l=0;l&lt;3;l++){</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                tmp1=0.;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                <span class="keywordflow">for</span>(mm=0;mm&lt;displacemap.size();mm++){</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                        m=displacemap[mm];</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                        const1=2.* <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>]/wdisplace ;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                                        <span class="keywordflow">for</span>(n=0;n&lt;3;n++){</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                                tmp0=0.;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                                <span class="keywordflow">for</span>(o=0;o&lt;3;o++){</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                                                        <span class="keywordtype">int</span> ind=n*3*3*natoms+o*3*natoms+l*natoms+k;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                                        tmp0+=myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a81557ebd5f551e247f6c41ec7e6888e5">dmatdp1</a>[ind]*myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a8699495213654a67b71e96805dfc3588">p1reset</a>[<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>][o];</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                                }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                                tmp0*=-const1*array_n_3[<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>][<a class="code" href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a>];</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                                tmp1+= tmp0;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                        }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                                }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                tmp0=0.;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                <span class="keywordflow">for</span>(o=0;o&lt;3;o++){</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                                                        tmp0+=array_n_3[k][o]*myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a481dc79b025ebb85a9dcc0aad71119ba">rotmat0on1</a>[o][l];</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                                }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                tmp1+=-tmp0*2.*<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[k]/wdisplace;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                tmp0=0.;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                <span class="keywordflow">for</span>(mm=0;mm&lt;displacemap.size();mm++){</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                        m=displacemap[mm];</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                        <span class="keywordflow">for</span>(o=0;o&lt;3;o++){</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                                tmp0+=array_n_3[<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>][o]*myk-&gt;<a class="code" href="class_p_l_m_d_1_1_kearsley.html#a481dc79b025ebb85a9dcc0aad71119ba">rotmat0on1</a>[o][l]*<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[<a class="code" href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a>];</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                        }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                                }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                tmp1 += tmp0*2.*<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[k]/(walign*wdisplace);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[k][l]=tmp1;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                        }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment">        /// probably not really the way it should be</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment"></span>        <span class="keywordflow">if</span> (rmsd){</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                ret=sqrt(ret);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                        <span class="keywordtype">double</span> tmp=0.5/ret;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;natoms;i++){</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][0]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][0]*tmp;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][1]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][1]*tmp;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][2]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][2]*tmp;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][0]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][0]*tmp;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][1]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][1]*tmp;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                                        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][2]=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][2]*tmp;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                        }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_optimal_alignment.html#a8e3d7a7b2e3545a34fb28134fac3da53">  311</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8e3d7a7b2e3545a34fb28134fac3da53">OptimalAlignment::weightedFindiffTest</a>( <span class="keywordtype">bool</span> rmsd){</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_random.html">Random</a> rnd;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;Entering rmsd finite difference test system\n &quot;</span>);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;RMSD OR MSD: %s\n&quot;</span>,(rmsd)?<span class="stringliteral">&quot;rmsd&quot;</span>:<span class="stringliteral">&quot;msd&quot;</span>);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;-------------------------------------------\n&quot;</span>);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TEST1: derivative of the value (derr_dr0/derr_dr1)\n&quot;</span>);<span class="comment"></span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">        //// test 1</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment"></span>        <span class="keywordtype">double</span> step=1.e-8,olderr,<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>,err;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        vector&lt;Vector&gt; fakederivatives;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        fakederivatives.resize(<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a9a044922a28220ba9e50add33c84a09f">p0</a>.size());</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a474c32d43f60fa886ee5fb1a306cc3a5">fast</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="comment">// randomizing alignments and  displacements</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">/*      for (i=0;i&lt;p0.size();i++){</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">                // draw a random number</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment">            delta=drand48();</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">            delta1=drand48();</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="comment">            if(delta&gt;delta1){</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment">                align[i]=delta;</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">            }else{align[i]=0.;};</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="comment">            delta=drand48();</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="comment">            delta1=drand48();</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="comment">            if(delta&gt;delta1){</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">                displace[i]=delta;</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">            }else{displace[i]=0.;}</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment">        }*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">        //// get initial value of the error and derivative of it</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment"></span>        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a572a4bcf03d8060cfe2fa827f3239cee">assignAlign</a>(<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a135e8ef1970008384727b70ae2e3c06d">assignDisplace</a>(<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        olderr=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a2176806348d0a336809246d75748e2de">calculate</a>(rmsd, fakederivatives);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;INITIAL ERROR VALUE: %e\n&quot;</span>,olderr);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="comment">// randomizing alignments and  displacements</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TESTING: derrdp0 \n&quot;</span>);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;3;j++){</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;           <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>.size();i++){</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;               <span class="comment">// random displacement</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;               delta=(rnd.<a class="code" href="class_p_l_m_d_1_1_random.html#a41e26619b6d2a00d4faac288baedbb17">RandU01</a>()-0.5)*2*step;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;               <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a9a044922a28220ba9e50add33c84a09f">p0</a>[i][j]+=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;               <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a3f4443c2d8ad39382118f28399a4c9b6">assignP0</a>( <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a9a044922a28220ba9e50add33c84a09f">p0</a> );</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;               err=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a2176806348d0a336809246d75748e2de">calculate</a>(rmsd, fakederivatives);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;               <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a9a044922a28220ba9e50add33c84a09f">p0</a>[i][j]-=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;               <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a3f4443c2d8ad39382118f28399a4c9b6">assignP0</a>( <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a9a044922a28220ba9e50add33c84a09f">p0</a> );</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;               <span class="keywordflow">switch</span>(j){</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                 <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                     <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TESTING: X  %4u ANAL %18.9f NUMER %18.9f DELTA %18.9f DISP %6.2f ALIGN %6.2f \n&quot;</span>,i,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][j],(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][j]-(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i],<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i]);<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                 <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                     <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TESTING: Y  %4u ANAL %18.9f NUMER %18.9f DELTA %18.9f DISP %6.2f ALIGN %6.2f \n&quot;</span>,i,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][j],(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][j]-(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i],<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i]);<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                 <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                     <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TESTING: Z  %4u ANAL %18.9f NUMER %18.9f DELTA %18.9f DISP %6.2f ALIGN %6.2f \n&quot;</span>,i,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][j],(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">derrdp0</a>[i][j]-(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i],<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i]);<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;               }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;           }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        }</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TESTING: derrdp1 \n&quot;</span>);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;3;j++){</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;           <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>.size();i++){</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;               <span class="comment">// random displacement</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;               delta=(rnd.<a class="code" href="class_p_l_m_d_1_1_random.html#a41e26619b6d2a00d4faac288baedbb17">RandU01</a>()-0.5)*2*step;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;               <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ab30e4e70842fc54b5b681d5bac1de56e">p1</a>[i][j]+=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;               <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a922aebdc20f640dd65fdc9b1a21640cd">assignP1</a>( <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ab30e4e70842fc54b5b681d5bac1de56e">p1</a> );</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;               err=<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a2176806348d0a336809246d75748e2de">calculate</a>(rmsd, fakederivatives);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;               <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ab30e4e70842fc54b5b681d5bac1de56e">p1</a>[i][j]-=<a class="code" href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">delta</a>;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;               <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a922aebdc20f640dd65fdc9b1a21640cd">assignP1</a>( <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ab30e4e70842fc54b5b681d5bac1de56e">p1</a> );</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;               <span class="keywordflow">switch</span>(j){</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                 <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                     <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TESTING: X  %4u ANAL %18.9f NUMER %18.9f DELTA %18.9f DISP %6.2f ALIGN %6.2f \n&quot;</span>,i,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][j],(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][j]-(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i],<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i]);<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                 <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                     <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TESTING: Y  %4u ANAL %18.9f NUMER %18.9f DELTA %18.9f DISP %6.2f ALIGN %6.2f \n&quot;</span>,i,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][j],(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][j]-(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i],<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i]);<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                 <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                     <a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">log</a>-&gt;<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;TESTING: Z  %4u ANAL %18.9f NUMER %18.9f DELTA %18.9f DISP %6.2f ALIGN %6.2f \n&quot;</span>,i,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][j],(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">derrdp1</a>[i][j]-(err-olderr)/delta,<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">displace</a>[i],<a class="code" href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">align</a>[i]);<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;               }</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;           }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        exit(0);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">// This is to avoid warnings:</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;}</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a81557ebd5f551e247f6c41ec7e6888e5"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a81557ebd5f551e247f6c41ec7e6888e5">PLMD::Kearsley::dmatdp1</a></div><div class="ttdeci">std::vector&lt; double &gt; dmatdp1</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00220">Kearsley.h:220</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a8e3d7a7b2e3545a34fb28134fac3da53"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a8e3d7a7b2e3545a34fb28134fac3da53">PLMD::OptimalAlignment::weightedFindiffTest</a></div><div class="ttdeci">double weightedFindiffTest(bool rmsd)</div><div class="ttdef"><b>Definition:</b> <a href="_optimal_alignment_8cpp_source.html#l00311">OptimalAlignment.cpp:311</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a2176806348d0a336809246d75748e2de"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a2176806348d0a336809246d75748e2de">PLMD::OptimalAlignment::calculate</a></div><div class="ttdeci">double calculate(bool rmsd, std::vector&lt; Vector &gt; &amp;derivatives)</div><div class="ttdoc">this does the real calculation </div><div class="ttdef"><b>Definition:</b> <a href="_optimal_alignment_8cpp_source.html#l00083">OptimalAlignment.cpp:83</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a3f4443c2d8ad39382118f28399a4c9b6"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a3f4443c2d8ad39382118f28399a4c9b6">PLMD::OptimalAlignment::assignP0</a></div><div class="ttdeci">void assignP0(const std::vector&lt; Vector &gt; &amp;p0)</div><div class="ttdoc">assignment of the running frame p0 </div><div class="ttdef"><b>Definition:</b> <a href="_optimal_alignment_8cpp_source.html#l00063">OptimalAlignment.cpp:63</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a9a044922a28220ba9e50add33c84a09f"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a9a044922a28220ba9e50add33c84a09f">PLMD::OptimalAlignment::p0</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p0</div><div class="ttdoc">position of one frame (generally the MD) </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00046">OptimalAlignment.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a922aebdc20f640dd65fdc9b1a21640cd"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a922aebdc20f640dd65fdc9b1a21640cd">PLMD::OptimalAlignment::assignP1</a></div><div class="ttdeci">void assignP1(const std::vector&lt; Vector &gt; &amp;p1)</div><div class="ttdoc">assignment to the reference frame p1 </div><div class="ttdef"><b>Definition:</b> <a href="_optimal_alignment_8cpp_source.html#l00068">OptimalAlignment.cpp:68</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a135e8ef1970008384727b70ae2e3c06d"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a135e8ef1970008384727b70ae2e3c06d">PLMD::OptimalAlignment::assignDisplace</a></div><div class="ttdeci">void assignDisplace(const std::vector&lt; double &gt; &amp;displace)</div><div class="ttdef"><b>Definition:</b> <a href="_optimal_alignment_8cpp_source.html#l00078">OptimalAlignment.cpp:78</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_ab30e4e70842fc54b5b681d5bac1de56e"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#ab30e4e70842fc54b5b681d5bac1de56e">PLMD::OptimalAlignment::p1</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p1</div><div class="ttdoc">position of the reference frames </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00048">OptimalAlignment.h:48</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html">PLMD::Random</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_random_8h_source.html#l00031">Random.h:31</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_log_html"><div class="ttname"><a href="class_p_l_m_d_1_1_log.html">PLMD::Log</a></div><div class="ttdoc">Class containing the log stream. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_log_8h_source.html#l00037">Log.h:37</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a130c0fe8bb10a3931a3f8a41bbce3ec3"><div class="ttname"><a href="tools_2_matrix_8h.html#a130c0fe8bb10a3931a3f8a41bbce3ec3">n</a></div><div class="ttdeci">void const char const char int * n</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a8699495213654a67b71e96805dfc3588"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a8699495213654a67b71e96805dfc3588">PLMD::Kearsley::p1reset</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p1reset</div><div class="ttdoc">position resetted wrt coms p1 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00206">Kearsley.h:206</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a17fdda2964885ba9c09aee24bec5011c"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a17fdda2964885ba9c09aee24bec5011c">PLMD::OptimalAlignment::mykearsley</a></div><div class="ttdeci">Kearsley * mykearsley</div><div class="ttdoc">a pointer to the object that performs the optimal alignment via quaternions </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00040">OptimalAlignment.h:40</a></div></div>
+<div class="ttc" id="tools_2_optimal_alignment_8h_html"><div class="ttname"><a href="tools_2_optimal_alignment_8h.html">OptimalAlignment.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a556b97cfd9d050f394476739f585da27"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a556b97cfd9d050f394476739f585da27">PLMD::Kearsley::derrdp1</a></div><div class="ttdeci">std::vector&lt; Vector &gt; derrdp1</div><div class="ttdoc">derivatives: derivative of the error respect p1 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00216">Kearsley.h:216</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_aff093a1e6914a14c906b69cb3447bfe6"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#aff093a1e6914a14c906b69cb3447bfe6">PLMD::OptimalAlignment::align</a></div><div class="ttdeci">std::vector&lt; double &gt; align</div><div class="ttdoc">alignment vector: a double that says if the atom has to be used in reset COM and makeing the alignmen...</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00044">OptimalAlignment.h:44</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a3bad6c7722967f7ac63520120fad9494"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a3bad6c7722967f7ac63520120fad9494">PLMD::Kearsley::assignP0</a></div><div class="ttdeci">void assignP0(const std::vector&lt; Vector &gt; &amp;p0)</div><div class="ttdoc">switch the assignment of the structure p0 (e.g. at each md step) </div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00729">Kearsley.cpp:729</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a79ac46bc4d19c0ae87479f4c1529c09f"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a79ac46bc4d19c0ae87479f4c1529c09f">PLMD::Kearsley::calculate</a></div><div class="ttdeci">double calculate(bool rmsd)</div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00065">Kearsley.cpp:65</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_o_file_html_a1ad29d0ba5b7ceb7c1949f33c6ccd29f"><div class="ttname"><a href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">PLMD::OFile::printf</a></div><div class="ttdeci">int printf(const char *fmt,...)</div><div class="ttdoc">Formatted output with explicit format - a la printf. </div><div class="ttdef"><b>Definition:</b> <a href="_o_file_8cpp_source.html#l00082">OFile.cpp:82</a></div></div>
+<div class="ttc" id="tools_2_log_8h_html"><div class="ttname"><a href="tools_2_log_8h.html">Log.h</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_html_a2a1cf3a4fea01e78626f761aa04abd90"><div class="ttname"><a href="namespace_p_l_m_d.html#a2a1cf3a4fea01e78626f761aa04abd90">PLMD::delta</a></div><div class="ttdeci">VectorGeneric&lt; n &gt; delta(const VectorGeneric&lt; n &gt; &amp;v1, const VectorGeneric&lt; n &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_vector_8h_source.html#l00262">Vector.h:262</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_aa92d65a71a416506612240c47adc94a9"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#aa92d65a71a416506612240c47adc94a9">PLMD::Kearsley::p0reset</a></div><div class="ttdeci">std::vector&lt; Vector &gt; p0reset</div><div class="ttdoc">position resetted wrt coms p0 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00204">Kearsley.h:204</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a6eada5d7b46d64ab228b8f403679ab02"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a6eada5d7b46d64ab228b8f403679ab02">PLMD::OptimalAlignment::weightedAlignment</a></div><div class="ttdeci">double weightedAlignment(bool rmsd)</div><div class="ttdoc">this should perform the weighted alignment </div><div class="ttdef"><b>Definition:</b> <a href="_optimal_alignment_8cpp_source.html#l00118">OptimalAlignment.cpp:118</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a572a4bcf03d8060cfe2fa827f3239cee"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a572a4bcf03d8060cfe2fa827f3239cee">PLMD::OptimalAlignment::assignAlign</a></div><div class="ttdeci">void assignAlign(const std::vector&lt; double &gt; &amp;align)</div><div class="ttdef"><b>Definition:</b> <a href="_optimal_alignment_8cpp_source.html#l00073">OptimalAlignment.cpp:73</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_ab074f13510544532018db04ed819b066"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#ab074f13510544532018db04ed819b066">PLMD::Kearsley::assignP1</a></div><div class="ttdeci">void assignP1(const std::vector&lt; Vector &gt; &amp;p1)</div><div class="ttdoc">derivatives: derivative of the error respect p1 </div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00725">Kearsley.cpp:725</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a8094198f2a7c1d814ece32a1f9a39647"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a8094198f2a7c1d814ece32a1f9a39647">PLMD::OptimalAlignment::displace</a></div><div class="ttdeci">std::vector&lt; double &gt; displace</div><div class="ttdoc">displacement vector : a double that says if the coordinate should be used in calculating the RMSD/MSD...</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00042">OptimalAlignment.h:42</a></div></div>
+<div class="ttc" id="tools_2_random_8h_html"><div class="ttname"><a href="tools_2_random_8h.html">Random.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_a474c32d43f60fa886ee5fb1a306cc3a5"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#a474c32d43f60fa886ee5fb1a306cc3a5">PLMD::OptimalAlignment::fast</a></div><div class="ttdeci">bool fast</div><div class="ttdoc">a bool that decides to make the fast version (alignment vec= displacement vec) or the slower case ...</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00056">OptimalAlignment.h:56</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_aaa6b3ac152d606535d517d85b31a4d82"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#aaa6b3ac152d606535d517d85b31a4d82">PLMD::OptimalAlignment::derrdp0</a></div><div class="ttdeci">std::vector&lt; Vector &gt; derrdp0</div><div class="ttdoc">derivatives of the error respect to the p0 (MD running frame) </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00050">OptimalAlignment.h:50</a></div></div>
+<div class="ttc" id="tools_2_matrix_8h_html_a31e2cd1661cd1e272dddf5da4086e01c"><div class="ttname"><a href="tools_2_matrix_8h.html#a31e2cd1661cd1e272dddf5da4086e01c">m</a></div><div class="ttdeci">void const char const char int double int double double int int double int * m</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_matrix_8h_source.html#l00042">Matrix.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_random_html_a41e26619b6d2a00d4faac288baedbb17"><div class="ttname"><a href="class_p_l_m_d_1_1_random.html#a41e26619b6d2a00d4faac288baedbb17">PLMD::Random::RandU01</a></div><div class="ttdeci">double RandU01()</div><div class="ttdef"><b>Definition:</b> <a href="_random_8cpp_source.html#l00051">Random.cpp:51</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_ae19ae0900544039f32c46cc769fd91f1"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#ae19ae0900544039f32c46cc769fd91f1">PLMD::OptimalAlignment::derrdp1</a></div><div class="ttdeci">std::vector&lt; Vector &gt; derrdp1</div><div class="ttdoc">derivatives of the error respect to the p1 (static frame, do not remove: useful for SM) ...</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00052">OptimalAlignment.h:52</a></div></div>
+<div class="ttc" id="tools_2_kearsley_8h_html"><div class="ttname"><a href="tools_2_kearsley_8h.html">Kearsley.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_abb907d36e28429ec1a57abb256538ea9"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#abb907d36e28429ec1a57abb256538ea9">PLMD::OptimalAlignment::~OptimalAlignment</a></div><div class="ttdeci">~OptimalAlignment()</div><div class="ttdoc">the destructor: delete kearsley </div><div class="ttdef"><b>Definition:</b> <a href="_optimal_alignment_8cpp_source.html#l00059">OptimalAlignment.cpp:59</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a4ed767e89ba09227d51b661fe9444a5f"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a4ed767e89ba09227d51b661fe9444a5f">PLMD::Kearsley::assignAlign</a></div><div class="ttdeci">void assignAlign(const std::vector&lt; double &gt; &amp;align)</div><div class="ttdoc">transfer the alignment vector </div><div class="ttdef"><b>Definition:</b> <a href="_kearsley_8cpp_source.html#l00734">Kearsley.cpp:734</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_add810c5ea32d16728ba3afc257382a06"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#add810c5ea32d16728ba3afc257382a06">PLMD::Kearsley::dmatdp0</a></div><div class="ttdeci">std::vector&lt; double &gt; dmatdp0</div><div class="ttdoc">derivative of the rotation matrix note the dimension 3x3 x 3 x N </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00219">Kearsley.h:219</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a481dc79b025ebb85a9dcc0aad71119ba"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a481dc79b025ebb85a9dcc0aad71119ba">PLMD::Kearsley::rotmat0on1</a></div><div class="ttdeci">Tensor rotmat0on1</div><div class="ttdoc">rotation matrices p0 on p1 and reverse (p1 over p0) </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00212">Kearsley.h:212</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html">PLMD::Kearsley</a></div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00177">Kearsley.h:177</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_kearsley_html_a19680e7c013b8510f26a7cb3afbe0b9c"><div class="ttname"><a href="class_p_l_m_d_1_1_kearsley.html#a19680e7c013b8510f26a7cb3afbe0b9c">PLMD::Kearsley::derrdp0</a></div><div class="ttdeci">std::vector&lt; Vector &gt; derrdp0</div><div class="ttdoc">derivatives: derivative of the error respect p0 </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_kearsley_8h_source.html#l00214">Kearsley.h:214</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_optimal_alignment_html_aab98b0978dbf2774d1c34eb24e5faf0b"><div class="ttname"><a href="class_p_l_m_d_1_1_optimal_alignment.html#aab98b0978dbf2774d1c34eb24e5faf0b">PLMD::OptimalAlignment::log</a></div><div class="ttdeci">Log * log</div><div class="ttdoc">the pointer to the logfile </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_optimal_alignment_8h_source.html#l00054">OptimalAlignment.h:54</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

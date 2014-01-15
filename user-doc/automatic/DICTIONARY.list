@@ -1,0 +1,5 @@
+<tr> <td width=5%> \subpage BiasRepresentation </td><td> INTERNAL </td><td>An internal tool in plumed that is used to represent a bias</td> </tr>
+<tr> <td width=5%> \subpage histogrambead </td><td> INTERNAL </td><td>A function that can be used to calculate whether quantities are between fixed upper and lower bounds.</td> </tr>
+<tr> <td width=5%> \subpage kernelfunctions </td><td> INTERNAL </td><td>Functions that are used to construct histograms</td> </tr>
+<tr> <td width=5%> \subpage reweighting </td><td> INTERNAL </td><td>Calculate free energies from a biassed/higher temperature trajectory. </td> </tr>
+<tr> <td width=5%> \subpage switchingfunction </td><td> INTERNAL </td><td>Functions that measure whether values are less than a certain quantity.</td> </tr>

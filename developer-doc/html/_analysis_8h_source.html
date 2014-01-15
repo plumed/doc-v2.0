@@ -1,0 +1,364 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: analysis/Analysis.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b8678fa8510b7ff9a55ffd4d18fd5e47.html">analysis</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Analysis.h</div>  </div>
+</div>
+<div class="contents">
+<a href="_analysis_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __PLUMED_analysis_Analysis_h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __PLUMED_analysis_Analysis_h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;core/ActionPilot.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;core/ActionWithArguments.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="_analysis_8h.html#a7b97eaac822267c0b1d1ffac8fe9c109">   28</a></span>&#160;<span class="preprocessor">#define PLUMED_ANALYSIS_INIT(ao) Action(ao),Analysis(ao)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>PLMD {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>analysis {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">\ingroup INHERIT</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">This is the abstract base class to use for implementing new methods for analyzing the trajectory, within it there </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">is information as to how to go about implementing a new analysis method.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html">Analysis</a> :</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_pilot.html">ActionPilot</a>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html">ActionWithArguments</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/// Are we running only once for the whole trajectory</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a6ff0b1e2b0a1d7ad69304a677ee21e4d">   46</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a6ff0b1e2b0a1d7ad69304a677ee21e4d">single_run</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/// Are we treating each block of data separately</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ae9fa2fe9dcfd1069df43307515dc84e2">   48</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ae9fa2fe9dcfd1069df43307515dc84e2">nomemory</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/// Are we writing a checkpoint file</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0d885dc5c2dba4da017a2c3e3ebbb9bb">   50</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0d885dc5c2dba4da017a2c3e3ebbb9bb">write_chq</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// Are we reusing data stored by another analysis action</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ada41af4bf35ff91d039ab421f1d9c0ec">   52</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ada41af4bf35ff91d039ab421f1d9c0ec">reusing_data</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// If we are reusing data are we ignoring the reweighting in that data</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a268a23c5d96b7863c90b29e01e1bc11c">   54</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a268a23c5d96b7863c90b29e01e1bc11c">ignore_reweight</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// The Analysis action that we are reusing data from</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2fa83ff441d0e2c5f7d0d319699230b1">   56</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html">Analysis</a>* <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2fa83ff441d0e2c5f7d0d319699230b1">mydatastash</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// The frequency with which we are performing analysis</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a174568b6659da57085642f8c2f8a6213">   58</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a174568b6659da57085642f8c2f8a6213">freq</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// Number of data point we need to run analysis</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ad7162296c68575ab13f3b95e322926a9">   60</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ad7162296c68575ab13f3b95e322926a9">ndata</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/// The temperature at which we are running the calculation</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a7fc9875e81206d4b079175d6b3778e26">   62</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a7fc9875e81206d4b079175d6b3778e26">simtemp</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// The temperature at which we want the histogram</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a34dd1bed4f171d5ffdd871c8149d2a7c">   64</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a34dd1bed4f171d5ffdd871c8149d2a7c">rtemp</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// Do we need the energy (are we reweighting at a different temperature)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a76a5288c1e1b44053802a66ca949210d">   66</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a76a5288c1e1b44053802a66ca949210d">needeng</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// The biases we are using in reweighting and the args we store them separately</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#adb9d8e47a756e1230c3b63f66f54ef2d">   68</a></span>&#160;<span class="comment"></span>  std::vector&lt;Value*&gt; <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#adb9d8e47a756e1230c3b63f66f54ef2d">biases</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/// The piece of data we are inserting</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a74e791936937edb544f5b799d09a6ccc">   70</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a74e791936937edb544f5b799d09a6ccc">idata</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">/// Tempory vector to store values of arguments</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ab7afd397436f08460e8c5ff53c70af20">   72</a></span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ab7afd397436f08460e8c5ff53c70af20">args</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">/// The data we are going to analyze</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#aa56ae4a1664c55eb255b5fb1ad0c2035">   74</a></span>&#160;<span class="comment"></span>  std::vector&lt;std::vector&lt;double&gt; &gt; <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#aa56ae4a1664c55eb255b5fb1ad0c2035">data</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/// The weights of all the data points</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a76ecfb5035f922962b9cec6374fc2744">   76</a></span>&#160;<span class="comment"></span>  std::vector&lt;double&gt; <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a1e595ca370e1495d30aae04478113d7b">logweights</a>, <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a76ecfb5035f922962b9cec6374fc2744">weights</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/// Have we analyzed the data for the first time</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a56ba08525630c285b826c2542efac311">   78</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a56ba08525630c285b826c2542efac311">firstAnalysisDone</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/// The value of the old normalization constant</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a551caa07808bba992182859ca3b8aeda">   80</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0c2f740b503474db56ab848a774a4290">norm</a>, <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a551caa07808bba992182859ca3b8aeda">old_norm</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/// The format to use in output files</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a31482a026f5fc947081c6d87e608140a">   82</a></span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a31482a026f5fc947081c6d87e608140a">ofmt</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/// The checkpoint file</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a389245c9dea12e09a98b43d915bd5da6">   84</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_p_l_m_d_1_1_o_file.html">OFile</a> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a389245c9dea12e09a98b43d915bd5da6">rfile</a>;<span class="comment"></span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/// Read in data from a file</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a8a0f6980b3f2442fe4ccc2d594e5c001">readDataFromFile</a>( <span class="keyword">const</span> std::string&amp; filename );<span class="comment"></span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/// This retrieves the value of norm from the analysis action.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/// It is only used to transfer data from one analysis action to</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/// another. You should never need to use it.  If you think you need it</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">/// you probably need getNormalization()</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a7e94e03d8422b753fef4926148f9a42e">retrieveNorm</a>() <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">protected</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/// This is used to read in output file names for analysis methods.  When</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">/// this method is used and the calculation is not restarted old analysis</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/// files are backed up.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2a2e2aacbfb8d03992f223bd43e67e97">parseOutputFile</a>( <span class="keyword">const</span> std::string&amp; key, std::string&amp; filename );<span class="comment"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/// Return the number of arguments (this overwrites the one in ActionWithArguments)</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a66bcef9a343e24547a44962f53032d16">getNumberOfArguments</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/// Return the number of data points</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"></span>  <span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0308ae2a44ede198225546c5a973825b">getNumberOfDataPoints</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">/// Retrieve the ith point</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a9a677d26422bcd0d0452f5a70ca063ce">getDataPoint</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a74e791936937edb544f5b799d09a6ccc">idata</a>, std::vector&lt;double&gt;&amp; point, <span class="keywordtype">double</span>&amp; weight ) <span class="keyword">const</span> ;<span class="comment"></span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/// Returns true if argument i is periodic together with the domain </span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a3dd7c69cca5d3c1ee51a8de94b85a921">getPeriodicityInformation</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; i, std::string&amp; dmin, std::string&amp; dmax);<span class="comment"></span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/// Return the normalization constant</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"></span>  <span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a52f021fd214f9542d34a1234b959ad22">getNormalization</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/// Are we analyzing each data block separately (if we are not this also returns the old normalization )</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ac9aeea2ad4abda88cba9a133f139399e">usingMemory</a>() <span class="keyword">const</span>; <span class="comment"></span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/// Convert the stored log weights to proper weights</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a53c5e72d9807c342838314d817e1db1f">finalizeWeights</a>( <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; ignore_weights );<span class="comment"></span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">/// Overwrite ActionWithArguments getArguments() so that we don&#39;t return</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/// the bias</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"></span>  std::vector&lt;Value*&gt; <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2ceaa66137209eb02804aebaec7a971a">getArguments</a>();<span class="comment"></span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">/// Return the format to use for numbers in output files</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"></span>  std::string <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a85aa4cae1a1c3fb6c16917ffd5a6d3e2">getOutputFormat</a>() <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#af7eaa43d1c21471dd48a67120d13c9cd">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a372330f7bfe191c574e33a710007a96d">Analysis</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a576822214d2f0332f1e572db74c2d907">~Analysis</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ad52950f1492ebdf18b08f9906ee51fbe">prepare</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a02280822afd1a60330956c05c394c0a8">calculate</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#abd0c9a824d3f4fa7103b6f3ed4bf3a36">update</a>();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0733e2e494b488fa078ccc185fbac0f1">performAnalysis</a>()=0;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#abb07058e632a8a62a34e9c96242d705f">  124</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#abb07058e632a8a62a34e9c96242d705f">apply</a>(){}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a546a7615e7f3b826cfb0e8dfcae7fffd">runFinalJobs</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a9e709bf9fdea5c05a252e9b9b4f30573">runAnalysis</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0308ae2a44ede198225546c5a973825b">  130</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0308ae2a44ede198225546c5a973825b">Analysis::getNumberOfDataPoints</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">if</span>( !<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ada41af4bf35ff91d039ab421f1d9c0ec">reusing_data</a> ){</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;     plumed_dbg_assert( <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#aa56ae4a1664c55eb255b5fb1ad0c2035">data</a>.size()==<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a1e595ca370e1495d30aae04478113d7b">logweights</a>.size() );</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;     <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#aa56ae4a1664c55eb255b5fb1ad0c2035">data</a>.size();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;     <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2fa83ff441d0e2c5f7d0d319699230b1">mydatastash</a>-&gt;<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0308ae2a44ede198225546c5a973825b">getNumberOfDataPoints</a>();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a9a677d26422bcd0d0452f5a70ca063ce">  140</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a9a677d26422bcd0d0452f5a70ca063ce">Analysis::getDataPoint</a>( <span class="keyword">const</span> <span class="keywordtype">unsigned</span>&amp; idata, std::vector&lt;double&gt;&amp; point, <span class="keywordtype">double</span>&amp; weight )<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordflow">if</span>( !<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ada41af4bf35ff91d039ab421f1d9c0ec">reusing_data</a> ){</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      plumed_dbg_assert( idata&lt;<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a76ecfb5035f922962b9cec6374fc2744">weights</a>.size() &amp;&amp;  point.size()==<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a66bcef9a343e24547a44962f53032d16">getNumberOfArguments</a>() );</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;point.size();++i) point[i]=<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#aa56ae4a1664c55eb255b5fb1ad0c2035">data</a>[idata][i];</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      weight=<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a76ecfb5035f922962b9cec6374fc2744">weights</a>[<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a74e791936937edb544f5b799d09a6ccc">idata</a>];</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2fa83ff441d0e2c5f7d0d319699230b1">mydatastash</a>-&gt;<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a9a677d26422bcd0d0452f5a70ca063ce">getDataPoint</a>( idata, point, weight );</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ac9aeea2ad4abda88cba9a133f139399e">  151</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ac9aeea2ad4abda88cba9a133f139399e">Analysis::usingMemory</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">if</span>( !<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ada41af4bf35ff91d039ab421f1d9c0ec">reusing_data</a> ){</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordflow">return</span> !<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ae9fa2fe9dcfd1069df43307515dc84e2">nomemory</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2fa83ff441d0e2c5f7d0d319699230b1">mydatastash</a>-&gt;<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ac9aeea2ad4abda88cba9a133f139399e">usingMemory</a>();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a66bcef9a343e24547a44962f53032d16">  160</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a66bcef9a343e24547a44962f53032d16">Analysis::getNumberOfArguments</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">unsigned</span> nargs=<a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">ActionWithArguments::getNumberOfArguments</a>();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordflow">return</span> nargs - <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#adb9d8e47a756e1230c3b63f66f54ef2d">biases</a>.size(); </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a7e94e03d8422b753fef4926148f9a42e">  166</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a7e94e03d8422b753fef4926148f9a42e">Analysis::retrieveNorm</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0c2f740b503474db56ab848a774a4290">norm</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2ceaa66137209eb02804aebaec7a971a">  171</a></span>&#160;std::vector&lt;Value*&gt; <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2ceaa66137209eb02804aebaec7a971a">Analysis::getArguments</a>(){</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  std::vector&lt;Value*&gt; arg_vals( <a class="code" href="class_p_l_m_d_1_1_action_with_arguments.html#a45a45a41e09dc19b7e6a153c5be55c6f">ActionWithArguments::getArguments</a>() );</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;<a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#adb9d8e47a756e1230c3b63f66f54ef2d">biases</a>.size();++i) arg_vals.erase(arg_vals.end()-1);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordflow">return</span> arg_vals;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a85aa4cae1a1c3fb6c16917ffd5a6d3e2">  178</a></span>&#160;std::string <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a85aa4cae1a1c3fb6c16917ffd5a6d3e2">Analysis::getOutputFormat</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a31482a026f5fc947081c6d87e608140a">ofmt</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_ada41af4bf35ff91d039ab421f1d9c0ec"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ada41af4bf35ff91d039ab421f1d9c0ec">PLMD::analysis::Analysis::reusing_data</a></div><div class="ttdeci">bool reusing_data</div><div class="ttdoc">Are we reusing data stored by another analysis action. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00052">Analysis.h:52</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a546a7615e7f3b826cfb0e8dfcae7fffd"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a546a7615e7f3b826cfb0e8dfcae7fffd">PLMD::analysis::Analysis::runFinalJobs</a></div><div class="ttdeci">void runFinalJobs()</div><div class="ttdoc">RunFinalJobs This method is called once at the very end of the calculation. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00338">Analysis.cpp:338</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_adb9d8e47a756e1230c3b63f66f54ef2d"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#adb9d8e47a756e1230c3b63f66f54ef2d">PLMD::analysis::Analysis::biases</a></div><div class="ttdeci">std::vector&lt; Value * &gt; biases</div><div class="ttdoc">The biases we are using in reweighting and the args we store them separately. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00068">Analysis.h:68</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_ae9fa2fe9dcfd1069df43307515dc84e2"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ae9fa2fe9dcfd1069df43307515dc84e2">PLMD::analysis::Analysis::nomemory</a></div><div class="ttdeci">bool nomemory</div><div class="ttdoc">Are we treating each block of data separately. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00048">Analysis.h:48</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a3dd7c69cca5d3c1ee51a8de94b85a921"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a3dd7c69cca5d3c1ee51a8de94b85a921">PLMD::analysis::Analysis::getPeriodicityInformation</a></div><div class="ttdeci">bool getPeriodicityInformation(const unsigned &amp;i, std::string &amp;dmin, std::string &amp;dmax)</div><div class="ttdoc">Returns true if argument i is periodic together with the domain. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00332">Analysis.cpp:332</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_ac9aeea2ad4abda88cba9a133f139399e"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ac9aeea2ad4abda88cba9a133f139399e">PLMD::analysis::Analysis::usingMemory</a></div><div class="ttdeci">bool usingMemory() const </div><div class="ttdoc">Are we analyzing each data block separately (if we are not this also returns the old normalization ) ...</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00151">Analysis.h:151</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a74e791936937edb544f5b799d09a6ccc"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a74e791936937edb544f5b799d09a6ccc">PLMD::analysis::Analysis::idata</a></div><div class="ttdeci">unsigned idata</div><div class="ttdoc">The piece of data we are inserting. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00070">Analysis.h:70</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_ad7162296c68575ab13f3b95e322926a9"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ad7162296c68575ab13f3b95e322926a9">PLMD::analysis::Analysis::ndata</a></div><div class="ttdeci">unsigned ndata</div><div class="ttdoc">Number of data point we need to run analysis. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00060">Analysis.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a9a677d26422bcd0d0452f5a70ca063ce"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a9a677d26422bcd0d0452f5a70ca063ce">PLMD::analysis::Analysis::getDataPoint</a></div><div class="ttdeci">void getDataPoint(const unsigned &amp;idata, std::vector&lt; double &gt; &amp;point, double &amp;weight) const </div><div class="ttdoc">Retrieve the ith point. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00140">Analysis.h:140</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a268a23c5d96b7863c90b29e01e1bc11c"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a268a23c5d96b7863c90b29e01e1bc11c">PLMD::analysis::Analysis::ignore_reweight</a></div><div class="ttdeci">bool ignore_reweight</div><div class="ttdoc">If we are reusing data are we ignoring the reweighting in that data. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00054">Analysis.h:54</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_pilot_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_pilot.html">PLMD::ActionPilot</a></div><div class="ttdoc">This is used to create PLMD::Action objects that are run with some set frequency. ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_pilot_8h_source.html#l00039">ActionPilot.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a389245c9dea12e09a98b43d915bd5da6"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a389245c9dea12e09a98b43d915bd5da6">PLMD::analysis::Analysis::rfile</a></div><div class="ttdeci">OFile rfile</div><div class="ttdoc">The checkpoint file. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00084">Analysis.h:84</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a2a2e2aacbfb8d03992f223bd43e67e97"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2a2e2aacbfb8d03992f223bd43e67e97">PLMD::analysis::Analysis::parseOutputFile</a></div><div class="ttdeci">void parseOutputFile(const std::string &amp;key, std::string &amp;filename)</div><div class="ttdoc">This is used to read in output file names for analysis methods. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00198">Analysis.cpp:198</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a53c5e72d9807c342838314d817e1db1f"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a53c5e72d9807c342838314d817e1db1f">PLMD::analysis::Analysis::finalizeWeights</a></div><div class="ttdeci">void finalizeWeights(const bool &amp;ignore_weights)</div><div class="ttdoc">Convert the stored log weights to proper weights. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00253">Analysis.cpp:253</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a8a0f6980b3f2442fe4ccc2d594e5c001"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a8a0f6980b3f2442fe4ccc2d594e5c001">PLMD::analysis::Analysis::readDataFromFile</a></div><div class="ttdeci">void readDataFromFile(const std::string &amp;filename)</div><div class="ttdoc">Read in data from a file. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00176">Analysis.cpp:176</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a7e94e03d8422b753fef4926148f9a42e"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a7e94e03d8422b753fef4926148f9a42e">PLMD::analysis::Analysis::retrieveNorm</a></div><div class="ttdeci">double retrieveNorm() const </div><div class="ttdoc">This retrieves the value of norm from the analysis action. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00166">Analysis.h:166</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a56ba08525630c285b826c2542efac311"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a56ba08525630c285b826c2542efac311">PLMD::analysis::Analysis::firstAnalysisDone</a></div><div class="ttdeci">bool firstAnalysisDone</div><div class="ttdoc">Have we analyzed the data for the first time. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00078">Analysis.h:78</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_aa56ae4a1664c55eb255b5fb1ad0c2035"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#aa56ae4a1664c55eb255b5fb1ad0c2035">PLMD::analysis::Analysis::data</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; data</div><div class="ttdoc">The data we are going to analyze. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00074">Analysis.h:74</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html">PLMD::ActionWithArguments</a></div><div class="ttdoc">This is used to create PLMD::Action objects that take the output from some other Action as input...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00042">ActionWithArguments.h:42</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_ab7afd397436f08460e8c5ff53c70af20"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ab7afd397436f08460e8c5ff53c70af20">PLMD::analysis::Analysis::args</a></div><div class="ttdeci">std::vector&lt; double &gt; args</div><div class="ttdoc">Tempory vector to store values of arguments. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00072">Analysis.h:72</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a76ecfb5035f922962b9cec6374fc2744"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a76ecfb5035f922962b9cec6374fc2744">PLMD::analysis::Analysis::weights</a></div><div class="ttdeci">std::vector&lt; double &gt; weights</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00076">Analysis.h:76</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a52f021fd214f9542d34a1234b959ad22"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a52f021fd214f9542d34a1234b959ad22">PLMD::analysis::Analysis::getNormalization</a></div><div class="ttdeci">double getNormalization() const </div><div class="ttdoc">Return the normalization constant. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00320">Analysis.cpp:320</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_abd0c9a824d3f4fa7103b6f3ed4bf3a36"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#abd0c9a824d3f4fa7103b6f3ed4bf3a36">PLMD::analysis::Analysis::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Update. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00325">Analysis.cpp:325</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a2fa83ff441d0e2c5f7d0d319699230b1"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2fa83ff441d0e2c5f7d0d319699230b1">PLMD::analysis::Analysis::mydatastash</a></div><div class="ttdeci">Analysis * mydatastash</div><div class="ttdoc">The Analysis action that we are reusing data from. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00056">Analysis.h:56</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a7fc9875e81206d4b079175d6b3778e26"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a7fc9875e81206d4b079175d6b3778e26">PLMD::analysis::Analysis::simtemp</a></div><div class="ttdeci">double simtemp</div><div class="ttdoc">The temperature at which we are running the calculation. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00062">Analysis.h:62</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a551caa07808bba992182859ca3b8aeda"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a551caa07808bba992182859ca3b8aeda">PLMD::analysis::Analysis::old_norm</a></div><div class="ttdeci">double old_norm</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00080">Analysis.h:80</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a174568b6659da57085642f8c2f8a6213"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a174568b6659da57085642f8c2f8a6213">PLMD::analysis::Analysis::freq</a></div><div class="ttdeci">unsigned freq</div><div class="ttdoc">The frequency with which we are performing analysis. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00058">Analysis.h:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_a45a45a41e09dc19b7e6a153c5be55c6f"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#a45a45a41e09dc19b7e6a153c5be55c6f">PLMD::ActionWithArguments::getArguments</a></div><div class="ttdeci">std::vector&lt; Value * &gt; &amp; getArguments()</div><div class="ttdoc">Returns an array of pointers to the arguments. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00123">ActionWithArguments.h:123</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a0d885dc5c2dba4da017a2c3e3ebbb9bb"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0d885dc5c2dba4da017a2c3e3ebbb9bb">PLMD::analysis::Analysis::write_chq</a></div><div class="ttdeci">bool write_chq</div><div class="ttdoc">Are we writing a checkpoint file. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00050">Analysis.h:50</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a2ceaa66137209eb02804aebaec7a971a"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a2ceaa66137209eb02804aebaec7a971a">PLMD::analysis::Analysis::getArguments</a></div><div class="ttdeci">std::vector&lt; Value * &gt; getArguments()</div><div class="ttdoc">Overwrite ActionWithArguments getArguments() so that we don&amp;#39;t return the bias. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00171">Analysis.h:171</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a0308ae2a44ede198225546c5a973825b"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0308ae2a44ede198225546c5a973825b">PLMD::analysis::Analysis::getNumberOfDataPoints</a></div><div class="ttdeci">unsigned getNumberOfDataPoints() const </div><div class="ttdoc">Return the number of data points. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00130">Analysis.h:130</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_abb07058e632a8a62a34e9c96242d705f"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#abb07058e632a8a62a34e9c96242d705f">PLMD::analysis::Analysis::apply</a></div><div class="ttdeci">void apply()</div><div class="ttdoc">Apply an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00124">Analysis.h:124</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html">PLMD::analysis::Analysis</a></div><div class="ttdoc">This is the abstract base class to use for implementing new methods for analyzing the trajectory...</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00040">Analysis.h:40</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_ad52950f1492ebdf18b08f9906ee51fbe"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#ad52950f1492ebdf18b08f9906ee51fbe">PLMD::analysis::Analysis::prepare</a></div><div class="ttdeci">void prepare()</div><div class="ttdoc">Prepare an Action for calculation This can be used by Action if they need some special preparation be...</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00207">Analysis.cpp:207</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a66bcef9a343e24547a44962f53032d16"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a66bcef9a343e24547a44962f53032d16">PLMD::analysis::Analysis::getNumberOfArguments</a></div><div class="ttdeci">unsigned getNumberOfArguments() const </div><div class="ttdoc">Return the number of arguments (this overwrites the one in ActionWithArguments) </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00160">Analysis.h:160</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a0733e2e494b488fa078ccc185fbac0f1"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0733e2e494b488fa078ccc185fbac0f1">PLMD::analysis::Analysis::performAnalysis</a></div><div class="ttdeci">virtual void performAnalysis()=0</div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_o_file_html"><div class="ttname"><a href="class_p_l_m_d_1_1_o_file.html">PLMD::OFile</a></div><div class="ttdoc">Class for output files. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_o_file_8h_source.html#l00084">OFile.h:84</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a9e709bf9fdea5c05a252e9b9b4f30573"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a9e709bf9fdea5c05a252e9b9b4f30573">PLMD::analysis::Analysis::runAnalysis</a></div><div class="ttdeci">void runAnalysis()</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00292">Analysis.cpp:292</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a576822214d2f0332f1e572db74c2d907"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a576822214d2f0332f1e572db74c2d907">PLMD::analysis::Analysis::~Analysis</a></div><div class="ttdeci">~Analysis()</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00249">Analysis.cpp:249</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a02280822afd1a60330956c05c394c0a8"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a02280822afd1a60330956c05c394c0a8">PLMD::analysis::Analysis::calculate</a></div><div class="ttdeci">void calculate()</div><div class="ttdoc">Calculate an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00211">Analysis.cpp:211</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a6ff0b1e2b0a1d7ad69304a677ee21e4d"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a6ff0b1e2b0a1d7ad69304a677ee21e4d">PLMD::analysis::Analysis::single_run</a></div><div class="ttdeci">bool single_run</div><div class="ttdoc">Are we running only once for the whole trajectory. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00046">Analysis.h:46</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a372330f7bfe191c574e33a710007a96d"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a372330f7bfe191c574e33a710007a96d">PLMD::analysis::Analysis::Analysis</a></div><div class="ttdeci">Analysis(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00075">Analysis.cpp:75</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a34dd1bed4f171d5ffdd871c8149d2a7c"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a34dd1bed4f171d5ffdd871c8149d2a7c">PLMD::analysis::Analysis::rtemp</a></div><div class="ttdeci">double rtemp</div><div class="ttdoc">The temperature at which we want the histogram. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00064">Analysis.h:64</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a76a5288c1e1b44053802a66ca949210d"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a76a5288c1e1b44053802a66ca949210d">PLMD::analysis::Analysis::needeng</a></div><div class="ttdeci">bool needeng</div><div class="ttdoc">Do we need the energy (are we reweighting at a different temperature) </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00066">Analysis.h:66</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_af7eaa43d1c21471dd48a67120d13c9cd"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#af7eaa43d1c21471dd48a67120d13c9cd">PLMD::analysis::Analysis::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8cpp_source.html#l00055">Analysis.cpp:55</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_with_arguments_html_ac759d81efea580cc19220472484bda0d"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_arguments.html#ac759d81efea580cc19220472484bda0d">PLMD::ActionWithArguments::getNumberOfArguments</a></div><div class="ttdeci">unsigned getNumberOfArguments() const </div><div class="ttdoc">Returns the number of arguments. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_with_arguments_8h_source.html#l00098">ActionWithArguments.h:98</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a31482a026f5fc947081c6d87e608140a"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a31482a026f5fc947081c6d87e608140a">PLMD::analysis::Analysis::ofmt</a></div><div class="ttdeci">std::string ofmt</div><div class="ttdoc">The format to use in output files. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00082">Analysis.h:82</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a0c2f740b503474db56ab848a774a4290"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a0c2f740b503474db56ab848a774a4290">PLMD::analysis::Analysis::norm</a></div><div class="ttdeci">double norm</div><div class="ttdoc">The value of the old normalization constant. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00080">Analysis.h:80</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a1e595ca370e1495d30aae04478113d7b"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a1e595ca370e1495d30aae04478113d7b">PLMD::analysis::Analysis::logweights</a></div><div class="ttdeci">std::vector&lt; double &gt; logweights</div><div class="ttdoc">The weights of all the data points. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00076">Analysis.h:76</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1analysis_1_1_analysis_html_a85aa4cae1a1c3fb6c16917ffd5a6d3e2"><div class="ttname"><a href="class_p_l_m_d_1_1analysis_1_1_analysis.html#a85aa4cae1a1c3fb6c16917ffd5a6d3e2">PLMD::analysis::Analysis::getOutputFormat</a></div><div class="ttdeci">std::string getOutputFormat() const </div><div class="ttdoc">Return the format to use for numbers in output files. </div><div class="ttdef"><b>Definition:</b> <a href="_analysis_8h_source.html#l00178">Analysis.h:178</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

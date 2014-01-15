@@ -1,0 +1,205 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: user manual: sum_hills</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../developer-doc/html/index.html"> <img src="../user-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: user manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="glossary.html"><span>Glossary</span></a></li>
+      <li><a href="tutorials.html"><span>How-tos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="index.html">Introduction</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">sum_hills </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>sum_hills is a tool that allows one to to use plumed to post-process an existing hills/colvar file</p>
+<dl class="section user"><dt>The following options are available</dt><dd></dd></dl>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> &ndash;help/-h </b> </td><td>( default=off ) print this help   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;help-debug </b> </td><td>( default=off ) print special options that can be used to create regtests   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;negbias </b> </td><td>( default=off ) print the negative bias instead of the free energy (only needed with welltempered runs and flexible hills)   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;nohistory </b> </td><td><p class="starttd">( default=off ) to be used with &ndash;stride: it splits the bias/histogram in pieces without previous history  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="15%"><b> &ndash;hills </b> </td><td>specify the name of the hills file   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;histo </b> </td><td>specify the name of the file for histogram a colvar/hills file is good   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;stride </b> </td><td>specify the stride for integrating hills file (default 0=never)   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;min </b> </td><td>the lower bounds for the grid   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;max </b> </td><td>the upper bounds for the grid   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;bin </b> </td><td>the number of bins for the grid   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;idw </b> </td><td>specify the variables to be integrated (default is all)   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;outfile </b> </td><td>specify the outputfile for sumhills   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;outhisto </b> </td><td>specify the outputfile for the histogram   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;kt </b> </td><td>specify temperature for integrating out variables   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;sigma </b> </td><td>a vector that specify the sigma for binning (only needed when doing histogram   </td></tr>
+<tr>
+<td width="15%"><b> &ndash;fmt </b> </td><td><p class="starttd">specify the output format  </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<p>a typical case is about the integration of a hills file:</p>
+<pre class="fragment">plumed sum_hills  --hills PATHTOMYHILLSFILE
+</pre><p>The default name for the output file will be fes.dat Note that starting from this version plumed will automatically detect the number of the variables you have and their periodicity. Additionally, if you use flexible hills (multivariate gaussians), plumed will understand it from the HILLS file.</p>
+<p>now sum_hills tool accepts als multiple files that will be integrated one after the other</p>
+<pre class="fragment">plumed sum_hills  --hills PATHTOMYHILLSFILE1,PATHTOMYHILLSFILE2,PATHTOMYHILLSFILE3
+</pre><p>if you want to integrate out some variable you do</p>
+<pre class="fragment">plumed sum_hills  --hills PATHTOMYHILLSFILE   --idw t1 --kt 0.6
+</pre><p>where with &ndash;idw you define the variables that you want all the others will be integrated out. &ndash;kt defines the temperature of the system in energy units. (be consistent with the units you have in your hills: plumed will not check this for you) If you need more variables then you may use a comma separated syntax</p>
+<pre class="fragment">plumed sum_hills  --hills PATHTOMYHILLSFILE   --idw t1,t2 --kt 0.6
+</pre><p>You can define the output grid only with the number of bins you want while min/max will be detected for you</p>
+<pre class="fragment">plumed sum_hills --bin 99,99 --hills PATHTOMYHILLSFILE
+</pre><p>or full grid specification</p>
+<pre class="fragment">plumed sum_hills --bin 99,99 --min -pi,-pi --max pi,pi --hills PATHTOMYHILLSFILE
+</pre><p>You can of course use numbers instead of -pi/pi.</p>
+<p>You can use a &ndash;stride keyword to have a dump each bunch of hills you read </p>
+<pre class="fragment">plumed sum_hills --stride 300 --hills PATHTOMYHILLSFILE
+</pre><p>You can also have, in case of welltempered metadynamics, only the negative bias instead of the free energy through the keyword &ndash;negbias</p>
+<pre class="fragment">plumed sum_hills --negbias --hills PATHTOMYHILLSFILE
+</pre><p>Here the default name will be negativebias.dat</p>
+<p>From time to time you might need to use HILLS or a COLVAR file as it was just a simple set of points from which you want to build a free energy by using -(1/beta)log(P) then you use &ndash;histo</p>
+<pre class="fragment">plumed sum_hills --histo PATHTOMYCOLVARORHILLSFILE  --sigma 0.2,0.2 --kt 0.6
+</pre><p>in this case you need a &ndash;kt to do the reweighting and then you need also some width (with the &ndash;sigma keyword) for the histogram calculation (actually will be done with gaussians, so it will be a continuous histogram) Here the default output will be correction.dat. Note that also here you can have multiple input files separated by a comma.</p>
+<p>Additionally, if you want to do histogram and hills from the same file you can do as this </p>
+<pre class="fragment">plumed sum_hills --hills --histo PATHTOMYCOLVARORHILLSFILE  --sigma 0.2,0.2 --kt 0.6
+</pre><p> The two files can be eventually the same</p>
+<p>Another interesting thing one can do is monitor the difference in blocks as a metadynamics goes on. When the bias deposited is constant over the whole domain one can consider to be at convergence. This can be done with the &ndash;nohistory keyword</p>
+<pre class="fragment">plumed sum_hills --stride 300 --hills PATHTOMYHILLSFILE  --nohistory
+</pre><p>and similarly one can do the same for an histogram file</p>
+<pre class="fragment">plumed sum_hills --histo PATHTOMYCOLVARORHILLSFILE  --sigma 0.2,0.2 --kt 0.6 --nohistory
+</pre><p>just to check the hypothetical free energy calculated in single blocks of time during a simulation and not in a cumulative way</p>
+<p>Output format can be controlled via the &ndash;fmt field</p>
+<pre class="fragment">plumed sum_hills --hills PATHTOMYHILLSFILE  --fmt %8.3f
+</pre><p>where here we chose a float with length of 8 and 3 digits</p>
+<p>The output can be named in a arbitrary way :</p>
+<pre class="fragment">plumed sum_hills --hills PATHTOMYHILLSFILE  --outfile myfes.dat
+</pre><p>will produce a file myfes.dat which contains the free energy.</p>
+<p>If you use stride, this keyword is the suffix</p>
+<pre class="fragment">plumed sum_hills --hills PATHTOMYHILLSFILE  --outfile myfes_ --stride 100
+</pre><p>will produce myfes_0.dat, myfes_1.dat, myfes_2.dat etc.</p>
+<p>The same is true for the output coming from histogram corrections </p>
+<pre class="fragment">plumed sum_hills --histo HILLS --kt 2.5 --sigma 0.01 --outhisto mycorrection.dat
+</pre><p>is producing a file mycorrection.dat while, when using stride, this is the suffix</p>
+<pre class="fragment">plumed sum_hills --histo HILLS --kt 2.5 --sigma 0.01 --outhisto mycorrection_ --stride 100
+</pre><p>that gives mycorrection_0.dat, mycorrection_1.dat, mycorrection_3.dat etc.. </p>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

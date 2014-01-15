@@ -1,0 +1,250 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: Creating plumed documentation</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Creating plumed documentation </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>To create the plumed manual you should go to the <b> user-doc </b> directory and type <b> make </b>.</p>
+<p>This command works because user documentation for all the <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> is inside the source code. If you look at the documentation page for any of the actions that are implemented in plumed you will see that it is composed of three pars:</p>
+<ul>
+<li>A short introduction which describes what the method does.</li>
+<li>A description of the various keywords for the calculation.</li>
+<li>An example/some examples of how the <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> can be used.</li>
+</ul>
+<p>Furthermore, you will also have noticed that if you make an error in the input for any <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> the descriptions of all the keywords from the manual appears in the log file. This is possible because manual pages for <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> are inside the code and because the manual is created using the following packages:</p>
+<ul>
+<li>Doxygen: <a href="http://www.doxygen.org">http://www.doxygen.org</a></li>
+<li>Graphviz: <a href="http://www.graphviz.org/">http://www.graphviz.org/</a></li>
+</ul>
+<p>In addition a special class, <a class="el" href="class_p_l_m_d_1_1_keywords.html" title="This class holds the keywords and their documentation. ">PLMD::Keywords</a>, is used to store the descriptions of the syntax for any given action so that this data can be produced in the output when the user makes a mistake in input. In the following a step-by-step explanaition as to how to use the documentation prodcuing functionality of plumed is provided. When you have finished creating your new documentation they should be incorporated automatically in the manual the next time you make the manual. Furthermore, a number of checks of your manual are performed when you make the manual so any errors should be straightforward to find.</p>
+<h1><a class="anchor" id="registerkeys"></a>
+Registering Keywords</h1>
+<p>When you implement any new <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> in plumed you must first create the documentation for the keywords that you will use to read the input for your new method. In fact you cannot read in undocumented keywords using plumed. The documentation for keywords is created in a static method of the action called registerKeywords. This method should be declared in the definition of the class as follows:</p>
+<pre class="fragment">static void registerKeywords(Keywords&amp; keys);
+</pre><p>The static atribute allows one to use the registerKeywords routine when no instances of the class have been created. This is essential as keywordRegistration in plumed is done before the list of <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> is created. This means that when the keywords are created plumed has no understanding of the hierachy of inherited Actions. Hence, before adding your own Keywords you must ensure that the keywords for the class from which your new class inherits have been added. In pracise this is done by calling <a class="el" href="class_p_l_m_d_1_1_colvar.html#a2c83483dd966f7c44edbc35f46919645">PLMD::Colvar::registerKeywords</a>, PLMD::Function::registerKeywords or PLMD::Bias::registerKeywords for a new <a class="el" href="class_p_l_m_d_1_1_colvar.html" title="This is the abstract base class to use for implementing new collective variables, within it there is ...">PLMD::Colvar</a>, PLMD::Function or PLMD::Bias respectively. To be clear these functions will ensure that generic keywords such as LABEL, NUMERICAL_DERIVATIVES or ARG are registered and explained in the manual. If your method requires the derivatives of some value and you have no way of implementing the analytical derivatives you should also call <a class="el" href="class_p_l_m_d_1_1_action_with_value.html#a37f8991d8bf2a0194adeae85df9084b5" title="Insist that numerical derivatives should always be used for an action and make this fact appear in th...">PLMD::ActionWithValue::noAnalyticalDerivatives</a>. This routine will ensure that plumed's numerical derivatives routines are used to calculation your derivatives automatically and will ensure that a message is put in the plumed manual so that other users are aware that numerical derivatives are being used.</p>
+<p>Once you have called the reigsterKeywords routine for the <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> above yours in the hierachy you can begin to add the keywords for your new method. These keywords will have one of 5 attributes:</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%%"><b> compulsory </b>  </td><td>These are the quantities that must be defined in order to perform your action   </td></tr>
+<tr>
+<td><b> optional </b>  </td><td>If there is some alternate way of performing your calculation that requires numerical input you should declare your keyword as optional   </td></tr>
+<tr>
+<td><b> flag </b>  </td><td>This is used to declare keywords such as NOPBC that tell plumed to turn on/off some feature of the calculation   </td></tr>
+<tr>
+<td><b> atoms </b>  </td><td>If you are reading a list of atoms after the keyword then you should use this keyword. You can easily specify if there are multiple ways of defining the atoms involved in the action in the manual. To register the keywords for this first method of specifying the atoms using atoms-1. Then register the keywords for the second way of specifying the atoms using atoms-2 and so on. A manual that states that these keywords can be used in an either or fashion, much that for <a href="../../user-doc/html/_t_o_r_s_i_o_n.html">TORSION </a>, will then be generated.   </td></tr>
+<tr>
+<td><b> numbered </b>  </td><td>If you need to read in a list of similar keywords such as keyword0, keyword1, keyword2... then you must use this option. These keywords will be assumed to be optional. However, you can set them to be atoms or whatever by using reset_style(keyword,newstyle).  </td></tr>
+</table>
+<p>All keywords (other than flags) are added using the add method of <a class="el" href="class_p_l_m_d_1_1_keywords.html" title="This class holds the keywords and their documentation. ">PLMD::Keywords</a>. This command has the following syntax:</p>
+<pre class="fragment">keys.add( attribute, keyword, explanation );
+</pre><p>where <em> attribute </em> is one of the options from the above table, <em> keyword </em> is the word that appears on the input line and <em> explanation </em> is an explantion of what the keyword does. If your keyword is compulsory it can also be added using:</p>
+<pre class="fragment">keys.add( attribute, keyword, default, explanation );
+</pre><p>where <em> default </em> is a string containing the default value to use for the quantity.</p>
+<p>Flags are added using the add flag method, this has syntax:</p>
+<pre class="fragment">keys.addFlag( keyword, default, explantion );   
+</pre><p>where default is a bool that tells plumed if by default this option is/is not in use.</p>
+<h1><a class="anchor" id="reading"></a>
+Reading the input keywords</h1>
+<p>Keywords are read in using either <a class="el" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12" title="Parse one keyword as generic type. ">PLMD::Action::parse</a>, <a class="el" href="class_p_l_m_d_1_1_action.html#a31b0be7c8476c86e53f3f784dec1a66f" title="Parse one keyword as std::vector. ">PLMD::Action::parseVector</a>, <a class="el" href="class_p_l_m_d_1_1_action.html#aab343ae578d05b8241c58daa40d3081e" title="Parse a vector with a number. ">PLMD::Action::parseNumberedVector</a> or <a class="el" href="class_p_l_m_d_1_1_action.html#a5540be9c95bc8bf9f1ec567c047afddb" title="Parse one keyword as boolean flag. ">PLMD::Action::parseFlag</a>. These routines will use the information provided during keyword registration to check the sanity of any input. For instance if you declare a compulsory keyword and do not specify a default value then the code will automatically complain if the particular keyword is missing from input. In addition, if the vector you pass to <a class="el" href="class_p_l_m_d_1_1_action.html#a31b0be7c8476c86e53f3f784dec1a66f" title="Parse one keyword as std::vector. ">PLMD::Action::parseVector</a> and <a class="el" href="class_p_l_m_d_1_1_action.html#aab343ae578d05b8241c58daa40d3081e" title="Parse a vector with a number. ">PLMD::Action::parseNumberedVector</a> has a size greater than 0 plumed will assume that the input should contain a vector of this size and will complain if it finds a different sized vector.</p>
+<h1><a class="anchor" id="reserved"></a>
+Reserved Keywords</h1>
+<p>To maintain some consistency for end users of the code certain keywords (e.g. ARG, PERIODIC) are reserved. The reserved keywords for <a class="el" href="class_p_l_m_d_1_1_colvar.html" title="This is the abstract base class to use for implementing new collective variables, within it there is ...">PLMD::Colvar</a>, PLMD::Function and PLMD::Bias are explained inside the documentation for these actions. To use one of the registered keywords you shold insert the following command into the registerKeywords method of your new function.</p>
+<pre class="fragment">keys.use( keyword );
+</pre><p>where <em> keyword </em> is a string that tells the method which reserved keyword you wish to use. To be clear when you use a reserved keyword all the parsing and registering for it is looked after automatically.</p>
+<h1><a class="anchor" id="errors"></a>
+Generating errors</h1>
+<p>You may need to check for other mistakes in input. When you find these mistakes you can report them to users using <a class="el" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d" title="Crash calculation and print documentation. ">PLMD::Action::error</a>. This routine will output a description of how the input to your Action should appear. It takes as input a string that describes the particular nature of the error that the user has made.</p>
+<h1><a class="anchor" id="manual"></a>
+Creating the rest of the manual</h1>
+<p>The remainder of the manual - the detailed description of your action and some examples of how the <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> can be used - is created from the comments at the top of the cpp file that contains the various subroutines that your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> performs. This is converted to manual using Doxygen as this allows one to incorporate equations, bibliographic information and bits and pieces of HTML. At the start of the block of manual information the following lines should appear:</p>
+<pre class="fragment">//+PLUMEDOC TYPE ACTIONNAME 
+/*
+</pre><p>ACTIONAME is the first word that appears on the input line - i.e. it is the command that a user would use in input in order to make use of your particular <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a>. TYPE, meanwhile, tells Doxygen where in the manual the Docuementation should be placed. TYPE should be one of the following:</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%%"><b> COLVAR </b>  </td><td>This is used if your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> is the calculation of a CV   </td></tr>
+<tr>
+<td width="5%%"><b> MCOLVAR </b>  </td><td>This is used if your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> calculates some Function of a distribution of CVs   </td></tr>
+<tr>
+<td width="5%%"><b> FUNCTION </b>  </td><td>This is used if your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> calculates some Function of a set of CVs   </td></tr>
+<tr>
+<td width="5%%"><b> VATOM </b>  </td><td>This is used if your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> calculates the position of a new atom e.g. for COM   </td></tr>
+<tr>
+<td width="5%%"><b> ANALYSIS </b>  </td><td>This is used if your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> does some analysis of the trajectory   </td></tr>
+<tr>
+<td width="5%%"><b> BIAS </b>  </td><td>This is used if your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> is a bias that adds supplemental forces to the potential in order to enhance sampling   </td></tr>
+<tr>
+<td width="5%%"><b> GENERIC </b>  </td><td>This should be used if you want to specify manually where in the manual your documentation should appear. If you feel this really is the correct way to incorporate your new feature please contact the core developers so as to discuss it.   </td></tr>
+</table>
+<p>Immediately after the start comment symbol you should place a single line that describes in a sentence or two what it is your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> does. This information will appear beside the link to your more detailed manual page in the general pages of the user manual. The code will use everything up to the first blank line in input to create this brief description. You can then write a longer description of your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a> to appear at the start of its particular page in the manual. As described below this description can incorporate equations and bibliographic information.</p>
+<dl class="section user"><dt>Creating latex formulae</dt><dd></dd></dl>
+<p>You can add formulae in latex using:</p>
+<pre class="fragment">This is an inline equation \f$s=y+x\f$ but this is an equation:
+
+\f[
+r = \sqrt{ \mathbf{s}^T \mathbf{C}^{-1} \mathbf{s} }
+\f]
+
+And this is an equation array:
+
+\f{eqnarray*}{
+ f &amp;=&amp; \frac{1}{2} \\
+ g &amp;=&amp; \frac{2}{3}
+\f}
+</pre><p>In the manual this will be translated into:</p>
+<p>This is an inline equation \(s=y+x\) but this is an equation:</p>
+<p class="formulaDsp">
+\[ r = \sqrt{ \mathbf{s}^T \mathbf{C}^{-1} \mathbf{s} } \]
+</p>
+<p>And this is an equation array:</p>
+<p class="formulaDsp">
+\begin{eqnarray*} f &amp;=&amp; \frac{1}{2} \\ g &amp;=&amp; \frac{2}{3} \end{eqnarray*}
+</p>
+<dl class="section user"><dt>Creating lists</dt><dd></dd></dl>
+<p>You can create lists of data using:</p>
+<pre class="fragment">- First item in list
+- Second item in list
+</pre><p>which becomes:</p>
+<ul>
+<li>First item in list</li>
+<li>Second item in list</li>
+</ul>
+<dl class="section user"><dt>Formatting your documentation</dt><dd></dd></dl>
+<p>You can create a new section in your documentation using:</p>
+<pre class="fragment">\section manual Creating the rest of the manual
+</pre><p>In fact I used this very command earlier in writing this page. I can therefore reference it here (<a class="el" href="using_doxygen.html#manual">Creating the rest of the manual</a>) by using:</p>
+<pre class="fragment">\ref manual 
+</pre><p>You can also reference external webpages by typing web addresses directly in the documentation.</p>
+<dl class="section user"><dt>Adding citations</dt><dd></dd></dl>
+<p>You can create citations using:</p>
+<pre class="fragment">\cite bibtex-tag
+</pre><p>This command uses an interface between Doxygen and bibtex to create bibliographic data. Inside the user-doc directory you will find a bibtex file called bibliography.bib that contains all the references that are included in the user documentation for plumed. To add your reference you should add bibliographic data for the article you want to cite in this file.</p>
+<dl class="section user"><dt>Creating some examples</dt><dd></dd></dl>
+<p>Your manual entry <b>must</b> contain some examples as to how your <a class="el" href="class_p_l_m_d_1_1_action.html" title="Base class for all the input Actions. ">PLMD::Action</a>. These should be included as follows:</p>
+<pre class="fragment">\par Examples
+
+The following input tells plumed to print the distance between atoms 3 and 5,
+the distance between atoms 2 and 4 and the x component of the distance between atoms 2 and 4.
+\verbatim
+DISTANCE ATOMS=3,5             LABEL=d1
+DISTANCE ATOMS=2,4 COMPONENTS  LABEL=d2
+PRINT ARG=d1,d2,d2.x
+\ endverbatim  /*** But with no space between the \ and the endverbatim
+</pre><p>In the manual this will be converted to:</p>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<p>The following input tells plumed to print the distance between atoms 3 and 5, the distance between atoms 2 and 4 and the x component of the distance between atoms 2 and 4. </p>
+<pre class="fragment">DISTANCE ATOMS=3,5             LABEL=d1
+DISTANCE ATOMS=2,4 COMPONENTS  LABEL=d2
+PRINT ARG=d1,d2,d2.x
+</pre><p>Please be aware of the blank line between after the title of the paragraph. If this line is not present your manual will look ugly. Also be aware that your Examples section <b> must </b> be called Examples and not Example because of a perculiarity in the script that generates the manual. </p>
+</div></div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

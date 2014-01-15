@@ -1,0 +1,256 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Plumed 2.0: developer manual: colvar/Coordination.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">
+<div id="titlearea">
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tbody>
+<tr style="height: 30px;">
+<td valign="center"> &nbsp; <img src="../pigeon.png" width="120"/></td>
+<td style="padding-left: 0.2em;" width="74%"> <img src="../logo.png" width="400" /> </td>
+<td style="padding-left: 0.2em;" align="right"> <a href="../../user-doc/html/index.html"> <img src="../developer-logo.png" width="180" /> </a> </td>
+</tr>
+</tbody>
+</table>
+<!--
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plumed 2.0: developer manual
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+-->
+</div>
+
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_522821243a246e1e3c6d050e57ed13f6.html">colvar</a></li>  </ul>
+</div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Coordination.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_coordination_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (c) 2013 The plumed team</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   (see the PEOPLE file at the root of the distribution for a list of names)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   See http://www.plumed-code.org for more information.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   This file is part of plumed, version 2.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">   plumed is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   plumed is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   along with plumed.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_coordination_base_8h.html">CoordinationBase.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;tools/SwitchingFunction.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="colvar_2_action_register_8h.html">ActionRegister.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>PLMD{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>colvar{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//+PLUMEDOC COLVAR COORDINATION</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">Calculate coordination numbers.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">This keyword can be used to calculate the coordination numbers for atoms in your system. </span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">We use the following switching function to make the coordination number differentiable:</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">\f[</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">s = \frac{ 1 - \left(\frac{r-d_0}{r_0}\right)^n } { 1 - \left(\frac{r-d_0}{r_0}\right)^m }</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">\f]</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">To make your calculation faster you can use a neighbor list, which makes it that only a</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">relevant subset of the pairwise distance are calculated at every step.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">\par Examples</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">The following example instructs plumed to calculate the total coordination number of the atoms in group 1-10 with the atoms in group 20-100.  For atoms 1-10 coordination numbers are calculated that count the number of atoms from the second group that are within 0.3 nm of the central atom.  A neighbour list is used to make this calculation faster, this neighbour list is updated every 100 steps.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">\verbatim</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">COORDINATION GROUPA=1-10 GROUPB=20-100 R_0=0.3 NLIST NL_CUTOFF=0.5 NL_STRIDE=100 </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">\endverbatim</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//+ENDPLUMEDOC</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_coordination.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html">Coordination</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination_base.html">CoordinationBase</a>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#a5ff253b5d11909590bcbfcbfabf24392">   58</a></span>&#160;  <a class="code" href="class_p_l_m_d_1_1_switching_function.html">SwitchingFunction</a> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#a5ff253b5d11909590bcbfcbfabf24392">switchingFunction</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html">Coordination</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// active methods:</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> registerKeywords( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">double</span> pairing(<span class="keywordtype">double</span> distance,<span class="keywordtype">double</span>&amp;dfunc,<span class="keywordtype">unsigned</span> i,<span class="keywordtype">unsigned</span> j)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;PLUMED_REGISTER_ACTION(<a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html">Coordination</a>,<span class="stringliteral">&quot;COORDINATION&quot;</span>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#a322849a1cb7d4fd0ae95bb8723f9339f">   69</a></span>&#160;void <a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html">Coordination</a>::registerKeywords( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  CoordinationBase::registerKeywords(keys);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;NN&quot;</span>,<span class="stringliteral">&quot;6&quot;</span>,<span class="stringliteral">&quot;The n parameter of the switching function &quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;MM&quot;</span>,<span class="stringliteral">&quot;12&quot;</span>,<span class="stringliteral">&quot;The m parameter of the switching function &quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;D_0&quot;</span>,<span class="stringliteral">&quot;0.0&quot;</span>,<span class="stringliteral">&quot;The d_0 parameter of the switching function&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  keys.add(<span class="stringliteral">&quot;compulsory&quot;</span>,<span class="stringliteral">&quot;R_0&quot;</span>,<span class="stringliteral">&quot;The r_0 parameter of the switching function&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  keys.add(<span class="stringliteral">&quot;optional&quot;</span>,<span class="stringliteral">&quot;SWITCH&quot;</span>,<span class="stringliteral">&quot;This keyword is used if you want to employ an alternative to the continuous swiching function defined above. &quot;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                               <span class="stringliteral">&quot;The following provides information on the \\ref switchingfunction that are available. &quot;</span> </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                               <span class="stringliteral">&quot;When this keyword is present you no longer need the NN, MM, D_0 and R_0 keywords.&quot;</span>); </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#a7bc43eb45926e796ae7cf935ddb7e17e">   80</a></span>&#160;Coordination::Coordination(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;ao):</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="class_p_l_m_d_1_1_action.html">Action</a>(ao),</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination_base.html">CoordinationBase</a>(ao)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">string</span> sw,errors;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;SWITCH&quot;</span>,sw);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">if</span>(sw.length()&gt;0){</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#a5ff253b5d11909590bcbfcbfabf24392">switchingFunction</a>.<a class="code" href="class_p_l_m_d_1_1_switching_function.html#a4b7365bdd0529f451b42a319ba2a5d34">set</a>(sw,errors);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span>( errors.length()!=0 ) <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;problem reading SWITCH keyword : &quot;</span> + errors );</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> nn=6;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> mm=12;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">double</span> d0=0.0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">double</span> r0=0.0;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;R_0&quot;</span>,r0);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span>(r0&lt;=0.0) <a class="code" href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">error</a>(<span class="stringliteral">&quot;R_0 should be explicitly specified and positive&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;D_0&quot;</span>,d0);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;NN&quot;</span>,nn);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">parse</a>(<span class="stringliteral">&quot;MM&quot;</span>,mm);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#a5ff253b5d11909590bcbfcbfabf24392">switchingFunction</a>.<a class="code" href="class_p_l_m_d_1_1_switching_function.html#a4b7365bdd0529f451b42a319ba2a5d34">set</a>(nn,mm,r0,d0);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">checkRead</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#ae9d42096425f0693949cc50a4b9b28f9">  106</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#ae9d42096425f0693949cc50a4b9b28f9">Coordination::pairing</a>(<span class="keywordtype">double</span> distance,<span class="keywordtype">double</span>&amp;dfunc,<span class="keywordtype">unsigned</span> i,<span class="keywordtype">unsigned</span> j)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  (void) i; <span class="comment">// avoid warnings</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  (void) j; <span class="comment">// avoid warnings</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_coordination.html#a5ff253b5d11909590bcbfcbfabf24392">switchingFunction</a>.<a class="code" href="class_p_l_m_d_1_1_switching_function.html#a82c7c90ba37a2e5b1c7b1f35a45cb7dd">calculate</a>(distance,dfunc);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="ttc" id="class_p_l_m_d_1_1_switching_function_html_a82c7c90ba37a2e5b1c7b1f35a45cb7dd"><div class="ttname"><a href="class_p_l_m_d_1_1_switching_function.html#a82c7c90ba37a2e5b1c7b1f35a45cb7dd">PLMD::SwitchingFunction::calculate</a></div><div class="ttdeci">double calculate(double x, double &amp;df) const </div><div class="ttdef"><b>Definition:</b> <a href="_switching_function_8cpp_source.html#l00164">SwitchingFunction.cpp:164</a></div></div>
+<div class="ttc" id="colvar_2_action_register_8h_html"><div class="ttname"><a href="colvar_2_action_register_8h.html">ActionRegister.h</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_switching_function_html_a4b7365bdd0529f451b42a319ba2a5d34"><div class="ttname"><a href="class_p_l_m_d_1_1_switching_function.html#a4b7365bdd0529f451b42a319ba2a5d34">PLMD::SwitchingFunction::set</a></div><div class="ttdeci">void set(int nn, int mm, double r_0, double d_0)</div><div class="ttdef"><b>Definition:</b> <a href="_switching_function_8cpp_source.html#l00228">SwitchingFunction.cpp:228</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a94c1c30fbc92747b8828aa6f1e3d207d"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a94c1c30fbc92747b8828aa6f1e3d207d">PLMD::Action::error</a></div><div class="ttdeci">void error(const std::string &amp;msg) const </div><div class="ttdoc">Crash calculation and print documentation. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00195">Action.cpp:195</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_coordination_html_a5ff253b5d11909590bcbfcbfabf24392"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_coordination.html#a5ff253b5d11909590bcbfcbfabf24392">PLMD::colvar::Coordination::switchingFunction</a></div><div class="ttdeci">SwitchingFunction switchingFunction</div><div class="ttdef"><b>Definition:</b> <a href="_coordination_8cpp_source.html#l00058">Coordination.cpp:58</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_a8ffc4538dce6f51e1505a0a300d204e2"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#a8ffc4538dce6f51e1505a0a300d204e2">PLMD::Action::checkRead</a></div><div class="ttdeci">void checkRead()</div><div class="ttdoc">Check if Action was properly read. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00161">Action.cpp:161</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_switching_function_html"><div class="ttname"><a href="class_p_l_m_d_1_1_switching_function.html">PLMD::SwitchingFunction</a></div><div class="ttdoc">Small class to compure switching functions in the form In the future we might extend it so as to be s...</div><div class="ttdef"><b>Definition:</b> <a href="tools_2_switching_function_8h_source.html#l00039">SwitchingFunction.h:39</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html_ae0c8ed07593b5e242e34b32e0edc3a12"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#ae0c8ed07593b5e242e34b32e0edc3a12">PLMD::Action::parse</a></div><div class="ttdeci">void parse(const std::string &amp;key, T &amp;t)</div><div class="ttdoc">Parse one keyword as generic type. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00273">Action.h:273</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_coordination_html"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_coordination.html">PLMD::colvar::Coordination</a></div><div class="ttdoc">Provides the keyword COORDINATION  </div><div class="ttdef"><b>Definition:</b> <a href="_coordination_8cpp_source.html#l00057">Coordination.cpp:57</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_coordination_html_ae9d42096425f0693949cc50a4b9b28f9"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_coordination.html#ae9d42096425f0693949cc50a4b9b28f9">PLMD::colvar::Coordination::pairing</a></div><div class="ttdeci">virtual double pairing(double distance, double &amp;dfunc, unsigned i, unsigned j) const </div><div class="ttdef"><b>Definition:</b> <a href="_coordination_8cpp_source.html#l00106">Coordination.cpp:106</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1_action_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html">PLMD::Action</a></div><div class="ttdoc">Base class for all the input Actions. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00060">Action.h:60</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_coordination_base_html"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_coordination_base.html">PLMD::colvar::CoordinationBase</a></div><div class="ttdef"><b>Definition:</b> <a href="_coordination_base_8h_source.html#l00032">CoordinationBase.h:32</a></div></div>
+<div class="ttc" id="_coordination_base_8h_html"><div class="ttname"><a href="_coordination_base_8h.html">CoordinationBase.h</a></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+<table align="center" frame="void" width="98%" cellpadding="2%">
+<tr><td align="left" valign="center"> 
+Hosted by GitHub &nbsp;
+<a href="http://github.com"><img src="Octocat.png" width="88" height="66"  alt="GitHub Logo" /></a>
+ <a href="http://www.doxygen.org/index.html">
+</td><td width=90% align="right">
+<img class="footer" src="doxygen.png" alt="doxygen" align="right"/>
+</a> 1.8.5
+</td> </tr> 
+</table>
+</small></address>
+</body>
+</html>

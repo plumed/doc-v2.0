@@ -1,0 +1,28 @@
+/**
+\page CELL CELL
+Calculate the components of the simulation cell
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+
+</table>
+
+</table>
+
+\par Examples
+The following input tells plumed to print the squared modulo of each of the three lattice vectors
+\verbatim
+cell: CELL
+aaa:    COMBINE ARG=cell.ax,cell.ay,cell.az POWERS=2,2,2 PERIODIC=NO
+bbb:    COMBINE ARG=cell.bx,cell.by,cell.bz POWERS=2,2,2 PERIODIC=NO
+ccc:    COMBINE ARG=cell.cx,cell.cy,cell.cz POWERS=2,2,2 PERIODIC=NO
+PRINT ARG=aaa,bbb,ccc
+\endverbatim
+(See also \ref COMBINE and \ref PRINT).
+
+*/

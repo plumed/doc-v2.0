@@ -1,0 +1,79 @@
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+<tr>
+<td width=15%> <b> STRIDE </b></td>
+<td> ( default=1 ) the frequency with which data should be stored for analysis </td>
+</tr>
+<tr>
+<td width=15%> <b> RUN </b></td>
+<td> the frequency with which to run the analysis algorithm. This is not required if you specify USE_ALL_DATA </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_MIN </b></td>
+<td> the lower bounds for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_MAX </b></td>
+<td> the upper bounds for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_BIN </b></td>
+<td> the number of bins for the grid </td>
+</tr>
+<tr>
+<td width=15%> <b> KERNEL </b></td>
+<td> ( default=gaussian ) the kernel function you are using. More details on the kernels available in plumed can be found in \ref kernelfunctions. </td>
+</tr>
+<tr>
+<td width=15%> <b> BANDWIDTH </b></td>
+<td> the bandwdith for kernel density estimation </td>
+</tr>
+<tr>
+<td width=15%> <b> GRID_WFILE </b></td>
+<td> ( default=histogram ) the file on which to write the grid </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> USE_ALL_DATA </b></td>
+<td> ( default=off ) use the data from the entire trajectory to perform the analysis </td>
+</tr>
+<tr>
+<td width=15%> <b> REWEIGHT_BIAS </b></td>
+<td> ( default=off ) reweight the data using all the biases acting on the dynamics. For more information see \ref reweighting. </td>
+</tr>
+<tr>
+<td width=15%> <b> WRITE_CHECKPOINT </b></td>
+<td> ( default=off ) write out a checkpoint so that the analysis can be restarted in a later run </td>
+</tr>
+<tr>
+<td width=15%> <b> NOMEMORY </b></td>
+<td> ( default=off ) analyse each block of data separately </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> FMT </b></td>
+<td> the format that should be used in analysis output files </td>
+</tr>
+<tr>
+<td width=15%> <b> TEMP </b></td>
+<td> the system temperature.  This is required if you are reweighting. </td>
+</tr>
+<tr>
+<td width=15%> <b> REWEIGHT_TEMP </b></td>
+<td> reweight data from a trajectory at one temperature and output the probability distribution at a second temperature. For more information see \ref reweighting. This is not possible during postprocessing. </td>
+</tr>
+
+</table>
+

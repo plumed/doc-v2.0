@@ -1,0 +1,16 @@
+/**
+\page DHENERGY DHENERGY
+Calculate Debye-Huckel interaction energy among GROUPA and GROUPB.
+
+This collective variable can be used to analyze or induce electrostatically driven reactions \cite do13jctc.
+The two atom groups should be disjointed. Notice that the value of the DHENERGY is returned in plumed units (see \ref UNITS).
+
+\par Examples
+\verbatim
+# this is printing the electrostatic interaction between two groups of atoms
+dh: DHENERGY GROUPA=1-10 GROUPB=11-20 EPSILON=80.0 I=0.1 TEMP=300.0
+PRINT ARG=dh
+\endverbatim
+(see also \ref PRINT)
+
+*/

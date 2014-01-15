@@ -1,0 +1,60 @@
+/**
+\page FUNCPATHMSD FUNCPATHMSD
+This function calculates path collective variables.
+
+This is the Path Collective Variables implementation
+( see \cite brand07 ).
+This variable computes the progress along a given set of frames that is provided
+in input ("s" component) and the distance from them ("z" component).
+It is a function of MSD that are obtained by the joint use of MSD variable and SQUARED flag
+(see below).
+
+\par Compulsory keywords
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> ARG </b></td>
+<td> the input for this action is the output from one or more other actions. The particular output that you used is referenced using that action of interests label. If the label appears on its own then the value of the relevant Action is taken.  If * or *.* appears the information from all arguments is taken.  Some actions have multi-component outputs, each component of the output has a specific label so for instance an action labelled dist may have three componets x, y and z.  To take just the x component you should use dist.x, if you wish to take all three components then use dist.* </td>
+</tr>
+<tr>
+<td width=15%> <b> LAMBDA </b></td>
+<td> all compulsory keywords should be added like this with a description here </td>
+</tr>
+</table>
+
+\par Options
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NUMERICAL_DERIVATIVES </b></td>
+<td> ( default=off ) calculate the derivatives for these quantities numerically </td>
+</tr>
+
+</table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> NEIGH_SIZE </b></td>
+<td> all optional keywords that have input should be added like a description here </td>
+</tr>
+<tr>
+<td width=15%> <b> NEIGH_STRIDE </b></td>
+<td> all optional keywords that have input should be added like a description here </td>
+</tr>
+
+</table>
+
+\par Examples
+
+Here below is a case where you have defined three frames and you want to
+calculate the progress alng the path and the distance from it in p1
+
+\verbatim
+t1: RMSD REFERENCE=frame_1.dat TYPE=OPTIMAL SQUARED
+t2: RMSD REFERENCE=frame_21.dat TYPE=OPTIMAL SQUARED
+t3: RMSD REFERENCE=frame_42.dat TYPE=OPTIMAL SQUARED
+p1: FUNCPATHMSD ARG=t1,t2,t3 LAMBDA=500.0
+PRINT ARG=t1,t2,t3,p1.s,p1.z STRIDE=1 FILE=colvar FMT=%8.4f
+\endverbatim
+
+*/
