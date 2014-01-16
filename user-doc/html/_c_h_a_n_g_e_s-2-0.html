@@ -147,7 +147,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For users:</p>
 <ul>
 <li>Fixed bug with <a class="el" href="_r_e_a_d.html">READ</a> and periodic variables.</li>
-<li>Gromacs patch updated to 4.6.5</li>
+<li>Fixed bug with <a class="el" href="_h_i_s_t_o_g_r_a_m.html">HISTOGRAM</a> (option USE_ALL_DATA was not working properly).</li>
+<li>Gromacs patch updated to 4.6.5.</li>
+<li>Added option 'plumed info &ndash;long-version'. Notice that &ndash;version and &ndash;long-version are automatically updated from git repositories.</li>
 <li>Added full reference (page/number) to published paper in doc and log.</li>
 <li>Fixed a bug in file backups (only affecting Windows version - thanks to T. Giorgino).</li>
 <li>Added possibility to search in the documentation.</li>
@@ -157,10 +159,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>Fixed makefile dependencies in some auxiliary files in src/lib (src/lib/*cmake and src/lib/*inc).</li>
 <li>Changed way modules are linked in src/. E.g. src/colvar/tools/ is not anymore a symlink to src/colvar but a real directory.</li>
-<li>Removed include graphs in the documentation (too large).</li>
-<li>Several small fixes in documentation.</li>
 <li>Patch for gromacs 4.6 now also include original code so as to simplify its modification.</li>
-<li>Added option 'plumed patch &ndash;save-originals' </li>
+<li>Added option 'plumed patch &ndash;save-originals'.</li>
+<li>Fixed regtest regtest/secondarystructure/rt32 to avoid problems with NUMERICAL_DERIVATIVES.</li>
+<li>Removed include graphs in the documentation (too large).</li>
+<li>Several small fixes in documentation. </li>
 </ul>
 </div></div>
 

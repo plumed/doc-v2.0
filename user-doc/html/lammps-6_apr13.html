@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <div class="textblock"><p>PLUMED can be incorporated into LAMMPS using a simple patching procedure. Patching must be done <em>before</em> LAMMPS is configured. After patching, one should enable PLUMED using the command make yes-user-plumed In the same way, before reverting one should disable PLUMED using the command make no-user-plumed</p>
-<p>Also notice that command "fix plumed" should be used in lammps input file <em>after</em> setting the relevant input parameters (e.g. after "timestep" command)</p>
+<p>Also notice that command "fix plumed" should be used in lammps input file <em>after</em> the relevant input parameters have been set (e.g. after "timestep" command)</p>
 <p>See also <a href="http://lammps.sandia.gov/doc/Section_commands.html">http://lammps.sandia.gov/doc/Section_commands.html</a> for further info on processing LAMMPS input, as well as this discussion on github: <a href="http://github.com/plumed/plumed2/issues/67">http://github.com/plumed/plumed2/issues/67</a>.</p>
 <p>For more information on LAMMPS you should visit <a href="http://lammps.sandia.gov/">http://lammps.sandia.gov/</a> </p>
 </div></div>

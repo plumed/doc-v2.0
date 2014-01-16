@@ -12,6 +12,8 @@ The following pages describe how to perform a variety of tasks using PLUMED 2
 In addition, the following websites contain resources that might be helpful
 
 <table align=center frame=void width=95%% cellpadding=5%%>
+<tr> <td>  http://www.youtube.com/watch?v=iDvZmbWE5ps </td> <td>  A short video introduction to the use of multicolvars in PLUMED 2  </td> </tr>
+<tr> <td>  http://www.youtube.com/watch?v=PxJP16qNCYs </td> <td>  A short video introduction to the syntax of the PLUMED 2 input file </td> </tr>
 <tr> <td>  http://en.wikipedia.org/wiki/Metadynamics </td> <td>  A wikipedia article on metadynamics </td> </tr>
 </table>
 
