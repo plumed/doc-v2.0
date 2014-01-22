@@ -137,11 +137,11 @@ EXTERNAL ARG=t1,t2 FILENAME=bias.dat LABEL=ext
 #! SET min_t1 -pi
 #! SET max_t1 +pi
 #! SET nbins_t1 100
-#! SET peirodic_t1 true
+#! SET periodic_t1 true
 #! SET min_t2 -pi
 #! SET max_t2 +pi
 #! SET nbins_t2 100
-#! SET peirodic_t2 true
+#! SET periodic_t2 true
 </pre><p>This would be then followed by 100 blocks of data. In the first block of data the value of t1 (the value in the first column) is kept fixed and the value of the function is given at 100 equally spaced values for t2 between \(-pi\) and \(+pi\). In the second block of data t1 is fixed at \(-pi + \frac{2pi}{100}\) and the value of the function is given at 100 equally spaced values for t2 between \(-pi\) and \(+pi\). In the third block of data the same is done but t1 is fixed at \(-pi + \frac{4pi}{100}\) and so on untill you get to the 100th block of data where t1 is fixed at \(+pi\).</p>
 <p>Please note the order that the order of arguments in the plumed.dat file must be the same as the order of arguments in the header of the grid file. </p>
 </div></div>

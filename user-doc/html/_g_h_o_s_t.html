@@ -111,7 +111,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 COM ATOMS=15,20       LABEL=c2
 DISTANCE ATOMS=c1,c2  LABEL=d1
 PRINT ARG=d1
-</pre> (See also <a class="el" href="_d_i_s_t_a_n_c_e.html">DISTANCE</a> and <a class="el" href="_p_r_i_n_t.html">PRINT</a>). </dd></dl>
+</pre> (See also <a class="el" href="_d_i_s_t_a_n_c_e.html">DISTANCE</a> and <a class="el" href="_p_r_i_n_t.html">PRINT</a>).</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If a force is added to a ghost atom, the contribution to the virial could contain small artifacts. It is therefore discouraged to use GHOST in a constant pressure simulation. </dd></dl>
 </div></div>
 
 

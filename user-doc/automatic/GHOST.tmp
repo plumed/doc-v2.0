@@ -16,4 +16,8 @@ PRINT ARG=d1
 \endverbatim
 (See also \ref DISTANCE and \ref PRINT).
 
+\warning If a force is added to a ghost atom, the contribution
+to the virial could contain small artifacts. It is therefore discouraged to
+use GHOST in a constant pressure simulation.
+
 */
