@@ -18,6 +18,30 @@ where \f$s(r)\f$ is a \ref switchingfunction.  This second form means that you c
 use this to calculate functions of the angles in the first coordination sphere of
 an atom / molecule \cite lj-recon.
 
+\par Description of components
+
+This Action can be used to calculate the following quantities by employing the keywords listed below. You must select which from amongst these quantities you wish to calculate - this command cannot be run unless one of the quantities below is being calculated.These quantities can then be referenced elsewhere in the input file by using this Action's label followed by a dot and the name of the quantity. Some amongst them can be calculated multiple times with different parameters.  In this case the quantities calculated can be referenced elsewhere in the input by using the name of the quantity followed by a numerical identifier e.g. <em>label</em>.less_than-1, <em>label</em>.less_than-2 etc.
+
+ <table align=center frame=void width=60%% cellpadding=5%%> 
+<tr> <td width=5%> <b> Quantity </b> </td> <td> <b> Keyword </b> </td> <td> <b> Description </b> </td> </tr>
+<tr>
+<td width=5%> <b> more_than </b></td> <td width=10%> <b> MORE_THAN </b> </td> 
+<td> the number of values more than a target value. This is calculated using one of the formula described in the description of the keyword so as to make it continuous. You can calculate this quantity multiple times using different parameters. </td>
+</tr>
+<tr>
+<td width=5%> <b> mean </b></td> <td width=10%> <b> MEAN </b> </td> 
+<td> the mean value. The output component can be refererred to elsewhere in the input file by using the label.mean </td>
+</tr>
+<tr>
+<td width=5%> <b> less_than </b></td> <td width=10%> <b> LESS_THAN </b> </td> 
+<td> the number of values less than a target value. This is calculated using one of the formula described in the description of the keyword so as to make it continuous. You can calculate this quantity multiple times using different parameters. </td>
+</tr>
+<tr>
+<td width=5%> <b> between </b></td> <td width=10%> <b> BETWEEN </b> </td> 
+<td> the number/fraction of values within a certain range. This is calculated using one of the formula described in the description of the keyword so as to make it continuous. You can calculate this quantity multiple times using different parameters. </td>
+</tr>
+</table>
+
 \par The atoms involved can be specified using
 
  <table align=center frame=void width=95%% cellpadding=5%%> 

@@ -153,64 +153,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="version_8h.html#aef273566954dc24b93e650d79065f93c">PLUMED_VERSION_LONG</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#a74bfa65032b3a2336d4b508050a08ea9">   46</a></span>&#160;std::string <a class="code" href="namespace_p_l_m_d_1_1config.html#a74bfa65032b3a2336d4b508050a08ea9">getMakefile</a>(){</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> conf [] ={</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;Makefile.conf.xxd&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    , 0x00 };</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> std::string(conf,conf+std::strlen(conf));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#aaac2777fa74de8578cf4e44d2b3e4555">   53</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d_1_1config.html#aaac2777fa74de8578cf4e44d2b3e4555">hasMatheval</a>(){</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#if __PLUMED_HAS_MATHEVAL</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#abdee7a8903a53ba1c889acfff62fbb10">   61</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d_1_1config.html#abdee7a8903a53ba1c889acfff62fbb10">hasDlopen</a>(){</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#if __PLUMED_HAS_DLOPEN</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#a46fc4cb100de5daa68c2f2e49e6af6e9">   69</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d_1_1config.html#a46fc4cb100de5daa68c2f2e49e6af6e9">hasAlmost</a>(){</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#if __PLUMED_HAS_ALMOST</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#a2ee478073e3c9830358b957b3f6b0485">   78</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d_1_1config.html#a2ee478073e3c9830358b957b3f6b0485">hasCregex</a>(){</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#if __PLUMED_HAS_CREGEX</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#a58fd275b4e044fc3fe5bfd0db34c23b3">   46</a></span>&#160;std::string <a class="code" href="namespace_p_l_m_d_1_1config.html#a58fd275b4e044fc3fe5bfd0db34c23b3">getVersionGit</a>(){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="version_8h.html#a63a0a33abe3477c3e788277631c06852">PLUMED_VERSION_GIT</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#a74bfa65032b3a2336d4b508050a08ea9">   50</a></span>&#160;std::string <a class="code" href="namespace_p_l_m_d_1_1config.html#a74bfa65032b3a2336d4b508050a08ea9">getMakefile</a>(){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> conf [] ={</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;Makefile.conf.xxd&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    , 0x00 };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">return</span> std::string(conf,conf+std::strlen(conf));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#aaac2777fa74de8578cf4e44d2b3e4555">   57</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d_1_1config.html#aaac2777fa74de8578cf4e44d2b3e4555">hasMatheval</a>(){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#if __PLUMED_HAS_MATHEVAL</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#abdee7a8903a53ba1c889acfff62fbb10">   65</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d_1_1config.html#abdee7a8903a53ba1c889acfff62fbb10">hasDlopen</a>(){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#if __PLUMED_HAS_DLOPEN</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#a46fc4cb100de5daa68c2f2e49e6af6e9">   73</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d_1_1config.html#a46fc4cb100de5daa68c2f2e49e6af6e9">hasAlmost</a>(){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#if __PLUMED_HAS_ALMOST</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="namespace_p_l_m_d_1_1config.html#a2ee478073e3c9830358b957b3f6b0485">   82</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespace_p_l_m_d_1_1config.html#a2ee478073e3c9830358b957b3f6b0485">hasCregex</a>(){</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#if __PLUMED_HAS_CREGEX</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor"></span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="ttc" id="namespace_p_l_m_d_1_1config_html_a74bfa65032b3a2336d4b508050a08ea9"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a74bfa65032b3a2336d4b508050a08ea9">PLMD::config::getMakefile</a></div><div class="ttdeci">std::string getMakefile()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00046">Config.cpp:46</a></div></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="ttc" id="namespace_p_l_m_d_1_1config_html_a74bfa65032b3a2336d4b508050a08ea9"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a74bfa65032b3a2336d4b508050a08ea9">PLMD::config::getMakefile</a></div><div class="ttdeci">std::string getMakefile()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00050">Config.cpp:50</a></div></div>
 <div class="ttc" id="namespace_p_l_m_d_1_1config_html_ac912fda233a0fc65f8ffa814b9af13b1"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#ac912fda233a0fc65f8ffa814b9af13b1">PLMD::config::getPlumedRoot</a></div><div class="ttdeci">std::string getPlumedRoot()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00034">Config.cpp:34</a></div></div>
 <div class="ttc" id="namespace_p_l_m_d_1_1config_html_ab08ffddf07ed9f5f34befb4ff64ad6e2"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#ab08ffddf07ed9f5f34befb4ff64ad6e2">PLMD::config::getVersionLong</a></div><div class="ttdeci">std::string getVersionLong()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00042">Config.cpp:42</a></div></div>
 <div class="ttc" id="version_8h_html_a37c3c32b51040a0d104669cc4a209cbb"><div class="ttname"><a href="version_8h.html#a37c3c32b51040a0d104669cc4a209cbb">PLUMED_VERSION_SHORT</a></div><div class="ttdeci">#define PLUMED_VERSION_SHORT</div><div class="ttdef"><b>Definition:</b> <a href="version_8h_source.html#l00001">version.h:1</a></div></div>
 <div class="ttc" id="namespace_p_l_m_d_1_1config_html_a21b1a77d58a591195cc899cc5098a201"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a21b1a77d58a591195cc899cc5098a201">PLMD::config::getVersion</a></div><div class="ttdeci">std::string getVersion()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00038">Config.cpp:38</a></div></div>
 <div class="ttc" id="version_8h_html_aef273566954dc24b93e650d79065f93c"><div class="ttname"><a href="version_8h.html#aef273566954dc24b93e650d79065f93c">PLUMED_VERSION_LONG</a></div><div class="ttdeci">#define PLUMED_VERSION_LONG</div><div class="ttdef"><b>Definition:</b> <a href="version_8h_source.html#l00002">version.h:2</a></div></div>
-<div class="ttc" id="namespace_p_l_m_d_1_1config_html_a46fc4cb100de5daa68c2f2e49e6af6e9"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a46fc4cb100de5daa68c2f2e49e6af6e9">PLMD::config::hasAlmost</a></div><div class="ttdeci">bool hasAlmost()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00069">Config.cpp:69</a></div></div>
-<div class="ttc" id="namespace_p_l_m_d_1_1config_html_a2ee478073e3c9830358b957b3f6b0485"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a2ee478073e3c9830358b957b3f6b0485">PLMD::config::hasCregex</a></div><div class="ttdeci">bool hasCregex()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00078">Config.cpp:78</a></div></div>
-<div class="ttc" id="namespace_p_l_m_d_1_1config_html_abdee7a8903a53ba1c889acfff62fbb10"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#abdee7a8903a53ba1c889acfff62fbb10">PLMD::config::hasDlopen</a></div><div class="ttdeci">bool hasDlopen()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00061">Config.cpp:61</a></div></div>
+<div class="ttc" id="version_8h_html_a63a0a33abe3477c3e788277631c06852"><div class="ttname"><a href="version_8h.html#a63a0a33abe3477c3e788277631c06852">PLUMED_VERSION_GIT</a></div><div class="ttdeci">#define PLUMED_VERSION_GIT</div><div class="ttdef"><b>Definition:</b> <a href="version_8h_source.html#l00003">version.h:3</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_1_1config_html_a46fc4cb100de5daa68c2f2e49e6af6e9"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a46fc4cb100de5daa68c2f2e49e6af6e9">PLMD::config::hasAlmost</a></div><div class="ttdeci">bool hasAlmost()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00073">Config.cpp:73</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_1_1config_html_a2ee478073e3c9830358b957b3f6b0485"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a2ee478073e3c9830358b957b3f6b0485">PLMD::config::hasCregex</a></div><div class="ttdeci">bool hasCregex()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00082">Config.cpp:82</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_1_1config_html_abdee7a8903a53ba1c889acfff62fbb10"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#abdee7a8903a53ba1c889acfff62fbb10">PLMD::config::hasDlopen</a></div><div class="ttdeci">bool hasDlopen()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00065">Config.cpp:65</a></div></div>
 <div class="ttc" id="config_2_config_8h_html"><div class="ttname"><a href="config_2_config_8h.html">Config.h</a></div></div>
 <div class="ttc" id="version_8h_html"><div class="ttname"><a href="version_8h.html">version.h</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_1_1config_html_a58fd275b4e044fc3fe5bfd0db34c23b3"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a58fd275b4e044fc3fe5bfd0db34c23b3">PLMD::config::getVersionGit</a></div><div class="ttdeci">std::string getVersionGit()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00046">Config.cpp:46</a></div></div>
 <div class="ttc" id="namespace_p_l_m_d_1_1config_html_a7080396c9ae414ea8177c900d346839f"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#a7080396c9ae414ea8177c900d346839f">PLMD::config::getSoExt</a></div><div class="ttdeci">std::string getSoExt()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00030">Config.cpp:30</a></div></div>
-<div class="ttc" id="namespace_p_l_m_d_1_1config_html_aaac2777fa74de8578cf4e44d2b3e4555"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#aaac2777fa74de8578cf4e44d2b3e4555">PLMD::config::hasMatheval</a></div><div class="ttdeci">bool hasMatheval()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00053">Config.cpp:53</a></div></div>
+<div class="ttc" id="namespace_p_l_m_d_1_1config_html_aaac2777fa74de8578cf4e44d2b3e4555"><div class="ttname"><a href="namespace_p_l_m_d_1_1config.html#aaac2777fa74de8578cf4e44d2b3e4555">PLMD::config::hasMatheval</a></div><div class="ttdeci">bool hasMatheval()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8cpp_source.html#l00057">Config.cpp:57</a></div></div>
 </div>
 
 

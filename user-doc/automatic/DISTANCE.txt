@@ -8,6 +8,26 @@ Moreover, single components (x,y, and z) can be also computed.
 Notice that single components will not have the proper periodicity!
 A possible hack is shown in one of the examples below.
 
+\par Description of components
+
+By default the value of the calculated quantity can be referenced elsewhere in the input file by using the label of the action.  Alternatively this Action can be used to be used to calculate the following quantities by employing the keywords listed below.  These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.
+
+ <table align=center frame=void width=60%% cellpadding=5%%> 
+<tr> <td width=5%> <b> Quantity </b> </td> <td> <b> Keyword </b> </td> <td> <b> Description </b> </td> </tr>
+<tr>
+<td width=5%> <b> x </b></td> <td width=10%> <b> COMPONENTS </b> </td> 
+<td> the x-component of the vector connecting the two atoms </td>
+</tr>
+<tr>
+<td width=5%> <b> y </b></td> <td width=10%> <b> COMPONENTS </b> </td> 
+<td> the y-component of the vector connecting the two atoms </td>
+</tr>
+<tr>
+<td width=5%> <b> z </b></td> <td width=10%> <b> COMPONENTS </b> </td> 
+<td> the z-component of the vector connecting the two atoms </td>
+</tr>
+</table>
+
 \par The atoms involved can be specified using
 
  <table align=center frame=void width=95%% cellpadding=5%%> 

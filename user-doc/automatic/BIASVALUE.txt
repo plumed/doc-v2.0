@@ -6,6 +6,18 @@ This is the simplest possible bias: the bias potential is equal to a collective 
 It is useful to create custom biasing potential, e.g. applying a function (see \ref Function)
 to some collective variable then using the value of this function directly as a bias.
 
+\par Description of components
+
+By default this Action calculates the following quantities. These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr> <td width=5%> <b> Quantity </b> </td> <td> <b> Description </b> </td> </tr>
+<tr>
+<td width=15%> <b> bias. </b></td>
+<td> one or multiple instances of this quantity will be refereceable elsewhere in the input file. these quantities will named with  the arguments of the bias followed by the character string _bias. These quantities tell the user how much the bias is due to each of the colvars. </td>
+</tr>
+</table>
+
 \par Compulsory keywords
 
  <table align=center frame=void width=95%% cellpadding=5%%> 

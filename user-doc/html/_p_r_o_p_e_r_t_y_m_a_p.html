@@ -106,6 +106,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 \begin{eqnarray} X=\frac{\sum_i X_i*\exp(-\lambda D_i(x))}{\sum_i \exp(-\lambda D_i(x))} \\ Y=\frac{\sum_i Y_i*\exp(-\lambda D_i(x))}{\sum_i \exp(-\lambda D_i(x))} \\ \cdots\\ zzz=-\frac{1}{\lambda}\log(\sum_i \exp(-\lambda D_i(x))) \end{eqnarray}
 </p>
 <p>where the parameters \(X_i\) and \(Y_i\) are provided in the input pdb (allv.pdb in this case) and \(D_i(x)\) is the MSD after optimal alignment calculated on the pdb frames you input (see Kearsley).</p>
+<dl class="section user"><dt>Description of components</dt><dd></dd></dl>
+<p>The names of the components in this action can be customized by the user in the actions input file. However, in addition to these customizable components the following quantities will always be output</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><b> Quantity </b>  </td><td><b> Description </b>   </td></tr>
+<tr>
+<td width="15%"><b> zzz </b> </td><td>the minimum distance from the reference points   </td></tr>
+</table>
 <dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
 <tr>

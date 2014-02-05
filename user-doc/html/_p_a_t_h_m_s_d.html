@@ -101,6 +101,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This Colvar calculates path collective variables.</p>
 <p>This is the Path Collective Variables implementation ( see <a class="el" href="citelist.html#CITEREF_brand07">[5]</a> ). This variable computes the progress along a given set of frames that is provided in input ("sss" component) and the distance from them ("zzz" component). (see below).</p>
+<dl class="section user"><dt>Description of components</dt><dd></dd></dl>
+<p>By default this Action calculates the following quantities. These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><b> Quantity </b>  </td><td><b> Description </b>   </td></tr>
+<tr>
+<td width="15%"><b> sss </b> </td><td>the position on the path   </td></tr>
+<tr>
+<td width="15%"><b> zzz </b> </td><td>the distance from the path   </td></tr>
+</table>
 <dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
 <tr>

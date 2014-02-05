@@ -35,6 +35,26 @@ case of the ratchet and pawl system, propelled by thermal motion of the solvent
 molecules, the biasing potential does not exert work on the system. \f$\eta(t)\f$ is
 an additional white noise acting on the minimum position of the bias.
 
+\par Description of components
+
+By default this Action calculates the following quantities. These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr> <td width=5%> <b> Quantity </b> </td> <td> <b> Description </b> </td> </tr>
+<tr>
+<td width=15%> <b> bias </b></td>
+<td> the instantaneous value of the bias potential </td>
+</tr>
+<tr>
+<td width=15%> <b> force2 </b></td>
+<td> the instantaneous value of the squared force due to this bias potential </td>
+</tr>
+<tr>
+<td width=15%> <b> min_ </b></td>
+<td> one or multiple instances of this quantity will be refereceable elsewhere in the input file. These quantities will be named as min_# and the number of the argument to which they refer.These quantities tell the user the minimum value assumed by rho_m(t). </td>
+</tr>
+</table>
+
 \par Compulsory keywords
 
  <table align=center frame=void width=95%% cellpadding=5%%> 
@@ -86,7 +106,7 @@ using TO and the two strength using KAPPA. The total energy of the bias is print
 DISTANCE ATOMS=3,5 LABEL=d1
 DISTANCE ATOMS=2,4 LABEL=d2
 ABMD ARG=d1,d2 TO=1.0,1.5 KAPPA=5.0,5.0 LABEL=abmd
-PRINT ARG=abmd.bias
+PRINT ARG=abmd.bias,abmd.min_1,abmd.min_2
 \endverbatim
 (See also \ref DISTANCE and \ref PRINT).
 

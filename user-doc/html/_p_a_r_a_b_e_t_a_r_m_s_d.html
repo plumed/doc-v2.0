@@ -108,6 +108,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>where the sum runs over all possible segments of parallel beta sheet. By default the NN, MM and D_0 parameters are set equal to those used in <a class="el" href="citelist.html#CITEREF_pietrucci09jctc">[19]</a>. The R_0 parameter must be set by the user - the value used in <a class="el" href="citelist.html#CITEREF_pietrucci09jctc">[19]</a> was 0.08 nm.</p>
 <p>If you change the function in the above sum you can calculate quantities such as the average distance from a structure composed of only parallel beta sheets or the distance between the set of residues that is closest to a parallel beta sheet and the reference configuration. To do these sorts of calculations you can use the AVERAGE and MIN keywords. In addition you can use the LESS_THAN keyword if you would like to change the form of the switching function. If you use any of these options you no longer need to specify NN, R_0, MM and D_0.</p>
 <p>Please be aware that for codes like gromacs you must ensure that plumed reconstructs the chains involved in your CV when you calculate this CV using anthing other than TYPE=DRMSD. For more details as to how to do this see <a class="el" href="_w_h_o_l_e_m_o_l_e_c_u_l_e_s.html">WHOLEMOLECULES</a>.</p>
+<dl class="section user"><dt>Description of components</dt><dd></dd></dl>
+<p>By default this Action calculates the number of structural units that are within a certain distance of a idealised secondary structure element. This quantity can then be referenced elsewhere in the input by using the label of the action. However, thes Action can also be used to calculate the following quantities by using the keywords as described below. The quantities then calculated can be referened using the label of the action followed by a dot and then the name from the table below.</p>
+<table  align="center" frame="void" width="60%%" cellpadding="5%%">
+<tr>
+<td width="5%"><b> Quantity </b>  </td><td><b> Keyword </b>  </td><td><b> Description </b>   </td></tr>
+<tr>
+<td width="5%"><b> min </b> </td><td width="10%"><b> MIN </b>  </td><td>the minimum value. This is calculated using the formula described in the description of the keyword so as to make it continuous.   </td></tr>
+<tr>
+<td width="5%"><b> less_than </b> </td><td width="10%"><b> LESS_THAN </b>  </td><td>the number of values less than a target value. This is calculated using one of the formula described in the description of the keyword so as to make it continuous. You can calculate this quantity multiple times using different parameters.   </td></tr>
+</table>
 <dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
 <tr>
@@ -147,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td width="15%"><b> LESS_THAN </b> </td><td>calculate the number of variables less than a certain target value. This quantity is calculated using \(\sum_i \sigma(s_i)\), where \(\sigma(s)\) is a <a class="el" href="switchingfunction.html">switchingfunction</a>. The final value can be referenced using <em>label</em>.less_than. You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3... The corresponding values are then referenced using <em>label</em>.less_than-1, <em>label</em>.less_than-2, <em>label</em>.less_than-3...   </td></tr>
 <tr>
-<td width="15%"><b> MIN </b> </td><td>The final value can be referenced using <em>label</em>.min.   </td></tr>
+<td width="15%"><b> MIN </b> </td><td>calculate the minimum value. To make this quantity continuous the minimum is calculated using \( \textrm{min} = \frac{\beta}{ \log \sum_i \exp\left( \frac{\beta}{s_i} \right) } \) The value of \(\beta\) in this function is specified using (BETA= \(\beta\)) The final value can be referenced using <em>label</em>.min.   </td></tr>
 <tr>
 <td width="15%"><b> STRANDS_CUTOFF </b> </td><td><p class="starttd">If in a segment of protein the two strands are further apart then the calculation of the actual RMSD is skipped as the structure is very far from being beta-sheet like. This keyword speeds up the calculation enormously when you are using the LESS_THAN option. However, if you are using some other option, then this cannot be used  </p>
 <p class="endtd"></p>

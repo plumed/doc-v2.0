@@ -100,6 +100,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <div class="textblock"><p>Calculate the distances between one or many pairs of atoms. You can then calculate functions of the distribution of distances such as the minimum, the number less than a certain quantity and so on.</p>
+<dl class="section user"><dt>Description of components</dt><dd></dd></dl>
+<p>This Action can be used to calculate the following quantities by employing the keywords listed below. You must select which from amongst these quantities you wish to calculate - this command cannot be run unless one of the quantities below is being calculated.These quantities can then be referenced elsewhere in the input file by using this Action's label followed by a dot and the name of the quantity. Some amongst them can be calculated multiple times with different parameters. In this case the quantities calculated can be referenced elsewhere in the input by using the name of the quantity followed by a numerical identifier e.g. <em>label</em>.less_than-1, <em>label</em>.less_than-2 etc.</p>
+<table  align="center" frame="void" width="60%%" cellpadding="5%%">
+<tr>
+<td width="5%"><b> Quantity </b>  </td><td><b> Keyword </b>  </td><td><b> Description </b>   </td></tr>
+<tr>
+<td width="5%"><b> more_than </b> </td><td width="10%"><b> MORE_THAN </b>  </td><td>the number of values more than a target value. This is calculated using one of the formula described in the description of the keyword so as to make it continuous. You can calculate this quantity multiple times using different parameters.   </td></tr>
+<tr>
+<td width="5%"><b> min </b> </td><td width="10%"><b> MIN </b>  </td><td>the minimum value. This is calculated using the formula described in the description of the keyword so as to make it continuous.   </td></tr>
+<tr>
+<td width="5%"><b> mean </b> </td><td width="10%"><b> MEAN </b>  </td><td>the mean value. The output component can be refererred to elsewhere in the input file by using the label.mean   </td></tr>
+<tr>
+<td width="5%"><b> less_than </b> </td><td width="10%"><b> LESS_THAN </b>  </td><td>the number of values less than a target value. This is calculated using one of the formula described in the description of the keyword so as to make it continuous. You can calculate this quantity multiple times using different parameters.   </td></tr>
+<tr>
+<td width="5%"><b> between </b> </td><td width="10%"><b> BETWEEN </b>  </td><td>the number/fraction of values within a certain range. This is calculated using one of the formula described in the description of the keyword so as to make it continuous. You can calculate this quantity multiple times using different parameters.   </td></tr>
+<tr>
+<td width="5%"><b> moment </b> </td><td width="10%"><b> MOMENTS </b>  </td><td>the central moments of the distribution of values. The second moment would be referenced elsewhere in the input file using <em>label</em>.moment-2, the third as <em>label</em>.moment-3, etc.   </td></tr>
+<tr>
+<td width="5%"><b> dhenergy </b> </td><td width="10%"><b> DHENERGY </b>  </td><td>the Debye-Huckel interaction energy. You can calculate this quantity multiple times using different parameters   </td></tr>
+</table>
 <dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
 <tr>
@@ -136,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td width="15%"><b> TOL </b> </td><td>this keyword can be used to speed up your calculation. When accumulating sums in which the individual terms are numbers inbetween zero and one it is assumed that terms less than a certain tolerance make only a small contribution to the sum. They can thus be safely ignored as can the the derivatives wrt these small quantities.   </td></tr>
 <tr>
-<td width="15%"><b> MIN </b> </td><td>The final value can be referenced using <em>label</em>.min.   </td></tr>
+<td width="15%"><b> MIN </b> </td><td>calculate the minimum value. To make this quantity continuous the minimum is calculated using \( \textrm{min} = \frac{\beta}{ \log \sum_i \exp\left( \frac{\beta}{s_i} \right) } \) The value of \(\beta\) in this function is specified using (BETA= \(\beta\)) The final value can be referenced using <em>label</em>.min.   </td></tr>
 <tr>
 <td width="15%"><b> LESS_THAN </b> </td><td>calculate the number of variables less than a certain target value. This quantity is calculated using \(\sum_i \sigma(s_i)\), where \(\sigma(s)\) is a <a class="el" href="switchingfunction.html">switchingfunction</a>. The final value can be referenced using <em>label</em>.less_than. You can use multiple instances of this keyword i.e. LESS_THAN1, LESS_THAN2, LESS_THAN3... The corresponding values are then referenced using <em>label</em>.less_than-1, <em>label</em>.less_than-2, <em>label</em>.less_than-3...   </td></tr>
 <tr>

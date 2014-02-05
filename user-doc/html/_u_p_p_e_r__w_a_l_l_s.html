@@ -103,6 +103,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The restraining potential starts acting on the system when the value of the CV is greater (in the case of UPPER_WALLS) or lower (in the case of LOWER_WALLS) than a certain limit \(a_i\) (AT) minus an offset \(o_i\) (OFFSET). The expression for the bias due to the wall is given by:</p>
 <p>\( \sum_i {k_i}((x_i-a_i+o_i)/s_i)^e_i \)</p>
 <p>\(k_i\) (KAPPA) is an energy constant in internal unit of the code, \(s_i\) (EPS) a rescaling factor and \(e_i\) (EXP) the exponent determining the power law. By default: EXP = 2, EPS = 1.0, OFF = 0.</p>
+<dl class="section user"><dt>Description of components</dt><dd></dd></dl>
+<p>By default this Action calculates the following quantities. These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><b> Quantity </b>  </td><td><b> Description </b>   </td></tr>
+<tr>
+<td width="15%"><b> bias </b> </td><td>the instantaneous value of the bias potential   </td></tr>
+<tr>
+<td width="15%"><b> force2 </b> </td><td>the instantaneous value of the squared force due to this bias potential   </td></tr>
+</table>
 <dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
 <tr>

@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">How to add a new collective variable </div>  </div>
 </div>
 <div class="contents">
-<div class="textblock"><p>To implement a CV one you need to create a single cpp file called ColvarNAME.cpp.</p>
+<div class="textblock"><p>To implement a CV one you need to create a single cpp file called <em>ColvarName</em>.cpp in the directory src/colvar.</p>
 <p>If you use the following template for this file then the manual and the calls to the CV will be looked after automatically.</p>
 <pre class="fragment">#include "Colvar.h"
 #include "ActionRegister.h"
@@ -110,6 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 using namespace std;
 
 namespace PLMD{
+namespace colvar{
 
 //+PLUMEDOC COLVAR NAME
 /*
@@ -141,14 +142,14 @@ class ColvarNAME : public Colvar {
 PLUMED_REGISTER_ACTION(ColvarNAME,"KEYWORD")
 
  /----- The following routine creates the documentation for the keyowrds used by your CV
-void ColvarNAME::registerKeywords( Keywords&amp; keys ){
+void ColvarName::registerKeywords( Keywords&amp; keys ){
   Colvar::registerKeywords(keys);
-</pre><p>In here you should add all your descriptions of the keywords used by your colvar. Descriptions as to how to do this can be found here: <a class="el" href="using_doxygen.html">Creating plumed documentation</a></p>
+</pre><p>In here you should add all your descriptions of the keywords used by your colvar as well as descriptions of any components that you can use this colvar to calculate. Descriptions as to how to do this can be found here: <a class="el" href="using_doxygen.html">Creating plumed documentation</a></p>
 <pre class="fragment">}
 
  /---- We now write the actual readin (constructor) and calculations routines for the colvar
 
-ColvarNAME::ColvarNAME(const ActionOptions&amp;ao):
+ColvarName::ColvarName(const ActionOptions&amp;ao):
  /------ This line sets up various things in the plumed core which colvars rely on.
 PLUMED_COLVAR_INIT(ao)
 {
@@ -170,7 +171,7 @@ PLUMED_COLVAR_INIT(ao)
    getValue("")-&gt;setDomain(min,max);     // This routine is only required if the function is periodic.  It sets the minimum and maximum values of the colvar.
 }
 
-void ColvarNAME::calculate(){
+void ColvarName::calculate(){
 /--- These are the things you must calculate for any cv ---/
   double cv_val;              /--- The value of the cv ----/
   Tensor boxDerivatives;      /--- The derivative of the cv with respect to the box vectors ----/

@@ -16,6 +16,18 @@ zzz=-\frac{1}{\lambda}\log(\sum_i  \exp(-\lambda D_i(x)))
 where the parameters \f$X_i\f$  and  \f$Y_i\f$ are provided in the input pdb (allv.pdb in this case) and
 \f$D_i(x)\f$  is the MSD after optimal alignment calculated on the pdb frames you input (see Kearsley).
 
+\par Description of components
+
+The names of the components in this action can be customized by the user in the actions input file.  However, in addition to these customizable components the following quantities will always be output
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr> <td width=5%> <b> Quantity </b> </td> <td> <b> Description </b> </td> </tr>
+<tr>
+<td width=15%> <b> zzz </b></td>
+<td> the minimum distance from the reference points </td>
+</tr>
+</table>
+
 \par Compulsory keywords
 
  <table align=center frame=void width=95%% cellpadding=5%%> 

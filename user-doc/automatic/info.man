@@ -29,6 +29,10 @@
 <td width=15%> <b> --long-version </b></td>
 <td> ( default=off ) print the version number (long version) </td>
 </tr>
+<tr>
+<td width=15%> <b> --git-version </b></td>
+<td> ( default=off ) print the version number (git version, if available) </td>
+</tr>
 
 </table>
 

@@ -15,7 +15,7 @@ var searchData=
   ['rescaledtobias',['rescaledToBias',['../class_p_l_m_d_1_1_bias_representation.html#a656c031b783fc7590a7388745337122a',1,'PLMD::BiasRepresentation']]],
   ['reserved_5fkeys',['reserved_keys',['../class_p_l_m_d_1_1_keywords.html#ac9a3f77b35ed799c5b1e911d6a86b1f6',1,'PLMD::Keywords']]],
   ['residue',['residue',['../class_p_l_m_d_1_1_p_d_b.html#a3dd1ae51af0d59e567d1867e14766f16',1,'PLMD::PDB']]],
-  ['residuenames',['residueNames',['../class_p_l_m_d_1_1generic_1_1_dump_atoms.html#affa2efd8d3b9d0175f430257fb5c50ec',1,'PLMD::generic::DumpAtoms::residueNames()'],['../class_p_l_m_d_1_1_p_d_b.html#a341c5768d4394f13d596271c0942b7d1',1,'PLMD::PDB::residuenames()']]],
+  ['residuenames',['residuenames',['../class_p_l_m_d_1_1_p_d_b.html#a341c5768d4394f13d596271c0942b7d1',1,'PLMD::PDB::residuenames()'],['../class_p_l_m_d_1_1generic_1_1_dump_atoms.html#affa2efd8d3b9d0175f430257fb5c50ec',1,'PLMD::generic::DumpAtoms::residueNames()']]],
   ['residuenumbers',['residueNumbers',['../class_p_l_m_d_1_1generic_1_1_dump_atoms.html#a9b6610be8d48285bea125dc057aa28c0',1,'PLMD::generic::DumpAtoms']]],
   ['restart',['restart',['../class_p_l_m_d_1_1_plumed_main.html#a30efd73a9f0679df3ee035720952bc90',1,'PLMD::PlumedMain']]],
   ['reusing_5fdata',['reusing_data',['../class_p_l_m_d_1_1analysis_1_1_analysis.html#ada41af4bf35ff91d039ab421f1d9c0ec',1,'PLMD::analysis::Analysis']]],

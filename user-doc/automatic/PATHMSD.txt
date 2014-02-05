@@ -8,6 +8,22 @@ This variable computes the progress along a given set of frames that is provided
 in input ("sss" component) and the distance from them ("zzz" component).
 (see below).
 
+\par Description of components
+
+By default this Action calculates the following quantities. These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr> <td width=5%> <b> Quantity </b> </td> <td> <b> Description </b> </td> </tr>
+<tr>
+<td width=15%> <b> sss </b></td>
+<td> the position on the path </td>
+</tr>
+<tr>
+<td width=15%> <b> zzz </b></td>
+<td> the distance from the path </td>
+</tr>
+</table>
+
 \par Compulsory keywords
 
  <table align=center frame=void width=95%% cellpadding=5%%> 

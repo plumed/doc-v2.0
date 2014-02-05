@@ -106,6 +106,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 \[ V(\vec{s},t) = \frac{1}{2} \kappa(t) ( \vec{s} - \vec{s}_0(t) )^2 \]
 </p>
 <p>The time dependence of \(\kappa\) and \(\vec{s}_0\) are specified by a list of STEP, KAPPA and AT keywords. These keywords tell plumed what values \(\kappa\) and \(\vec{s}_0\) should have at the time specified by the corresponding STEP keyword. Inbetween these times the values of \(\kappa\) and \(\vec{s}_0\) are linearly interpolated.</p>
+<dl class="section user"><dt>Description of components</dt><dd></dd></dl>
+<p>By default this Action calculates the following quantities. These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.</p>
+<table  align="center" frame="void" width="95%%" cellpadding="5%%">
+<tr>
+<td width="5%"><b> Quantity </b>  </td><td><b> Description </b>   </td></tr>
+<tr>
+<td width="15%"><b> bias </b> </td><td>the instantaneous value of the bias potential   </td></tr>
+<tr>
+<td width="15%"><b> force2 </b> </td><td>the instantaneous value of the squared force due to this bias potential   </td></tr>
+<tr>
+<td width="15%"><b> _cntr </b> </td><td>one or multiple instances of this quantity will be refereceable elsewhere in the input file. these quantities will named with the arguments of the bias followed by the character string _cntr. These quantities give the instantaneous position of the center of the harmonic potential.   </td></tr>
+<tr>
+<td width="15%"><b> _work </b> </td><td>one or multiple instances of this quantity will be refereceable elsewhere in the input file. These quantities will named with the arguments of the bias followed by the character string _work. These quantities tell the user how much work has been done by the potential in dragging the system along the various colvar axis.   </td></tr>
+</table>
 <dl class="section user"><dt>Compulsory keywords</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
 <tr>

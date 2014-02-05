@@ -1,3 +1,47 @@
+\par Description of components
+
+By default this Action calculates the following quantities. These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr> <td width=5%> <b> Quantity </b> </td> <td> <b> Description </b> </td> </tr>
+<tr>
+<td width=15%> <b> ax </b></td>
+<td> the ax component of the cell matrix </td>
+</tr>
+<tr>
+<td width=15%> <b> ay </b></td>
+<td> the ay component of the cell matrix </td>
+</tr>
+<tr>
+<td width=15%> <b> az </b></td>
+<td> the az component of the cell matrix </td>
+</tr>
+<tr>
+<td width=15%> <b> bx </b></td>
+<td> the bx component of the cell matrix </td>
+</tr>
+<tr>
+<td width=15%> <b> by </b></td>
+<td> the by component of the cell matrix </td>
+</tr>
+<tr>
+<td width=15%> <b> bz </b></td>
+<td> the bz component of the cell matrix </td>
+</tr>
+<tr>
+<td width=15%> <b> cx </b></td>
+<td> the cx component of the cell matrix </td>
+</tr>
+<tr>
+<td width=15%> <b> cy </b></td>
+<td> the cy component of the cell matrix </td>
+</tr>
+<tr>
+<td width=15%> <b> cz </b></td>
+<td> the cz component of the cell matrix </td>
+</tr>
+</table>
+
 \par Options
 
  <table align=center frame=void width=95%% cellpadding=5%%> 
