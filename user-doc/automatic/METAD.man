@@ -112,7 +112,7 @@ By default this Action calculates the following quantities. These quanties can b
 </tr>
 <tr>
 <td width=15%> <b> INTERVAL </b></td>
-<td> monodimensional lower and upper limits, outside the limits the system will not fell the bias (when used together with grid SPLINES are automatically deactivated) </td>
+<td> monodimensional lower and upper limits, outside the limits the system will not feel the biasing force. </td>
 </tr>
 <tr>
 <td width=15%> <b> GRID_RFILE </b></td>

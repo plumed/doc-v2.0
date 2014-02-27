@@ -114,15 +114,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p class="formulaDsp">
 \[ V({s},t)= \sum_{t&#39;=0,\tau_G,2\tau_G,\dots}^{t&#39;&lt;t} W e^{-V({s}({q}(t&#39;),t&#39;)/\Delta T} \exp\left( -\sum_{i=1}^{d} \frac{(s_i({q})-s_i({q}(t&#39;))^2}{2\sigma_i^2} \right), \]
 </p>
-<p>This method ensures that the bias converges more smoothly.</p>
+<p>This method ensures that the bias converges more smoothly. It should be noted that, in the case of well-tempered metadynamics, in the output printed the Gaussian height is re-scaled using the bias factor. Also notice that with well-tempered metadynamics the HILLS file does not contain the bias, but the negative of the free-energy estimate. This choice has the advantage that one can restart a simulation using a different value for the \(\Delta T\). The applied bias will be scaled accordingly.</p>
 <p>Note that you can use here also the flexible gaussian approach <a class="el" href="citelist.html#CITEREF_Branduardi:2012dl">[6]</a> in which you can adapt the gaussian to the extent of Cartesian space covered by a variable or to the space in collective variable covered in a given time. In this case the width of the deposited gaussian potential is denoted by one value only that is a Cartesian space (ADAPTIVE=GEOM) or a time (ADAPTIVE=DIFF). Note that a specific integration technique for the deposited gaussians should be used in this case. Check the documentation for utility sum_hills.</p>
 <p>With the keyword INTERVAL one changes the metadynamics algorithm setting the bias force equal to zero outside boundary <a class="el" href="citelist.html#CITEREF_baftizadeh2012protein">[1]</a>. If, for example, metadynamics is performed on a CV s and one is interested only to the free energy for s &gt; sw, the history dependent potential is still updated according to the above equations but the metadynamics force is set to zero for s &lt; sw. Notice that Gaussians are added also if s &lt; sw, as the tails of these Gaussians influence VG in the relevant region s &gt; sw. In this way, the force on the system in the region s &gt; sw comes from both metadynamics and the force field, in the region s &lt; sw only from the latter. This approach allows obtaining a history-dependent bias potential VG that fluctuates around a stable estimator, equal to the negative of the free energy far enough from the boundaries. Note that:</p>
 <ul>
 <li>It works only for one-dimensional biases;</li>
-<li>It works with GRID but automatically turn off the SPLINES so set a higher number of BINS;</li>
+<li>It works both with and without GRID;</li>
 <li>The interval limit sw in a region where the free energy derivative is not large;</li>
 <li>If in the region outside the limit sw the system has a free energy minimum, the INTERVAL keyword should be used together with a soft wall at sw</li>
 </ul>
+<p>As a final note, since version 2.0.2 when the system is outside of the selected interval the force is set to zero and the bias value to the value at the corresponding boundary. This allows acceptances for replica exchange methods to be computed correctly.</p>
 <p>Multiple walkers <a class="el" href="citelist.html#CITEREF_multiplewalkers">[21]</a> can also be used. See below the examples.</p>
 <dl class="section user"><dt>Description of components</dt><dd></dd></dl>
 <p>By default this Action calculates the following quantities. These quanties can be referenced elsewhere in the input by using this Action's label followed by a dot and the name of the quantity required from the list below.</p>
@@ -186,7 +187,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td width="15%"><b> WALKERS_RSTRIDE </b> </td><td>stride for reading hills files   </td></tr>
 <tr>
-<td width="15%"><b> INTERVAL </b> </td><td>monodimensional lower and upper limits, outside the limits the system will not fell the bias (when used together with grid SPLINES are automatically deactivated)   </td></tr>
+<td width="15%"><b> INTERVAL </b> </td><td>monodimensional lower and upper limits, outside the limits the system will not feel the biasing force.   </td></tr>
 <tr>
 <td width="15%"><b> GRID_RFILE </b> </td><td>a grid file from which the bias should be read at the initial step of the simulation   </td></tr>
 <tr>
