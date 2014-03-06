@@ -67,6 +67,6 @@
 <tr> <td width=5%> \ref MOLINFO </td><td> TOPOLOGY </td><td>This command is used to provide information on the molecules that are present in your system.</td> </tr>
 <tr> <td width=5%> \ref RESTART </td><td> GENERIC </td><td>Activate restart.</td> </tr>
 <tr> <td width=5%> \ref UNITS </td><td> GENERIC </td><td>This command sets the internal units for the code.  A new unit can be set by eitherspecifying how to convert from the plumed default unit into that new unit or by usingthe shortcuts described below.  This directive MUST appear at the BEGINNING of the plumed.dat file.  The same units must be used througout the plumed.dat file.</td> </tr>
-<tr> <td width=5%> \ref CENTER </td><td> VATOM </td><td>Calculate the center for a group of atoms, with arbitraty weights.</td> </tr>
+<tr> <td width=5%> \ref CENTER </td><td> VATOM </td><td>Calculate the center for a group of atoms, with arbitrary weights.</td> </tr>
 <tr> <td width=5%> \ref COM </td><td> VATOM </td><td>Calculate the center of mass for a group of atoms.</td> </tr>
 <tr> <td width=5%> \ref GHOST </td><td> VATOM </td><td>Calculate the absolute position of a ghost atom with fixed coordinatesin the local reference frame formed by three atoms. The computed ghost atom is stored as a virtual atom that can be accessed inan atom list through the the label for the GHOST action that creates it.</td> </tr>

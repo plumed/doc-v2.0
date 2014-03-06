@@ -1,5 +1,5 @@
 <tr> <td width=5%> \subpage  CENTER </td> <td>
-Calculate the center for a group of atoms, with arbitraty weights.
+Calculate the center for a group of atoms, with arbitrary weights.
 </td> </tr>
 <tr> <td width=5%> \subpage  COM </td> <td>
 Calculate the center of mass for a group of atoms.

@@ -24,7 +24,7 @@ particular tasks that are being performed see:
 <tr> <td width=5%> \ref BIASVALUE </td><td> BIAS </td><td>Takes the value of one variable and use it as a bias</td> </tr>
 <tr> <td width=5%> \ref BRIDGE </td><td> MCOLVAR </td><td>Calculate the number of atoms that bridge two parts of a structure</td> </tr>
 <tr> <td width=5%> \ref CELL </td><td> COLVAR </td><td>Calculate the components of the simulation cell</td> </tr>
-<tr> <td width=5%> \ref CENTER </td><td> VATOM </td><td>Calculate the center for a group of atoms, with arbitraty weights.</td> </tr>
+<tr> <td width=5%> \ref CENTER </td><td> VATOM </td><td>Calculate the center for a group of atoms, with arbitrary weights.</td> </tr>
 <tr> <td width=5%> \ref COMBINE </td><td> FUNCTION </td><td>Calculate a polynomial combination of a set of other variables.</td> </tr>
 <tr> <td width=5%> \ref COM </td><td> VATOM </td><td>Calculate the center of mass for a group of atoms.</td> </tr>
 <tr> <td width=5%> \ref CONSTANT </td><td> COLVAR </td><td>Return a constant quantity.</td> </tr>
