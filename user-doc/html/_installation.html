@@ -133,7 +133,7 @@ ERROR: I cannot find /xxx/yyy/patches directory
 <h1><a class="anchor" id="BlasAndLapack"></a>
 BLAS and LAPACK</h1>
 <p>We tried to keep PLUMED as independent as possible from external libraries. Moreover, some libraries (e.g. Almost and Matheval) providing extra features are optional. However, to have a properly working PLUMED you need to link BLAS and LAPACK libraries. Here you find some note.</p>
-<p>First of all, the DYNAMIC_LIB variable in the configuration file should contain the flag necessary to load these libraries (typically -llapack -lblas, but full path specification with -L should be necessary depending on your system configuration).</p>
+<p>First of all, the DYNAMIC_LIB variable in the configuration file should contain the flag necessary to load these libraries (typically -llapack -lblas, in some case followed by -lgfortran but full path specification with -L should be necessary depending on your system configuration).</p>
 <p>Even though you can incur in some problem.</p>
 <ul>
 <li>If the linker complains and suggest to recompiled lapack with -fPIC, it means that you have static lapack libraries. Either install dynamic lapack libraries or switch to static compilation of PLUMED (by unsetting the SOEXT variable in configuration file).</li>
