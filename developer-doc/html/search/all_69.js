@@ -59,7 +59,7 @@ var searchData=
   ['initialized',['initialized',['../class_p_l_m_d_1_1_g_r_e_x.html#acaf88f4255444bfa941cedb0ce84970c',1,'PLMD::GREX::initialized()'],['../class_p_l_m_d_1_1_plumed_main.html#a55a37c8ff05e85ca3f198687d6571afa',1,'PLMD::PlumedMain::initialized()'],['../class_p_l_m_d_1_1_communicator.html#aedb540a572658060da5bfa50140ef622',1,'PLMD::Communicator::initialized()']]],
   ['initstride',['initstride',['../class_p_l_m_d_1_1function_1_1_func_sum_hills.html#a15843084e11a7b5df613154a46e4b670',1,'PLMD::function::FuncSumHills']]],
   ['inmiddleoffield',['inMiddleOfField',['../class_p_l_m_d_1_1_i_file.html#a5eed4fec559a6cdb76c6cb75ade8b19a',1,'PLMD::IFile']]],
-  ['inputdata',['inputdata',['../class_p_l_m_d_1_1_c_l_tool.html#a0e197fd101a186b702359f92dd40fad1',1,'PLMD::CLTool::inputdata()'],['../class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18',1,'PLMD::CLTool::inputData()']]],
+  ['inputdata',['inputData',['../class_p_l_m_d_1_1_c_l_tool.html#a95cc2400d04a99c371281f394bc1bc18',1,'PLMD::CLTool::inputData()'],['../class_p_l_m_d_1_1_c_l_tool.html#a0e197fd101a186b702359f92dd40fad1',1,'PLMD::CLTool::inputdata()']]],
   ['inputforce',['inputForce',['../class_p_l_m_d_1_1_value.html#af93e4b86fdfdbba7d2b2bbefb6c9c7d0',1,'PLMD::Value']]],
   ['insertfile',['insertFile',['../class_p_l_m_d_1_1_plumed_main.html#af8ca0da0566d2328483f1b71e4f37729',1,'PLMD::PlumedMain']]],
   ['insertgroup',['insertGroup',['../class_p_l_m_d_1_1_atoms.html#aef07d80802805072df083d4f4fcf20f9',1,'PLMD::Atoms']]],

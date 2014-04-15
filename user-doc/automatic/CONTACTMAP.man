@@ -31,8 +31,18 @@
 <td width=15%> <b> SUM </b></td>
 <td> ( default=off ) calculate the sum of all the contacts in the input </td>
 </tr>
+<tr>
+<td width=15%> <b> CMDIST </b></td>
+<td> ( default=off ) calculate the distance with respect to the provided reference contant map </td>
+</tr>
 
 </table>
+
+ <table align=center frame=void width=95%% cellpadding=5%%> 
+<tr>
+<td width=15%> <b> REFERENCE </b></td>
+<td> A reference value for a given contact, by default is 0.0 You can either specify a global reference value using REFERENCE or one reference value for each contact. You can use multiple instances of this keyword i.e. REFERENCE1, REFERENCE2, REFERENCE3... </td>
+</tr>
 
 </table>
 

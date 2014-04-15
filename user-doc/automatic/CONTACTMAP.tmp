@@ -1,6 +1,8 @@
 /**
 \page CONTACTMAP CONTACTMAP
 Calculate the distances between a number of pairs of atoms and transform each distance by a switching function.
+The transformed distance can be compared with a set of reference values in order to calculate the squared distance
+between two contact maps.
 
 \par Examples
 
@@ -11,6 +13,23 @@ to a file named colvar.
 \verbatim
 CONTACTMAP ATOMS1=1,2 ATOMS2=3,4 ATOMS3=4,5 ATOMS4=5,6 SWITCH=(RATIONAL R_0=1.5) LABEL=f1
 PRINT ARG=f1.* FILE=colvar
+\endverbatim
+
+The following example calculates the difference of the current contact map with respect
+to a reference provided. 
+
+\verbatim
+CONTACTMAP ...
+ATOMS1=1,2 REFERENCE1=0.1 
+ATOMS2=3,4 REFERENCE2=0.5
+ATOMS3=4,5 REFERENCE3=0.25
+ATOMS4=5,6 REFERENCE4=0.0
+SWITCH=(RATIONAL R_0=1.5) 
+LABEL=cmap
+CMDIST
+... CONTACTMAP
+
+PRINT ARG=cmap FILE=colvar
 \endverbatim
 (See also \ref PRINT)
 

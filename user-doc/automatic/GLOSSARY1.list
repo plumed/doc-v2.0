@@ -16,7 +16,7 @@
 <tr> <td width=5%> \ref ANGLE </td><td> COLVAR </td><td>Calculate an angle.</td> </tr>
 <tr> <td width=5%> \ref CELL </td><td> COLVAR </td><td>Calculate the components of the simulation cell</td> </tr>
 <tr> <td width=5%> \ref CONSTANT </td><td> COLVAR </td><td>Return a constant quantity.</td> </tr>
-<tr> <td width=5%> \ref CONTACTMAP </td><td> COLVAR </td><td>Calculate the distances between a number of pairs of atoms and transform each distance by a switching function.</td> </tr>
+<tr> <td width=5%> \ref CONTACTMAP </td><td> COLVAR </td><td>Calculate the distances between a number of pairs of atoms and transform each distance by a switching function.The transformed distance can be compared with a set of reference values in order to calculate the squared distancebetween two contact maps.</td> </tr>
 <tr> <td width=5%> \ref COORDINATION </td><td> COLVAR </td><td>Calculate coordination numbers.</td> </tr>
 <tr> <td width=5%> \ref CS2BACKBONE </td><td> COLVAR </td><td>This collective variable calculates a scoring function based on the comparison of backcalculated andexperimental backbone chemical shifts for a protein (CA, CB, C', H, HA, N).</td> </tr>
 <tr> <td width=5%> \ref DHENERGY </td><td> COLVAR </td><td>Calculate Debye-Huckel interaction energy among GROUPA and GROUPB.</td> </tr>

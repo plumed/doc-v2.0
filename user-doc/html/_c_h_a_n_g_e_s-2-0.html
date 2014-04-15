@@ -172,9 +172,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Now compiles on Blue Gene Q with IBM compilers.</li>
 <li>Fixed bug in <a class="el" href="_c_e_n_t_e_r.html">CENTER</a> where default WEIGHTS were missing.</li>
 <li>Several small fixes in documentation and log file.</li>
+<li>Fixed broken CONTACTMAP with SUM</li>
+<li>Added CMDIST in CONTACTMAP to emulate plumed1 CMAP.</li>
 </ul>
 <p>For developers:</p>
 <ul>
+<li>Fixed cmd("getBias") to retrieve bias. It was not working with single precision codes and it was not converting units properly.</li>
 <li>Fixed a regression in 2.0.2 concerning include files from installed plumed (see commit 562d5ea9dfc3).</li>
 <li>Small fix in tools/Random.cpp that allows Random objects to be declared as static.</li>
 <li>Fixed non-ansi syntax in a few points and a non-important memory leakage.</li>

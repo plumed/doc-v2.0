@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <div class="textblock"><p>Define a group of atoms so that a particular list of atoms can be referenced with a single label in definitions of CVs or virtual atoms.</p>
-<p>Notice that this command just creates a shortcut, and does not imply any real calculation. It is just convenient to better organize input files. Might be used in combination with the <a class="el" href="_i_n_c_l_u_d_e.html">INCLUDE</a> command so as to store long group definitions in a separate files.</p>
+<p>Notice that this command just creates a shortcut, and does not imply any real calculation. It is just convenient to better organize input files. Might be used in combination with the <a class="el" href="_i_n_c_l_u_d_e.html">INCLUDE</a> command so as to store long group definitions in a separate file.</p>
 <dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
 <tr>
@@ -112,14 +112,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 h: GROUP ATOMS=2,3,5,6,8,9,12,13
 # compute the coordination among the two groups
 c: COORDINATION GROUPA=o GROUPB=h R_0=0.3
-
 # same could have been obtained without GROUP, just writing:
 # c: COORDINATION GROUPA=1,4,7,11,14 GROUPB=2,3,5,6,8,9,12,13
-</pre><p> (see also <a class="el" href="_c_o_o_r_d_i_n_a_t_i_o_n.html">COORDINATION</a>)</p>
-<p>Groups can be conveniently stored in a separate file </p>
+
+# print the coordination on file 'colvar'
+PRINT ARG=c FILE=colvar
+</pre><p> (see also <a class="el" href="_c_o_o_r_d_i_n_a_t_i_o_n.html">COORDINATION</a> and <a class="el" href="_p_r_i_n_t.html">PRINT</a>)</p>
+<p>Groups can be conveniently stored in a separate file. E.g. one could create a file named 'groups.dat' which reads </p>
+<pre class="fragment">o: GROUP ATOMS=1,4,7,11,14
+h: GROUP ATOMS=2,3,5,6,8,9,12,13
+</pre><p> and then include it in the main 'plumed.dat' file </p>
 <pre class="fragment">INCLUDE groups.dat
+# compute the coordination among the two groups
 c: COORDINATION GROUPA=o GROUPB=h R_0=0.3
-</pre><p> (see also <a class="el" href="_i_n_c_l_u_d_e.html">INCLUDE</a> and <a class="el" href="_c_o_o_r_d_i_n_a_t_i_o_n.html">COORDINATION</a>). The groups.dat file could be very long and include lists of thousand atoms without cluttering the main plumed.dat file. </p>
+# print the coordination on file 'colvar'
+PRINT ARG=c FILE=colvar
+</pre><p> (see also <a class="el" href="_i_n_c_l_u_d_e.html">INCLUDE</a>, <a class="el" href="_c_o_o_r_d_i_n_a_t_i_o_n.html">COORDINATION</a>, and <a class="el" href="_p_r_i_n_t.html">PRINT</a>). The groups.dat file could be very long and include lists of thousand atoms without cluttering the main plumed.dat file. </p>
 </div></div>
 
 

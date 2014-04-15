@@ -9,6 +9,8 @@ Return a constant quantity.
 </td> </tr>
 <tr> <td width=5%> \subpage  CONTACTMAP </td> <td>
 Calculate the distances between a number of pairs of atoms and transform each distance by a switching function.
+The transformed distance can be compared with a set of reference values in order to calculate the squared distance
+between two contact maps.
 </td> </tr>
 <tr> <td width=5%> \subpage  COORDINATION </td> <td>
 Calculate coordination numbers.

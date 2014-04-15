@@ -4,7 +4,7 @@ var searchData=
   ['of',['of',['../class_p_l_m_d_1_1generic_1_1_dump_atoms.html#adb16bd1ec978669d31c399fdad5cc1de',1,'PLMD::generic::DumpAtoms::of()'],['../class_p_l_m_d_1_1generic_1_1_dump_derivatives.html#a7cb0cbc12ebfdb8f106e96c92d5fca7e',1,'PLMD::generic::DumpDerivatives::of()'],['../class_p_l_m_d_1_1generic_1_1_dump_forces.html#a8214cae8f74cef3ef0cacee15c232a8e',1,'PLMD::generic::DumpForces::of()'],['../class_p_l_m_d_1_1generic_1_1_dump_projections.html#aaa64f0a21a298f6ecfdfc9edcec45fef',1,'PLMD::generic::DumpProjections::of()']]],
   ['offset',['offset',['../class_p_l_m_d_1_1bias_1_1_l_walls.html#a05c93e21428a99131773e10df03b42f0',1,'PLMD::bias::LWalls::offset()'],['../class_p_l_m_d_1_1bias_1_1_u_walls.html#ad482c55f785761330ece4a0fd120e167',1,'PLMD::bias::UWalls::offset()'],['../class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a633cc9faaf3c9b63a6a0d2c2fbf2f43a',1,'PLMD::manyrestraints::Sphere::offset()']]],
   ['ofile',['OFile',['../class_p_l_m_d_1_1_o_file.html',1,'PLMD']]],
-  ['ofile',['OFile',['../class_p_l_m_d_1_1_o_file.html#a4cda93444e86dcd27bdadb87f045bd32',1,'PLMD::OFile::OFile()'],['../class_p_l_m_d_1_1generic_1_1_print.html#a7e4ea517cdad584c353820483b4d0654',1,'PLMD::generic::Print::ofile()']]],
+  ['ofile',['ofile',['../class_p_l_m_d_1_1generic_1_1_print.html#a7e4ea517cdad584c353820483b4d0654',1,'PLMD::generic::Print::ofile()'],['../class_p_l_m_d_1_1_o_file.html#a4cda93444e86dcd27bdadb87f045bd32',1,'PLMD::OFile::OFile()']]],
   ['ofile_2ecpp',['OFile.cpp',['../_o_file_8cpp.html',1,'']]],
   ['ofile_2eh',['OFile.h',['../cltools_2tools_2_o_file_8h.html',1,'']]],
   ['ofile_2eh',['OFile.h',['../vatom_2tools_2_o_file_8h.html',1,'']]],

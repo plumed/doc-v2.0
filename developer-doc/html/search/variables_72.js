@@ -8,7 +8,7 @@ var searchData=
   ['readvals',['readvals',['../class_p_l_m_d_1_1generic_1_1_read.html#a2e78ca26bae9a185a016cfd906b6638a',1,'PLMD::generic::Read']]],
   ['reduceatnextstep',['reduceAtNextStep',['../class_p_l_m_d_1_1secondarystructure_1_1_secondary_structure_r_m_s_d.html#aae3285f94a259207118f9d3e5a066757',1,'PLMD::secondarystructure::SecondaryStructureRMSD']]],
   ['reduced',['reduced',['../class_p_l_m_d_1_1_neighbor_list.html#a99c54783d14c87fdb26d7c48e4ee091b',1,'PLMD::NeighborList::reduced()'],['../class_p_l_m_d_1_1_pbc.html#a1523c38102af4b7b77099a684d62929f',1,'PLMD::Pbc::reduced()']]],
-  ['reference',['reference',['../class_p_l_m_d_1_1colvar_1_1_path_m_s_d_base.html#ac7b32dea958c3b81c115c0ac39d66816',1,'PLMD::colvar::PathMSDBase::reference()'],['../class_p_l_m_d_1_1_r_m_s_d.html#ad6687bdb16a3f210f3813af3c3242ce2',1,'PLMD::RMSD::reference()']]],
+  ['reference',['reference',['../class_p_l_m_d_1_1colvar_1_1_contact_map.html#a5994447fcd35a8c50b4bb6f7923640d8',1,'PLMD::colvar::ContactMap::reference()'],['../class_p_l_m_d_1_1colvar_1_1_path_m_s_d_base.html#ac7b32dea958c3b81c115c0ac39d66816',1,'PLMD::colvar::PathMSDBase::reference()'],['../class_p_l_m_d_1_1_r_m_s_d.html#ad6687bdb16a3f210f3813af3c3242ce2',1,'PLMD::RMSD::reference()']]],
   ['registerme',['RegisterMe',['../namespace_p_l_m_d.html#a58a6b9fdc777a0669aacee7da32bf5b0',1,'PLMD']]],
   ['remark',['remark',['../class_p_l_m_d_1_1_p_d_b.html#aee57c74aee9200e604b10f7250167611',1,'PLMD::PDB']]],
   ['requestlist_5f',['requestlist_',['../class_p_l_m_d_1_1_neighbor_list.html#a746aaebaced7e40a58774a3a7672e843',1,'PLMD::NeighborList']]],

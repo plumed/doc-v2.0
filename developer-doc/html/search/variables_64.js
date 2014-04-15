@@ -38,6 +38,7 @@ var searchData=
   ['do_5fcosine',['do_cosine',['../class_p_l_m_d_1_1colvar_1_1_torsion.html#a464f9df42a0dd2b82f727b97f0d17081',1,'PLMD::colvar::Torsion']]],
   ['do_5fpair_5f',['do_pair_',['../class_p_l_m_d_1_1_neighbor_list.html#a8539534d536635ff9ba853c5bb549f2b',1,'PLMD::NeighborList']]],
   ['do_5fpbc_5f',['do_pbc_',['../class_p_l_m_d_1_1_neighbor_list.html#a8435b5f09d388d9bd0afe7ca1ba51f50',1,'PLMD::NeighborList']]],
+  ['docmdist',['docmdist',['../class_p_l_m_d_1_1colvar_1_1_contact_map.html#a4b58f5850c0f2252e7efefa6304ab001',1,'PLMD::colvar::ContactMap']]],
   ['documentation',['documentation',['../class_p_l_m_d_1_1_keywords.html#a91bab448c40d077ed784e7e079f9e542',1,'PLMD::Keywords']]],
   ['doint_5f',['doInt_',['../class_p_l_m_d_1_1bias_1_1_meta_d.html#af31e928175fb70ecd73bdf7fdd096a1f',1,'PLMD::bias::MetaD']]],
   ['dospline_5f',['dospline_',['../class_p_l_m_d_1_1_grid.html#ace9ef69e2a5cfb8595fe6156c54ad684',1,'PLMD::Grid']]],
