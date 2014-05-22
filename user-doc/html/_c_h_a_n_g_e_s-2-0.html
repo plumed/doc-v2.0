@@ -181,6 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Fixed cmd("getBias") to retrieve bias. It was not working with single precision codes and it was not converting units properly.</li>
 <li>Fixed a regression in 2.0.2 concerning include files from installed plumed (see commit 562d5ea9dfc3).</li>
 <li>Small fix in tools/Random.cpp that allows Random objects to be declared as static.</li>
+<li>Small fix in user-doc compilation, so that if plumed is not found the sourceme.sh file is sourced</li>
 <li>Fixed non-ansi syntax in a few points and a non-important memory leakage.</li>
 <li>Split cltools/Driver.cpp to make parallel compilation faster. </li>
 </ul>

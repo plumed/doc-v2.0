@@ -163,17 +163,17 @@ UPPER_WALLS ARG=d1 AT=3.0 KAPPA=3.0 LABEL=Snout # In this same interlude it doth
 <h1><a class="anchor" id="ContinuationLines"></a>
 Continuation lines</h1>
 <p>If your input lines get very long then editing them using vi and other such text editors becomes a massive pain in the arse. We at PLUMED are aware of this fact and thus have provided a way of doing line continuations so as to make your life that much easier - aren't we kind? Well no not really, we have to use this code too. Anyway, you can do continuations by using the "..." syntax as this makes this:</p>
-<pre class="fragment">DISTANCE ATOMS1=1,300 ATOMS2=1,400 ATOMS3=1,500
-</pre><p> (see <a class="el" href="_d_i_s_t_a_n_c_e.html">DISTANCE</a>)</p>
+<pre class="fragment">DISTANCES ATOMS1=1,300 ATOMS2=1,400 ATOMS3=1,500
+</pre><p> (see <a class="el" href="_d_i_s_t_a_n_c_e_s.html">DISTANCES</a>)</p>
 <p>equivalent to this:</p>
-<pre class="fragment">DISTANCE ...
+<pre class="fragment">DISTANCES ...
 # we can also insert comments here
 ATOMS1=1,300
 # multiple kewords per line are allowed
 ATOMS2=1,400 ATOMS3=1,500
 #empty lines are also allowed
 
-... DISTANCE
+... DISTANCES
 </pre><h1><a class="anchor" id="includes"></a>
 Including other files in the PLUMED input</h1>
 <p>If, for some reason, you want to spread your PLUMED input over a number of files you can use <a class="el" href="_i_n_c_l_u_d_e.html">INCLUDE</a> as shown below:</p>
