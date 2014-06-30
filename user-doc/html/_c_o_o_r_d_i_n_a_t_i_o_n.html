@@ -100,10 +100,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <div class="textblock"><p>Calculate coordination numbers.</p>
-<p>This keyword can be used to calculate the coordination numbers for atoms in your system. We use the following switching function to make the coordination number differentiable:</p>
+<p>This keyword can be used to calculate the number of contacts between two groups of atoms and is defined as </p>
 <p class="formulaDsp">
-\[ s = \frac{ 1 - \left(\frac{r-d_0}{r_0}\right)^n } { 1 - \left(\frac{r-d_0}{r_0}\right)^m } \]
+\[ \sum_{i\in A} \sum_{i\in B} s_{ij} \]
 </p>
+<p> where \(s_{ij}\) is 1 if the contact between atoms \(i\) and \(j\) is formed, zero otherwise. In practise, \(s_{ij}\) is replaced with a switching function to make it differentiable. The default switching function is: </p>
+<p class="formulaDsp">
+\[ s_{ij} = \frac{ 1 - \left(\frac{{\bf r}_{ij}-d_0}{r_0}\right)^n } { 1 - \left(\frac{{\bf r}_{ij}-d_0}{r_0}\right)^m } \]
+</p>
+<p> but it can be changed using the optional SWITCH option.</p>
 <p>To make your calculation faster you can use a neighbor list, which makes it that only a relevant subset of the pairwise distance are calculated at every step.</p>
 <dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">

@@ -100,6 +100,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <div class="textblock"><p>Calculate Debye-Huckel interaction energy among GROUPA and GROUPB.</p>
+<p>This variable calculates the electrostatic interaction among GROUPA and GROUPB using a Debye-Huckel approximation defined as </p>
+<p class="formulaDsp">
+\[ \frac{1}{4\pi\epsilon_r\epsilon_0} \sum_{i\in A} \sum_{j \in B} q_i q_j \frac{e^{-\kappa |{\bf r}_{ij}|}}{|{\bf r}_{ij}|} \]
+</p>
 <p>This collective variable can be used to analyze or induce electrostatically driven reactions <a class="el" href="citelist.html#CITEREF_do13jctc">[10]</a>. The two atom groups should be disjointed. Notice that the value of the DHENERGY is returned in plumed units (see <a class="el" href="_u_n_i_t_s.html">UNITS</a>).</p>
 <dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
