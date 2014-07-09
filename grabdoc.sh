@@ -33,9 +33,6 @@ rm */.gitignore
 # files beginning with _ are skipped
 touch .nojekyll
 
-# Filter html so that it does not contain dates
-find . -name "*html" -type f -exec ./filter.sh {} \;
-
 cat << EOF
 # next thing you should do is:
 ###
