@@ -1,12 +1,12 @@
 <tr> <td width=5%> \ref HISTOGRAM </td><td> ANALYSIS </td><td>Calculate the probability density as a function of a few CVs using kernel density estimation</td> </tr>
 <tr> <td width=5%> \ref ABMD </td><td> BIAS </td><td>Adds a ratchet-and-pawl like restraint on one or more variables.</td> </tr>
+<tr> <td width=5%> \ref BIASVALUE </td><td> BIAS </td><td>Takes the value of one variable and use it as a bias</td> </tr>
 <tr> <td width=5%> \ref EXTERNAL </td><td> BIAS </td><td>Calculate a restraint that is defined on a grid that is read during start up</td> </tr>
 <tr> <td width=5%> \ref LOWER_WALLS </td><td> BIAS </td><td>The LOWER_WALLS and UPPER_WALLS keywords define a wall for the value of one or more collective variables, which limits the region of the phase space accessible during the simulation. </td> </tr>
 <tr> <td width=5%> \ref METAD </td><td> BIAS </td><td>Used to performed MetaDynamics on one or more collective variables.</td> </tr>
 <tr> <td width=5%> \ref MOVINGRESTRAINT </td><td> BIAS </td><td>Add a time-dependent, harmonic restraint on one or more variables.</td> </tr>
 <tr> <td width=5%> \ref RESTRAINT </td><td> BIAS </td><td>Adds harmonic and/or linear restraints on one or more variables.  </td> </tr>
 <tr> <td width=5%> \ref UPPER_WALLS </td><td> BIAS </td><td>The LOWER_WALLS and UPPER_WALLS keywords define a wall for the value of one or more collective variables, which limits the region of the phase space accessible during the simulation. </td> </tr>
-<tr> <td width=5%> \ref BIASVALUE </td><td> BIAS </td><td>Takes the value of one variable and use it as a bias</td> </tr>
 <tr> <td width=5%> \ref driver </td><td> TOOLS </td><td>driver is a tool that allows one to to use plumed to post-process an existing trajectory.</td> </tr>
 <tr> <td width=5%> \ref gentemplate </td><td> TOOLS </td><td>gentemplate is a tool that you can use to construct template inputs for the variousactions</td> </tr>
 <tr> <td width=5%> \ref info </td><td> TOOLS </td><td>This tool allows you to obtain information about your plumed version</td> </tr>

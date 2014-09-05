@@ -1,6 +1,9 @@
 <tr> <td width=5%> \subpage  ABMD </td> <td>
 Adds a ratchet-and-pawl like restraint on one or more variables.
 </td> </tr>
+<tr> <td width=5%> \subpage  BIASVALUE </td> <td>
+Takes the value of one variable and use it as a bias
+</td> </tr>
 <tr> <td width=5%> \subpage  EXTERNAL </td> <td>
 Calculate a restraint that is defined on a grid that is read during start up
 </td> </tr>
@@ -20,7 +23,4 @@ Adds harmonic and/or linear restraints on one or more variables.
 <tr> <td width=5%> \subpage  UPPER_WALLS </td> <td>
 The LOWER_WALLS and UPPER_WALLS keywords define a wall for the value of one or more collective variables,
  which limits the region of the phase space accessible during the simulation. 
-</td> </tr>
-<tr> <td width=5%> \subpage  BIASVALUE </td> <td>
-Takes the value of one variable and use it as a bias
 </td> </tr>

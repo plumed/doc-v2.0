@@ -134,6 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0fef7717eb1341600df6eacf3955aed5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_bias_representation.html#a0fef7717eb1341600df6eacf3955aed5">BiasRepresentation</a> (vector&lt; <a class="el" href="class_p_l_m_d_1_1_value.html">Value</a> * &gt; tmpvalues, <a class="el" href="class_p_l_m_d_1_1_communicator.html">Communicator</a> &amp;cc, vector&lt; string &gt; gmin, vector&lt; string &gt; gmax, vector&lt; unsigned &gt; nbin, vector&lt; double &gt; sigma)</td></tr>
 <tr class="memdesc:a0fef7717eb1341600df6eacf3955aed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a histogram with grid representation and sigmas in input  <a href="#a0fef7717eb1341600df6eacf3955aed5">More...</a><br /></td></tr>
 <tr class="separator:a0fef7717eb1341600df6eacf3955aed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1aad6fbf505e3351b0089afbda84946"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_bias_representation.html#af1aad6fbf505e3351b0089afbda84946">~BiasRepresentation</a> ()</td></tr>
+<tr class="memdesc:af1aad6fbf505e3351b0089afbda84946"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor  <a href="#af1aad6fbf505e3351b0089afbda84946">More...</a><br /></td></tr>
+<tr class="separator:af1aad6fbf505e3351b0089afbda84946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabdbb9d196f88d2b7c0efe133b4e2515"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_bias_representation.html#aabdbb9d196f88d2b7c0efe133b4e2515">getNumberOfDimensions</a> ()</td></tr>
 <tr class="memdesc:aabdbb9d196f88d2b7c0efe133b4e2515"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve the number of dimension of the representation  <a href="#aabdbb9d196f88d2b7c0efe133b4e2515">More...</a><br /></td></tr>
 <tr class="separator:aabdbb9d196f88d2b7c0efe133b4e2515"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,10 +201,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3b58488ec406bb96119e35b6c0a689bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa05742014ed9f1f13b346a0bb15bf96b"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_bias_representation.html#aa05742014ed9f1f13b346a0bb15bf96b">histosigma</a></td></tr>
 <tr class="separator:aa05742014ed9f1f13b346a0bb15bf96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac36d8634713d4f4e71f9f541aa0835b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_l_m_d_1_1_grid.html">Grid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_bias_representation.html#ac36d8634713d4f4e71f9f541aa0835b0">BiasGrid_</a></td></tr>
-<tr class="separator:ac36d8634713d4f4e71f9f541aa0835b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dc09cc8fc4da1535e073e47585c0a7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_l_m_d_1_1_communicator.html">Communicator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_bias_representation.html#a8dc09cc8fc4da1535e073e47585c0a7d">mycomm</a></td></tr>
 <tr class="separator:a8dc09cc8fc4da1535e073e47585c0a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36d8634713d4f4e71f9f541aa0835b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_l_m_d_1_1_grid.html">Grid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_l_m_d_1_1_bias_representation.html#ac36d8634713d4f4e71f9f541aa0835b0">BiasGrid_</a></td></tr>
+<tr class="separator:ac36d8634713d4f4e71f9f541aa0835b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>this class implements a general purpose class that aims to provide a Grid/list transparently add gaussians to a bias </p>
@@ -380,6 +383,25 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af1aad6fbf505e3351b0089afbda84946"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PLMD::BiasRepresentation::~BiasRepresentation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>destructor </p>
+
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00073">73</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a8eadd3d8c37e3c6250a77606389fdf36"></a>
 <div class="memitem">
@@ -413,7 +435,7 @@ Private Attributes</h2></td></tr>
 
 <p>add the grid to the representation </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00073">73</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00078">78</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -432,7 +454,7 @@ Private Attributes</h2></td></tr>
 
 <p>clear the representation (grid included) </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00243">243</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00248">248</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -451,7 +473,7 @@ Private Attributes</h2></td></tr>
 
 <p>get the pointer to the grid </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00205">205</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00210">210</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -487,7 +509,7 @@ Private Attributes</h2></td></tr>
 
 <p>get an automatic min/max from the set so to know how to configure the grid </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00209">209</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00214">214</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -507,7 +529,7 @@ Private Attributes</h2></td></tr>
 
 <p>get the name of the i-th value </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00099">99</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00104">104</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +548,7 @@ Private Attributes</h2></td></tr>
 
 <p>get the names of the variables </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00096">96</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00101">101</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -545,7 +567,7 @@ Private Attributes</h2></td></tr>
 
 <p>retrieve the number of dimension of the representation </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00093">93</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00098">98</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -564,7 +586,7 @@ Private Attributes</h2></td></tr>
 
 <p>get the number of kernels contained in the representation </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00202">202</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00207">207</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -584,7 +606,7 @@ Private Attributes</h2></td></tr>
 
 <p>get a pointer to a specific value </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00106">106</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00111">111</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -603,7 +625,7 @@ Private Attributes</h2></td></tr>
 
 <p>get the pointer to the values </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00103">103</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00108">108</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -622,7 +644,7 @@ Private Attributes</h2></td></tr>
 
 <p>check if the sigma values are already provided (in case of a histogram representation with input sigmas) </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00082">82</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00087">87</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -641,7 +663,7 @@ Private Attributes</h2></td></tr>
 
 <p>check if the representation is rescaled to the bias </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00089">89</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00094">94</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -661,7 +683,7 @@ Private Attributes</h2></td></tr>
 
 <p>push a kernel on the representation (includes widths and height) </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00118">118</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00123">123</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -681,7 +703,7 @@ Private Attributes</h2></td></tr>
 
 <p>get a new histogram point from a file </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00110">110</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00115">115</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -701,7 +723,7 @@ Private Attributes</h2></td></tr>
 
 <p>set the flag that rescales the free energy to the bias </p>
 
-<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00085">85</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bias_representation_8cpp_source.html#l00090">90</a> of file <a class="el" href="_bias_representation_8cpp_source.html">BiasRepresentation.cpp</a>.</p>
 
 </div>
 </div>
@@ -724,7 +746,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00092">92</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00094">94</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -746,7 +768,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00094">94</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00097">97</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -768,7 +790,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00087">87</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00089">89</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -790,7 +812,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00091">91</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00093">93</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -812,7 +834,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00093">93</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00095">95</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -834,7 +856,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00095">95</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00096">96</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -856,7 +878,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00090">90</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00092">92</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -878,7 +900,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00086">86</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00088">88</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -900,7 +922,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00088">88</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00090">90</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -922,7 +944,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00089">89</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_bias_representation_8h_source.html#l00091">91</a> of file <a class="el" href="tools_2_bias_representation_8h_source.html">BiasRepresentation.h</a>.</p>
 
 </div>
 </div>

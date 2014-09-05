@@ -228,7 +228,7 @@ var searchData=
   ['sum_2ecpp',['Sum.cpp',['../_sum_8cpp.html',1,'']]],
   ['sumhills_2ecpp',['SumHills.cpp',['../_sum_hills_8cpp.html',1,'']]],
   ['switchgaussian',['switchGaussian',['../class_p_l_m_d_1_1_random.html#a15b7435563d26cc21b7d61e352b48bd3',1,'PLMD::Random']]],
-  ['switchingfunction',['SwitchingFunction',['../class_p_l_m_d_1_1_switching_function.html#a9f1a2d687e16ec8236efe2d8331620f2',1,'PLMD::SwitchingFunction::SwitchingFunction()'],['../class_p_l_m_d_1_1colvar_1_1_coordination.html#a5ff253b5d11909590bcbfcbfabf24392',1,'PLMD::colvar::Coordination::switchingFunction()'],['../class_p_l_m_d_1_1multicolvar_1_1_coordination_numbers.html#a5d37417b1004a5b5fe9c8eff8811357f',1,'PLMD::multicolvar::CoordinationNumbers::switchingFunction()']]],
+  ['switchingfunction',['switchingFunction',['../class_p_l_m_d_1_1colvar_1_1_coordination.html#a5ff253b5d11909590bcbfcbfabf24392',1,'PLMD::colvar::Coordination::switchingFunction()'],['../class_p_l_m_d_1_1multicolvar_1_1_coordination_numbers.html#a5d37417b1004a5b5fe9c8eff8811357f',1,'PLMD::multicolvar::CoordinationNumbers::switchingFunction()'],['../class_p_l_m_d_1_1_switching_function.html#a9f1a2d687e16ec8236efe2d8331620f2',1,'PLMD::SwitchingFunction::SwitchingFunction()']]],
   ['switchingfunction',['SwitchingFunction',['../class_p_l_m_d_1_1_switching_function.html',1,'PLMD']]],
   ['switchingfunction_2ecpp',['SwitchingFunction.cpp',['../_switching_function_8cpp.html',1,'']]],
   ['switchingfunction_2eh',['SwitchingFunction.h',['../manyrestraints_2tools_2_switching_function_8h.html',1,'']]],

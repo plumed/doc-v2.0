@@ -4,6 +4,9 @@
 /// \class PLMD::bias::ABMD
 /// \ingroup INPUTDIRECTIVES
 /// Provides the keyword <a href="../../user-doc/html/_a_b_m_d.html"> ABMD </a>
+/// \class PLMD::bias::BiasValue
+/// \ingroup INPUTDIRECTIVES
+/// Provides the keyword <a href="../../user-doc/html/_b_i_a_s_v_a_l_u_e.html"> BIASVALUE </a>
 /// \class PLMD::bias::External
 /// \ingroup INPUTDIRECTIVES
 /// Provides the keyword <a href="../../user-doc/html/_e_x_t_e_r_n_a_l.html"> EXTERNAL </a>
@@ -22,9 +25,6 @@
 /// \class PLMD::bias::UWalls
 /// \ingroup INPUTDIRECTIVES
 /// Provides the keyword <a href="../../user-doc/html/_u_p_p_e_r__w_a_l_l_s.html"> UPPER_WALLS </a>
-/// \class PLMD::bias::BiasValue
-/// \ingroup INPUTDIRECTIVES
-/// Provides the keyword <a href="../../user-doc/html/_b_i_a_s_v_a_l_u_e.html"> BIASVALUE </a>
 /// \class PLMD::colvar::Angle
 /// \ingroup INPUTDIRECTIVES
 /// Provides the keyword <a href="../../user-doc/html/_a_n_g_l_e.html"> ANGLE </a>

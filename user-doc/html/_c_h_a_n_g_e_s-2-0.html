@@ -177,7 +177,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <h2>Unreleased changes (will be included in 2.0.4) </h2>
 <p>See <a href="http://github.com/plumed/plumed2/commits/v2.0">branch v2.0 on git repository</a>.</p>
-<p>Anything yet. </p>
+<p>For users:</p><ul>
+<li>Fixed a bug in <a class="el" href="_b_i_a_s_v_a_l_u_e.html">BIASVALUE</a> that could produce wrong acceptance with replica exchange simulations.</li>
+<li>Fixed a few innocuous memory leaks.</li>
+<li>Fixed reader for xyz files, that now correctly detecs missing columns. Also a related regtest has been changed.</li>
+</ul>
+<p>For developers:</p><ul>
+<li>Renamed Value.cpp to BiasValue.cpp </li>
+</ul>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
