@@ -192,7 +192,8 @@ Related Functions</h2></td></tr>
   plumed_massert(a&gt;0,"a should be larger than zero");
   if(a&lt;=0) plumed_error();
   if(a&lt;=0) plumed_merror("a should be larger than zero");
-</pre><p>By default, execution is terminated imediately and a message is printed on stderr.</p>
+</pre><p> The additional macros <a class="el" href="class_p_l_m_d_1_1_exception.html#a77eba41deab3b4b8b31d63832e288e61">plumed_dbg_assert()</a> and <a class="el" href="class_p_l_m_d_1_1_exception.html#a24b1e38e9efea0c7777b84bdee9c5240">plumed_dbg_massert()</a> are similar to <a class="el" href="class_p_l_m_d_1_1_exception.html#a07070e1d98cd5d3ca620b1d2b313ddfe">plumed_assert()</a> and <a class="el" href="class_p_l_m_d_1_1_exception.html#ab0336f6aa7d7ecbcd1dcb8d0bb18132a">plumed_massert()</a> respectively, but the corresponding check is only performed when NDEBUG macro is not defined. They should be used when the check is expensive and should be skipped in production code.</p>
+<p>By default, execution is terminated imediately and a message is printed on stderr.</p>
 <p>If PLUMED is compiled with -D__PLUMED_EXCEPTIONS execution will continue and the exception will be passed to c++, so that it will be possible to intercepted it at a higher level, even outside plumed. E.g., in an external c++ code using PLUMED as a library, one can type </p><pre class="fragment">  try{
     plumed.cmd("setPrecision",n);
   } catch (std::exception &amp; e) {
@@ -202,7 +203,7 @@ Related Functions</h2></td></tr>
 </pre><p> This can be useful if an external code wants to exit in a controlled manner (e.g. flushing files, printing the error message in a specific file, etc.) but is anyway limited to c++ codes. Moreover, since these errors are expected to be unrecoverable, the MD code will usually not be able to do something more clever than exiting.</p>
 <dl class="section note"><dt>Note</dt><dd>In the future we might decide to extend the usage of exceptions to detect recoverable errors (e.g. optional arguments not found, etc), even if I am not fully convinced that this is a good idea. Notice that sometime people claim that code compiled with exception enabled is slower (GB) </dd></dl>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00090">90</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00096">96</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6b0ef6d002ab91b536ad9ef70c3458db"></a>
 <div class="memitem">
@@ -314,7 +315,7 @@ Related Functions</h2></td></tr>
 
 <p>Destructor should be defined and should not throw other exceptions. </p>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00107">107</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00113">113</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>
@@ -425,7 +426,7 @@ Related Functions</h2></td></tr>
 
 <p>Returns the error message. </p>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00105">105</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00111">111</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>
@@ -453,7 +454,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Conditionally print file/line/function information and exit </p>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00123">123</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00129">129</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>
@@ -480,7 +481,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Conditionally print file/line/function information and exit when NDEBUG flag is not present </p>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00134">134</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00140">140</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>
@@ -515,9 +516,9 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Conditionally print file/line/function information plus msg and exit when NDEBUG flast is not present </p>
+<p>Conditionally print file/line/function information plus msg and exit when NDEBUG flag is not present </p>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00137">137</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00143">143</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>
@@ -543,7 +544,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Just print file/line/function information and exit </p>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00117">117</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00123">123</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>
@@ -580,7 +581,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Conditionally print file/line/function information plus msg and exit </p>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00126">126</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00132">132</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>
@@ -607,7 +608,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Print file/line/function information plus msg and exit </p>
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00120">120</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00126">126</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>
@@ -630,7 +631,7 @@ Related Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00092">92</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
+<p>Definition at line <a class="el" href="tools_2_exception_8h_source.html#l00098">98</a> of file <a class="el" href="tools_2_exception_8h_source.html">Exception.h</a>.</p>
 
 </div>
 </div>

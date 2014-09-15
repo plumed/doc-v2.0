@@ -109,6 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p class="formulaDsp">
 \[ {r}_{\rm COM}=\frac{\sum_i^{n} {r}_i\ m_i }{\sum_i^{n} m_i} \]
 </p>
+<p>The radius of gyration is calculated without applying periodic boundary conditions so the atoms used for the calculation should all be part of the same molecule that should be made whole before calculating the cv, <a class="el" href="_w_h_o_l_e_m_o_l_e_c_u_l_e_s.html">WHOLEMOLECULES</a>.</p>
 <dl class="section user"><dt>The atoms involved can be specified using</dt><dd></dd></dl>
 <table  align="center" frame="void" width="95%%" cellpadding="5%%">
 <tr>
@@ -124,14 +125,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td width="15%"><b> NUMERICAL_DERIVATIVES </b> </td><td>( default=off ) calculate the derivatives for these quantities numerically   </td></tr>
 <tr>
-<td width="15%"><b> NOPBC </b> </td><td>( default=off ) ignore the periodic boundary conditions when calculating distances   </td></tr>
-<tr>
 <td width="15%"><b> NOT_MASS_WEIGHTED </b> </td><td><p class="starttd">( default=off ) set the masses of all the atoms equal to one  </p>
 <p class="endtd"></p>
 </td></tr>
 </table>
 <dl class="section user"><dt>Examples</dt><dd></dd></dl>
-<p>The following input tells plumed to print the radius of gyration of the chain containing atoms 10 to 20. </p><pre class="fragment">GYRATION TYPE=RADIUS ATOMS=10-20 LABEL=rg
+<p>The following input tells plumed to print the radius of gyration of the chain containing atoms 10 to 20. </p><pre class="fragment">WHOLEMOLECULES ENTITY0=10-20
+GYRATION TYPE=RADIUS ATOMS=10-20 LABEL=rg
 PRINT ARG=rg STRIDE=1 FILE=colvar
 </pre><p> (See also <a class="el" href="_p_r_i_n_t.html">PRINT</a>) </p>
 </div></div><!-- contents -->
