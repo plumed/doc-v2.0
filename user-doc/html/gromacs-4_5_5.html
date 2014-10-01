@@ -99,7 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">gromacs-4.5.5 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>PLUMED can be incorporated into gromacs using a simple patching procedure. Patching must be done <em>after</em> gromacs has been configured but <em>before</em> gromacs is compiled</p>
+<div class="textblock"><p>PLUMED can be incorporated into gromacs using the standard patching procedure. Patching must be done in the gromacs source directory <em>after</em> gromacs has been configured but <em>before</em> gromacs is compiled. Gromcas should be configured with ./configure (not cmake).</p>
+<p>To enable PLUMED in a gromacs simulation one should use mdrun with an extra -plumed flag. The flag can be used to specify the name of the PLUMED input file, e.g.:</p>
+<p>mdrun -plumed plumed.dat</p>
 <p>For more information on gromacs you should visit <a href="http://www.gromacs.org">http://www.gromacs.org</a> </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->

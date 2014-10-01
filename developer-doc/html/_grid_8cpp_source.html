@@ -690,251 +690,252 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; <span class="comment">// Retrieve names for fields</span></div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160; <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;args.size();++i) labels[i]=args[i]-&gt;getName();</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; <span class="comment">// And read the stuff from the header</span></div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;args.size();++i){</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;min_&quot;</span> + labels[i], gmin[i]);</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;max_&quot;</span> + labels[i], gmax[i]);</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;periodic_&quot;</span> + labels[i], pstring );</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;nbins_&quot;</span> + labels[i], gbin1[i]);</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;     plumed_assert( gbin1[i]&gt;0 ); </div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;     <span class="keywordflow">if</span>( args[i]-&gt;isPeriodic() ){</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;         plumed_massert( pstring==<span class="stringliteral">&quot;true&quot;</span>, <span class="stringliteral">&quot;input value is periodic but grid is not&quot;</span>);</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;         std::string pmin, pmax;</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;         args[i]-&gt;getDomain( pmin, pmax ); gbin[i]=gbin1[i];</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;         <span class="keywordflow">if</span>( pmin!=gmin[i] || pmax!=gmax[i] ) plumed_merror(<span class="stringliteral">&quot;mismatch between grid boundaries and periods of values&quot;</span>);</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;     } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;         gbin[i]=gbin1[i]-1;  <span class="comment">// Note header in grid file indicates one more bin that there should be when data is not periodic</span></div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;         plumed_massert( pstring==<span class="stringliteral">&quot;false&quot;</span>, <span class="stringliteral">&quot;input value is not periodic but grid is&quot;</span>);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;     }</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;     hasder=ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#a808a3661f4ed93f73c1e8a202328dc2c">FieldExist</a>( <span class="stringliteral">&quot;der_&quot;</span> + args[i]-&gt;getName() );</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;     <span class="keywordflow">if</span>( doder &amp;&amp; !hasder ) plumed_merror(<span class="stringliteral">&quot;missing derivatives from grid file&quot;</span>); </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;     <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;fieldnames.size();++j){</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> k=i+1;k&lt;args.size();++k){</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;             <span class="keywordflow">if</span>( fieldnames[j]==labels[k] ) plumed_merror(<span class="stringliteral">&quot;arguments in input are not in same order as in grid file&quot;</span>);</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;         }</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;         <span class="keywordflow">if</span>( fieldnames[j]==labels[i] ) <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;     }</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; }</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; <span class="keywordflow">if</span>(!dosparse){grid=<span class="keyword">new</span> <a class="code" href="class_p_l_m_d_1_1_grid.html">Grid</a>(funcl,args,gmin,gmax,gbin,dospline,doder);}</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; <span class="keywordflow">else</span>{grid=<span class="keyword">new</span> <a class="code" href="class_p_l_m_d_1_1_sparse_grid.html">SparseGrid</a>(funcl,args,gmin,gmax,gbin,dospline,doder);}</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; vector&lt;double&gt; xx(nvar),dder(nvar);</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; vector&lt;double&gt; dx=grid-&gt;<a class="code" href="class_p_l_m_d_1_1_grid.html#a42f078debb0ef43f5f99b8a2dd04442c">getDx</a>();</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; <span class="keywordtype">double</span> f,x;</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; <span class="keywordflow">while</span>( ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>(funcl,f) ){</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;nvar;++i){ </div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>(labels[i],x); xx[i]=x+dx[i]/2.0; </div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;min_&quot;</span> + labels[i], gmin[i]);</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;max_&quot;</span> + labels[i], gmax[i]);</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;nbins_&quot;</span> + labels[i], gbin1[i]);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;periodic_&quot;</span> + labels[i], pstring );</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;  }</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;  <span class="keywordflow">if</span>(hasder){ <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;nvar;++i){ ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;der_&quot;</span> + args[i]-&gt;getName(), dder[i] ); } }</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;  <span class="keywordtype">unsigned</span> index=grid-&gt;<a class="code" href="class_p_l_m_d_1_1_grid.html#afa03ea10f7ff71f9287606ab980cbdd5">getIndex</a>(xx);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;  <span class="keywordflow">if</span>(doder){grid-&gt;<a class="code" href="class_p_l_m_d_1_1_grid.html#a4e616b89c9dfb11b9312d64b70f41cb8">setValueAndDerivatives</a>(index,f,dder);}</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;  <span class="keywordflow">else</span>{grid-&gt;<a class="code" href="class_p_l_m_d_1_1_grid.html#a38b713b91761fb9dfee85bc05b6aeb58">setValue</a>(index,f);}</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;  ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>();</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; }</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; <span class="keywordflow">return</span> grid;</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;}</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="comment">// Sparse version of grid with map</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a4f43c29c1dedc26715e858f49a64dc6d">  632</a></span>&#160;<span class="keywordtype">void</span> SparseGrid::clear(){</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; map_.<a class="code" href="class_p_l_m_d_1_1_grid.html#a169e1d3cabfd373ff2f2afbd39dfd3b3">clear</a>();</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;}</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;</div>
-<div class="line"><a name="l00636"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#ad907afd93128e43318ad9ef3f9166f9c">  636</a></span>&#160;<span class="keywordtype">unsigned</span> SparseGrid::getSize()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; <span class="keywordflow">return</span> map_.size(); </div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;}</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;</div>
-<div class="line"><a name="l00640"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a9d91db30d001e12633a011a9d44bdd70">  640</a></span>&#160;<span class="keywordtype">unsigned</span> SparseGrid::getMaxSize()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; <span class="keywordflow">return</span> maxsize_; </div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;}</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;</div>
-<div class="line"><a name="l00644"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#af9f31acb80c8283e3f47dd163151a35c">  644</a></span>&#160;<span class="keywordtype">double</span> SparseGrid::getValue(<span class="keywordtype">unsigned</span> index)<span class="keyword">const</span>{</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; plumed_assert(index&lt;maxsize_);</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; <span class="keywordtype">double</span> value=0.0;</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; <a class="code" href="class_p_l_m_d_1_1_sparse_grid.html#a299bd56ba2a077b7a3c1526ad1663782">iterator</a> it=map_.find(index);</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; <span class="keywordflow">if</span>(it!=map_.end()) value=it-&gt;second;</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160; <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;}</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;<span class="keywordtype">double</span> SparseGrid::getValueAndDerivatives</div>
-<div class="line"><a name="l00653"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#ab7a967a4d67fe9c059a63d5ea29addfc">  653</a></span>&#160; (<span class="keywordtype">unsigned</span> index, vector&lt;double&gt;&amp; der)<span class="keyword">const</span>{</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; usederiv_ &amp;&amp; der.size()==dimension_);</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; <span class="keywordtype">double</span> value=0.0;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0;i&lt;dimension_;++i) der[i]=0.0;</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; <a class="code" href="class_p_l_m_d_1_1_sparse_grid.html#a299bd56ba2a077b7a3c1526ad1663782">iterator</a> it=map_.find(index);</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; <span class="keywordflow">if</span>(it!=map_.end()) value=it-&gt;second;</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; <a class="code" href="class_p_l_m_d_1_1_sparse_grid.html#afba03e91518a5899fd53d1a877d32112">iterator_der</a> itder=der_.find(index);</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160; <span class="keywordflow">if</span>(itder!=der_.end()) der=itder-&gt;second;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;}</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;</div>
-<div class="line"><a name="l00664"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#ae27b9b4e1c74343c1184c39a67fbca14">  664</a></span>&#160;<span class="keywordtype">void</span> SparseGrid::setValue(<span class="keywordtype">unsigned</span> index, <span class="keywordtype">double</span> value){</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; !usederiv_);</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; map_[index]=value;</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;}</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="keywordtype">void</span> SparseGrid::setValueAndDerivatives</div>
-<div class="line"><a name="l00670"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a38f3767d5fc2fb4755b815f7e1c018d1">  670</a></span>&#160; (<span class="keywordtype">unsigned</span> index, <span class="keywordtype">double</span> value, vector&lt;double&gt;&amp; der){</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; usederiv_ &amp;&amp; der.size()==dimension_);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; map_[index]=value;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; der_[index]=der;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;}</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;</div>
-<div class="line"><a name="l00676"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#acc694b2036e8437551a28fc7985cd80a">  676</a></span>&#160;<span class="keywordtype">void</span> SparseGrid::addValue(<span class="keywordtype">unsigned</span> index, <span class="keywordtype">double</span> value){</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; !usederiv_);</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160; map_[index]+=value;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;}</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;<span class="keywordtype">void</span> SparseGrid::addValueAndDerivatives</div>
-<div class="line"><a name="l00682"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a18c185612720ac642ed7e7350a916968">  682</a></span>&#160; (<span class="keywordtype">unsigned</span> index, <span class="keywordtype">double</span> value, vector&lt;double&gt;&amp; der){</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; usederiv_ &amp;&amp; der.size()==dimension_);</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; map_[index]+=value;</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; der_[index].resize(dimension_);</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0;i&lt;dimension_;++i) der_[index][i]+=der[i]; </div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;}</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;</div>
-<div class="line"><a name="l00689"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a66c965454f664b3ca3eb2a3a7fd58c67">  689</a></span>&#160;<span class="keywordtype">void</span> SparseGrid::writeToFile(<a class="code" href="class_p_l_m_d_1_1_o_file.html">OFile</a>&amp; ofile){</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; vector&lt;double&gt; xx(dimension_);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; vector&lt;double&gt; der(dimension_);</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; <span class="keywordtype">double</span> f;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; writeHeader(ofile);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a037c292bae9c66521e5d75347d883e8e">fmtField</a>(<span class="stringliteral">&quot; &quot;</span>+fmt_);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; <span class="keywordflow">for</span>(<a class="code" href="class_p_l_m_d_1_1_sparse_grid.html#a299bd56ba2a077b7a3c1526ad1663782">iterator</a> it=map_.begin();it!=map_.end();++it){</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;   <span class="keywordtype">unsigned</span> i=(*it).first;</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;   xx=getPoint(i);</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;   <span class="keywordflow">if</span>(usederiv_){f=getValueAndDerivatives(i,der);} </div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;   <span class="keywordflow">else</span>{f=getValue(i);}</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;   <span class="keywordflow">if</span>(i&gt;0 &amp;&amp; dimension_&gt;1 &amp;&amp; getIndices(i)[dimension_-2]==0) ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimension_;++j){</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;       ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;min_&quot;</span> + argnames[j], str_min_[j] );</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;       ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;max_&quot;</span> + argnames[j], str_max_[j] );</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;       ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;nbins_&quot;</span> + argnames[j], static_cast&lt;int&gt;(nbin_[j]) );</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;       <span class="keywordflow">if</span>( pbc_[j] ) ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;periodic_&quot;</span> + argnames[j], <span class="stringliteral">&quot;true&quot;</span> );</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;       <span class="keywordflow">else</span>          ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;periodic_&quot;</span> + argnames[j], <span class="stringliteral">&quot;false&quot;</span> );</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;   }</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimension_;++j) ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(argnames[j],xx[j]);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;   ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(funcname, f);</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;   <span class="keywordflow">if</span>(usederiv_){ <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimension_;++j) ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;der_&quot;</span> + argnames[j],der[j]); }</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;   ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>();</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; }</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;}</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; plumed_massert( ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#a808a3661f4ed93f73c1e8a202328dc2c">FieldExist</a>( funcl ) , <span class="stringliteral">&quot;no column labelled &quot;</span> + funcl + <span class="stringliteral">&quot; in in grid input&quot;</span>);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;args.size();++i){</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;min_&quot;</span> + labels[i], gmin[i]);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;max_&quot;</span> + labels[i], gmax[i]);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;periodic_&quot;</span> + labels[i], pstring );</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;nbins_&quot;</span> + labels[i], gbin1[i]);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;     plumed_assert( gbin1[i]&gt;0 ); </div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;     <span class="keywordflow">if</span>( args[i]-&gt;isPeriodic() ){</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;         plumed_massert( pstring==<span class="stringliteral">&quot;true&quot;</span>, <span class="stringliteral">&quot;input value is periodic but grid is not&quot;</span>);</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;         std::string pmin, pmax;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;         args[i]-&gt;getDomain( pmin, pmax ); gbin[i]=gbin1[i];</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;         <span class="keywordflow">if</span>( pmin!=gmin[i] || pmax!=gmax[i] ) plumed_merror(<span class="stringliteral">&quot;mismatch between grid boundaries and periods of values&quot;</span>);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;     } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;         gbin[i]=gbin1[i]-1;  <span class="comment">// Note header in grid file indicates one more bin that there should be when data is not periodic</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;         plumed_massert( pstring==<span class="stringliteral">&quot;false&quot;</span>, <span class="stringliteral">&quot;input value is not periodic but grid is&quot;</span>);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;     }</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;     hasder=ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#a808a3661f4ed93f73c1e8a202328dc2c">FieldExist</a>( <span class="stringliteral">&quot;der_&quot;</span> + args[i]-&gt;getName() );</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;     <span class="keywordflow">if</span>( doder &amp;&amp; !hasder ) plumed_merror(<span class="stringliteral">&quot;missing derivatives from grid file&quot;</span>); </div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;     <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;fieldnames.size();++j){</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> k=i+1;k&lt;args.size();++k){</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;             <span class="keywordflow">if</span>( fieldnames[j]==labels[k] ) plumed_merror(<span class="stringliteral">&quot;arguments in input are not in same order as in grid file&quot;</span>);</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;         }</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;         <span class="keywordflow">if</span>( fieldnames[j]==labels[i] ) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;     }</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; }</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; <span class="keywordflow">if</span>(!dosparse){grid=<span class="keyword">new</span> <a class="code" href="class_p_l_m_d_1_1_grid.html">Grid</a>(funcl,args,gmin,gmax,gbin,dospline,doder);}</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; <span class="keywordflow">else</span>{grid=<span class="keyword">new</span> <a class="code" href="class_p_l_m_d_1_1_sparse_grid.html">SparseGrid</a>(funcl,args,gmin,gmax,gbin,dospline,doder);}</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; vector&lt;double&gt; xx(nvar),dder(nvar);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; vector&lt;double&gt; dx=grid-&gt;<a class="code" href="class_p_l_m_d_1_1_grid.html#a42f078debb0ef43f5f99b8a2dd04442c">getDx</a>();</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; <span class="keywordtype">double</span> f,x;</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160; <span class="keywordflow">while</span>( ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>(funcl,f) ){</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;nvar;++i){ </div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>(labels[i],x); xx[i]=x+dx[i]/2.0; </div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;min_&quot;</span> + labels[i], gmin[i]);</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;max_&quot;</span> + labels[i], gmax[i]);</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;nbins_&quot;</span> + labels[i], gbin1[i]);</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;     ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;periodic_&quot;</span> + labels[i], pstring );</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;  }</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;  <span class="keywordflow">if</span>(hasder){ <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;nvar;++i){ ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>( <span class="stringliteral">&quot;der_&quot;</span> + args[i]-&gt;getName(), dder[i] ); } }</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;  <span class="keywordtype">unsigned</span> index=grid-&gt;<a class="code" href="class_p_l_m_d_1_1_grid.html#afa03ea10f7ff71f9287606ab980cbdd5">getIndex</a>(xx);</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;  <span class="keywordflow">if</span>(doder){grid-&gt;<a class="code" href="class_p_l_m_d_1_1_grid.html#a4e616b89c9dfb11b9312d64b70f41cb8">setValueAndDerivatives</a>(index,f,dder);}</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;  <span class="keywordflow">else</span>{grid-&gt;<a class="code" href="class_p_l_m_d_1_1_grid.html#a38b713b91761fb9dfee85bc05b6aeb58">setValue</a>(index,f);}</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;  ifile.<a class="code" href="class_p_l_m_d_1_1_i_file.html#ad096909f5bcfce00897e8b8b8e9cfd98">scanField</a>();</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; }</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; <span class="keywordflow">return</span> grid;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;}</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="comment">// Sparse version of grid with map</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a4f43c29c1dedc26715e858f49a64dc6d">  633</a></span>&#160;<span class="keywordtype">void</span> SparseGrid::clear(){</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; map_.<a class="code" href="class_p_l_m_d_1_1_grid.html#a169e1d3cabfd373ff2f2afbd39dfd3b3">clear</a>();</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;}</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;</div>
+<div class="line"><a name="l00637"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#ad907afd93128e43318ad9ef3f9166f9c">  637</a></span>&#160;<span class="keywordtype">unsigned</span> SparseGrid::getSize()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160; <span class="keywordflow">return</span> map_.size(); </div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;}</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;</div>
+<div class="line"><a name="l00641"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a9d91db30d001e12633a011a9d44bdd70">  641</a></span>&#160;<span class="keywordtype">unsigned</span> SparseGrid::getMaxSize()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160; <span class="keywordflow">return</span> maxsize_; </div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;}</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;</div>
+<div class="line"><a name="l00645"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#af9f31acb80c8283e3f47dd163151a35c">  645</a></span>&#160;<span class="keywordtype">double</span> SparseGrid::getValue(<span class="keywordtype">unsigned</span> index)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; plumed_assert(index&lt;maxsize_);</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; <span class="keywordtype">double</span> value=0.0;</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; <a class="code" href="class_p_l_m_d_1_1_sparse_grid.html#a299bd56ba2a077b7a3c1526ad1663782">iterator</a> it=map_.find(index);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160; <span class="keywordflow">if</span>(it!=map_.end()) value=it-&gt;second;</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;}</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;<span class="keywordtype">double</span> SparseGrid::getValueAndDerivatives</div>
+<div class="line"><a name="l00654"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#ab7a967a4d67fe9c059a63d5ea29addfc">  654</a></span>&#160; (<span class="keywordtype">unsigned</span> index, vector&lt;double&gt;&amp; der)<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; usederiv_ &amp;&amp; der.size()==dimension_);</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; <span class="keywordtype">double</span> value=0.0;</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0;i&lt;dimension_;++i) der[i]=0.0;</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; <a class="code" href="class_p_l_m_d_1_1_sparse_grid.html#a299bd56ba2a077b7a3c1526ad1663782">iterator</a> it=map_.find(index);</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; <span class="keywordflow">if</span>(it!=map_.end()) value=it-&gt;second;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160; <a class="code" href="class_p_l_m_d_1_1_sparse_grid.html#afba03e91518a5899fd53d1a877d32112">iterator_der</a> itder=der_.find(index);</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; <span class="keywordflow">if</span>(itder!=der_.end()) der=itder-&gt;second;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;}</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;</div>
+<div class="line"><a name="l00665"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#ae27b9b4e1c74343c1184c39a67fbca14">  665</a></span>&#160;<span class="keywordtype">void</span> SparseGrid::setValue(<span class="keywordtype">unsigned</span> index, <span class="keywordtype">double</span> value){</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; !usederiv_);</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; map_[index]=value;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;}</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<span class="keywordtype">void</span> SparseGrid::setValueAndDerivatives</div>
+<div class="line"><a name="l00671"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a38f3767d5fc2fb4755b815f7e1c018d1">  671</a></span>&#160; (<span class="keywordtype">unsigned</span> index, <span class="keywordtype">double</span> value, vector&lt;double&gt;&amp; der){</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; usederiv_ &amp;&amp; der.size()==dimension_);</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; map_[index]=value;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; der_[index]=der;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;}</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div>
+<div class="line"><a name="l00677"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#acc694b2036e8437551a28fc7985cd80a">  677</a></span>&#160;<span class="keywordtype">void</span> SparseGrid::addValue(<span class="keywordtype">unsigned</span> index, <span class="keywordtype">double</span> value){</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; !usederiv_);</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; map_[index]+=value;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;}</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="keywordtype">void</span> SparseGrid::addValueAndDerivatives</div>
+<div class="line"><a name="l00683"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a18c185612720ac642ed7e7350a916968">  683</a></span>&#160; (<span class="keywordtype">unsigned</span> index, <span class="keywordtype">double</span> value, vector&lt;double&gt;&amp; der){</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; plumed_assert(index&lt;maxsize_ &amp;&amp; usederiv_ &amp;&amp; der.size()==dimension_);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; map_[index]+=value;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; der_[index].resize(dimension_);</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0;i&lt;dimension_;++i) der_[index][i]+=der[i]; </div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;}</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;</div>
+<div class="line"><a name="l00690"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_sparse_grid.html#a66c965454f664b3ca3eb2a3a7fd58c67">  690</a></span>&#160;<span class="keywordtype">void</span> SparseGrid::writeToFile(<a class="code" href="class_p_l_m_d_1_1_o_file.html">OFile</a>&amp; ofile){</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; vector&lt;double&gt; xx(dimension_);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; vector&lt;double&gt; der(dimension_);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; <span class="keywordtype">double</span> f;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; writeHeader(ofile);</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a037c292bae9c66521e5d75347d883e8e">fmtField</a>(<span class="stringliteral">&quot; &quot;</span>+fmt_);</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; <span class="keywordflow">for</span>(<a class="code" href="class_p_l_m_d_1_1_sparse_grid.html#a299bd56ba2a077b7a3c1526ad1663782">iterator</a> it=map_.begin();it!=map_.end();++it){</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;   <span class="keywordtype">unsigned</span> i=(*it).first;</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;   xx=getPoint(i);</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;   <span class="keywordflow">if</span>(usederiv_){f=getValueAndDerivatives(i,der);} </div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;   <span class="keywordflow">else</span>{f=getValue(i);}</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;   <span class="keywordflow">if</span>(i&gt;0 &amp;&amp; dimension_&gt;1 &amp;&amp; getIndices(i)[dimension_-2]==0) ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a1ad29d0ba5b7ceb7c1949f33c6ccd29f">printf</a>(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimension_;++j){</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;       ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;min_&quot;</span> + argnames[j], str_min_[j] );</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;       ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;max_&quot;</span> + argnames[j], str_max_[j] );</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;       ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;nbins_&quot;</span> + argnames[j], static_cast&lt;int&gt;(nbin_[j]) );</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;       <span class="keywordflow">if</span>( pbc_[j] ) ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;periodic_&quot;</span> + argnames[j], <span class="stringliteral">&quot;true&quot;</span> );</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;       <span class="keywordflow">else</span>          ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;periodic_&quot;</span> + argnames[j], <span class="stringliteral">&quot;false&quot;</span> );</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;   }</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimension_;++j) ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(argnames[j],xx[j]);</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;   ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(funcname, f);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;   <span class="keywordflow">if</span>(usederiv_){ <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimension_;++j) ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>(<span class="stringliteral">&quot;der_&quot;</span> + argnames[j],der[j]); }</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;   ofile.<a class="code" href="class_p_l_m_d_1_1_o_file.html#a8adb46d3160bd34ed49cea650f17f6a9">printField</a>();</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; }</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;}</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;</div>
-<div class="line"><a name="l00716"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_grid.html#a216b67eafdac7bf62590b50b02fa8055">  716</a></span>&#160;<span class="keywordtype">void</span> Grid::projectOnLowDimension(<span class="keywordtype">double</span> &amp;val, std::vector&lt;int&gt; &amp;vHigh, <a class="code" href="class_p_l_m_d_1_1_weight_base.html">WeightBase</a> * ptr2obj ){</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="keywordtype">unsigned</span> i=0;</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;vHigh.size();i++){</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;       <span class="keywordflow">if</span>(vHigh[i]&lt;0){<span class="comment">// this bin needs to be integrated out </span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;          <span class="comment">// parallelize here???</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;(getNbin())[i];j++){</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            vHigh[i]=int(j);  </div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            projectOnLowDimension(val,vHigh,ptr2obj); <span class="comment">// recursive function: this is the core of the mechanism</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            vHigh[i]=-1;</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;          } </div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;          <span class="keywordflow">return</span>; <span class="comment">// </span></div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;       }</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    }</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="comment">// when there are no more bin to dig in then retrieve the value </span></div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">if</span>(i==vHigh.size()){</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        <span class="comment">//std::cerr&lt;&lt;&quot;POINT: &quot;; </span></div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <span class="comment">//for(unsigned j=0;j&lt;vHigh.size();j++){</span></div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="comment">//   std::cerr&lt;&lt;vHigh[j]&lt;&lt;&quot; &quot;;</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="comment">//} </span></div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        std::vector&lt;unsigned&gt; vv(vHigh.size()); </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;vHigh.size();j++)vv[j]=<span class="keywordtype">unsigned</span>(vHigh[j]);</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        <span class="comment">// this is the real assignment !!!!! (hack this to have bias or other stuff)</span></div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        <span class="comment">// this case: produce fes</span></div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <span class="comment">//val+=exp(beta*getValue(vv)) ;</span></div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <span class="keywordtype">double</span> myv=getValue(vv);</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        val=ptr2obj-&gt;<a class="code" href="class_p_l_m_d_1_1_weight_base.html#afaa187709667bfb2438598b5f255e3c4">projectInnerLoop</a>(val,myv) ;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <span class="comment">// to be added: bias (same as before without negative sign) </span></div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <span class="comment">//std::cerr&lt;&lt;&quot; VAL: &quot;&lt;&lt;val &lt;&lt;endl;</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    }</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;}</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div>
-<div class="line"><a name="l00750"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_grid.html#aaec852ada83d217d99a5602725d7cc41">  750</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_grid.html">Grid</a> Grid::project(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp; proj , <a class="code" href="class_p_l_m_d_1_1_weight_base.html">WeightBase</a> *ptr2obj ){</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;         <span class="comment">// find extrema only for the projection</span></div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;         vector&lt;string&gt;   smallMin,smallMax;</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;         vector&lt;unsigned&gt; smallBin;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;         vector&lt;unsigned&gt; dimMapping;</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;         vector&lt;bool&gt; smallIsPeriodic;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;         vector&lt;string&gt; smallName;</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;         <span class="comment">// check if the two key methods are there</span></div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;         <a class="code" href="class_p_l_m_d_1_1_weight_base.html">WeightBase</a>* pp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_p_l_m_d_1_1_weight_base.html">WeightBase</a>*<span class="keyword">&gt;</span>(ptr2obj);</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;         <span class="keywordflow">if</span> (!pp)plumed_merror(<span class="stringliteral">&quot;This WeightBase is not complete: you need a projectInnerLoop and projectOuterLoop &quot;</span>);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160; </div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;proj.size();j++){</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;              <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;getArgNames().size();i++){</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                    <span class="keywordflow">if</span>(proj[j]==getArgNames()[i]){ </div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                         <span class="keywordtype">unsigned</span> offset;                </div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                         <span class="comment">// note that at sizetime the non periodic dimension get a bin more     </span></div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                         <span class="keywordflow">if</span>(getIsPeriodic()[i]){offset=0;}<span class="keywordflow">else</span>{offset=1;}</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                         smallMax.push_back(getMax()[i]);</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                         smallMin.push_back(getMin()[i]);</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                         smallBin.push_back(getNbin()[i]-offset);</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                         smallIsPeriodic.push_back(getIsPeriodic()[i]);</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                         dimMapping.push_back(i);</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                         smallName.push_back(getArgNames()[i]);</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                         <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    }</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;              }</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;         }</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;         <a class="code" href="class_p_l_m_d_1_1_grid.html">Grid</a> smallgrid(<span class="stringliteral">&quot;projection&quot;</span>,smallName,smallMin,smallMax,smallBin,<span class="keyword">false</span>,<span class="keyword">false</span>,<span class="keyword">true</span>,smallIsPeriodic,smallMin,smallMax);  </div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;         <span class="comment">// check that the two grids are commensurate </span></div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;dimMapping.size();i++){</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;              plumed_massert(  (smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a06f7e6070deec226045d91f355fd1d53">getMax</a>())[i] == (getMax())[dimMapping[i]],  <span class="stringliteral">&quot;the two input grids are not compatible in max&quot;</span>   );  </div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;              plumed_massert(  (smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#ac09e0f6d03f67c0c1015bb8a23313c4a">getMin</a>())[i] == (getMin())[dimMapping[i]],  <span class="stringliteral">&quot;the two input grids are not compatible in min&quot;</span>   );  </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;              plumed_massert(  (smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a147013261beb2bb7248894a22cbcd8ee">getNbin</a>())[i]== (getNbin())[dimMapping[i]], <span class="stringliteral">&quot;the two input grids are not compatible in bin&quot;</span>   );  </div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;         }</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;         vector&lt;unsigned&gt; toBeIntegrated;</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;getArgNames().size();i++){</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;              <span class="keywordtype">bool</span> doappend=<span class="keyword">true</span>;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimMapping.size();j++){</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                 <span class="keywordflow">if</span>(dimMapping[j]==i){doappend=<span class="keyword">false</span>; <span class="keywordflow">break</span>;}  </div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;              }</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;              <span class="keywordflow">if</span>(doappend)toBeIntegrated.push_back(i);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;         }</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;         <span class="comment">//for(unsigned i=0;i&lt;dimMapping.size();i++ ){</span></div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;         <span class="comment">//     cerr&lt;&lt;&quot;Dimension to preserve &quot;&lt;&lt;dimMapping[i]&lt;&lt;endl;</span></div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;         <span class="comment">//}</span></div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;         <span class="comment">//for(unsigned i=0;i&lt;toBeIntegrated.size();i++ ){</span></div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;         <span class="comment">//     cerr&lt;&lt;&quot;Dimension to integrate &quot;&lt;&lt;toBeIntegrated[i]&lt;&lt;endl;</span></div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;         <span class="comment">//}</span></div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;         <span class="comment">// loop over all the points in the Grid, find the corresponding fixed index, rotate over all the other ones  </span></div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a72ccf9147da9aea1243938a1ae1a54ee">getSize</a>();i++){</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                 std::vector&lt;unsigned&gt; v;</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                 v=smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#ab00cf4d00e12fc5bd5879670ebc77f4f">getIndices</a>(i);</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                 std::vector&lt;int&gt; vHigh((getArgNames()).size(),-1);   </div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                 <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimMapping.size();j++)vHigh[dimMapping[j]]=<span class="keywordtype">int</span>(v[j]);</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                 <span class="comment">// the vector vhigh now contains at the beginning the index of the low dimension and -1 for the values that need to be integrated </span></div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                 <span class="keywordtype">double</span> initval=0.;  </div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                 projectOnLowDimension(initval,vHigh, ptr2obj); </div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                 smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a38b713b91761fb9dfee85bc05b6aeb58">setValue</a>(i,initval);  </div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;         }</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;         <span class="comment">// reset to zero just for biasing (this option can be evtl enabled in a future...) </span></div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;         <span class="comment">//double vmin;vmin=-smallgrid.getMinValue()+1;</span></div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a72ccf9147da9aea1243938a1ae1a54ee">getSize</a>();i++){</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;         <span class="comment">//         //if(dynamic_cast&lt;BiasWeight*&gt;(ptr2obj)){</span></div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;         <span class="comment">//         //        smallgrid.addValue(i,vmin);// go to 1     </span></div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;         <span class="comment">//         //}</span></div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                  <span class="keywordtype">double</span> vv=smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#ae2161c962289e557947be4ee95bf5673">getValue</a>(i); </div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                  smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a38b713b91761fb9dfee85bc05b6aeb58">setValue</a>(i,ptr2obj-&gt;<a class="code" href="class_p_l_m_d_1_1_weight_base.html#ac9dd9965650ae6a2ffc39ad743a678bb">projectOuterLoop</a>(vv));</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;         <span class="comment">//         //if(dynamic_cast&lt;BiasWeight*&gt;(ptr2obj)){</span></div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;         <span class="comment">//         //        smallgrid.addValue(i,-vmin);// bring back to the value    </span></div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;         <span class="comment">//         //}</span></div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;         }</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;     <span class="keywordflow">return</span> smallgrid; </div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;}</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;}</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;</div>
+<div class="line"><a name="l00717"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_grid.html#a216b67eafdac7bf62590b50b02fa8055">  717</a></span>&#160;<span class="keywordtype">void</span> Grid::projectOnLowDimension(<span class="keywordtype">double</span> &amp;val, std::vector&lt;int&gt; &amp;vHigh, <a class="code" href="class_p_l_m_d_1_1_weight_base.html">WeightBase</a> * ptr2obj ){</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="keywordtype">unsigned</span> i=0;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;vHigh.size();i++){</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;       <span class="keywordflow">if</span>(vHigh[i]&lt;0){<span class="comment">// this bin needs to be integrated out </span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;          <span class="comment">// parallelize here???</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;(getNbin())[i];j++){</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            vHigh[i]=int(j);  </div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            projectOnLowDimension(val,vHigh,ptr2obj); <span class="comment">// recursive function: this is the core of the mechanism</span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            vHigh[i]=-1;</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;          } </div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;          <span class="keywordflow">return</span>; <span class="comment">// </span></div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;       }</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    }</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="comment">// when there are no more bin to dig in then retrieve the value </span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordflow">if</span>(i==vHigh.size()){</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <span class="comment">//std::cerr&lt;&lt;&quot;POINT: &quot;; </span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="comment">//for(unsigned j=0;j&lt;vHigh.size();j++){</span></div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="comment">//   std::cerr&lt;&lt;vHigh[j]&lt;&lt;&quot; &quot;;</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <span class="comment">//} </span></div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        std::vector&lt;unsigned&gt; vv(vHigh.size()); </div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;vHigh.size();j++)vv[j]=<span class="keywordtype">unsigned</span>(vHigh[j]);</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <span class="comment">// this is the real assignment !!!!! (hack this to have bias or other stuff)</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <span class="comment">// this case: produce fes</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <span class="comment">//val+=exp(beta*getValue(vv)) ;</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <span class="keywordtype">double</span> myv=getValue(vv);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        val=ptr2obj-&gt;<a class="code" href="class_p_l_m_d_1_1_weight_base.html#afaa187709667bfb2438598b5f255e3c4">projectInnerLoop</a>(val,myv) ;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <span class="comment">// to be added: bias (same as before without negative sign) </span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <span class="comment">//std::cerr&lt;&lt;&quot; VAL: &quot;&lt;&lt;val &lt;&lt;endl;</span></div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    }</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;}</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;</div>
+<div class="line"><a name="l00751"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1_grid.html#aaec852ada83d217d99a5602725d7cc41">  751</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1_grid.html">Grid</a> Grid::project(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp; proj , <a class="code" href="class_p_l_m_d_1_1_weight_base.html">WeightBase</a> *ptr2obj ){</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;         <span class="comment">// find extrema only for the projection</span></div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;         vector&lt;string&gt;   smallMin,smallMax;</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;         vector&lt;unsigned&gt; smallBin;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;         vector&lt;unsigned&gt; dimMapping;</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;         vector&lt;bool&gt; smallIsPeriodic;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;         vector&lt;string&gt; smallName;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;         <span class="comment">// check if the two key methods are there</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;         <a class="code" href="class_p_l_m_d_1_1_weight_base.html">WeightBase</a>* pp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_p_l_m_d_1_1_weight_base.html">WeightBase</a>*<span class="keyword">&gt;</span>(ptr2obj);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;         <span class="keywordflow">if</span> (!pp)plumed_merror(<span class="stringliteral">&quot;This WeightBase is not complete: you need a projectInnerLoop and projectOuterLoop &quot;</span>);</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;proj.size();j++){</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;              <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;getArgNames().size();i++){</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                    <span class="keywordflow">if</span>(proj[j]==getArgNames()[i]){ </div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                         <span class="keywordtype">unsigned</span> offset;                </div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                         <span class="comment">// note that at sizetime the non periodic dimension get a bin more     </span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                         <span class="keywordflow">if</span>(getIsPeriodic()[i]){offset=0;}<span class="keywordflow">else</span>{offset=1;}</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                         smallMax.push_back(getMax()[i]);</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                         smallMin.push_back(getMin()[i]);</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                         smallBin.push_back(getNbin()[i]-offset);</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                         smallIsPeriodic.push_back(getIsPeriodic()[i]);</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                         dimMapping.push_back(i);</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                         smallName.push_back(getArgNames()[i]);</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                         <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                    }</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;              }</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;         }</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;         <a class="code" href="class_p_l_m_d_1_1_grid.html">Grid</a> smallgrid(<span class="stringliteral">&quot;projection&quot;</span>,smallName,smallMin,smallMax,smallBin,<span class="keyword">false</span>,<span class="keyword">false</span>,<span class="keyword">true</span>,smallIsPeriodic,smallMin,smallMax);  </div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;         <span class="comment">// check that the two grids are commensurate </span></div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;dimMapping.size();i++){</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;              plumed_massert(  (smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a06f7e6070deec226045d91f355fd1d53">getMax</a>())[i] == (getMax())[dimMapping[i]],  <span class="stringliteral">&quot;the two input grids are not compatible in max&quot;</span>   );  </div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;              plumed_massert(  (smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#ac09e0f6d03f67c0c1015bb8a23313c4a">getMin</a>())[i] == (getMin())[dimMapping[i]],  <span class="stringliteral">&quot;the two input grids are not compatible in min&quot;</span>   );  </div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;              plumed_massert(  (smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a147013261beb2bb7248894a22cbcd8ee">getNbin</a>())[i]== (getNbin())[dimMapping[i]], <span class="stringliteral">&quot;the two input grids are not compatible in bin&quot;</span>   );  </div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;         }</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;         vector&lt;unsigned&gt; toBeIntegrated;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;getArgNames().size();i++){</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;              <span class="keywordtype">bool</span> doappend=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimMapping.size();j++){</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                 <span class="keywordflow">if</span>(dimMapping[j]==i){doappend=<span class="keyword">false</span>; <span class="keywordflow">break</span>;}  </div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;              }</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;              <span class="keywordflow">if</span>(doappend)toBeIntegrated.push_back(i);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;         }</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;         <span class="comment">//for(unsigned i=0;i&lt;dimMapping.size();i++ ){</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;         <span class="comment">//     cerr&lt;&lt;&quot;Dimension to preserve &quot;&lt;&lt;dimMapping[i]&lt;&lt;endl;</span></div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;         <span class="comment">//}</span></div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;         <span class="comment">//for(unsigned i=0;i&lt;toBeIntegrated.size();i++ ){</span></div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;         <span class="comment">//     cerr&lt;&lt;&quot;Dimension to integrate &quot;&lt;&lt;toBeIntegrated[i]&lt;&lt;endl;</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;         <span class="comment">//}</span></div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;         <span class="comment">// loop over all the points in the Grid, find the corresponding fixed index, rotate over all the other ones  </span></div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a72ccf9147da9aea1243938a1ae1a54ee">getSize</a>();i++){</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                 std::vector&lt;unsigned&gt; v;</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                 v=smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#ab00cf4d00e12fc5bd5879670ebc77f4f">getIndices</a>(i);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                 std::vector&lt;int&gt; vHigh((getArgNames()).size(),-1);   </div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                 <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j=0;j&lt;dimMapping.size();j++)vHigh[dimMapping[j]]=<span class="keywordtype">int</span>(v[j]);</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                 <span class="comment">// the vector vhigh now contains at the beginning the index of the low dimension and -1 for the values that need to be integrated </span></div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                 <span class="keywordtype">double</span> initval=0.;  </div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                 projectOnLowDimension(initval,vHigh, ptr2obj); </div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                 smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a38b713b91761fb9dfee85bc05b6aeb58">setValue</a>(i,initval);  </div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;         }</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;         <span class="comment">// reset to zero just for biasing (this option can be evtl enabled in a future...) </span></div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;         <span class="comment">//double vmin;vmin=-smallgrid.getMinValue()+1;</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=0;i&lt;smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a72ccf9147da9aea1243938a1ae1a54ee">getSize</a>();i++){</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;         <span class="comment">//         //if(dynamic_cast&lt;BiasWeight*&gt;(ptr2obj)){</span></div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;         <span class="comment">//         //        smallgrid.addValue(i,vmin);// go to 1     </span></div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;         <span class="comment">//         //}</span></div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                  <span class="keywordtype">double</span> vv=smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#ae2161c962289e557947be4ee95bf5673">getValue</a>(i); </div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                  smallgrid.<a class="code" href="class_p_l_m_d_1_1_grid.html#a38b713b91761fb9dfee85bc05b6aeb58">setValue</a>(i,ptr2obj-&gt;<a class="code" href="class_p_l_m_d_1_1_weight_base.html#ac9dd9965650ae6a2ffc39ad743a678bb">projectOuterLoop</a>(vv));</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;         <span class="comment">//         //if(dynamic_cast&lt;BiasWeight*&gt;(ptr2obj)){</span></div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;         <span class="comment">//         //        smallgrid.addValue(i,-vmin);// bring back to the value    </span></div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;         <span class="comment">//         //}</span></div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;         }</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;     <span class="keywordflow">return</span> smallgrid; </div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;}</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;}</div>
 <div class="ttc" id="class_p_l_m_d_1_1_i_file_html_a808a3661f4ed93f73c1e8a202328dc2c"><div class="ttname"><a href="class_p_l_m_d_1_1_i_file.html#a808a3661f4ed93f73c1e8a202328dc2c">PLMD::IFile::FieldExist</a></div><div class="ttdeci">bool FieldExist(const std::string &amp;s)</div><div class="ttdoc">Check if a field exist. </div><div class="ttdef"><b>Definition:</b> <a href="_i_file_8cpp_source.html#l00104">IFile.cpp:104</a></div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_weight_base_html_afaa187709667bfb2438598b5f255e3c4"><div class="ttname"><a href="class_p_l_m_d_1_1_weight_base.html#afaa187709667bfb2438598b5f255e3c4">PLMD::WeightBase::projectInnerLoop</a></div><div class="ttdeci">virtual double projectInnerLoop(double &amp;input, double &amp;v)=0</div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_kernel_functions_html_aa3cf162d39965fdac203421a5240df59"><div class="ttname"><a href="class_p_l_m_d_1_1_kernel_functions.html#aa3cf162d39965fdac203421a5240df59">PLMD::KernelFunctions::getSupport</a></div><div class="ttdeci">std::vector&lt; unsigned &gt; getSupport(const std::vector&lt; double &gt; &amp;dx) const </div><div class="ttdoc">Get the support. </div><div class="ttdef"><b>Definition:</b> <a href="_kernel_functions_8cpp_source.html#l00176">KernelFunctions.cpp:176</a></div></div>

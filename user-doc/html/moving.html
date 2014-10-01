@@ -99,12 +99,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Moving from Plumed 1 to Plumed 2 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>In Plumed 1 groups (lists) were used for two tasks:</p><ul>
+<div class="textblock"><p>Syntax in PLUMED 2 has been completely redesigned. The main difference is that whereas in PLUMED 1 lines could be inserted in any order, in PLUMED 2 the order of the lines matters. This is due to a major change in the internal architecture of PLUMED. In version 2, commands (or "actions") are executed in the order they are found in the input file. Because of this, you must e.g. first compute a collective variable and then print it later. More information can be found in the Section about Syntax.</p>
+<p>Another very important change is in the way groups are used, discussed below. Finally, many features appear under a different name in the new version.</p>
+<h1><a class="anchor" id="moving-Groups"></a>
+Groups</h1>
+<p>In Plumed 1 groups (lists) were used for two tasks:</p><ul>
 <li>To provide centers of masses to collective variables such as distances, angles, etc. This is now done by defining virtual atoms using either <a class="el" href="_c_e_n_t_e_r.html">CENTER</a> or <a class="el" href="_c_o_m.html">COM</a></li>
 <li>To provide lists of atoms to collective variables such as coordination, gyration radius, etc. This is now done directly in the line that defines the collective variable.</li>
 </ul>
 <p>If you would still like to use groups you can use the <a class="el" href="_g_r_o_u_p.html">GROUP</a> commands. Whenever the label for a <a class="el" href="_g_r_o_u_p.html">GROUP</a> action appears in the input it is replaced by the list of atoms that were specified in the <a class="el" href="_g_r_o_u_p.html">GROUP</a>.</p>
-<h1><a class="anchor" id="Directives"></a>
+<h1><a class="anchor" id="moving-Directives"></a>
 Directives</h1>
 <p>What follows is a list of all the documented directives of Plumed 1 together with their plumed 2 equivalents. Be aware that the input syntaxes for these directives are not totally equivalent. You should read the documentation for the Plumed 2 Action.</p>
 <table class="doxtable">
@@ -199,9 +203,9 @@ Directives</h1>
 <tr>
 <td>SPRINT  </td><td><b> currently missing </b>   </td></tr>
 <tr>
-<td>RDF  </td><td><b> <a class="el" href="_d_i_s_t_a_n_c_e_s.html">DISTANCES</a> </b>, used in combination with HISTOGRAM / BETWEEN keyword   </td></tr>
+<td>RDF  </td><td><a class="el" href="_d_i_s_t_a_n_c_e_s.html">DISTANCES</a>, used in combination with HISTOGRAM / BETWEEN keyword   </td></tr>
 <tr>
-<td>ADF  </td><td><b> <a class="el" href="_a_n_g_l_e_s.html">ANGLES</a> </b>, used in combination with HISTOGRAM / BETWEEN keyword   </td></tr>
+<td>ADF  </td><td><a class="el" href="_a_n_g_l_e_s.html">ANGLES</a>, used in combination with HISTOGRAM / BETWEEN keyword   </td></tr>
 <tr>
 <td>POLY  </td><td><a class="el" href="_c_o_m_b_i_n_e.html">COMBINE</a>   </td></tr>
 <tr>
