@@ -146,86 +146,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">Total energy can be biased with umbrella sampling \cite bart-karp98jpcb or with well tempered metadynamics \cite Bonomi:2009p17935.</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">\par Examples</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">The following input instructs plumed to print the energy of the system</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">\verbatim</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">ENERGY LABEL=ene</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">PRINT ARG=ene</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">\endverbatim</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">(See also \ref PRINT).</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//+ENDPLUMEDOC</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html">   51</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html">Energy</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html">Colvar</a> {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#abcae27a5dbce96b570fc986ec9938d37">Energy</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// active methods:</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ae4ded803b8fe4a65ca015d48502a27f0">prepare</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#a36e6c3e723d235361954195090cd8066">calculate</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ab9c29c6c0a55cf53e28b949d52bac0da">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">Notice that this CV could be unavailable with some MD code. When</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">it is available, and when also replica exchange is available,</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">metadynamics applied to ENERGY can be used to decrease the</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">number of required replicas.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">\bug Acceptance for replica exchange when \ref ENERGY is biased</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">is computed correctly only of all the replicas has the same </span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">potential energy function. This is for instance not true when</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">using GROMACS with lambda replica exchange of with plumed-hrex branch.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">\par Examples</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">The following input instructs plumed to print the energy of the system</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">\verbatim</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">ENERGY LABEL=ene</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">PRINT ARG=ene</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">\endverbatim</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">(See also \ref PRINT).</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//+ENDPLUMEDOC</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;PLUMED_REGISTER_ACTION(<a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html">Energy</a>,<span class="stringliteral">&quot;ENERGY&quot;</span>)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html#abcae27a5dbce96b570fc986ec9938d37">   67</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html">Energy</a>::<a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html">Energy</a>(const <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;ao):</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<a class="code" href="core_2_colvar_8h.html#aa95e2f515fc3d4e1693bfa2f0199a971">PLUMED_COLVAR_INIT</a>(ao)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//  if(checkNumericalDerivatives())</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//    error(&quot;Cannot use NUMERICAL_DERIVATIVES with ENERGY&quot;);</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  isEnergy=<span class="keyword">true</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  addValueWithDerivatives(); setNotPeriodic();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  getPntrToValue()-&gt;resizeDerivatives(1);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  log&lt;&lt;<span class="stringliteral">&quot;  Bibliography &quot;</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  log&lt;&lt;<a class="code" href="structplumed.html">plumed</a>.cite(<span class="stringliteral">&quot;Bartels and Karplus, J. Phys. Chem. B 102, 865 (1998)&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  log&lt;&lt;<a class="code" href="structplumed.html">plumed</a>.cite(<span class="stringliteral">&quot;Bonomi and Parrinello, J. Comp. Chem. 30, 1615 (2009)&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  log&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ab9c29c6c0a55cf53e28b949d52bac0da">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ab9c29c6c0a55cf53e28b949d52bac0da">Energy::registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae2441cde22748f855c3d150d2b73b117">Action::registerKeywords</a>( keys );</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a6808603d6de1551e0679bc61d3e716ff">ActionAtomistic::registerKeywords</a>( keys );</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a6986b7aaa91453dc739b333efaae7071">ActionWithValue::registerKeywords</a>( keys );</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  keys.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a2619e12c7717a5b027bbe795a97389f9">remove</a>(<span class="stringliteral">&quot;NUMERICAL_DERIVATIVES&quot;</span>); </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ae4ded803b8fe4a65ca015d48502a27f0">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ae4ded803b8fe4a65ca015d48502a27f0">Energy::prepare</a>(){</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="structplumed.html">plumed</a>.getAtoms().setCollectEnergy(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// calculator</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html#a36e6c3e723d235361954195090cd8066">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#a36e6c3e723d235361954195090cd8066">Energy::calculate</a>(){</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  setValue( getEnergy() );</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  getPntrToComponent(0)-&gt;addDerivative(0,1.0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html">   61</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html">Energy</a> : <span class="keyword">public</span> <a class="code" href="class_p_l_m_d_1_1_colvar.html">Colvar</a> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#abcae27a5dbce96b570fc986ec9938d37">Energy</a>(<span class="keyword">const</span> <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// active methods:</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ae4ded803b8fe4a65ca015d48502a27f0">prepare</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#a36e6c3e723d235361954195090cd8066">calculate</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ab9c29c6c0a55cf53e28b949d52bac0da">registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;PLUMED_REGISTER_ACTION(<a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html">Energy</a>,<span class="stringliteral">&quot;ENERGY&quot;</span>)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html#abcae27a5dbce96b570fc986ec9938d37">   77</a></span>&#160;<a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html">Energy</a>::<a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html">Energy</a>(const <a class="code" href="class_p_l_m_d_1_1_action_options.html">ActionOptions</a>&amp;ao):</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<a class="code" href="core_2_colvar_8h.html#aa95e2f515fc3d4e1693bfa2f0199a971">PLUMED_COLVAR_INIT</a>(ao)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">//  if(checkNumericalDerivatives())</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">//    error(&quot;Cannot use NUMERICAL_DERIVATIVES with ENERGY&quot;);</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  isEnergy=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  addValueWithDerivatives(); setNotPeriodic();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  getPntrToValue()-&gt;resizeDerivatives(1);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  log&lt;&lt;<span class="stringliteral">&quot;  Bibliography &quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  log&lt;&lt;<a class="code" href="structplumed.html">plumed</a>.cite(<span class="stringliteral">&quot;Bartels and Karplus, J. Phys. Chem. B 102, 865 (1998)&quot;</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  log&lt;&lt;<a class="code" href="structplumed.html">plumed</a>.cite(<span class="stringliteral">&quot;Bonomi and Parrinello, J. Comp. Chem. 30, 1615 (2009)&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  log&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ab9c29c6c0a55cf53e28b949d52bac0da">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ab9c29c6c0a55cf53e28b949d52bac0da">Energy::registerKeywords</a>( <a class="code" href="class_p_l_m_d_1_1_keywords.html">Keywords</a>&amp; keys ){</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action.html#ae2441cde22748f855c3d150d2b73b117">Action::registerKeywords</a>( keys );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_atomistic.html#a6808603d6de1551e0679bc61d3e716ff">ActionAtomistic::registerKeywords</a>( keys );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="class_p_l_m_d_1_1_action_with_value.html#a6986b7aaa91453dc739b333efaae7071">ActionWithValue::registerKeywords</a>( keys );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  keys.<a class="code" href="class_p_l_m_d_1_1_keywords.html#a2619e12c7717a5b027bbe795a97389f9">remove</a>(<span class="stringliteral">&quot;NUMERICAL_DERIVATIVES&quot;</span>); </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ae4ded803b8fe4a65ca015d48502a27f0">   98</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#ae4ded803b8fe4a65ca015d48502a27f0">Energy::prepare</a>(){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="structplumed.html">plumed</a>.getAtoms().setCollectEnergy(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// calculator</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_p_l_m_d_1_1colvar_1_1_energy.html#a36e6c3e723d235361954195090cd8066">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_l_m_d_1_1colvar_1_1_energy.html#a36e6c3e723d235361954195090cd8066">Energy::calculate</a>(){</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  setValue( getEnergy() );</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  getPntrToComponent(0)-&gt;addDerivative(0,1.0);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="ttc" id="colvar_2_colvar_8h_html"><div class="ttname"><a href="colvar_2_colvar_8h.html">Colvar.h</a></div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_action_with_value_html_a6986b7aaa91453dc739b333efaae7071"><div class="ttname"><a href="class_p_l_m_d_1_1_action_with_value.html#a6986b7aaa91453dc739b333efaae7071">PLMD::ActionWithValue::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdoc">Register all the relevant keywords for the action. </div><div class="ttdef"><b>Definition:</b> <a href="_action_with_value_8cpp_source.html#l00028">ActionWithValue.cpp:28</a></div></div>
 <div class="ttc" id="colvar_2_action_register_8h_html"><div class="ttname"><a href="colvar_2_action_register_8h.html">ActionRegister.h</a></div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_action_atomistic_html_a6808603d6de1551e0679bc61d3e716ff"><div class="ttname"><a href="class_p_l_m_d_1_1_action_atomistic.html#a6808603d6de1551e0679bc61d3e716ff">PLMD::ActionAtomistic::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_action_atomistic_8cpp_source.html#l00054">ActionAtomistic.cpp:54</a></div></div>
-<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html">PLMD::colvar::Energy</a></div><div class="ttdoc">Provides the keyword ENERGY  </div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00051">Energy.cpp:51</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html">PLMD::colvar::Energy</a></div><div class="ttdoc">Provides the keyword ENERGY  </div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00061">Energy.cpp:61</a></div></div>
 <div class="ttc" id="core_2_colvar_8h_html_aa95e2f515fc3d4e1693bfa2f0199a971"><div class="ttname"><a href="core_2_colvar_8h.html#aa95e2f515fc3d4e1693bfa2f0199a971">PLUMED_COLVAR_INIT</a></div><div class="ttdeci">#define PLUMED_COLVAR_INIT(ao)</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00029">Colvar.h:29</a></div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_keywords_html"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html">PLMD::Keywords</a></div><div class="ttdoc">This class holds the keywords and their documentation. </div><div class="ttdef"><b>Definition:</b> <a href="tools_2_keywords_8h_source.html#l00036">Keywords.h:36</a></div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_action_options_html"><div class="ttname"><a href="class_p_l_m_d_1_1_action_options.html">PLMD::ActionOptions</a></div><div class="ttdoc">This class is used to bring the relevant information to the Action constructor. </div><div class="ttdef"><b>Definition:</b> <a href="core_2_action_8h_source.html#l00041">Action.h:41</a></div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_colvar_html"><div class="ttname"><a href="class_p_l_m_d_1_1_colvar.html">PLMD::Colvar</a></div><div class="ttdoc">This is the abstract base class to use for implementing new collective variables, within it there is ...</div><div class="ttdef"><b>Definition:</b> <a href="core_2_colvar_8h_source.html#l00039">Colvar.h:39</a></div></div>
-<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html_ae4ded803b8fe4a65ca015d48502a27f0"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html#ae4ded803b8fe4a65ca015d48502a27f0">PLMD::colvar::Energy::prepare</a></div><div class="ttdeci">void prepare()</div><div class="ttdoc">Prepare an Action for calculation This can be used by Action if they need some special preparation be...</div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00088">Energy.cpp:88</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html_ae4ded803b8fe4a65ca015d48502a27f0"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html#ae4ded803b8fe4a65ca015d48502a27f0">PLMD::colvar::Energy::prepare</a></div><div class="ttdeci">void prepare()</div><div class="ttdoc">Prepare an Action for calculation This can be used by Action if they need some special preparation be...</div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00098">Energy.cpp:98</a></div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_action_html_ae2441cde22748f855c3d150d2b73b117"><div class="ttname"><a href="class_p_l_m_d_1_1_action.html#ae2441cde22748f855c3d150d2b73b117">PLMD::Action::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdoc">Register all the relevant keywords for the action. </div><div class="ttdef"><b>Definition:</b> <a href="_action_8cpp_source.html#l00049">Action.cpp:49</a></div></div>
-<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html_abcae27a5dbce96b570fc986ec9938d37"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html#abcae27a5dbce96b570fc986ec9938d37">PLMD::colvar::Energy::Energy</a></div><div class="ttdeci">Energy(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00067">Energy.cpp:67</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html_abcae27a5dbce96b570fc986ec9938d37"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html#abcae27a5dbce96b570fc986ec9938d37">PLMD::colvar::Energy::Energy</a></div><div class="ttdeci">Energy(const ActionOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00077">Energy.cpp:77</a></div></div>
 <div class="ttc" id="class_p_l_m_d_1_1_keywords_html_a2619e12c7717a5b027bbe795a97389f9"><div class="ttname"><a href="class_p_l_m_d_1_1_keywords.html#a2619e12c7717a5b027bbe795a97389f9">PLMD::Keywords::remove</a></div><div class="ttdeci">void remove(const std::string &amp;k)</div><div class="ttdoc">Remove the keyword with name k. </div><div class="ttdef"><b>Definition:</b> <a href="_keywords_8cpp_source.html#l00204">Keywords.cpp:204</a></div></div>
-<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html_a36e6c3e723d235361954195090cd8066"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html#a36e6c3e723d235361954195090cd8066">PLMD::colvar::Energy::calculate</a></div><div class="ttdeci">virtual void calculate()</div><div class="ttdoc">Calculate an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00093">Energy.cpp:93</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html_a36e6c3e723d235361954195090cd8066"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html#a36e6c3e723d235361954195090cd8066">PLMD::colvar::Energy::calculate</a></div><div class="ttdeci">virtual void calculate()</div><div class="ttdoc">Calculate an Action. </div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00103">Energy.cpp:103</a></div></div>
 <div class="ttc" id="structplumed_html"><div class="ttname"><a href="structplumed.html">plumed</a></div><div class="ttdoc">Main plumed object. </div><div class="ttdef"><b>Definition:</b> <a href="wrapper_2_plumed_8h_source.html#l00201">Plumed.h:201</a></div></div>
-<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html_ab9c29c6c0a55cf53e28b949d52bac0da"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html#ab9c29c6c0a55cf53e28b949d52bac0da">PLMD::colvar::Energy::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00081">Energy.cpp:81</a></div></div>
+<div class="ttc" id="class_p_l_m_d_1_1colvar_1_1_energy_html_ab9c29c6c0a55cf53e28b949d52bac0da"><div class="ttname"><a href="class_p_l_m_d_1_1colvar_1_1_energy.html#ab9c29c6c0a55cf53e28b949d52bac0da">PLMD::colvar::Energy::registerKeywords</a></div><div class="ttdeci">static void registerKeywords(Keywords &amp;keys)</div><div class="ttdef"><b>Definition:</b> <a href="_energy_8cpp_source.html#l00091">Energy.cpp:91</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->

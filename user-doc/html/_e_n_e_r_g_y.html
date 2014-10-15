@@ -54,7 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Home&#160;(v2.0)</span></a></li>
       <li><a href="glossary.html"><span>Glossary</span></a></li>
       <li><a href="tutorials.html"><span>How-tos</span></a></li>
       <li>
@@ -101,6 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>Calculate the total energy of the simulation box.</p>
 <p>Total energy can be biased with umbrella sampling <a class="el" href="citelist.html#CITEREF_bart-karp98jpcb">[3]</a> or with well tempered metadynamics <a class="el" href="citelist.html#CITEREF_Bonomi:2009p17935">[4]</a>.</p>
+<p>Notice that this CV could be unavailable with some MD code. When it is available, and when also replica exchange is available, metadynamics applied to ENERGY can be used to decrease the number of required replicas.</p>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>Acceptance for replica exchange when <a class="el" href="_e_n_e_r_g_y.html">ENERGY</a> is biased is computed correctly only of all the replicas has the same potential energy function. This is for instance not true when using GROMACS with lambda replica exchange of with plumed-hrex branch.</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following input instructs plumed to print the energy of the system <pre class="fragment">ENERGY LABEL=ene
 PRINT ARG=ene
 </pre> (See also <a class="el" href="_p_r_i_n_t.html">PRINT</a>). </dd></dl>
