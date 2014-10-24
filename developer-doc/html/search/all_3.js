@@ -174,7 +174,7 @@ var searchData=
   ['combine',['Combine',['../class_p_l_m_d_1_1function_1_1_combine.html#a2c197df2fa8629d65527c1be83881821',1,'PLMD::function::Combine']]],
   ['combine_2ecpp',['Combine.cpp',['../_combine_8cpp.html',1,'']]],
   ['comm',['comm',['../class_p_l_m_d_1_1_action.html#a7c787b25470ea3699f4c262c37225c83',1,'PLMD::Action::comm()'],['../class_p_l_m_d_1_1_c_l_tool_main.html#a4497243e02a053e6a5f1217ad11be423',1,'PLMD::CLToolMain::comm()'],['../class_p_l_m_d_1_1_plumed_main.html#a1994fd167a4706ff873a27d0cae962ee',1,'PLMD::PlumedMain::comm()'],['../class_p_l_m_d_1_1_file_base.html#aded96b082cd2b4eb41aed0a7a96fa28e',1,'PLMD::FileBase::comm()'],['../class_p_l_m_d_1_1vesselbase_1_1_vessel.html#a793c75e03ce59e1b50d05dd54b8f39d7',1,'PLMD::vesselbase::Vessel::comm()']]],
-  ['commandline',['commandline',['../class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a0511c02c198f5109570c7433065f5063',1,'PLMD::CLTool']]],
+  ['commandline',['commandline',['../group___i_n_h_e_r_i_t.html#gga90512549015d8586a9fad819be622879a0511c02c198f5109570c7433065f5063',1,'PLMD::CLTool']]],
   ['communicator',['Communicator',['../class_p_l_m_d_1_1_communicator.html',1,'PLMD']]],
   ['communicator',['Communicator',['../class_p_l_m_d_1_1_communicator.html#a8ea21123fdf0b8e9c840b687b8748853',1,'PLMD::Communicator::Communicator()'],['../class_p_l_m_d_1_1_communicator.html#acf1f5913e795428876551e67bf7e9f3d',1,'PLMD::Communicator::Communicator(const Communicator &amp;)'],['../class_p_l_m_d_1_1_communicator.html#a011974d634694565321bff669d96ce83',1,'PLMD::Communicator::communicator()']]],
   ['communicator_2ecpp',['Communicator.cpp',['../_communicator_8cpp.html',1,'']]],

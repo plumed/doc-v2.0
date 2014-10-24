@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gaussian',['gaussian',['../class_p_l_m_d_1_1_histogram_bead.html#a7f42d781d6c7359020a904ed08c99efaa7979ccdc88ebbf910877de66eff830e6',1,'PLMD::HistogramBead::gaussian()'],['../class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaae610fc9a544dc1aa010143877c50d61e',1,'PLMD::KernelFunctions::gaussian()'],['../class_p_l_m_d_1_1_switching_function.html#a40bb174fa8e4d4bc53549bcd153f76b8a10155daf75a7538e9cf59da9a6e57e9e',1,'PLMD::SwitchingFunction::gaussian()']]],
+  ['gaussian',['gaussian',['../group___t_o_o_l_b_o_x.html#gga7f42d781d6c7359020a904ed08c99efaa7979ccdc88ebbf910877de66eff830e6',1,'PLMD::HistogramBead::gaussian()'],['../class_p_l_m_d_1_1_kernel_functions.html#a8164ce2237e8a7a019836d3237231dbaae610fc9a544dc1aa010143877c50d61e',1,'PLMD::KernelFunctions::gaussian()'],['../group___t_o_o_l_b_o_x.html#gga40bb174fa8e4d4bc53549bcd153f76b8a10155daf75a7538e9cf59da9a6e57e9e',1,'PLMD::SwitchingFunction::gaussian()']]],
   ['generic',['generic',['../class_p_l_m_d_1_1_pbc.html#a6de51ac833d005f2dbd1f9b1d5a16480a343ffb69a7e11db0b394dbe1ff18173e',1,'PLMD::Pbc']]],
   ['geometry',['geometry',['../class_p_l_m_d_1_1_flexible_bin.html#a6db7c895a06d40e3acd72443273211eda965c5ee8a5c8dda64406df320b36f8a8',1,'PLMD::FlexibleBin']]],
   ['gtpc_5f1',['GTPC_1',['../class_p_l_m_d_1_1colvar_1_1_gyration.html#aeefc3e232dbb95186322a2589a273834a99b0e9f644c5d82e5326ced1b01a07f4',1,'PLMD::colvar::Gyration']]],

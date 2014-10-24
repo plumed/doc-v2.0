@@ -7,7 +7,7 @@ var searchData=
   ['idata',['idata',['../class_p_l_m_d_1_1analysis_1_1_analysis.html#a74e791936937edb544f5b799d09a6ccc',1,'PLMD::analysis::Analysis']]],
   ['identity',['identity',['../class_p_l_m_d_1_1_tensor_generic.html#ae71eabdd51c31d4549b7157f459ce415',1,'PLMD::TensorGeneric']]],
   ['idum',['idum',['../class_p_l_m_d_1_1_random.html#a78b88f95b8fde1d90d83502ee1164119',1,'PLMD::Random']]],
-  ['ifile',['IFile',['../class_p_l_m_d_1_1_i_file.html#aed74086d6d6a3846403b039e06a802c5',1,'PLMD::IFile::IFile()'],['../class_p_l_m_d_1_1_c_l_tool.html#a90512549015d8586a9fad819be622879a7fb7fc6aed4400d56c2d6cb6cbe33c1e',1,'PLMD::CLTool::ifile()'],['../class_p_l_m_d_1_1generic_1_1_read.html#a50de562b580df6b1df38e2289ac7e263',1,'PLMD::generic::Read::ifile()']]],
+  ['ifile',['IFile',['../class_p_l_m_d_1_1_i_file.html#aed74086d6d6a3846403b039e06a802c5',1,'PLMD::IFile::IFile()'],['../group___i_n_h_e_r_i_t.html#gga90512549015d8586a9fad819be622879a7fb7fc6aed4400d56c2d6cb6cbe33c1e',1,'PLMD::CLTool::ifile()'],['../class_p_l_m_d_1_1generic_1_1_read.html#a50de562b580df6b1df38e2289ac7e263',1,'PLMD::generic::Read::ifile()']]],
   ['ifile',['IFile',['../class_p_l_m_d_1_1_i_file.html',1,'PLMD']]],
   ['ifile_2ecpp',['IFile.cpp',['../_i_file_8cpp.html',1,'']]],
   ['ifile_2eh',['IFile.h',['../cltools_2tools_2_i_file_8h.html',1,'']]],

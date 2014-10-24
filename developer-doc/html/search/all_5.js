@@ -57,7 +57,7 @@ var searchData=
   ['exit',['exit',['../class_p_l_m_d_1_1_action.html#a4f9f50e5782df513490845f9b5a29446',1,'PLMD::Action::exit()'],['../class_p_l_m_d_1_1_plumed_main.html#ac85cb9c8bea7ea775cea4793246390d5',1,'PLMD::PlumedMain::exit()']]],
   ['exp',['exp',['../class_p_l_m_d_1_1bias_1_1_l_walls.html#adf449e616a0247e6a725fda5edfb2f7c',1,'PLMD::bias::LWalls::exp()'],['../class_p_l_m_d_1_1bias_1_1_u_walls.html#a9abbcefcbff1870c469c8099758fa128',1,'PLMD::bias::UWalls::exp()'],['../class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#ae7523c729b133591d04ba85fb66db1a1',1,'PLMD::manyrestraints::Sphere::exp()']]],
   ['expandargkeywordinpdb',['expandArgKeywordInPDB',['../class_p_l_m_d_1_1_action_with_arguments.html#af3fa598b3bbedd7c53feb629d79171c3',1,'PLMD::ActionWithArguments']]],
-  ['exponential',['exponential',['../class_p_l_m_d_1_1_switching_function.html#a40bb174fa8e4d4bc53549bcd153f76b8adf5d04cb54529b377c02691b52bd63bd',1,'PLMD::SwitchingFunction']]],
+  ['exponential',['exponential',['../group___t_o_o_l_b_o_x.html#gga40bb174fa8e4d4bc53549bcd153f76b8adf5d04cb54529b377c02691b52bd63bd',1,'PLMD::SwitchingFunction']]],
   ['extension',['extension',['../class_p_l_m_d_1_1_tools.html#a25c9a4620f98ba12050b64cec5a386d5',1,'PLMD::Tools']]],
   ['external',['External',['../class_p_l_m_d_1_1bias_1_1_external.html',1,'PLMD::bias']]],
   ['external',['External',['../class_p_l_m_d_1_1bias_1_1_external.html#a20bed7050568ba355884a7815af353d2',1,'PLMD::bias::External']]],
