@@ -53,7 +53,7 @@ var searchData=
   ['optimal',['OPTIMAL',['../group___t_o_o_l_b_o_x.html#gga8badaeb0e01f3702138874c1ebe905ffabdaa75a52041d13f6f7f3938f1efcf49',1,'PLMD::RMSD']]],
   ['optimal_5ffast',['OPTIMAL_FAST',['../group___t_o_o_l_b_o_x.html#gga8badaeb0e01f3702138874c1ebe905ffa0a57cd98f29ff50b02583f03bfcaf656',1,'PLMD::RMSD']]],
   ['optimalalignment',['OptimalAlignment',['../class_p_l_m_d_1_1_optimal_alignment.html',1,'PLMD']]],
-  ['optimalalignment',['optimalAlignment',['../class_p_l_m_d_1_1_r_m_s_d.html#af4209f66c98207fed00e5e15d78ffb7c',1,'PLMD::RMSD::optimalAlignment()'],['../class_p_l_m_d_1_1_optimal_alignment.html#a2e4dd71c38304b5c33f73c88f4421ed0',1,'PLMD::OptimalAlignment::OptimalAlignment()']]],
+  ['optimalalignment',['OptimalAlignment',['../class_p_l_m_d_1_1_optimal_alignment.html#a2e4dd71c38304b5c33f73c88f4421ed0',1,'PLMD::OptimalAlignment::OptimalAlignment()'],['../class_p_l_m_d_1_1_r_m_s_d.html#af4209f66c98207fed00e5e15d78ffb7c',1,'PLMD::RMSD::optimalAlignment()']]],
   ['optimalalignment_2ecpp',['OptimalAlignment.cpp',['../_optimal_alignment_8cpp.html',1,'']]],
   ['optimalalignment_2eh',['OptimalAlignment.h',['../colvar_2tools_2_optimal_alignment_8h.html',1,'']]],
   ['optimalalignment_2eh',['OptimalAlignment.h',['../setup_2tools_2_optimal_alignment_8h.html',1,'']]],

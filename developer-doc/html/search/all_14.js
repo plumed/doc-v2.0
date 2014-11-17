@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['t',['T',['../class_p_l_m_d_1_1multicolvar_1_1_d_h_energy.html#a14f0faaebedb2589731155dba5aa16fe',1,'PLMD::multicolvar::DHEnergy::T()'],['../class_p_l_m_d_1_1_matrix_square_brackets_access_1_1_const__row.html#a5e537208763f8dd3dc2637958239ed69',1,'PLMD::MatrixSquareBracketsAccess::Const_row::t()'],['../class_p_l_m_d_1_1_matrix_square_brackets_access_1_1_row.html#a9b6142a33d93075595e2ba1e5e239929',1,'PLMD::MatrixSquareBracketsAccess::Row::t()']]],
+  ['t',['t',['../class_p_l_m_d_1_1_matrix_square_brackets_access_1_1_const__row.html#a5e537208763f8dd3dc2637958239ed69',1,'PLMD::MatrixSquareBracketsAccess::Const_row::t()'],['../class_p_l_m_d_1_1_matrix_square_brackets_access_1_1_row.html#a9b6142a33d93075595e2ba1e5e239929',1,'PLMD::MatrixSquareBracketsAccess::Row::t()'],['../class_p_l_m_d_1_1multicolvar_1_1_d_h_energy.html#a14f0faaebedb2589731155dba5aa16fe',1,'PLMD::multicolvar::DHEnergy::T()']]],
   ['t1',['t1',['../class_p_l_m_d_1_1_interpolate_bicubic.html#a207eb370e727ac24f1b1782bd0f09da5',1,'PLMD::InterpolateBicubic']]],
   ['t2',['t2',['../class_p_l_m_d_1_1_interpolate_bicubic.html#adb66a4ca6775bc949fcc3711eac26a76',1,'PLMD::InterpolateBicubic']]],
   ['target',['Target',['../class_p_l_m_d_1_1function_1_1_target.html',1,'PLMD::function']]],
-  ['target',['Target',['../class_p_l_m_d_1_1function_1_1_target.html#ad62613bbbedfdae514a69f7fcf7ead3e',1,'PLMD::function::Target::Target()'],['../class_p_l_m_d_1_1_target_dist.html#adeab4f00654000aea1d3a88bc5921a18',1,'PLMD::TargetDist::target()'],['../class_p_l_m_d_1_1function_1_1_target.html#a37c4ffe7cef29d6dbc8bde07effef8f7',1,'PLMD::function::Target::target()'],['../class_p_l_m_d_1_1multicolvar_1_1_alpha_beta.html#a0cce61e94f17c5e4f4889e66ce27dbf6',1,'PLMD::multicolvar::AlphaBeta::target()']]],
+  ['target',['target',['../class_p_l_m_d_1_1_target_dist.html#adeab4f00654000aea1d3a88bc5921a18',1,'PLMD::TargetDist::target()'],['../class_p_l_m_d_1_1function_1_1_target.html#a37c4ffe7cef29d6dbc8bde07effef8f7',1,'PLMD::function::Target::target()'],['../class_p_l_m_d_1_1multicolvar_1_1_alpha_beta.html#a0cce61e94f17c5e4f4889e66ce27dbf6',1,'PLMD::multicolvar::AlphaBeta::target()'],['../class_p_l_m_d_1_1function_1_1_target.html#ad62613bbbedfdae514a69f7fcf7ead3e',1,'PLMD::function::Target::Target()']]],
   ['target_2ecpp',['Target.cpp',['../_target_8cpp.html',1,'']]],
   ['targetdist',['TargetDist',['../class_p_l_m_d_1_1_target_dist.html',1,'PLMD']]],
   ['targetdist',['TargetDist',['../class_p_l_m_d_1_1_target_dist.html#a451b7b0e44e505ed4c25088f26f382a0',1,'PLMD::TargetDist']]],
@@ -106,7 +106,7 @@ var searchData=
   ['torsion_2eh',['Torsion.h',['../vatom_2tools_2_torsion_8h.html',1,'']]],
   ['tostring',['toString',['../class_p_l_m_d_1_1_keywords_1_1_key_type.html#a512ce3107fe14ee44346089193cd2306',1,'PLMD::Keywords::KeyType::toString()'],['../class_p_l_m_d_1_1_random.html#a1bc63d5786ce100c8b289d1fb305ea77',1,'PLMD::Random::toString()']]],
   ['tot',['TOT',['../class_p_l_m_d_1_1colvar_1_1_gyration.html#aeefc3e232dbb95186322a2589a273834af3dfb2a00c3d250669eb43f03f0744d0',1,'PLMD::colvar::Gyration']]],
-  ['total',['TOTAL',['../class_p_l_m_d_1_1_exchange_patterns.html#ac9d54a3ce2faba59d45cb1cfa82e85e8a9e752466a505b18223baba67ad0d9707',1,'PLMD::ExchangePatterns::TOTAL()'],['../class_p_l_m_d_1_1_stopwatch_1_1_watch.html#a620df5013408433902bb8e3cfd335e48',1,'PLMD::Stopwatch::Watch::total()']]],
+  ['total',['total',['../class_p_l_m_d_1_1_stopwatch_1_1_watch.html#a620df5013408433902bb8e3cfd335e48',1,'PLMD::Stopwatch::Watch::total()'],['../class_p_l_m_d_1_1_exchange_patterns.html#ac9d54a3ce2faba59d45cb1cfa82e85e8a9e752466a505b18223baba67ad0d9707',1,'PLMD::ExchangePatterns::TOTAL()']]],
   ['trace',['TRACE',['../class_p_l_m_d_1_1colvar_1_1_gyration.html#aeefc3e232dbb95186322a2589a273834a309f3171315be8609965b5e33eef400d',1,'PLMD::colvar::Gyration']]],
   ['transferrate',['transferRate',['../class_p_l_m_d_1_1_i_m_d.html#a82fe2bdbe7bad1a229083ed6fc9265d1',1,'PLMD::IMD']]],
   ['translator',['translator',['../class_p_l_m_d_1_1_dynamic_list.html#aee4c209068456d749274303312bc355e',1,'PLMD::DynamicList']]],

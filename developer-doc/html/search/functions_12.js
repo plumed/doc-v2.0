@@ -111,7 +111,7 @@ var searchData=
   ['simplealignment',['simpleAlignment',['../class_p_l_m_d_1_1_r_m_s_d.html#aefab4d8305240c5f28ba20243871d8fc',1,'PLMD::RMSD']]],
   ['simplemd',['SimpleMD',['../class_p_l_m_d_1_1cltools_1_1_simple_m_d.html#a79eeb76dcdc6b948a64cd3ac5530c3d0',1,'PLMD::cltools::SimpleMD']]],
   ['size',['size',['../class_p_l_m_d_1_1_keywords.html#acb259069c981032339f4533f7e595f19',1,'PLMD::Keywords::size()'],['../class_p_l_m_d_1_1_neighbor_list.html#a4b12ff28ca8c240c8985d69eb09650ac',1,'PLMD::NeighborList::size()'],['../class_p_l_m_d_1_1_p_d_b.html#a3dfe1959ce888788e0d84c80660e010b',1,'PLMD::PDB::size()']]],
-  ['sort',['Sort',['../class_p_l_m_d_1_1function_1_1_sort.html#aff1d8c098310af7f66a122ba942b595f',1,'PLMD::function::Sort::Sort()'],['../class_p_l_m_d_1_1_lattice_reduction.html#aaaeddb4fc1a9edd37e2b9fb79a7daede',1,'PLMD::LatticeReduction::sort()']]],
+  ['sort',['sort',['../class_p_l_m_d_1_1_lattice_reduction.html#aaaeddb4fc1a9edd37e2b9fb79a7daede',1,'PLMD::LatticeReduction::sort()'],['../class_p_l_m_d_1_1function_1_1_sort.html#aff1d8c098310af7f66a122ba942b595f',1,'PLMD::function::Sort::Sort()']]],
   ['sortactivelist',['sortActiveList',['../class_p_l_m_d_1_1_dynamic_list.html#aa506da97db9558ec1194028c38283d46',1,'PLMD::DynamicList']]],
   ['sparsegrid',['SparseGrid',['../class_p_l_m_d_1_1_sparse_grid.html#a6f73b503a0f8bcdca313183bf7ce025d',1,'PLMD::SparseGrid']]],
   ['sphere',['Sphere',['../class_p_l_m_d_1_1manyrestraints_1_1_sphere.html#a16297bb69cee246acfef5ebd037188d1',1,'PLMD::manyrestraints::Sphere']]],

@@ -7,7 +7,7 @@ var searchData=
   ['unique',['unique',['../class_p_l_m_d_1_1_action_atomistic.html#ac41675b21f7117618f9ce2dcb3e460d1',1,'PLMD::ActionAtomistic']]],
   ['units',['Units',['../class_p_l_m_d_1_1setup_1_1_units.html',1,'PLMD::setup']]],
   ['units',['Units',['../class_p_l_m_d_1_1_units.html',1,'PLMD']]],
-  ['units',['Units',['../class_p_l_m_d_1_1setup_1_1_units.html#a789577c7dfe83a13f83c1264fc39287c',1,'PLMD::setup::Units::Units()'],['../class_p_l_m_d_1_1_units.html#aa85efba722e27d320db44820c3eaa42b',1,'PLMD::Units::Units()'],['../class_p_l_m_d_1_1_atoms.html#ad349a6b3c90afb26bf9c63007ec062fd',1,'PLMD::Atoms::units()']]],
+  ['units',['units',['../class_p_l_m_d_1_1_atoms.html#ad349a6b3c90afb26bf9c63007ec062fd',1,'PLMD::Atoms::units()'],['../class_p_l_m_d_1_1setup_1_1_units.html#a789577c7dfe83a13f83c1264fc39287c',1,'PLMD::setup::Units::Units()'],['../class_p_l_m_d_1_1_units.html#aa85efba722e27d320db44820c3eaa42b',1,'PLMD::Units::Units()']]],
   ['units_2ecpp',['Units.cpp',['../setup_2_units_8cpp.html',1,'']]],
   ['units_2ecpp',['Units.cpp',['../tools_2_units_8cpp.html',1,'']]],
   ['units_2eh',['Units.h',['../tools_2_units_8h.html',1,'']]],
