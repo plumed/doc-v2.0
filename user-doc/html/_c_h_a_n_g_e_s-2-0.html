@@ -185,11 +185,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For developers:</p><ul>
 <li>Renamed Value.cpp to BiasValue.cpp</li>
 </ul>
-<h2>Unreleased changes (will be included in 2.0.5) </h2>
-<p>See <a href="http://github.com/plumed/plumed2/commits/v2.0">branch v2.0 on git repository</a>.</p>
+<h2>Version 2.0.5 (Dec 15, 2014) </h2>
+<p>Notice that branch 2.0 will not be longer maintained! All users are invited to switch to version 2.1.</p>
 <p>For users:</p><ul>
 <li>Fixed a bug in replica exchange with different Hamiltonians (either lamdba-dynamics or plumed XX-hrex branch) possibly occuring when using charge or mass dependent variables.</li>
 <li>Fixed a bug in analysis (e.g. <a class="el" href="_h_i_s_t_o_g_r_a_m.html">HISTOGRAM</a>) leading to wrong accumulation of statistics when running a replica exchange simulation.</li>
+<li>Fixed a bug in the calculation of derivatives in histograms. This should be harmless since people usually only consider the value in histograms and not the derivatives.</li>
 <li>Fixed an issue in Makefile that could results in problems when patching an MD code with &ndash;shared option (pointed out by Abhi Acharya). This fixes a regression introduced in 2.0.2.</li>
 <li>Small fixes in documentation.</li>
 </ul>
